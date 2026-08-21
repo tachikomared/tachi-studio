@@ -211,7 +211,7 @@ apps/desktop/electron/   main process — IPC surfaces, services, MCP server
 apps/desktop/src/        renderer — pages, Zustand stores, i18n
 packages/core/           @tachi/core — shared types, routing, memory, parsers
 scripts/                 sidecar preparation, licence notice generation
-recipes/                 how to extend: themes, agent memory
+recipes/                 how to extend: themes, providers, agent memory
 docs/                    architecture and subsystem documentation
 ```
 

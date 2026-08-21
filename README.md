@@ -8,6 +8,9 @@ Chat with any model, run coding agents on your own repos, wire multi-step flows
 on a canvas, and generate images, video and speech locally. No sign-up, no
 subscription, and no server of ours between you and the model.
 
+[![CI](https://github.com/tachikomared/tachi-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/tachikomared/tachi-studio/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/tachikomared/tachi-studio?display_name=tag&sort=semver)](https://github.com/tachikomared/tachi-studio/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/tachikomared/tachi-studio/total)](https://github.com/tachikomared/tachi-studio/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-black)](LICENSE)
 [![Windows](https://img.shields.io/badge/windows-10%20%7C%2011-black)](https://github.com/tachikomared/tachi-studio/releases/latest)
 [![X](https://img.shields.io/badge/%40smolekoma-black?logo=x&logoColor=white)](https://x.com/smolekoma)
@@ -194,11 +197,8 @@ Add your own in **Settings → Connections**.
 | `pnpm test` | Unit suites — `@tachi/core` and desktop (~9 800 tests) |
 | `pnpm -F tachi-studio-desktop package` | Build an installer for the current OS |
 
-A GitHub Actions workflow runs the whole suite on Windows on every push. It is
-switched off while this repository is private — a private repository bills its
-Actions minutes, and there is nothing here worth paying for that `pnpm test`
-does not do locally for free. Public repositories get those runners for nothing,
-so it goes back on the day this one does.
+CI runs the whole suite on Windows on every push — the platform this release
+ships on. macOS and Linux join the matrix when they are ready to ship.
 
 ## Layout
 

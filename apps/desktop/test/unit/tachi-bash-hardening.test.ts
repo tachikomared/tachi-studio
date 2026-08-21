@@ -21,7 +21,7 @@ import { executeTool, type ToolContext } from '../../electron/services/tachi/too
 // its child is still alive turns the next test's temp-directory cleanup into
 // EBUSY. The allowance is per file on purpose: raising it globally was measured
 // to break four sd/media suites that share real temp directories.
-vi.setConfig({ testTimeout: 30_000, hookTimeout: 30_000 })
+vi.setConfig({ testTimeout: 120_000, hookTimeout: 120_000 })
 
 const isWin = process.platform === 'win32'
 

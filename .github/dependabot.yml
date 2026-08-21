@@ -1,0 +1,38 @@
+# Dependency updates arrive GROUPED and weekly.
+#
+# The default (a pull request per package, opened the moment an advisory lands)
+# produced thirty PRs in the first minute this repository existed. That is not
+# maintenance, it is a wall — and a wall is what makes a repository look
+# abandoned even while somebody is working on it. One grouped PR per ecosystem
+# per week is reviewable; thirty are not.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      security-and-patches:
+        applies-to: security-updates
+        patterns: ['*']
+      production:
+        dependency-type: production
+        update-types: [minor, patch]
+      development:
+        dependency-type: development
+        update-types: [minor, patch]
+    ignore:
+      # Electron majors change the security model; they are read and taken
+      # deliberately, never merged by a bot.
+      - dependency-name: electron
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ['*']

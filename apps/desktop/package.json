@@ -62,7 +62,7 @@
     "node-pty": "^1.1.0",
     "node-sqlite3-wasm": "^0.8.59",
     "nodejs-whisper": "^0.3.0",
-    "pdfjs-dist": "6.1.200",
+    "pdfjs-dist": "6.2.108",
     "puppeteer-core": "^24.43.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

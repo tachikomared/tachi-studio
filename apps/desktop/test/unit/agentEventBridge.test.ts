@@ -271,12 +271,12 @@ describe('agent event bridge — checkpoint intercept', () => {
     emit({
       type: 'checkpoint',
       checkpoint: { id: 'cp-1', label: 'before edits' },
-      workspaceRoot: 'D:/projects/TachiDesk',
+      workspaceRoot: 'D:/work/demo-app',
     } as unknown as AgentEvent)
 
     expect(messages()).toEqual([])   // NOT transcript
     expect(useAgentStore.getState().revertCheckpoint).toEqual({
-      id: 'cp-1', root: 'D:/projects/TachiDesk', label: 'before edits',
+      id: 'cp-1', root: 'D:/work/demo-app', label: 'before edits',
     })
   })
 

@@ -49,6 +49,5 @@ pnpm-lock.yaml linguist-generated=true -diff
 
 # GitHub language stats: this is a TypeScript app, not a docs/media project.
 docs/**            linguist-documentation=true
-claude-design/**   linguist-vendored=true
-website-landing/** linguist-documentation=true
 examples/**        linguist-documentation=true
+recipes/**         linguist-documentation=true

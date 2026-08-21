@@ -5,7 +5,10 @@ Thanks for your interest! This is a pre-1.0, local-first desktop AI app
 
 ## Dev setup
 
-Requires **Node 22+** and **pnpm 9+** (Windows, macOS, or Linux).
+Requires **Node 22+** and **pnpm 11+** (Windows, macOS, or Linux). The pnpm
+major matters: `overrides` moved to `pnpm-workspace.yaml` in pnpm 10, and a
+pnpm 9 install cannot see them, so `--frozen-lockfile` fails against a lockfile
+written by 11. The version is pinned once, in the root `packageManager` field.
 
 ```bash
 pnpm install

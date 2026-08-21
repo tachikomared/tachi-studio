@@ -140,10 +140,17 @@ jobs:
           # The NAME is the asset name, not the on-disk name: GitHub turns spaces
           # into dashes on upload, and a checksum line naming a file that is not
           # on the release page is a line nobody can use.
-          Get-ChildItem *.exe, *.zip | ForEach-Object {
-            $asset = $_.Name -replace ' ', '-'
-            "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $asset"
-          } | Out-File -Encoding utf8 SHA256SUMS
+          # WriteAllLines with a BOM-less encoder, not Out-File: `-Encoding utf8`
+          # prepends a byte-order mark, and `sha256sum -c` then reads the BOM as
+          # part of the first hash and rejects the line as malformed.
+          # artifactName fixes the names at build time, so no rewriting here.
+          $lines = Get-ChildItem *.exe, *.zip | ForEach-Object {
+            "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)"
+          }
+          # LF, not Environment.NewLine — WriteAllLines writes CRLF on Windows and
+          # `sha256sum -c` keeps the carriage return as part of the filename.
+          $text = ($lines -join "`n") + "`n"
+          [System.IO.File]::WriteAllText("$PWD\SHA256SUMS", $text, (New-Object System.Text.UTF8Encoding $false))
 
       - name: Generate checksums (macOS)
         if: matrix.os == 'macos-latest'

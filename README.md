@@ -198,6 +198,12 @@ Add your own in **Settings → Connections**.
 | `pnpm test` | Unit suites — `@tachi/core` and desktop (~9 800 tests) |
 | `pnpm -F tachi-studio-desktop package` | Build an installer for the current OS |
 
+CI runs the suite on Windows, Linux and macOS, and **gates on Windows** — the
+platform this release ships. The other two report without blocking, because a
+known set of test files still assumes Windows-shaped paths
+([#7](https://github.com/tachikomared/tachi-studio/issues/7), a good first
+issue if you want one).
+
 ## Layout
 
 ```

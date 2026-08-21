@@ -26,15 +26,15 @@ jobs:
     # Bringing them back = fix the path assumptions, then add the two entries.
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
         # No version here on purpose: pnpm/action-setup reads `packageManager`
         # from package.json, so the toolchain is pinned in ONE place. Hardcoding
         # 9 here is what made the first real release run fail on all three
         # runners — overrides moved to pnpm-workspace.yaml in pnpm 10, which a
         # pnpm 9 install cannot see, so --frozen-lockfile reported a config
         # mismatch against a lockfile written by 11.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with: { node-version: 22, cache: 'pnpm' }
       - run: pnpm install --frozen-lockfile
       - name: Typecheck (renderer + main)

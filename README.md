@@ -19,6 +19,8 @@ subscription, and no server of ours between you and the model.
 
 Installer or portable folder · no admin rights · nothing phones home
 
+[**tachistudio.tech**](https://www.tachistudio.tech/) · [Documentation](docs/) · [Discussions](https://github.com/tachikomared/tachi-studio/discussions)
+
 </div>
 
 ---
@@ -231,6 +233,7 @@ including the handful that are **not** MIT and what that means for you.
 
 <div align="center">
 
+[**tachistudio.tech**](https://www.tachistudio.tech/) ·
 **[⬇ Download](https://github.com/tachikomared/tachi-studio/releases/latest)** ·
 [Documentation](docs/) ·
 [Issues](https://github.com/tachikomared/tachi-studio/issues) ·

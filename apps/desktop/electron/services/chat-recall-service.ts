@@ -19,7 +19,7 @@
 //                                                   ──► wrapUntrusted block
 //
 // NO NEW INDEX, NO EMBEDDINGS. The ACE-style embedding cosine rerank is a
-// LATER upgrade path (docs/app/RESEARCH-2026-06-09.md §1 "agentic-context-
+// LATER upgrade path (notes/RESEARCH-2026-06-09.md §1 "agentic-context-
 // engine" / §4 item 3) and deliberately not built here — this stage is lexical
 // only, which is why it needs no model, no download and no warm-up.
 //

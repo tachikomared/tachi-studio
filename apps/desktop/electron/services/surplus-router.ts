@@ -6,8 +6,8 @@
 // catalog ids in (and optionally runtime signals), so the whole module stays
 // deterministic and unit-testable.
 //
-// Design + rationale: docs/app/SURPLUS-SMART-ROUTER-DESIGN.md  (+ audit in
-// docs/app/SURPLUS-SMART-ROUTER-AUDIT.md)
+// Design + rationale: notes/SURPLUS-SMART-ROUTER-DESIGN.md  (+ audit in
+// notes/SURPLUS-SMART-ROUTER-AUDIT.md)
 //
 // What it routes on:
 //   - DIFFICULTY (SIMPLE / MID / TOP) from a weighted keyword/structural score.

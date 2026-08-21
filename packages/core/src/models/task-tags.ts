@@ -398,38 +398,38 @@ function sameImageFact(ids: readonly string[], fact: ImageInputFact): Record<str
  */
 export const IMAGE_INPUT_MODELS: Record<string, ImageInputFact> = {
   // ── Free rows, from OUR OWN measured catalog reads ────────────────────────
-  // docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3 — OpenRouter live catalogue,
+  // notes/FREE-FLEET-SWEEP-2026-08-01.md §3 — OpenRouter live catalogue,
   // `architecture.input_modalities` per model.
   'google/gemma-4-31b-it:free': {
-    source: 'OpenRouter live catalogue, input_modalities [image, text, video] — docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3',
+    source: 'OpenRouter live catalogue, input_modalities [image, text, video] — notes/FREE-FLEET-SWEEP-2026-08-01.md §3',
     readOn: '2026-08-01',
   },
   'google/gemma-4-26b-a4b-it:free': {
-    source: 'OpenRouter live catalogue, input_modalities [image, text, video] — docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3',
+    source: 'OpenRouter live catalogue, input_modalities [image, text, video] — notes/FREE-FLEET-SWEEP-2026-08-01.md §3',
     readOn: '2026-08-01',
   },
   'nvidia/nemotron-nano-12b-v2-vl:free': {
-    source: 'OpenRouter live catalogue, input_modalities [image, text, video] — docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3',
+    source: 'OpenRouter live catalogue, input_modalities [image, text, video] — notes/FREE-FLEET-SWEEP-2026-08-01.md §3',
     readOn: '2026-08-01',
   },
   'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free': {
-    source: 'OpenRouter live catalogue, input_modalities [text, audio, image, video] — docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3',
+    source: 'OpenRouter live catalogue, input_modalities [text, audio, image, video] — notes/FREE-FLEET-SWEEP-2026-08-01.md §3',
     readOn: '2026-08-01',
   },
   'nvidia/nemotron-3.5-content-safety:free': {
-    source: 'OpenRouter live catalogue, input_modalities [text, image] — docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3',
+    source: 'OpenRouter live catalogue, input_modalities [text, image] — notes/FREE-FLEET-SWEEP-2026-08-01.md §3',
     readOn: '2026-08-01',
   },
-  // docs/app/OMNIROUTE-PROVIDER-RESEARCH-2026-08-01.md §4 — Kilo Gateway
+  // notes/OMNIROUTE-PROVIDER-RESEARCH-2026-08-01.md §4 — Kilo Gateway
   // keyless catalog. Independently re-read 2026-08-01 during this work and the
   // modalities agreed; the doc stays the cited source because it is ours and
   // it is what the shipped whitelist was built from.
   'stepfun/step-3.7-flash:free': {
-    source: 'Kilo Gateway keyless catalog, text+image — docs/app/OMNIROUTE-PROVIDER-RESEARCH-2026-08-01.md §4',
+    source: 'Kilo Gateway keyless catalog, text+image — notes/OMNIROUTE-PROVIDER-RESEARCH-2026-08-01.md §4',
     readOn: '2026-08-01',
   },
   'openrouter/free': {
-    source: 'Kilo Gateway keyless catalog, text+image — docs/app/OMNIROUTE-PROVIDER-RESEARCH-2026-08-01.md §4',
+    source: 'Kilo Gateway keyless catalog, text+image — notes/OMNIROUTE-PROVIDER-RESEARCH-2026-08-01.md §4',
     readOn: '2026-08-01',
   },
 

@@ -2,7 +2,7 @@
 //
 // OpenRouter live text-model catalog for the chat model picker, carrying the
 // PER-MODEL FREE SIGNAL the free-fleet sweep called for
-// (docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3):
+// (notes/FREE-FLEET-SWEEP-2026-08-01.md §3):
 //
 //   free ⇔ live `pricing.prompt === 0 AND pricing.completion === 0`
 //

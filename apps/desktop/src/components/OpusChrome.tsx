@@ -10,7 +10,7 @@
 // bottom inset, TK-05 stamps one number into both, and this frame stamps the
 // mock's 30px header rail over its 24px hint bar.
 //
-// WHAT THE MOCK SHOWS (docs/app/CHASSIS-MOCK-SPEC-2026-07-26.md — an inventory
+// WHAT THE MOCK SHOWS (notes/CHASSIS-MOCK-SPEC-2026-07-26.md — an inventory
 // taken off the owner's Claude Design screens):
 //
 //   TOP    `OPUS-5 · CHASSIS REV 5 · <w> × <h>` (live numbers, not a fiction),

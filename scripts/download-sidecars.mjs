@@ -272,7 +272,7 @@ async function prepareFreellmapi() {
   //
   // THE REAL FIX is upstream of this file — fork the sidecar repo and pin it by
   // full SHA with a lockfile, so its build is reproducible. Recorded in
-  // docs/app/RELEASE-READINESS-2026-08-05.md.
+  // notes/RELEASE-READINESS-2026-08-05.md.
   const clientDir  = join(FREELLMAPI, 'client')
   const clientDist = join(clientDir, 'dist', 'index.html')
   if (existsSync(clientDir) && !existsSync(clientDist)) {

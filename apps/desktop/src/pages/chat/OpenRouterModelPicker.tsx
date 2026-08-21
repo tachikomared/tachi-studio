@@ -10,7 +10,7 @@
 // Free rows carry a FREE badge and the group header states the measured tier
 // limits from OpenRouter's own docs: 20 requests/min, 50 requests/day without
 // purchased credits (1000/day with ≥$10 credits) — quoted in
-// docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3. No throughput promises beyond that.
+// notes/FREE-FLEET-SWEEP-2026-08-01.md §3. No throughput promises beyond that.
 import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { OpenRouterModelInfo } from '../../types/electron'

@@ -91,7 +91,7 @@ export const TK_BEZEL_MAX_RATIO_Y = 0.075
  * The hardware pieces the slab can carry.
  *
  * The first eight are the Phase-1 skeleton. The seven after them are the mock's
- * full inventory (docs/app/CHASSIS-MOCK-SPEC-2026-07-26.md):
+ * full inventory (notes/CHASSIS-MOCK-SPEC-2026-07-26.md):
  *
  *   'topplate'   TACHIKOMA-RED / UNIT TK-05 · RED CRAB VARIANT name plate.
  *   'ventstrip'  perforated INTAKE · PASSIVE strip in the top rail.

@@ -2,7 +2,7 @@
 //
 // Local OpenAI-compatible API server — lets any external tool (IDE plugins,
 // scripts, other apps) use Tachi Studio as a drop-in OpenAI/Ollama-style
-// endpoint. #1 user-wants item (docs/app/USER-WANTS-2026-07-08.md): serve the
+// endpoint. #1 user-wants item (notes/USER-WANTS-2026-07-08.md): serve the
 // bundled FreeLLM router + llama.cpp behind one 127.0.0.1 URL.
 //
 // Design mirrors the in-process MCP server (mcp-server.ts):

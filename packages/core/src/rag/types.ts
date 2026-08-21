@@ -1,7 +1,7 @@
 // packages/core/src/rag/types.ts
 //
 // Shared types for the local RAG core (STEAL 2026-06-21 #7; decision doc
-// docs/app/RAG-EMBEDDER-DECISION-2026-06-22.md). The Embedder is an INTERFACE so
+// notes/RAG-EMBEDDER-DECISION-2026-06-22.md). The Embedder is an INTERFACE so
 // the pure core (chunker + vector store + retrieval) is fully unit-testable with
 // a deterministic fake, and the real in-process embedder (Transformers.js /
 // jina-embeddings-v2-base-code) is wired behind it later in the Electron main.

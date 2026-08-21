@@ -4,7 +4,7 @@
 // SAVING AN ERROR PAGE AS A MODEL.
 //
 // Two failure classes are pinned here, both from the Civitai integration spec
-// (docs/app/CIVITAI-INTEGRATION-SPEC-2026-07-28.md §1 landmine R1, §5 win 10):
+// (notes/CIVITAI-INTEGRATION-SPEC-2026-07-28.md §1 landmine R1, §5 win 10):
 //
 //  1. TOKEN LEAK ACROSS A REDIRECT. `GET civitai.com/api/download/models/<id>`
 //     answers 307 with a presigned R2/B2 URL whose signature covers

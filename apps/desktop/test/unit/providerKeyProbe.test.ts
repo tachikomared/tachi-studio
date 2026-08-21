@@ -553,7 +553,7 @@ describe('OpenGateway has NO validator, on purpose', () => {
     // that the deletion was complete rather than partial — a leftover validator
     // or key field for a provider nothing dispatches would be the worst of both
     // worlds. The keyless PATTERN it established is documented in
-    // docs/app/ADDING-A-PROVIDER.md and still governs OpenCode Zen inside the
+    // recipes/ADDING-A-PROVIDER.md and still governs OpenCode Zen inside the
     // relay (which needs the Authorization header ABSENT, not empty).
     const ipc = strip(read(PROVIDERS_IPC))
     expect(ipc).not.toMatch(/validate-kilo/)

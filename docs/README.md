@@ -14,3 +14,12 @@ Extending the app:
 - [../AGENTS.md](../AGENTS.md) — the conventions this codebase is written to. The in-app agent reads this file when it works on Tachi Studio itself.
 
 Screenshots used throughout the documentation live in [media/](media/).
+
+## A note on `notes/…` references in the source
+
+Some comments cite a research file under `notes/` — a measured provider sweep, a
+protocol investigation, a design spec. Those are the maintainer's working notes:
+they are the evidence behind a decision, they are not published, and the comment
+names them so the reasoning has an owner rather than appearing out of nowhere.
+Nothing in the build reads them. If a claim in a comment matters to you and the
+note is not here, open an issue and ask — the measurement can be repeated.

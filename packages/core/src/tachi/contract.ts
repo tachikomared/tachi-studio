@@ -3,8 +3,8 @@
 // Shared type spine for the TACHI first-party agentic harness. Pure types only —
 // no runtime, no electron, no node. Every TACHI core module imports its
 // input/output shapes from here so the loop (apps/desktop) and the pure logic
-// (packages/core/src/tachi/*) stay in lock-step. See docs/app/TACHI-HARNESS-2026-06-10.md
-// and docs/app/TACHI-V2-2026-06-11.md.
+// (packages/core/src/tachi/*) stay in lock-step. See notes/TACHI-HARNESS-2026-06-10.md
+// and notes/TACHI-V2-2026-06-11.md.
 
 // ── Tools ──────────────────────────────────────────────────────────────────────
 

@@ -2293,7 +2293,7 @@ function OpenRouterOAuthCard() {
         {t('openRouterOAuth.description')}
       </div>
       {/* Measured free-tier facts (their docs, quoted in
-          docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3): 14 live-priced $0 models,
+          notes/FREE-FLEET-SWEEP-2026-08-01.md §3): 14 live-priced $0 models,
           20 requests/min, 50/day without purchased credits. Per-model — the
           provider itself stays paid; the picker shows which rows are free. */}
       <div style={{ fontSize: 10, color: 'var(--text-dim)', marginBottom: 8 }}>
@@ -2422,7 +2422,7 @@ interface ThemePreview {
 // made this list an eighth, undetectable theme-registration point: it is typed
 // as Theme, so a theme whose CSS sheet exists but was never added here simply
 // never appeared in Settings, and neither typecheck nor tests noticed
-// (docs/app/DESIGN-VERTICAL-RESEARCH-2026-07-26.md). The colors are now DERIVED
+// (notes/DESIGN-VERTICAL-RESEARCH-2026-07-26.md). The colors are now DERIVED
 // from the sheets below; this array survives only as the labels + order + a
 // safety net if a sheet ever stops parsing.
 const THEME_PREVIEW_FALLBACK: ThemePreview[] = [

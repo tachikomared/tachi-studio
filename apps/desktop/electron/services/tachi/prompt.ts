@@ -4,7 +4,7 @@
 // every always-on token is paid on every call). Structure mirrors the
 // Claude-Code-class references (tone / proactiveness / tools / safety) without
 // their bulk. Workspace + env context is appended as a stable, cache-friendly
-// block. See docs/app/TACHI-HARNESS-2026-06-10.md §4 and TACHI-V2 §0.
+// block. See notes/TACHI-HARNESS-2026-06-10.md §4 and TACHI-V2 §0.
 
 import { buildSlashCommandInstruction, type ParsedSlashCommand } from '@tachi/core'
 

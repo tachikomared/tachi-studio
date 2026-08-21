@@ -2,7 +2,7 @@
 //
 // In-app learning guide — plain-language walkthrough so anyone (no coding
 // background needed) can understand what TachiDesk does and follow along.
-// Self-contained content; for the deep technical docs see docs/app/*.md.
+// Self-contained content; for the deep technical docs see notes/*.md.
 //
 // Brutalist: 2px borders, no radius, JetBrains Mono, semantic CSS vars, no emojis.
 

@@ -3,7 +3,7 @@
 // "IS THIS PASTED KEY LIVE?" — for the four provider credentials that can
 // actually be asked, plus the written record of why the fifth cannot.
 //
-// This module exists because of the Civitai lesson (docs/app/
+// This module exists because of the Civitai lesson (notes/
 // CIVITAI-AUTH-RESEARCH-2026-08-01.md §5): every PUBLIC endpoint of that API
 // answers a clean 200 to a garbage bearer, so a validator built on the obvious
 // endpoint would have printed a green tick over a typo. Only /api/v1/me reacted

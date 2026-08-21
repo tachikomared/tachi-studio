@@ -1889,7 +1889,7 @@ export type CivitaiAuthProbe =
 // trainedWords, and nothing else).
 //
 // LIVE-MATCHED 3/3 on 2026-07-31, anonymous probes
-// (docs/app/CIVITAI-AUTH-RESEARCH-2026-08-01.md §5):
+// (notes/CIVITAI-AUTH-RESEARCH-2026-08-01.md §5):
 //     mini/1833157  requireAuth=true   → the download first-hops 401
 //     mini/9208     requireAuth=false  → 307
 //     mini/290640   requireAuth=false  → 307

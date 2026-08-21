@@ -527,7 +527,7 @@ export const VERIFIED_FREE_MODELS: Record<string, { freeUntil?: string }> = {
   // 2026-08-02: 337 rows, of which 17 are priced 0/0; all 12 below still are.
   // No printed expiry on any of these; docs cap the free tier at 20 req/min ·
   // 50 req/day without purchased credits
-  // (docs/app/FREE-FLEET-SWEEP-2026-08-01.md §3).
+  // (notes/FREE-FLEET-SWEEP-2026-08-01.md §3).
   // OpenRouter always sends the full `org/model` id, so only that spelling is
   // listed. Since 2026-08-02 the OpenRouter picker also forwards the LIVE
   // per-model rate for every row, so this list is no longer the only pricing

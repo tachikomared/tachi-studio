@@ -74,7 +74,7 @@ export interface CustomTheme {
  *
  * A TEMPLATE-LITERAL member, deliberately: extending the built-in enum with a
  * dynamic id would mean touching five compile-time unions and a zod enum every
- * time a user imports a theme (see docs/app/DESIGN-VERTICAL-RESEARCH-2026-07-26.md).
+ * time a user imports a theme (see notes/DESIGN-VERTICAL-RESEARCH-2026-07-26.md).
  * Custom themes live in their own `customThemes` key instead, and this type
  * widens just enough to carry the pointer.
  */

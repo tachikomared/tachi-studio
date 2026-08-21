@@ -13,6 +13,7 @@ subscription, and no server of ours between you and the model.
 [![Downloads](https://img.shields.io/github/downloads/tachikomared/tachi-studio/total)](https://github.com/tachikomared/tachi-studio/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-black)](LICENSE)
 [![Windows](https://img.shields.io/badge/windows-10%20%7C%2011-black)](https://github.com/tachikomared/tachi-studio/releases/latest)
+[![X](https://img.shields.io/badge/%40smolekoma-black?logo=x&logoColor=white)](https://x.com/smolekoma)
 
 ### [⬇ Download for Windows](https://github.com/tachikomared/tachi-studio/releases/latest)
 
@@ -22,7 +23,7 @@ Installer or portable folder · no admin rights · nothing phones home
 
 ---
 
-![The chat tab](docs/media/chat-home.png)
+![Nodes, design, media and the model catalog](docs/media/hero.png)
 
 ## Why this exists
 
@@ -227,6 +228,9 @@ those are the platforms that need real users to become real releases. See
 
 MIT — see [LICENSE](LICENSE).
 
+Built by **smolekoma** ([@smolekoma](https://x.com/smolekoma)) and **smolemaru**,
+with Claude.
+
 Tachi Studio stands on a lot of other people's work. Every production dependency
 and its licence is listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md),
 including the handful that are **not** MIT and what that means for you.
@@ -236,6 +240,7 @@ including the handful that are **not** MIT and what that means for you.
 **[⬇ Download](https://github.com/tachikomared/tachi-studio/releases/latest)** ·
 [Documentation](docs/) ·
 [Issues](https://github.com/tachikomared/tachi-studio/issues) ·
-[Discussions](https://github.com/tachikomared/tachi-studio/discussions)
+[Discussions](https://github.com/tachikomared/tachi-studio/discussions) ·
+[@smolekoma](https://x.com/smolekoma)
 
 </div>

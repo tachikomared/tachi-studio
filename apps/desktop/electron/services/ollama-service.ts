@@ -125,22 +125,57 @@ export async function ensureOllamaRunning(): Promise<void> {
   // running for other clients). On Windows we have no choice — it dies with us.
   if (process.platform !== 'win32') proc.unref()
 
-  // Poll for health
-  for (let i = 0; i < MAX_HEALTH_ATTEMPTS; i++) {
-    if (await isOllamaRunning()) return
-    if (proc.exitCode !== null) {
-      throw new Error(`Ollama exited immediately (code ${proc.exitCode}). Is it installed and not blocked by another instance?`)
+  // A FAILED SPAWN ARRIVES HERE, NOT IN THE catch ABOVE.
+  //
+  // `spawn()` does not throw for a missing executable. It returns a
+  // ChildProcess and reports ENOENT asynchronously as an 'error' event — and an
+  // EventEmitter that emits 'error' with no listener rethrows it. In Electron's
+  // main process that is the modal "A JavaScript error occurred in the main
+  // process" dialog, which is what a machine without Ollama saw the moment the
+  // chat tab asked for a model list. The listener has to exist before the event
+  // can arrive, so it is attached on the line after the spawn and nowhere else.
+  const spawnFailed = new Promise<never>((_, reject) => {
+    proc.once('error', (err: NodeJS.ErrnoException) => {
+      if (spawnedProc === proc) spawnedProc = null   // a child that never started must not look like "already starting"
+      reject(new Error(
+        err.code === 'ENOENT'
+          ? 'Ollama is not installed on this machine. Get it from https://ollama.com/download, then try again — or pick a different provider.'
+          : `Could not start Ollama: ${err.message}. Install or repair it from https://ollama.com/download.`,
+      ))
+    })
+  })
+
+  const healthy = (async () => {
+    for (let i = 0; i < MAX_HEALTH_ATTEMPTS; i++) {
+      if (await isOllamaRunning()) return
+      if (proc.exitCode !== null) {
+        throw new Error(`Ollama exited immediately (code ${proc.exitCode}). Is it installed and not blocked by another instance?`)
+      }
+      await new Promise(r => setTimeout(r, HEALTH_POLL_INTERVAL_MS))
     }
-    await new Promise(r => setTimeout(r, HEALTH_POLL_INTERVAL_MS))
-  }
-  throw new Error('Ollama started but did not respond on :11434 in time.')
+    throw new Error('Ollama started but did not respond on :11434 in time.')
+  })()
+
+  // race, not await-in-sequence: without this, a spawn that fails instantly
+  // still costs the caller the full ~10 s poll before it hears about it.
+  await Promise.race([spawnFailed, healthy])
 }
 
 /**
  * List models the user has pulled. Ensures Ollama is running first.
  */
 export async function listOllamaModels(): Promise<OllamaModel[]> {
-  await ensureOllamaRunning()
+  // LISTING NEVER STARTS ANYTHING. Starting is its own verb —
+  // `ensureOllamaRunning`, called by the surfaces that mean it: the chat send
+  // path and the catalog's explicit button.
+  //
+  // This function used to call it, which meant merely OPENING the chat tab
+  // launched a daemon: the model picker asks for a list, and on a machine with
+  // no Ollama that reached a failing spawn. Every other caller here already
+  // guarded with `isOllamaRunning()` first — mcp/tools/llm.ts and
+  // catalog-service both do, and catalog-service's comment says why. The guard
+  // belongs in the one function, not in each caller who remembers.
+  if (!(await isOllamaRunning())) return []
   const res = await fetch(`${OLLAMA_BASE}/api/tags`)
   if (!res.ok) throw new Error(`/api/tags returned ${res.status}`)
   const data = await res.json() as { models?: OllamaModel[] }

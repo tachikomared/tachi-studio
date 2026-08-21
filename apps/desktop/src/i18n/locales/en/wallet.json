@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "Wallet",
+    "subtitle": "MULTI-CHAIN · App (nookplot · x402) + darksol agent wallets"
+  },
+  "toast": {
+    "addressCopied": "Address copied",
+    "backupDownloaded": "Encrypted backup downloaded",
+    "walletImported": "Wallet imported",
+    "walletRemoved": "Wallet removed from this device",
+    "agentWalletRemoved": "Agent wallet \"{{agentName}}\" removed"
+  },
+  "newKey": {
+    "backupNow": "Back this up now — only copy",
+    "address": "Address",
+    "privateKey": "Private key",
+    "done": "Done — open wallet"
+  },
+  "empty": {
+    "title": "No wallet yet",
+    "description": "Your app-wide wallet — one account for nookplot, x402 payments, and any integration. Non-custodial: the key is encrypted in your OS keychain and never leaves this device unencrypted.",
+    "creating": "Creating…",
+    "create": "✦ Create wallet",
+    "importKey": "Import private key",
+    "keyPlaceholder": "0x…",
+    "import": "Import"
+  },
+  "account": {
+    "title": "Account · {{label}}",
+    "noAddress": "—",
+    "copy": "Copy"
+  },
+  "balances": {
+    "title": "Balances",
+    "allNetworks": "· all networks",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 show",
+    "hide": "👁 hide",
+    "refreshing": "refreshing…",
+    "refresh": "↻ refresh"
+  },
+  "backup": {
+    "title": "Encrypted backup",
+    "description": "Password-encrypted keystore (Web3 Secret Storage — works with MetaMask/geth). Keep the file + password safe; together they restore your agent on any machine.",
+    "password": "Backup password (min 8)",
+    "download": "Download backup"
+  },
+  "switch": {
+    "title": "Switch wallet",
+    "replaceTitle": "Replace key · {{label}}",
+    "warning": "Export a backup first — replacing the key removes the current wallet from this device.",
+    "agentName": "Agent wallet name",
+    "keyPlaceholder": "Private key 0x…",
+    "importKey": "Import key",
+    "orKeystore": "or keystore JSON + password",
+    "keystorePassword": "keystore password",
+    "importKeystore": "Import keystore"
+  },
+  "danger": {
+    "title": "New / remove",
+    "generate": "Generate new wallet",
+    "forget": "Forget wallet",
+    "forgetNamed": "Forget {{label}}"
+  },
+  "switcher": {
+    "account": "account",
+    "activeSuffix": " ·active",
+    "new": "+ New",
+    "newPrompt": "New darksol agent wallet name:",
+    "newTitle": "New agent wallet",
+    "newPlaceholder": "e.g. trading-bot",
+    "newOk": "Create",
+    "newCancel": "Cancel"
+  },
+  "network": {
+    "all": "All networks"
+  },
+  "send": {
+    "title": "Send · any token",
+    "token": "Token",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "Recipient",
+    "recipientPlaceholder": "0x… / name.eth",
+    "amount": "Amount",
+    "sending": "Sending…",
+    "send": "Send",
+    "note": "Native + any ERC-20 on the selected network (or paste a contract address). Cross-chain → use the darksol agent (LI.FI).",
+    "toast": {
+      "success": "Sent — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "Funding · App → {{agentName}}",
+    "amount": "Amount (native)",
+    "moving": "Moving…",
+    "move": "Move",
+    "note": "Keeps your NOOK / x402 balance on the App wallet untouched.",
+    "toast": {
+      "success": "Funded — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Agent limits · darksol agent-signer",
+    "maxPerTrade": "Max / trade",
+    "daily": "Daily limit",
+    "dryRun": "Dry-run",
+    "on": "ON",
+    "off": "OFF",
+    "save": "Save limits",
+    "toast": {
+      "saved": "Limits saved"
+    }
+  }
+}

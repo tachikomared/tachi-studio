@@ -1,0 +1,400 @@
+{
+  "auth": {
+    "header": "GitHub認証",
+    "intro": "AeonはGitHub Actions上で動作します。続行するにはGitHubアカウントでサインインしてください。",
+    "signIn": "GitHubでサインイン",
+    "waiting": "ブラウザでの認可を待機中…",
+    "deviceCode": "デバイスコード",
+    "copyHint": "このコードをGitHubのデバイスライセンス認証ページにコピーして、下のボタンをクリックしてください。",
+    "openDevicePage": "github.com/login/deviceを開く",
+    "cancel": "キャンセル"
+  },
+  "repoSetup": {
+    "header": "aaronjmars/aeonをフォーク",
+    "intro": {
+      "before": "AeonはAPIシークレットを保存し、ワークフローをトリガーするために、自分自身のGitHubリポジトリで実行する必要があります。これは",
+      "after": "をあなたのアカウントにフォークします。"
+    },
+    "forking": "フォーク中…",
+    "forkRepo": "リポジトリをフォーク",
+    "checking": "確認中…",
+    "alreadyForked": "既に手動でフォーク済み",
+    "errors": {
+      "notVisible": "フォークが作成されていますが、リポジトリがまだ表示されていません。下の「既にフォーク済み」を試してください。",
+      "notFound": "フォークが見つかりません。GitHubでaaronjmars/aeonをフォークしてから、再度ここをクリックしてください。"
+    }
+  },
+  "ghNotInstalled": {
+    "header": "GitHub CLIをインストール",
+    "requires": {
+      "before": "Aeonには",
+      "installFrom": "からインストール",
+      "thenRestart": "して、Tachi Studioを再起動してください。"
+    }
+  },
+  "forkBadge": {
+    "syncing": "[同期中…]",
+    "behind": "[フォーク {{count}} コミット遅延]",
+    "title": "{{count}}コミット遅延 — クリックして同期"
+  },
+  "page": {
+    "checkingStatus": "ghステータスを確認中…"
+  },
+  "memory": {
+    "title": "メモリ検索",
+    "placeholder": "メモリを検索...",
+    "searching": "[検索中...]",
+    "errorPrefix": "[エラー]",
+    "noResults": "[結果なし]"
+  },
+  "skills": {
+    "title": "スキル ({{filtered}}/{{total}})",
+    "filterPlaceholder": "スキルをフィルタ…",
+    "refresh": "リフレッシュ",
+    "loading": "ワークフロー読み込み中…",
+    "noMatches": "一致する項目なし。",
+    "empty": {
+      "actionsDisabled": {
+        "title": "このフォークではGitHub Actionsが無効化されています。",
+        "body": "フォークはセキュリティのためActionsが無効になっています。約121のスキルワークフローを登録するために有効化してください。以下のワンクリック — ターミナルは不要です。"
+      },
+      "noWorkflows": {
+        "title": "まだワークフローが登録されていません。",
+        "body": "Actionsを有効化したばかりの場合は、GitHubが数秒待つ間に「リフレッシュ」を押してください。スキルがアップストリームより古い場合は、フォークを同期してください。"
+      },
+      "enabling": "…有効化中",
+      "enableActions": "▶ ACTIONSを有効化",
+      "syncing": "…同期中",
+      "syncFromUpstream": "⟲ アップストリームから同期",
+      "openActionsTab": "Actionsタブを開く ↗"
+    },
+    "analytics": {
+      "successRate": "成功率",
+      "streak": "ストリーク (連続成功)",
+      "avgDuration": "平均実行時間"
+    },
+    "run": {
+      "triggerTitle": "ワークフローをトリガー",
+      "disabledTitle": "ワークフローが無効です",
+      "label": "▶ 実行"
+    },
+    "toast": {
+      "actionsEnabled": "フォークでGitHub Actionsが有効化されました",
+      "synced": "フォークがアップストリームから同期されました ({{mergeType}})",
+      "upToDate": "フォークは既にアップストリームと同期済み",
+      "syncFailed": "同期失敗: {{error}}"
+    },
+    "errors": {
+      "enableFailed": "Actions有効化失敗: {{error}}",
+      "syncFailed": "同期失敗: {{error}}",
+      "triggerFailed": "{{name}}のトリガー失敗: {{error}}"
+    }
+  },
+  "composer": {
+    "header": "Aeonにタスクを与える",
+    "reloadTitle": "スキルを再読み込み",
+    "reload": "再読み込み",
+    "workflowLabel": "ワークフロー",
+    "noWorkflows": "ワークフローが登録されていません。左側のスキルカードを使用して、フォークのActionsを有効化し、アップストリームからスキルを同期してください。",
+    "loadingOption": "読み込み中…",
+    "disabledOption": "{{name}} (無効)",
+    "loadingInputs": "入力を読み込み中…",
+    "noInputs": {
+      "before": "このワークフローは",
+      "after": "入力を宣言していません。"
+    },
+    "hideAdvanced": "▾ 高度なオプションを非表示",
+    "showAdvanced": "▸ 高度なオプションを表示",
+    "dispatching": "ディスパッチ中…",
+    "dispatch": "▶ ディスパッチ",
+    "skillField": {
+      "before": "フォークの",
+      "after": "ディレクトリから({{count}}見つかった)サブスキルを選択するか、カスタム名を入力してください。",
+      "examplePlaceholder": "例: {{name}}",
+      "defaultPlaceholder": "スキル名"
+    },
+    "errors": {
+      "readInputs": "{{path}}の入力を読み込めませんでした: {{error}}",
+      "pickSkill": "まずスキルを選択してください。",
+      "requiredEmpty": "必須フィールド「{{name}}」が空です。",
+      "tooManyInputs": "入力が多すぎます ({{count}}) — workflow_dispatchは{{max}}が上限です。"
+    },
+    "toast": {
+      "dispatched": "GitHubにディスパッチされました",
+      "dispatchFailed": "ディスパッチ失敗: {{error}}"
+    }
+  },
+  "dashboard": {
+    "stage": {
+      "idle": "アイドル",
+      "downloading": "GitHubからダッシュボードソースを取得中",
+      "extracting": "抽出中",
+      "installingDeps": "ダッシュボード依存関係をインストール中",
+      "installingGh": "GitHub CLIを取得中 (初回起動のみ)",
+      "starting": "Next.js開発サーバーを起動中",
+      "ready": "ライブ",
+      "error": "エラー"
+    },
+    "resetConfirm": {
+      "message": "次の起動時にGitHubからダッシュボードを再ダウンロードしますか？ローカルキャッシュがクリアされます (~150 MB)。",
+      "ok": "リセット"
+    },
+    "backTitle": "Aeonホームに戻る",
+    "back": "← Aeonホーム",
+    "label": "ダッシュボード ·",
+    "reloadIframeTitle": "ダッシュボードiframeを再読み込み",
+    "reload": "⟳ 再読み込み",
+    "openInBrowser": "ブラウザで開く ↗",
+    "stopTitle": "ダッシュボードサーバーを停止",
+    "stop": "■ 停止",
+    "iframeTitle": "Aeonダッシュボード",
+    "progress": {
+      "title": "{{stage}}…",
+      "body": "初回起動はアプリ内にAeonのダッシュボードをインストールします。これはワンタイム設定 — 次回起動は数秒で開始します。"
+    },
+    "launch": {
+      "errorTitle": "ダッシュボードを起動できませんでした",
+      "title": "Aeonダッシュボード",
+      "body": {
+        "before": "Aeonは独自のNext.jsダッシュボードを搭載しています。「起動」をクリックすると、GitHubから最新ソースを取得し、アプリ内にインストールして、ここにタブとして埋め込みます。GitHub OAuthは自動的に渡されます —",
+        "after": "は不要です。"
+      },
+      "retry": "再試行",
+      "launch": "ダッシュボードを起動",
+      "resetCacheTitle": "ローカルキャッシュをクリアして、次回起動時に強制再ダウンロード",
+      "resetCache": "キャッシュをリセット",
+      "yourFork": "GitHub上のあなたのフォーク ↗",
+      "source": {
+        "before": "ソース:",
+        "after": "。アプリデータにキャッシュ — 後続の起動で再利用。"
+      }
+    },
+    "prereq": {
+      "nodeMissing": {
+        "before": "Node.jsがPATHで検出されません —",
+        "after": "からインストール (LTSで構いません)。"
+      },
+      "npmMissing": "npmがPATHで検出されません — Node.jsにバンドルされています。"
+    }
+  },
+  "channels": {
+    "header": "チャネル · Aeonがあなたに話しかける方法",
+    "intro": "Aeonはこれらをネイティブでサポートしています — シークレットをプッシュするだけで、次の実行時にチャネルが有効化されます。ワークフローパッチは不要です。",
+    "pushedBadge": "GHにプッシュ済み ✓",
+    "pushing": "…プッシュ中",
+    "pushMany": "{{count}}個のシークレットをGitHubにプッシュ",
+    "pushOne": "シークレットをGitHubにプッシュ",
+    "toast": {
+      "pushed": "{{channel}}シークレットがプッシュされました — 次のスキル実行時にチャネルが有効",
+      "pushFailed": "プッシュ失敗: {{error}}"
+    },
+    "items": {
+      "telegram": {
+        "label": "Telegram",
+        "description": "最も人気のあるチャネル — Aeonはスキル出力をメッセージとして送信し、コマンドで返信できます。@BotFatherでボットを作成してから、アカウントからボットに/startを送信してください。",
+        "helpLabel": "BotFatherチュートリアル"
+      },
+      "discord-webhook": {
+        "label": "Discord (アウトバウンドのみ)",
+        "description": "最も簡単なDiscordセットアップ — プッシュのみ。チャネル → チャネル編集 → インテグレーション → Webhook → 作成。ボットの権限は不要。",
+        "helpLabel": "Webhookセットアップ"
+      },
+      "discord-bot": {
+        "label": "Discord (インバウンド + アウトバウンド)",
+        "description": "完全な双方向Discord。discord.com/developers → 新規アプリケーション → Bot → Message Content意図を有効化、ボットトークンをコピー。チャネル:履歴スコープでボットをサーバーに招待。",
+        "helpLabel": "Discord開発者ポータル"
+      },
+      "slack-webhook": {
+        "label": "Slack (アウトバウンドのみ)",
+        "description": "プッシュのみSlack。api.slack.com → あなたのアプリ → 新規アプリを作成 → スクラッチから → 受信Webhook → チャネルに追加 → URLをコピー。",
+        "helpLabel": "Slack webhookドキュメント"
+      },
+      "slack-bot": {
+        "label": "Slack (インバウンド + アウトバウンド)",
+        "description": "完全な双方向Slack。アプリ → OAuth & 権限 → channels:history + reactions:writeスコープを追加 → インストール → Bot User OAuthトークンをコピー。チャネルIDはURLにあります。",
+        "helpLabel": "ボットトークンドキュメント"
+      },
+      "email": {
+        "label": "メール (SendGrid)",
+        "description": "スキル出力は整形されたHTMLメールとして到着します。sendgrid.com/settings/api_keys → メール送信権限でAPIキーを作成 → コピー。通知を送信する受信者アドレスを設定します。",
+        "helpLabel": "SendGrid APIキー"
+      }
+    },
+    "secretLabels": {
+      "TELEGRAM_BOT_TOKEN": "ボットトークン",
+      "TELEGRAM_CHAT_ID": "チャットID",
+      "DISCORD_WEBHOOK_URL": "Webhook URL",
+      "DISCORD_BOT_TOKEN": "ボットトークン",
+      "DISCORD_CHANNEL_ID": "チャネルID",
+      "SLACK_WEBHOOK_URL": "Webhook URL",
+      "SLACK_BOT_TOKEN": "ボットトークン",
+      "SLACK_CHANNEL_ID": "チャネルID",
+      "SENDGRID_API_KEY": "SendGrid APIキー",
+      "NOTIFY_EMAIL_TO": "受信メール"
+    }
+  },
+  "provider": {
+    "header": "プロバイダシークレット · GitHub Actions にプッシュ",
+    "intro": {
+      "before": "これらのキーはあなたの",
+      "after": "リポジトリにGitHub Actionsシークレットとしてプッシュされるので、クラウド側のスキル実行時に使用できます。ローカルチャットタブのキーは別です。"
+    },
+    "set": "設定",
+    "save": "保存",
+    "push": "プッシュ",
+    "pushing": "…プッシュ中",
+    "activating": "…有効化中",
+    "localBadge": "ローカル ✓",
+    "pushedBadge": "GHにプッシュ済み ✓",
+    "activeGatewayBadge": "アクティブプロバイダー ✓",
+    "activeGatewayTitle": "aeon.yml gateway.provider = {{mode}}",
+    "ghSecret": "GHシークレット →",
+    "useDifferentKey": "別のキーを使用",
+    "pushLocalButton": "ローカル{{label}}キーをGitHubにプッシュ",
+    "activateTitle": "フォークのaeon.ymlにgateways.provider={{mode}}を設定",
+    "activateButton": "→ {{label}}を有効化 (aeon.ymlを{{mode}}に設定)",
+    "patch": {
+      "title": "OpenGatewayワークフローパッチ",
+      "applied": "適用済み ✓",
+      "notApplied": "未適用",
+      "body": {
+        "part1": "Aeonのアップストリームワークフローは",
+        "part2": "または",
+        "part3": "を読み込みません。このワンクリックパッチはフォークに4行のジョブレベル",
+        "part4": "ブロックをコミットして、OpenGateawayシークレットがClaude Codeで取得されるようにします。"
+      },
+      "applying": "…適用中",
+      "applyButton": "パッチを適用 (フォークにコミット)",
+      "reverting": "…元に戻し中",
+      "revertButton": "パッチを元に戻す"
+    },
+    "rows": {
+      "anthropic-oauth": {
+        "label": "Anthropic OAuth",
+        "description": "/chat (Anthropic Pro ログイン)のAnthropicOAuth更新トークン。AeonワークフローはClaude CodeのOAuthモード経由でこれを使用 — 推奨パス。"
+      },
+      "anthropic": {
+        "label": "Anthropic APIキー",
+        "description": "直接Anthropic APIキー (sk-ant-api03-…)。ゲートウェイモードでない場合、ワークフローはANTHROPIC_API_KEYとして読み込みます。"
+      },
+      "bankr-gateway": {
+        "label": "Bankr",
+        "description": "Bankr LLMキー (bk_…)。Aeonはネイティブでbankrをサポート — 「有効化」をクリックしてaeon.ymlにgateway.provider=bankrを設定。"
+      },
+      "opengateway": {
+        "label": "OpenGateway",
+        "description": "OpenGatewayキー (ogw_live_…)。2つのシークレットをプッシュ: ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN。下記のワークフローパッチが必要 — Aeonはネイティブではopengatewayを経由しません。"
+      }
+    },
+    "toast": {
+      "gatewayUpdated": "aeon.ymlが更新されました — {{label}}は新しいアクティブプロバイダー",
+      "gatewayAlready": "{{label}}は既にaeon.ymlでアクティブ",
+      "activateFailed": "有効化失敗: {{error}}",
+      "patchAlready": "ワークフローは既にOpenGatewayにパッチ済み",
+      "patched": "フォークワークフローにパッチ — OpenGatewayはClaude Codeで配線済み",
+      "patchFailed": "パッチ失敗: {{error}}",
+      "reverted": "OpenGatewayパッチを元に戻し — ワークフローはアップストリーム形状に",
+      "revertFailed": "元に戻し失敗: {{error}}",
+      "pushedLocal": "ローカル{{label}}キーを{{owner}}/aeonのGitHubシークレットにプッシュ",
+      "pushFailed": "プッシュ失敗: {{error}}",
+      "savedExplicit": "{{label}} → {{secretName}} ({{owner}}/aeon上)"
+    }
+  },
+  "drawer": {
+    "tabs": {
+      "result": "結果",
+      "logs": "ログ"
+    },
+    "resultTitle": "解析結果、生成ファイル、トークン使用量を表示",
+    "resultTitleDisabled": "実行完了後に利用可能",
+    "refresh": "リフレッシュ",
+    "reload": "再読み込み",
+    "openOnGithubTitle": "GitHubで開く",
+    "openOnGithub": "GitHubで開く ↗",
+    "closeTitle": "閉じる (Esc)",
+    "close": "閉じる",
+    "jobs": {
+      "title": "ジョブ ({{count}})",
+      "waiting": "ランナーを待機中…",
+      "none": "このラン内にジョブはありません。"
+    },
+    "logs": {
+      "title": "ログ",
+      "live": "● ライブ",
+      "fetching": "取得中…",
+      "queued": "ジョブはキューイング中 — ランナーを待機中…",
+      "noOutput": "ログ出力がまだありません。",
+      "selectJob": "ジョブを選択してそのログを表示。"
+    },
+    "errors": {
+      "loadJobs": "ジョブの読み込みに失敗: {{error}}",
+      "logFetch": "[ログ取得エラー] {{error}}"
+    },
+    "result": {
+      "loadingLogs": "ラン ログを読み込み中…",
+      "whatItDid": "何をしたか",
+      "noSummary": "スキルが最終出力で構造化された概要を出力しませんでした。ログの生の実行については「ログ」に切り替えてください。",
+      "filesProduced": "生成ファイル",
+      "filesProducedCount": "生成ファイル ({{count}})",
+      "noFiles": "このランでファイル変更は検出されませんでした。",
+      "openFileTitle": "GitHubで{{path}}を開く",
+      "open": "開く ↗",
+      "commit": "コミット",
+      "openShort": "開く ↗",
+      "tokenUsage": "トークン使用量",
+      "tokens": {
+        "cacheRead": "キャッシュ読み取り",
+        "cacheCreation": "キャッシュ作成"
+      },
+      "browseOutputs": "出力を参照",
+      "outputsTitle": "JSON形式のスキル出力 (Aeonのダッシュボードフィード)",
+      "links": {
+        "outputs": "dashboard/outputs ↗",
+        "articles": "記事 ↗",
+        "commits": "すべてのコミット ↗",
+        "thisRun": "このランをGitHubで ↗"
+      }
+    }
+  },
+  "runs": {
+    "header": "最近の実行",
+    "refresh": "リフレッシュ",
+    "loading": "ラン読み込み中…",
+    "empty": "ラン実行なし。スキルをトリガーして、ここに結果を表示してください。",
+    "rerun": "▶ 再実行",
+    "rerunTitle": "再実行",
+    "deleteTitle": "ランを削除",
+    "confirmDeleteTitle": "再度クリックして確認",
+    "sure": "確認?",
+    "row": {
+      "openTitle": "ライブラン詳細を開く"
+    },
+    "card": {
+      "title": "クリックで開く · ドラッグでキューイング済みで再実行",
+      "rerunTitle": "このワークフローを再実行",
+      "confirmDeleteTitle": "もう一度クリックして削除を確認"
+    },
+    "kanban": {
+      "todo": "キューイング済み",
+      "running": "実行中",
+      "failed": "失敗",
+      "done": "完了",
+      "dropHint": "↓ ドロップで再実行"
+    },
+    "toast": {
+      "rerunning": "{{name}}を再実行中",
+      "rerunFailed": "再実行失敗: {{error}}",
+      "deleted": "{{name}}を削除",
+      "deleteFailed": "削除失敗: {{error}}",
+      "alreadyRunning": "既に実行中"
+    }
+  },
+  "intro": {
+    "title": "AEON — クラウド上のあなたのエージェント",
+    "body": "Aeonは、このアプリを閉じていてもクラウドであなたのために働くエージェントです。あなた自身のGitHubフォーク ({{owner}}/aeon) に常駐し、リサーチ・モニタリング・ライティングなどのスキルをGitHub Actions経由で自律的に実行します — スケジュールで、またはタスクをディスパッチしたときに。結果は下の「最近の実行」と、接続したチャネル (Telegram、Discord、Slack、メール) に届きます。"
+  },
+  "setup": {
+    "header": "セットアップ (初回のみ)",
+    "hint": "プロバイダーのシークレット + 通知チャネル。実行が動いていれば設定済みです。"
+  }
+}

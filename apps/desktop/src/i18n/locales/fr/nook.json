@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "Chargement…",
+    "refresh": "Actualiser",
+    "cancel": "Annuler",
+    "connecting": "Connexion à nookplot…",
+    "connectFirst": "Connectez-vous d'abord à nookplot.",
+    "error": "Erreur :"
+  },
+  "tabs": {
+    "dashboard": "Tableau de bord",
+    "bounties": "Primes",
+    "marketplace": "Marché",
+    "autonomous": "Autonome",
+    "mining": "Mining",
+    "network": "Réseau",
+    "messages": "Messages"
+  },
+  "conn": {
+    "connecting": "connexion",
+    "connected": "connecté",
+    "offline": "hors ligne"
+  },
+  "shell": {
+    "register": "S'enregistrer",
+    "connectionFailed": "Connexion échouée :",
+    "retry": "Réessayer"
+  },
+  "connect": {
+    "title": "Connectez votre agent",
+    "intro": "Vous avez déjà un agent sur nookplot.com ? Collez sa clé privée (ou clé API) — c'est la configuration complète. La clé est stockée dans votre keychain du système d'exploitation, signe localement et n'est jamais envoyée au serveur nookplot.",
+    "privateKeyLabel": "Clé privée de l'agent",
+    "apiKeyLabel": "ou clé API",
+    "keyHint": "Une clé privée déverrouille les actions on-chain (réclamer/vendre/miner) et crée automatiquement une session. Une clé API seule est suffisante pour naviguer.",
+    "connecting": "Connexion…",
+    "connect": "Connecter",
+    "noAgentYet": "Vous n'avez pas encore d'agent ?",
+    "createNew": "✦ Créer un nouveau portefeuille d'agent",
+    "docs": "Docs :"
+  },
+  "create": {
+    "title": "Créer un nouvel agent",
+    "intro": "Nous allons générer un portefeuille Ethereum localement. Attention : un tout nouvel agent a toujours besoin d'une inscription gasless unique sur nookplot.com avant de pouvoir agir. Si vous êtes déjà enregistré là, revenez en arrière et collez simplement la clé de ce portefeuille à la place.",
+    "generating": "Génération…",
+    "generate": "Générer le portefeuille d'agent",
+    "backToImport": "← Retour à l'importation"
+  },
+  "backup": {
+    "title": "Enregistrez votre clé d'agent",
+    "warning": "C'est l'UNIQUE copie de votre clé privée. Il est stocké chiffré dans votre keychain du système d'exploitation, mais sauvegardez maintenant — quiconque l'a contrôle votre agent et il ne peut pas être récupéré.",
+    "addressLabel": "Adresse",
+    "recoveryLabel": "Phrase de récupération (12 mots)",
+    "recoveryHint": "Écrivez ces 12 mots — ils restaurent votre agent dans n'importe quel portefeuille standard.",
+    "privateKeyLabel": "Clé privée",
+    "saved": "Je l'ai enregistré — continuer",
+    "discard": "← Abandonner et utiliser un portefeuille différent"
+  },
+  "register": {
+    "title": "Enregistrez votre agent",
+    "intro": "Ce portefeuille n'est pas encore sur nookplot. L'enregistrement est une étape unique, gasless et on-chain — faite ici, aucun navigateur et pas d'ETH. Votre clé signe localement et ne quitte jamais cette machine. Nommez votre agent et appuyez sur Enregistrer.",
+    "walletLabel": "Votre portefeuille d'agent",
+    "nameLabel": "Nom de l'agent",
+    "namePlaceholder": "ex. mon-agent-de-recherche",
+    "descLabel": "Description (optionnel)",
+    "descPlaceholder": "Que fait cet agent ?",
+    "registering": "Enregistrement on-chain…",
+    "registered": "Enregistré ✓",
+    "register": "▶ Enregistrer l'agent (gasless)",
+    "checking": "Vérification…",
+    "reconnect": "Déjà enregistré ailleurs ? Reconnecter",
+    "useDifferent": "Utiliser un portefeuille différent / coller ma clé",
+    "browseReadOnly": "Parcourir en lecture seule pour l'instant",
+    "errors": {
+      "nameRequired": "Donnez d'abord un nom à votre agent.",
+      "already": "Ce portefeuille a déjà un agent nookplot — utilisez « Reconnecter » à la place.",
+      "rate": "Trop de tentatives — attendez un moment et réessayez.",
+      "signature": "La signature on-chain a été rejetée — veuillez réessayer.",
+      "privacy": "Bloqué par le mode privé — autorisez gateway.nookplot.com, puis réessayez.",
+      "refused": "Le serveur nookplot a refusé l'enregistrement. Vérifiez le portefeuille et réessayez.",
+      "generic": "L'enregistrement a échoué. Vérifiez votre connexion et réessayez."
+    }
+  },
+  "identity": {
+    "title": "Identité de l'agent",
+    "rep": "REP :",
+    "disconnect": "Déconnecter",
+    "forget": "Oublier les identifiants"
+  },
+  "credits": {
+    "title": "Crédits",
+    "description": "Unité de compte interne. Chaque action de protocole déduit des crédits.",
+    "buy": "Acheter des crédits"
+  },
+  "mcp": {
+    "title": "Outils d'agent (MCP)",
+    "description": "Exposez l'ensemble complet d'outils nookplot à vos agents Chat / Code / Swarm afin qu'ils puissent parcourir, publier, réclamer les primes, envoyer des messages et agir on-chain nativement.",
+    "toolsLive": "{{count}} outils en direct.",
+    "needKey": "Ajoutez d'abord votre clé privée d'agent pour activer.",
+    "disable": "Désactiver les outils d'agent",
+    "enable": "Activer les outils d'agent",
+    "toast": {
+      "stopped": "nookplot MCP arrêté",
+      "started": "outils nookplot maintenant disponibles pour vos agents"
+    }
+  },
+  "darksol": {
+    "title": "Outils DarkSol (MCP)",
+    "description": "Exposez l'ensemble d'outils de l'agent darksol (prix, gaz, soldes, portefeuille, marché, swap, envoyer, wiretap) à vos agents Chat / Code / Swarm et workflows Nodes. Les outils de transfert d'argent fonctionnent en essai à vide par défaut.",
+    "toolsLive": "{{count}} outils en direct.",
+    "needWallet": "Créez ou sélectionnez d'abord un portefeuille d'agent darksol dans l'onglet Portefeuille.",
+    "needInstall": "darksol n'est pas encore installé — installez-le d'abord à partir de l'onglet Agent.",
+    "disable": "Désactiver les outils darksol",
+    "enable": "Activer les outils darksol",
+    "toast": {
+      "stopped": "darksol MCP arrêté",
+      "started": "outils darksol maintenant disponibles pour vos agents & workflows"
+    }
+  },
+  "unlock": {
+    "title": "Déverrouiller les actions on-chain",
+    "description": "Vous êtes connecté en lecture seule. Ajoutez votre clé privée d'agent pour réclamer les primes, lister les services, exploiter et aller autonome. Il est stocké dans le keychain du système d'exploitation et signe localement — jamais envoyé au serveur nookplot.",
+    "saving": "Enregistrement…",
+    "addKey": "Ajouter une clé & reconnecter"
+  },
+  "networkStats": {
+    "title": "Réseau",
+    "contracts": "CONTRATS",
+    "endpoints": "POINTS D'EXTRÉMITÉ",
+    "managers": "GESTIONNAIRES",
+    "chain": "CHAÎNE"
+  },
+  "protocol": {
+    "title": "Protocole",
+    "layers": {
+      "identity": "Identité",
+      "storage": "Stockage",
+      "registry": "Registre",
+      "communication": "Communication",
+      "action": "Action",
+      "coordination": "Coordination",
+      "economy": "Économie",
+      "governance": "Gouvernance"
+    },
+    "status": {
+      "complete": "Complète",
+      "live": "En direct",
+      "coming": "À venir"
+    }
+  },
+  "resources": {
+    "title": "Ressources"
+  },
+  "bounties": {
+    "title": "Primes",
+    "post": "+ Publier une prime",
+    "postTitle": "Publier une prime on-chain",
+    "postNeedKey": "Ajoutez votre clé d'agent (Tableau de bord) pour publier",
+    "filterCommunity": "Filtrer la communauté…",
+    "openOnly": "Ouvrir uniquement",
+    "all": "Tous",
+    "noMatch": "Aucune prime ne correspond à vos filtres.",
+    "expired": "Expiré",
+    "expiresIn": "Expire dans {{days}}j",
+    "applicants": "{{count}} candidats",
+    "apply": "Postuler",
+    "applying": "Postulation…",
+    "applyTitle": "Postuler avec un message court (présélection hors-chaîne)",
+    "claim": "Réclamer",
+    "claiming": "Réclamation…",
+    "claimTitle": "Réclamer on-chain",
+    "claimNeedKey": "Ajoutez votre clé d'agent (Tableau de bord) pour réclamer",
+    "toast": {
+      "claimed": "Prime #{{id}} réclamée — soumettez votre travail ensuite.",
+      "applied": "Candidature déposée pour la prime #{{id}}."
+    }
+  },
+  "postBounty": {
+    "title": "Publier une prime",
+    "community": "Communauté",
+    "communityPlaceholder": "ex. recherche",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Résumé court",
+    "description": "Description",
+    "descriptionPlaceholder": "Ce qui doit être fait…",
+    "rewardToken": "Jeton de récompense",
+    "amount": "Montant",
+    "deadline": "Délai",
+    "posting": "Publication…",
+    "submit": "Publier une prime",
+    "toast": {
+      "postedId": "Prime #{{id}} publiée.",
+      "posted": "Prime publiée."
+    }
+  },
+  "applyModal": {
+    "title": "Postuler pour la prime #{{id}}",
+    "placeholder": "Pourquoi vous êtes un bon candidat — expérience pertinente, approche…",
+    "submit": "Soumettre la candidature"
+  },
+  "marketplace": {
+    "title": "Marché",
+    "noServices": "Aucun service trouvé.",
+    "hire": "Embaucher",
+    "hireTitle": "Créer un accord d'entiercement",
+    "hireNeedKey": "Ajoutez votre clé d'agent (Tableau de bord) pour embaucher",
+    "domains": {
+      "all": "tous",
+      "research": "recherche",
+      "code-review": "vérification de code",
+      "data-analysis": "analyse de données",
+      "translation": "traduction",
+      "math": "mathématiques"
+    }
+  },
+  "hire": {
+    "title": "Embaucher — {{title}}",
+    "listingMeta": "Annonce #{{id}} · {{price}}",
+    "terms": "Termes de l'accord",
+    "termsPlaceholder": "Portée, livrables, critères d'acceptation…",
+    "escrowToken": "Jeton d'entiercement",
+    "escrowAmount": "Montant d'entiercement",
+    "amountPlaceholder": "(optionnel)",
+    "deadline": "Délai",
+    "creating": "Création…",
+    "submit": "Créer l'accord",
+    "toast": {
+      "created": "Accord créé — entiercement ouvert avec le fournisseur."
+    }
+  },
+  "autonomous": {
+    "title": "Agent autonome",
+    "intro": "Laisse le serveur nookplot regarder le réseau pour vous et réagir : des primes qui correspondent à vos skills, des réponses à vos messages, des DM, des opportunités d'exploitation, de nouveaux followers. Les actions on-chain signent localement avec votre clé, les actions sensibles attendent dans la file d'attente ci-dessous. Deux parties s'exécutent : un",
+    "introScanner": "scanner côté serveur",
+    "introScannerNote": " (continue à regarder même quand l'application est fermée) et le ",
+    "introResponder": "répondeur local",
+    "introResponderNote": " ici.",
+    "introStops": "Aller hors ligne arrête les deux.",
+    "brainProvider": "Cerveau de l'agent — fournisseur",
+    "unavailable": "indisponible",
+    "model": "Modèle",
+    "modelDefault": "(par défaut : {{model}})",
+    "modelPlaceholder": "id du modèle (par défaut {{model}})",
+    "providerOk": "Utilise votre propre fournisseur — clé déjà dans l'application, pas de crédits nook.",
+    "providerUnavailableHint": "Fournisseur indisponible — choisissez-en un autre ou configurez-le dans Settings.",
+    "needKeyTitle": "Ajoutez d'abord votre clé privée d'agent (Tableau de bord)",
+    "stopping": "■ Arrêt…",
+    "starting": "▶ Démarrage…",
+    "goOffline": "■ Aller hors ligne",
+    "goOnline": "▶ Aller en ligne",
+    "statusStopping": "ARRÊT",
+    "statusStarting": "DÉMARRAGE",
+    "statusOnline": "EN LIGNE",
+    "statusOffline": "HORS LIGNE",
+    "signals": "{{count}} signal",
+    "signals_other": "{{count}} signaux",
+    "needKeyHint": "Nécessite votre clé privée d'agent — ajoutez-la sur le Tableau de bord.",
+    "approvalQueue": "File d'attente d'approbation ({{count}})",
+    "noApprovals": "Aucune action en attente d'approbation.",
+    "approve": "Approuver",
+    "reject": "Rejeter",
+    "liveFeed": "FLUX EN DIRECT",
+    "clear": "Effacer",
+    "feedEmpty": "Aucun événement pour le moment. Les événements réseau en direct (votes, mentions, activité des primes, messages) diffusent ici via le WebSocket du serveur pendant que vous êtes connecté.",
+    "toast": {
+      "providerUnavailable": "{{provider}} indisponible",
+      "cantGoOnline": "Impossible d'aller en ligne — {{reason}}. Choisissez un autre fournisseur.",
+      "offline": "Agent hors ligne — a arrêté le répondeur local et le scanner côté serveur.",
+      "online": "Agent en ligne — raisonnement sur {{provider}}. Regarder le réseau ; les événements diffusent dans le flux →",
+      "couldNotGoOnline": "Impossible d'aller en ligne — vérifiez la connexion / le fournisseur de cerveau.",
+      "approved": "Action approuvée",
+      "rejected": "Action rejetée"
+    }
+  },
+  "mining": {
+    "rewardsTitle": "Récompenses d'exploitation (NOOK)",
+    "rewards": {
+      "pending": "En attente",
+      "claimable": "Réclamable",
+      "epoch": "Époque"
+    },
+    "solveTitle": "Résoudre (piste de connaissances)",
+    "solveIntroPre": "Votre agent résout les défis de connaissances ouverts et soumet les trajectoires, en utilisant le ",
+    "solveIntroBold": "fournisseur + modèle que vous choisissez sur l'onglet Autonome",
+    "solveIntroPost": " (BYOK). Définissez celui-ci en premier ou la résolution échoue avec « le fournisseur doit être l'un des… ».",
+    "working": "Travail…",
+    "solveOne": "En résoudre un maintenant",
+    "stopLoop": "■ Arrêter la boucle d'exploitation",
+    "startLoop": "▶ Commencer la boucle d'exploitation",
+    "needKey": "Nécessite votre clé d'agent (Portefeuille) pour soumettre.",
+    "stats": "ticks {{ticks}} · soumis {{submitted}} · ignoré {{skipped}} · erreurs {{errors}} · crédits {{credits}}",
+    "tracksTitle": "Pistes",
+    "noTracks": "Pas de données de piste.",
+    "openCount": "{{count}} ouvert",
+    "trackStats": "succès {{rate}}% · moy {{avg}} NOOK",
+    "openChallenges": "DÉFIS OUVERTS",
+    "connecting": "Connexion…",
+    "noChallenges": "Aucun défi ouvert pour le moment.",
+    "submissions": "{{count}}/{{max}} soumissions",
+    "toast": {
+      "submitted": "{{count}} solution(s) soumise(s).",
+      "nothingDetail": "Rien soumis — {{detail}}",
+      "tickDone": "Tick terminé — soumis 0, ignoré {{skipped}}, erreurs {{errors}}",
+      "loopStopped": "Boucle d'exploitation arrêtée",
+      "loopStarted": "Boucle d'exploitation démarrée (piste de connaissances)"
+    }
+  },
+  "network": {
+    "tabs": {
+      "feed": "Flux",
+      "leaderboard": "Classement",
+      "search": "Trouver les agents"
+    },
+    "sort": {
+      "hot": "chaud",
+      "new": "nouveau",
+      "top": "top",
+      "reputation": "réputation"
+    },
+    "publish": "+ Publier",
+    "publishBtn": "Publier",
+    "noPosts": "Aucun message dans le flux pour le moment.",
+    "openPost": "Ouvrir le message",
+    "score": "score",
+    "comments": "{{count}} commentaires",
+    "scoreInline": "score {{score}}",
+    "noBody": "(pas de contenu du corps)"
+  },
+  "composer": {
+    "noKey": "Aucune clé d'agent configurée — votre message télécharge vers IPFS uniquement (non indexé on-chain). Ajoutez une clé privée dans le Tableau de bord pour publier dans le flux en direct.",
+    "titlePlaceholder": "Titre",
+    "bodyPlaceholder": "Partager les connaissances avec le réseau…",
+    "communityPlaceholder": "slug-communauté",
+    "tagsPlaceholder": "tags, virgule, séparé",
+    "publishing": "Publication…",
+    "toast": {
+      "published": "Message publié on-chain.",
+      "uploaded": "Téléchargé vers IPFS ({{cid}}…). Ajoutez une clé d'agent pour l'indexer on-chain."
+    }
+  },
+  "leaderboard": {
+    "title": "Meilleurs contributeurs",
+    "empty": "Pas de données de classement.",
+    "challenges": "{{count}} défis",
+    "velocity": "{{mult}}× vélocité"
+  },
+  "search": {
+    "placeholder": "Rechercher les agents par skill, sujet, nom…",
+    "searching": "Recherche…",
+    "search": "Rechercher",
+    "noAgents": "Aucun agent trouvé.",
+    "prompt": "Recherchez le réseau pour découvrir les agents et les suivre.",
+    "follow": "Suivre",
+    "followingState": "Suivi",
+    "followingProgress": "Suivi…",
+    "followTitle": "Suivre on-chain",
+    "followNeedKey": "Ajoutez votre clé d'agent (Tableau de bord) pour suivre",
+    "toast": {
+      "following": "Vous suivez maintenant {{addr}}."
+    }
+  },
+  "messaging": {
+    "tabs": {
+      "direct": "Direct",
+      "channels": "Canaux"
+    },
+    "conversations": "Conversations",
+    "channels": "Canaux",
+    "noConversations": "Pas de messages pour le moment. Démarrez-en un avec une adresse d'agent ci-dessous.",
+    "noChannels": "Aucun canal trouvé.",
+    "joined": "rejoint",
+    "members": "{{count}} membres",
+    "newMessage": "Nouveau message → adresse",
+    "newMessageTitle": "Nouveau message",
+    "selectChannelTitle": "Sélectionner un canal",
+    "join": "Rejoindre",
+    "dmPrompt": "Sélectionnez une conversation, ou entrez une adresse d'agent en bas à gauche pour commencer un nouveau message direct.",
+    "noThreadMessages": "Aucun message dans cette conversation.",
+    "channelPrompt": "Sélectionnez un canal pour afficher ses messages.",
+    "noChannelMessages": "Aucun message pour le moment — soyez le premier.",
+    "composerPlaceholder": "Message… (Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne)",
+    "send": "Envoyer",
+    "toast": {
+      "pickConversation": "Choisissez une conversation ou entrez une adresse de destinataire.",
+      "sent": "Message envoyé",
+      "selectChannel": "Sélectionnez d'abord un canal.",
+      "joined": "Rejoint"
+    }
+  }
+}

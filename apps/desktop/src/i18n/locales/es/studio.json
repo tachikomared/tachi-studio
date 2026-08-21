@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "Cargando…"
+  },
+  "topbar": {
+    "badge": "Dashboard"
+  },
+  "system": {
+    "title": "Sistema",
+    "live": "● EN DIRECTO",
+    "os": "SO",
+    "release": "Lanzamiento",
+    "host": "Host",
+    "cpu": "CPU",
+    "cores": "{{count}} núcleos",
+    "app": "App",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "Tiempo de funcionamiento de la aplicación",
+    "ram": "RAM",
+    "disk": "Disco",
+    "tachiProcess": "proceso de la app: {{size}}"
+  },
+  "sidecars": {
+    "title": "Servicios en segundo plano",
+    "upCount": "{{up}}/{{total}} arriba",
+    "none": "Sin servicios en segundo plano registrados",
+    "viewLogTail": "Ver cola de registro",
+    "logs": "registros",
+    "stop": "detener",
+    "start": "iniciar",
+    "startFailed": "Error al iniciar: {{error}}",
+    "stopFailed": "Error al detener: {{error}}"
+  },
+  "logs": {
+    "ariaLabel": "Registros para {{id}}",
+    "header": "{{id}} · cola de registro",
+    "live": "● EN DIRECTO 2s",
+    "close": "cerrar",
+    "noFile": "Sin archivo de registro para este servicio aún — solo openclaude escribe en disco.",
+    "empty": "El archivo de registro está vacío."
+  },
+  "harnesses": {
+    "title": "Agentes → Proveedores",
+    "activeRouting": "Enrutamiento activo",
+    "ready": "listo",
+    "idle": "inactivo",
+    "provider": {
+      "freellmLocal": "FreeLLM (router local)",
+      "anthropicOAuth": "OAuth de Anthropic (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "no está en ejecución"
+    },
+    "harness": {
+      "directChat": "Chat directo"
+    }
+  },
+  "providers": {
+    "title": "Proveedores",
+    "configured": "{{count}} configurados",
+    "none": "Sin proveedores configurados. Abre Configuración para agregar una clave.",
+    "connected": "conectado",
+    "tier": {
+      "oauthPro": "OAuth y Pro",
+      "free": "Proveedores gratuitos",
+      "tools": "Herramientas"
+    },
+    "footer": "+ Router FreeLLM (sin clave requerida) · free-claude-code: ambos responden desde esta máquina y reenvían tu prompt a un proveedor en la nube"
+  },
+  "runtimes": {
+    "title": "Detectado en esta máquina",
+    "rescan": "re-escanear",
+    "scanning": "Escaneando…",
+    "state": {
+      "running": "EJECUTANDO",
+      "healthy": "SANO",
+      "connected": "CONECTADO",
+      "installed": "LISTO",
+      "starting": "INICIANDO",
+      "stopped": "DETENIDO",
+      "not_installed": "NO INSTALADO",
+      "error": "ERROR",
+      "unreachable": "NO ALCANZABLE"
+    }
+  },
+  "conversations": {
+    "title": "Conversaciones",
+    "total": "Total",
+    "messages": "Mensajes",
+    "youWrote": "Escribiste",
+    "modelWrote": "El modelo escribió",
+    "tokensUsed": "Tokens usados",
+    "byProvider": "Por proveedor",
+    "none": "Sin conversaciones aún."
+  },
+  "workflow": {
+    "title": "Lienzo de Flujo de Trabajo",
+    "open": "abrir ↗",
+    "description": "Compone nodos de proveedor + agente + skill en un gráfico. Conecta salidas en entradas para encadenar ejecuciones.",
+    "edges": "Bordes",
+    "inputs": "Entradas",
+    "providers": "Proveedores",
+    "outputs": "Salidas"
+  },
+  "aeon": {
+    "auth": "Auth",
+    "signedIn": "sesión iniciada",
+    "notSignedIn": "sesión no iniciada",
+    "user": "Usuario",
+    "ghClient": "cliente gh",
+    "signInPrompt": "Abre la pestaña Aeon y haz clic en",
+    "signInButton": "Iniciar sesión en GitHub"
+  },
+  "audit": {
+    "title": "Solicitudes salientes · {{count}}",
+    "loading": "cargando…",
+    "live": "EN DIRECTO 5s",
+    "reload": "Recargar",
+    "clear": "Limpiar",
+    "explainer": "Llamadas de red que el proceso principal de Tachi Studio hizo directamente — a GitHub, tu proveedor de LLM elegido, Ollama, etc. Verde = OK, amarillo = redirigido, rojo = error. Haz clic en una fila para la URL completa y tiempo. Nota: las llamadas hechas dentro de procesos de servicios locales (OpenClaude, freellmapi) y el RPC de billetera en cadena NO se muestran aquí, así que esto es una ayuda de depuración, no un registro de egreso completo.",
+    "filterAll": "Todo",
+    "category": {
+      "other": "Otro"
+    },
+    "emptyNone": "Sin solicitudes de red registradas aún. Usa la pestaña de chat o activa una acción.",
+    "emptyFilter": "Sin entradas que coincidan con el filtro seleccionado.",
+    "detail": {
+      "url": "URL",
+      "status": "Estado",
+      "networkError": "error de red",
+      "duration": "Duración",
+      "reqSize": "Tamaño de solicitud",
+      "resSize": "Tamaño de respuesta",
+      "time": "Tiempo",
+      "category": "Categoría"
+    }
+  },
+  "doctor": {
+    "title": "Doctor",
+    "run": "Comprobar",
+    "running": "Comprobando…",
+    "hint": "Ejecuta cada binario externo (Piper, SD, yt-dlp, Whisper, llama.cpp, Chromium) y el router FreeLLM con un comando de prueba — detecta instalaciones rotas que el indicador \"instalado\" no ve.",
+    "status": {
+      "ok": "ok",
+      "missing": "falta",
+      "broken": "roto",
+      "timeout": "timeout",
+      "error": "error"
+    }
+  }
+}

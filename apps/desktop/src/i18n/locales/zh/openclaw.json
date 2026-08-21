@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "OpenClaw 仪表板"
+  },
+  "actions": {
+    "reload": "重新加载",
+    "openInBrowser": "在浏览器中打开",
+    "openDocs": "打开文档"
+  },
+  "iframe": {
+    "title": "OpenClaw 仪表板"
+  },
+  "probing": {
+    "label": "探测 {{url}}…"
+  },
+  "unreachable": {
+    "title": "OpenClaw 守护程序无法访问",
+    "hint": "在终端中启动 OpenClaw 守护程序，然后点击重新加载："
+  },
+  "status": {
+    "probing": "探测中",
+    "live": "实时",
+    "offline": "离线"
+  }
+}

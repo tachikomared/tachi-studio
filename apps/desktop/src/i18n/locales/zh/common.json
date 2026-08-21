@@ -1,0 +1,256 @@
+{
+  "actions": {
+    "newChat": "+ 新建聊天",
+    "routines": "例程",
+    "customize": "自定义",
+    "providers": "提供商",
+    "tachiapp": "TACHIAPP",
+    "tachiappHint": "询问这个应用，或告诉它要改什么——它会修改自己的源代码",
+    "approvalPending": "{{n}} 项授权等待处理 — 运行已阻塞，直到你回答"
+  },
+  "sidebar": {
+    "newSession": "+ 新建会话",
+    "workspace": "工作空间",
+    "openCanvas": "+ 打开画布",
+    "media": "Media",
+    "newMedia": "+ 新建媒体",
+    "artifacts": "Artifacts",
+    "newSwarm": "+ New swarm",
+    "openInbox": "打开收件箱",
+    "llmNodes": "+ LLM Nodes",
+    "addRuntime": "添加本地服务器",
+    "settings": "Settings",
+    "runSkill": "+ 运行 skill",
+    "configure": "配置",
+    "secrets": "密钥",
+    "dashboard": "仪表板",
+    "postBounty": "+ 发布赏金",
+    "browseNetwork": "浏览网络",
+    "mineNook": "挖掘 NOOK",
+    "toasts": {
+      "routinesSoon": "例程 — 即将推出！",
+      "workspaceSoon": "工作空间管理 — 即将推出！",
+      "addRuntimeHint": "添加本地服务器 — 手动安装 Ollama/Claude Code，然后重启 Tachi Studio 以检测它们。"
+    },
+    "newDesign": "+ 新设计",
+    "recentDesigns": "最近的设计",
+    "noRecentDesigns": "暂无设计",
+    "untitledDesign": "未命名设计",
+    "recent": "最近",
+    "noRecentSwarms": "暂无最近的集群",
+    "more": "更多",
+    "moreHint": "更多标签页 — Swarm、仪表板、目录、Aeon、Nook、学习",
+    "learnHint": "学习 — 每个标签页的简短演练",
+    "wallet": "钱包",
+    "walletExpand": "显示钱包余额",
+    "walletCollapse": "隐藏钱包余额"
+  },
+  "theme": {
+    "dark": "深色",
+    "light": "浅色",
+    "neon": "霓虹",
+    "comic": "漫画",
+    "opus5": "作品5",
+    "tk05": "TK-05",
+    "moreHint": "全部主题 — 设置 → 外观"
+  },
+  "language": "语言",
+  "errors": {
+    "generic": "出错了。请重试，或在设置中检查提供商。",
+    "noKey": "此提供商没有 API 密钥 — 请在 设置 → 提供商 中添加，或选择免密钥的免费提供商。",
+    "auth": "提供商拒绝了 API 密钥 — 请在 设置 → 提供商 中检查。",
+    "rateLimit": "达到速率限制 — 请稍候重试，或更换模型/提供商。",
+    "quota": "提供商配额或额度已用尽 — 请检查套餐或更换提供商。",
+    "contextLength": "对话超出了此模型的上下文长度 — 请开始新对话或换用更大上下文的模型。",
+    "network": "连接提供商时出现网络问题 — 请检查网络（或私密模式是否拦截了流量）。",
+    "upstream": "提供商服务器出错 — 请稍后重试。"
+  },
+  "quickask": {
+    "placeholder": "随便问点什么…",
+    "ask": "提问",
+    "asking": "…",
+    "thinking": "思考中…",
+    "hintEmpty": "Enter 提问 · Esc 关闭",
+    "footer": "quick ask · 免密钥 FreeLLM 路由",
+    "copy": "复制",
+    "openApp": "打开应用",
+    "routerDown": "本地路由未运行——请先打开应用。"
+  },
+  "prompts": {
+    "search": "搜索模板…",
+    "saveCurrent": "+ 保存当前",
+    "titlePlaceholder": "模板名称…",
+    "save": "保存",
+    "empty": "还没有模板。把你最好的提示词存在这里。",
+    "insert": "插入",
+    "delete": "删除模板"
+  },
+  "split": {
+    "hint": "拖动调整宽度 · 双击折叠"
+  },
+  "footerHints": {
+    "chat": "Enter 发送 · {{mod}}+K 命令面板 · {{mod}}+Shift+Space 快速提问",
+    "code": "Enter 运行任务 · ↺ 回滚到检查点",
+    "nodes": "{{mod}}+Enter 全部运行 · {{mod}}+Z 撤销",
+    "design": "{{mod}}+Enter 发送 · ↺ 编辑即回退",
+    "media": "提示词 → 生成 · Esc 关闭预览",
+    "catalog": "点击量化标签查看是否适配",
+    "swarm": "NEW SWARM 打开一个仓库 · 信息流实时显示 Agent 提交",
+    "dashboard": "实时系统状态 · 每 3 秒自动刷新"
+  },
+  "activity": {
+    "title": "活动",
+    "stop": "停止",
+    "stopping": "正在停止…",
+    "dismiss": "关闭",
+    "more": "还有 {{n}} 项",
+    "less": "收起",
+    "open": "前往该任务",
+    "failed": "失败",
+    "done": "完成",
+    "cancelled": "已取消",
+    "label": {
+      "generate": "生成中",
+      "render": "视频导出",
+      "migrate": "正在迁移模型",
+      "rife": "补帧",
+      "audioOverview": "音频概览"
+    },
+    "notify": {
+      "imageReady": "图像已生成",
+      "videoReady": "视频已生成",
+      "genFailed": "生成失败",
+      "installed": "{{name}} 安装完成",
+      "installFailed": "{{name}} 安装失败",
+      "renderDone": "视频导出完成",
+      "renderFailed": "视频导出失败",
+      "rifeDone": "补帧完成",
+      "rifeFailed": "补帧失败",
+      "took": "用时 {{elapsed}}",
+      "audioOverviewReady": "音频概览已完成",
+      "audioOverviewFailed": "音频概览失败"
+    }
+  },
+  "audioOverview": {
+    "stage": {
+      "script": "正在起草脚本…",
+      "voices": "配音 {{n}}/{{m}}",
+      "mix": "正在混音…",
+      "saving": "正在保存…"
+    },
+    "saved": "已保存到磁盘",
+    "reveal": "显示文件",
+    "saveFailed": "未保存到磁盘：{{reason}}"
+  },
+  "downloads": {
+    "title": "下载",
+    "pause": "暂停",
+    "resume": "继续",
+    "retry": "重试",
+    "cancel": "取消下载 (删除未完成的文件)",
+    "dismiss": "关闭",
+    "paused": "已暂停",
+    "queued": "排队中",
+    "verifying": "校验中",
+    "done": "完成",
+    "error": "错误",
+    "verifiedSha": "SHA-256 已校验",
+    "verifiedSize": "大小已校验"
+  },
+  "observability": {
+    "compaction": "压缩",
+    "tokensSaved": "已节省 token（估算）",
+    "charsSaved": "已节省字符",
+    "promptCache": "提示词缓存",
+    "cachedInputTokens": "缓存的输入 token",
+    "cacheHitRatio": "命中率（缓存 / 输入）",
+    "legacyHarnessTag": "历史 harness",
+    "legacyHarnessNote": "在支出归属到实际提供服务的网关之前，由 harness 以自己的名义记录的花费。作为历史保留 —— 账本不做事后修改。"
+  },
+  "commands": {
+    "popupLabel": "斜杠命令",
+    "popupHint": "↑↓ 移动 · ↵ / Tab 选择 · esc 关闭",
+    "groupCommands": "命令",
+    "groupSkills": "技能",
+    "dismiss": "关闭",
+    "unknown": "未知命令 /{{name}}。输入 /help 查看可用命令，或以 // 开头发送字面斜杠。",
+    "wrongSurfaceChat": "/{{name}} 仅在 Chat 标签页可用。",
+    "wrongSurfaceHarness": "/{{name}} 仅在 Code 标签页可用。",
+    "unavailable": "/{{name}} 目前在这里不可用。",
+    "help": {
+      "desc": "列出此处可用的全部命令",
+      "title": "可用命令",
+      "escape": "以 // 开头即可发送字面斜杠。"
+    },
+    "new": {
+      "desc": "开始新对话"
+    },
+    "compact": {
+      "desc": "把较早的对话压缩成摘要以释放上下文",
+      "done": "已压缩 — 较早的对话已变为摘要，原始记录未改动。",
+      "failed": "暂时没有可压缩的内容。"
+    },
+    "init": {
+      "desc": "为该文件夹生成 AGENTS.md",
+      "done": "已写入 {{path}}",
+      "failed": "无法生成 AGENTS.md：{{reason}}"
+    },
+    "model": {
+      "desc": "查看当前模型或切换模型",
+      "args": "[名称]",
+      "current": "当前模型：{{model}}",
+      "switched": "模型 → {{model}}",
+      "noMatch": "没有匹配“{{name}}”的模型或提供方。"
+    },
+    "cost": {
+      "desc": "显示本次会话与 30 天花费",
+      "title": "花费",
+      "session": "本次会话：{{value}}",
+      "sessionTokens": "约 {{count}} tokens",
+      "window": "最近 {{days}} 天：${{total}} / 预算 ${{budget}}",
+      "provider": "  {{provider}} — ${{usd}}",
+      "none": "  尚未记录计价花费"
+    },
+    "memory": {
+      "desc": "显示已保存的记忆条目",
+      "title": "记忆条目（{{count}}）",
+      "empty": "尚未保存记忆条目 — 用 /remember <文本> 添加一条。"
+    },
+    "remember": {
+      "desc": "把一条信息存入记忆",
+      "args": "<文本>",
+      "saved": "已记住：{{text}}",
+      "needsText": "用法：/remember <文本>",
+      "failed": "无法保存该条目。"
+    },
+    "rewind": {
+      "desc": "编辑你的上一条消息并从那里重跑",
+      "done": "上一条消息已回到输入框 — 编辑后发送。",
+      "none": "没有可回退的消息。"
+    },
+    "search": {
+      "desc": "针对该查询强制进行网页搜索",
+      "args": "<查询>",
+      "needsQuery": "用法：/search <查询>",
+      "disabled": "网页搜索已关闭 — 请在设置中开启并填入 Brave 或 Tavily 密钥。"
+    },
+    "plan": {
+      "desc": "动手改代码前先做计划"
+    },
+    "review": {
+      "desc": "按严重程度分级的结构化代码评审"
+    },
+    "troubleshoot": {
+      "desc": "定位故障根因并提出修复方案"
+    },
+    "refactor": {
+      "desc": "规划一次保持行为不变的重构"
+    },
+    "loop": {
+      "desc": "循环运行，直到达成目标",
+      "args": "[n] <目标>",
+      "needsGoal": "用法：/loop [n] <目标> — 例如 /loop 3 让所有测试通过",
+      "needsTachi": "/loop 需要 TACHI 引擎 — 请先在 ADVANCED 中选择，然后重新发送。"
+    }
+  }
+}

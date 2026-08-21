@@ -1,0 +1,8 @@
+{
+  "id": "bash/grep",
+  "matches": { "toolName": "Bash", "stdoutContains": ["grep", "rg ", "ripgrep"] },
+  "transforms": { "stripAnsi": true, "dedupeAdjacent": false },
+  "success": { "head": 30, "tail": 30, "maxChars": 6000 },
+  "failure": { "head": 12, "tail": 20, "maxChars": 4000 },
+  "preserveOnFailure": false
+}

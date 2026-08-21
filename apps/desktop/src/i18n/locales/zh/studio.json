@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "加载中…"
+  },
+  "topbar": {
+    "badge": "仪表板"
+  },
+  "system": {
+    "title": "系统",
+    "live": "● 实时",
+    "os": "操作系统",
+    "release": "发布",
+    "host": "主机",
+    "cpu": "CPU",
+    "cores": "{{count}} 核心",
+    "app": "应用",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "应用正常运行时间",
+    "ram": "RAM",
+    "disk": "磁盘",
+    "tachiProcess": "应用进程：{{size}}"
+  },
+  "sidecars": {
+    "title": "后台服务",
+    "upCount": "{{up}}/{{total}} 运行中",
+    "none": "未注册后台服务",
+    "viewLogTail": "查看日志尾部",
+    "logs": "日志",
+    "stop": "停止",
+    "start": "启动",
+    "startFailed": "启动失败：{{error}}",
+    "stopFailed": "停止失败：{{error}}"
+  },
+  "logs": {
+    "ariaLabel": "{{id}} 的日志",
+    "header": "{{id}} · 日志尾部",
+    "live": "● 实时 2s",
+    "close": "关闭",
+    "noFile": "此服务尚无日志文件 — 仅 openclaude 写入磁盘。",
+    "empty": "日志文件为空。"
+  },
+  "harnesses": {
+    "title": "Agents → 提供商",
+    "activeRouting": "活跃路由",
+    "ready": "就绪",
+    "idle": "空闲",
+    "provider": {
+      "freellmLocal": "FreeLLM (本地路由器)",
+      "anthropicOAuth": "Anthropic OAuth (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "未运行"
+    },
+    "harness": {
+      "directChat": "直接聊天"
+    }
+  },
+  "providers": {
+    "title": "提供商",
+    "configured": "{{count}} 已配置",
+    "none": "未配置提供商。打开设置以添加密钥。",
+    "connected": "已连接",
+    "tier": {
+      "oauthPro": "OAuth & Pro",
+      "free": "免费提供商",
+      "tools": "工具"
+    },
+    "footer": "+ FreeLLM 路由器 (无需密钥) · free-claude-code — 两者都由本机应答，并把你的提示词转发给云端服务商"
+  },
+  "runtimes": {
+    "title": "在本机检测到",
+    "rescan": "重新扫描",
+    "scanning": "扫描中…",
+    "state": {
+      "running": "运行中",
+      "healthy": "健康",
+      "connected": "已连接",
+      "installed": "就绪",
+      "starting": "启动中",
+      "stopped": "已停止",
+      "not_installed": "未安装",
+      "error": "错误",
+      "unreachable": "无法访问"
+    }
+  },
+  "conversations": {
+    "title": "对话",
+    "total": "总计",
+    "messages": "消息",
+    "youWrote": "您写",
+    "modelWrote": "模型写",
+    "tokensUsed": "使用的 token",
+    "byProvider": "按提供商",
+    "none": "尚无对话。"
+  },
+  "workflow": {
+    "title": "工作流画布",
+    "open": "打开 ↗",
+    "description": "将提供商 + agent + skill 节点组合到图中。将输出接入输入以链接运行。",
+    "edges": "边",
+    "inputs": "输入",
+    "providers": "提供商",
+    "outputs": "输出"
+  },
+  "aeon": {
+    "auth": "身份验证",
+    "signedIn": "已登录",
+    "notSignedIn": "未登录",
+    "user": "用户",
+    "ghClient": "gh 客户端",
+    "signInPrompt": "打开 Aeon 标签页并点击",
+    "signInButton": "登录 GitHub"
+  },
+  "audit": {
+    "title": "出站请求 · {{count}}",
+    "loading": "加载中…",
+    "live": "实时 5s",
+    "reload": "重新加载",
+    "clear": "清除",
+    "explainer": "Tachi Studio 主进程直接发出的网络调用 — 到 GitHub、您选择的 LLM 提供商、Ollama 等。绿色 = OK，黄色 = 重定向，红色 = 错误。点击一行获取完整 URL 和计时。注意：本地服务进程 (OpenClaude、freellmapi) 内部发出的调用以及链上钱包 RPC 不在此显示，因此这是调试辅助，不是完整的出站流量账本。",
+    "filterAll": "全部",
+    "category": {
+      "other": "其他"
+    },
+    "emptyNone": "尚未记录网络请求。使用聊天标签页或触发操作。",
+    "emptyFilter": "没有条目匹配选定的过滤器。",
+    "detail": {
+      "url": "URL",
+      "status": "状态",
+      "networkError": "网络错误",
+      "duration": "持续时间",
+      "reqSize": "请求大小",
+      "resSize": "响应大小",
+      "time": "时间",
+      "category": "类别"
+    }
+  },
+  "doctor": {
+    "title": "体检",
+    "run": "运行检查",
+    "running": "检查中…",
+    "hint": "实际执行每个外部程序（Piper、SD、yt-dlp、Whisper、llama.cpp、Chromium）和 FreeLLM 路由器的探测命令——能发现\"已安装\"标记看不到的损坏安装。",
+    "status": {
+      "ok": "正常",
+      "missing": "缺失",
+      "broken": "损坏",
+      "timeout": "超时",
+      "error": "错误"
+    }
+  }
+}

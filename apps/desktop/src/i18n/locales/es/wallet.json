@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "Billetera",
+    "subtitle": "MULTICADENA · Billetera de aplicación (nookplot · x402) + billeteras de agente darksol"
+  },
+  "toast": {
+    "addressCopied": "Dirección copiada",
+    "backupDownloaded": "Copia de seguridad encriptada descargada",
+    "walletImported": "Billetera importada",
+    "walletRemoved": "Billetera eliminada de este dispositivo",
+    "agentWalletRemoved": "Billetera de agente \"{{agentName}}\" eliminada"
+  },
+  "newKey": {
+    "backupNow": "Haz una copia de seguridad ahora — solo copia",
+    "address": "Dirección",
+    "privateKey": "Clave privada",
+    "done": "Hecho — abrir billetera"
+  },
+  "empty": {
+    "title": "Sin billetera aún",
+    "description": "Tu billetera de aplicación — una cuenta para nookplot, pagos x402 y cualquier integración. No custodial: la clave está encriptada en tu cadena de claves del SO y nunca sale sin encriptar.",
+    "creating": "Creando…",
+    "create": "✦ Crear billetera",
+    "importKey": "Importar clave privada",
+    "keyPlaceholder": "0x…",
+    "import": "Importar"
+  },
+  "account": {
+    "title": "Cuenta · {{label}}",
+    "noAddress": "—",
+    "copy": "Copiar"
+  },
+  "balances": {
+    "title": "Saldos",
+    "allNetworks": "· todas las redes",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 mostrar",
+    "hide": "👁 ocultar",
+    "refreshing": "refrescando…",
+    "refresh": "↻ refrescar"
+  },
+  "backup": {
+    "title": "Copia de seguridad encriptada",
+    "description": "Almacén de claves encriptado con contraseña (Almacenamiento Secreto Web3 — funciona con MetaMask/geth). Mantén el archivo + contraseña seguros; juntos restauran tu agente en cualquier máquina.",
+    "password": "Contraseña de copia de seguridad (mín 8)",
+    "download": "Descargar copia de seguridad"
+  },
+  "switch": {
+    "title": "Cambiar billetera",
+    "replaceTitle": "Reemplazar clave · {{label}}",
+    "warning": "Exporta una copia de seguridad primero — reemplazar la clave elimina la billetera actual de este dispositivo.",
+    "agentName": "Nombre de billetera de agente",
+    "keyPlaceholder": "Clave privada 0x…",
+    "importKey": "Importar clave",
+    "orKeystore": "o JSON de almacén de claves + contraseña",
+    "keystorePassword": "contraseña del almacén de claves",
+    "importKeystore": "Importar almacén de claves"
+  },
+  "danger": {
+    "title": "Nuevo / eliminar",
+    "generate": "Generar nueva billetera",
+    "forget": "Olvidar billetera",
+    "forgetNamed": "Olvidar {{label}}"
+  },
+  "switcher": {
+    "account": "cuenta",
+    "activeSuffix": " ·activa",
+    "new": "+ Nuevo",
+    "newPrompt": "Nuevo nombre de billetera de agente darksol:",
+    "newTitle": "Nueva billetera de agente",
+    "newPlaceholder": "p. ej. trading-bot",
+    "newOk": "Crear",
+    "newCancel": "Cancelar"
+  },
+  "network": {
+    "all": "Todas las redes"
+  },
+  "send": {
+    "title": "Enviar · cualquier token",
+    "token": "Token",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "Destinatario",
+    "recipientPlaceholder": "0x… / nombre.eth",
+    "amount": "Cantidad",
+    "sending": "Enviando…",
+    "send": "Enviar",
+    "note": "Nativo + cualquier ERC-20 en la red seleccionada (o pega una dirección de contrato). Entre cadenas → usa el agente darksol (LI.FI).",
+    "toast": {
+      "success": "Enviado — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "Financiación · Aplicación → {{agentName}}",
+    "amount": "Cantidad (nativa)",
+    "moving": "Moviendo…",
+    "move": "Mover",
+    "note": "Mantiene tu saldo NOOK / x402 en la billetera de la aplicación intacto.",
+    "toast": {
+      "success": "Financiado — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Límites de agente · firmante de agente darksol",
+    "maxPerTrade": "Máx / comercio",
+    "daily": "Límite diario",
+    "dryRun": "Ejecución en seco",
+    "on": "ENCENDIDO",
+    "off": "APAGADO",
+    "save": "Guardar límites",
+    "toast": {
+      "saved": "Límites guardados"
+    }
+  }
+}

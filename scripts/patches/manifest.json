@@ -1,0 +1,68 @@
+{
+  "$comment": [
+    "SINGLE ORDERED SOURCE OF TRUTH for the freellmapi vendor patches.",
+    "",
+    "This file exists because a patch pipeline that cannot prove its own output",
+    "shipped an installer without patch #2. The apply step logged 'already",
+    "present - skipping' for BOTH a successful idempotent skip and a genuine",
+    "failure, and nothing ever looked at the result, so a patch that was never",
+    "attempted was indistinguishable from one that had landed.",
+    "",
+    "ORDER MATTERS. Each patch is authored against the tree with the previous",
+    "ones applied and must be applied in this sequence.",
+    "",
+    "MARKERS are the proof. Each is a literal string the patch is supposed to",
+    "introduce into a specific file. After applying, the pipeline asserts every",
+    "marker is present; the same assertion runs as a unit test against the",
+    "checked-in sidecar tree, and at runtime through freellmapi-patches.ts.",
+    "Pick markers that ONLY that patch can produce - a platform id it adds, a",
+    "migration function it defines, a function it introduces. Never a comment.",
+    "",
+    "TWO SETS, and the second one matters more. `markers` prove the SOURCE was",
+    "patched. `builtMarkers` prove the compiled server/dist that actually RUNS",
+    "was rebuilt from that source. Source-only proof would accept a tree that",
+    "was patched and never rebuilt - green test, wrong relay, which is the same",
+    "class of lie as the bug this manifest exists to prevent.",
+    "",
+    "Consumers (keep all three working when this file changes):",
+    "  scripts/download-sidecars.mjs                                  package-time build",
+    "  apps/desktop/electron/services/freellmapi-patches.ts           runtime verify",
+    "  apps/desktop/test/unit/freellmapiPatchMarkers.test.ts          the guard"
+  ],
+  "patches": [
+    {
+      "file": "freellmapi-ovh-scaleway.patch",
+      "what": "ovh + scaleway providers",
+      "markers": [
+        { "path": "shared/types.ts", "contains": "'ovh'" },
+        { "path": "shared/types.ts", "contains": "'scaleway'" },
+        { "path": "server/src/db/index.ts", "contains": "function migrateModelsV12" },
+        { "path": "server/src/providers/index.ts", "contains": "platform: 'ovh'" },
+        { "path": "server/src/providers/index.ts", "contains": "platform: 'scaleway'" }
+      ],
+      "builtMarkers": [
+        { "path": "server/dist/db/index.js", "contains": "migrateModelsV12" },
+        { "path": "server/dist/providers/index.js", "contains": "'scaleway'" }
+      ]
+    },
+    {
+      "file": "freellmapi-kilo-zen-freeroute.patch",
+      "what": "kilo + opencode-zen keyless upstreams, dead upstreams sunk, credential failover, platform-qualified model ids",
+      "markers": [
+        { "path": "shared/types.ts", "contains": "'zen'" },
+        { "path": "server/src/providers/index.ts", "contains": "platform: 'zen'" },
+        { "path": "server/src/routes/keys.ts", "contains": "'zen'" },
+        { "path": "server/src/db/index.ts", "contains": "function migrateModelsV13" },
+        { "path": "server/src/routes/proxy.ts", "contains": "function isCredentialError" },
+        { "path": "server/src/routes/proxy.ts", "contains": "function resolveRequestedModel" }
+      ],
+      "builtMarkers": [
+        { "path": "server/dist/db/index.js", "contains": "migrateModelsV13" },
+        { "path": "server/dist/providers/index.js", "contains": "'zen'" },
+        { "path": "server/dist/routes/keys.js", "contains": "'zen'" },
+        { "path": "server/dist/routes/proxy.js", "contains": "isCredentialError" },
+        { "path": "server/dist/routes/proxy.js", "contains": "resolveRequestedModel" }
+      ]
+    }
+  ]
+}

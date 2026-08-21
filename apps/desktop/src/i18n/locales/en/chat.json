@@ -1,0 +1,567 @@
+{
+  "sampler": {
+    "chip": "SAMPLER",
+    "chipTitle": "Sampler preset for this chat — controls how random the model's replies are (temperature / top-p)",
+    "heading": "SAMPLER PRESET",
+    "preset": {
+      "fast": "FAST",
+      "balanced": "BALANCED",
+      "creative": "CREATIVE",
+      "advanced": "ADVANCED"
+    },
+    "presetDesc": {
+      "fast": "Precise & focused — temperature 0.3",
+      "balanced": "Provider defaults — sends nothing",
+      "creative": "Loose & varied — temp 0.9, top-p 0.95",
+      "advanced": "Set the exact temperature & top-p"
+    },
+    "temperature": "Temperature",
+    "topP": "Top-p",
+    "advancedHint": "Exact knobs — applied to this chat only.",
+    "balancedNote": "BALANCED sends no sampler settings — the provider's own defaults apply."
+  },
+  "customEndpoint": {
+    "lanBadge": "LAN-LOCAL",
+    "cloudBadge": "CLOUD",
+    "defaultName": "Custom endpoint",
+    "pickTitle": "Pick or type a model for this endpoint",
+    "loadError": "Could not load models",
+    "noModels": "Endpoint returned no models — type a model id below.",
+    "loadingCatalog": "Loading models…",
+    "modelPlaceholder": "type a model id…",
+    "useModel": "Use"
+  },
+  "capture": {
+    "prompt": "Remember this?",
+    "save": "Save",
+    "saved": "Saved to memory"
+  },
+  "actions": {
+    "copy": "COPY",
+    "download": "DOWNLOAD",
+    "regenerate": "REGENERATE",
+    "fork": "Fork — new chat seeded with the conversation up to here",
+    "forkLabel": "Fork",
+    "forked": "Forked — you are now in the new branch"
+  },
+  "messages": {
+    "emptyState": "Send a message to start chatting.",
+    "waiting": "Waiting for response…"
+  },
+  "message": {
+    "thinking": "THINKING",
+    "error": "ERROR"
+  },
+  "reasoning": {
+    "label": "reasoning",
+    "thinking": "thinking…"
+  },
+  "sources": {
+    "label": "Sources",
+    "hint": "Retrieved from the attached folder — click a source to see the exact text",
+    "chipTitle": "{{path}} · lines {{start}}-{{end}} · match {{score}}",
+    "lines": "lines {{start}}-{{end}}",
+    "match": "match {{score}}",
+    "openFile": "Reveal file"
+  },
+  "blocks": {
+    "empty": "(empty)"
+  },
+  "meter": {
+    "title": "Tokens used this conversation: {{count}}",
+    "titleDanger": "Tokens used this conversation: {{count}} — very long, start a fresh chat for best results",
+    "ariaLabel": "Conversation tokens: {{count}}",
+    "unit": "tok"
+  },
+  "topbar": {
+    "hideArtifacts": "Hide artifacts",
+    "showArtifacts": "Show artifacts",
+    "hideArtifactsPanel": "Hide artifacts panel",
+    "showArtifactsPanel": "Show artifacts panel",
+    "artifactsButton": "ARTIFACTS {{count}}",
+    "showHistory": "Show history",
+    "showHistoryAria": "Show chat history",
+    "history": "history",
+    "howToTitle": "Interactive walkthrough of this tab",
+    "howTo": "How to"
+  },
+  "tour": {
+    "title": "How to use the Chat tab",
+    "step1": {
+      "title": "This is the Chat tab",
+      "body": "A plain AI chat — ask questions, paste text, attach files or images. No folder or setup needed. Let me show you the three things that matter."
+    },
+    "step2": {
+      "title": "Pick where the AI comes from",
+      "body": "This is the provider picker. \"Free\" needs no key; others — Venice, Bankr, Ollama, llama.cpp — use a key or a local model. The model list shows capability tags (vision · reasoning · tools) so you grab the right one. Each chat remembers its own provider."
+    },
+    "step3": {
+      "title": "Type your message",
+      "body": "Write here. You can drag in files/images or paste a screenshot. Type \"/\" to use a skill. Each chat keeps its own memory of the conversation."
+    },
+    "step4": {
+      "title": "Send it",
+      "body": "Press this Send button or hit Enter (Shift+Enter for a new line). The reply streams in above. Start a fresh chat any time with \"New\"."
+    },
+    "step5": {
+      "title": "You are set",
+      "body": "Pick a provider, type, send. The meter up top shows how full the conversation is getting. Reopen this from the \"How to\" button."
+    }
+  },
+  "redZone": {
+    "toast": "This chat is getting long — the AI may start forgetting earlier messages. Start a fresh chat for best results.",
+    "newChat": "New chat"
+  },
+  "compact": {
+    "button": "COMPACT",
+    "working": "COMPACTING…",
+    "title": "Compress older messages into a summary to free up context — the full transcript stays on screen",
+    "done": "Compacted {{count}} messages into a summary",
+    "failed": "Could not compact this chat — try again",
+    "marker": "{{count}} messages compacted",
+    "markerTitle": "These earlier messages are sent as a summary to save context. Click to view it.",
+    "summaryLabel": "Context summary"
+  },
+  "history": {
+    "header": "History · {{count}}",
+    "new": "+ NEW",
+    "newChat": "New chat",
+    "hide": "Hide history",
+    "searchPlaceholder": "Search chats…",
+    "noMatches": "No matches.",
+    "noConversations": "No conversations yet.",
+    "msgCount": "{{count}} msgs",
+    "time": {
+      "justNow": "just now",
+      "minutesAgo": "{{count}}m ago",
+      "hoursAgo": "{{count}}h ago",
+      "daysAgo": "{{count}}d ago"
+    },
+    "actions": {
+      "rename": "rename",
+      "copyMd": "copy md",
+      "copyMdTitle": "Copy as markdown",
+      "export": "export",
+      "downloadTitle": "Download markdown",
+      "downloadAria": "Download as markdown",
+      "delete": "Delete",
+      "deleteConfirm": "Click again to confirm",
+      "deleteShort": "del",
+      "deleteSure": "sure?"
+    },
+    "toast": {
+      "copiedMarkdown": "Conversation copied to clipboard as markdown",
+      "downloaded": "Downloaded {{filename}}",
+      "deleted": "Deleted \"{{title}}\""
+    },
+    "untitled": "New Chat",
+    "deepSearch": "In messages (full-text)",
+    "pinnedSection": "Pinned",
+    "pin": {
+      "pin": "Pin",
+      "unpin": "Unpin",
+      "pinTitle": "Pin — keep this chat at the top of History",
+      "unpinTitle": "Unpin this chat"
+    },
+    "folders": {
+      "new": "New folder",
+      "defaultName": "New project",
+      "unfiled": "Unfiled",
+      "prompt": "Prompt",
+      "knowledge": "Knowledge",
+      "detach": "Detach knowledge",
+      "promptPlaceholder": "Project system prompt — sent with every chat in this folder…",
+      "none": "No folder",
+      "moveTitle": "Move to folder",
+      "projectPowers": "Project prompt / knowledge attached",
+      "actionsTitle": "Folder actions",
+      "settings": "Folder settings",
+      "settingsTitle": "Folder settings — instructions, default provider/model, knowledge",
+      "instructions": "Instructions",
+      "defaultProviderModel": "Default provider / model",
+      "providerAppDefault": "App default",
+      "defaultModelPlaceholder": "auto",
+      "knowledgeLabel": "Knowledge folder",
+      "newChatInFolder": "New chat in this folder — adopts the folder defaults"
+    }
+  },
+  "artifacts": {
+    "header": "Artifacts · {{count}}",
+    "closeTitle": "Close artifacts panel",
+    "closeAria": "Close artifacts panel",
+    "empty": "No artifacts in this conversation yet.",
+    "copied": "Artifact copied to clipboard",
+    "downloaded": "Downloaded {{filename}}"
+  },
+  "toast": {
+    "copied": "Copied to clipboard",
+    "copyFailed": "Copy failed",
+    "codeCopied": "Code copied to clipboard"
+  },
+  "media": {
+    "save": "Save",
+    "reveal": "Reveal",
+    "savedTo": "Saved to {{path}}",
+    "nothingToSave": "Nothing to save for this item.",
+    "generatedImageAlt": "generated image",
+    "attachedImageAlt": "attached image",
+    "attachAudioToTranscribe": "Attach an audio file to transcribe.",
+    "transcribeEcho": "Transcribe: {{name}}",
+    "generationFailed": "Media generation failed: {{error}}",
+    "noArtifactsReturned": "No artifacts were returned.",
+    "jobFailed": "Job failed",
+    "pollTimeout": "Still processing — timed out after 5 min. Try again to re-poll."
+  },
+  "provider": {
+    "localityGroup": {
+      "local": "On this machine",
+      "relay": "On this machine, forwarded on",
+      "cloud": "In the cloud"
+    },
+    "listAria": "Providers",
+    "noKeyBadge": "no key",
+    "readyNow": "{{count}} of {{total}} work right now without a key. The rest need one pasted in Settings.",
+    "autoRouteNow": "Right now this sends to {{provider}} · {{model}}",
+    "changeTitle": "Change provider for this chat",
+    "label": "provider:",
+    "needsKey": "(sign in / add key)",
+    "autoLabel": "Auto",
+    "autoBadge": "AUTO",
+    "autoHint": "Auto-pick: on-device model if it fits, else free, else your default.",
+    "locality": {
+      "local": {
+        "badge": "LOCAL",
+        "title": "Runs on this machine. Your prompt never leaves it."
+      },
+      "relay": {
+        "badge": "RELAY",
+        "title": "A process on this machine answers, but it forwards your prompt to a cloud provider — your prompt does leave this machine."
+      },
+      "cloud": {
+        "badge": "CLOUD",
+        "title": "Your prompt is sent over the internet to a remote provider."
+      }
+    }
+  },
+  "health": {
+    "ok": "Reachable — last health check passed",
+    "error": "Unreachable — last health check failed",
+    "checking": "Checking provider health…",
+    "unknown": "Health unknown",
+    "ariaLabel": "provider health: {{status}}"
+  },
+  "picker": {
+    "listAria": "Models",
+    "taskFilterAria": "Filter models by task",
+    "taskAll": "All",
+    "taskAllTitle": "Every model this provider offers, grouped by family.",
+    "taskEmpty": "Nothing here is labelled for that task. The app only labels what it can prove, so a model with no label may still be the right one.",
+    "modelLabel": "model:",
+    "pickModel": "pick model",
+    "offlineTitle": "Showing curated catalog — live fetch unavailable",
+    "offlineBadge": "·offline",
+    "offlineCurated": "Offline — showing curated catalog ({{error}})",
+    "priceRate": "${{in}}/M in · ${{out}}/M out",
+    "priceFree": "$0 — nothing to pay"
+  },
+  "bankr": {
+    "pickTitle": "Pick which Bankr model to use",
+    "loadError": "Could not load Bankr models",
+    "loadingCatalog": "Loading Bankr catalog…"
+  },
+  "venice": {
+    "pickTitle": "Pick which Venice model to use",
+    "loadError": "Could not load Venice models",
+    "loadingCatalog": "Loading Venice catalog…"
+  },
+  "imgnai": {
+    "pickTitle": "Pick which imgnAI Katana model to use",
+    "loadingCatalog": "Loading imgnAI catalog…"
+  },
+  "surplus": {
+    "pickTitle": "Pick which Surplus model to use",
+    "loadError": "Could not load Surplus models",
+    "loadingCatalog": "Loading Surplus catalog…",
+    "modelAuto": "MODEL: AUTO",
+    "modelAutoTitle": "Smart routing is ON — the model is chosen automatically per message. Turn SMART off to pick one.",
+    "smartOn": "SMART ON",
+    "smartOff": "SMART OFF",
+    "smartOnTitle": "Smart routing ON — simple prompts use cheap models, hard prompts use top models (auto). Click to turn off.",
+    "smartOffTitle": "Smart routing OFF — uses the model you picked. Click to auto-route by task difficulty.",
+    "smartAuto": "AUTO ROUTE",
+    "smartAutoTitle": "Model is AUTO — every message routes by task difficulty automatically. Pick a model to pin it, or click to force SMART on.",
+    "tuneTitle": "Tune routing difficulty boundaries",
+    "tuneHint": "difficulty cutoffs (lower = stronger models more often)",
+    "tuneSimple": "SIMPLE below",
+    "tuneMid": "MID below",
+    "tuneReset": "reset",
+    "workflowOn": "WORKFLOW ON",
+    "workflowOff": "WORKFLOW OFF",
+    "workflowOnTitle": "WORKFLOW escalation ON — a genuinely hard, multi-step/agentic prompt runs a multi-agent workflow (several agents plan + execute) instead of one model. Slower. Click to disable.",
+    "workflowOffTitle": "WORKFLOW escalation OFF — turn on to let genuinely hard, multi-step/agentic prompts run a multi-agent workflow instead of a single model (advanced, slower, needs a key)."
+  },
+  "surplusMedia": {
+    "pickTitle": "Pick which Surplus media model to use",
+    "pickModel": "pick media model",
+    "mediaLabel": "media:",
+    "loadError": "Could not load Surplus media models",
+    "loadingCatalog": "Loading media catalog…",
+    "noModels": "No media models. Add a Surplus key and fund USDC.",
+    "modality": {
+      "image": "IMAGE",
+      "video": "VIDEO",
+      "music": "MUSIC",
+      "tts": "TEXT → SPEECH",
+      "stt": "SPEECH → TEXT"
+    }
+  },
+  "ollama": {
+    "pickTitle": "Pick which Ollama model to chat with",
+    "notAvailable": "Ollama not available",
+    "firstInstalled": "First installed model",
+    "probing": "Probing Ollama…",
+    "noModelsPrefix": "No models pulled yet. Run",
+    "noModelsSuffix": "or any other model."
+  },
+  "llamaCpp": {
+    "pickTitle": "Pick which downloaded llama.cpp model to load + chat with",
+    "startFailed": "Failed to start model",
+    "loading": "loading…",
+    "loadingParen": "(loading…)",
+    "selectModel": "select model",
+    "noModelsPrefix": "No llama.cpp models downloaded yet. Get one in",
+    "noModelsLink": "Catalog → Recommended",
+    "running": "running",
+    "clickToLoad": "click to load"
+  },
+  "freellmapi": {
+    "pickTitle": "Pick model for next message",
+    "unavailable": "freellmapi unavailable",
+    "modelPinned": "MODEL: {{model}}",
+    "modelAuto": "MODEL: AUTO",
+    "modelUnavail": "MODEL: [unavail]",
+    "fallbackChain": "fallback chain",
+    "sortTitle": "Cycle fallback sort order",
+    "sort": "SORT: {{mode}}",
+    "sortUnavail": "SORT: [unavail]",
+    "sortMode": {
+      "intelligence": "intel",
+      "speed": "speed",
+      "budget": "budget"
+    },
+    "routingTitle": "Chooses which free model answers first: smart = most capable, fast = quickest, cheap = lowest cost (click to cycle).",
+    "routing": "Routing: {{mode}}",
+    "routingUnavail": "Routing: [unavail]",
+    "routingMode": {
+      "intelligence": "smart",
+      "speed": "fast",
+      "budget": "cheap"
+    }
+  },
+  "mediaControls": {
+    "size": "size",
+    "count": "n",
+    "voice": "voice",
+    "seconds": "seconds",
+    "lyrics": "lyrics",
+    "defaultPlaceholder": "(default)",
+    "optionalPlaceholder": "(optional)",
+    "changeAudio": "Change audio",
+    "attachAudio": "Attach audio",
+    "working": "working…",
+    "workingProgress": "working · {{progress}}",
+    "modality": {
+      "image": "image",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "video",
+      "music": "music"
+    },
+    "modalityWord": {
+      "image": "image",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "video",
+      "music": "music"
+    }
+  },
+  "composer": {
+    "attachTitle": "Attach file or image",
+    "micStop": "Stop listening",
+    "micStart": "Voice input (click to start)",
+    "micStopAria": "Stop listening",
+    "micStartAria": "Start voice input",
+    "rec": "REC",
+    "mic": "MIC",
+    "transcribing": "TRANSCRIBING",
+    "placeholderStt": "Attach an audio file to transcribe (prompt ignored)",
+    "placeholderMedia": "Describe the {{modality}} to generate...",
+    "placeholderDefault": "Enter command or prompt... (Shift+Enter for newline)",
+    "stop": "Stop",
+    "stopTitle": "Stop generating",
+    "send": "Send",
+    "sendAria": "Send message",
+    "draftTokens": "+{{count}} draft",
+    "modeChip": "Chat",
+    "prompts": "{ }",
+    "promptsTitle": "Prompt library — reusable templates with variables",
+    "attachFolderTitle": "Attach a folder — the chat will pull relevant context from it (local semantic index)",
+    "folderIndexing": "Indexing folder…",
+    "folderIndexed": "Folder indexed: {{count}} chunks",
+    "folderIndexError": "Folder indexing failed",
+    "folderDetach": "Detach folder",
+    "attachFull": "FULL",
+    "attachRag": "RAG",
+    "attachFullTitle": "Fits in context: ~{{tokens}} tokens ≤ 60% of the model's {{window}}-token window — the full folder text is sent with your message (no retrieval).",
+    "attachRagTitle": "~{{tokens}} tokens — too big to inline into the model's {{window}}-token window; the most relevant chunks are retrieved for each message instead.",
+    "attachRagFallbackTitle": "The most relevant folder chunks are retrieved for each message.",
+    "attachScanningTitle": "Estimating folder size…",
+    "promptsLabel": "Prompts",
+    "attachFolderLabel": "Folder",
+    "attachLabel": "Attach",
+    "editBranchSaved": "Old thread kept as a \"(branch)\" chat in History",
+    "inputAria": "Message input",
+    "folderChipAria": "Attached folder: {{folder}}",
+    "attachmentsAria": "Attachments ({{count}})",
+    "blanksHint": "Blanks to fill: {{n}} — Tab to jump, Esc to send as-is",
+    "blanksDismiss": "send as-is"
+  },
+  "slash": {
+    "ariaLabel": "Slash commands",
+    "skillsLabel": "Skills",
+    "toPick": "to pick",
+    "toDismiss": "to dismiss"
+  },
+  "voice": {
+    "error": "Voice: {{error}}"
+  },
+  "attachments": {
+    "image": "image",
+    "remove": "Remove",
+    "removeNamed": "Remove attachment {{name}}"
+  },
+  "workspace": {
+    "noSession": "No active session",
+    "loading": "Loading...",
+    "noToolCalls": "No tool calls recorded yet",
+    "recentChanges": "Recent changes",
+    "state": "State",
+    "openPanel": "Open workspace panel",
+    "title": "WORKSPACE",
+    "noWorkspace": "No workspace selected.",
+    "pickFolder": "Pick a folder in the Agent header to start browsing files."
+  },
+  "workspaceState": {
+    "noTasks": "No tasks",
+    "snapshot": "STATE SNAPSHOT",
+    "phases": "PHASES",
+    "blockers": "BLOCKERS",
+    "decisions": "DECISIONS",
+    "noData": "No state data yet"
+  },
+  "rightPanel": {
+    "provider": "Provider",
+    "online": "Online",
+    "model": "Model",
+    "usage": "Usage",
+    "promptTokens": "Prompt: {{count}} tokens",
+    "completionTokens": "Completion: {{count}} tokens",
+    "routing": "Routing",
+    "routingHint": "Enable bankr-router for routing insights (Phase 2)"
+  },
+  "compare": {
+    "useThis": "Use this answer",
+    "pickedNote": "Compared {{count}} models — picked {{model}}",
+    "tokPerSec": "{{rate}} tok/s",
+    "tokPerSecEst": "~{{rate}} tok/s",
+    "tokPerSecNone": "— tok/s",
+    "ttft": "TTFT {{seconds}}s",
+    "ttftNone": "TTFT —"
+  },
+  "panelPicker": {
+    "chipAuto": "PANEL AUTO",
+    "chipCount": "PANEL·{{count}}",
+    "chipAutoTitle": "Panel models come from the preset. Click to pick your own — cloud AND local (Ollama / llama.cpp) models can answer side-by-side.",
+    "chipCustomTitle": "Custom panel: {{models}}. Click to edit.",
+    "title": "Fusion / Compare panel",
+    "autoRow": "AUTO",
+    "autoRowHint": "use the preset panel",
+    "cloudSection": "Cloud — {{provider}}",
+    "ollamaSection": "Ollama — local",
+    "llamacppSection": "llama.cpp — local",
+    "loading": "probing…",
+    "cloudEmpty": "Catalog unavailable — add an API key or check your connection.",
+    "ollamaEmpty": "No Ollama models pulled.",
+    "llamacppEmpty": "No GGUF models downloaded — get one in Catalog.",
+    "running": "running",
+    "willStart": "click to load into llama-server",
+    "starting": "loading model…",
+    "startFailedGeneric": "Could not start llama.cpp.",
+    "localTag": "LOCAL",
+    "hint": "2–6 models answer in parallel. Local legs run on your machine; every column reports measured tok/s + time-to-first-token."
+  },
+  "fitPill": {
+    "gpu": "FITS",
+    "cpu": "CPU-ONLY",
+    "tight": "TIGHT",
+    "tooBig": "NO FIT",
+    "gpuTitle": "Fits in GPU memory — fast",
+    "cpuTitle": "Fits in RAM — runs on CPU / partial GPU (slower)",
+    "tightTitle": "Tight — may run out of memory",
+    "tooBigTitle": "Too large for this machine",
+    "sizeFromDiskTitle": "size measured from the model file on disk"
+  },
+  "starters": {
+    "try": "TRY ▸",
+    "summarizeUrl": {
+      "label": "SUMMARIZE A URL",
+      "desc": "Paste any link — get the gist in five bullets.",
+      "prompt": "Summarize this page in 5 bullet points, then give me the single most important takeaway:\n<paste URL here>"
+    },
+    "explain": {
+      "label": "EXPLAIN SIMPLY",
+      "desc": "Any concept, explained like you are new to it.",
+      "prompt": "Explain <topic> simply, as if I am smart but new to the field. Use one concrete analogy."
+    },
+    "compare": {
+      "label": "COMPARE TWO MODELS",
+      "desc": "Same question, side-by-side answers — pick the best.",
+      "prompt": "Which planning approach is better for a small team: kanban or scrum? Answer in 4 sentences."
+    }
+  },
+  "versions": {
+    "prev": "Previous version",
+    "next": "Next version",
+    "counter": "v{{n}} / {{total}}"
+  },
+  "auto": {
+    "badge": "AUTO",
+    "routedTitle": "Picked automatically by the AUTO router"
+  },
+  "reconnect": {
+    "retrying": "Connection lost — retrying {{attempt}}/{{max}}",
+    "nextIn": "next in {{seconds}}s",
+    "reason": "Cause: {{reason}}"
+  },
+  "a11y": {
+    "transcript": "Chat transcript",
+    "userMessage": "Your message",
+    "assistantMessage": "Assistant reply",
+    "errorMessage": "Assistant error",
+    "toolMessage": "Tool call: {{tool}}",
+    "thinking": "Assistant is thinking"
+  },
+  "fileChips": {
+    "label": "Files",
+    "revealAria": "Reveal {{name}} in the file manager"
+  },
+  "openrouterPicker": {
+    "pickTitle": "Pick which OpenRouter model to use",
+    "loadError": "Could not load OpenRouter models",
+    "loadingCatalog": "Loading OpenRouter catalog…",
+    "freeBadge": "FREE",
+    "freeLimits": "Free tier: 20 requests/min · 50/day without credits (their published limits).",
+    "freeGroup": "Free — live-priced $0 ({{count}})",
+    "paidGroup": "Paid ({{count}})"
+  }
+}

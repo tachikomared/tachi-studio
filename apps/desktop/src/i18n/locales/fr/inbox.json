@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "INBOX",
+    "pending": "[{{count}} en attente]"
+  },
+  "actions": {
+    "approveAll": "[APPROUVER TOUS]",
+    "clearResolved": "[EFFACER LES RÉSOLUS]"
+  },
+  "footer": {
+    "modeLabel": "Mode :",
+    "mode": {
+      "immediate": "[IMMÉDIAT]",
+      "inbox": "[INBOX]"
+    },
+    "hints": "j/k déplacer  ·  Entrée approuver  ·  Suppr refuser  ·  Ctrl+A approuver tous"
+  },
+  "empty": {
+    "title": "[ INBOX VIDE ]",
+    "inbox": "Les demandes de permission d'outil arrivent ici pendant que votre agent fonctionne. Approuvez ou refusez-les à votre rythme — l'agent attend jusqu'à ce que vous décidiez.",
+    "immediate": "Vous êtes en mode IMMÉDIAT. Les demandes de permission d'outil affichent une modal bloquante à la place de la file d'attente ici. Basculez en INBOX ci-dessous pour laisser l'agent fonctionner longtemps et réviser par lot plus tard."
+  },
+  "fields": {
+    "reason": "raison :",
+    "session": "session :",
+    "workingDir": "workingDir :"
+  },
+  "item": {
+    "approve": "[APPROUVER]",
+    "approveAria": "approuver la demande",
+    "deny": "[REFUSER]",
+    "denyAria": "refuser la demande"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "学习",
+    "intro": "两分钟的游览。无需技术背景 — 从上到下阅读，或跳到一个部分。"
+  },
+  "hero": {
+    "eyebrow": "首次启动",
+    "title": "欢迎使用 Tachi Studio",
+    "intro": "一个与 AI 协作的工作台。五种上手方式 — 任选其一即可开始。你随时可以重新打开本指南。",
+    "lines": {
+      "chat": "<strong>CHAT</strong> — 给 AI 助手发消息。免费，无需设置。",
+      "code": "<strong>CODE</strong> — 指向一个文件夹，它会在你眼前完成真实工作。",
+      "nodes": "<strong>NODES</strong> — 将步骤连接成可视化工作流，运行整条流水线。",
+      "design": "<strong>DESIGN</strong> — 描述一个页面或动态图形，看它实时渲染。",
+      "media": "<strong>MEDIA</strong> — 生成图像、视频、音乐和语音。"
+    },
+    "cta": {
+      "chat": "打开 Chat",
+      "flow": "试用入门流程",
+      "quickstart": "阅读快速上手"
+    },
+    "dismiss": "关闭"
+  },
+  "sections": {
+    "basics": {
+      "title": "这个应用是什么",
+      "intro1": "Tachi Studio 是一个与 AI 合作的桌面。您可以与它 <strong>聊天</strong>，或指向一个文件夹并让它 <strong>为您构建东西</strong> — 网站、脚本、小应用 — 同时您观看。",
+      "intro2": "您无需安装任何技术内容或打开终端。所有东西都在此窗口中发生。有几种方式：",
+      "ways": {
+        "chat": "<strong>Chat</strong> — 像给助手发短信。免费，无需设置。",
+        "code": "<strong>Code</strong> — 给它一个文件夹 + 一个任务，它在那个文件夹中做真实工作。",
+        "media": "<strong>Media</strong> — 生成图像、视频、音乐和语音 (和转录音频)。",
+        "nodes": "<strong>Nodes</strong> — 将这些步骤接入一个视觉工作流并运行整个管道。",
+        "design": "<strong>设计</strong> — 描述一个网页或动态图形；实时查看渲染，并通过对话不断完善。"
+      }
+    },
+    "chat": {
+      "title": "就是聊天 (简单开始)",
+      "steps": {
+        "open": "在左侧边栏中点击 <strong>CHAT</strong>。",
+        "type": "在底部输入问题并按 Enter。",
+        "done": "就是这样。第一个提供商免费且无需密钥。"
+      },
+      "note": "它记得对话 — 提问后续问题，它知道您在谈论什么。使用 <strong>新建</strong> (右上角) 开始新主题。每个聊天保持自己的记忆。",
+      "open": "打开 Chat →",
+      "moreTitle": "Chat 中还有",
+      "extras": {
+        "commands": "输入 <strong>/</strong> 查看命令列表 — <strong>/help</strong>、<strong>/compact</strong>、<strong>/model</strong>、<strong>/cost</strong>、<strong>/memory</strong>、<strong>/remember</strong>、<strong>/search</strong>、<strong>/loop</strong> 等等。同样的斜杠命令在 Chat、Code 以及 HOME 的“随便问点什么”输入框中都能用。",
+        "sources": "附加一个文件夹并针对它提问 — 有依据的回答下方会显示 <strong>Sources</strong> 芯片。点击其中一个可展开它使用的确切文件内容。"
+      }
+    },
+    "code": {
+      "title": "构建东西 (Code agent)",
+      "steps": {
+        "open": "点击边栏中的 <strong>CODE</strong>。",
+        "choose": "点击 <strong>选择文件夹</strong> (或将文件夹拖到页面上)。这是 AI 被允许接触的唯一地方。",
+        "type": "输入您想要的内容，例如 <em>“用 html 文件制作一个简单的贪吃蛇游戏”</em>，然后按运行按钮。",
+        "watch": "观看它工作。当它写一个文件时，您可以点击 <strong>[PREVIEW]</strong> 来看它活动 — 一个 HTML 游戏实际上在应用内播放。"
+      },
+      "note": "它只能在您选择的文件夹内读写。它不能漫游到计算机的其余部分。",
+      "open": "打开 Code →",
+      "moreTitle": "Code 中还有",
+      "extras": {
+        "tachiapp": "想让它处理自己的源代码？侧边栏底部固定的 <strong>TACHIAPP</strong> 行会打开一个已经指向 Tachi Studio 自身的 Code 对话 — 无需选择文件夹。",
+        "spawnLoop": "让它把一个大任务一次性拆分给多个 agent，或输入 <strong>/loop</strong> 让它按重复的时间间隔持续朝目标努力 — <strong>LOOP</strong> 徽章会显示它仍在运行。",
+        "incomplete": "如果一次运行在完成前停止，您会看到琥珀色的 <strong>! Ended without completing</strong> 徽章，而不是虚假的“完成” — 提示您继续或给出更多指示。"
+      }
+    },
+    "media": {
+      "title": "制作图像、视频和音乐",
+      "steps": {
+        "open": "在边栏中点击 <strong>MEDIA</strong>。",
+        "pick": "选择要制作的内容 (图像、视频、音乐、语音、转录)、提供商 (Surplus 或 Venice) 和模型。",
+        "prompt": "输入 prompt，可选地放入参考图像，然后按生成。"
+      },
+      "note": "您制作的所有内容都保存在 <strong>Artifacts</strong> 子标签页中。支持它的模型可以编辑图像或将其变成视频 (图像到视频)。",
+      "open": "打开 Media →"
+    },
+    "buttons": {
+      "title": "Code 按钮的含义",
+      "intro": "四个小开关位于 Code 标签页的顶部。您可以开始时忽略它们 — 默认值很好。以下是每个的作用：",
+      "table": {
+        "head": {
+          "button": "按钮",
+          "plain": "简单来说",
+          "realName": "真实名称"
+        },
+        "mode": {
+          "name": "模式",
+          "plain": "先计划或现在构建"
+        },
+        "thinking": {
+          "name": "思考",
+          "plain": "AI 在执行前推理的深度"
+        },
+        "engine": {
+          "name": "Agent",
+          "plain": "哪个编码 agent 做工作"
+        },
+        "gateway": {
+          "name": "提供商",
+          "plain": "AI 模型的来源"
+        }
+      },
+      "note": "<strong>[CTX nn%]</strong> 徽章显示 AI 的记忆有多满。当它变黄然后红色时，开始新会话以便它不会忘记早期部分。"
+    },
+    "private": {
+      "title": "保持私密",
+      "intro": "<strong>PRIVATE MODE</strong> 将所有内容保持在您的机器上。云 AI 被阻止，agents 被阻止接触互联网。",
+      "steps": {
+        "palette": "按 <strong>Ctrl/Cmd + K</strong> 打开命令调色板。",
+        "toggle": "输入 <em>“Toggle PRIVATE MODE”</em> 并选择它。",
+        "badge": "一个红色 <strong>[PRIVATE]</strong> 徽章出现在顶部。云提供商显示为 <strong>[LOCKED]</strong>。"
+      },
+      "note": "在 PRIVATE MODE 中只有本地提供商工作 (Ollama 或 llama.cpp)。稍后以相同方式关闭以再次使用云模型。"
+    },
+    "providers": {
+      "title": "连接您自己的 AI (可选)",
+      "intro": "免费选项无需设置。要使用高级模型，添加密钥：",
+      "steps": {
+        "settings": "转到 <strong>Settings</strong> (边栏底部) → 提供商。",
+        "key": "选择提供商，点击 <strong>获取密钥</strong> (打开注册页面)，粘贴密钥，点击 <strong>测试</strong>。",
+        "green": "绿色意味着已连接。现在您可以在 Chat 或 Code 中选择该提供商。"
+      },
+      "open": "打开 Settings →"
+    },
+    "power": {
+      "title": "电源功能 (当您准备好时)",
+      "list": {
+        "nodes": "<strong>Nodes</strong> — 绘制您自己的 AI 管道：将模型接入 agent，或链接文本 → 图像 → 视频。每次运行都会掉一张结果卡，您可以从中分支；选择任何模型 (Venice 或本地)；像聊天一样保存和切换流。",
+        "swarm": "<strong>Swarm</strong> — 作为一个团队在共享任务板上运行多个 agents。",
+        "parallel": "<strong>平行任务</strong> — 在 Code 中，一次运行多个 agents，每个在项目的自己的副本中。",
+        "inbox": "<strong>收件箱</strong> — 不是每个权限弹出，让请求堆积并在批次中批准。",
+        "marketplace": "<strong>Connections</strong> — 在 Settings → Connections 浏览 MCP 工具服务器目录，一键安装，无需编辑 JSON。Private Mode 会自动只保留仅限本地的服务器运行，并阻止其余的。",
+        "scheduler": "<strong>定时任务</strong> — 在 Settings → Advanced → Scheduled 中，设置一个聊天、Code 运行或 flow 按重复计划触发。它能扛过电脑休眠，并在唤醒后补上错过的运行。"
+      },
+      "note": "这些都不是获得价值所必需的 — 当您长大时它们就在那里。"
+    },
+    "tips": {
+      "title": "方便的快捷键",
+      "list": {
+        "palette": "<strong>Ctrl/Cmd + K</strong> — 命令调色板 (通过输入做任何事情)。",
+        "send": "<strong>Enter</strong> — 发送。<strong>Shift + Enter</strong> — 新行。",
+        "new": "<strong>新建</strong> — 用清洁记忆开始新聊天/会话。",
+        "tooltip": "悬停任何按钮 — 工具提示以简单的词语解释。",
+        "reconnect": "如果回复卡住了，留意 <strong>Retrying n/10</strong> 横幅 — 连接掉线了，正在自动重连回同一条回复。不需要重发，等它自愈就好。"
+      }
+    },
+    "design": {
+      "title": "设计 — 制作页面或动画",
+      "steps": {
+        "open": "点击侧栏中的 <strong>DESIGN</strong>。",
+        "pick": "选择 <strong>page</strong>（静态网页 → 导出 PNG/PDF）或 <strong>animate</strong>（动态图形 → 导出 MP4）。",
+        "engine": "在 animate 模式下选择渲染器：<strong>Remotion</strong>（渲染为 MP4 视频）或 <strong>HyperFrames</strong>（HTML + GSAP 动画）。",
+        "type": "输入你想要的（“一个三档定价页”、“一个旋转入场的 logo”）。渲染显示在右侧；继续对话即可修改。"
+      },
+      "note": "一切都会自动保存到磁盘的一个文件夹，你还可以点击页面预览中的任意文本就地编辑。导出按钮在右上角。",
+      "open": "打开设计 →"
+    }
+  },
+  "footer": {
+    "deepDocs": "想要深度技术版本？完整的架构和每个功能文档在项目中的 <code> docs/app/</code> — 应用内 agent 可以读取它们来理解和扩展 Tachi Studio 本身。"
+  }
+}

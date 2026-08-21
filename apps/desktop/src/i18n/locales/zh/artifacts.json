@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "全部",
+    "image": "图像",
+    "video": "视频",
+    "music": "音乐",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "搜索 prompts…"
+  },
+  "empty": {
+    "none": "还没有工件。您在媒体工作室或工作室画布上的媒体节点中生成的所有内容都会在这里。",
+    "noneHint": "打开媒体标签页来生成您的第一个工件。",
+    "noMatch": "没有工件匹配 {{scope}}{{query}}。",
+    "noMatchFilter": "这个过滤器"
+  },
+  "tile": {
+    "altFallback": "工件",
+    "noPreview": "(无预览)",
+    "noPrompt": "(no prompt)",
+    "pin": "钉住",
+    "pinned": "已钉住",
+    "pinTitle": "钉住到顶部",
+    "unpinTitle": "取消钉住",
+    "completedAfterPrivate": "PRIVATE MODE 后完成",
+    "completedAfterPrivateTitle": "生成请求在 PRIVATE MODE 开启前已经发送，因此正常完成并保存，而不是被拦截。切换之后没有任何新内容离开这台设备——此时拒绝只会丢弃一个已经发出的结果。"
+  },
+  "actions": {
+    "fullscreen": "全屏",
+    "save": "保存",
+    "reveal": "显示"
+  },
+  "preview": {
+    "alt": "预览",
+    "close": "关闭 (Esc)"
+  },
+  "pane": {
+    "preview": "预览",
+    "code": "代码",
+    "openInDesign": "在设计中打开",
+    "restore": "恢复",
+    "viewingVersion": "正在查看 v{{n}} / {{max}} — 只读",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "旧版本",
+    "newerVersion": "新版本",
+    "seedUser": "从聊天导入：{{title}}",
+    "seedAssistant": "由聊天工件生成 — 继续聊天来迭代。"
+  }
+}

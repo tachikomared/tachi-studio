@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "OpenClaw 대시보드"
+  },
+  "actions": {
+    "reload": "새로 고침",
+    "openInBrowser": "브라우저에서 열기",
+    "openDocs": "문서 열기"
+  },
+  "iframe": {
+    "title": "OpenClaw 대시보드"
+  },
+  "probing": {
+    "label": "{{url}} 연결 확인 중…"
+  },
+  "unreachable": {
+    "title": "OpenClaw 데몬에 연결할 수 없습니다",
+    "hint": "터미널에서 OpenClaw 데몬을 시작한 후 새로 고침을 클릭하세요:"
+  },
+  "status": {
+    "probing": "연결 확인 중",
+    "live": "활성",
+    "offline": "오프라인"
+  }
+}

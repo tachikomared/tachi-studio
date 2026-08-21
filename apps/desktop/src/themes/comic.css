@@ -1,0 +1,38 @@
+/* ── comic ───────────────────────────────────────────────────────────────────
+   BLUEPRINT COMIC — inked graphic-novel panel on paper-white stock. Thick black
+   outlines, hard BLACK offset shadows (the signature — a bold cel drop-shadow,
+   not a colored glow), a subtle blueprint tint in the recessed surfaces, and the
+   violet accent family kept from tachi-dark so ink pops against the paper. Every
+   variable mirrors tachi-dark/bankr/neon so the whole app themes
+   automatically; the halftone/panel feel comes from the heavier border width +
+   pure-black shadow rather than any component change.
+   ──────────────────────────────────────────────────────────────────────── */
+:root[data-theme="comic"] {
+  --bg-base:       #f4f1e8;  /* aged paper stock */
+  --bg-surface:    #fbfaf4;  /* clean panel */
+  --bg-elevated:   #ffffff;  /* speech-bubble white */
+  --bg-inset:      #e7ecf2;  /* blueprint-tinted recess */
+  --bg-sidebar:    #eef0e9;
+  --accent:        #6b38d4;  /* ink violet */
+  --accent-hover:  #8455ef;
+  --accent-alt:    #a48bff;  /* halftone violet */
+  --accent-muted:  #e6ddfa;
+  --accent-text:   #3c1f8f;
+  --text-primary:  #12100a;  /* india ink */
+  --text-muted:    #55503f;
+  --text-dim:      #8f8a78;
+  --border:        #12100a;  /* thick black outline */
+  --border-strong: #000000;
+  /* ONE semantic red — alias of --danger (see tachi-dark.css note). */
+  --destructive:   var(--danger);
+  --success:       #17924f;
+  --warning:       #c98a00;
+  --danger:        #d42f3f;
+  --info:          #2f5fd4;
+  /* Hard BLACK cel offset = the comic signature. */
+  --shadow-hard:   3px 3px 0 #000000;
+  --shadow-hard-lg: 6px 6px 0 #000000;
+  --shadow-soft:   3px 3px 0 rgba(0, 0, 0, 0.35);
+  /* Heavier outline sells the inked-panel look. */
+  --border-width:  3px;
+}

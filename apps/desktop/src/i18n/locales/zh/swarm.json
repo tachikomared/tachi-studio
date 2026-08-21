@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "如何使用 Swarm 标签页",
+    "step1": {
+      "title": "这是 Swarm 标签页",
+      "body": "高级：同时在一个 git 存储库上运行多个 AI agents。它们通过提交小状态文件到 .gnap/ 文件夹中进行协调 — 存储库内的共享待办事项板、agent 列表和消息日志。"
+    },
+    "step2": {
+      "title": "启动 swarm",
+      "body": "点击 [新建 swarm] 指向 git repo 并启动 agents。它仅在 .gnap/ 内写，所以您的代码是安全的。使用 [打开现有] 重新附加到您已经制作的。"
+    },
+    "step3": {
+      "title": "您将看到什么",
+      "body": "打开后，仪表板显示三个窗格：agents (谁在工作)、kanban 板 (任务跨阶段移动) 和每次提交的实时源。它在 agents 工作时更新。"
+    },
+    "step4": {
+      "title": "何时使用",
+      "body": "Swarm 用于代码库上的平行多 agent 工作 — 它是实验性的，比 Code 标签页更复杂。如果您只想要一个 agent，使用 Code。从“如何使用”重新打开。"
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(未打开 swarm)",
+    "loading": "· 加载中…"
+  },
+  "actions": {
+    "newSwarm": "[新建 swarm]",
+    "openExisting": "[打开现有]",
+    "howTo": "[如何使用]",
+    "howToTitle": "什么是 swarm？走我看看",
+    "open": "[打开]",
+    "refresh": "[刷新]"
+  },
+  "empty": {
+    "title": "未打开 swarm",
+    "descBefore": "Swarm 是一支共同处理同一个仓库的 AI 智能体团队：它们在共享看板上分配任务并记录每一步。所有协调信息都存放在一个小小的",
+    "descAfter": " 文件夹中——你的代码不会被改动。新建一个 swarm，或重新打开已有的。",
+    "pathRequired": "路径是必需的",
+    "pathPlaceholder": "…或输入路径",
+    "recent": "最近"
+  },
+  "agents": {
+    "header": "AGENTS ({{count}})",
+    "empty": "尚无 agents 注册。",
+    "register": "[注册 AGENT]",
+    "idPlaceholder": "id (例如 alice)",
+    "namePlaceholder": "名称 (可选)",
+    "roleLabel": "角色：",
+    "heartbeatLabel": "hb：",
+    "cancel": "取消",
+    "add": "添加",
+    "idRequired": "id 是必需的",
+    "registerFailed": "registerAgent 失败"
+  },
+  "kanban": {
+    "header": "任务 ({{count}})",
+    "claimed": "[已认领]",
+    "newTask": "+ 新建任务",
+    "titlePlaceholder": "标题",
+    "descPlaceholder": "描述 (可选)",
+    "cancel": "取消",
+    "add": "添加",
+    "actionOpen": "打开",
+    "titleRequired": "标题是必需的",
+    "detail": {
+      "titlePrefix": "任务 ·",
+      "close": "关闭",
+      "comments": "评论 ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "源",
+    "counts": "{{commits}} 提交 · {{messages}} 消息",
+    "empty": "暂无。提交和消息将在 swarm 运行时出现在此处。",
+    "commit": "提交",
+    "noSubject": "(无主题)",
+    "moreFiles": "+ {{count}} 更多",
+    "msg": "消息"
+  },
+  "messaging": {
+    "header": "消息",
+    "registerPrompt": "注册 agents 以打开 agent 间通道。",
+    "noMessages": "无消息。",
+    "ctxLabel": "ctx：",
+    "unreadTitle_one": "{{count}} 条未读消息",
+    "unreadTitle_other": "{{count}} 条未读消息",
+    "sendTestTitle": "发送测试交接给 {{name}}",
+    "sendTestButton": "[发送测试交接 → {{name}}]",
+    "testHandoff": {
+      "task": "审查触及的模块上的 diff",
+      "context": "从 {{name}} 交接"
+    }
+  },
+  "dialog": {
+    "title": "新建 swarm",
+    "descBefore": "选择 git 存储库以主机 swarm。一个",
+    "descAfter": "目录将在其内被创建 (或重用)。",
+    "pathPlaceholder": "/path/to/repo",
+    "pick": "[选择]",
+    "cancel": "取消",
+    "create": "创建",
+    "creating": "创建中...",
+    "pathRequired": "请选择或输入目录路径。",
+    "initFailed": "initSwarm 失败"
+  }
+}

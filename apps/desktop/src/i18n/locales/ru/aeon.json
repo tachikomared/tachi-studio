@@ -1,0 +1,400 @@
+{
+  "auth": {
+    "header": "Аутентификация GitHub",
+    "intro": "Aeon работает на GitHub Actions. Войдите с помощью своей учётной записи GitHub.",
+    "signIn": "Войти через GitHub",
+    "waiting": "Ожидание авторизации в браузере…",
+    "deviceCode": "Код устройства",
+    "copyHint": "Скопируйте этот код на страницу активации устройства GitHub, затем нажмите кнопку ниже.",
+    "openDevicePage": "Открыть github.com/login/device",
+    "cancel": "Отмена"
+  },
+  "repoSetup": {
+    "header": "Форк aaronjmars/aeon",
+    "intro": {
+      "before": "Aeon должен работать в вашем собственном репозитории GitHub, чтобы хранить секреты API и запускать рабочие процессы. Это выполнит форк",
+      "after": "в вашу учётную запись."
+    },
+    "forking": "Создание форка…",
+    "forkRepo": "Создать форк репо",
+    "checking": "Проверка…",
+    "alreadyForked": "Я уже создал форк вручную",
+    "errors": {
+      "notVisible": "Форк создан, но репо ещё не видно. Попробуйте «Я уже создал форк» ниже.",
+      "notFound": "Форк не найден. Сначала создайте форк aaronjmars/aeon на GitHub, затем нажмите здесь ещё раз."
+    }
+  },
+  "ghNotInstalled": {
+    "header": "Установите GitHub CLI",
+    "requires": {
+      "before": "Aeon требует",
+      "installFrom": "Установите его с сайта",
+      "thenRestart": "затем перезагрузите Tachi Studio."
+    }
+  },
+  "forkBadge": {
+    "syncing": "[синхронизация…]",
+    "behind": "[форк на {{count}} коммитов позади]",
+    "title": "{{count}} коммит(ов) позади апстрима — нажмите для синхронизации"
+  },
+  "page": {
+    "checkingStatus": "Проверка статуса gh…"
+  },
+  "memory": {
+    "title": "Поиск в памяти",
+    "placeholder": "поиск в памяти…",
+    "searching": "[поиск…]",
+    "errorPrefix": "[ошибка]",
+    "noResults": "[нет результатов]"
+  },
+  "skills": {
+    "title": "Навыки ({{filtered}}/{{total}})",
+    "filterPlaceholder": "Фильтр навыков…",
+    "refresh": "Обновить",
+    "loading": "Загрузка рабочих процессов…",
+    "noMatches": "Совпадений не найдено.",
+    "empty": {
+      "actionsDisabled": {
+        "title": "GitHub Actions отключены в этом форке.",
+        "body": "По соображениям безопасности в форках Actions отключены по умолчанию. Включите их для регистрации примерно 121 рабочего процесса. Одна кнопка ниже — не требуется терминал."
+      },
+      "noWorkflows": {
+        "title": "Рабочие процессы ещё не зарегистрированы.",
+        "body": "Если вы только что включили Actions, дайте GitHub несколько секунд и нажмите обновить. Если навыки устарели относительно апстрима, синхронизируйте форк."
+      },
+      "enabling": "…включение",
+      "enableActions": "▶ ВКЛЮЧИТЬ ACTIONS",
+      "syncing": "…синхронизация",
+      "syncFromUpstream": "⟲ СИНХРОНИЗИРОВАТЬ С АПСТРИМА",
+      "openActionsTab": "Открыть вкладку Actions ↗"
+    },
+    "analytics": {
+      "successRate": "Процент успеха",
+      "streak": "Серия (последовательные успехи)",
+      "avgDuration": "Средняя продолжительность"
+    },
+    "run": {
+      "triggerTitle": "Запустить рабочий процесс",
+      "disabledTitle": "Рабочий процесс отключен",
+      "label": "▶ Запустить"
+    },
+    "toast": {
+      "actionsEnabled": "GitHub Actions включены в вашем форке",
+      "synced": "Форк синхронизирован с апстримом ({{mergeType}})",
+      "upToDate": "Форк уже синхронизирован с апстримом",
+      "syncFailed": "Синхронизация не удалась: {{error}}"
+    },
+    "errors": {
+      "enableFailed": "Не удалось включить Actions: {{error}}",
+      "syncFailed": "Синхронизация не удалась: {{error}}",
+      "triggerFailed": "Не удалось запустить {{name}}: {{error}}"
+    }
+  },
+  "composer": {
+    "header": "Дайте Aeon задачу",
+    "reloadTitle": "Перезагрузить навыки",
+    "reload": "Перезагрузить",
+    "workflowLabel": "Рабочий процесс",
+    "noWorkflows": "Рабочие процессы ещё не зарегистрированы. Используйте карточку «Навыки» слева для включения Actions в вашем форке и синхронизации навыков из апстрима.",
+    "loadingOption": "Загрузка…",
+    "disabledOption": "{{name}} (отключено)",
+    "loadingInputs": "Загрузка входных параметров…",
+    "noInputs": {
+      "before": "Этот рабочий процесс не объявляет",
+      "after": "входные параметры."
+    },
+    "hideAdvanced": "▾ Скрыть расширенные входные параметры",
+    "showAdvanced": "▸ Показать расширенные входные параметры",
+    "dispatching": "Отправка…",
+    "dispatch": "▶ Отправить",
+    "skillField": {
+      "before": "Выберите подмастерство из папки форка",
+      "after": "(найдено {{count}}), или введите пользовательское имя.",
+      "examplePlaceholder": "например {{name}}",
+      "defaultPlaceholder": "имя-навыка"
+    },
+    "errors": {
+      "readInputs": "Не удалось прочитать входные параметры {{path}}: {{error}}",
+      "pickSkill": "Сначала выберите навык.",
+      "requiredEmpty": "Обязательное поле «{{name}}» пусто.",
+      "tooManyInputs": "Слишком много входных параметров ({{count}}) — workflow_dispatch ограничен {{max}}."
+    },
+    "toast": {
+      "dispatched": "Отправлено на GitHub",
+      "dispatchFailed": "Отправка не удалась: {{error}}"
+    }
+  },
+  "dashboard": {
+    "stage": {
+      "idle": "Ожидание",
+      "downloading": "Загрузка исходного кода панели инструментов с GitHub",
+      "extracting": "Распаковка",
+      "installingDeps": "Установка зависимостей панели инструментов",
+      "installingGh": "Загрузка GitHub CLI (только при первом запуске)",
+      "starting": "Запуск сервера разработки Next.js",
+      "ready": "В сети",
+      "error": "Ошибка"
+    },
+    "resetConfirm": {
+      "message": "Перезагрузить панель инструментов с GitHub при следующем запуске? Ваш локальный кэш будет удалён (примерно 150 МБ).",
+      "ok": "СБРОС"
+    },
+    "backTitle": "Вернуться на главную Aeon",
+    "back": "← Главная Aeon",
+    "label": "ПАНЕЛЬ ИНСТРУМЕНТОВ ·",
+    "reloadIframeTitle": "Перезагрузить iframe панели инструментов",
+    "reload": "⟳ Перезагрузить",
+    "openInBrowser": "Открыть в браузере ↗",
+    "stopTitle": "Остановить сервер панели инструментов",
+    "stop": "■ Остановить",
+    "iframeTitle": "Панель инструментов Aeon",
+    "progress": {
+      "title": "{{stage}}…",
+      "body": "При первом запуске устанавливается панель инструментов Aeon внутри приложения. Это одноразовая настройка — последующие запуски начинаются за несколько секунд."
+    },
+    "launch": {
+      "errorTitle": "Не удалось запустить панель инструментов",
+      "title": "Панель инструментов Aeon",
+      "body": {
+        "before": "Aeon поставляется со своей панелью инструментов Next.js. Нажмите «Запустить», и мы загрузим последнюю версию с GitHub, установим её внутри приложения и встроим как вкладку здесь. Ваш OAuth для GitHub передаётся автоматически — не требуется",
+        "after": "."
+      },
+      "retry": "Повторить запуск",
+      "launch": "Запустить панель инструментов",
+      "resetCacheTitle": "Очистить локальный кэш и принудительно перезагрузить при следующем запуске",
+      "resetCache": "Сброс кэша",
+      "yourFork": "Ваш форк на GitHub ↗",
+      "source": {
+        "before": "Источник:",
+        "after": ". Кэшируется в данных приложения — переиспользуется при последующих запусках."
+      }
+    },
+    "prereq": {
+      "nodeMissing": {
+        "before": "Node.js не обнаружен в PATH — установите с сайта",
+        "after": "(LTS подойдёт)."
+      },
+      "npmMissing": "npm не обнаружен в PATH — входит в комплект Node.js."
+    }
+  },
+  "channels": {
+    "header": "Каналы · как Aeon вам рассказывает",
+    "intro": "Aeon изначально поддерживает это — просто отправьте секрет(ы), и канал активируется при следующем запуске. Изменение рабочего процесса не требуется.",
+    "pushedBadge": "ОТПРАВЛЕНО НА GH ✓",
+    "pushing": "…отправка",
+    "pushMany": "Отправить {{count}} секретов на GitHub",
+    "pushOne": "Отправить секрет на GitHub",
+    "toast": {
+      "pushed": "Секреты {{channel}} отправлены — канал активен при следующем запуске навыка",
+      "pushFailed": "Отправка не удалась: {{error}}"
+    },
+    "items": {
+      "telegram": {
+        "label": "Telegram",
+        "description": "Самый популярный канал — Aeon отправляет выходные данные навыков как сообщения, вы можете ответить командами. Создайте бота у @BotFather, затем отправьте /start вашему боту с вашей учётной записи.",
+        "helpLabel": "Руководство по BotFather"
+      },
+      "discord-webhook": {
+        "label": "Discord (только исходящие)",
+        "description": "Самая простая настройка Discord — только исходящие. Канал → Правка канала → Интеграции → Вебхуки → Создать. Не требуются разрешения бота.",
+        "helpLabel": "Настройка вебхука"
+      },
+      "discord-bot": {
+        "label": "Discord (входящие + исходящие)",
+        "description": "Полный двусторонний Discord. discord.com/developers → Новое приложение → Бот → включить Message Content intent, скопировать токен бота. Пригласите бота на свой сервер с областью channels:history.",
+        "helpLabel": "Discord Developer Portal"
+      },
+      "slack-webhook": {
+        "label": "Slack (только исходящие)",
+        "description": "Только исходящий Slack. api.slack.com → Ваши приложения → Создать новое приложение → С нуля → Входящие вебхуки → Добавить в канал → скопировать URL.",
+        "helpLabel": "Документация по вебхукам Slack"
+      },
+      "slack-bot": {
+        "label": "Slack (входящие + исходящие)",
+        "description": "Полный двусторонний Slack. Приложение → OAuth и разрешения → добавить области channels:history + reactions:write → установить → скопировать токен OAuth пользователя бота. ID канала находится в URL.",
+        "helpLabel": "Документация по токену бота"
+      },
+      "email": {
+        "label": "Email (SendGrid)",
+        "description": "Выходные данные навыков приходят как стилизованные HTML письма. sendgrid.com/settings/api_keys → Создать ключ API с разрешением Mail Send → скопировать. Установите адрес получателя для уведомлений.",
+        "helpLabel": "Ключи API SendGrid"
+      }
+    },
+    "secretLabels": {
+      "TELEGRAM_BOT_TOKEN": "Токен бота",
+      "TELEGRAM_CHAT_ID": "ID чата",
+      "DISCORD_WEBHOOK_URL": "URL вебхука",
+      "DISCORD_BOT_TOKEN": "Токен бота",
+      "DISCORD_CHANNEL_ID": "ID канала",
+      "SLACK_WEBHOOK_URL": "URL вебхука",
+      "SLACK_BOT_TOKEN": "Токен бота",
+      "SLACK_CHANNEL_ID": "ID канала",
+      "SENDGRID_API_KEY": "Ключ API SendGrid",
+      "NOTIFY_EMAIL_TO": "Email получателя"
+    }
+  },
+  "provider": {
+    "header": "Секреты поставщика · отправляются на GitHub Actions",
+    "intro": {
+      "before": "Эти ключи отправляются в ваш",
+      "after": "репо как секреты GitHub Actions, чтобы облачные запуски навыков могли их использовать. Локальный ключ вкладки Chat отдельный."
+    },
+    "set": "УСТАНОВИТЬ",
+    "save": "Сохранить",
+    "push": "Отправить",
+    "pushing": "…отправка",
+    "activating": "…активация",
+    "localBadge": "ЛОКАЛЬНЫЙ ✓",
+    "pushedBadge": "ОТПРАВЛЕНО НА GH ✓",
+    "activeGatewayBadge": "АКТИВНЫЙ ПРОВАЙДЕР ✓",
+    "activeGatewayTitle": "aeon.yml gateway.provider = {{mode}}",
+    "ghSecret": "Секрет GH →",
+    "useDifferentKey": "Использовать другой ключ",
+    "pushLocalButton": "Отправить локальный ключ {{label}} на GitHub",
+    "activateTitle": "Установить gateway.provider={{mode}} в aeon.yml вашего форка",
+    "activateButton": "→ Активировать {{label}} (установить aeon.yml gateway: {{mode}})",
+    "patch": {
+      "title": "Исправление рабочего процесса OpenGateway",
+      "applied": "ПРИМЕНЕНО ✓",
+      "notApplied": "НЕ ПРИМЕНЕНО",
+      "body": {
+        "part1": "Рабочий процесс апстрима Aeon не читает",
+        "part2": "или",
+        "part3": ". Это одноклассное исправление коммитит 4-строчный",
+        "part4": "блок уровня задания в ваш форк, чтобы секреты OpenGateway подхватились Claude Code."
+      },
+      "applying": "…применение",
+      "applyButton": "Применить исправление (коммит в форк)",
+      "reverting": "…отмена",
+      "revertButton": "Отменить исправление"
+    },
+    "rows": {
+      "anthropic-oauth": {
+        "label": "Anthropic OAuth",
+        "description": "Токен обновления Anthropic OAuth из /chat (вход в Anthropic Pro). Рабочий процесс Aeon использует это через режим OAuth Claude Code — рекомендуемый путь."
+      },
+      "anthropic": {
+        "label": "Ключ API Anthropic",
+        "description": "Прямой ключ API Anthropic (sk-ant-api03-…). Считывается рабочим процессом как ANTHROPIC_API_KEY вне режима шлюза."
+      },
+      "bankr-gateway": {
+        "label": "Bankr",
+        "description": "Ключ Bankr LLM (bk_…). Aeon изначально поддерживает Bankr — нажмите «Активировать» для установки gateway.provider=bankr в aeon.yml."
+      },
+      "opengateway": {
+        "label": "OpenGateway",
+        "description": "Ключ OpenGateway (ogw_live_…). Отправляет два секрета: ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN. Требуется исправление рабочего процесса ниже — Aeon не изначально маршрутизирует через OpenGateway."
+      }
+    },
+    "toast": {
+      "gatewayUpdated": "aeon.yml обновлён — {{label}} теперь активный провайдер",
+      "gatewayAlready": "{{label}} уже был активен в aeon.yml",
+      "activateFailed": "Активация не удалась: {{error}}",
+      "patchAlready": "Рабочий процесс уже исправлен для OpenGateway",
+      "patched": "Рабочий процесс форка исправлен — OpenGateway теперь подключен через Claude Code",
+      "patchFailed": "Исправление не удалось: {{error}}",
+      "reverted": "Исправление OpenGateway отменено — рабочий процесс возвращен к исходному виду",
+      "revertFailed": "Отмена не удалась: {{error}}",
+      "pushedLocal": "Отправлен локальный ключ {{label}} на секреты GitHub для {{owner}}/aeon",
+      "pushFailed": "Отправка не удалась: {{error}}",
+      "savedExplicit": "{{label}} → {{secretName}} на {{owner}}/aeon"
+    }
+  },
+  "drawer": {
+    "tabs": {
+      "result": "РЕЗУЛЬТАТ",
+      "logs": "ЛОГИ"
+    },
+    "resultTitle": "Показать разобранный результат, созданные файлы и использование токенов",
+    "resultTitleDisabled": "Доступно после завершения запуска",
+    "refresh": "Обновить",
+    "reload": "Перезагрузить",
+    "openOnGithubTitle": "Открыть на GitHub",
+    "openOnGithub": "Открыть на GitHub ↗",
+    "closeTitle": "Закрыть (Esc)",
+    "close": "Закрыть",
+    "jobs": {
+      "title": "Работы ({{count}})",
+      "waiting": "Ожидание Runner…",
+      "none": "Нет работ в этом запуске."
+    },
+    "logs": {
+      "title": "Логи",
+      "live": "● LIVE",
+      "fetching": "загрузка…",
+      "queued": "Работа в очереди — ожидание Runner…",
+      "noOutput": "Ещё нет выходных логов.",
+      "selectJob": "Выберите работу для просмотра её логов."
+    },
+    "errors": {
+      "loadJobs": "Не удалось загрузить работы: {{error}}",
+      "logFetch": "[ошибка загрузки логов] {{error}}"
+    },
+    "result": {
+      "loadingLogs": "Загрузка логов запуска…",
+      "whatItDid": "Что было сделано",
+      "noSummary": "Навык не выдал структурированное резюме в финальный выход. Переключитесь на ЛОГИ для необработанного запуска.",
+      "filesProduced": "Созданные файлы",
+      "filesProducedCount": "Созданные файлы ({{count}})",
+      "noFiles": "Изменений файлов в этом запуске не обнаружено.",
+      "openFileTitle": "Открыть {{path}} на GitHub",
+      "open": "открыть ↗",
+      "commit": "Коммит",
+      "openShort": "Открыть ↗",
+      "tokenUsage": "Использование токенов",
+      "tokens": {
+        "cacheRead": "чтение кэша",
+        "cacheCreation": "создание кэша"
+      },
+      "browseOutputs": "Просмотр выходных данных",
+      "outputsTitle": "Выходные данные навыков в формате JSON (лента панели инструментов Aeon)",
+      "links": {
+        "outputs": "dashboard/outputs ↗",
+        "articles": "статьи ↗",
+        "commits": "все коммиты ↗",
+        "thisRun": "этот запуск на GitHub ↗"
+      }
+    }
+  },
+  "runs": {
+    "header": "Недавние запуски",
+    "refresh": "Обновить",
+    "loading": "Загрузка запусков…",
+    "empty": "Нет запусков. Запустите навык, чтобы увидеть результаты здесь.",
+    "rerun": "▶ ПЕРЕЗАПУСТИТЬ",
+    "rerunTitle": "Перезапустить",
+    "deleteTitle": "Удалить запуск",
+    "confirmDeleteTitle": "Нажмите ещё раз для подтверждения",
+    "sure": "УВЕРЕНЫ?",
+    "row": {
+      "openTitle": "Открыть детали живого запуска"
+    },
+    "card": {
+      "title": "Нажмите для открытия · перетащите в очередь для перезапуска",
+      "rerunTitle": "Перезапустить этот рабочий процесс",
+      "confirmDeleteTitle": "Нажмите ещё раз для подтверждения удаления"
+    },
+    "kanban": {
+      "todo": "В очереди",
+      "running": "Запуск",
+      "failed": "Ошибка",
+      "done": "Готово",
+      "dropHint": "↓ отпустите для перезапуска"
+    },
+    "toast": {
+      "rerunning": "Перезапуск {{name}}",
+      "rerunFailed": "Перезапуск не удался: {{error}}",
+      "deleted": "Удалён {{name}}",
+      "deleteFailed": "Удаление не удалось: {{error}}",
+      "alreadyRunning": "Уже запущен"
+    }
+  },
+  "intro": {
+    "title": "AEON — ВАШ АГЕНТ В ОБЛАКЕ",
+    "body": "Aeon — это ваш агент, работающий на вас в облаке, даже когда это приложение закрыто. Он живёт в вашем собственном форке GitHub ({{owner}}/aeon) и автономно выполняет навыки — исследования, мониторинг, тексты — через GitHub Actions, по расписанию или когда вы отправляете задачу. Результаты появляются в «Недавних запусках» ниже и в любом подключённом канале (Telegram, Discord, Slack, email)."
+  },
+  "setup": {
+    "header": "НАСТРОЙКА (ОДИН РАЗ)",
+    "hint": "Секреты провайдеров + каналы уведомлений. Если запуски уже работают — всё готово."
+  }
+}

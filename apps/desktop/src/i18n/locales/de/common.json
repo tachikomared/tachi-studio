@@ -1,0 +1,256 @@
+{
+  "actions": {
+    "newChat": "+ Neuer Chat",
+    "routines": "Routinen",
+    "customize": "Anpassen",
+    "providers": "Provider",
+    "tachiapp": "TACHIAPP",
+    "tachiappHint": "Frag etwas über diese App oder sag ihr, was sie ändern soll — sie bearbeitet ihren eigenen Quellcode",
+    "approvalPending": "{{n}} Freigabe ausstehend — ein Lauf ist blockiert, bis du antwortest"
+  },
+  "sidebar": {
+    "newSession": "+ Neue Sitzung",
+    "workspace": "Workspace",
+    "openCanvas": "+ Canvas öffnen",
+    "media": "Media",
+    "newMedia": "+ Neue Media",
+    "artifacts": "Artifacts",
+    "newSwarm": "+ Neuer swarm",
+    "openInbox": "Inbox öffnen",
+    "llmNodes": "+ LLM Nodes",
+    "addRuntime": "Lokalen Server hinzufügen",
+    "settings": "Einstellungen",
+    "runSkill": "+ Skill ausführen",
+    "configure": "Konfigurieren",
+    "secrets": "Geheimnisse",
+    "dashboard": "Dashboard",
+    "postBounty": "+ Bounty posten",
+    "browseNetwork": "Netzwerk durchsuchen",
+    "mineNook": "NOOK schürfen",
+    "toasts": {
+      "routinesSoon": "Routinen — bald!",
+      "workspaceSoon": "Workspace-Verwaltung — bald!",
+      "addRuntimeHint": "Lokalen Server hinzufügen — installieren Sie Ollama/Claude Code manuell und starten Sie Tachi Studio neu, um sie zu erkennen."
+    },
+    "newDesign": "+ Neues Design",
+    "recentDesigns": "Letzte Designs",
+    "noRecentDesigns": "Noch keine Designs",
+    "untitledDesign": "Unbenanntes Design",
+    "recent": "Zuletzt",
+    "noRecentSwarms": "Keine letzten Swarms",
+    "more": "Mehr",
+    "moreHint": "Weitere Tabs — Swarm, Dashboard, Katalog, Aeon, Nook, Learn",
+    "learnHint": "Learn — kurzer Rundgang durch jeden Tab",
+    "wallet": "Wallet",
+    "walletExpand": "Wallet-Guthaben anzeigen",
+    "walletCollapse": "Wallet-Guthaben ausblenden"
+  },
+  "theme": {
+    "dark": "Dunkel",
+    "light": "Hell",
+    "neon": "Neon",
+    "comic": "Comic",
+    "opus5": "Opus5",
+    "tk05": "TK-05",
+    "moreHint": "Alle Designs — Einstellungen → Erscheinungsbild"
+  },
+  "language": "Sprache",
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Erneut versuchen oder den Anbieter in den Einstellungen prüfen.",
+    "noKey": "Kein API-Schlüssel für diesen Anbieter — in Einstellungen → Anbieter hinzufügen oder den kostenlosen Anbieter ohne Schlüssel wählen.",
+    "auth": "Der Anbieter hat den API-Schlüssel abgelehnt — in Einstellungen → Anbieter prüfen.",
+    "rateLimit": "Ratenlimit erreicht — kurz warten und erneut versuchen, oder Modell/Anbieter wechseln.",
+    "quota": "Kontingent oder Guthaben des Anbieters aufgebraucht — Tarif prüfen oder Anbieter wechseln.",
+    "contextLength": "Die Unterhaltung ist zu lang für dieses Modell — neuen Chat starten oder ein Modell mit größerem Kontext wählen.",
+    "network": "Netzwerkproblem beim Erreichen des Anbieters — Verbindung prüfen (oder der Private Modus blockiert den Datenverkehr).",
+    "upstream": "Beim Anbieter ist ein Serverfehler aufgetreten — gleich erneut versuchen."
+  },
+  "quickask": {
+    "placeholder": "Frag irgendwas…",
+    "ask": "Fragen",
+    "asking": "…",
+    "thinking": "denke nach…",
+    "hintEmpty": "Enter zum Fragen · Esc zum Schließen",
+    "footer": "quick ask · schlüsselloser FreeLLM-Router",
+    "copy": "kopieren",
+    "openApp": "App öffnen",
+    "routerDown": "Lokaler Router läuft nicht — öffnen Sie zuerst die App."
+  },
+  "prompts": {
+    "search": "Vorlagen durchsuchen…",
+    "saveCurrent": "+ aktuelles speichern",
+    "titlePlaceholder": "Vorlagenname…",
+    "save": "Speichern",
+    "empty": "Noch keine Vorlagen. Speichern Sie hier Ihre besten Prompts.",
+    "insert": "Einfügen",
+    "delete": "Vorlage löschen"
+  },
+  "split": {
+    "hint": "Ziehen zum Anpassen · Doppelklick zum Einklappen"
+  },
+  "footerHints": {
+    "chat": "Enter senden · {{mod}}+K Palette · {{mod}}+Shift+Space Quick-Ask",
+    "code": "Enter startet die Aufgabe · ↺ Checkpoint zurücksetzen",
+    "nodes": "{{mod}}+Enter alles ausführen · {{mod}}+Z rückgängig",
+    "design": "{{mod}}+Enter senden · ↺ bearbeiten zum Zurückspulen",
+    "media": "Prompt → Generieren · Esc schließt die Vorschau",
+    "catalog": "Quant-Pille anklicken, um die Passung zu sehen",
+    "swarm": "NEUER SWARM öffnet ein Repo · der Feed streamt Agent-Commits",
+    "dashboard": "Live-Systemstatistiken · Auto-Refresh alle 3 s"
+  },
+  "activity": {
+    "title": "Aktivität",
+    "stop": "Stopp",
+    "stopping": "Wird gestoppt…",
+    "dismiss": "Ausblenden",
+    "more": "+{{n}} weitere",
+    "less": "Weniger anzeigen",
+    "open": "Zu dieser Aufgabe springen",
+    "failed": "Fehlgeschlagen",
+    "done": "Fertig",
+    "cancelled": "Abgebrochen",
+    "label": {
+      "generate": "Generierung",
+      "render": "Videoexport",
+      "migrate": "Modelle verschieben",
+      "rife": "Frame-Interpolation",
+      "audioOverview": "Audio-Überblick"
+    },
+    "notify": {
+      "imageReady": "Bild fertig",
+      "videoReady": "Video fertig",
+      "genFailed": "Generierung fehlgeschlagen",
+      "installed": "{{name}} installiert",
+      "installFailed": "Installation von {{name}} fehlgeschlagen",
+      "renderDone": "Videoexport abgeschlossen",
+      "renderFailed": "Videoexport fehlgeschlagen",
+      "rifeDone": "Frame-Interpolation abgeschlossen",
+      "rifeFailed": "Frame-Interpolation fehlgeschlagen",
+      "took": "dauerte {{elapsed}}",
+      "audioOverviewReady": "Audio-Überblick fertig",
+      "audioOverviewFailed": "Audio-Überblick fehlgeschlagen"
+    }
+  },
+  "audioOverview": {
+    "stage": {
+      "script": "Skript wird entworfen…",
+      "voices": "Stimmen {{n}}/{{m}}",
+      "mix": "Mischen…",
+      "saving": "Speichern…"
+    },
+    "saved": "Auf der Festplatte gespeichert",
+    "reveal": "Datei anzeigen",
+    "saveFailed": "Nicht gespeichert: {{reason}}"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "pause": "Pausieren",
+    "resume": "Fortsetzen",
+    "retry": "Erneut versuchen",
+    "cancel": "Download abbrechen (löscht die unvollständige Datei)",
+    "dismiss": "Ausblenden",
+    "paused": "Pausiert",
+    "queued": "In Warteschlange",
+    "verifying": "Wird überprüft",
+    "done": "Fertig",
+    "error": "Fehler",
+    "verifiedSha": "SHA-256 verifiziert",
+    "verifiedSize": "Größe verifiziert"
+  },
+  "observability": {
+    "compaction": "Komprimierung",
+    "tokensSaved": "gesparte Tokens (geschätzt)",
+    "charsSaved": "gesparte Zeichen",
+    "promptCache": "Prompt-Cache",
+    "cachedInputTokens": "gecachte Eingabe-Tokens",
+    "cacheHitRatio": "Trefferquote (Cache / Eingabe)",
+    "legacyHarnessTag": "Alt-Harness",
+    "legacyHarnessNote": "Harness-Ausgaben, erfasst bevor sie dem Gateway zugeordnet wurden, das sie bedient hat. Bleibt als Historie erhalten — ein Hauptbuch wird nicht nachträglich geändert."
+  },
+  "commands": {
+    "popupLabel": "Slash-Befehle",
+    "popupHint": "↑↓ bewegen · ↵ / Tab wählen · esc schließen",
+    "groupCommands": "Befehle",
+    "groupSkills": "Skills",
+    "dismiss": "Ausblenden",
+    "unknown": "Unbekannter Befehl /{{name}}. Tippe /help für die verfügbaren Befehle, oder beginne die Nachricht mit //, um einen echten Schrägstrich zu senden.",
+    "wrongSurfaceChat": "/{{name}} funktioniert nur im Chat-Tab.",
+    "wrongSurfaceHarness": "/{{name}} funktioniert nur im Code-Tab.",
+    "unavailable": "/{{name}} ist hier gerade nicht verfügbar.",
+    "help": {
+      "desc": "Alle hier verfügbaren Befehle auflisten",
+      "title": "VERFÜGBARE BEFEHLE",
+      "escape": "Beginne eine Nachricht mit //, um einen echten Schrägstrich zu senden."
+    },
+    "new": {
+      "desc": "Neuen Chat starten"
+    },
+    "compact": {
+      "desc": "Ältere Beiträge zu einer Zusammenfassung eindampfen",
+      "done": "Verdichtet — ältere Beiträge sind jetzt eine Zusammenfassung. Der Verlauf bleibt unverändert.",
+      "failed": "Es gibt noch nichts zu verdichten."
+    },
+    "init": {
+      "desc": "AGENTS.md für diesen Ordner erzeugen",
+      "done": "{{path}} geschrieben",
+      "failed": "AGENTS.md konnte nicht erzeugt werden: {{reason}}"
+    },
+    "model": {
+      "desc": "Aktuelles Modell anzeigen oder wechseln",
+      "args": "[Name]",
+      "current": "Aktuelles Modell: {{model}}",
+      "switched": "Modell → {{model}}",
+      "noMatch": "Kein Modell und kein Anbieter passt zu „{{name}}“."
+    },
+    "cost": {
+      "desc": "Ausgaben der Sitzung und der letzten 30 Tage zeigen",
+      "title": "AUSGABEN",
+      "session": "Diese Sitzung: {{value}}",
+      "sessionTokens": "~{{count}} Tokens",
+      "window": "Letzte {{days}} Tage: ${{total}} von ${{budget}} Budget",
+      "provider": "  {{provider}} — ${{usd}}",
+      "none": "  noch keine bepreisten Ausgaben erfasst"
+    },
+    "memory": {
+      "desc": "Gespeicherte Gedächtnis-Fakten anzeigen",
+      "title": "GEDÄCHTNIS-FAKTEN ({{count}})",
+      "empty": "Noch keine Fakten gespeichert — füge einen mit /remember <Text> hinzu."
+    },
+    "remember": {
+      "desc": "Einen Fakt im Gedächtnis speichern",
+      "args": "<Text>",
+      "saved": "Gemerkt: {{text}}",
+      "needsText": "Verwendung: /remember <Text>",
+      "failed": "Dieser Fakt konnte nicht gespeichert werden."
+    },
+    "rewind": {
+      "desc": "Letzte Nachricht bearbeiten und ab dort neu laufen lassen",
+      "done": "Deine letzte Nachricht ist wieder im Eingabefeld — bearbeiten und senden.",
+      "none": "Keine Nachricht zum Zurückspulen."
+    },
+    "search": {
+      "desc": "Eine Websuche für diese Anfrage erzwingen",
+      "args": "<Suchanfrage>",
+      "needsQuery": "Verwendung: /search <Suchanfrage>",
+      "disabled": "Websuche ist aus — schalte sie in den Einstellungen ein und hinterlege einen Brave- oder Tavily-Schlüssel."
+    },
+    "plan": {
+      "desc": "Die Arbeit planen, bevor Code angefasst wird"
+    },
+    "review": {
+      "desc": "Strukturiertes Code-Review mit Schweregraden"
+    },
+    "troubleshoot": {
+      "desc": "Ursache eines Fehlers finden und Lösungen vorschlagen"
+    },
+    "refactor": {
+      "desc": "Ein verhaltenserhaltendes Refactoring planen"
+    },
+    "loop": {
+      "desc": "In Zyklen weiterarbeiten, bis das Ziel erreicht ist",
+      "args": "[n] <Ziel>",
+      "needsGoal": "Verwendung: /loop [n] <Ziel> — z. B. /loop 3 alle Tests grün bekommen",
+      "needsTachi": "/loop braucht den TACHI-Harness — unter ADVANCED auswählen und erneut senden."
+    }
+  }
+}

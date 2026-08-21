@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["electron", "src"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@tachi/core": ["../../packages/core/src/index.ts"],
+      "@tachi/core/*": ["../../packages/core/src/*"],
+      // Pin TYPE resolution of react to this app's own @types/react@18.
+      // claude-design/promo (a Remotion side-project that snuck into the root
+      // pnpm lock as an importer) hoists @types/react@19 into the workspace's
+      // hidden hoist root (.pnpm/node_modules); without these paths, library
+      // .d.ts files (react-router-dom, react-i18next, @xyflow/react, ...)
+      // resolve React types THERE while app code resolves the local 18 copy,
+      // producing ~69 TS2786 "not a valid JSX element type" errors.
+      // Runtime bundling (electron-vite/esbuild) ignores tsconfig paths and
+      // already resolves the real react@18 — this is types-only.
+      "react": ["./node_modules/@types/react"],
+      "react/jsx-runtime": ["./node_modules/@types/react/jsx-runtime"],
+      "react-dom": ["./node_modules/@types/react-dom"],
+      "react-dom/client": ["./node_modules/@types/react-dom/client"]
+    }
+  }
+}

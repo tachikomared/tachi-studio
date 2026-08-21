@@ -1,0 +1,50 @@
+{
+  "toolbar": {
+    "title": "[FREELLMAPI] ダッシュボード"
+  },
+  "actions": {
+    "reload": "[再読み込み]",
+    "openInBrowser": "[ブラウザで開く]"
+  },
+  "iframe": {
+    "title": "freellmapi ダッシュボード"
+  },
+  "status": {
+    "probing": "[プローブ中]",
+    "ready": "[準備完了]",
+    "unreachable": "[到達不可]"
+  },
+  "probing": {
+    "label": "[プローブ中] {{url}}"
+  },
+  "unreachable": {
+    "title": "[到達不可] freellmapiが応答していません",
+    "body": "freellmapiはTachi Studioで自動起動します。失敗した場合は、Dashboardページをチェックしてサービスエラーを確認し、再読み込みをクリック:",
+    "portLine": "ポート: {{port}}"
+  },
+  "errors": {
+    "healthFalse": "サービスヘルスチェックはfalseを返しました — freellmapiはまだ開始中かもしれません"
+  },
+  "api": {
+    "title": "コードから使う",
+    "tabs": {
+      "curl": "curl",
+      "python": "Python",
+      "javascript": "JavaScript"
+    },
+    "copy": "[コピー]",
+    "copied": "[コピー済み — キー入り]",
+    "copiedNoKey": "[コピー済み — プレースホルダーキー]",
+    "keyNote": "コピーすると実際の API キーが挿入されます — スニペット上は {{placeholder}} と表示されます。OpenAI 互換の SDK ならどれでも動作し、モデル \"auto\" は FreeLLM / llama.cpp にルーティングされます。",
+    "status": {
+      "running": "[ 実行中 ]",
+      "stopped": "[ 停止中 ]",
+      "disabled": "[ 無効 ]"
+    }
+  },
+  "disclosure": {
+    "title": "無料ルート — その背後にあるもの",
+    "trainsOnPrompts": "このルーターの背後にある一部の無料アップストリームは、あなたのプロンプトを学習に利用する場合があります（Kilo の無料モデルは自社カタログでそう明記しています）。機密情報や個人データは送信せず、ローカルプロバイダーをご利用ください。",
+    "trainsBadge": "プロンプトが学習に使われる場合あり"
+  }
+}

@@ -1,0 +1,69 @@
+/* ── tachikoma-red ───────────────────────────────────────────────────────────
+   TACHIKOMA-RED · RED CRAB UNIT — the mech, not the machine shop. Where
+   tachi-opus5 is a cold instrument plate, this is a WALKER: an armoured
+   carapace in ink and arterial crimson, lit by one cyan OPTIC. Every plate is
+   cut at a mech panel angle, every live element is the optic colour, and the
+   hard offset shadow is that optic bleeding onto the plate behind it.
+
+   SIGNATURE SHADOW: 3px 3px 0 #00e5ff (optic cyan on blood-red chassis). The
+   red/cyan pair is the whole identity — crimson is structure, cyan is
+   attention, and nothing else is allowed to be either.
+
+   WHY THESE HUES (constraints, not taste):
+   • --accent must take WHITE text: Sidebar's primaryButtonStyle, the inbox
+     badge and ::selection all hardcode #ffffff on var(--accent). Arterial
+     #a81232 gives 7.5:1 with white; hover #c8163c gives 5.8:1. The cyan optic
+     is never a text bed, so it lives in --accent-alt / --tk-optic.
+   • --danger cannot be another red next to a crimson accent, so it is pushed
+     hot-pink (#ff2b6b) — twice the lightness of the accent, unmistakable at
+     chip scale.
+   • --info would collide with the optic, so it steps to a cold periwinkle.
+   • ToolCallBlock colours READ=accent, WRITE=success, EDIT=warning: crimson /
+     spring-green / amber stay mutually distinguishable at 9px.
+
+   COMPANION CHROME (optional, same pattern as OpusChrome.tsx): a
+   TachikomaChrome.tsx mounts the FULL claw-left/claw-right silhouettes hue-
+   rotated to crimson, clamped on the window frame from OUTSIDE with an optic
+   drop-shadow. Anchor by the INNER edge (left: <grip> + translate(-100%)) so
+   the grip depth never drifts, and — unlike the retired crab chrome — do NOT hide it
+   below 1180px: at the owner's 1068px daily size the arms re-stage inward
+   instead of disappearing (see the structure sheet header).
+
+   Every variable of tachi-dark.css is mirrored. Two EXTRA vars (--tk-optic,
+   --tk-blood) exist only so tachikoma-red-structure.css can name its two inks.
+   ──────────────────────────────────────────────────────────────────────── */
+:root[data-theme="tachikoma-red"] {
+  --bg-base:       #0a0708;  /* carapace void */
+  --bg-surface:    #100b0d;  /* armour plate */
+  --bg-elevated:   #171012;  /* raised plate */
+  --bg-inset:      #050304;  /* servo recess */
+  --bg-sidebar:    #0d0809;  /* spine plate */
+  --accent:        #a81232;  /* ARTERIAL — the unit's own red */
+  --accent-hover:  #c8163c;
+  --accent-alt:    #00e5ff;  /* OPTIC — the single blue eye */
+  --accent-muted:  #2a0410;  /* recessed blood well */
+  --accent-text:   #ff7d95;
+  --text-primary:  #f3eaec;
+  --text-muted:    #9a8a8e;
+  --text-dim:      #8d7b81;  /* 5.0:1 on base — the etched-silkscreen tier.
+                                Chassis legends (S/N, INTAKE, DO NOT OPEN) are
+                                real 8px copy, so this clears AA rather than
+                                merely looking recessed. */
+  --border:        #2b1f22;  /* panel seam */
+  --border-strong: #5a3b41;  /* armour rib */
+  /* ONE semantic red: --destructive is an alias of --danger (see tachi-dark). */
+  --destructive:   var(--danger);
+  --success:       #00e08a;
+  --warning:       #ffb300;
+  --danger:        #ff2b6b;  /* hot pink-red — never confusable with --accent */
+  --info:          #7aa2ff;  /* stepped off the optic so cyan stays unique */
+  /* Optic bleed = the TACHIKOMA-RED signature. */
+  --shadow-hard:   3px 3px 0 #00e5ff;
+  --shadow-hard-lg: 6px 6px 0 #00e5ff;
+  --shadow-soft:   3px 3px 0 rgba(0, 229, 255, 0.30);
+  --border-width:  2px;
+
+  /* ── Theme-private inks (structure layer only) ───────────────────────── */
+  --tk-optic:      #00e5ff;
+  --tk-blood:      #ff2b6b;
+}

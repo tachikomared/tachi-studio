@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "Wird geladen…"
+  },
+  "topbar": {
+    "badge": "Dashboard"
+  },
+  "system": {
+    "title": "System",
+    "live": "● LIVE",
+    "os": "OS",
+    "release": "Veröffentlichung",
+    "host": "Host",
+    "cpu": "CPU",
+    "cores": "{{count}} Kerne",
+    "app": "App",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "App-Betriebszeit",
+    "ram": "RAM",
+    "disk": "Festplatte",
+    "tachiProcess": "App-Prozess: {{size}}"
+  },
+  "sidecars": {
+    "title": "Hintergrunddienste",
+    "upCount": "{{up}}/{{total}} oben",
+    "none": "Keine Hintergrunddienste registriert",
+    "viewLogTail": "Log-Dateiende anzeigen",
+    "logs": "Logs",
+    "stop": "Beenden",
+    "start": "Starten",
+    "startFailed": "Start fehlgeschlagen: {{error}}",
+    "stopFailed": "Stopp fehlgeschlagen: {{error}}"
+  },
+  "logs": {
+    "ariaLabel": "Logs für {{id}}",
+    "header": "{{id}} · Log-Dateiende",
+    "live": "● LIVE 2s",
+    "close": "Schließen",
+    "noFile": "Noch keine Log-Datei für diesen Dienst — nur openclaude schreibt auf die Festplatte.",
+    "empty": "Log-Datei ist leer."
+  },
+  "harnesses": {
+    "title": "Agents → Provider",
+    "activeRouting": "Aktives Routing",
+    "ready": "Bereit",
+    "idle": "Untätig",
+    "provider": {
+      "freellmLocal": "FreeLLM (lokaler Router)",
+      "anthropicOAuth": "Anthropic OAuth (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "läuft nicht"
+    },
+    "harness": {
+      "directChat": "Direkter Chat"
+    }
+  },
+  "providers": {
+    "title": "Provider",
+    "configured": "{{count}} konfiguriert",
+    "none": "Keine Provider konfiguriert. Öffnen Sie Einstellungen, um einen Schlüssel hinzuzufügen.",
+    "connected": "Verbunden",
+    "tier": {
+      "oauthPro": "OAuth & Pro",
+      "free": "Kostenlose Provider",
+      "tools": "Tools"
+    },
+    "footer": "+ FreeLLM-Router (kein Schlüssel erforderlich) · free-claude-code — beide antworten von dieser Maschine und leiten Ihren Prompt an einen Cloud-Anbieter weiter"
+  },
+  "runtimes": {
+    "title": "Auf dieser Maschine erkannt",
+    "rescan": "Erneut scannen",
+    "scanning": "Wird gescannt…",
+    "state": {
+      "running": "LÄUFT",
+      "healthy": "GESUND",
+      "connected": "VERBUNDEN",
+      "installed": "BEREIT",
+      "starting": "WIRD GESTARTET",
+      "stopped": "BEENDET",
+      "not_installed": "NICHT INSTALLIERT",
+      "error": "FEHLER",
+      "unreachable": "UNERREICHBAR"
+    }
+  },
+  "conversations": {
+    "title": "Gespräche",
+    "total": "Gesamt",
+    "messages": "Nachrichten",
+    "youWrote": "Sie haben geschrieben",
+    "modelWrote": "Modell hat geschrieben",
+    "tokensUsed": "Tokens verwendet",
+    "byProvider": "Nach Provider",
+    "none": "Noch keine Gespräche."
+  },
+  "workflow": {
+    "title": "Workflow-Leinwand",
+    "open": "Öffnen ↗",
+    "description": "Stellen Sie Provider + Agent + Skill-Nodes in einen Graph zusammen. Verdrahten Sie Ausgaben in Eingaben, um Läufe zu verketten.",
+    "edges": "Kanten",
+    "inputs": "Eingaben",
+    "providers": "Provider",
+    "outputs": "Ausgaben"
+  },
+  "aeon": {
+    "auth": "Auth",
+    "signedIn": "Angemeldet",
+    "notSignedIn": "Nicht angemeldet",
+    "user": "Benutzer",
+    "ghClient": "gh-Client",
+    "signInPrompt": "Öffnen Sie die Aeon-Registerkarte und klicken Sie auf",
+    "signInButton": "Bei GitHub anmelden"
+  },
+  "audit": {
+    "title": "Ausgehende Anfragen · {{count}}",
+    "loading": "wird geladen…",
+    "live": "LIVE 5s",
+    "reload": "Neu laden",
+    "clear": "Löschen",
+    "explainer": "Netzwerkaufrufe, die der Tachi-Studio-Hauptprozess direkt getätigt hat — zu GitHub, Ihrem gewählten LLM-Provider, Ollama usw. Grün = OK, Gelb = umgeleitet, Rot = Fehler. Klicken Sie auf eine Zeile für die vollständige URL und Zeit. Hinweis: Aufrufe aus lokalen Dienst-Prozessen (OpenClaude, freellmapi) und On-Chain-Wallet-RPC werden hier NICHT angezeigt — dies ist also eine Debugging-Hilfe, kein vollständiges Egress-Protokoll.",
+    "filterAll": "Alle",
+    "category": {
+      "other": "Sonstiges"
+    },
+    "emptyNone": "Noch keine Netzwerkanfragen aufgezeichnet. Verwenden Sie die Chat-Registerkarte oder triggern Sie eine Aktion.",
+    "emptyFilter": "Keine Einträge stimmen dem ausgewählten Filter überein.",
+    "detail": {
+      "url": "URL",
+      "status": "Status",
+      "networkError": "Netzwerkfehler",
+      "duration": "Dauer",
+      "reqSize": "Req.-Größe",
+      "resSize": "Res.-Größe",
+      "time": "Zeit",
+      "category": "Kategorie"
+    }
+  },
+  "doctor": {
+    "title": "Doktor",
+    "run": "Prüfen",
+    "running": "Prüfe…",
+    "hint": "Führt jedes externe Binary (Piper, SD, yt-dlp, Whisper, llama.cpp, Chromium) und den FreeLLM-Router mit einem Testbefehl aus — findet kaputte Installationen, die das „installiert“-Flag übersieht.",
+    "status": {
+      "ok": "ok",
+      "missing": "fehlt",
+      "broken": "defekt",
+      "timeout": "Timeout",
+      "error": "Fehler"
+    }
+  }
+}

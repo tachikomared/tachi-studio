@@ -1,0 +1,29 @@
+:root[data-theme="tachi-dark"] {
+  --bg-base:       #0f0f0f;
+  --bg-surface:    #111111;
+  --bg-elevated:   #141414;
+  --bg-inset:      #0a0a0a;
+  --bg-sidebar:    #141414;
+  --accent:        #6b38d4;
+  --accent-hover:  #8455ef;
+  --accent-alt:    #d43f00;
+  --accent-muted:  #1e1530;
+  --accent-text:   #d0bcff;
+  --text-primary:  #f5f5f0;
+  --text-muted:    #888888;
+  --text-dim:      #444444;
+  --border:        #2a2a2a;
+  --border-strong: #3a3a3a;
+  /* ONE semantic red: --destructive is an alias of --danger (audit: error text
+     and delete buttons used to render two different reds). */
+  --destructive:   var(--danger);
+  --success:       #52c41a;
+  --warning:       #faad14;
+  --danger:        #ff5252;
+  --info:          #60a5fa;
+  --shadow-hard:   2px 2px 0 #000000;
+  /* Larger offset variant for hover "lift" — same color, bigger shadow. */
+  --shadow-hard-lg: 6px 6px 0 #000000;
+  --shadow-soft:   2px 2px 0 rgba(0,0,0,0.3);
+  --border-width:  2px;
+}

@@ -1,0 +1,26 @@
+packages:
+  - apps/*
+  - packages/*
+  # Docs site (VitePress) — not part of the desktop build pipeline.
+  - website
+allowBuilds:
+  # nookplot's native crypto build scripts are intentionally NOT run — ethers v6
+  # uses pure-JS (@noble) crypto, so keccak/secp256k1 native addons aren't needed.
+  '@nookplot/mcp': false
+  electron: true
+  # electron-builder 26's Squirrel packager dep — postinstall only unpacks its
+  # vendored binaries; we build NSIS, but the script is harmless and required
+  # for install to proceed.
+  electron-winstaller: true
+  esbuild: true
+  keccak: false
+  node-pty: true
+  # RAG embedder (@huggingface/transformers): onnxruntime-node ships prebuilt
+  # NAPI binaries — its script only relocates them. sharp is the IMAGE pipeline
+  # backend which text embeddings never touch; keep its native build off.
+  onnxruntime-node: true
+  protobufjs: true
+  secp256k1: false
+  sharp: false
+overrides:
+  "@inngest/ai": "0.1.7"

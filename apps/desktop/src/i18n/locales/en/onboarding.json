@@ -1,0 +1,152 @@
+{
+  "steps": {
+    "welcome": "Welcome",
+    "privacy": "Privacy",
+    "provider": "Provider",
+    "vibe": "Vibe",
+    "done": "Done"
+  },
+  "footer": {
+    "step": "Step {{current}} of {{total}}",
+    "skipAll": "Skip all"
+  },
+  "nav": {
+    "back": "Back",
+    "continue": "Continue"
+  },
+  "welcome": {
+    "heading": "Zero-terminal AI workbench",
+    "builtBy": "Built by TachikomaRed on Bankr",
+    "features": {
+      "chat": "Chat with any model — Anthropic, Ollama, OpenRouter, free tier",
+      "code": "Ship code with an agentic loop, no terminal needed",
+      "aeon": "Aeon HQ: kanban + skills running on GitHub Actions"
+    },
+    "continue": "Continue",
+    "skip": "Skip onboarding",
+    "choose": "Pick your path",
+    "cards": {
+      "local": {
+        "title": "RUN LOCAL",
+        "desc": "Download a model picked for your hardware and run it on this machine. No account, no key.",
+        "hint": "NEXT: MODEL CATALOG"
+      },
+      "cloud": {
+        "title": "BRING API KEY",
+        "desc": "Connect a cloud provider — Bankr, Anthropic, OpenRouter — with your own key.",
+        "hint": "NEXT: KEY FORM"
+      },
+      "explore": {
+        "title": "JUST EXPLORE",
+        "desc": "Skip setup and look around. Add a model or a key later in Settings.",
+        "hint": "NEXT: STRAIGHT IN"
+      }
+    },
+    "privacyNote": "Your prompts stay on this machine only with a local model (Ollama or llama.cpp) — the keyless router forwards them to free cloud providers."
+  },
+  "privacy": {
+    "heading": "How do you want to start?",
+    "subtext": "You can switch anytime via Command Palette → \"Toggle PRIVATE MODE\".",
+    "free": {
+      "title": "FREE + FAST",
+      "recommended": "RECOMMENDED",
+      "tagline": "(for everyone — quickest path to chat)",
+      "features": {
+        "cloud": "cloud providers enabled",
+        "freeTier": "free tier defaults",
+        "oneClick": "one-click chat",
+        "noKey": "no key needed for pollinations / llm7"
+      },
+      "pick": "[ PICK FREE + FAST ]"
+    },
+    "private": {
+      "title": "PRIVATE + LOCAL",
+      "strict": "STRICT",
+      "tagline": "(paranoid / crypto-native — local only)",
+      "features": {
+        "cloudLocked": "cloud providers locked",
+        "ollamaOnly": "only ollama allowed",
+        "noEgress": "no network egress",
+        "toolsDenied": "tool calls denylisted"
+      },
+      "pick": "[ PICK PRIVATE + LOCAL ]"
+    },
+    "skipForNow": "Skip for now"
+  },
+  "provider": {
+    "heading": "Pick a provider",
+    "subtext": "You can change this later in Settings.",
+    "privateBanner": {
+      "title": "[ PRIVATE MODE ACTIVE ]",
+      "body": "Only local providers can be selected. Cloud providers are locked — toggle PRIVATE MODE off later to enable them."
+    },
+    "list": {
+      "freellmapi": "Free tier, no API key needed. Shared rate limits apply.",
+      "bankr-gateway": "Paste your Bankr LLM key to use the Bankr cloud provider.",
+      "anthropic-oauth": "OAuth login with your Anthropic Pro or Max account.",
+      "ollama": "Local inference via Ollama running on this machine. No key needed.",
+      "openrouter": "Access hundreds of models via OpenRouter OAuth."
+    },
+    "selected": "SELECTED",
+    "locked": "LOCKED",
+    "lockedTitle": "Blocked in PRIVATE MODE — only local providers (Ollama) are allowed",
+    "bankrKey": "Bankr key",
+    "test": "Test",
+    "hints": {
+      "connected": "Connected",
+      "authInvalid": "Key rejected (401/403). Re-check the key.",
+      "degraded": "Upstream responded with an error.",
+      "unreachable": "Host unreachable — check network or URL."
+    },
+    "skipStep": "Skip step",
+    "testStates": {
+      "ok": "OK",
+      "auth": "AUTH",
+      "noNet": "NO NET",
+      "warn": "WARN"
+    },
+    "gpuBanner": {
+      "title": "GPU ready",
+      "body": "{{gpu}} ({{vram}}) detected — you can run models fully locally on your GPU. Pick a provider now; add local models any time in Settings → llama.cpp."
+    }
+  },
+  "vibe": {
+    "heading": "Pick a vibe",
+    "subtext": "What do you want to do first?",
+    "selected": "SELECTED",
+    "list": {
+      "chat": {
+        "label": "Chat",
+        "desc": "Just talk to a model",
+        "detail": "Open-ended conversation with any provider. Best for Q&A, writing, brainstorming."
+      },
+      "code": {
+        "label": "Code",
+        "desc": "Ship features with an agent",
+        "detail": "Agentic loop that reads, writes, and runs code on your machine. Zero terminal required."
+      },
+      "aeon": {
+        "label": "Aeon HQ",
+        "desc": "Kanban + skills on GitHub Actions",
+        "detail": "Dispatch cloud agents from a kanban board. Skills run in GitHub Actions on your fork."
+      }
+    }
+  },
+  "done": {
+    "status": "SETUP COMPLETE",
+    "heading": "You're set up.",
+    "hints": {
+      "chat": "Head to Chat and start a conversation.",
+      "code": "Open Agent mode and describe a task — it will read, write, and run code for you.",
+      "aeon": "Open Aeon HQ, fork the repo, and dispatch your first skill.",
+      "local": "The model catalog opens next — grab a model sized for your hardware.",
+      "default": "Explore the sidebar to get started."
+    },
+    "next": {
+      "settings": "Open Settings to configure additional providers or themes",
+      "shortcut": "Use Cmd/Ctrl+, to jump to Settings at any time",
+      "sidebar": "Check the sidebar for Chat, Code, Dashboard, and Aeon"
+    },
+    "open": "Open Tachi Studio"
+  }
+}

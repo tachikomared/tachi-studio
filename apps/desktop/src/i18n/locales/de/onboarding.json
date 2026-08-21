@@ -1,0 +1,152 @@
+{
+  "steps": {
+    "welcome": "Willkommen",
+    "privacy": "Datenschutz",
+    "provider": "Provider",
+    "vibe": "Vibe",
+    "done": "Fertig"
+  },
+  "footer": {
+    "step": "Schritt {{current}} von {{total}}",
+    "skipAll": "Alle überspringen"
+  },
+  "nav": {
+    "back": "Zurück",
+    "continue": "Weiter"
+  },
+  "welcome": {
+    "heading": "Zero-Terminal KI-Workbench",
+    "builtBy": "Gebaut von TachikomaRed auf Bankr",
+    "features": {
+      "chat": "Mit jedem Modell chatten — Anthropic, Ollama, OpenRouter, free tier",
+      "code": "Code mit einer agentic Schleife versenden, kein Terminal erforderlich",
+      "aeon": "Aeon HQ: kanban + Skills auf GitHub Actions"
+    },
+    "continue": "Weiter",
+    "skip": "Onboarding überspringen",
+    "choose": "Wählen Sie Ihren Weg",
+    "cards": {
+      "local": {
+        "title": "LOKAL AUSFÜHREN",
+        "desc": "Laden Sie ein für Ihre Hardware ausgewähltes Modell herunter und führen Sie es auf dieser Maschine aus. Kein Konto, kein Schlüssel.",
+        "hint": "WEITER: MODELLKATALOG"
+      },
+      "cloud": {
+        "title": "EIGENER API-SCHLÜSSEL",
+        "desc": "Verbinden Sie einen Cloud-Anbieter — Bankr, Anthropic, OpenRouter — mit Ihrem eigenen Schlüssel.",
+        "hint": "WEITER: SCHLÜSSEL-FORMULAR"
+      },
+      "explore": {
+        "title": "NUR UMSCHAUEN",
+        "desc": "Überspringen Sie die Einrichtung und schauen Sie sich um. Modell oder Schlüssel können Sie später in den Einstellungen hinzufügen.",
+        "hint": "WEITER: DIREKT REIN"
+      }
+    },
+    "privacyNote": "Ihre Prompts bleiben nur mit einem lokalen Modell (Ollama oder llama.cpp) auf dieser Maschine — der schlüssellose Router leitet sie an kostenlose Cloud-Anbieter weiter."
+  },
+  "privacy": {
+    "heading": "Wie möchten Sie beginnen?",
+    "subtext": "Sie können jederzeit über Befehlspalette → \"Toggle PRIVATE MODE\" wechseln.",
+    "free": {
+      "title": "KOSTENLOS + SCHNELL",
+      "recommended": "EMPFOHLEN",
+      "tagline": "(für alle — schnellster Weg zum Chat)",
+      "features": {
+        "cloud": "Cloud-Provider aktiviert",
+        "freeTier": "free tier Standardeinstellungen",
+        "oneClick": "Ein-Klick-Chat",
+        "noKey": "Kein Schlüssel für pollinations / llm7 erforderlich"
+      },
+      "pick": "[ KOSTENLOS + SCHNELL AUSWÄHLEN ]"
+    },
+    "private": {
+      "title": "PRIVAT + LOKAL",
+      "strict": "STRENG",
+      "tagline": "(paranoid / Krypto-nativ — nur lokal)",
+      "features": {
+        "cloudLocked": "Cloud-Provider gesperrt",
+        "ollamaOnly": "Nur Ollama erlaubt",
+        "noEgress": "Kein Netzwerk-Egress",
+        "toolsDenied": "Tool-Aufrufe auf schwarze Liste"
+      },
+      "pick": "[ PRIVAT + LOKAL AUSWÄHLEN ]"
+    },
+    "skipForNow": "Vorerst überspringen"
+  },
+  "provider": {
+    "heading": "Wählen Sie einen Provider",
+    "subtext": "Sie können dies später in den Einstellungen ändern.",
+    "privateBanner": {
+      "title": "[ PRIVATE MODE AKTIV ]",
+      "body": "Nur lokale Provider können ausgewählt werden. Cloud-Provider sind gesperrt — schalten Sie später PRIVATE MODE aus, um sie zu aktivieren."
+    },
+    "list": {
+      "freellmapi": "free tier, kein API-Schlüssel erforderlich. Gemeinsame Ratenbegrenzungen gelten.",
+      "bankr-gateway": "Fügen Sie Ihren Bankr LLM-Schlüssel ein, um den Bankr-Cloud-Provider zu verwenden.",
+      "anthropic-oauth": "OAuth-Anmeldung mit Ihrem Anthropic Pro- oder Max-Konto.",
+      "ollama": "Lokale Inferenz über Ollama auf dieser Maschine. Kein Schlüssel erforderlich.",
+      "openrouter": "Zugriff auf Hunderte von Modellen über OpenRouter OAuth."
+    },
+    "selected": "AUSGEWÄHLT",
+    "locked": "GESPERRT",
+    "lockedTitle": "Im PRIVATE MODE blockiert — nur lokale Provider (Ollama) sind erlaubt",
+    "bankrKey": "Bankr-Schlüssel",
+    "test": "Testen",
+    "hints": {
+      "connected": "Verbunden",
+      "authInvalid": "Schlüssel abgelehnt (401/403). Überprüfen Sie den Schlüssel erneut.",
+      "degraded": "Upstream hat einen Fehler zurückgegeben.",
+      "unreachable": "Host unerreichbar — überprüfen Sie das Netzwerk oder die URL."
+    },
+    "skipStep": "Schritt überspringen",
+    "testStates": {
+      "ok": "OK",
+      "auth": "ABGELEHNT",
+      "noNet": "KEIN NETZ",
+      "warn": "WARNUNG"
+    },
+    "gpuBanner": {
+      "title": "GPU bereit",
+      "body": "{{gpu}} ({{vram}}) erkannt — du kannst Modelle vollständig lokal auf deiner GPU ausführen. Wähle jetzt einen Anbieter; lokale Modelle jederzeit unter Einstellungen → llama.cpp."
+    }
+  },
+  "vibe": {
+    "heading": "Wählen Sie einen Vibe",
+    "subtext": "Was möchten Sie zuerst tun?",
+    "selected": "AUSGEWÄHLT",
+    "list": {
+      "chat": {
+        "label": "Chat",
+        "desc": "Nur mit einem Modell sprechen",
+        "detail": "Offenes Gespräch mit jedem Provider. Am besten für Fragen & Antworten, Schreiben, Brainstorming."
+      },
+      "code": {
+        "label": "Code",
+        "desc": "Versenden Sie Features mit einem Agent",
+        "detail": "Agentische Schleife, die auf Ihrer Maschine Code liest, schreibt und ausführt. Kein Terminal erforderlich."
+      },
+      "aeon": {
+        "label": "Aeon HQ",
+        "desc": "Kanban + Skills auf GitHub Actions",
+        "detail": "Versenden Sie Cloud-Agents von einem kanban-Board aus. Skills laufen auf GitHub Actions auf Ihrem Fork."
+      }
+    }
+  },
+  "done": {
+    "status": "SETUP ABGESCHLOSSEN",
+    "heading": "Sie sind eingerichtet.",
+    "hints": {
+      "chat": "Gehen Sie zu Chat und starten Sie ein Gespräch.",
+      "code": "Öffnen Sie den Agent-Modus und beschreiben Sie eine Aufgabe — er liest, schreibt und führt Code aus.",
+      "aeon": "Öffnen Sie Aeon HQ, forken Sie das Repository und versenden Sie Ihren ersten Skill.",
+      "default": "Erkunden Sie die Seitenleiste, um zu beginnen.",
+      "local": "Als Nächstes öffnet sich der Modellkatalog — holen Sie sich ein Modell in der Größe Ihrer Hardware."
+    },
+    "next": {
+      "settings": "Öffnen Sie Einstellungen, um zusätzliche Provider oder Designs zu konfigurieren",
+      "shortcut": "Verwenden Sie Cmd/Strg+, um jederzeit zu den Einstellungen zu springen",
+      "sidebar": "Überprüfen Sie die Seitenleiste auf Chat, Agent, Dashboard und Aeon HQ"
+    },
+    "open": "Tachi Studio öffnen"
+  }
+}

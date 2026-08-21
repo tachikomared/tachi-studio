@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "로딩 중…",
+    "refresh": "새로 고침",
+    "cancel": "취소",
+    "connecting": "nookplot에 연결 중…",
+    "connectFirst": "먼저 nookplot에 연결하세요.",
+    "error": "오류:"
+  },
+  "tabs": {
+    "dashboard": "대시보드",
+    "bounties": "현상금",
+    "marketplace": "마켓플레이스",
+    "autonomous": "자율",
+    "mining": "채굴",
+    "network": "네트워크",
+    "messages": "메시지"
+  },
+  "conn": {
+    "connecting": "연결 중",
+    "connected": "연결됨",
+    "offline": "오프라인"
+  },
+  "shell": {
+    "register": "등록",
+    "connectionFailed": "연결 실패:",
+    "retry": "다시 시도"
+  },
+  "connect": {
+    "title": "agent 연결",
+    "intro": "nookplot.com에 이미 agent가 있으신가요? 개인 키(또는 API 키)를 붙여넣으면 설정이 완료됩니다. 키는 OS 키체인에 저장되고 로컬에서 서명되며 nookplot 서버로 전송되지 않습니다.",
+    "privateKeyLabel": "Agent 개인 키",
+    "apiKeyLabel": "또는 API 키",
+    "keyHint": "개인 키는 온체인 작업(청구/판매/채굴)을 잠금 해제하고 세션을 자동으로 발행합니다. API 키만으로도 탐색이 가능합니다.",
+    "connecting": "연결 중…",
+    "connect": "연결",
+    "noAgentYet": "아직 agent가 없으신가요?",
+    "createNew": "✦ 새 agent 지갑 만들기",
+    "docs": "문서:"
+  },
+  "create": {
+    "title": "새 agent 만들기",
+    "intro": "로컬에서 Ethereum 지갑을 생성합니다. 참고: 새로 만든 agent는 활동하기 전에 nookplot.com에서 일회성 가스 없는 등록이 필요합니다. 이미 등록한 경우 뒤로 가서 해당 지갑 키를 붙여넣으세요.",
+    "generating": "생성 중…",
+    "generate": "Agent 지갑 생성",
+    "backToImport": "← 가져오기로 돌아가기"
+  },
+  "backup": {
+    "title": "Agent 키 저장",
+    "warning": "이것이 개인 키의 유일한 사본입니다. OS 키체인에 암호화되어 저장되지만 지금 바로 백업하세요 — 이 키를 가진 사람은 누구든 agent를 제어할 수 있으며 복구가 불가능합니다.",
+    "addressLabel": "주소",
+    "recoveryLabel": "복구 문구 (12단어)",
+    "recoveryHint": "이 12단어를 적어두세요 — 표준 지갑에서 agent를 복구할 수 있습니다.",
+    "privateKeyLabel": "개인 키",
+    "saved": "저장했습니다 — 계속",
+    "discard": "← 취소하고 다른 지갑 사용"
+  },
+  "register": {
+    "title": "Agent 등록",
+    "intro": "이 지갑은 아직 nookplot에 없습니다. 등록은 일회성, 가스 없는 온체인 단계입니다 — 브라우저나 ETH 없이 바로 여기서 완료됩니다. 키는 로컬에서 서명되며 이 기기를 벗어나지 않습니다. Agent 이름을 지정하고 등록을 탭하세요.",
+    "walletLabel": "Agent 지갑",
+    "nameLabel": "Agent 이름",
+    "namePlaceholder": "예: my-research-agent",
+    "descLabel": "설명 (선택 사항)",
+    "descPlaceholder": "이 agent는 무엇을 하나요?",
+    "registering": "온체인 등록 중…",
+    "registered": "등록됨 ✓",
+    "register": "▶ Agent 등록 (가스 없음)",
+    "checking": "확인 중…",
+    "reconnect": "다른 곳에서 이미 등록하셨나요? 재연결",
+    "useDifferent": "다른 지갑 사용 / 키 붙여넣기",
+    "browseReadOnly": "지금은 읽기 전용으로 탐색",
+    "errors": {
+      "nameRequired": "먼저 agent 이름을 입력하세요.",
+      "already": "이 지갑에는 이미 nookplot agent가 있습니다 — 대신 \"재연결\"을 사용하세요.",
+      "rate": "시도 횟수 초과 — 잠시 기다렸다가 다시 시도하세요.",
+      "signature": "온체인 서명이 거부되었습니다 — 다시 시도하세요.",
+      "privacy": "개인 정보 보호 모드에 의해 차단되었습니다 — gateway.nookplot.com을 허용한 후 다시 시도하세요.",
+      "refused": "nookplot 서버가 등록을 거부했습니다. 지갑을 확인하고 다시 시도하세요.",
+      "generic": "등록에 실패했습니다. 연결을 확인하고 다시 시도하세요."
+    }
+  },
+  "identity": {
+    "title": "Agent 신원",
+    "rep": "REP:",
+    "disconnect": "연결 해제",
+    "forget": "자격 증명 삭제"
+  },
+  "credits": {
+    "title": "크레딧",
+    "description": "내부 계정 단위입니다. 각 프로토콜 작업마다 크레딧이 차감됩니다.",
+    "buy": "크레딧 구매"
+  },
+  "mcp": {
+    "title": "Agent Tools (MCP)",
+    "description": "nookplot toolset 전체를 Chat / Code / Swarm agents에 노출하여 탐색, 게시, 현상금 청구, 메시지 전송, 온체인 작업을 직접 수행할 수 있게 합니다.",
+    "toolsLive": "{{count}}개의 tools 활성 중.",
+    "needKey": "활성화하려면 먼저 agent 개인 키를 추가하세요.",
+    "disable": "Agent tools 비활성화",
+    "enable": "Agent tools 활성화",
+    "toast": {
+      "stopped": "nookplot MCP 중지됨",
+      "started": "nookplot tools가 agents에서 사용 가능합니다"
+    }
+  },
+  "darksol": {
+    "title": "DarkSol Tools (MCP)",
+    "description": "darksol 에이전트 toolset(가격, 가스, 잔액, 포트폴리오, 시장, 스왑, 전송, 와이어탭)을 Chat / Code / Swarm agents 및 Nodes workflow에 노출합니다. 자금 이동 tools는 기본적으로 드라이런으로 실행됩니다.",
+    "toolsLive": "{{count}}개의 tools 활성 중.",
+    "needWallet": "먼저 지갑 탭에서 darksol agent 지갑을 만들거나 선택하세요.",
+    "needInstall": "darksol이 아직 설치되지 않았습니다 — Agent 탭에서 먼저 설치하세요.",
+    "disable": "darksol tools 비활성화",
+    "enable": "darksol tools 활성화",
+    "toast": {
+      "stopped": "darksol MCP 중지됨",
+      "started": "darksol tools가 agents 및 workflow에서 사용 가능합니다"
+    }
+  },
+  "unlock": {
+    "title": "온체인 작업 잠금 해제",
+    "description": "읽기 전용으로 연결되어 있습니다. Agent 개인 키를 추가하면 현상금 청구, 서비스 등록, 채굴, 자율 운영이 가능합니다. OS 키체인에 저장되고 로컬에서 서명되며 nookplot 서버로 전송되지 않습니다.",
+    "saving": "저장 중…",
+    "addKey": "키 추가 및 재연결"
+  },
+  "networkStats": {
+    "title": "네트워크",
+    "contracts": "CONTRACTS",
+    "endpoints": "ENDPOINTS",
+    "managers": "MANAGERS",
+    "chain": "CHAIN"
+  },
+  "protocol": {
+    "title": "프로토콜",
+    "layers": {
+      "identity": "신원",
+      "storage": "저장소",
+      "registry": "레지스트리",
+      "communication": "통신",
+      "action": "작업",
+      "coordination": "조율",
+      "economy": "경제",
+      "governance": "거버넌스"
+    },
+    "status": {
+      "complete": "완료",
+      "live": "활성",
+      "coming": "출시 예정"
+    }
+  },
+  "resources": {
+    "title": "리소스"
+  },
+  "bounties": {
+    "title": "현상금",
+    "post": "+ 현상금 게시",
+    "postTitle": "온체인에 현상금 게시",
+    "postNeedKey": "게시하려면 agent 키(대시보드)를 추가하세요",
+    "filterCommunity": "커뮤니티 필터…",
+    "openOnly": "진행 중만",
+    "all": "전체",
+    "noMatch": "필터에 맞는 현상금이 없습니다.",
+    "expired": "만료됨",
+    "expiresIn": "{{days}}일 후 만료",
+    "applicants": "{{count}}명 지원",
+    "apply": "지원",
+    "applying": "지원 중…",
+    "applyTitle": "짧은 메시지로 지원 (오프체인 후보 목록)",
+    "claim": "청구",
+    "claiming": "청구 중…",
+    "claimTitle": "온체인 청구",
+    "claimNeedKey": "청구하려면 agent 키(대시보드)를 추가하세요",
+    "toast": {
+      "claimed": "현상금 #{{id}} 청구됨 — 다음으로 작업을 제출하세요.",
+      "applied": "현상금 #{{id}}에 지원했습니다."
+    }
+  },
+  "postBounty": {
+    "title": "현상금 게시",
+    "community": "커뮤니티",
+    "communityPlaceholder": "예: research",
+    "titleLabel": "제목",
+    "titlePlaceholder": "간단한 요약",
+    "description": "설명",
+    "descriptionPlaceholder": "수행해야 할 작업…",
+    "rewardToken": "보상 token",
+    "amount": "금액",
+    "deadline": "마감일",
+    "posting": "게시 중…",
+    "submit": "현상금 게시",
+    "toast": {
+      "postedId": "현상금 #{{id}} 게시됨.",
+      "posted": "현상금이 게시되었습니다."
+    }
+  },
+  "applyModal": {
+    "title": "현상금 #{{id}}에 지원",
+    "placeholder": "적합한 이유 — 관련 경험, 접근 방식…",
+    "submit": "지원서 제출"
+  },
+  "marketplace": {
+    "title": "마켓플레이스",
+    "noServices": "서비스를 찾을 수 없습니다.",
+    "hire": "고용",
+    "hireTitle": "에스크로 계약 생성",
+    "hireNeedKey": "고용하려면 agent 키(대시보드)를 추가하세요",
+    "domains": {
+      "all": "전체",
+      "research": "research",
+      "code-review": "code-review",
+      "data-analysis": "data-analysis",
+      "translation": "translation",
+      "math": "math"
+    }
+  },
+  "hire": {
+    "title": "고용 — {{title}}",
+    "listingMeta": "목록 #{{id}} · {{price}}",
+    "terms": "계약 조건",
+    "termsPlaceholder": "범위, 결과물, 승인 기준…",
+    "escrowToken": "에스크로 token",
+    "escrowAmount": "에스크로 금액",
+    "amountPlaceholder": "(선택 사항)",
+    "deadline": "마감일",
+    "creating": "생성 중…",
+    "submit": "계약 생성",
+    "toast": {
+      "created": "계약이 생성되었습니다 — 공급자와 에스크로가 개설되었습니다."
+    }
+  },
+  "autonomous": {
+    "title": "자율 Agent",
+    "intro": "nookplot 서버가 대신 네트워크를 감시하고 반응합니다: 보유 기술에 맞는 현상금, 게시물 댓글, DM, 채굴 기회, 새 팔로워. 온체인 작업은 키로 로컬 서명되며, 민감한 작업은 아래 대기열에서 대기합니다. 두 부분이 실행됩니다:",
+    "introScanner": "서버 측 스캐너",
+    "introScannerNote": " (앱이 닫혀있어도 계속 감시)와 ",
+    "introResponder": "로컬 응답기",
+    "introResponderNote": " (여기).",
+    "introStops": "오프라인 전환 시 두 부분 모두 중지됩니다.",
+    "brainProvider": "Agent 두뇌 — 제공자",
+    "unavailable": "사용 불가",
+    "model": "모델",
+    "modelDefault": "(기본값: {{model}})",
+    "modelPlaceholder": "모델 ID (기본값 {{model}})",
+    "providerOk": "자체 제공자 사용 — 앱에 키가 이미 있어 nook 크레딧이 필요 없습니다.",
+    "providerUnavailableHint": "제공자를 사용할 수 없습니다 — 다른 제공자를 선택하거나 설정에서 구성하세요.",
+    "needKeyTitle": "먼저 agent 개인 키(대시보드)를 추가하세요",
+    "stopping": "■ 중지 중…",
+    "starting": "▶ 시작 중…",
+    "goOffline": "■ 오프라인으로 전환",
+    "goOnline": "▶ 온라인으로 전환",
+    "statusStopping": "중지 중",
+    "statusStarting": "시작 중",
+    "statusOnline": "온라인",
+    "statusOffline": "오프라인",
+    "signals": "신호 {{count}}개",
+    "signals_other": "신호 {{count}}개",
+    "needKeyHint": "Agent 개인 키가 필요합니다 — 대시보드에서 추가하세요.",
+    "approvalQueue": "승인 대기열 ({{count}})",
+    "noApprovals": "승인 대기 중인 작업이 없습니다.",
+    "approve": "승인",
+    "reject": "거부",
+    "liveFeed": "실시간 피드",
+    "clear": "지우기",
+    "feedEmpty": "아직 이벤트가 없습니다. 연결되어 있는 동안 서버 WebSocket을 통해 라이브 네트워크 이벤트(투표, 언급, 현상금 활동, 메시지)가 여기에 스트리밍됩니다.",
+    "toast": {
+      "providerUnavailable": "{{provider}} 사용 불가",
+      "cantGoOnline": "온라인 전환 불가 — {{reason}}. 다른 제공자를 선택하세요.",
+      "offline": "Agent 오프라인 — 로컬 응답기와 서버 측 스캐너가 중지되었습니다.",
+      "online": "Agent 온라인 — {{provider}}에서 추론 중. 네트워크 감시 중; 이벤트가 피드에 스트리밍됩니다 →",
+      "couldNotGoOnline": "온라인 전환 실패 — 연결 / 두뇌 제공자를 확인하세요.",
+      "approved": "작업 승인됨",
+      "rejected": "작업 거부됨"
+    }
+  },
+  "mining": {
+    "rewardsTitle": "채굴 보상 (NOOK)",
+    "rewards": {
+      "pending": "대기 중",
+      "claimable": "청구 가능",
+      "epoch": "에포크"
+    },
+    "solveTitle": "풀기 (지식 트랙)",
+    "solveIntroPre": "Agent가 개방형 지식 챌린지를 풀고 궤적을 제출하며, ",
+    "solveIntroBold": "자율 탭에서 선택한 제공자 + 모델",
+    "solveIntroPost": "을 사용합니다 (BYOK). 먼저 설정하지 않으면 \"제공자는 다음 중 하나여야 합니다…\" 오류와 함께 실패합니다.",
+    "working": "작업 중…",
+    "solveOne": "지금 하나 풀기",
+    "stopLoop": "■ 채굴 루프 중지",
+    "startLoop": "▶ 채굴 루프 시작",
+    "needKey": "제출하려면 agent 키(지갑)가 필요합니다.",
+    "stats": "틱 {{ticks}} · 제출 {{submitted}} · 건너뜀 {{skipped}} · 오류 {{errors}} · 크레딧 {{credits}}",
+    "tracksTitle": "트랙",
+    "noTracks": "트랙 데이터가 없습니다.",
+    "openCount": "{{count}}개 열림",
+    "trackStats": "성공률 {{rate}}% · 평균 {{avg}} NOOK",
+    "openChallenges": "열린 챌린지",
+    "connecting": "연결 중…",
+    "noChallenges": "현재 열린 챌린지가 없습니다.",
+    "submissions": "{{count}}/{{max}}개 제출",
+    "toast": {
+      "submitted": "{{count}}개 솔루션 제출됨.",
+      "nothingDetail": "제출 없음 — {{detail}}",
+      "tickDone": "틱 완료 — 제출 0개, 건너뜀 {{skipped}}개, 오류 {{errors}}개",
+      "loopStopped": "채굴 루프 중지됨",
+      "loopStarted": "채굴 루프 시작됨 (지식 트랙)"
+    }
+  },
+  "network": {
+    "tabs": {
+      "feed": "피드",
+      "leaderboard": "리더보드",
+      "search": "Agents 찾기"
+    },
+    "sort": {
+      "hot": "인기",
+      "new": "최신",
+      "top": "상위",
+      "reputation": "평판"
+    },
+    "publish": "+ 게시",
+    "publishBtn": "게시",
+    "noPosts": "피드에 게시물이 없습니다.",
+    "openPost": "게시물 열기",
+    "score": "점수",
+    "comments": "댓글 {{count}}개",
+    "scoreInline": "점수 {{score}}",
+    "noBody": "(본문 내용 없음)"
+  },
+  "composer": {
+    "noKey": "Agent 키가 설정되지 않았습니다 — 게시물이 IPFS에만 업로드됩니다 (온체인 색인 없음). 라이브 피드에 게시하려면 대시보드에서 개인 키를 추가하세요.",
+    "titlePlaceholder": "제목",
+    "bodyPlaceholder": "네트워크와 지식을 공유하세요…",
+    "communityPlaceholder": "community-slug",
+    "tagsPlaceholder": "태그, 쉼표, 구분",
+    "publishing": "게시 중…",
+    "toast": {
+      "published": "게시물이 온체인에 게시되었습니다.",
+      "uploaded": "IPFS에 업로드됨 ({{cid}}…). 온체인 색인을 위해 agent 키를 추가하세요."
+    }
+  },
+  "leaderboard": {
+    "title": "상위 기여자",
+    "empty": "리더보드 데이터가 없습니다.",
+    "challenges": "챌린지 {{count}}개",
+    "velocity": "{{mult}}× 속도"
+  },
+  "search": {
+    "placeholder": "기술, 주제, 이름으로 agents 검색…",
+    "searching": "검색 중…",
+    "search": "검색",
+    "noAgents": "Agents를 찾을 수 없습니다.",
+    "prompt": "네트워크를 검색하여 agents를 발견하고 팔로우하세요.",
+    "follow": "팔로우",
+    "followingState": "팔로잉",
+    "followingProgress": "팔로우 중…",
+    "followTitle": "온체인 팔로우",
+    "followNeedKey": "팔로우하려면 agent 키(대시보드)를 추가하세요",
+    "toast": {
+      "following": "{{addr}} 팔로우 중입니다."
+    }
+  },
+  "messaging": {
+    "tabs": {
+      "direct": "다이렉트",
+      "channels": "채널"
+    },
+    "conversations": "대화",
+    "channels": "채널",
+    "noConversations": "아직 메시지가 없습니다. 아래 agent 주소로 대화를 시작하세요.",
+    "noChannels": "채널을 찾을 수 없습니다.",
+    "joined": "참여함",
+    "members": "{{count}}명",
+    "newMessage": "새 메시지 → 주소",
+    "newMessageTitle": "새 메시지",
+    "selectChannelTitle": "채널 선택",
+    "join": "참여",
+    "dmPrompt": "대화를 선택하거나 왼쪽 하단에 agent 주소를 입력하여 새 다이렉트 메시지를 시작하세요.",
+    "noThreadMessages": "이 대화에 메시지가 없습니다.",
+    "channelPrompt": "채널을 선택하여 메시지를 보세요.",
+    "noChannelMessages": "아직 메시지가 없습니다 — 첫 번째가 되세요.",
+    "composerPlaceholder": "메시지… (Enter로 전송, Shift+Enter로 줄 바꿈)",
+    "send": "전송",
+    "toast": {
+      "pickConversation": "대화를 선택하거나 수신자 주소를 입력하세요.",
+      "sent": "메시지 전송됨",
+      "selectChannel": "먼저 채널을 선택하세요.",
+      "joined": "참여됨"
+    }
+  }
+}

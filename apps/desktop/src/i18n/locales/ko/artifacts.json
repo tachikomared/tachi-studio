@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "전체",
+    "image": "이미지",
+    "video": "비디오",
+    "music": "MUSIC",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "prompt 검색…"
+  },
+  "empty": {
+    "none": "아직 아티팩트가 없습니다. 미디어 스튜디오나 Nodes 캔버스의 미디어 node에서 생성한 모든 결과물이 여기에 저장됩니다.",
+    "noneHint": "미디어 탭을 열어 첫 번째 아티팩트를 생성해 보세요.",
+    "noMatch": "{{scope}}{{query}}에 해당하는 아티팩트가 없습니다.",
+    "noMatchFilter": "이 필터"
+  },
+  "tile": {
+    "altFallback": "아티팩트",
+    "noPreview": "(미리보기 없음)",
+    "noPrompt": "(prompt 없음)",
+    "pin": "고정",
+    "pinned": "고정됨",
+    "pinTitle": "상단에 고정",
+    "unpinTitle": "고정 해제",
+    "completedAfterPrivate": "PRIVATE MODE 이후 완료",
+    "completedAfterPrivateTitle": "이 생성 요청은 PRIVATE MODE가 켜지기 전에 이미 전송된 상태였기 때문에 차단되지 않고 완료되어 저장되었습니다. 전환 이후 이 기기에서 새로 나간 것은 없습니다 — 이 시점에 거부했더라도 이미 전송된 결과물만 버려졌을 것입니다."
+  },
+  "actions": {
+    "fullscreen": "전체 화면",
+    "save": "저장",
+    "reveal": "파일 위치 열기"
+  },
+  "preview": {
+    "alt": "미리보기",
+    "close": "닫기 (Esc)"
+  },
+  "pane": {
+    "preview": "미리보기",
+    "code": "코드",
+    "openInDesign": "디자인에서 열기",
+    "restore": "복원",
+    "viewingVersion": "v{{n}} / {{max}} 보는 중 — 읽기 전용",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "이전 버전",
+    "newerVersion": "다음 버전",
+    "seedUser": "채팅에서 가져옴: {{title}}",
+    "seedAssistant": "채팅 아티팩트에서 시작됨 — 채팅으로 계속 다듬으세요."
+  }
+}

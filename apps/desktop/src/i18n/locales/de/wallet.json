@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "Geldbörse",
+    "subtitle": "MULTI-KETTE · App (nookplot · x402) + DarkSol-Agent-Geldbörsen"
+  },
+  "toast": {
+    "addressCopied": "Adresse kopiert",
+    "backupDownloaded": "Verschlüsselte Sicherung heruntergeladen",
+    "walletImported": "Geldbörse importiert",
+    "walletRemoved": "Geldbörse von diesem Gerät entfernt",
+    "agentWalletRemoved": "Agent-Geldbörse \"{{agentName}}\" entfernt"
+  },
+  "newKey": {
+    "backupNow": "Machen Sie jetzt eine Sicherung — nur Kopie",
+    "address": "Adresse",
+    "privateKey": "Privater Schlüssel",
+    "done": "Fertig — Geldbörse öffnen"
+  },
+  "empty": {
+    "title": "Noch keine Geldbörse",
+    "description": "Ihre App-weite Geldbörse — ein Konto für nookplot, x402-Zahlungen und jede Integration. Non-custodial: Der Schlüssel ist in Ihrem OS-Keychain verschlüsselt und verlässt dieses Gerät unverschlüsselt nie.",
+    "creating": "Wird erstellt…",
+    "create": "✦ Geldbörse erstellen",
+    "importKey": "Privaten Schlüssel importieren",
+    "keyPlaceholder": "0x…",
+    "import": "Importieren"
+  },
+  "account": {
+    "title": "Konto · {{label}}",
+    "noAddress": "—",
+    "copy": "Kopieren"
+  },
+  "balances": {
+    "title": "Guthaben",
+    "allNetworks": "· alle Netzwerke",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 zeigen",
+    "hide": "👁 verbergen",
+    "refreshing": "wird aktualisiert…",
+    "refresh": "↻ aktualisieren"
+  },
+  "backup": {
+    "title": "Verschlüsselte Sicherung",
+    "description": "Passwortgeschlüsselter Keystore (Web3 Secret Storage — funktioniert mit MetaMask/geth). Halten Sie die Datei + Passwort sicher; zusammen stellen sie Ihren Agent auf jeder Maschine wieder her.",
+    "password": "Sicherungspasswort (min. 8)",
+    "download": "Sicherung herunterladen"
+  },
+  "switch": {
+    "title": "Geldbörse wechseln",
+    "replaceTitle": "Schlüssel ersetzen · {{label}}",
+    "warning": "Exportieren Sie zuerst eine Sicherung — das Ersetzen des Schlüssels entfernt die aktuelle Geldbörse von diesem Gerät.",
+    "agentName": "Agent-Geldbörsenname",
+    "keyPlaceholder": "Privater Schlüssel 0x…",
+    "importKey": "Schlüssel importieren",
+    "orKeystore": "oder Keystore JSON + Passwort",
+    "keystorePassword": "Keystore-Passwort",
+    "importKeystore": "Keystore importieren"
+  },
+  "danger": {
+    "title": "Neu / entfernen",
+    "generate": "Neue Geldbörse generieren",
+    "forget": "Geldbörse vergessen",
+    "forgetNamed": "{{label}} vergessen"
+  },
+  "switcher": {
+    "account": "Konto",
+    "activeSuffix": " · Aktiv",
+    "new": "+ Neu",
+    "newPrompt": "Neuer DarkSol-Agent-Geldbörsenname:",
+    "newTitle": "Neue Agent-Geldbörse",
+    "newPlaceholder": "z. B. trading-bot",
+    "newOk": "Erstellen",
+    "newCancel": "Abbrechen"
+  },
+  "network": {
+    "all": "Alle Netzwerke"
+  },
+  "send": {
+    "title": "Senden · beliebiger Token",
+    "token": "Token",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "Empfänger",
+    "recipientPlaceholder": "0x… / Name.eth",
+    "amount": "Betrag",
+    "sending": "Wird gesendet…",
+    "send": "Senden",
+    "note": "Native + beliebiger ERC-20 im ausgewählten Netzwerk (oder Kontraktadresse einfügen). Cross-Chain → verwenden Sie den DarkSol-Agent (LI.FI).",
+    "toast": {
+      "success": "Gesendet — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "Finanzierung · App → {{agentName}}",
+    "amount": "Betrag (native)",
+    "moving": "Wird verschoben…",
+    "move": "Verschieben",
+    "note": "Hält Ihr NOOK / x402-Guthaben auf der App-Geldbörse unberührt.",
+    "toast": {
+      "success": "Finanziert — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Agent-Grenzen · DarkSol-Agent-Unterzeichner",
+    "maxPerTrade": "Max / Handel",
+    "daily": "Tägliche Grenze",
+    "dryRun": "Trockentest",
+    "on": "AN",
+    "off": "AUS",
+    "save": "Grenzen speichern",
+    "toast": {
+      "saved": "Grenzen gespeichert"
+    }
+  }
+}

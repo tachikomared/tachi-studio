@@ -1,0 +1,221 @@
+{
+  "hero": {
+    "subtitlePage": "ページやアプリを説明してください。完全で自己完結したデザインが得られます — ライブレンダリング、チャットで洗練。",
+    "subtitleAnimate": "モーショングラフィックを説明してください。Remotionアニメーションが得られます — ライブレンダリング、チャットで洗練。",
+    "recentDesigns": "最近のデザイン"
+  },
+  "composer": {
+    "placeholderNew": "デザインしたいページやアプリを説明してください…",
+    "placeholderChange": "変更内容を説明してください — 例:「ヒーローをダークにしてお客様の声を追加」",
+    "placeholderEditingV": "v{{n}} を編集中 — このバージョンへの変更を書いてください",
+    "preset": "プリセット",
+    "presetNone": "プリセットなし",
+    "presetTitle": "ブランドプリセット — 生成に使うデザインシステム一式（配色・書体・角丸・モーション）",
+    "designMdChip": "DESIGN.md",
+    "designMdTitle": "添付フォルダのルートに DESIGN.md を検出 — デザイン方針として送信されます",
+    "files": "+ ファイル",
+    "filesTitle": "ファイルをコンテキストとして添付 — テキスト/コード、または動画/音声/GIF をページ素材として",
+    "folder": "+ フォルダー",
+    "folderTitle": "フォルダー/プロジェクト全体に対してデザイン",
+    "image": "+ 画像",
+    "imageTitleOn": "参考画像を添付（デザインを合わせる）",
+    "imageTitleOff": "画像を添付するにはビジョンモデルを選択",
+    "interview": "インタビュー",
+    "interviewTitle": "デザイン前にいくつか確認質問をする（Claude Designスタイル）。オフ = すぐに作成。",
+    "stop": "停止",
+    "ask": "質問",
+    "send": "送信",
+    "generate": "生成",
+    "askTitle": "まず確認質問をする",
+    "imageChip": "画像",
+    "brand": "+ ブランドURL",
+    "brandTitle": "サイトの色・フォント・ロゴを抽出してそのブランドでデザイン",
+    "brandBusy": "サイトを読み込み中…",
+    "brandPrompt": "サイトのURLを貼り付けてください — 色・フォント・ロゴをブランド指針として抽出します:",
+    "brandFailed": "そのサイトを読み込めませんでした。",
+    "brandGo": "抽出",
+    "brandClose": "閉じる",
+    "brandAuto": "{{host}} からブランドを抽出中…",
+    "assetAdded": "{{name}} を添付しました — ページは assets/{{name}} を参照します"
+  },
+  "mode": {
+    "page": "ページ",
+    "animate": "アニメ",
+    "title": "静的ページまたはRemotionアニメーション"
+  },
+  "provider": {
+    "none": "なし",
+    "noLocal": "ローカルプロバイダーなし",
+    "loading": "読み込み中…",
+    "noModels": "モデルなし"
+  },
+  "project": {
+    "label": "プロジェクト",
+    "new": "+ 新規プロジェクト",
+    "defaultName": "プロジェクト {{n}}",
+    "namePlaceholder": "プロジェクト名",
+    "ok": "OK",
+    "renameTitle": "プロジェクト名を変更",
+    "title": "プロジェクト — TACHI Design/ 配下のフォルダーに対応",
+    "folderBtn": "フォルダー",
+    "setFolderBtn": "フォルダーを設定…",
+    "openFolderTitle": "このプロジェクトのフォルダーを開く。\n保存先: {{dir}}",
+    "setFolderTitle": "デザインの保存先を変更。\n現在: {{dir}}"
+  },
+  "sessions": {
+    "none": "以前のデザインはまだありません。",
+    "button": "セッション ({{count}})",
+    "prevTitle": "このプロジェクトの以前のデザイン",
+    "new": "+ 新規",
+    "newTitle": "新しいデザインを開始",
+    "versionsTitle": "{{count}} バージョン",
+    "deleteTitle": "削除",
+    "kindAnim": "動画",
+    "kindPage": "ページ"
+  },
+  "thread": {
+    "edit": "編集",
+    "editTitle": "このメッセージを編集してここから再生成",
+    "editConfirm": "削除して編集？",
+    "editConfirmTitle": "このメッセージとそれ以降のすべてのバージョンを削除します。もう一度クリックで確定 — 何も失わずに古いバージョンを戻すには ↩ 復元 を使ってください。",
+    "restore": "復元",
+    "restoreTitle": "このバージョンを新しいバージョンとして戻す — 何も削除されません",
+    "restoredV": "v{{n}} を復元しました",
+    "restoredToast": "v{{n}} を最新バージョンとして復元しました",
+    "designV": "デザイン v{{n}}",
+    "showing": "（表示中）",
+    "designing": "デザイン中…",
+    "sentWith": "このメッセージと一緒に送信"
+  },
+  "dropOpen": {
+    "title": "{{name}} は完全な HTML ドキュメントのようです。",
+    "open": "デザインとして開く",
+    "openTitle": "現在のデザインにします — プレビュー・テキスト編集・修正・書き出しがそのまま使えます",
+    "attach": "コンテキストとして添付",
+    "attachTitle": "次のプロンプトの参考資料として保持します（6000 文字に切り詰め）",
+    "seedUser": "{{name}} をインポート",
+    "seedAssistant": "{{name}} をインポート",
+    "opened": "{{name}} を開きました — チャットで仕上げてください",
+    "tooBig": "{{name}} はプレビュー上限 {{cap}} を超えています — 代わりにコンテキストとして添付しました"
+  },
+  "view": {
+    "preview": "プレビュー",
+    "code": "コード"
+  },
+  "artifact": {
+    "latest": "最新",
+    "latestTitle": "最新バージョンへ移動",
+    "editText": "テキスト編集",
+    "editing": "編集中",
+    "editTitle": "プレビュー内のテキストをクリックしてその場で編集",
+    "copy": "コピー",
+    "export": "エクスポート",
+    "encoderInstall": "動画エンコーダーをインストール · {{size}}",
+    "encoderInstallTitle": "動画の書き出しには Remotion のエンコーダーが必要です。アプリに同梱せず、Remotion 公式の npm パッケージから一度だけダウンロードします — その FFmpeg ビルドは自身のライセンスが再配布を禁じていると表示するためです。何も送信されません。ダウンロードされるだけです。",
+    "encoderInstalling": "エンコーダーをインストール中… {{percent}}%",
+    "encoderReady": "動画エンコーダーを導入しました",
+    "encoderFailed": "動画エンコーダーをインストールできませんでした",
+    "exportMp4": "MP4書き出し",
+    "mp4Title": "本物のH.264 MP4をレンダリング（初回はマネージドChromiumをダウンロード）",
+    "pngTitle": "ページ全体のPNGを書き出し",
+    "pdfTitle": "1ページのPDFを書き出し",
+    "wysiwygBar": "テキストをクリックして編集 · Enterで保存 · Escで取消",
+    "generating": "生成中…",
+    "noDoc": "まだドキュメントがありません。",
+    "mp4ResTitle": "書き出し解像度（2K/4Kは再レンダリング、アップスケールではありません）"
+  },
+  "msg": {
+    "herePage": "デザインができました。",
+    "hereAnimation": "アニメーションができました。",
+    "updatedPage": "デザインを更新しました。",
+    "updatedAnimation": "アニメーションを更新しました。",
+    "error": "エラーが発生しました: {{error}}",
+    "discoveryFailed": "ヒアリングを実行できませんでした{{detail}}。下に回答するか、生成を押してください。",
+    "tellMore": "もう少し教えてください（対象、雰囲気、必須セクション）。その後、生成を押してください。",
+    "gatewayTimeout": "プロバイダが3回の再試行後もタイムアウト — 負荷が高い状態です。最後のメッセージの ↺ edit を押して1分後に再送してください。"
+  },
+  "errors": {
+    "visionModel": "参考画像を添付する前にビジョンモデル（Claude / GPT / Gemini）を選んでください。",
+    "fileUnsupported": "{{name}}: 未対応のファイル形式です — 画像、動画/音声、またはテキスト/コードを添付してください",
+    "assetFailed": "{{name}}: {{error}}"
+  },
+  "render": {
+    "starting": "開始中…"
+  },
+  "toast": {
+    "mp4Exported": "MP4を書き出しました — フォルダーに表示",
+    "imgExported": "{{format}}を書き出しました — フォルダーに表示",
+    "exportFailed": "書き出しに失敗しました",
+    "copied": "コードをコピーしました",
+    "copyFailed": "コピーに失敗しました",
+    "openedFolder": "フォルダーを開きました",
+    "failed": "失敗",
+    "saveTo": "デザインの保存先: {{dir}}"
+  },
+  "examples": {
+    "page1": "AIノートアプリのランディングページ — ヒーロー、機能グリッド、料金、フッター",
+    "page2": "暗号資産ポートフォリオのダッシュボード — 残高カード、保有テーブル、チャート",
+    "page3": "ミニマルなポートフォリオ — 大胆なヒーローとプロジェクトギャラリー",
+    "page4": "洗練された料金ページ — 3プランと月/年トグル",
+    "anim1": "アニメーションのロゴリビール — 文字がスプリングで順に現れ、光が走る",
+    "anim2": "キネティックタイポの導入 —「TACHI」をタイプし、粒子に弾ける",
+    "anim3": "ループするグラデーション背景と浮遊する幾何学図形",
+    "anim4": "機能のコールアウト — カードがスライドイン、数字が99%までカウントアップ"
+  },
+  "engine": {
+    "remotion": "Remotion",
+    "hyperframes": "HyperFrames",
+    "title": "アニメーションレンダラー: Remotion（React → MP4書き出し）または HyperFrames（HTML + GSAPタイムライン）"
+  },
+  "voiceover": {
+    "button": "オーディオ",
+    "title": "ナレーション — ローカル TTS",
+    "voice": "声",
+    "groupStudio": "スタジオ — KOKORO",
+    "groupPiper": "PIPER",
+    "studioUnavailable": "スタジオ音声にはこのビルドのメディアライブラリーが必要です — 代わりに PIPER の音声を選んでください。",
+    "placeholder": "ナレーションを入力…",
+    "synthesize": "合成",
+    "busy": "合成中…",
+    "files": "プロジェクト内の音声 — ジェネレーターが利用できます:",
+    "copy": "staticFile() をコピー",
+    "copied": "コピーしました ✓",
+    "noVoices": "TTS ボイスが未インストールです。",
+    "installTts": "ボイスを入れる: Media → TTS",
+    "hint": "ナレーションに触れつつアニメを生成・調整してください — モデルはこれらのファイルを認識し、自分で <Audio> を追加します。"
+  },
+  "interview": {
+    "title": "クイックインタビュー",
+    "suggested": "推奨",
+    "otherPlaceholder": "または自由に入力…",
+    "designIt": "デザインする",
+    "hint": "未回答 = おまかせ",
+    "youDecide": "おまかせ"
+  },
+  "audio": {
+    "import": "+ サウンドを取り込む",
+    "importTitle": "WAV/MP3 を追加 — アニメーションで使用できます",
+    "imported": "取り込み完了：{{file}}",
+    "importFailed": "取り込みに失敗",
+    "noPath": "ファイルパスを読み取れませんでした。"
+  },
+  "tour": {
+    "windowTitle": "Design タブの使い方",
+    "mode": {
+      "title": "作るものを選ぶ",
+      "body": "「ページ」は完全なウェブページやアプリ画面をデザインし、「アニメ」はモーショングラフィックを作ります。「アニメ」ではレンダラーも選べます — Remotion（React、本物の MP4 エクスポート）または HyperFrames（HTML + GSAP タイムライン）。セッションはモードを記憶します。古いデザインを開き直すと、これらのトグルが自動で戻ります。"
+    },
+    "composer": {
+      "title": "言葉で伝える",
+      "body": "作りたいものを普通の言葉で入力してください — ファイル、フォルダ全体、参考画像をコンテキストとして添付できます。クイックインタビューをオンにすると、最初のターンでいくつか的確な質問をしてから作り始めます。オフにすればすぐに作ります。Cmd/Ctrl+Enter で送信。"
+    },
+    "brand": {
+      "title": "ブランドに合わせてデザイン",
+      "body": "ここにサイトの URL を貼ると、実際のパレット、フォント、コピーが抽出され、ジェネレーターが読むコンテキストチップになります。もっと簡単な方法: プロンプトに URL を直接入れるだけでもブランドは自動で取り込まれます。"
+    },
+    "export": {
+      "title": "プレビューとエクスポート",
+      "body": "すべてのバージョンがプレビューペインでライブレンダリングされます — スレッドのバージョンをクリックして表示したり、プレビュー内で直接テキストを編集できます。ページは HTML/PNG/PDF でエクスポート。アニメーションは 1080p、2K、4K の本物の H.264 MP4 にレンダリングされます。"
+    }
+  }
+}

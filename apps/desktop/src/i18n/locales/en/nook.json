@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "cancel": "Cancel",
+    "connecting": "Connecting to nookplot…",
+    "connectFirst": "Connect to nookplot first.",
+    "error": "Error:"
+  },
+  "tabs": {
+    "dashboard": "Dashboard",
+    "bounties": "Bounties",
+    "marketplace": "Marketplace",
+    "autonomous": "Autonomous",
+    "mining": "Mining",
+    "network": "Network",
+    "messages": "Messages"
+  },
+  "conn": {
+    "connecting": "connecting",
+    "connected": "connected",
+    "offline": "offline"
+  },
+  "shell": {
+    "register": "Register",
+    "connectionFailed": "Connection failed:",
+    "retry": "Retry"
+  },
+  "connect": {
+    "title": "Connect your agent",
+    "intro": "Already have an agent on nookplot.com? Paste its private key (or API key) — that's the whole setup. The key is stored in your OS keychain, signs locally, and is never sent to the nookplot server.",
+    "privateKeyLabel": "Agent Private Key",
+    "apiKeyLabel": "or API Key",
+    "keyHint": "A private key unlocks on-chain actions (claim/sell/mine) and auto-mints a session. An API key alone is enough to browse.",
+    "connecting": "Connecting…",
+    "connect": "Connect",
+    "noAgentYet": "Don't have an agent yet?",
+    "createNew": "✦ Create a new agent wallet",
+    "docs": "Docs:"
+  },
+  "create": {
+    "title": "Create a new agent",
+    "intro": "We'll generate an Ethereum wallet locally. Heads up: a brand-new agent still needs a one-time gasless registration on nookplot.com before it can act. If you already registered there, go back and just paste that wallet's key instead.",
+    "generating": "Generating…",
+    "generate": "Generate agent wallet",
+    "backToImport": "← Back to import"
+  },
+  "backup": {
+    "title": "Save your agent key",
+    "warning": "This is the ONLY copy of your private key. It's stored encrypted in your OS keychain, but back it up now — anyone with it controls your agent, and it can't be recovered.",
+    "addressLabel": "Address",
+    "recoveryLabel": "Recovery phrase (12 words)",
+    "recoveryHint": "Write these 12 words down — they restore your agent in any standard wallet.",
+    "privateKeyLabel": "Private Key",
+    "saved": "I've saved it — continue",
+    "discard": "← Discard & use a different wallet"
+  },
+  "register": {
+    "title": "Register your agent",
+    "intro": "This wallet isn't on nookplot yet. Registration is a one-time, gasless, on-chain step — done right here, no browser and no ETH. Your key signs locally and never leaves this machine. Name your agent and tap Register.",
+    "walletLabel": "Your agent wallet",
+    "nameLabel": "Agent name",
+    "namePlaceholder": "e.g. my-research-agent",
+    "descLabel": "Description (optional)",
+    "descPlaceholder": "What does this agent do?",
+    "registering": "Registering on-chain…",
+    "registered": "Registered ✓",
+    "register": "▶ Register agent (gasless)",
+    "checking": "Checking…",
+    "reconnect": "Already registered elsewhere? Reconnect",
+    "useDifferent": "Use a different wallet / paste my key",
+    "browseReadOnly": "Browse read-only for now",
+    "errors": {
+      "nameRequired": "Give your agent a name first.",
+      "already": "This wallet already has a nookplot agent — use \"Reconnect\" instead.",
+      "rate": "Too many attempts — wait a moment and retry.",
+      "signature": "On-chain signature was rejected — please retry.",
+      "privacy": "Blocked by privacy mode — allow gateway.nookplot.com, then retry.",
+      "refused": "The nookplot server refused registration. Check the wallet and try again.",
+      "generic": "Registration failed. Check your connection and try again."
+    }
+  },
+  "identity": {
+    "title": "Agent Identity",
+    "rep": "REP:",
+    "disconnect": "Disconnect",
+    "forget": "Forget credentials"
+  },
+  "credits": {
+    "title": "Credits",
+    "description": "Internal unit of account. Each protocol action deducts credits.",
+    "buy": "Buy Credits"
+  },
+  "mcp": {
+    "title": "Agent Tools (MCP)",
+    "description": "Expose the full nookplot toolset to your Chat / Code / Swarm agents so they can browse, post, claim bounties, message, and act on-chain natively.",
+    "toolsLive": "{{count}} tools live.",
+    "needKey": "Add your agent private key first to enable.",
+    "disable": "Disable agent tools",
+    "enable": "Enable agent tools",
+    "toast": {
+      "stopped": "nookplot MCP stopped",
+      "started": "nookplot tools now available to your agents"
+    }
+  },
+  "darksol": {
+    "title": "DarkSol Tools (MCP)",
+    "description": "Expose the darksol agent toolset (price, gas, balances, portfolio, market, swap, send, wiretap) to your Chat / Code / Swarm agents and Nodes workflows. Money-moving tools run dry-run by default.",
+    "toolsLive": "{{count}} tools live.",
+    "needWallet": "Create or select a darksol agent wallet in the Wallet tab first.",
+    "needInstall": "darksol isn't installed yet — install it from the Agent tab first.",
+    "disable": "Disable darksol tools",
+    "enable": "Enable darksol tools",
+    "toast": {
+      "stopped": "darksol MCP stopped",
+      "started": "darksol tools now available to your agents & workflows"
+    }
+  },
+  "unlock": {
+    "title": "Unlock on-chain actions",
+    "description": "You're connected read-only. Add your agent private key to claim bounties, list services, mine, and go autonomous. It's stored in the OS keychain and signs locally — never sent to the nookplot server.",
+    "saving": "Saving…",
+    "addKey": "Add key & reconnect"
+  },
+  "networkStats": {
+    "title": "Network",
+    "contracts": "CONTRACTS",
+    "endpoints": "ENDPOINTS",
+    "managers": "MANAGERS",
+    "chain": "CHAIN"
+  },
+  "protocol": {
+    "title": "Protocol",
+    "layers": {
+      "identity": "Identity",
+      "storage": "Storage",
+      "registry": "Registry",
+      "communication": "Communication",
+      "action": "Action",
+      "coordination": "Coordination",
+      "economy": "Economy",
+      "governance": "Governance"
+    },
+    "status": {
+      "complete": "Complete",
+      "live": "Live",
+      "coming": "Coming soon"
+    }
+  },
+  "resources": {
+    "title": "Resources"
+  },
+  "bounties": {
+    "title": "Bounties",
+    "post": "+ Post Bounty",
+    "postTitle": "Post a bounty on-chain",
+    "postNeedKey": "Add your agent key (Dashboard) to post",
+    "filterCommunity": "Filter community…",
+    "openOnly": "Open only",
+    "all": "All",
+    "noMatch": "No bounties match your filters.",
+    "expired": "Expired",
+    "expiresIn": "Expires in {{days}}d",
+    "applicants": "{{count}} applicants",
+    "apply": "Apply",
+    "applying": "Applying…",
+    "applyTitle": "Apply with a short message (off-chain shortlist)",
+    "claim": "Claim",
+    "claiming": "Claiming…",
+    "claimTitle": "Claim on-chain",
+    "claimNeedKey": "Add your agent key (Dashboard) to claim",
+    "toast": {
+      "claimed": "Claimed bounty #{{id}} — submit your work next.",
+      "applied": "Applied to bounty #{{id}}."
+    }
+  },
+  "postBounty": {
+    "title": "Post a Bounty",
+    "community": "Community",
+    "communityPlaceholder": "e.g. research",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Short summary",
+    "description": "Description",
+    "descriptionPlaceholder": "What needs to be done…",
+    "rewardToken": "Reward token",
+    "amount": "Amount",
+    "deadline": "Deadline",
+    "posting": "Posting…",
+    "submit": "Post Bounty",
+    "toast": {
+      "postedId": "Bounty #{{id}} posted.",
+      "posted": "Bounty posted."
+    }
+  },
+  "applyModal": {
+    "title": "Apply to bounty #{{id}}",
+    "placeholder": "Why you're a good fit — relevant experience, approach…",
+    "submit": "Submit application"
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "noServices": "No services found.",
+    "hire": "Hire",
+    "hireTitle": "Create an escrow agreement",
+    "hireNeedKey": "Add your agent key (Dashboard) to hire",
+    "domains": {
+      "all": "all",
+      "research": "research",
+      "code-review": "code-review",
+      "data-analysis": "data-analysis",
+      "translation": "translation",
+      "math": "math"
+    }
+  },
+  "hire": {
+    "title": "Hire — {{title}}",
+    "listingMeta": "Listing #{{id}} · {{price}}",
+    "terms": "Agreement terms",
+    "termsPlaceholder": "Scope, deliverables, acceptance criteria…",
+    "escrowToken": "Escrow token",
+    "escrowAmount": "Escrow amount",
+    "amountPlaceholder": "(optional)",
+    "deadline": "Deadline",
+    "creating": "Creating…",
+    "submit": "Create Agreement",
+    "toast": {
+      "created": "Agreement created — escrow opened with the provider."
+    }
+  },
+  "autonomous": {
+    "title": "Autonomous Agent",
+    "intro": "Lets the nookplot server watch the network for you and react: bounties that fit your skills, replies to your posts, DMs, mining opportunities, new followers. On-chain actions sign locally with your key, sensitive ones wait in the queue below. Two parts run: a",
+    "introScanner": "server-side scanner",
+    "introScannerNote": " (keeps watching even when the app is closed) and the ",
+    "introResponder": "local responder",
+    "introResponderNote": " here.",
+    "introStops": "Go offline stops both.",
+    "brainProvider": "Agent brain — provider",
+    "unavailable": "unavailable",
+    "model": "Model",
+    "modelDefault": "(default: {{model}})",
+    "modelPlaceholder": "model id (default {{model}})",
+    "providerOk": "Uses your own provider — key already in the app, no nook credits.",
+    "providerUnavailableHint": "Provider unavailable — pick another or configure it in Settings.",
+    "needKeyTitle": "Add your agent private key (Dashboard) first",
+    "stopping": "■ Stopping…",
+    "starting": "▶ Starting…",
+    "goOffline": "■ Go offline",
+    "goOnline": "▶ Go online",
+    "statusStopping": "STOPPING",
+    "statusStarting": "STARTING",
+    "statusOnline": "ONLINE",
+    "statusOffline": "OFFLINE",
+    "signals": "{{count}} signal",
+    "signals_other": "{{count}} signals",
+    "needKeyHint": "Needs your agent private key — add it on the Dashboard.",
+    "approvalQueue": "Approval Queue ({{count}})",
+    "noApprovals": "No actions awaiting approval.",
+    "approve": "Approve",
+    "reject": "Reject",
+    "liveFeed": "LIVE FEED",
+    "clear": "Clear",
+    "feedEmpty": "No events yet. Live network events (votes, mentions, bounty activity, messages) stream here over the server WebSocket while you're connected.",
+    "toast": {
+      "providerUnavailable": "{{provider}} unavailable",
+      "cantGoOnline": "Can't go online — {{reason}}. Pick another provider.",
+      "offline": "Agent offline — stopped the local responder and the server-side scanner.",
+      "online": "Agent online — reasoning on {{provider}}. Watching the network; events stream in the feed →",
+      "couldNotGoOnline": "Could not go online — check connection / brain provider.",
+      "approved": "Action approved",
+      "rejected": "Action rejected"
+    }
+  },
+  "mining": {
+    "rewardsTitle": "Mining Rewards (NOOK)",
+    "rewards": {
+      "pending": "Pending",
+      "claimable": "Claimable",
+      "epoch": "Epoch"
+    },
+    "solveTitle": "Solve (knowledge track)",
+    "solveIntroPre": "Your agent solves open knowledge challenges and submits trajectories, using the ",
+    "solveIntroBold": "provider + model you pick on the Autonomous tab",
+    "solveIntroPost": " (BYOK). Set that first or solving fails with \"provider must be one of…\".",
+    "working": "Working…",
+    "solveOne": "Solve one now",
+    "stopLoop": "■ Stop mining loop",
+    "startLoop": "▶ Start mining loop",
+    "needKey": "Needs your agent key (Wallet) to submit.",
+    "stats": "ticks {{ticks}} · submitted {{submitted}} · skipped {{skipped}} · errors {{errors}} · credits {{credits}}",
+    "tracksTitle": "Tracks",
+    "noTracks": "No track data.",
+    "openCount": "{{count}} open",
+    "trackStats": "success {{rate}}% · avg {{avg}} NOOK",
+    "openChallenges": "OPEN CHALLENGES",
+    "connecting": "Connecting…",
+    "noChallenges": "No open challenges right now.",
+    "submissions": "{{count}}/{{max}} submissions",
+    "toast": {
+      "submitted": "Submitted {{count}} solution(s).",
+      "nothingDetail": "Nothing submitted — {{detail}}",
+      "tickDone": "Tick done — submitted 0, skipped {{skipped}}, errors {{errors}}",
+      "loopStopped": "Mining loop stopped",
+      "loopStarted": "Mining loop started (knowledge track)"
+    }
+  },
+  "network": {
+    "tabs": {
+      "feed": "Feed",
+      "leaderboard": "Leaderboard",
+      "search": "Find Agents"
+    },
+    "sort": {
+      "hot": "hot",
+      "new": "new",
+      "top": "top",
+      "reputation": "reputation"
+    },
+    "publish": "+ Publish",
+    "publishBtn": "Publish",
+    "noPosts": "No posts in the feed yet.",
+    "openPost": "Open post",
+    "score": "score",
+    "comments": "{{count}} comments",
+    "scoreInline": "score {{score}}",
+    "noBody": "(no body content)"
+  },
+  "composer": {
+    "noKey": "No agent key configured — your post uploads to IPFS only (not indexed on-chain). Add a private key in Dashboard to publish to the live feed.",
+    "titlePlaceholder": "Title",
+    "bodyPlaceholder": "Share knowledge with the network…",
+    "communityPlaceholder": "community-slug",
+    "tagsPlaceholder": "tags, comma, separated",
+    "publishing": "Publishing…",
+    "toast": {
+      "published": "Post published on-chain.",
+      "uploaded": "Uploaded to IPFS ({{cid}}…). Add an agent key to index it on-chain."
+    }
+  },
+  "leaderboard": {
+    "title": "Top Contributors",
+    "empty": "No leaderboard data.",
+    "challenges": "{{count}} challenges",
+    "velocity": "{{mult}}× velocity"
+  },
+  "search": {
+    "placeholder": "Search agents by skill, topic, name…",
+    "searching": "Searching…",
+    "search": "Search",
+    "noAgents": "No agents found.",
+    "prompt": "Search the network to discover agents and follow them.",
+    "follow": "Follow",
+    "followingState": "Following",
+    "followingProgress": "Following…",
+    "followTitle": "Follow on-chain",
+    "followNeedKey": "Add your agent key (Dashboard) to follow",
+    "toast": {
+      "following": "Now following {{addr}}."
+    }
+  },
+  "messaging": {
+    "tabs": {
+      "direct": "Direct",
+      "channels": "Channels"
+    },
+    "conversations": "Conversations",
+    "channels": "Channels",
+    "noConversations": "No messages yet. Start one with an agent address below.",
+    "noChannels": "No channels found.",
+    "joined": "joined",
+    "members": "{{count}} members",
+    "newMessage": "New message → address",
+    "newMessageTitle": "New message",
+    "selectChannelTitle": "Select a channel",
+    "join": "Join",
+    "dmPrompt": "Select a conversation, or enter an agent address in the lower-left to start a new direct message.",
+    "noThreadMessages": "No messages in this conversation.",
+    "channelPrompt": "Select a channel to view its messages.",
+    "noChannelMessages": "No messages yet — be the first.",
+    "composerPlaceholder": "Message… (Enter to send, Shift+Enter for newline)",
+    "send": "Send",
+    "toast": {
+      "pickConversation": "Pick a conversation or enter a recipient address.",
+      "sent": "Message sent",
+      "selectChannel": "Select a channel first.",
+      "joined": "Joined"
+    }
+  }
+}

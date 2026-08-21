@@ -1,0 +1,9 @@
+{
+  "id": "bash/git-status",
+  "matches": { "toolName": "Bash", "stdoutContains": ["git status", "git diff", "git log"] },
+  "transforms": { "stripAnsi": true, "dedupeAdjacent": false },
+  "success": { "head": 0, "tail": 0, "maxChars": 0 },
+  "failure": { "head": 0, "tail": 0, "maxChars": 0 },
+  "preserveOnFailure": true,
+  "alwaysFull": true
+}

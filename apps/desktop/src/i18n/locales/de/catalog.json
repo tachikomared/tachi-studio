@@ -1,0 +1,211 @@
+{
+  "tabCurated": "Empfohlen",
+  "tabSearchHf": "HF durchsuchen",
+  "tabInstalled": "Installiert",
+  "searchPlaceholder": "z. B. qwen2.5 7b",
+  "filterByName": "nach Name filtern…",
+  "searchButton": "Suchen",
+  "searchUnavailable": "Suche nicht verfügbar",
+  "emptyInstalled": "Noch keine lokalen Modelle. Lade eins aus Empfohlen oder HF durchsuchen herunter.",
+  "confirmRemove": "Dieses Modell von der Festplatte entfernen?",
+  "removing": "Wird entfernt…",
+  "pullIncompatible": "Ollama konnte dieses Repo nicht laden. Es ist möglicherweise inkompatibel (nicht standardmäßiges oder multimodales GGUF). Versuche ein Modell von bartowski / unsloth / lmstudio-community oder nutze Empfohlen.",
+  "download": "Herunterladen",
+  "run": "Ausführen",
+  "remove": "Entfernen",
+  "clear": "löschen",
+  "chooseQuant": "Quantisierung wählen",
+  "recommended": "empfohlen",
+  "quant": "Quant.",
+  "quants": "Quants.",
+  "downloadSize": "Downloadgröße:",
+  "starting": "Wird gestartet…",
+  "downloading": "Wird heruntergeladen…",
+  "hfDownloadNotSupported": "Das Herunterladen beliebiger Hugging-Face-Modelle in llama.cpp kommt bald. Derzeit werden nur die empfohlenen Modelle unterstützt.",
+  "ram": "RAM",
+  "free": "frei",
+  "gpu": "GPU",
+  "vram": "VRAM",
+  "cpu": "CPU",
+  "cores": "Kerne",
+  "unknown": "unbekannt",
+  "fit": {
+    "gpu": "Passt in die GPU (schnell)",
+    "cpu": "CPU / teilweise GPU (langsamer)",
+    "tight": "Knapp — Speicher könnte ausgehen",
+    "too-big": "Zu groß",
+    "sdcppNote": "Auflösung und Bildanzahl entscheiden über den tatsächlichen Spitzenwert — Offload-Flags ändern alles.",
+    "sdcppVram": "Benötigt ~{{gb}} GB VRAM (Auflösung/Offload-Flags ändern das)"
+  },
+  "capabilities": {
+    "chat": "Chat",
+    "reasoning": "Reasoning",
+    "vision": "Vision",
+    "code": "Code",
+    "tools": "Tools",
+    "image-gen": "Bildgen.",
+    "video-gen": "Videogen.",
+    "music": "Musik",
+    "tts": "TTS",
+    "stt": "STT"
+  },
+  "notice": {
+    "downloadFailed": "Download fehlgeschlagen",
+    "installingLlama": "llama.cpp wird installiert…",
+    "loading": "{{name}} wird geladen…",
+    "llamaInstallFailed": "llama.cpp-Installation fehlgeschlagen",
+    "failedToStart": "Modell konnte nicht gestartet werden",
+    "startingOllama": "Ollama wird gestartet…",
+    "removeFailed": "Entfernen fehlgeschlagen",
+    "whisperReady": "{{name}} bereit — nutze das Mikrofon in Chat zum Transkribieren.",
+    "nothingToStop": "Nichts zu stoppen — dieser Download ist bereits übertragen.",
+    "stopNotYet": "Stopp ist verfügbar, solange die Übertragung läuft."
+  },
+  "stopDownload": "Stopp",
+  "favorite": "Zu Favoriten hinzufügen",
+  "unfavorite": "Aus Favoriten entfernen",
+  "sectionFavorites": "Favoriten",
+  "sectionRecent": "Zuletzt verwendet",
+  "sectionAll": "Alle Modelle",
+  "emptyCurated": "Die Modell-Registry konnte nicht geladen werden.",
+  "retry": "Erneut versuchen",
+  "notAvailable": "Nicht verfügbar",
+  "noMatches": "Keine Modelle gefunden — Suche anpassen oder Filter löschen.",
+  "tour": {
+    "windowTitle": "So verwenden Sie den Catalog-Tab",
+    "search": {
+      "title": "Finden Sie ein Modell",
+      "body": "Drei Quellen: Empfohlen (kuratiert), HF durchsuchen (ganz Hugging Face) und Installiert (bereits auf der Platte). Tippen Sie, um zu filtern oder zu suchen, und grenzen Sie mit Fähigkeits-Chips ein — Chat, Vision, Bildgenerierung, TTS und mehr."
+    },
+    "hardware": {
+      "title": "Ihre Hardware, erkannt",
+      "body": "Diese Leiste zeigt Ihre echte Maschine — RAM, GPU, VRAM und CPU-Kerne. Jedes Passungs-Urteil darunter wird aus diesen Zahlen berechnet, nicht aus generischen Anforderungen."
+    },
+    "fit": {
+      "title": "Passt es?",
+      "body": "Lokale Modelle bekommen eine Passungs-Pille — PASST / KNAPP / NUR CPU / ZU GROSS — plus eine VRAM-Schätzung, berechnet aus IHRER GPU und Ihrem RAM oben. PASST heißt schnell auf der GPU; bei KNAPP kann mitten in der Generierung der Speicher ausgehen."
+    },
+    "download": {
+      "title": "Herunterladen & ausführen",
+      "body": "HERUNTERLADEN öffnet die Quant-Auswahl, die für Ihre Hardware empfohlene Quantisierung ist hervorgehoben — kleinere Quants tauschen Qualität gegen Passung. Nach der Installation wird der Button zu AUSFÜHREN: Er lädt das Modell und bringt Sie direkt in einen Chat damit."
+    }
+  },
+  "openChat": "Chat öffnen",
+  "tabCivitai": "Civitai",
+  "civitai": {
+    "searchPlaceholder": "z. B. dreamshaper, realistic vision",
+    "sfwNote": "nur SFW",
+    "install": "Installieren",
+    "loadMore": "Mehr laden",
+    "loadingMore": "Wird geladen…",
+    "empty": "Nichts anzuzeigen — andere Suche oder anderen Typ probieren.",
+    "emptyAfterError": "Nichts anzuzeigen — die Suche oben ist fehlgeschlagen.",
+    "tryAgain": "Erneut versuchen",
+    "filteredNotice": "Vom SFW-Filter ausgeblendet: {{count}}",
+    "noPreview": "keine Vorschau",
+    "triggerWords": "Trigger:",
+    "copyTrigger": "„{{word}}“ kopieren",
+    "blockedFallback": "Diese App kann dieses Modell nicht installieren.",
+    "reveal": "18+-Vorschau anzeigen",
+    "sortLabel": "Sortierung",
+    "periodLabel": "Zeitraum",
+    "baseLabel": "Basismodell",
+    "clearFilters": "Filter zurücksetzen",
+    "mode": {
+      "adult": "18+-Modus (civitai.red)",
+      "adultInert": "18+ ist in den Einstellungen aktiv, diese Seite kam aber ohne 18+ zurück — prüfe deinen Civitai-Schlüssel."
+    },
+    "types": {
+      "all": "Alle",
+      "checkpoint": "Checkpoint",
+      "unet": "UNet",
+      "text-encoder": "Text-Encoder",
+      "clip": "CLIP",
+      "clip-vision": "CLIP Vision",
+      "vision-language": "VLM",
+      "llm": "LLM",
+      "lora": "LoRA",
+      "locon": "LoCon",
+      "embedding": "Embedding",
+      "vae": "VAE",
+      "controlnet": "ControlNet",
+      "upscaler": "Hochskalierer",
+      "motion": "Bewegung",
+      "dora": "DoRA",
+      "hypernetwork": "Hypernetwork",
+      "aesthetic": "Ästhetik",
+      "poses": "Posen",
+      "wildcards": "Wildcards",
+      "workflows": "Workflows",
+      "detection": "Erkennung",
+      "other": "Sonstige"
+    },
+    "groups": {
+      "models": "Modelle",
+      "adapters": "Adapter",
+      "other": "Sonstige Dateien"
+    },
+    "outlook": {
+      "runs": "Installiert sich und generiert eigenständig.",
+      "needs-base": "Installiert nur, wenn ein passender Basis-Checkpoint bereits auf der Festplatte liegt.",
+      "later": "Die Engine kann das — die App hat dafür noch keine Oberfläche.",
+      "no": "Nur zum Stöbern — diese App kann diesen Typ nicht installieren."
+    },
+    "sort": {
+      "mostDownloaded": "Meist geladen",
+      "newest": "Neueste",
+      "highestRated": "Bestbewertet"
+    },
+    "period": {
+      "allTime": "Gesamt",
+      "year": "Jahr",
+      "month": "Monat",
+      "week": "Woche",
+      "day": "Tag"
+    },
+    "license": {
+      "noCommercial": "keine kommerzielle Nutzung",
+      "noCommercialHint": "Der Ersteller erlaubt keine kommerzielle Nutzung dieses Modells.",
+      "attribution": "Namensnennung nötig",
+      "attributionHint": "Der Ersteller verlangt eine Namensnennung bei Nutzung des Modells.",
+      "noDerivatives": "keine Ableitungen",
+      "noDerivativesHint": "Der Ersteller erlaubt keine Merges oder abgeleiteten Modelle."
+    },
+    "forMyModels": "Für meine Modelle",
+    "forMyModelsHint": "Nur Erweiterungen für die installierten Modellfamilien anzeigen.",
+    "forMyModelsEmpty": "Installiere zuerst ein lokales Bild- oder Videomodell — dann filtert dies darauf.",
+    "forMyModelsActive": "Eingegrenzt auf das Installierte: {{families}}",
+    "keyHint": "Wo trage ich meinen API-Schlüssel ein?",
+    "families": {
+      "sd15": "SD 1.5",
+      "sdxl": "SDXL",
+      "zimage": "Z-Image",
+      "wan": "Wan"
+    },
+    "detail": {
+      "title": "Modelldetails",
+      "open": "Details öffnen",
+      "about": "Über dieses Modell",
+      "by": "von {{user}}",
+      "downloadsLabel": "Downloads",
+      "likesLabel": "Likes",
+      "published": "Veröffentlicht am {{date}}",
+      "loading": "Beschreibung wird geladen…",
+      "loadFailed": "Die Beschreibung dieses Modells konnte nicht geladen werden.",
+      "noDescription": "Der Uploader hat keine Beschreibung verfasst.",
+      "descriptionTruncated": "Die Beschreibung war lang — sie wird hier gekürzt gezeigt.",
+      "openOnCivitai": "Auf Civitai öffnen",
+      "thisVersion": "Diese Version",
+      "otherVersions": "Andere Versionen",
+      "versionsHidden": "Vom SFW-Filter ausgeblendete Versionen: {{count}}",
+      "versionsCapped": "{{shown}} von {{total}} Versionen werden angezeigt.",
+      "signInRequired": "erfordert ein Civitai-Konto",
+      "openNamed": "Details zu {{name}} öffnen"
+    }
+  },
+  "sdRemove": {
+    "frees": "Gibt {{size}} auf der Festplatte frei.",
+    "sharedStay": "Gemeinsame Komponenten bleiben — {{models}} nutzt sie weiterhin.",
+    "sharedWith": "teilt Komponenten mit {{models}}"
+  }
+}

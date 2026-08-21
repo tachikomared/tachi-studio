@@ -1,0 +1,508 @@
+@import './themes/bankr.css';
+@import './themes/tachi-dark.css';
+@import './themes/tachi-neon.css';
+@import './themes/comic.css';
+@import './themes/comic-structure.css';
+@import './themes/tachi-opus5.css';
+@import './themes/tachi-opus5-structure.css';
+@import './themes/tachikoma-red.css';
+@import './themes/tachikoma-red-structure.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --border-color: var(--border);
+  --primary: var(--accent);
+  --primary-foreground: var(--bg-base);
+  --muted: var(--bg-elevated);
+  --muted-foreground: var(--text-muted);
+}
+
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg-base); color: var(--text-primary); }
+
+/* App shell root — full-bleed on every theme (was an inline height on the
+   AppShell div; moved here so the chassis recess below can override it). */
+.app-body { height: 100vh; }
+
+/* ── INSET PLATE (chassis) — one attribute, two frames ───────────────────────
+   The chassis themes do not draw the app edge-to-edge: they inset `.app-body`
+   into a recessed PLATE and fill the margin with a milled slab. A companion
+   component owns the margin art and stamps the root attribute; this block is
+   the other half. The attribute is ABSENT on every other theme, so everything
+   here is inert by default and those themes stay pixel-identical.
+
+   `data-chassis` — TachikomaChrome.tsx (`tachikoma-red`) and OpusChrome.tsx
+     (`tachi-opus5`). Needs no window transparency: the margin is FILLED by a
+     slab drawn in CSS and the plate is counterbored INTO it. The value is the
+     staging ('wide'|'mid'|'narrow'|'flush'); ANY value is a live chassis, so
+     every rule here is value-agnostic — the object restages, it never hides,
+     and there is deliberately no width rule that collapses it.
+
+   HISTORY, because the absence of a breakpoint is load-bearing: the retired
+   `tachi-crab` theme had the same plate but hid its claw art below 1180px and
+   collapsed the gutter with it, which erased the whole theme at the owner's
+   ~1068px daily width. Both surviving frames restage inward instead. Do not
+   reintroduce a max-width rule for `data-chassis` (a unit test forbids it).
+
+   The plate is `position: fixed` + `inset` (not `height: 100%`) on purpose:
+   several React wrappers sit between #root and .app-body, so a percentage
+   height chain would be fragile. Fixed+inset sizes to the viewport regardless.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root[data-chassis] body { background: transparent !important; }
+:root[data-chassis] #root { background: transparent; }
+
+/* TK-05 / OPUS-5 CHASSIS — the plate is COUNTERBORED into a milled slab.
+   Any `data-chassis` value is a live stage, so this rule is value-agnostic and
+   the geometry arrives in THREE custom properties (the chrome components compute
+   them from the viewport, because the keys/bolts/chamfer restage with the bezel
+   and a media query could not scale those). The fallbacks are the NARROW stage —
+   the safest first paint, and the reason a window that never fires a resize
+   event still shows a chassis.
+
+   WHY THE VERTICAL AXIS IS TWO PROPERTIES AND NOT ONE (2026-07-27). It was one
+   (`--chassis-inset-y`), which forced both frames to be vertically SYMMETRIC by
+   construction — and the OPUS-5 mock is not: its header rail carries the LED
+   rack, the revision caption and the window keys (30px) while its bottom rail
+   carries one line of hint type (24px). TachikomaChrome's slab genuinely is
+   symmetric and stamps the same number into both, so nothing about the TK-05
+   frame moves; the split only gives the thin rim the asymmetry it was drawn
+   with. Three-value `inset` is top / horizontal / bottom, the same shorthand
+   order as `margin`. */
+:root[data-chassis] .app-body {
+  position: fixed;
+  inset: var(--chassis-inset-top, 24px) var(--chassis-inset-x, 36px) var(--chassis-inset-bottom, 24px);
+  height: auto;
+  width: auto;
+  /* Above the chassis layers (TachikomaChrome's container is z-index 0), so no
+     decorative bar can ever paint over app content. */
+  z-index: 5;
+  border: var(--border-width, 2px) solid var(--border-strong);
+  /* The counterbore: a hard seam, an optic seep out of the pocket, then the
+     slab's own shadow falling onto the plate. box-shadow, NOT
+     filter: drop-shadow — drop-shadow traces alpha and would ghost every glyph
+     inside the plate (the defect two structure themes shipped). */
+  box-shadow:
+    0 0 0 2px var(--bg-inset),
+    0 0 0 3px rgba(0, 229, 255, 0.10),
+    0 10px 34px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* ── Brutalist motion primitives ────────────────────────────────────────────
+   These give every button a tactile press-down feel that matches our hard-
+   shadow aesthetic: on hover the shadow grows slightly + a tiny nudge,
+   on press the shadow collapses and the button "lands" 2px down/right.
+   Uses prefers-reduced-motion to respect a11y settings.
+   ─────────────────────────────────────────────────────────────────────── */
+button:not(:disabled), [role="button"]:not([aria-disabled="true"]), .tachi-pressable {
+  transition:
+    transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 120ms ease-out,
+    /* `color` EASES WITH THE BACKGROUND IT IS PAIRED TO, and that is the whole
+       reason it is in this list. It was omitted, so on every control that flips
+       its text colour together with its background — a segmented picker, a
+       selected-state chip; four surfaces do exactly this — the text jumped to
+       the on-accent colour instantly while the background was still easing
+       toward the accent. Measured on the installed build: the newly selected
+       button read rgb(252,249,248) on rgb(252,249,248), its own background,
+       while the button you had just LEFT was still painted accent. The right
+       answer unreadable and the wrong one still lit, for 120ms, every time.
+
+       Easing them together cannot reproduce that: both endpoints are readable
+       pairs, so every point between them is a partially-faded text on a
+       partially-faded background rather than one of the two arriving alone. */
+    color 120ms ease-out,
+    border-color 120ms ease-out;
+  will-change: transform;
+}
+button:not(:disabled):hover,
+[role="button"]:not([aria-disabled="true"]):hover,
+.tachi-pressable:hover {
+  transform: translate(-1px, -1px);
+}
+button:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active,
+.tachi-pressable:active {
+  transform: translate(2px, 2px);
+  box-shadow: none !important;
+  transition-duration: 60ms;
+}
+
+/* Inputs and textareas get a clean accent ring on focus, no rounded outline */
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+/* Universal focus-visible — brutalist 2px inverted outline for keyboard nav */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button, [role="button"], .tachi-pressable {
+    transition: none !important;
+    transform: none !important;
+  }
+  button:hover, button:active, [role="button"]:hover, [role="button"]:active,
+  .tachi-pressable:hover, .tachi-pressable:active {
+    transform: none !important;
+  }
+}
+
+/* Scrollbars — brutalist dark thin */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-inset); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong, var(--border));
+  border: 2px solid var(--bg-inset);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Selection */
+::selection { background: var(--accent); color: #fff; }
+
+/* ── kbd chip used in the command palette + shortcut hints ─────────────── */
+kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 2px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 1px 1px 0 var(--border);
+  vertical-align: middle;
+}
+
+/* Caret blink for typewriter "thinking" indicator */
+@keyframes tachi-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+.tachi-caret { animation: tachi-blink 1s steps(1) infinite; }
+
+/* Subtle pulse for working/streaming dots */
+@keyframes tachi-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+.tachi-pulse-dot { animation: tachi-pulse 1.2s ease-in-out infinite; }
+
+/* Tutorial highlight — pulse the ACTUAL target button (no offset ring to drift).
+   Outline + box-shadow don't affect layout, so the button never jumps. */
+@keyframes tachi-tour-pulse {
+  0%, 100% { outline-offset: 2px; box-shadow: 0 0 0 2px var(--accent), 0 0 0 0 rgba(124, 58, 237, 0); }
+  50%      { outline-offset: 4px; box-shadow: 0 0 0 3px var(--accent), 0 0 16px 5px var(--accent); }
+}
+.tachi-tour-pulse {
+  outline: 2px solid var(--accent) !important;
+  animation: tachi-tour-pulse 1.05s ease-in-out infinite !important;
+  border-radius: 0 !important;
+}
+
+/* Node currently executing in a graph run — pulse its border so you can watch
+   the run move from agent to agent. */
+@keyframes tachi-node-run {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent), 4px 4px 0 var(--accent); }
+  50%      { box-shadow: 0 0 18px 5px var(--accent), 4px 4px 0 var(--accent); }
+}
+.tachi-node-running { animation: tachi-node-run 0.9s ease-in-out infinite !important; }
+
+/* Edges feeding INTO the currently-running node get a marching-ants accent dash,
+   so you can watch the data flow arrive along the wire as the run advances.
+   Toggled imperatively in NodesPage alongside .tachi-node-running. */
+@keyframes tachi-edge-dash { to { stroke-dashoffset: -20; } }
+.react-flow__edge.tachi-edge-running .react-flow__edge-path {
+  stroke: var(--accent) !important;
+  stroke-width: 2.5 !important;
+  stroke-dasharray: 7 5;
+  animation: tachi-edge-dash 0.5s linear infinite;
+}
+
+/* EDGE RUN-INFO: while a node is executing, ITS OUTGOING edges get the same
+   marching-ants motion so data-flow direction is visible (the stroke colour +
+   dasharray are set inline on the path in LinkEdge; this class only owns the
+   motion, so prefers-reduced-motion below can switch it off). */
+.react-flow__edge-path.tachi-edge-flow {
+  animation: tachi-edge-dash 0.5s linear infinite;
+}
+
+/* B2.2: Breathing animation for ToolGroupSummary active-run badge */
+@keyframes tachi-breath {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+.tachi-breath { animation: tachi-breath 1.5s ease-in-out infinite; }
+
+/* Toast slide-in from bottom-right */
+@keyframes tachi-toast-in {
+  from { transform: translate(12px, 8px); opacity: 0; }
+  to   { transform: translate(0, 0); opacity: 1; }
+}
+.tachi-toast { animation: tachi-toast-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+/* ── Route drill-in ──────────────────────────────────────────────────────────
+   When the URL changes, the routed view is keyed by pathname so it remounts;
+   this class hits on every fresh mount and "drills in" with a quick slide-up
+   + fade. Brutalist-fast (140ms), no springs, snaps to final state. */
+@keyframes tachi-drill-in {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+/* fill-mode BACKWARDS, not both: a filled (forwards) transform keyframe keeps
+   a computed transform on the route wrapper forever — Chromium reports it as
+   an identity matrix even when the keyframe says `none` — which makes the
+   wrapper a containing block for position:fixed descendants and shoves every
+   fixed popup (context menus, pickers) right+down by the sidebar/header
+   offset. backwards keeps the pre-start state (what we wanted from `both`)
+   and releases the transform once the 140ms drill-in finishes.
+   Live-verified: computed transform flips matrix(1,0,0,1,0,0) → none. */
+.tachi-route-enter { animation: tachi-drill-in 140ms ease-out backwards; }
+
+/* ── Tool-call block reveal ───────────────────────────────────────────────────
+   When a ToolCallBlock expands, the body wedge slides down out of the header
+   instead of popping in. Same 120ms snap as buttons so it matches the system. */
+@keyframes tachi-wedge-down {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tachi-wedge-down { animation: tachi-wedge-down 120ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+/* ── Sidebar tab underline glide ─────────────────────────────────────────────
+   The 2px active-tab underline slides between tabs instead of teleporting.
+   The base style is set inline in Sidebar.tsx; this just adds the easing. */
+.tachi-tab-underline { transition: border-bottom-color 140ms ease-out; }
+
+/* ── Node hover lift ──────────────────────────────────────────────────────────
+   Every node type (Agent/Provider/Skill/Mcp/Internet/Folder/Media/Prompt) sets
+   className="tachi-node-hover" on hover. Each node carries its own inline
+   box-shadow (a coloured hard offset), so we DON'T touch box-shadow here — inline
+   wins specificity. Instead we nudge the node up-left (the brutalist "peel") and
+   add an accent drop-shadow GLOW via filter, which layers on top of the inline
+   shadow. In the Neon theme that glow is hot magenta and really pops. */
+.tachi-node-hover {
+  transform: translate(-2px, -2px);
+  filter: drop-shadow(0 0 7px var(--accent));
+  transition: transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              filter    160ms ease-out;
+}
+
+/* ── Node mount entrance ──────────────────────────────────────────────────────
+   New nodes (and the initial graph load) fade + de-blur in. We animate ONLY
+   opacity/filter — never transform — because ReactFlow owns the wrapper's
+   transform for positioning, and animating it would yank the node to the origin. */
+@keyframes tachi-node-enter {
+  from { opacity: 0; filter: blur(3px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+.react-flow__node { animation: tachi-node-enter 190ms ease-out; }
+
+/* ── Selected node ring ───────────────────────────────────────────────────────
+   A crisp accent outline + soft glow so the focused node reads instantly. The
+   outline sits on the RF wrapper (no layout shift); the glow uses the theme
+   accent so it matches whatever palette is active. */
+.react-flow__node.selected {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  filter: drop-shadow(0 0 9px var(--accent));
+}
+
+/* ── Tab content crossfade ────────────────────────────────────────────────────
+   Tab panels keyed by the active tab get a quick slide-up + fade on switch, so
+   content changes feel like a deliberate transition rather than an instant swap.
+   Matches the 140ms route-drill timing. */
+@keyframes tachi-tab-content {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tachi-tab-content { animation: tachi-tab-content 140ms ease-out both; }
+
+/* ── Tab slider indicator ─────────────────────────────────────────────────────
+   The animated underline pill that slides between tabs. Geometry (left/width)
+   is set inline from measured button rects; this just supplies the easing and
+   the accent fill. */
+.tachi-tab-slider {
+  transition: left 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              width 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ── Node config side-panel slide-in (canvas-advanced) ──────────────────────────
+   NodeConfigPanel uses className 'tachi-config-panel' — slides in from the right
+   edge of the canvas. BlueprintImportDialog uses 'tachi-blueprint-card' — a
+   scale+fade pop over the dim backdrop. Both guarded below in the reduce block. */
+@keyframes tachi-config-slide {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.tachi-config-panel {
+  animation: tachi-config-slide 160ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  will-change: transform, opacity;
+}
+
+@keyframes tachi-blueprint-pop {
+  from { transform: translateY(8px) scale(0.98); opacity: 0; }
+  to   { transform: translateY(0)   scale(1);    opacity: 1; }
+}
+.tachi-blueprint-card {
+  animation: tachi-blueprint-pop 140ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* ── Run-trace in-flight span pulse (run-trace) ─────────────────────────────────
+   TraceTab applies 'tachi-trace-live' to bars of still-open spans so they gently
+   pulse while the span is in progress. Guarded for reduced-motion. */
+@keyframes tachi-trace-live {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}
+.tachi-trace-live { animation: tachi-trace-live 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) infinite; }
+
+/* ── Reusable layout primitives (tier3-polish) ─────────────────────────────────
+   SettingsCard hover-lift transition + ResizablePanelEdge pill scale. Components
+   ship inline fallbacks; the smooth easing + reduced-motion guard live here. */
+.tachi-settings-card {
+  transition: transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 120ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.tachi-resize-pill {
+  transition: background 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.tachi-resize-pill[data-active="true"] {
+  background: var(--accent);
+  transform: scaleX(1.6);
+}
+/* While a panel-resize gesture is live: iframes are OOPIFs that swallow
+   pointermove (even through pointer capture) and kill the drag — turn off
+   their hit-testing for the duration. Also stop accidental text selection. */
+.tachi-panel-resizing iframe { pointer-events: none !important; }
+.tachi-panel-resizing { user-select: none; cursor: col-resize; }
+
+/* ── Drag-resize handle affordance (theme-proof) ─────────────────────────────
+   Every drag-resize handle carries `.tachi-resize-handle`: the AppShell sidebar
+   edge (ResizablePanelEdge) and the pane splitters added with SplitHandle
+   (Design thread · Agent file preview · Chat history rail · Chat artifacts ·
+   Nodes flow-chat). Both components ALSO set `cursor` inline as a no-CSS
+   fallback; this block is what actually guarantees the affordance.
+
+   Why it is `!important` and lives here, not only inline: an inline `cursor`
+   beats normal author rules but loses to ANY author `!important`, and a theme
+   may ship a structure layer (themes/<id>-structure.css) that restyles broad
+   element selectors. Owning the winning declaration centrally means no present
+   or future theme can take the resize cursor away — the handles look and behave
+   identically on bankr / tachi-dark / tachi-neon / comic / opus5 / tk05.
+
+   `cursor` is inherited, so the descendant selector is belt-and-braces for the
+   handles' inner decoration (`.tachi-resize-pill`): inheritance is overridden by
+   any rule that matches the CHILD, and an !important on the parent does not
+   protect it. aria-orientation picks the axis — a vertical separator splits
+   columns (col-resize), a horizontal one splits rows (row-resize). */
+.tachi-resize-handle,
+.tachi-resize-handle * { cursor: col-resize !important; }
+.tachi-resize-handle[aria-orientation="horizontal"],
+.tachi-resize-handle[aria-orientation="horizontal"] * { cursor: row-resize !important; }
+/* The handle must stay hit-testable: a theme (or a decorative chrome overlay
+   like the chassis frames) may switch off pointer-events on broad selectors, and
+   a handle that cannot be hovered can never show a cursor. */
+.tachi-resize-handle { pointer-events: auto; touch-action: none; user-select: none; }
+
+/* Loading skeleton (Catalog grid, etc.) — quiet opacity pulse. */
+@keyframes tachi-skeleton-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+.tachi-skeleton { animation: tachi-skeleton-pulse 1.2s ease-in-out infinite; }
+
+/* ── Canvas quick-add hover affordance ────────────────────────────────────────
+   canvas-quick-add: Twenty-style hover '+' affordance on canvas nodes. Hidden
+   until the parent node is hovered (.tachi-node-hover) or the picker is open
+   (data-open). Centralized here; QuickAddPlus.tsx also ships a scoped copy. */
+.tachi-quickadd {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.tachi-node-hover .tachi-quickadd,
+.tachi-quickadd[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Soft entrance for agent chat blocks (markdown answers + tool cards) — fires
+   once per block on mount; keyed blocks don't re-animate while streaming. */
+@keyframes tachi-msg-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tachi-msg-in { animation: tachi-msg-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+/* ── Transcript waiting indicator ────────────────────────────────────────────
+   Shown at the tail of the CODE / CHAT transcripts while a run is in flight but
+   nothing is streaming (before the first token, and in the gap between a tool
+   result and the next model text). Three squares breathing in sequence.
+
+   The animation is on the DOT SPANS ONLY — leaf elements. Same reasoning as the
+   note on .tachi-route-enter above: a filled transform keyframe on a WRAPPER
+   leaves a permanent computed transform and turns it into the containing block
+   for position:fixed descendants. A leaf has no descendants, so this indicator
+   can never spring that trap. No fill-mode here either — it loops forever. */
+@keyframes tachi-typing-dot {
+  0%, 70%, 100% { opacity: 0.2; transform: translateY(0); }
+  35%           { opacity: 1;   transform: translateY(-3px); }
+}
+.tachi-typing-dot { animation: tachi-typing-dot 1.15s ease-in-out infinite; }
+
+/* Monochrome brand marks (OpenAI, GitHub) ship a near-black baked fill that is
+   invisible on the dark themes. Force their svg shapes to currentColor so they
+   inherit the theme text color from ProviderIcon's wrapper. CSS beats an SVG
+   presentation `fill=` attribute, so this overrides the baked color. */
+.tachi-brand-mono svg,
+.tachi-brand-mono svg path,
+.tachi-brand-mono svg rect,
+.tachi-brand-mono svg circle,
+.tachi-brand-mono svg polygon { fill: currentColor !important; }
+
+/* Fill-in-the-blanks (batch36): the highlight layer MOUNTS when a template
+   with {{blanks}} is inserted, so a plain mount animation is the whole "the
+   blanks just appeared" cue — no state, no key, no timer. Opacity only: the
+   layer is pixel-aligned under a transparent textarea, so anything that moves
+   or scales it would visibly smear the text it sits behind. */
+@keyframes tachi-slot-arm {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.tachi-slot-layer { animation: tachi-slot-arm 140ms ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tachi-msg-in,
+  .tachi-route-enter,
+  .tachi-wedge-down,
+  .tachi-tab-content,
+  .tachi-pulse-dot,
+  .tachi-slot-layer,
+  .react-flow__node { animation: none !important; }
+  .tachi-node-hover { transform: none !important; filter: none !important; }
+  .tachi-tab-slider { transition: none !important; }
+  .tachi-tab-underline { transition: none !important; }
+  .tachi-toast { animation: none !important; }
+  .tachi-quickadd { transition: none !important; }
+  .react-flow__edge.tachi-edge-running .react-flow__edge-path { animation: none !important; }
+  .react-flow__edge-path.tachi-edge-flow { animation: none !important; }
+  .tachi-config-panel,
+  .tachi-blueprint-card,
+  .tachi-trace-live { animation: none !important; }
+  .tachi-settings-card, .tachi-resize-pill { transition: none !important; }
+  .tachi-resize-pill[data-active="true"] { transform: none; }
+  .tachi-skeleton { animation: none !important; opacity: 0.6; }
+  /* The waiting indicator stays LEGIBLE with motion off — the dots hold still
+     at full-ish opacity so "still working" is readable, just not animated. */
+  .tachi-typing-dot { animation: none !important; opacity: 0.65; transform: none !important; }
+}

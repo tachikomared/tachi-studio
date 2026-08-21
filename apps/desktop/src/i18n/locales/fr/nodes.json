@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "local",
+    "free": "cloud gratuit",
+    "unknown": "prix inconnu"
+  },
+  "repair": {
+    "title": "Le flux nécessite une configuration",
+    "summary_one": "Ce flux référence 1 élément qui n'est pas encore prêt.",
+    "summary_other": "Ce flux référence {{count}} éléments qui ne sont pas encore prêts.",
+    "openAnyway": "Ouvrir quand même",
+    "openAnywayTitle": "Ignorer pour ce flux — l'ouvrir tel quel",
+    "persistFailedTitle": "Non enregistré",
+    "persistFailed": "Les modifications du canevas ne sont PAS enregistrées — exportez votre flux.",
+    "fix": {
+      "providers": "Ajouter une clé",
+      "catalog": "Ouvrir le catalogue",
+      "settings": "Ouvrir les paramètres",
+      "skills": "Ouvrir les compétences",
+      "pickFolder": "Choisir un dossier",
+      "generic": "Corriger"
+    },
+    "problem": {
+      "providerKey": "Non connecté — ajoutez la clé API de ce fournisseur pour l'exécuter.",
+      "localModel": "Le modèle local « {{model}} » n'est pas téléchargé.",
+      "engineOff": "Le modèle « {{model}} » est téléchargé, mais le moteur local ne l'exécute pas.",
+      "folderEmpty": "Aucun dossier choisi — sélectionnez-en un pour donner un espace de travail à l'agent.",
+      "folderMissing": "Dossier introuvable sur cette machine : {{path}}",
+      "skillMissing": "La compétence « {{skill}} » n'est pas installée.",
+      "codexMissing": "Codex n'est pas encore installé.",
+      "segmentLength": "La scène chaînée demande {{frames}} images — une vidéo chaînée est plafonnée à {{cap}} (~5 s) par scène et celle-ci sera coupée. Ajoutez une autre scène plutôt qu'une plus longue.",
+      "rifeNoInput": "Rien de ce qui pourrait produire une vidéo n’est relié à ce nœud d’interpolation — reliez un nœud vidéo, sa carte de résultat ou un autre nœud d’interpolation.",
+      "rifeMissing": "Le moteur d’interpolation d’images n’est pas installé. Installez-le sur le nœud lui-même : c’est un téléchargement unique et le bouton en indique la taille.",
+      "generic": "Nécessite une configuration avant de lancer ce flux."
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "Supprimer le nœud",
+    "toggleMain": "Basculer la sortie principale"
+  },
+  "unknownNode": {
+    "title": "Nœud inconnu",
+    "originalTypeLabel": "Type d'origine",
+    "hint": "Ce type de nœud n'est pas enregistré dans cette version. Ses données sont conservées et il est ignoré lors de l'exécution du flux."
+  },
+  "agentNode": {
+    "mainSet": "Marquer comme la sortie principale (finale)",
+    "mainUnset": "Ceci est la sortie principale/finale — cliquez pour désactiver",
+    "modelFromUpstream": "modèle ← fournisseur amont",
+    "instructionsLabel": "Instructions (optionnel · @ pour référencer)",
+    "instructionsPlaceholder": "Qui est cet agent ? ex. 'Vous êtes un examinateur de code strict.' Tapez @ pour référencer un nœud amont.",
+    "runTitle": "Exécuter juste cet agent en utilisant les sorties en amont",
+    "empty": "(l'agent n'a produit aucun texte)"
+  },
+  "promptNode": {
+    "mainSet": "Marquer comme la sortie principale (finale)",
+    "mainUnset": "Sortie finale — cliquez pour désactiver",
+    "providerLabel": "Fournisseur",
+    "modelLabel": "Modèle",
+    "visionSuffix": " · vision",
+    "noLocalModels": "Aucun modèle local — téléchargez-en un dans Status → llama.cpp.",
+    "modelIdPlaceholder": "id du modèle",
+    "instructionLabel": "Instruction (@ pour référencer)",
+    "instructionPlaceholder": "ex. 'Écrivez un message de génération d'image vivant et détaillé pour : une ville néon la nuit.' Tapez @ pour plier un nœud amont.",
+    "visionWarning": "VISION ▸ image connectée, mais ce modèle ne peut pas lire les images — choisissez un modèle vision (Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…) pour l'utiliser.",
+    "runTitle": "Exécuter ce nœud Prompt — générer le texte du prompt",
+    "empty": "(aucun message généré pour le moment)",
+    "library": "{ } bibliothèque",
+    "libraryTitle": "Insérer un modèle de la bibliothèque de prompts"
+  },
+  "folderNode": {
+    "header": "dossier · espace de travail",
+    "noFolder": "aucun dossier choisi",
+    "pickTitle": "Choisir le dossier de l'espace de travail",
+    "change": "Changer le dossier",
+    "choose": "Choisir un dossier",
+    "hint": "les agents connectés ici peuvent lire/écrire des fichiers (selon le Rôle que vous accordez), limités à ce dossier."
+  },
+  "internetNode": {
+    "grants": "accorde : web_fetch(url)",
+    "hint": "les agents connectés ici peuvent récupérer les URL publiques. Bloqué en PRIVATE MODE."
+  },
+  "mcpNode": {
+    "urlPlaceholder": "vide = serveur intégré",
+    "hint": "les agents connectés ici obtiennent les outils de ce serveur MCP. Limité à la liste sûre en PRIVATE MODE."
+  },
+  "textNode": {
+    "label": "Texte — le sujet / le résumé",
+    "placeholder": "De quoi devrait parler le prompt ? ex. 'Publicité pour $TACHI — brutalist néon, viral, hype crypto.' Référencez-le en aval avec @ ou connectez-le dans un nœud Prompt / Media.",
+    "hintBefore": "Sortie = ce texte. Référencez-le à partir d'un autre nœud avec ",
+    "hintAfter": ", ou connectez-le dans un nœud Prompt / Media."
+  },
+  "noteNode": {
+    "badge": "NOTE",
+    "placeholder": "Pense-bête — notez une étiquette, une tâche ou du contexte. Ne fait pas partie de l'exécution.",
+    "cycleColor": "Changer de couleur",
+    "anchor": "Ancre {{count}} nœud(s) — ils se déplacent avec cette note",
+    "dragHint": "Le glissement déplace aussi les nœuds à l'intérieur de la note. Maintenez Alt pour déplacer uniquement la note."
+  },
+  "subflowNode": {
+    "badge": "Sous-flux",
+    "labelPlaceholder": "Sous-flux",
+    "labelAria": "Nom du sous-flux",
+    "count": "{{n}} nœuds",
+    "expand": "Développer",
+    "expandTitle": "Développer — restaurer les nœuds réduits et leurs connexions",
+    "hint": "Groupe réduit. Les nœuds masqués s'exécutent toujours avec le flux."
+  },
+  "imageRefNode": {
+    "tooLarge": "Image trop grande ({{size}} MB, max 12).",
+    "readError": "Impossible de lire le fichier.",
+    "label": "Image de référence (image d'init / ref de style)",
+    "altFallback": "référence",
+    "replace": "Remplacer l'image…",
+    "choose": "Choisir une image…",
+    "removeImage": "Supprimer l'image",
+    "clear": "Effacer",
+    "hint1": "Connecter dans un ",
+    "hintVideoImage": "Vidéo / Image",
+    "hint2": " nœud = son image de référence (image d'init image-vers-vidéo). Connecter dans un ",
+    "hint3": " nœud = le modèle de texte la VOIT (vision) et écrit à ce sujet. Nécessite un modèle capable de vision."
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ sortie",
+    "titlePlain": "sortie",
+    "regen": "↻ RÉGÉNÉRER",
+    "regenTitle": "Régénérer — relancer le nœud source",
+    "regenAria": "Régénérer",
+    "deleteResult": "Supprimer le résultat",
+    "noOutput": "(pas de sortie)",
+    "branchHint": "Branche ▸ connectez un nouveau nœud Prompt / Media de ce résultat pour continuer la chaîne.",
+    "pin": "ÉPINGLER",
+    "pinned": "▪ ÉPINGLÉ",
+    "pinTitle": "Épingler ce résultat — « Exécuter tous » le réutilise au lieu de relancer (et repayer) le nœud",
+    "unpinTitle": "Désépingler — « Exécuter tous » relancera ce nœud",
+    "pinnedChip": "ÉPINGLÉ — EXÉCUTER TOUS LE RÉUTILISE",
+    "costTitle": "Coût estimé de la dernière exécution de ce nœud (calcul de tokens chars/4 aux tarifs du modèle connecté)",
+    "followUp": "Suivi",
+    "followUpLabel": "Suivi",
+    "followUpTitle": "Brancher un agent de suivi depuis ce résultat — il lit cette sortie comme contexte",
+    "variantTitle": "Variante {{n}} de la duplication — l'une des exécutions sœurs du nœud source"
+  },
+  "mediaNode": {
+    "noLocalVoices": "Aucune voix locale — téléchargez-en une dans Media → Local.",
+    "installPiper": "Installez piper + téléchargez une voix dans Media → Local.",
+    "noLocalModels": "Aucun modèle {{kind}} local — téléchargez-en un dans Media → Local.",
+    "installSdCpp": "Installez sd.cpp + téléchargez un modèle dans Media → Local.",
+    "providerLabel": "Fournisseur",
+    "providerLocal": "Local",
+    "modelLabel": "Modèle",
+    "staleModel": "{{id}} (non installé)",
+    "noModels": "Aucun modèle — ajoutez une clé Surplus + financez l'USDC.",
+    "noModelsErr": "Aucun modèle ({{error}})",
+    "promptLabel": "Prompt",
+    "promptWired1": "Le prompt est connecté d'un nœud amont — sa sortie est utilisée comme le prompt. Déconnectez la ",
+    "promptWired2": " prise pour en taper un ici.",
+    "promptLabelRef": "Prompt (@ pour référencer un nœud amont)",
+    "promptPlaceholder": "décrivez ce que vous voulez générer… (ou connectez un nœud Prompt dans la prise de prompt)",
+    "imageWired1": "L'image de référence est connectée d'un nœud amont — son image est utilisée. Déconnectez la ",
+    "imageWired2": " prise pour en choisir une ici.",
+    "required": "Requis :",
+    "runTitle": "Générer en utilisant le message et les paramètres de ce nœud",
+    "perfPreset": "Performance",
+    "perfPresetPlaceholder": "— niveau —",
+    "stylePreset": "Style"
+  },
+  "resultCard": {
+    "collapse": "Réduire la carte de résultat",
+    "expand": "Développer la carte de résultat",
+    "toggleAria": "Afficher/masquer la carte de résultat : {{title}}"
+  },
+  "paneMenu": {
+    "aria": "Menu contextuel du canevas",
+    "tidyUp": "Ranger",
+    "tidyUpTitle": "Réorganiser automatiquement tous les nœuds avec la mise en page en couches ELK",
+    "addNode": "Ajouter un nœud…",
+    "addNodeTitle": "Ajouter rapidement un nœud à cette position",
+    "kindAgent": "Agent",
+    "kindPrompt": "Message",
+    "kindText": "Texte",
+    "kindMedia": "Image (Média)",
+    "kindProvider": "Fournisseur"
+  },
+  "group": {
+    "toSubflow": "Grouper → Sous-flux",
+    "title": "Réduire les {{n}} nœuds sélectionnés en un sous-flux"
+  },
+  "merge": {
+    "toFollowUp": "Fusionner → Suivi",
+    "title": "Fusionne les {{n}} résultats sélectionnés en un agent de suivi qui les synthétise",
+    "label": "Fusion",
+    "systemPrompt": "Synthétisez les résultats en amont en une seule réponse."
+  },
+  "nodeMenu": {
+    "aria": "Menu contextuel du nœud",
+    "group": "Grouper en sous-flux",
+    "duplicate": "Dupliquer",
+    "delete": "Supprimer"
+  },
+  "runUI": {
+    "runDefault": "Exécuter juste ce nœud",
+    "run": "Exécuter",
+    "running": "Exécution…",
+    "pin": "ÉPINGLER",
+    "pinned": "ÉPINGLER ●",
+    "pinTitle": "Épingler cette sortie comme une référence fixe pour les nœuds en aval",
+    "pinnedTitle": "Épinglé : les exécutions en aval réutilisent cette sortie sans relancer. Cliquez pour dépingler.",
+    "clearTitle": "Effacer la sortie mise en cache de ce nœud",
+    "clearAria": "Effacer la sortie",
+    "clearBusyTitle": "Impossible d’effacer pendant que ce nœud s’exécute — arrêtez d’abord l’exécution",
+    "noOutput": "(pas de sortie)",
+    "generatedAlt": "généré",
+    "toDesignAudio": "→ audio Design",
+    "toDesignAudioTitle": "Copier ce clip dans l'audio Design — les animations peuvent l'utiliser via staticFile()",
+    "toDesignAudioDone": "Enregistré dans l'audio Design : {{file}}",
+    "retry": "RÉESSAI {{attempt}}/{{attempts}}",
+    "fanoutTitle": "Dupliquer ×{{count}} — RUN exécute ce nœud {{count}} fois dans des cartes de résultat distinctes. Cliquez pour changer (×1 · ×2 · ×4).",
+    "fanoutAria": "Duplication ×{{count}}",
+    "fanoutRunning": "RUN {{current}}/{{total}}",
+    "fanoutStop": "STOP",
+    "fanoutStopTitle": "Arrêter la duplication après la fin de la variante en cours",
+    "stopRun": "STOP",
+    "stopRunTitle": "Arrêter ce rendu — met fin maintenant au processus du moteur local",
+    "statusDone": "{{title}} : exécution terminée",
+    "statusError": "{{title}} : exécution échouée"
+  },
+  "quickAdd": {
+    "addConnected": "Ajouter un nœud connecté",
+    "menuAria": "Ajouter un nœud connecté",
+    "header": "Ajouter + connecter"
+  },
+  "referenceField": {
+    "placeholder": "Tapez, ou @ pour référencer un nœud amont…",
+    "resolvesTo": "Se résout en",
+    "empty": "(vide — les nœuds amont n'ont pas encore de sortie)"
+  },
+  "edgeSidecar": {
+    "placeholder": "Instruction de bord...",
+    "hint": "Entrez pour enregistrer · Esc pour annuler"
+  },
+  "edge": {
+    "removeConnection": "Supprimer la connexion",
+    "editLabel": "Modifier l'étiquette du bord"
+  },
+  "emptyCanvas": {
+    "title": "Canevas vide",
+    "addNode": "Cliquez sur un modèle dans la palette pour ajouter un nœud.",
+    "connect": "Glissez les poignées pour connecter les nœuds.",
+    "delete": "Survolez un nœud et cliquez sur × pour le supprimer, ou sélectionnez + appuyez sur Suppr / Retour arrière.",
+    "starters": "…ou partez d'un modèle"
+  },
+  "palette": {
+    "title": "Palette de nœuds",
+    "searchPlaceholder": "Rechercher…",
+    "searchAria": "Palette de recherche",
+    "noMatches": "Aucune correspondance.",
+    "footer": "Glissez sur le canevas ou cliquez pour insérer.",
+    "dropHint": "Déposez pour ajouter un nœud",
+    "addNode": "Ajouter un nœud {{label}}",
+    "addRole": "Ajouter un nœud rôle {{label}}",
+    "groups": {
+      "providers": "Fournisseurs",
+      "prompt": "Message",
+      "inputs": "Entrées",
+      "agents": "Agents",
+      "tools": "Outils",
+      "media": "Média",
+      "annotate": "Annoter",
+      "roles": "Rôles",
+      "triggers": "Déclencheurs"
+    },
+    "aria": "Palette de nœuds"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "Révisions — chaque enregistrement crée un instantané",
+      "openAria": "Afficher les révisions",
+      "title": "Révisions",
+      "loading": "Lecture de l'historique…",
+      "empty": "Aucune révision pour l'instant — enregistrez ce flux pour en créer une.",
+      "failed": "Impossible de lire les révisions : {{error}}",
+      "unreadable": "instantané illisible",
+      "identical": "aucun changement",
+      "nodesAdded": "+{{n}} nœuds",
+      "nodesRemoved": "-{{n}} nœuds",
+      "edgesAdded": "+{{n}} liens",
+      "edgesRemoved": "-{{n}} liens",
+      "params": "{{n}} paramètres",
+      "justNow": "à l'instant",
+      "minutesAgo": "il y a {{n}} min",
+      "hoursAgo": "il y a {{n}} h",
+      "daysAgo": "il y a {{n}} j",
+      "size": "{{n}} Ko",
+      "restore": "restaurer",
+      "restoreTitle": "Restaurer cette révision — l'état actuel est d'abord enregistré, l'opération est donc réversible",
+      "restored": "« {{name}} » restauré depuis une révision antérieure",
+      "restoreFailed": "Échec de la restauration : {{error}}"
+    },
+    "scheduleTitle": "Planifier ce flux avec une minuterie",
+    "scheduleAria": "Planifier ce flux",
+    "title": "Flux",
+    "refreshTitle": "Actualiser la liste",
+    "refreshAria": "Actualiser",
+    "newTitle": "Enregistrer le canevas actuel et en commencer un nouveau",
+    "newFlow": "+ Nouveau flux",
+    "empty": "Aucun flux enregistré pour le moment. Construisez-en un et cliquez sur Enregistrer, ou + Nouveau flux.",
+    "rename": "ren",
+    "renameTitle": "Renommer le flux",
+    "confirmDelete": "sûr ?",
+    "confirmDeleteTitle": "Cliquez à nouveau pour confirmer la suppression",
+    "deleteTitle": "Supprimer le flux",
+    "templates": "Modèles",
+    "import": "⇧ Importer",
+    "importTitle": "Importer un fichier de flux .tachiflow.json",
+    "importAria": "Importer le flux",
+    "imported": "« {{name}} » importé",
+    "importFailed": "Échec de l'import : {{error}}",
+    "notTachiflow": "Ce n'est pas un fichier .tachiflow.json",
+    "unsupportedVersion": "Ce .tachiflow.json provient d'une version plus récente de l'app — mettez à jour TACHI STUDIO pour l'importer.",
+    "exportTitle": "Exporter en .tachiflow.json",
+    "exportAria": "Exporter le flux",
+    "exported": "{{file}} exporté",
+    "exportFailed": "Échec de l'export : {{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "Exporter le canevas actuel en PNG avec le flux intégré — réimportable",
+    "pngExported": "Exporté {{file}}",
+    "pngExportFailed": "Échec de l'export PNG : {{error}}",
+    "pngNoFlow": "Aucun flux intégré trouvé dans ce PNG",
+    "saveFailed": "Échec de l'enregistrement : {{error}}",
+    "cfaBlocked": "L'accès contrôlé aux dossiers de Windows bloque l'écriture dans Documents\\Tachi Studio — autorisez Tachi Studio dans Sécurité Windows, sinon l'application stockera les données dans {{fallback}}",
+    "aria": "Flux enregistrés",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "Ouvrir le flux",
+    "renameAria": "Renommer le flux",
+    "deleteAria": "Supprimer le flux",
+    "confirmDeleteAria": "Confirmer la suppression"
+  },
+  "config": {
+    "aria": "Configuration du nœud",
+    "header": "Configurer · {{type}}",
+    "close": "Fermer",
+    "closeEsc": "Fermer (Esc)",
+    "deleteNode": "Supprimer le nœud",
+    "deleteTitle": "Supprimer ce nœud et ses bords",
+    "duplicateNode": "Dupliquer le nœud",
+    "duplicateTitle": "Cloner ce nœud avec tous ses réglages (Ctrl+D)",
+    "fields": {
+      "label": "Étiquette",
+      "model": "Modèle",
+      "provider": "Fournisseur",
+      "endpoint": "Point d'extrémité",
+      "harness": "Agent",
+      "systemPrompt": "System prompt",
+      "final": "Final (sortie principale)",
+      "instruction": "Instruction",
+      "roleId": "ID de rôle",
+      "description": "Description",
+      "permissionTier": "Niveau de permission",
+      "workspacePath": "Chemin de l'espace de travail",
+      "serverUrl": "URL du serveur",
+      "modality": "Modalité",
+      "promptTemplate": "Prompt template",
+      "size": "Taille",
+      "count": "Nombre (n)",
+      "voice": "Voix",
+      "format": "Format",
+      "duration": "Durée (s)",
+      "resolution": "Résolution",
+      "audioPath": "Chemin audio",
+      "autoSaveDir": "Répertoire d'enregistrement auto",
+      "codexAllowWrite": "Autoriser l'écriture (bac à sable workspace-write)",
+      "retries": "Nouvelles tentatives en cas d’échec",
+      "retryDelay": "Délai entre tentatives (ms)"
+    },
+    "placeholders": {
+      "nodeLabel": "Étiquette du nœud",
+      "modelId": "id du modèle",
+      "systemPrompt": "Qui est cet agent ? ex. 'Vous êtes un examinateur de code strict.'",
+      "instruction": "Quel type de message écrire…",
+      "serverUrl": "Vide = serveur intégré",
+      "surplusModelId": "id du modèle surplus",
+      "autoSaveDir": "Dossier de secours d'enregistrement auto"
+    },
+    "hints": {
+      "modelFromProvider": "Le modèle vient du nœud Fournisseur amont.",
+      "internet": "Accorde la récupération web à un agent connecté (controlée par la politique d'egress).",
+      "codexAllowWrite": "Codex peut créer, modifier ou supprimer des fichiers uniquement dans le dossier connecté. Désactivé = analyse en lecture seule.",
+      "codexWriteNeedsFolder": "Connectez un nœud Dossier pour activer le mode écriture — il cible ce dossier, jamais tout le stockage de l'application.",
+      "retries": "Relance ce nœud jusqu’à 3 fois en cas d’échec. 0 = désactivé. Seul l’échec final enregistre l’erreur ou alimente une branche d’erreur.",
+      "retryDelay": "Attendre ce délai entre les tentatives."
+    },
+    "sections": {
+      "input": "Entrée",
+      "params": "Paramètres",
+      "output": "Sortie"
+    },
+    "io": {
+      "noInputs": "Aucune entrée câblée",
+      "inputEmpty": "— pas encore de sortie",
+      "noOutput": "Pas encore exécuté",
+      "showMore": "Afficher plus",
+      "showLess": "Afficher moins",
+      "statusOk": "OK",
+      "statusError": "Échec",
+      "statusIdle": "Non exécuté",
+      "errorLabel": "Erreur",
+      "costTitle": "Coût estimé de la dernière exécution de ce nœud (calcul caractères/4 selon les tarifs du modèle câblé)"
+    },
+    "retries": {
+      "decrease": "Moins de tentatives",
+      "increase": "Plus de tentatives"
+    }
+  },
+  "blueprint": {
+    "title": "Importer un plan",
+    "close": "Fermer",
+    "description": "Collez du markdown avec des étapes numérotées. Chaque étape devient un nœud agent (étiquette = titre, system prompt = corps), connectée de haut en bas dans une chaîne.",
+    "placeholder": "Collez un plan numéroté, ex.\n\n1. Recherche\nRecueillez les sources sur le sujet et résumez les faits clés.\n\n2. Brouillon\nÉcrivez un premier brouillon à partir de la recherche ci-dessus.\n\n3. Vérification\nCritiquez le brouillon et listez les corrections concrètes.",
+    "stepsDetected_one": "{{count}} étape détectée",
+    "stepsDetected_other": "{{count}} étapes détectées",
+    "noSteps": "Aucune étape numérotée trouvée. Commencez les lignes par « 1. », « 2) », etc.",
+    "final": "(final)",
+    "cancel": "Annuler",
+    "import": "Importer",
+    "importCount": "Importer ({{count}})",
+    "importTitleReady": "Générer la chaîne d'agent",
+    "importTitleEmpty": "Collez d'abord les étapes numérotées"
+  },
+  "howto": {
+    "title": "Comment construire un workflow",
+    "closeAria": "Fermer la visite guidée",
+    "closeTitle": "Fermer (restaure votre canevas)",
+    "back": "Retour",
+    "next": "Suivant",
+    "restore": "Restaurer mon canevas",
+    "restoreTitle": "Supprimer l'exemple et remettre votre canevas en place",
+    "keep": "Garder l'exemple",
+    "keepTitle": "Garder l'exemple sur le canevas",
+    "restoreNote": "Votre canevas est restauré quand vous fermez — sauf si vous choisissez « Garder l'exemple ».",
+    "steps": {
+      "intro": {
+        "title": "Qu'est-ce qu'un workflow ?",
+        "body": "Un workflow est une chaîne d'étapes IA que vous connectez sur ce canevas — texte, messages, images, vidéo, musique. Je vais construire un exemple simple à deux étapes directement devant vous ; appuyez sur Suivant et regardez. (Chaque étape que vous exécutez dépose son résultat comme une carte sur le canevas dont vous pouvez vous brancher.)"
+      },
+      "provider": {
+        "title": "Étape 1 — Fournisseur",
+        "body": "Un Fournisseur est d'où viennent les modèles IA. Nous utilisons le routeur FreeLLM sans clé — aucune clé requise. Chaque agent a besoin d'un fournisseur pour son « cerveau »."
+      },
+      "agent": {
+        "title": "Étape 2 — Agent",
+        "body": "Un Agent fait le vrai travail. Celui-ci est l'Écrivain. Sur le vrai canevas, vous ajoutez des nœuds de la palette sur la gauche (glissez-en un)."
+      },
+      "wire": {
+        "title": "Étape 3 — Connectez-les",
+        "body": "Connectez le Fournisseur à l'Écrivain en glissant du bord d'un nœud à l'autre. Maintenant l'Écrivain a un cerveau (son modèle). Le fil vient d'apparaître."
+      },
+      "second": {
+        "title": "Étape 4 — Ajouter une deuxième étape",
+        "body": "Ajoutez un deuxième Agent (Relecteur) et connectez Écrivain à Relecteur. L'étiquette sur ce fil (« a besoin d'examen ») est une indication de routage — elle dit au flux quand avancer. Vous avez maintenant un workflow à 2 étapes."
+      },
+      "run": {
+        "title": "Étape 5 — Exécuter",
+        "body": "C'est un workflow complet. Cliquez sur le bouton « Exécuter le flux » en surbrillance (brillant maintenant), puis « Exécuter tous » pour exécuter chaque nœud dans l'ordre. Chaque étape dépose une carte de résultat sur le canevas — branchez un nouveau nœud hors de n'importe quelle carte pour continuer, ou cliquez sur le Regen de la carte pour le relancer."
+      },
+      "beyond": {
+        "title": "Au-delà des agents",
+        "body": "La palette a plus : un nœud Texte (un sujet/résumé), un nœud Image de référence (alimentez un caractère ou un style), des nœuds Media (image, vidéo, musique, TTS, STT — via Venice ou Surplus), et un nœud Prompt qui peut VOIR une image connectée (vision). N'importe quel fournisseur fonctionne — Venice, Bankr, Ollama, llama.cpp — avec les étiquettes de capacité du modèle affichées en ligne. Enregistrez les canevas dans la liste Flux sur la gauche et basculez entre eux comme des chats."
+      }
+    }
+  },
+  "toolbar": {
+    "title": "Canevas de nœud",
+    "howToBuild": "Comment construire",
+    "howToBuildTitle": "Visite guidée interactive — construisez votre premier workflow étape par étape",
+    "templates": "Modèles ▾",
+    "templatesTitle": "Insérer un exemple de workflow prêt à l'emploi",
+    "council": "Conseil",
+    "councilTitle": "Générer un Conseil : un agent source se divise en Skeptique / Pragmatique / Critique, qui alimentent un agent Synthèse final",
+    "importBlueprint": "Importer un plan",
+    "importBlueprintTitle": "Collez du markdown avec des étapes numérotées pour générer une chaîne séquentielle de nœuds d'agent",
+    "flowNamePlaceholder": "Nom du flux...",
+    "flowNameAria": "Nom du flux",
+    "new": "Nouveau",
+    "newTitle": "Nouveau — abandonner le flux actuel",
+    "open": "Ouvrir",
+    "openTitle": "Ouvrir un fichier .tachi-flow.json",
+    "save": "Enregistrer",
+    "saveTitle": "Enregistrer le flux comme .tachi-flow.json",
+    "clear": "Effacer",
+    "clearTitle": "Effacer tous les nœuds et bords",
+    "autoLayout": "Mise en page automatique",
+    "layingOut": "Mise en page...",
+    "autoLayoutTitle": "Mise en page automatique des nœuds en utilisant l'algorithme en couches ELK",
+    "runFlow": "Exécuter le flux",
+    "runFlowTitle": "Compiler et EXÉCUTER ce graphique une fois, puis afficher le résultat",
+    "addExpert": "+ Ajouter un expert",
+    "addExpertTitle": "Ajouter un nouveau nœud d'agent persona et le connecter à la table ronde (avant le nœud CEO/MAIN)",
+    "chatWithFlow": "Discuter avec le flux",
+    "chatWithFlowTitle": "Parlez à toute l'équipe — chaque expert répond et l'agent MAIN synthétise",
+    "openInCode": "Ouvrir dans l'onglet Code",
+    "openInCodeTitle": "Envoyer ce flux à l'onglet Code comme une session d'agent (agent unique)",
+    "runInCode": "▸ Exécuter dans le chat Code",
+    "runInCodeTitle": "Enregistrer ce graphique entier et l'exécuter à partir du chat Code — envoyez-lui un message pour exécuter le réseau multi-agent entier",
+    "nodeCount_one": "{{count}} nœud",
+    "nodeCount_other": "{{count}} nœuds",
+    "edgeCount_one": "{{count}} bord",
+    "edgeCount_other": "{{count}} bords",
+    "whiteboard": "Tableau blanc",
+    "whiteboardTitle": "Basculer le tableau blanc d'esquisse — diagrammes et notes à main levée sur un canevas séparé ; votre flux reste intact en dessous",
+    "templatesMenuAria": "Modèles de démarrage"
+  },
+  "runPanel": {
+    "title": "Exécuter le flux",
+    "close": "Fermer",
+    "initialMessage": "Message initial (mode réseau uniquement)",
+    "initialPlaceholder": "Optionnel — laissez vide pour exécuter simplement le flux. Les nœuds Prompt portent leurs propres instructions.",
+    "runAll": "▸ Exécuter tous (dans l'ordre)",
+    "runAllTitle": "Exécuter chaque nœud UNE FOIS, de haut en bas dans l'ordre des dépendances (Prompt → Prompt → Media). La sortie de chaque nœud alimente le suivant — tout le pipeline en un clic.",
+    "running": "Exécution…",
+    "runningStep": "Exécution {{step}}/{{total}}{{label}}…",
+    "stop": "■ Arrêter après l'étape actuelle",
+    "stopTitle": "Arrêter l'exécution après la fin du nœud actuel (pas d'abandon mi-nœud).",
+    "runNetwork": "Exécuter comme un réseau",
+    "runNetworkTitle": "Alternative : une passe unique partagée du réseau agent-kit (les agents partagent l'état — pour les tables rondes). Utilise le message initial ci-dessus. Les Messages enchaînés→Message peuvent revenir vides sur certains fournisseurs.",
+    "idleBefore": "Appuyez sur ",
+    "idleStrong": "▸ Exécuter tous",
+    "idleAfter": " pour exécuter chaque nœud une fois, dans l'ordre des dépendances — la sortie de chaque nœud s'écoule dans le suivant, et le canevas se remplit en direct. (La boîte de message ci-dessous ne remplit que le mode optionnel « Exécuter comme un réseau ».)",
+    "runningNode": "Exécution du nœud {{step}} de {{total}}{{label}}… (regardez le canevas — chaque nœud se remplit au fur et à mesure qu'il se termine)",
+    "runningFlow": "Exécution du flux…",
+    "runFailed": "L'exécution a échouée",
+    "noAgentOutput": "Le flux a exécuté mais n'a produit aucune sortie d'agent.",
+    "step": "Étape {{n}} · {{agent}}",
+    "finalSuffix": " (final)",
+    "noTextOutput": "(pas de sortie de texte)",
+    "finalAnswer": "Réponse finale",
+    "empty": "(vide)",
+    "budgetLabel": "Plafond budget $",
+    "budgetOff": "désactivé",
+    "budgetTitle": "Arrêter l'exécution avant que la dépense estimée ne dépasse ce montant en dollars. Vide = pas de plafond. Les estimations utilisent les tarifs du modèle connecté de chaque nœud ; les modèles locaux sont gratuits.",
+    "retrySuffix": " · réessai {{attempt}}/{{attempts}}",
+    "aria": "Exécuter le flux",
+    "doneAria": "Exécution terminée"
+  },
+  "chatPanel": {
+    "title": "Discuter avec le flux",
+    "clear": "Effacer",
+    "clearTitle": "Effacer la conversation",
+    "close": "Fermer",
+    "empty": "Envoyez un message — chaque expert du flux pèse dans (chacun s'appuyant sur le précédent), et l'agent MAIN synthétise la décision. Tous les points de vue sont affichés ; la conversation est mémorisée d'un tour à l'autre. Conseil : chargez le modèle « Expert roundtable » ou cliquez sur « + Ajouter un expert », et marquez un nœud « MAIN » pour choisir qui synthétise.",
+    "you": "Vous",
+    "error": "Erreur",
+    "flow": "Flux",
+    "roundtable": "Table ronde d'équipe",
+    "decisionSuffix": " · décision",
+    "noOutput": "(pas de sortie)",
+    "thinking": "Le flux réfléchit…",
+    "inputPlaceholder": "Envoyez un message au flux… (Cmd/Ctrl+Entrée pour envoyer)",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "aria": "Discuter avec le flux"
+  },
+  "media": {
+    "output": "Sortie media",
+    "failed": "Échoué.",
+    "noTranscript": "(pas de transcription)",
+    "noArtifact": "Terminé — aucun artefact retourné.",
+    "generatedAlt": "généré",
+    "modalities": {
+      "image": "image",
+      "video": "vidéo",
+      "music": "musique",
+      "speech": "parole",
+      "transcript": "transcription"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "L'IPC d'exécution du graphe n'est pas disponible.",
+      "nothingToRun": "Rien à exécuter — ajouter un nœud Prompt, Agent ou Media.",
+      "cycle": "Cycle détecté dans le graphe — exécution ordonnée impossible. Nœuds concernés : {{nodes}}"
+    },
+    "errorPrefix": "erreur",
+    "budgetStop": "Arrêté : la dépense estimée ~${{spent}} a atteint le plafond budgétaire de ${{cap}}. Augmentez ou supprimez le plafond dans le panneau d'exécution pour continuer.",
+    "skippedNoError": "Ignoré — aucune erreur à traiter",
+    "skippedUpstreamFailed": "Ignoré — échec en amont"
+  },
+  "chat": {
+    "noOutput": "(pas de sortie)"
+  },
+  "scheduler": {
+    "addProviderAgent": "Ajouter d'abord un fournisseur et un agent.",
+    "needAgent": "Le flux a besoin d'au moins un nœud Agent.",
+    "needProvider": "Le flux a besoin d'au moins un nœud Fournisseur.",
+    "unknownHarness": "L'agent « {{harness}} » a un type d'agent inconnu — ignoré.",
+    "connectEdge": "Connectez un bord Fournisseur → Agent avant d'exécuter."
+  },
+  "confirm": {
+    "discardFlow": "Abandonner le flux actuel et recommencer ?",
+    "replaceTemplate": "Remplacer le flux actuel par le modèle « {{label}} » ?",
+    "clearAll": "Effacer {{count}} nœuds et tous les bords ?"
+  },
+  "toast": {
+    "addProviderFirst": "Ajouter d'abord un nœud Fournisseur, ou charger le modèle « Expert roundtable ».",
+    "expertAdded": "Expert ajouté. Cliquez dessus pour définir son nom + Instructions (persona).",
+    "autoLayoutFailed": "La mise en page auto a échouée : {{error}}",
+    "chainsCompiled": "{{count}} chaînes compilées — application de chain[0] à l'Agent.",
+    "flowLoadedPerm": " · permission {{permission}}",
+    "flowLoaded": "Flux chargé → {{harness}} sur {{provider}}{{perm}}. Choisissez un espace de travail pour commencer.",
+    "saved": "Enregistré : {{path}}",
+    "saveFailed": "L'enregistrement a échoué : {{error}}",
+    "unknownError": "erreur inconnue",
+    "useInCodeFailed": "Impossible d'utiliser dans Code : {{error}}",
+    "saveFailedShort": "l'enregistrement a échoué",
+    "activeInCode": "« {{name}} » est actif dans l'onglet Code — envoyez-lui un message pour exécuter le graphique entier.",
+    "councilAdded": "Conseil ajouté : source → Skeptique/Pragmatique/Critique → Synthèse. Connectez un Fournisseur aux agents pour l'exécuter.",
+    "blueprintImported_one": "{{count}} étape importée comme une chaîne d'agent. Connectez un Fournisseur au premier agent pour l'exécuter.",
+    "blueprintImported_other": "{{count}} étapes importées comme une chaîne d'agent. Connectez un Fournisseur au premier agent pour l'exécuter.",
+    "templateLoaded": "Modèle chargé « {{label}} ». Cliquez sur Exécuter le flux pour le tester.",
+    "loaded": "Chargé « {{name}} »",
+    "openFailed": "L'ouverture a échouée : {{error}}",
+    "cleared": "Canevas effacé ({{count}} nœuds)",
+    "undo": "ANNULER"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "Recherche multi-agents",
+        "description": "Le Chercheur rassemble les faits, l'Analyste les distille, le Rédacteur produit la synthèse finale. Gratuit — aucune clé requise."
+      },
+      "brainstorm-decide": {
+        "label": "Brainstormer et décider",
+        "description": "L'Optimiste propose des idées, le Sceptique les met à l'épreuve, le Décideur s'engage sur un plan. Gratuit — aucune clé requise."
+      },
+      "prompt-to-image": {
+        "label": "Prompt → Image",
+        "description": "Un modèle de texte gratuit écrit un prompt d'image vivant, puis alimente un nœud Image. Tapez votre idée et lancez."
+      },
+      "compare-two-models": {
+        "label": "Comparer deux modèles",
+        "description": "Une question, deux modèles répondent côte à côte, un juge désigne le gagnant. Le modèle B est Bankr/Claude par défaut."
+      },
+      "rag-over-folder": {
+        "label": "RAG sur un dossier",
+        "description": "Choisissez un dossier, posez vos questions — l'agent cherche dans vos fichiers et répond avec des citations. Nécessite une clé Bankr."
+      },
+      "summarize-url": {
+        "label": "Résumer une URL",
+        "description": "Collez un lien dans le nœud Texte — un agent connecté au web récupère la page et la résume. Nécessite une clé Bankr."
+      },
+      "geo-audit": {
+        "label": "Audit GEO (optimisation pour moteurs de réponse)",
+        "description": "Collez une page et les questions que vous visez : le flux simule l’usage qu’en ferait un moteur de réponse, la note et liste les correctifs. Gratuit, sans clé."
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio (multi-fournisseurs · débat → image + vidéo)",
+      "description": "Une équipe créative qui DÉBAT, puis crée. Un agent Bankr propose une idée, un agent OpenGateway la critique, un agent Surplus tranche — puis un nœud Message écrit le prompt d'image (Surplus image) et un Scenarist scénarise une vidéo (Surplus video). Fournisseurs, modèles, outils MCP/web et permissions différents par agent. Nécessite des clés Bankr + OpenGateway + Surplus (clé Surplus créditée pour les médias). Tableau de démonstration / test."
+    },
+    "storyboard": {
+      "label": "Storyboard (scènes enchaînées · local)",
+      "description": "Scènes enchaînées : une image fixe ouvre l'histoire, la scène 1 l'anime, et la scène 2 part de la DERNIÈRE IMAGE de la scène 1 — l'appli extrait cette image pour vous. Tapez votre prémisse, choisissez vos modèles locaux, puis lancez Run flow. Limites honnêtes : chaque scène est un rendu distinct d'environ 5 s avec un aller-retour pixel complet, donc la dérive de couleur et d'identité s'accumule à mesure que la chaîne s'allonge, et chaque scène paie son propre chargement de modèle. À voir comme un storyboard de quelques scènes, pas un long film."
+    },
+    "prompt-to-image": {
+      "label": "Prompt → Image",
+      "description": "Un modèle de texte gratuit rédige un prompt d'image vivant, puis l'envoie à un nœud Image. Tapez votre idée dans le nœud Message, exécutez-le, puis exécutez le nœud Image (nécessite une clé Surplus)."
+    },
+    "viral-video": {
+      "label": "Prompt → Viral → Vidéo",
+      "description": "Concept writer rédige une idée, un Viral rewriter la transforme en un prompt texte-vers-vidéo percutant, qui alimente un nœud Vidéo. La rédaction est gratuite ; générer la vidéo nécessite une clé Surplus."
+    },
+    "improve-prompt-image": {
+      "label": "Améliorer le prompt → Image",
+      "description": "Collez un prompt d'image brut dans le nœud Message — un modèle de texte gratuit le peaufine et alimente un nœud Image. Exécutez le nœud Message, puis le nœud Image."
+    },
+    "expert-roundtable": {
+      "label": "Table ronde d'experts (chat multi-agents)",
+      "description": "Les experts Frontend, Backend et SEO s'expriment à tour de rôle — chacun s'appuie sur le précédent —, puis le CEO synthétise le plan. Modifiez les Instructions de chaque agent pour personnaliser son personnage, ou cliquez sur « Add expert ». Ouvrez « Chat with flow » pour discuter avec l'équipe."
+    },
+    "code-helper": {
+      "label": "Assistant de code (fichiers)",
+      "description": "Un agent (Bankr/Claude) qui lit et écrit des fichiers dans un dossier de votre choix. Choisissez un dossier, puis exécutez."
+    },
+    "build-review": {
+      "label": "Build & Review (fichiers, multi-agents)",
+      "description": "Builder (Bankr/Claude) écrit des fichiers dans votre dossier, puis Reviewer les vérifie. Choisissez un dossier, puis exécutez."
+    },
+    "writer-reviewer": {
+      "label": "Writer vers Reviewer",
+      "description": "Writer rédige un brouillon, Reviewer le critique et l'améliore."
+    },
+    "research-summarize": {
+      "label": "Research vers Summary",
+      "description": "Researcher rassemble des éléments, Summarizer les condense."
+    },
+    "code-review": {
+      "label": "Code vers Review",
+      "description": "Coder écrit le code, Reviewer le vérifie à la recherche de bugs."
+    }
+  },
+  "whiteboard": {
+    "loading": "Chargement du tableau blanc…",
+    "saveFailed": "Impossible d'enregistrer le tableau blanc — le stockage du navigateur est plein. Votre esquisse reste disponible uniquement pour cette session."
+  },
+  "search": {
+    "placeholder": "Trouver un nœud…",
+    "title": "Rechercher les nœuds par libellé ou type — Entrée passe à la correspondance suivante, Maj+Entrée à la précédente",
+    "aria": "Rechercher des nœuds"
+  },
+  "errorBranch": {
+    "handleTooltip": "Sortie d'erreur — reliez-la à un nœud qui ne doit s'exécuter que si ce nœud échoue"
+  },
+  "codexWrite": {
+    "consentTitle": "AUTORISER L'ÉCRITURE CODEX",
+    "consentMessage": "L'agent Codex s'exécutera en mode ÉCRITURE. Il peut créer, modifier ou supprimer des fichiers uniquement dans ces dossiers :\n\n{{folders}}\n\nRien en dehors n'est touché. Continuer ?",
+    "consentRun": "EXÉCUTER",
+    "consentCancel": "ANNULER"
+  },
+  "canvas": {
+    "aria": "Canevas du flux",
+    "undo": "Annuler",
+    "undoTitle": "Annuler (Ctrl+Z)",
+    "redo": "Rétablir",
+    "redoTitle": "Rétablir (Ctrl+Maj+Z)"
+  },
+  "webhookNode": {
+    "header": "déclencheur · {{source}}",
+    "state": {
+      "listening": "À L’ÉCOUTE",
+      "disarmed": "DÉSACTIVÉ",
+      "server-off": "SERVEUR ÉTEINT",
+      "server-down": "SERVEUR PAS PRÊT",
+      "error": "ERREUR"
+    },
+    "help": {
+      "listening": "Activation…",
+      "disarmed": "Désactivé — le point d’entrée répond 404 jusqu’à ce que vous l’activiez.",
+      "server-off": "Le serveur API local est éteint. Activez-le dans Réglages → Connexions → OPENAI API pour obtenir une URL de webhook.",
+      "server-down": "Le serveur API local n’écoute pas encore — il démarre juste après l’application.",
+      "error": "Impossible d’activer ce déclencheur."
+    },
+    "arm": "ACTIVER",
+    "disarm": "DÉSACTIVER",
+    "armAria": "Activer ce déclencheur webhook",
+    "disarmAria": "Désactiver ce déclencheur webhook",
+    "copyUrl": "COPIER L’URL",
+    "copied": "COPIÉ",
+    "copyUrlAria": "Copier l’URL du webhook, secret inclus",
+    "rotate": "NOUVEAU SECRET",
+    "rotateAria": "Générer un nouveau secret — l’URL copiée avant cessera de fonctionner",
+    "autoRun": "Lancer le flux à l’arrivée d’une alerte",
+    "lastAlert": "Dernière : {{summary}} ({{count}} cette session)",
+    "noAlerts": "Aucune alerte pour l’instant.",
+    "loopbackHint": "Cette URL est locale (127.0.0.1). Les serveurs de TradingView ne peuvent pas l’atteindre — envoyez le POST depuis cette machine, ou exposez-la via un tunnel que vous gérez.",
+    "signalOnly": "Signal entrant uniquement : l’alerte devient du texte. Ce nœud ne passe jamais d’ordre."
+  },
+  "rifeNode": {
+    "header": "rife · interpolation",
+    "multiplierLabel": "Facteur",
+    "multiplierTitle": "Images par image source — ×2 ou ×4, une seule passe dans les deux cas",
+    "sourceLabel": "Clip source",
+    "noSource": "Rien n’est branché — reliez un résultat vidéo à la prise video.",
+    "checking": "Vérification du moteur…",
+    "unsupported": "Aucune version de RIFE n’est publiée pour cette plateforme.",
+    "install": "Installer le moteur · {{size}}",
+    "installTitle": "Télécharge le moteur rife-ncnn-vulkan ({{size}}) une seule fois. Ensuite, l’interpolation s’exécute entièrement sur votre machine.",
+    "installing": "Installation…",
+    "installHint": "Téléchargement unique. Rien n’est envoyé nulle part — le moteur tourne sur cette machine.",
+    "installFailed": "Le moteur n’a pas pu être installé.",
+    "runTitle": "Interpoler le clip branché et enregistrer un nouveau fichier à côté",
+    "wireHint": "Reliez un résultat vidéo local à la prise video pour pouvoir lancer.",
+    "localHint": "Entièrement local : lit le fichier sur le disque, calcule sur votre GPU et fonctionne en MODE PRIVÉ."
+  }
+}

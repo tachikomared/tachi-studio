@@ -1,0 +1,138 @@
+# Sprint B3 — provider-as-data registry.
+# Schema inspired by NangoHQ/nango's `providers.yaml` concept (Elastic License v2);
+# all data values here are written fresh from public provider documentation,
+# not copied from Nango's YAML.
+#
+# Each provider entry:
+#   id          — unique slug (used as a key below and passed around the app)
+#   label       — human-readable display name
+#   kind        — oauth_pkce | oauth_device | api_key | local
+#   authBaseUrl — (oauth only) authorization endpoint the browser opens
+#   tokenUrl    — (oauth only) server-side token exchange endpoint
+#   clientId    — (optional oauth) registered application client ID
+#   scope       — (oauth only) space-separated OAuth scopes
+#   verifyUrl   — URL TachiDesk hits to confirm a saved key/token still works
+#   verifyAuth  — how to attach the credential: bearer | x-api-key | none
+
+providers:
+  anthropic-oauth:
+    label:       Anthropic (Pro/Max)
+    kind:        oauth_pkce
+    authBaseUrl: https://claude.ai/oauth/authorize
+    tokenUrl:    https://console.anthropic.com/v1/oauth/token
+    clientId:    9d1c250a-e61b-44d9-88ed-5944d1962f5e
+    scope:       "org:create_api_key user:profile user:inference"
+    verifyUrl:   https://api.anthropic.com/v1/models
+    verifyAuth:  bearer
+
+  openrouter:
+    label:       OpenRouter
+    kind:        oauth_pkce
+    authBaseUrl: https://openrouter.ai/auth
+    tokenUrl:    https://openrouter.ai/api/v1/auth/keys
+    scope:       ""
+    verifyUrl:   https://openrouter.ai/api/v1/models
+    verifyAuth:  bearer
+
+  bankr-gateway:
+    label:      Bankr Gateway
+    kind:       api_key
+    verifyUrl:  https://llm.bankr.bot/v1/models
+    verifyAuth: bearer
+
+  opengateway:
+    label:      OpenGateway
+    kind:       api_key
+    verifyUrl:  https://opengateway.gitlawb.com/v1/models
+    verifyAuth: bearer
+
+  openai:
+    label:      OpenAI
+    kind:       api_key
+    verifyUrl:  https://api.openai.com/v1/models
+    verifyAuth: bearer
+
+  anthropic:
+    label:      Anthropic (Key)
+    kind:       api_key
+    verifyUrl:  https://api.anthropic.com/v1/models
+    verifyAuth: x-api-key
+
+  groq:
+    label:      Groq
+    kind:       api_key
+    verifyUrl:  https://api.groq.com/openai/v1/models
+    verifyAuth: bearer
+
+  mistral:
+    label:      Mistral
+    kind:       api_key
+    verifyUrl:  https://api.mistral.ai/v1/models
+    verifyAuth: bearer
+
+  cerebras:
+    label:      Cerebras
+    kind:       api_key
+    verifyUrl:  https://api.cerebras.ai/v1/models
+    verifyAuth: bearer
+
+  cohere:
+    label:      Cohere
+    kind:       api_key
+    verifyUrl:  https://api.cohere.com/v1/models
+    verifyAuth: bearer
+
+  # ── STEAL 2026-06-12 cluster E: free/cheap OpenAI-compatible providers ──────
+  # (key management + verify only; chat via the custom-openai provider path)
+  # Endpoints probed live 2026-06-13: NIM/SambaNova/GitHub/Novita → 200,
+  # ZAI/Scaleway → 401 (exists, auth-gated). codestral DROPPED — its subdomain
+  # has no /v1/models (404 even authed), so the key-verify probe can't work;
+  # Codestral models are reachable via the `mistral` entry above.
+
+  nvidia-nim:
+    label:      NVIDIA NIM
+    kind:       api_key
+    # chat base: https://integrate.api.nvidia.com/v1
+    verifyUrl:  https://integrate.api.nvidia.com/v1/models
+    verifyAuth: bearer
+
+  sambanova:
+    label:      SambaNova
+    kind:       api_key
+    # chat base: https://api.sambanova.ai/v1
+    verifyUrl:  https://api.sambanova.ai/v1/models
+    verifyAuth: bearer
+
+  github-models:
+    label:      GitHub Models
+    kind:       api_key
+    # chat base: https://models.github.ai/inference (GitHub PAT as key)
+    verifyUrl:  https://models.github.ai/catalog/models
+    verifyAuth: bearer
+
+  zai:
+    label:      Z.AI (GLM)
+    kind:       api_key
+    # chat base: https://api.z.ai/api/paas/v4 (coding plan: /api/coding/paas/v4)
+    verifyUrl:  https://api.z.ai/api/paas/v4/models
+    verifyAuth: bearer
+
+  scaleway-ai:
+    label:      Scaleway AI
+    kind:       api_key
+    # chat base: https://api.scaleway.ai/v1
+    verifyUrl:  https://api.scaleway.ai/v1/models
+    verifyAuth: bearer
+
+  novita:
+    label:      Novita AI
+    kind:       api_key
+    # chat base: https://api.novita.ai/openai/v1
+    verifyUrl:  https://api.novita.ai/openai/v1/models
+    verifyAuth: bearer
+
+  ollama:
+    label:      Ollama
+    kind:       local
+    verifyUrl:  http://127.0.0.1:11434/api/tags
+    verifyAuth: none

@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "ローカル",
+    "free": "無料クラウド",
+    "unknown": "価格不明"
+  },
+  "repair": {
+    "title": "フローの設定が必要です",
+    "summary_one": "このフローは、まだ準備できていない項目を 1 件参照しています。",
+    "summary_other": "このフローは、まだ準備できていない項目を {{count}} 件参照しています。",
+    "openAnyway": "そのまま開く",
+    "openAnywayTitle": "このフローでは非表示にする — そのまま開く",
+    "persistFailedTitle": "保存されていません",
+    "persistFailed": "キャンバスの変更は保存されていません — フローをエクスポートしてください。",
+    "fix": {
+      "providers": "キーを追加",
+      "catalog": "カタログを開く",
+      "settings": "設定を開く",
+      "skills": "スキルを開く",
+      "pickFolder": "フォルダを選択",
+      "generic": "修正"
+    },
+    "problem": {
+      "providerKey": "未接続です — 実行するにはこのプロバイダーの API キーを追加してください。",
+      "localModel": "ローカルモデル「{{model}}」がダウンロードされていません。",
+      "engineOff": "モデル「{{model}}」はダウンロード済みですが、ローカルエンジンで実行されていません。",
+      "folderEmpty": "フォルダがまだ選択されていません — エージェントの作業フォルダを選んでください。",
+      "folderMissing": "このマシンにフォルダが見つかりません：{{path}}",
+      "skillMissing": "スキル「{{skill}}」がインストールされていません。",
+      "codexMissing": "Codex はまだインストールされていません。",
+      "segmentLength": "連鎖シーンが {{frames}} フレームを要求しています — 連鎖動画は1シーンあたり {{cap}}（約5秒）が上限で、これは切り詰められます。長くするのではなく、シーンを追加してください。",
+      "rifeNoInput": "この補間ノードには動画を生み出せるものが何も接続されていません — 動画ノード、その結果カード、または別の補間ノードをつないでください。",
+      "rifeMissing": "フレーム補間エンジンがインストールされていません。ノード上のボタンからインストールしてください — 一度きりのダウンロードで、サイズはボタンに表示されます。",
+      "generic": "このフローを実行する前に設定が必要です。"
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "ノード削除",
+    "toggleMain": "メイン出力をトグル"
+  },
+  "unknownNode": {
+    "title": "不明なノード",
+    "originalTypeLabel": "元のタイプ",
+    "hint": "このノードタイプはこのビルドに登録されていません。データは保持され、フロー実行時にスキップされます。"
+  },
+  "agentNode": {
+    "mainSet": "メイン (最終)出力としてマーク",
+    "mainUnset": "これはメイン/最終出力 — クリックでアンセット",
+    "modelFromUpstream": "モデル ← アップストリームプロバイダー",
+    "instructionsLabel": "インストラクション (オプション · @でリファレンス)",
+    "instructionsPlaceholder": "このエージェントが誰ですか? 例: 'You are a strict code reviewer。' @を入力してアップストリームノードをリファレンス。",
+    "runTitle": "このエージェントだけをアップストリーム出力で実行",
+    "empty": "(エージェント出力なし)"
+  },
+  "promptNode": {
+    "mainSet": "メイン (最終)出力としてマーク",
+    "mainUnset": "最終出力 — クリックでアンセット",
+    "providerLabel": "プロバイダー",
+    "modelLabel": "モデル",
+    "visionSuffix": " · vision",
+    "noLocalModels": "ローカルモデルなし — ステータス → llama.cppでダウンロード。",
+    "modelIdPlaceholder": "モデルid",
+    "instructionLabel": "インストラクション (@でリファレンス)",
+    "instructionPlaceholder": "例: 'Write a vivid, detailed image-generation prompt for: a neon city at night。' @を入力してアップストリームノードをフォールド。",
+    "visionWarning": "VISION ▸ 画像が配線、でこのモデルは画像を読めません — visionモデル (Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…)を選択して使用。",
+    "runTitle": "このプロンプトノード実行 — プロンプトテキスト生成",
+    "empty": "(まだプロンプト生成なし)",
+    "library": "{ } ライブラリ",
+    "libraryTitle": "プロンプトライブラリからテンプレートを挿入"
+  },
+  "folderNode": {
+    "header": "フォルダー · ワークスペース",
+    "noFolder": "フォルダー選択なし",
+    "pickTitle": "ワークスペースフォルダーを選択",
+    "change": "フォルダー変更",
+    "choose": "フォルダー選択",
+    "hint": "ここに配線されたエージェントはファイル読み/書きできます (あなたが付与するロール)、このフォルダーにサンドボックス。"
+  },
+  "internetNode": {
+    "grants": "許可: web_fetch(url)",
+    "hint": "ここに配線されたエージェントはパブリックURLをフェッチできます。PRIVATE MODE でブロック。"
+  },
+  "mcpNode": {
+    "urlPlaceholder": "空白 = 組み込みサーバー",
+    "hint": "ここに配線されたエージェントはこのMCPサーバーのツールを取得。PRIVATE MODE では安全リストに制限。"
+  },
+  "textNode": {
+    "label": "テキスト — トピック / ブリーフ",
+    "placeholder": "プロンプトが何についてであるべき? 例: 'Advertise $TACHI — neon brutalist, viral, crypto hype。' @または別ノードで配線でリファレンス。",
+    "hintBefore": "出力 = このテキスト。別ノードから",
+    "hintAfter": "でリファレンス、またはプロンプト / メディアノードに配線。"
+  },
+  "noteNode": {
+    "badge": "メモ",
+    "placeholder": "付箋 — ラベルやToDo、メモを書き留めます。実行には含まれません。",
+    "cycleColor": "色を変更",
+    "anchor": "{{count}} 個のノードをアンカー — メモと一緒に移動します",
+    "dragHint": "ドラッグするとメモ内のノードも一緒に移動します。Alt を押すとメモのみを移動します。"
+  },
+  "subflowNode": {
+    "badge": "サブフロー",
+    "labelPlaceholder": "サブフロー",
+    "labelAria": "サブフロー名",
+    "count": "{{n}} ノード",
+    "expand": "展開",
+    "expandTitle": "展開 — 折りたたんだノードとその接続を復元",
+    "hint": "折りたたまれたグループ。非表示のノードもフローで実行されます。"
+  },
+  "imageRefNode": {
+    "tooLarge": "画像大きすぎます ({{size}} MB、最大12)。",
+    "readError": "ファイル読めませんでした。",
+    "label": "参照画像 (初期フレーム / スタイル参照)",
+    "altFallback": "参照",
+    "replace": "画像置換…",
+    "choose": "画像選択…",
+    "removeImage": "画像削除",
+    "clear": "クリア",
+    "hint1": "ノードに配線 ",
+    "hintVideoImage": "ビデオ / 画像",
+    "hint2": " = その参照画像 (画像からビデオ初期フレーム)。ノードに配線 ",
+    "hint3": " = テキストモデルが見て (vision)書く。Vision対応モデル必要。"
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ 出力",
+    "titlePlain": "出力",
+    "regen": "↻ 再生成",
+    "regenTitle": "再生成 — ソースノード再実行",
+    "regenAria": "再生成",
+    "deleteResult": "結果削除",
+    "noOutput": "(出力なし)",
+    "branchHint": "ブランチ ▸ この結果から新しいプロンプト / メディアノード配線してチェーン続ける。",
+    "pin": "ピン",
+    "pinned": "▪ ピン済",
+    "pinTitle": "この結果をピン留め — すべて実行は再実行(再課金)せずこれを再利用",
+    "unpinTitle": "ピン解除 — すべて実行はこのノードを再実行",
+    "pinnedChip": "ピン済 — すべて実行はこれを再利用",
+    "costTitle": "このノードの最終実行の推定コスト (配線モデルのレートで chars/4 トークン計算)",
+    "followUp": "フォローアップ",
+    "followUpLabel": "フォローアップ",
+    "followUpTitle": "この結果からフォローアップエージェントを分岐 — この出力をコンテキストとして読む",
+    "variantTitle": "ファンアウトのバリアント {{n}} — ソースノードの複数の並列実行のひとつ"
+  },
+  "mediaNode": {
+    "noLocalVoices": "ローカル音声なし — メディア → ローカルでダウンロード。",
+    "installPiper": "メディア → ローカルでpiperをインストール + 音声をダウンロード。",
+    "noLocalModels": "ローカル{{kind}}モデルなし — メディア → ローカルでダウンロード。",
+    "installSdCpp": "メディア → ローカルでsd.cppをインストール + モデルをダウンロード。",
+    "providerLabel": "プロバイダー",
+    "providerLocal": "ローカル",
+    "modelLabel": "モデル",
+    "staleModel": "{{id}}（未インストール）",
+    "noModels": "モデルなし — Surplusキー追加 + USDCに資金供給。",
+    "noModelsErr": "モデルなし ({{error}})",
+    "promptLabel": "プロンプト",
+    "promptWired1": "プロンプトはアップストリームノードから配線 — その出力がプロンプトで使用。",
+    "promptWired2": "プラグを接続してここに入力。",
+    "promptLabelRef": "プロンプト (@でアップストリームノードをリファレンス)",
+    "promptPlaceholder": "生成するもの説明… (またはプロンプトプラグにプロンプトノード配線)",
+    "imageWired1": "参照画像はアップストリームノードから配線 — その画像が使用。",
+    "imageWired2": "プラグを接続してここで1つ選択。",
+    "required": "必須:",
+    "runTitle": "このノードのプロンプト + パラメータで生成",
+    "perfPreset": "パフォーマンス",
+    "perfPresetPlaceholder": "— ティア —",
+    "stylePreset": "スタイル"
+  },
+  "resultCard": {
+    "collapse": "結果カードを折りたたむ",
+    "expand": "結果カードを展開",
+    "toggleAria": "結果カードの開閉: {{title}}"
+  },
+  "runUI": {
+    "runDefault": "このノードだけ実行",
+    "run": "実行",
+    "running": "実行中…",
+    "pin": "ピン",
+    "pinned": "ピン ●",
+    "pinTitle": "この出力をダウンストリームノード用固定参照としてピン",
+    "pinnedTitle": "ピン済み: ダウンストリームランは再実行なしでこの出力を再利用。クリックでアンピン。",
+    "clearTitle": "このノードのキャッシュ出力クリア",
+    "clearAria": "出力クリア",
+    "clearBusyTitle": "このノードの実行中はクリアできません — まず実行を停止してください",
+    "noOutput": "(出力なし)",
+    "generatedAlt": "生成",
+    "toDesignAudio": "→ Design オーディオ",
+    "toDesignAudioTitle": "このクリップを Design オーディオへコピー — アニメが staticFile() で利用できます",
+    "toDesignAudioDone": "Design オーディオに保存: {{file}}",
+    "retry": "リトライ {{attempt}}/{{attempts}}",
+    "fanoutTitle": "ファンアウト ×{{count}} — 実行するとこのノードを {{count}} 回動かし、別々の結果カードを作ります。クリックで切替（×1 · ×2 · ×4）。",
+    "fanoutAria": "ファンアウト ×{{count}}",
+    "fanoutRunning": "実行 {{current}}/{{total}}",
+    "fanoutStop": "停止",
+    "fanoutStopTitle": "現在のバリアントが終わったらファンアウトを停止します",
+    "stopRun": "停止",
+    "stopRunTitle": "このレンダリングを停止 — ローカルエンジンのプロセスを今すぐ終了します",
+    "statusDone": "{{title}}: 実行完了",
+    "statusError": "{{title}}: 実行失敗"
+  },
+  "quickAdd": {
+    "addConnected": "接続ノードを追加",
+    "menuAria": "接続ノードを追加",
+    "header": "追加 + 接続"
+  },
+  "referenceField": {
+    "placeholder": "入力、またはアップストリームノードをリファレンスするために@…",
+    "resolvesTo": "解決:",
+    "empty": "(空 — アップストリームノードはまだ出力なし)"
+  },
+  "edgeSidecar": {
+    "placeholder": "エッジインストラクション...",
+    "hint": "Enterで保存 · Escでキャンセル"
+  },
+  "edge": {
+    "removeConnection": "接続削除",
+    "editLabel": "エッジラベルを編集"
+  },
+  "paneMenu": {
+    "aria": "キャンバスのコンテキストメニュー",
+    "tidyUp": "整列",
+    "tidyUpTitle": "ELK レイヤードレイアウトで全ノードを自動整列",
+    "addNode": "ノードを追加…",
+    "addNodeTitle": "この位置にノードをクイック追加",
+    "kindAgent": "エージェント",
+    "kindPrompt": "プロンプト",
+    "kindText": "テキスト",
+    "kindMedia": "画像（メディア）",
+    "kindProvider": "プロバイダー"
+  },
+  "group": {
+    "toSubflow": "グループ化 → サブフロー",
+    "title": "選択した {{n}} 個のノードを1つのサブフローに折りたたむ"
+  },
+  "merge": {
+    "toFollowUp": "統合 → フォローアップ",
+    "title": "選択した {{n}} 件の結果を、それらを統合する1つのフォローアップエージェントにまとめます",
+    "label": "統合",
+    "systemPrompt": "上流の結果を1つの回答に統合してください。"
+  },
+  "nodeMenu": {
+    "aria": "ノードのコンテキストメニュー",
+    "group": "サブフローにグループ化",
+    "duplicate": "複製",
+    "delete": "削除"
+  },
+  "emptyCanvas": {
+    "title": "空キャンバス",
+    "addNode": "パレットでテンプレートをクリックしてノードを追加。",
+    "connect": "ハンドルをドラッグしてノードを接続。",
+    "delete": "ノードをホバーして×をクリックして削除、または選択 + Del / Backspaceを押す。",
+    "starters": "…またはテンプレートから始める"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "マルチエージェントリサーチ",
+        "description": "リサーチャーが事実を集め、アナリストが要点を絞り、ライターが最終ブリーフを仕上げます。無料 — キー不要。"
+      },
+      "brainstorm-decide": {
+        "label": "ブレストして決める",
+        "description": "楽観役がアイデアを出し、懐疑役が徹底検証し、決定役がひとつのプランに絞ります。無料 — キー不要。"
+      },
+      "prompt-to-image": {
+        "label": "プロンプト → 画像",
+        "description": "無料のテキストモデルが鮮やかな画像プロンプトを書き、画像ノードに渡します。アイデアを入力して実行するだけ。"
+      },
+      "compare-two-models": {
+        "label": "2 つのモデルを比較",
+        "description": "1 つの質問に 2 つのモデルが並んで回答し、ジャッジが勝者を選びます。モデル B のデフォルトは Bankr/Claude。"
+      },
+      "rag-over-folder": {
+        "label": "フォルダに RAG",
+        "description": "フォルダを選んで質問すると、エージェントがファイルを検索し、引用付きで回答します。Bankr キーが必要。"
+      },
+      "summarize-url": {
+        "label": "URL を要約",
+        "description": "テキストノードにリンクを貼ると、ウェブ対応エージェントがページを取得して要約します。Bankr キーが必要。"
+      },
+      "geo-audit": {
+        "label": "GEO 監査（アンサーエンジン最適化）",
+        "description": "ページと狙いたい質問を貼り付けると、アンサーエンジンがどう使うかをシミュレートし、採点して修正点を挙げます。無料・キー不要。"
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio（マルチプロバイダー・討論 → 画像＋動画）",
+      "description": "まず議論し、そして創り出すクリエイティブチーム。Bankrエージェントが構想を提案し、OpenGatewayエージェントが批評し、Surplusエージェントが最終決定を下します — その後Promptノードが画像プロンプトを書き（Surplus image）、Scenaristが動画の台本を書きます（Surplus video）。エージェントごとに異なるプロバイダー・モデル・MCP／webツール・権限を使用。Bankr＋OpenGateway＋Surplusのキーが必要です（メディア生成にはチャージ済みのSurplusキー）。ショーケース／テスト用ボード。"
+    },
+    "storyboard": {
+      "label": "ストーリーボード（連鎖シーン・ローカル）",
+      "description": "連鎖するシーン: スチル画像が物語を開き、シーン1がそれをアニメーション化し、シーン2はシーン1の最後のフレームから始まります — そのフレームはアプリが自動抽出します。前提を入力し、ローカルモデルを選んで Run flow を実行してください。正直な制約: 各シーンは個別の約5秒のレンダリングでピクセルの完全な往復を伴うため、チェーンが伸びるほど色や被写体の一貫性のズレが蓄積し、各シーンはそれぞれモデルの読み込みコストを支払います。長編映画ではなく、数シーン程度のストーリーボードとして考えてください。"
+    },
+    "prompt-to-image": {
+      "label": "Prompt → 画像",
+      "description": "無料のテキストモデルが鮮やかな画像プロンプトを作成し、画像ノードに渡します。Promptノードにアイデアを入力して実行し、次に画像ノードを実行してください（Surplusキーが必要）。"
+    },
+    "viral-video": {
+      "label": "Prompt → バイラル → 動画",
+      "description": "Concept writer がアイデアを下書きし、Viral rewriter がそれをキレのあるテキスト→動画プロンプトに書き換え、動画ノードに渡します。作成は無料。動画生成にはSurplusキーが必要です。"
+    },
+    "improve-prompt-image": {
+      "label": "プロンプト改善 → 画像",
+      "description": "粗い画像プロンプトをPromptノードに貼り付けると、無料のテキストモデルが磨き上げて画像ノードに渡します。Promptノードを実行し、次に画像ノードを実行してください。"
+    },
+    "expert-roundtable": {
+      "label": "専門家ラウンドテーブル（マルチエージェントチャット）",
+      "description": "Frontend・Backend・SEOの専門家が順番に意見を出し合い — それぞれ前の発言を踏まえて発展させ — 最後にCEOが計画をまとめます。各エージェントのInstructionsを編集してペルソナをカスタマイズするか、「Add expert」をクリックしてください。「Chat with flow」を開けばチームと会話できます。"
+    },
+    "code-helper": {
+      "label": "コードヘルパー（ファイル）",
+      "description": "選んだフォルダ内のファイルを読み書きする単一エージェント（Bankr/Claude）。フォルダを選んで実行してください。"
+    },
+    "build-review": {
+      "label": "Build & Review（ファイル・マルチエージェント）",
+      "description": "Builder（Bankr/Claude）がフォルダ内にファイルを書き、Reviewerがそれをチェックします。フォルダを選んで実行してください。"
+    },
+    "writer-reviewer": {
+      "label": "Writer から Reviewer へ",
+      "description": "Writerが下書きを書き、Reviewerが批評して改善します。"
+    },
+    "research-summarize": {
+      "label": "Research から Summary へ",
+      "description": "Researcherが要点を集め、Summarizerがそれを要約します。"
+    },
+    "code-review": {
+      "label": "Code から Review へ",
+      "description": "Coderがコードを書き、Reviewerがバグをチェックします。"
+    }
+  },
+  "palette": {
+    "title": "ノードパレット",
+    "searchPlaceholder": "検索…",
+    "searchAria": "パレット検索",
+    "noMatches": "一致なし。",
+    "footer": "キャンバスにドラッグ、またはクリックして挿入。",
+    "dropHint": "ドロップしてノードを追加",
+    "addNode": "{{label}}ノードを追加",
+    "addRole": "{{label}}ロールノードを追加",
+    "groups": {
+      "providers": "プロバイダー",
+      "prompt": "プロンプト",
+      "inputs": "入力",
+      "agents": "エージェント",
+      "tools": "ツール",
+      "media": "メディア",
+      "annotate": "注釈",
+      "roles": "ロール",
+      "triggers": "トリガー"
+    },
+    "aria": "ノードパレット"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "リビジョン — 保存のたびにスナップショットを作成",
+      "openAria": "リビジョンを表示",
+      "title": "リビジョン",
+      "loading": "履歴を読み込み中…",
+      "empty": "リビジョンはまだありません。このフローを保存するとスナップショットが作成されます。",
+      "failed": "リビジョンを読み込めません: {{error}}",
+      "unreadable": "スナップショットを読めません",
+      "identical": "変更なし",
+      "nodesAdded": "+{{n}} ノード",
+      "nodesRemoved": "-{{n}} ノード",
+      "edgesAdded": "+{{n}} エッジ",
+      "edgesRemoved": "-{{n}} エッジ",
+      "params": "{{n}} パラメータ",
+      "justNow": "たった今",
+      "minutesAgo": "{{n}} 分前",
+      "hoursAgo": "{{n}} 時間前",
+      "daysAgo": "{{n}} 日前",
+      "size": "{{n}} KB",
+      "restore": "復元",
+      "restoreTitle": "このリビジョンを復元 — 現在の状態を先にスナップショットするので元に戻せます",
+      "restored": "「{{name}}」を以前のリビジョンから復元しました",
+      "restoreFailed": "復元に失敗しました: {{error}}"
+    },
+    "scheduleTitle": "このフローをタイマーで実行する",
+    "scheduleAria": "このフローをスケジュール",
+    "title": "フロー",
+    "refreshTitle": "リスト再読み込み",
+    "refreshAria": "リフレッシュ",
+    "newTitle": "現在のキャンバスを保存して新規開始",
+    "newFlow": "+ 新規フロー",
+    "empty": "保存されたフロー なし。ビルド + 「保存」をヒット、またはフロー新規。",
+    "rename": "ren",
+    "renameTitle": "フロー名前変更",
+    "confirmDelete": "確認?",
+    "confirmDeleteTitle": "再度クリックで削除確認",
+    "deleteTitle": "フロー削除",
+    "templates": "テンプレート",
+    "import": "⇧ インポート",
+    "importTitle": ".tachiflow.json フローファイルをインポート",
+    "importAria": "フローをインポート",
+    "imported": "「{{name}}」をインポートしました",
+    "importFailed": "インポート失敗: {{error}}",
+    "notTachiflow": ".tachiflow.json ファイルではありません",
+    "unsupportedVersion": "この .tachiflow.json は新しいバージョンのアプリで作成されています — インポートするには TACHI STUDIO を更新してください。",
+    "exportTitle": ".tachiflow.json としてエクスポート",
+    "exportAria": "フローをエクスポート",
+    "exported": "{{file}} をエクスポートしました",
+    "exportFailed": "エクスポート失敗: {{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "現在のキャンバスをフロー埋め込みのPNGとして書き出す — 再インポート可能",
+    "pngExported": "書き出しました {{file}}",
+    "pngExportFailed": "PNGの書き出しに失敗: {{error}}",
+    "pngNoFlow": "このPNGに埋め込まれたフローが見つかりません",
+    "saveFailed": "保存に失敗しました: {{error}}",
+    "cfaBlocked": "Windows のコントロールされたフォルダー アクセスが ドキュメント\\Tachi Studio への書き込みをブロックしています — Windows セキュリティで Tachi Studio を許可してください。許可しない場合、アプリはデータを {{fallback}} に保存します",
+    "aria": "保存済みフロー",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "フローを開く",
+    "renameAria": "フロー名前変更",
+    "deleteAria": "フロー削除",
+    "confirmDeleteAria": "削除を確認"
+  },
+  "config": {
+    "aria": "ノード設定",
+    "header": "設定 · {{type}}",
+    "close": "閉じる",
+    "closeEsc": "閉じる (Esc)",
+    "deleteNode": "ノード削除",
+    "deleteTitle": "このノード + そのエッジ削除",
+    "duplicateNode": "ノードを複製",
+    "duplicateTitle": "設定ごとこのノードを複製 (Ctrl+D)",
+    "fields": {
+      "label": "ラベル",
+      "model": "モデル",
+      "provider": "プロバイダー",
+      "endpoint": "エンドポイント",
+      "harness": "エージェント",
+      "systemPrompt": "システムプロンプト",
+      "final": "最終 (メイン出力)",
+      "instruction": "インストラクション",
+      "roleId": "ロールid",
+      "description": "説明",
+      "permissionTier": "権限層",
+      "workspacePath": "ワークスペースパス",
+      "serverUrl": "サーバーURL",
+      "modality": "モダリティ",
+      "promptTemplate": "プロンプトテンプレート",
+      "size": "サイズ",
+      "count": "カウント (n)",
+      "voice": "音声",
+      "format": "フォーマット",
+      "duration": "デュレーション (s)",
+      "resolution": "解像度",
+      "audioPath": "オーディオパス",
+      "autoSaveDir": "自動保存ディレクトリ",
+      "codexAllowWrite": "書き込みを許可（workspace-write サンドボックス）",
+      "retries": "失敗時のリトライ回数",
+      "retryDelay": "リトライ間隔 (ms)"
+    },
+    "placeholders": {
+      "nodeLabel": "ノードラベル",
+      "modelId": "モデルid",
+      "systemPrompt": "このエージェントが誰ですか? 例: 'You are a strict code reviewer。'",
+      "instruction": "どんなプロンプトを書くか…",
+      "serverUrl": "空白 = 組み込みサーバー",
+      "surplusModelId": "surplusモデルid",
+      "autoSaveDir": "フォールバック保存フォルダー"
+    },
+    "hints": {
+      "modelFromProvider": "モデルはアップストリームプロバイダーノードから来ます。",
+      "internet": "配線されたエージェントにウェブフェッチを許可 (egress-policyゲート)。",
+      "codexAllowWrite": "Codex は接続されたフォルダー内でのみファイルを作成・変更・削除できます。オフ = 読み取り専用の分析。",
+      "codexWriteNeedsFolder": "書き込みモードを有効にするにはフォルダーノードを接続してください。対象はそのフォルダーのみで、アプリ全体のストレージには及びません。",
+      "retries": "失敗時にこのノードを最大3回再実行します。0 = オフ。最終的な失敗のみがエラーを記録し、エラーブランチに送られます。",
+      "retryDelay": "試行の間にこの時間だけ待機します。"
+    },
+    "sections": {
+      "input": "入力",
+      "params": "パラメータ",
+      "output": "出力"
+    },
+    "io": {
+      "noInputs": "接続された入力なし",
+      "inputEmpty": "— まだ出力なし",
+      "noOutput": "未実行",
+      "showMore": "もっと見る",
+      "showLess": "折りたたむ",
+      "statusOk": "OK",
+      "statusError": "失敗",
+      "statusIdle": "未実行",
+      "errorLabel": "エラー",
+      "costTitle": "このノードの前回実行の推定コスト（接続モデルの料金で文字数/4 のトークン換算）"
+    },
+    "retries": {
+      "decrease": "リトライを減らす",
+      "increase": "リトライを増やす"
+    }
+  },
+  "blueprint": {
+    "title": "ブループリント をインポート",
+    "close": "閉じる",
+    "description": "ナンバリングステップのマークダウンを貼り付け。各ステップがエージェントノード (ラベル = タイトル、システムプロンプト = ボディ)になり、トップ→ボトムにチェーン配線。",
+    "placeholder": "ナンバリングプランを貼り付け、例:\n\n1. Research\nトピックの出典を集めてキーファクトを要約。\n\n2. Draft\nリサーチ上から最初ドラフト書く。\n\n3. Review\nドラフト批評してコンクリート修正をリスト。",
+    "stepsDetected_one": "{{count}}ステップ検出",
+    "stepsDetected_other": "{{count}}ステップ検出",
+    "noSteps": "ナンバリングステップなし。行を「1.」「2)」などで開始。",
+    "final": "(最終)",
+    "cancel": "キャンセル",
+    "import": "インポート",
+    "importCount": "インポート ({{count}})",
+    "importTitleReady": "エージェントチェーン生成",
+    "importTitleEmpty": "最初にナンバリングステップを貼り付け"
+  },
+  "howto": {
+    "title": "ワークフロー構築方法",
+    "closeAria": "ウォークスルーを閉じる",
+    "closeTitle": "閉じる (キャンバス復元)",
+    "back": "戻る",
+    "next": "次へ",
+    "restore": "キャンバス復元",
+    "restoreTitle": "例を削除してキャンバス戻す",
+    "keep": "例を保持",
+    "keepTitle": "例をキャンバスに保持",
+    "restoreNote": "閉じるときキャンバスは復元 — 「例を保持」を選択しない限り。",
+    "steps": {
+      "intro": {
+        "title": "ワークフロー何",
+        "body": "ワークフローはこのキャンバス上に配線するAIステップのチェーン — テキスト、プロンプト、画像、ビデオ、ミュージック。私が目の前で単純2ステップ例をビルド; 次へ押して観察。(ラン毎ステップはキャンバスにカードをドロップしてブランチできます。)"
+      },
+      "provider": {
+        "title": "ステップ1 — プロバイダー",
+        "body": "プロバイダーはAIモデルが来ることろ。我々はキーレスの FreeLLM ルーターを使用 — キー不要。すべてのエージェントはそのブレイン (モデル)のプロバイダーが必要。"
+      },
+      "agent": {
+        "title": "ステップ2 — エージェント",
+        "body": "エージェントが実際作業する。これはライター。リアルキャンバスで左側パレットからノードを追加 (1つドラッグアウト)。"
+      },
+      "wire": {
+        "title": "ステップ3 — 配線",
+        "body": "1つノードエッジから別ノードにドラッグしてプロバイダーをライターに接続。これでライターはブレイン (モデル)がある。ワイアはちょうど現れた。"
+      },
+      "second": {
+        "title": "ステップ4 — 2番目ステップを追加",
+        "body": "2番目エージェント (レビューアー)を追加してライターをレビューアーに接続。そのワイア上ラベル (「needs review」)はルーティングヒント — フロー進む時を言う。あなたは2ステップワークフローがある。"
+      },
+      "run": {
+        "title": "ステップ5 — 実行",
+        "body": "これは完全ワークフロー。ハイライトされた「ラン フロー」ボタン (今グロー)をクリック、次に「すべて実行」してすべてのノード順に実行。各ステップはキャンバスにカード結果をドロップ — 任意のカードから新ノード分岐、またはカードの再生成ヒット。"
+      },
+      "beyond": {
+        "title": "エージェント越える",
+        "body": "パレットはもっと: テキストノード (トピック/ブリーフ)、参照画像ノード (キャラクター/スタイル)、メディアノード (画像、ビデオ、ミュージック、TTS、STT — Venice または Surplus経由)、配線画像見られるプロンプトノード (vision)。あんなプロバイダーが動く — Venice、Bankr、Ollama、llama.cpp — インラインで表示されるモデル機能タグ付き。チャットみたいフロー リスト左側に保存してフロー間切り替え。"
+      }
+    }
+  },
+  "toolbar": {
+    "title": "ノードキャンバス",
+    "howToBuild": "ビルド方法",
+    "howToBuildTitle": "インタラクティブウォークスルー — 最初ワークフロー1ステップずつビルド",
+    "templates": "テンプレート ▾",
+    "templatesTitle": "既製例ワークフロー挿入",
+    "council": "カウンシル",
+    "councilTitle": "カウンシル生成: ソースエージェント → スケプティック / プラグマティスト / クリティック、最終合成エージェントに供給",
+    "importBlueprint": "ブループリント インポート",
+    "importBlueprintTitle": "ナンバリングステップのマークダウン貼り付けて連続エージェントノードのチェーン生成",
+    "flowNamePlaceholder": "フロー名...",
+    "flowNameAria": "フロー名",
+    "new": "新規",
+    "newTitle": "新規 — 現在フロー破棄",
+    "open": "開く",
+    "openTitle": ".tachi-flow.jsonファイル開く",
+    "save": "保存",
+    "saveTitle": "フロー .tachi-flow.jsonで保存",
+    "clear": "クリア",
+    "clearTitle": "すべてのノード + エッジクリア",
+    "autoLayout": "自動レイアウト",
+    "layingOut": "レイアウト中...",
+    "autoLayoutTitle": "ELKレイアウトアルゴリズムを使用してノート自動レイアウト",
+    "whiteboard": "ホワイトボード",
+    "whiteboardTitle": "スケッチ用ホワイトボードを切り替え — 別のキャンバスにフリーハンドの図やメモを描けます。下のフローはそのまま維持されます",
+    "runFlow": "フロー実行",
+    "runFlowTitle": "コンパイルしてこのグラフ実行一度、結果表示",
+    "addExpert": "+ エキスパート追加",
+    "addExpertTitle": "新ペルソナエージェント追加してラウンドテーブルに配線 (CEO/メインノード前)",
+    "chatWithFlow": "フロー で チャット",
+    "chatWithFlowTitle": "全チーム に話す — すべてのエキスパートが応答、メインエージェント合成",
+    "openInCode": "コードタブで開く",
+    "openInCodeTitle": "このフローを コードタブにエージェントセッション として送信 (シングルエージェント)",
+    "runInCode": "▸ コードチャット実行",
+    "runInCodeTitle": "全グラフを保存してコードチャット実行 — そこでメッセージして全マルチエージェント ネットワーク実行",
+    "nodeCount_one": "{{count}}ノード",
+    "nodeCount_other": "{{count}}ノード",
+    "edgeCount_one": "{{count}}エッジ",
+    "edgeCount_other": "{{count}}エッジ",
+    "templatesMenuAria": "スターターテンプレート"
+  },
+  "runPanel": {
+    "title": "ラン フロー",
+    "close": "閉じる",
+    "initialMessage": "初期メッセージ (ネットワークモードのみ)",
+    "initialPlaceholder": "オプション — ブランク フロー実行だけ。プロンプトノード独自インストラクション。",
+    "runAll": "▸ すべて実行 (順)",
+    "runAllTitle": "すべてのノード実行一度、トップ→ ボトム依存順 (プロンプト → プロンプト → メディア)。各ノード出力を次に供給 — パイプライン全体ワンクリック。",
+    "running": "実行中…",
+    "runningStep": "実行中 {{step}}/{{total}}{{label}}…",
+    "stop": "■ 現在ステップ後停止",
+    "stopTitle": "現在ノード完了後ラン停止 (ミッドノード中止なし)。",
+    "runNetwork": "1ネットワークで実行",
+    "runNetworkTitle": "代替: 1共有エージェント-キット ネットワーク パス (エージェント状態共有 — ラウンドテーブル)。上の初期メッセージを使用。チェーン プロンプト→プロンプト はいくつプロバイダーで空に戻る可能。",
+    "idleBefore": "押す ",
+    "idleStrong": "▸ すべて実行",
+    "idleAfter": " すべてのノド一度実行、依存順 — 各ノード出力を次にフロー、キャンバス完成ライブ。(下のメッセージボックスだけオプション「1ネットワークで実行」モード供給。)",
+    "runningNode": "ノド {{step}}/{{total}}{{label}}実行中… (キャンバス見て — 各ノド完了時に完成)",
+    "runningFlow": "フロー実行中…",
+    "runFailed": "ラン失敗",
+    "noAgentOutput": "フロー実行でもエージェント出力なし。",
+    "step": "ステップ {{n}} · {{agent}}",
+    "finalSuffix": " (最終)",
+    "noTextOutput": "(テキスト出力なし)",
+    "finalAnswer": "最終回答",
+    "empty": "(空)",
+    "budgetLabel": "予算上限 $",
+    "budgetOff": "オフ",
+    "budgetTitle": "推定支出がこの金額(ドル)を超える前にランを停止。空 = 上限なし。推定は各ノードの配線モデルのレートを使用、ローカルモデルは無料。",
+    "retrySuffix": " · リトライ {{attempt}}/{{attempts}}",
+    "aria": "フローを実行",
+    "doneAria": "実行完了"
+  },
+  "chatPanel": {
+    "title": "フロー でチャット",
+    "clear": "クリア",
+    "clearTitle": "チャット クリア",
+    "close": "閉じる",
+    "empty": "メッセージを送信 — フロー内すべてのエキスパートが重み(各前の上に構築)、メインエージェント合成。すべての見方が表示; チャットがターン越えて記憶。チップ: 「エキスパート ラウンドテーブル」テンプレート読み込むか「+ エキスパート 追加」をクリック、合成誰か選ぶために「メイン」としてノドをマーク。",
+    "you": "あなた",
+    "error": "エラー",
+    "flow": "フロー",
+    "roundtable": "チーム ラウンドテーブル",
+    "decisionSuffix": " · 意思決定",
+    "noOutput": "(出力なし)",
+    "thinking": "フロー思考中…",
+    "inputPlaceholder": "フローにメッセージ… (Cmd/Ctrl+Enter送信)",
+    "send": "送信",
+    "sending": "送信中…",
+    "aria": "フローとチャット"
+  },
+  "media": {
+    "output": "メディア出力",
+    "failed": "失敗。",
+    "noTranscript": "(トランスクリプトなし)",
+    "noArtifact": "完了 — アーティファクト返されず。",
+    "generatedAlt": "生成",
+    "modalities": {
+      "image": "画像",
+      "video": "ビデオ",
+      "music": "ミュージック",
+      "speech": "音声",
+      "transcript": "トランスクリプト"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "グラフ実行 IPC は利用不可。",
+      "nothingToRun": "実行するものなし — プロンプト、エージェント またはメディア ノド追加。",
+      "cycle": "グラフに循環が検出されました — 順番に実行できません。対象ノード: {{nodes}}"
+    },
+    "errorPrefix": "エラー",
+    "budgetStop": "停止: 推定支出 ~${{spent}} が予算上限 ${{cap}} に到達。続けるにはランパネルで上限を上げるかクリア。",
+    "skippedNoError": "スキップ — 処理すべきエラーがありません",
+    "skippedUpstreamFailed": "スキップ — 上流ノードが失敗しました"
+  },
+  "chat": {
+    "noOutput": "(出力なし)"
+  },
+  "scheduler": {
+    "addProviderAgent": "プロバイダー + エージェント最初に追加。",
+    "needAgent": "フロー は最少1エージェント ノドが必要。",
+    "needProvider": "フロー は最少1プロバイダー ノドが必要。",
+    "unknownHarness": "エージェント \"{{harness}}\" のエージェントタイプが不明 — スキップ。",
+    "connectEdge": "プロバイダー → エージェント エッジ実行前に接続。"
+  },
+  "confirm": {
+    "discardFlow": "現在フロー破棄して新規開始?",
+    "replaceTemplate": "現在フロー \"{{label}}\" テンプレートで置換?",
+    "clearAll": "{{count}}個のノドとすべてのエッジをクリア?"
+  },
+  "toast": {
+    "addProviderFirst": "最初にプロバイダー ノド追加、またはロード「エキスパート ラウンドテーブル」テンプレート。",
+    "expertAdded": "エキスパート追加。クリックしてその名前 + インストラクション (ペルソナ)設定。",
+    "autoLayoutFailed": "自動 レイアウト失敗: {{error}}",
+    "chainsCompiled": "{{count}}チェーン コンパイル — chain[0] をエージェント適用。",
+    "flowLoadedPerm": " · {{permission}}権限",
+    "flowLoaded": "フロー読み込み → {{harness}} on {{provider}}{{perm}}。ワークスペース選択して開始。",
+    "saved": "保存: {{path}}",
+    "saveFailed": "保存失敗: {{error}}",
+    "unknownError": "不明 エラー",
+    "useInCodeFailed": "コード内で使用できませんでした: {{error}}",
+    "saveFailedShort": "保存失敗",
+    "activeInCode": "「{{name}}」 はコード タブ でアクティブ — そこでメッセージして全グラフ実行。",
+    "councilAdded": "カウンシル追加: ソース → スケプティック/プラグマティスト/クリティック → 合成。実行するエージェントにプロバイダー配線。",
+    "blueprintImported_one": "{{count}}ステップ をエージェント チェーン としてインポート。実行するために最初のエージェント にプロバイダー配線。",
+    "blueprintImported_other": "{{count}}ステップ をエージェント チェーン としてインポート。実行するために最初のエージェント にプロバイダー配線。",
+    "templateLoaded": "テンプレート\"{{label}}\"ロード。「ラン フロー」をクリックして試す。",
+    "loaded": "「{{name}}」ロード",
+    "openFailed": "開く失敗: {{error}}",
+    "cleared": "キャンバスをクリア ({{count}}ノド)",
+    "undo": "元に戻す"
+  },
+  "whiteboard": {
+    "loading": "ホワイトボードを読み込み中…",
+    "saveFailed": "ホワイトボードを保存できませんでした — ブラウザのストレージが満杯です。スケッチはこのセッション中のみ利用できます。"
+  },
+  "search": {
+    "placeholder": "ノード検索…",
+    "title": "ラベルまたはタイプでノード検索 — Enter で次のマッチへ、Shift+Enter で前へ",
+    "aria": "ノードを検索"
+  },
+  "errorBranch": {
+    "handleTooltip": "エラー出力 — このノードが失敗したときにのみ実行するノードに接続します"
+  },
+  "codexWrite": {
+    "consentTitle": "CODEX の書き込みを許可",
+    "consentMessage": "Codex エージェントは書き込みモードで実行されます。次のフォルダー内でのみファイルを作成・変更・削除できます：\n\n{{folders}}\n\nそれ以外には一切触れません。続行しますか？",
+    "consentRun": "実行",
+    "consentCancel": "キャンセル"
+  },
+  "canvas": {
+    "aria": "フロー キャンバス",
+    "undo": "元に戻す",
+    "undoTitle": "元に戻す (Ctrl+Z)",
+    "redo": "やり直す",
+    "redoTitle": "やり直す (Ctrl+Shift+Z)"
+  },
+  "webhookNode": {
+    "header": "トリガー · {{source}}",
+    "state": {
+      "listening": "受信待ち",
+      "disarmed": "停止中",
+      "server-off": "サーバー停止",
+      "server-down": "サーバー未準備",
+      "error": "エラー"
+    },
+    "help": {
+      "listening": "有効化しています…",
+      "disarmed": "停止中 — 有効にするまでエンドポイントは 404 を返します。",
+      "server-off": "ローカル API サーバーがオフです。設定 → 接続 → OPENAI API でオンにすると webhook URL が得られます。",
+      "server-down": "ローカル API サーバーはまだ待ち受けていません — アプリ起動の直後に立ち上がります。",
+      "error": "このトリガーを有効化できませんでした。"
+    },
+    "arm": "有効化",
+    "disarm": "停止",
+    "armAria": "この webhook トリガーを有効にする",
+    "disarmAria": "この webhook トリガーを停止する",
+    "copyUrl": "URL をコピー",
+    "copied": "コピーしました",
+    "copyUrlAria": "シークレットを含む webhook URL をコピー",
+    "rotate": "新しいシークレット",
+    "rotateAria": "新しいシークレットを生成 — 以前コピーした URL は無効になります",
+    "autoRun": "アラート受信時にフローを実行する",
+    "lastAlert": "最新: {{summary}}（このセッションで {{count}} 件）",
+    "noAlerts": "まだアラートはありません。",
+    "loopbackHint": "この URL はローカル（127.0.0.1）です。TradingView のサーバーからは到達できません — このマシンから POST するか、自分で用意したトンネルで公開してください。",
+    "signalOnly": "受信シグナル専用: アラートはテキストになるだけです。このノードは取引を行いません。"
+  },
+  "rifeNode": {
+    "header": "rife · 補間",
+    "multiplierLabel": "倍率",
+    "multiplierTitle": "元の 1 フレームあたりの枚数 — ×2 も ×4 も 1 パスで実行します",
+    "sourceLabel": "元のクリップ",
+    "noSource": "何も接続されていません — 動画の結果を video プラグにつないでください。",
+    "checking": "エンジンを確認中…",
+    "unsupported": "このプラットフォーム向けの RIFE ビルドは公開されていません。",
+    "install": "エンジンをインストール · {{size}}",
+    "installTitle": "rife-ncnn-vulkan エンジン（{{size}}）を一度だけダウンロードします。以降、補間はすべてこの端末で実行されます。",
+    "installing": "インストール中…",
+    "installHint": "ダウンロードは一度きりです。どこにも送信されず、エンジンはこの端末で動作します。",
+    "installFailed": "エンジンをインストールできませんでした。",
+    "runTitle": "接続されたクリップを補間し、隣に新しいファイルを保存します",
+    "wireHint": "実行するには、ローカルの動画結果を video プラグにつないでください。",
+    "localHint": "完全にローカル: ディスク上のファイルを読み、GPU で計算し、プライベートモードでも動作します。"
+  }
+}

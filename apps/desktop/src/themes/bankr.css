@@ -1,0 +1,28 @@
+:root[data-theme="bankr"] {
+  --bg-base:       #fcf9f8;
+  --bg-surface:    #ffffff;
+  --bg-elevated:   #f0edec;
+  --bg-inset:      #ebe7e7;
+  --bg-sidebar:    #f0edec;
+  --accent:        #6b38d4;
+  --accent-hover:  #8455ef;
+  --accent-alt:    #d43f00;
+  --accent-muted:  #e9ddff;
+  --accent-text:   #23005c;
+  --text-primary:  #1c1b1b;
+  --text-muted:    #7b7486;
+  --text-dim:      #cbc3d7;
+  --border:        #1c1b1b;
+  --border-strong: #1c1b1b;
+  /* ONE semantic red — alias of --danger (see tachi-dark.css note). */
+  --destructive:   var(--danger);
+  --success:       #2f9e44;
+  --warning:       #d97706;
+  --danger:        #c92a2a;
+  --info:          #1971c2;
+  --shadow-hard:   3px 3px 0 #1c1b1b;
+  /* Larger offset variant for hover "lift" — same color, bigger shadow. */
+  --shadow-hard-lg: 6px 6px 0 #1c1b1b;
+  --shadow-soft:   3px 3px 0 rgba(28,27,27,0.25);
+  --border-width:  2px;
+}

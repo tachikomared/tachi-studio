@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "ALL",
+    "image": "IMAGE",
+    "video": "VIDEO",
+    "music": "MUSIC",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "Search prompts…"
+  },
+  "empty": {
+    "none": "No artifacts yet. Everything you generate — in the Media studio or from a media node on the Nodes canvas — lands here.",
+    "noneHint": "Open the Media tab to generate your first one.",
+    "noMatch": "No artifacts match {{scope}}{{query}}.",
+    "noMatchFilter": "this filter"
+  },
+  "tile": {
+    "altFallback": "artifact",
+    "noPreview": "(no preview)",
+    "noPrompt": "(no prompt)",
+    "pin": "PIN",
+    "pinned": "PINNED",
+    "pinTitle": "Pin to top",
+    "unpinTitle": "Unpin",
+    "completedAfterPrivate": "AFTER PRIVATE MODE",
+    "completedAfterPrivateTitle": "This generation was already in flight when PRIVATE MODE was turned on, so it finished and saved instead of being blocked. Nothing new left this machine after the switch — refusing at that point would only have thrown away a result already sent."
+  },
+  "actions": {
+    "fullscreen": "Fullscreen",
+    "save": "Save",
+    "reveal": "Reveal"
+  },
+  "preview": {
+    "alt": "preview",
+    "close": "Close (Esc)"
+  },
+  "pane": {
+    "preview": "PREVIEW",
+    "code": "CODE",
+    "openInDesign": "OPEN IN DESIGN",
+    "restore": "RESTORE",
+    "viewingVersion": "VIEWING v{{n}} OF {{max}} — READ-ONLY",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "Older version",
+    "newerVersion": "Newer version",
+    "seedUser": "Imported from chat: {{title}}",
+    "seedAssistant": "Seeded from a chat artifact — iterate by chatting."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "npm/install",
+  "matches": { "toolName": "Bash", "stdoutContains": ["npm install", "npm ci", "pnpm install", "yarn install", "up to date in", "packages are looking for funding", "added ", "changed "] },
+  "transforms": { "stripAnsi": true, "dedupeAdjacent": true },
+  "success": { "head": 0, "tail": 20, "maxChars": 3000 },
+  "failure": { "head": 20, "tail": 40, "maxChars": 8000 },
+  "preserveOnFailure": true,
+  "matchOutput": [
+    { "pattern": "up to date in ", "replacement": "npm: dependencies already up to date." }
+  ]
+}

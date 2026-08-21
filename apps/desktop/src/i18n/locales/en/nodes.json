@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "local",
+    "free": "free cloud",
+    "unknown": "price unknown"
+  },
+  "repair": {
+    "title": "Flow needs setup",
+    "summary_one": "This flow references 1 thing that isn't ready yet.",
+    "summary_other": "This flow references {{count}} things that aren't ready yet.",
+    "openAnyway": "Open anyway",
+    "openAnywayTitle": "Dismiss for this flow — open it as-is",
+    "persistFailedTitle": "Not saving",
+    "persistFailed": "Canvas changes are NOT being saved — export your flow.",
+    "fix": {
+      "providers": "Add key",
+      "catalog": "Open catalog",
+      "settings": "Open settings",
+      "skills": "Open skills",
+      "pickFolder": "Pick folder",
+      "generic": "Fix"
+    },
+    "problem": {
+      "providerKey": "Not connected — add this provider's API key to run it.",
+      "localModel": "Local model \"{{model}}\" isn't downloaded.",
+      "engineOff": "Model \"{{model}}\" is downloaded, but the local engine isn't running it.",
+      "folderEmpty": "No folder picked yet — choose one to give the agent a workspace.",
+      "folderMissing": "Folder not found on this machine: {{path}}",
+      "skillMissing": "Skill \"{{skill}}\" isn't installed.",
+      "codexMissing": "Codex isn't installed yet.",
+      "segmentLength": "Chained scene asks for {{frames}} frames — chained video is capped at {{cap}} (~5 s) per scene and this one will be trimmed. Add another scene instead of a longer one.",
+      "rifeNoInput": "Nothing that could produce a video is wired into this interpolate node — connect a video node, its result card, or another interpolate node.",
+      "rifeMissing": "The frame-interpolation engine isn't installed. Install it on the node itself — it's a one-time download and the button shows the size.",
+      "generic": "Needs setup before this flow will run."
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "Delete node",
+    "toggleMain": "Toggle main output"
+  },
+  "unknownNode": {
+    "title": "Unknown node",
+    "originalTypeLabel": "Original type",
+    "hint": "This node type isn't registered in this build. Its data is preserved and it's skipped when the flow runs."
+  },
+  "agentNode": {
+    "mainSet": "Mark as the main (final) output",
+    "mainUnset": "This is the main/final output — click to unset",
+    "modelFromUpstream": "model ← upstream provider",
+    "instructionsLabel": "Instructions (optional · @ to reference)",
+    "instructionsPlaceholder": "Who is this agent? e.g. 'You are a strict code reviewer.' Type @ to reference an upstream node.",
+    "runTitle": "Run just this agent using upstream outputs",
+    "empty": "(agent produced no text)"
+  },
+  "promptNode": {
+    "mainSet": "Mark as the main (final) output",
+    "mainUnset": "Final output — click to unset",
+    "providerLabel": "Provider",
+    "modelLabel": "Model",
+    "visionSuffix": " · vision",
+    "noLocalModels": "No local models — download one in Status → llama.cpp.",
+    "modelIdPlaceholder": "model id",
+    "instructionLabel": "Instruction (@ to reference)",
+    "instructionPlaceholder": "e.g. 'Write a vivid, detailed image-generation prompt for: a neon city at night.' Type @ to fold in an upstream node.",
+    "visionWarning": "VISION ▸ image wired, but this model can't read images — pick a vision-capable model (Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…) to use it.",
+    "runTitle": "Run this prompt node — generate the prompt text",
+    "empty": "(no prompt generated yet)",
+    "library": "{ } library",
+    "libraryTitle": "Insert a template from the prompt library"
+  },
+  "folderNode": {
+    "header": "folder · workspace",
+    "noFolder": "no folder chosen",
+    "pickTitle": "Pick the workspace folder",
+    "change": "Change folder",
+    "choose": "Choose folder",
+    "hint": "agents wired here can read/write files (per the Role you grant), sandboxed to this folder."
+  },
+  "internetNode": {
+    "grants": "grants: web_fetch(url)",
+    "hint": "agents wired here can fetch public URLs. Blocked in PRIVATE MODE."
+  },
+  "mcpNode": {
+    "urlPlaceholder": "blank = built-in server",
+    "hint": "agents wired here get this MCP server's tools. Restricted to the safe list in PRIVATE MODE."
+  },
+  "textNode": {
+    "label": "Text — the topic / brief",
+    "placeholder": "What should the prompt be about? e.g. 'Advertise $TACHI — neon brutalist, viral, crypto hype.' Reference it downstream with @ or wire it into a Prompt / Media node.",
+    "hintBefore": "Output = this text. Reference it from another node with ",
+    "hintAfter": ", or wire it into a Prompt / Media node."
+  },
+  "noteNode": {
+    "badge": "NOTE",
+    "placeholder": "Sticky note — jot a label, a to-do, or context. Not part of the run.",
+    "cycleColor": "Change color",
+    "anchor": "Anchors {{count}} node(s) — they move with this note",
+    "dragHint": "Drag moves the nodes inside this note too. Hold Alt to move only the note."
+  },
+  "subflowNode": {
+    "badge": "Subflow",
+    "labelPlaceholder": "Subflow",
+    "labelAria": "Subflow label",
+    "count": "{{n}} nodes",
+    "expand": "Expand",
+    "expandTitle": "Expand — restore the collapsed nodes and their connections",
+    "hint": "Collapsed group. The hidden nodes still run with the flow."
+  },
+  "imageRefNode": {
+    "tooLarge": "Image too large ({{size}} MB, max 12).",
+    "readError": "Could not read the file.",
+    "label": "Reference image (init frame / style ref)",
+    "altFallback": "reference",
+    "replace": "Replace image…",
+    "choose": "Choose image…",
+    "removeImage": "Remove image",
+    "clear": "Clear",
+    "hint1": "Wire into a ",
+    "hintVideoImage": "Video / Image",
+    "hint2": " node = its reference image (image-to-video init frame). Wire into a ",
+    "hint3": " node = the text model SEES it (vision) and writes about it. Needs a vision-capable model."
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ output",
+    "titlePlain": "output",
+    "regen": "↻ REGEN",
+    "regenTitle": "Regenerate — re-run the source node",
+    "regenAria": "Regenerate",
+    "deleteResult": "Delete result",
+    "noOutput": "(no output)",
+    "branchHint": "Branch ▸ wire a new Prompt / Media node off this result to continue the chain.",
+    "pin": "PIN",
+    "pinned": "▪ PINNED",
+    "pinTitle": "Pin this result — Run all reuses it instead of re-running (and re-paying for) the node",
+    "unpinTitle": "Unpin — Run all will re-run this node again",
+    "pinnedChip": "PINNED — RUN ALL REUSES THIS",
+    "costTitle": "Estimated cost of the last run of this node (chars/4 token math on the wired model’s rates)",
+    "followUp": "Follow-up",
+    "followUpLabel": "Follow-up",
+    "followUpTitle": "Branch a follow-up agent from this result — it reads this output as its context",
+    "variantTitle": "Fan-out variant {{n}} — one of several sibling runs of the source node"
+  },
+  "mediaNode": {
+    "noLocalVoices": "No local voices — download one in Media → Local.",
+    "installPiper": "Install piper + download a voice in Media → Local.",
+    "noLocalModels": "No local {{kind}} models — download one in Media → Local.",
+    "installSdCpp": "Install sd.cpp + download a model in Media → Local.",
+    "providerLabel": "Provider",
+    "providerLocal": "Local",
+    "modelLabel": "Model",
+    "staleModel": "{{id}} (not installed)",
+    "noModels": "No models — add a Surplus key + fund USDC.",
+    "noModelsErr": "No models ({{error}})",
+    "promptLabel": "Prompt",
+    "promptWired1": "Prompt is wired from an upstream node — its output is used as the prompt. Disconnect the ",
+    "promptWired2": " plug to type one here.",
+    "promptLabelRef": "Prompt (@ to reference an upstream node)",
+    "promptPlaceholder": "describe what to generate… (or wire a Prompt node into the prompt plug)",
+    "imageWired1": "Reference image is wired from an upstream node — its image is used. Disconnect the ",
+    "imageWired2": " plug to choose one here.",
+    "required": "Required:",
+    "runTitle": "Generate using this node's prompt + params",
+    "perfPreset": "Performance",
+    "perfPresetPlaceholder": "— tier —",
+    "stylePreset": "Style"
+  },
+  "resultCard": {
+    "collapse": "Collapse result card",
+    "expand": "Expand result card",
+    "toggleAria": "Toggle result card: {{title}}"
+  },
+  "runUI": {
+    "runDefault": "Run just this node",
+    "run": "Run",
+    "running": "Running…",
+    "pin": "PIN",
+    "pinned": "PIN ●",
+    "pinTitle": "Pin this output as a fixed reference for downstream nodes",
+    "pinnedTitle": "Pinned: downstream runs reuse this output without re-running. Click to unpin.",
+    "clearTitle": "Clear this node's cached output",
+    "clearAria": "Clear output",
+    "clearBusyTitle": "Can’t clear while this node is running — stop the run first",
+    "noOutput": "(no output)",
+    "generatedAlt": "generated",
+    "toDesignAudio": "→ design audio",
+    "toDesignAudioTitle": "Copy this clip into Design audio — animate compositions can score with it via staticFile()",
+    "toDesignAudioDone": "Saved to Design audio: {{file}}",
+    "retry": "RETRY {{attempt}}/{{attempts}}",
+    "fanoutTitle": "Fan out ×{{count}} — RUN executes this node {{count}} times into separate result cards. Click to change (×1 · ×2 · ×4).",
+    "fanoutAria": "Fan-out ×{{count}}",
+    "fanoutRunning": "RUN {{current}}/{{total}}",
+    "fanoutStop": "STOP",
+    "fanoutStopTitle": "Stop the fan-out after the current variant finishes",
+    "stopRun": "STOP",
+    "stopRunTitle": "Stop this render — kills the local engine process now",
+    "statusDone": "{{title}}: run finished",
+    "statusError": "{{title}}: run failed"
+  },
+  "quickAdd": {
+    "addConnected": "Add a connected node",
+    "menuAria": "Add connected node",
+    "header": "Add + connect"
+  },
+  "referenceField": {
+    "placeholder": "Type, or @ to reference an upstream node…",
+    "resolvesTo": "Resolves to",
+    "empty": "(empty — upstream nodes have no output yet)"
+  },
+  "edgeSidecar": {
+    "placeholder": "Edge instruction...",
+    "hint": "Enter to save · Esc to cancel"
+  },
+  "edge": {
+    "removeConnection": "Remove connection",
+    "editLabel": "Edit edge label"
+  },
+  "paneMenu": {
+    "aria": "Canvas context menu",
+    "tidyUp": "Tidy Up",
+    "tidyUpTitle": "Auto-arrange all nodes using ELK layered layout",
+    "addNode": "Add node…",
+    "addNodeTitle": "Quick-add a node at this position",
+    "kindAgent": "Agent",
+    "kindPrompt": "Prompt",
+    "kindText": "Text",
+    "kindMedia": "Image (Media)",
+    "kindProvider": "Provider"
+  },
+  "group": {
+    "toSubflow": "Group → Subflow",
+    "title": "Collapse the {{n}} selected nodes into one subflow"
+  },
+  "merge": {
+    "toFollowUp": "Merge → Follow-up",
+    "title": "Merge the {{n}} selected results into one follow-up agent that synthesizes them",
+    "label": "Merge",
+    "systemPrompt": "Synthesize the upstream results into one answer."
+  },
+  "nodeMenu": {
+    "aria": "Node context menu",
+    "group": "Group into subflow",
+    "duplicate": "Duplicate",
+    "delete": "Delete"
+  },
+  "emptyCanvas": {
+    "title": "Empty canvas",
+    "addNode": "Click a template in the palette to add a node.",
+    "connect": "Drag handles to connect nodes.",
+    "delete": "Hover a node and click × to delete, or select + press Del / Backspace.",
+    "starters": "…or start from a template"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "Multi-agent research",
+        "description": "Researcher gathers facts, Analyst distills them, Writer produces the final brief. Free — no key needed."
+      },
+      "brainstorm-decide": {
+        "label": "Brainstorm & decide",
+        "description": "Optimist pitches ideas, Skeptic stress-tests them, Decider commits to one plan. Free — no key needed."
+      },
+      "prompt-to-image": {
+        "label": "Prompt → Image",
+        "description": "A free text model writes a vivid image prompt, then feeds an Image node. Type your idea and run."
+      },
+      "compare-two-models": {
+        "label": "Compare two models",
+        "description": "One question, two models answer side by side, a judge picks the winner. Model B defaults to Bankr/Claude."
+      },
+      "rag-over-folder": {
+        "label": "RAG over a folder",
+        "description": "Pick a folder, ask questions — the agent searches your files and answers with citations. Needs a Bankr key."
+      },
+      "summarize-url": {
+        "label": "Summarize a URL",
+        "description": "Paste a link into the Text node — a web-enabled agent fetches the page and summarizes it. Needs a Bankr key."
+      },
+      "geo-audit": {
+        "label": "GEO audit (answer-engine optimization)",
+        "description": "Paste a page and the questions you want to win — the flow simulates how an answer engine would use it, then grades it and lists the fixes. Free — no key needed."
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio (multi-provider · debate → image + video)",
+      "description": "A creative team that ARGUES, then creates. A Bankr agent pitches, an OpenGateway agent critiques, a Surplus agent directs — then a Prompt node writes the image prompt (Surplus image) and a Scenarist scripts a video (Surplus video). Different providers, models, MCP/web tools and permissions per agent. Needs Bankr + OpenGateway + Surplus keys (funded Surplus key for media). Showcase / testing board."
+    },
+    "storyboard": {
+      "label": "Storyboard (chained scenes · local)",
+      "description": "Chained scenes: a still opens the story, scene 1 animates it, and scene 2 starts from scene 1's LAST FRAME — the app extracts that frame for you. Type your premise, pick your local models, then Run flow. Honest limits: each scene is a separate ~5 s render and a full pixel round-trip, so colour and identity drift accumulate as the chain grows, and every scene pays its own model load. Think storyboard of a few scenes, not a long film."
+    },
+    "prompt-to-image": {
+      "label": "Prompt → Image",
+      "description": "A free text model authors a vivid image prompt, then feeds it into an Image node. Type your idea in the Prompt node, Run it, then Run the Image node (needs a Surplus key)."
+    },
+    "viral-video": {
+      "label": "Prompt → Viral → Video",
+      "description": "Concept writer drafts an idea, a Viral rewriter turns it into a kinetic text-to-video prompt, then it feeds a Video node. Free to author; Video gen needs a Surplus key."
+    },
+    "improve-prompt-image": {
+      "label": "Improve prompt → Image",
+      "description": "Paste a rough image prompt into the Prompt node — a free text model polishes it and feeds an Image node. Run the Prompt node, then the Image node."
+    },
+    "expert-roundtable": {
+      "label": "Expert roundtable (multi-agent chat)",
+      "description": "Frontend, Backend & SEO experts brainstorm in turn — each builds on the last — then the CEO synthesizes the plan. Edit each agent's Instructions to customize the persona, or click \"Add expert\". Open \"Chat with flow\" to talk to the team."
+    },
+    "code-helper": {
+      "label": "Code helper (files)",
+      "description": "One agent (Bankr/Claude) that reads & writes files in a folder you choose. Pick a folder, then run."
+    },
+    "build-review": {
+      "label": "Build & Review (files, multi-agent)",
+      "description": "Builder (Bankr/Claude) writes files in your folder, then Reviewer checks them. Pick a folder, then run."
+    },
+    "writer-reviewer": {
+      "label": "Writer to Reviewer",
+      "description": "Writer drafts, Reviewer critiques and improves it."
+    },
+    "research-summarize": {
+      "label": "Research to Summary",
+      "description": "Researcher gathers points, Summarizer condenses them."
+    },
+    "code-review": {
+      "label": "Code to Review",
+      "description": "Coder writes the code, Reviewer checks it for bugs."
+    }
+  },
+  "palette": {
+    "title": "Node Palette",
+    "searchPlaceholder": "Search…",
+    "searchAria": "Search palette",
+    "noMatches": "No matches.",
+    "footer": "Drag onto the canvas, or click to insert.",
+    "dropHint": "Drop to add node",
+    "addNode": "Add {{label}} node",
+    "addRole": "Add {{label}} role node",
+    "groups": {
+      "providers": "Providers",
+      "prompt": "Prompt",
+      "inputs": "Inputs",
+      "agents": "Agents",
+      "tools": "Tools",
+      "media": "Media",
+      "annotate": "Annotate",
+      "roles": "Roles",
+      "triggers": "Triggers"
+    },
+    "aria": "Node palette"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "Revisions — every save leaves a snapshot",
+      "openAria": "Show revisions",
+      "title": "Revisions",
+      "loading": "Reading history…",
+      "empty": "No revisions yet — saving this flow snapshots it here.",
+      "failed": "Couldn't read revisions: {{error}}",
+      "unreadable": "snapshot unreadable",
+      "identical": "no changes",
+      "nodesAdded": "+{{n}} nodes",
+      "nodesRemoved": "-{{n}} nodes",
+      "edgesAdded": "+{{n}} edges",
+      "edgesRemoved": "-{{n}} edges",
+      "params": "{{n}} params",
+      "justNow": "just now",
+      "minutesAgo": "{{n}}m ago",
+      "hoursAgo": "{{n}}h ago",
+      "daysAgo": "{{n}}d ago",
+      "size": "{{n}} KB",
+      "restore": "restore",
+      "restoreTitle": "Restore this revision — the current state is snapshotted first, so this is undoable",
+      "restored": "Restored \"{{name}}\" from an earlier revision",
+      "restoreFailed": "Restore failed: {{error}}"
+    },
+    "scheduleTitle": "Schedule this flow to run on a timer",
+    "scheduleAria": "Schedule this flow",
+    "title": "Flows",
+    "refreshTitle": "Refresh list",
+    "refreshAria": "Refresh",
+    "newTitle": "Save the current canvas and start a new one",
+    "newFlow": "+ New flow",
+    "empty": "No saved flows yet. Build one and hit Save, or + New flow.",
+    "rename": "ren",
+    "renameTitle": "Rename flow",
+    "confirmDelete": "sure?",
+    "confirmDeleteTitle": "Click again to confirm delete",
+    "deleteTitle": "Delete flow",
+    "templates": "Templates",
+    "import": "⇧ Import",
+    "importTitle": "Import a .tachiflow.json flow file",
+    "importAria": "Import flow",
+    "imported": "Imported \"{{name}}\"",
+    "importFailed": "Import failed: {{error}}",
+    "notTachiflow": "Not a .tachiflow.json file",
+    "unsupportedVersion": "This .tachiflow.json comes from a newer app version — update TACHI STUDIO to import it.",
+    "exportTitle": "Export as .tachiflow.json",
+    "exportAria": "Export flow",
+    "exported": "Exported {{file}}",
+    "exportFailed": "Export failed: {{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "Export the current canvas as a PNG with the flow embedded — re-importable",
+    "pngExported": "Exported {{file}}",
+    "pngExportFailed": "PNG export failed: {{error}}",
+    "pngNoFlow": "No embedded flow found in this PNG",
+    "saveFailed": "Save failed: {{error}}",
+    "cfaBlocked": "Windows Controlled Folder Access is blocking writes to Documents\\Tachi Studio — allow Tachi Studio in Windows Security, or the app will store data in {{fallback}}",
+    "aria": "Saved flows",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "Open flow",
+    "renameAria": "Rename flow",
+    "deleteAria": "Delete flow",
+    "confirmDeleteAria": "Confirm delete"
+  },
+  "config": {
+    "aria": "Node configuration",
+    "header": "Configure · {{type}}",
+    "close": "Close",
+    "closeEsc": "Close (Esc)",
+    "deleteNode": "Delete node",
+    "deleteTitle": "Delete this node and its edges",
+    "duplicateNode": "Duplicate node",
+    "duplicateTitle": "Clone this node with all its settings (Ctrl+D)",
+    "fields": {
+      "label": "Label",
+      "model": "Model",
+      "provider": "Provider",
+      "endpoint": "Endpoint",
+      "harness": "Agent",
+      "systemPrompt": "System prompt",
+      "final": "Final (main output)",
+      "instruction": "Instruction",
+      "roleId": "Role id",
+      "description": "Description",
+      "permissionTier": "Permission tier",
+      "workspacePath": "Workspace path",
+      "serverUrl": "Server URL",
+      "modality": "Modality",
+      "promptTemplate": "Prompt template",
+      "size": "Size",
+      "count": "Count (n)",
+      "voice": "Voice",
+      "format": "Format",
+      "duration": "Duration (s)",
+      "resolution": "Resolution",
+      "audioPath": "Audio path",
+      "autoSaveDir": "Auto-save dir",
+      "codexAllowWrite": "Allow write (workspace-write sandbox)",
+      "retries": "Retries on fail",
+      "retryDelay": "Retry delay (ms)"
+    },
+    "placeholders": {
+      "nodeLabel": "Node label",
+      "modelId": "model id",
+      "systemPrompt": "Who is this agent? e.g. 'You are a strict code reviewer.'",
+      "instruction": "What kind of prompt to write…",
+      "serverUrl": "Blank = built-in server",
+      "surplusModelId": "surplus model id",
+      "autoSaveDir": "Fallback save folder"
+    },
+    "hints": {
+      "modelFromProvider": "Model comes from the upstream Provider node.",
+      "internet": "Grants web fetch to a wired agent (egress-policy gated).",
+      "codexAllowWrite": "Codex may create, modify, or delete files inside the wired folder only. Off = read-only analysis.",
+      "codexWriteNeedsFolder": "Wire a Folder node to enable write mode — it targets that folder, never the whole app storage.",
+      "retries": "Re-run this node up to 3 times if it fails. 0 = off. Only the final failure records the error or feeds an error branch.",
+      "retryDelay": "Wait this long between attempts."
+    },
+    "sections": {
+      "input": "Input",
+      "params": "Params",
+      "output": "Output"
+    },
+    "io": {
+      "noInputs": "No inputs wired",
+      "inputEmpty": "— no output yet",
+      "noOutput": "Not run yet",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "statusOk": "OK",
+      "statusError": "Failed",
+      "statusIdle": "Not run",
+      "errorLabel": "Error",
+      "costTitle": "Estimated cost of this node’s last run (chars/4 token math on the wired model’s rates)"
+    },
+    "retries": {
+      "decrease": "Fewer retries",
+      "increase": "More retries"
+    }
+  },
+  "blueprint": {
+    "title": "Import blueprint",
+    "close": "Close",
+    "description": "Paste markdown with numbered steps. Each step becomes an agent node (label = title, system prompt = body), wired top→bottom into a chain.",
+    "placeholder": "Paste a numbered plan, e.g.\n\n1. Research\nGather sources on the topic and summarize the key facts.\n\n2. Draft\nWrite a first draft from the research above.\n\n3. Review\nCritique the draft and list concrete fixes.",
+    "stepsDetected_one": "{{count}} step detected",
+    "stepsDetected_other": "{{count}} steps detected",
+    "noSteps": "No numbered steps found. Start lines with \"1.\", \"2)\", etc.",
+    "final": "(final)",
+    "cancel": "Cancel",
+    "import": "Import",
+    "importCount": "Import ({{count}})",
+    "importTitleReady": "Generate the agent chain",
+    "importTitleEmpty": "Paste numbered steps first"
+  },
+  "howto": {
+    "title": "How to build a workflow",
+    "closeAria": "Close walkthrough",
+    "closeTitle": "Close (restores your canvas)",
+    "back": "Back",
+    "next": "Next",
+    "restore": "Restore my canvas",
+    "restoreTitle": "Remove the example and put your canvas back",
+    "keep": "Keep example",
+    "keepTitle": "Keep the example on the canvas",
+    "restoreNote": "Your canvas is restored when you close — unless you choose \"Keep example\".",
+    "steps": {
+      "intro": {
+        "title": "What is a workflow?",
+        "body": "A workflow is a chain of AI steps you wire on this canvas — text, prompts, images, video, music. I will build a simple two-step example right in front of you; press Next and watch. (Every step you run drops its result as a card on the canvas you can branch from.)"
+      },
+      "provider": {
+        "title": "Step 1 — Provider",
+        "body": "A Provider is where the AI models come from. We are using the keyless FreeLLM router — no key needed. Every agent needs a provider for its \"brain\"."
+      },
+      "agent": {
+        "title": "Step 2 — Agent",
+        "body": "An Agent does the actual work. This one is the Writer. On the real canvas you add nodes from the palette on the left (drag one out)."
+      },
+      "wire": {
+        "title": "Step 3 — Wire them up",
+        "body": "Connect the Provider to the Writer by dragging from the edge of one node to the other. Now the Writer has a brain (its model). The wire just appeared."
+      },
+      "second": {
+        "title": "Step 4 — Add a second step",
+        "body": "Add a second Agent (Reviewer) and connect Writer to Reviewer. The label on that wire (\"needs review\") is a routing hint — it tells the flow when to move on. You now have a 2-step workflow."
+      },
+      "run": {
+        "title": "Step 5 — Run it",
+        "body": "That is a complete workflow. Click the highlighted \"Run flow\" button (glowing now), then \"Run all\" to run every node in order. Each step drops a result card on the canvas — branch a new node off any card to keep going, or hit the card's Regen to re-roll it."
+      },
+      "beyond": {
+        "title": "Beyond agents",
+        "body": "The palette has more: a Text node (a topic/brief), a Reference Image node (feed a character or style), Media nodes (image, video, music, TTS, STT — via Venice or Surplus), and a Prompt node that can SEE a wired image (vision). Any provider works — Venice, Bankr, Ollama, llama.cpp — with model capability tags shown inline. Save canvases in the Flows list on the left and switch between them like chats."
+      }
+    }
+  },
+  "toolbar": {
+    "title": "Node Canvas",
+    "howToBuild": "How to build",
+    "howToBuildTitle": "Interactive walkthrough — build your first workflow step by step",
+    "templates": "Templates ▾",
+    "templatesTitle": "Insert a ready-made example workflow",
+    "council": "Council",
+    "councilTitle": "Generate a Council: a source agent fans out to Skeptic / Pragmatist / Critic, who feed a final Synthesis agent",
+    "importBlueprint": "Import blueprint",
+    "importBlueprintTitle": "Paste markdown with numbered steps to generate a sequential chain of agent nodes",
+    "flowNamePlaceholder": "Flow name...",
+    "flowNameAria": "Flow name",
+    "new": "New",
+    "newTitle": "New — discard current flow",
+    "open": "Open",
+    "openTitle": "Open .tachi-flow.json file",
+    "save": "Save",
+    "saveTitle": "Save flow as .tachi-flow.json",
+    "clear": "Clear",
+    "clearTitle": "Clear all nodes and edges",
+    "autoLayout": "Auto Layout",
+    "layingOut": "Laying out...",
+    "autoLayoutTitle": "Auto-layout nodes using ELK layered algorithm",
+    "whiteboard": "Whiteboard",
+    "whiteboardTitle": "Toggle the sketch whiteboard — freehand diagrams and notes on a separate canvas; your flow stays untouched underneath",
+    "runFlow": "Run flow",
+    "runFlowTitle": "Compile and EXECUTE this graph once, then show the result",
+    "addExpert": "+ Add expert",
+    "addExpertTitle": "Add a new persona agent and wire it into the roundtable (before the CEO/MAIN node)",
+    "chatWithFlow": "Chat with flow",
+    "chatWithFlowTitle": "Talk to the whole team — every expert responds and the MAIN agent synthesizes",
+    "openInCode": "Open in Code tab",
+    "openInCodeTitle": "Send this flow to the Code tab as an agent session (single-agent)",
+    "runInCode": "▸ Run in Code chat",
+    "runInCodeTitle": "Save this whole graph and run it from the Code chat — message it there to execute the full multi-agent network",
+    "nodeCount_one": "{{count}} node",
+    "nodeCount_other": "{{count}} nodes",
+    "edgeCount_one": "{{count}} edge",
+    "edgeCount_other": "{{count}} edges",
+    "templatesMenuAria": "Starter templates"
+  },
+  "runPanel": {
+    "title": "Run Flow",
+    "close": "Close",
+    "initialMessage": "Initial message (network mode only)",
+    "initialPlaceholder": "Optional — leave blank to just run the flow. Prompt nodes carry their own instructions.",
+    "runAll": "▸ Run all (in order)",
+    "runAllTitle": "Run every node ONCE, top to bottom in dependency order (Prompt → Prompt → Media). Each node's output feeds the next — the whole pipeline on one click.",
+    "running": "Running…",
+    "runningStep": "Running {{step}}/{{total}}{{label}}…",
+    "stop": "■ Stop after current step",
+    "stopTitle": "Stop the run after the current node finishes (there is no mid-node abort).",
+    "runNetwork": "Run as one network",
+    "runNetworkTitle": "Alternative: one shared agent-kit Network pass (agents share state — for roundtables). Uses the initial message above. Chained Prompt→Prompt may come back empty on some providers.",
+    "idleBefore": "Press ",
+    "idleStrong": "▸ Run all",
+    "idleAfter": " to execute every node once, in dependency order — each node's output flows into the next, and the canvas fills in live. (The message box below only feeds the optional \"Run as one network\" mode.)",
+    "runningNode": "Running node {{step}} of {{total}}{{label}}… (watch the canvas — each node fills in as it finishes)",
+    "runningFlow": "Running flow…",
+    "runFailed": "Run failed",
+    "noAgentOutput": "The flow ran but produced no agent output.",
+    "step": "Step {{n}} · {{agent}}",
+    "finalSuffix": " (final)",
+    "noTextOutput": "(no text output)",
+    "finalAnswer": "Final answer",
+    "empty": "(empty)",
+    "budgetLabel": "Budget cap $",
+    "budgetOff": "off",
+    "budgetTitle": "Stop the run before the estimated spend crosses this many dollars. Empty = no cap. Estimates use each node’s wired model rates; local models are free.",
+    "retrySuffix": " · retry {{attempt}}/{{attempts}}",
+    "aria": "Run flow",
+    "doneAria": "Run finished"
+  },
+  "chatPanel": {
+    "title": "Chat with flow",
+    "clear": "Clear",
+    "clearTitle": "Clear conversation",
+    "close": "Close",
+    "empty": "Send a message — every expert in the flow weighs in (each builds on the previous one), and the MAIN agent synthesizes the decision. All takes are shown; the conversation is remembered across turns. Tip: load the \"Expert roundtable\" template or click \"+ Add expert\", and mark a node \"MAIN\" to choose who synthesizes.",
+    "you": "You",
+    "error": "Error",
+    "flow": "Flow",
+    "roundtable": "Team roundtable",
+    "decisionSuffix": " · decision",
+    "noOutput": "(no output)",
+    "thinking": "Flow is thinking…",
+    "inputPlaceholder": "Message the flow… (Cmd/Ctrl+Enter to send)",
+    "send": "Send",
+    "sending": "Sending…",
+    "aria": "Chat with flow"
+  },
+  "media": {
+    "output": "Media output",
+    "failed": "Failed.",
+    "noTranscript": "(no transcript)",
+    "noArtifact": "Done — no artifact returned.",
+    "generatedAlt": "generated",
+    "modalities": {
+      "image": "image",
+      "video": "video",
+      "music": "music",
+      "speech": "speech",
+      "transcript": "transcript"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "Graph execution IPC is not available.",
+      "nothingToRun": "Nothing to run — add a Prompt, Agent or Media node.",
+      "cycle": "Cycle detected in graph — cannot run in order. Offending nodes: {{nodes}}"
+    },
+    "errorPrefix": "error",
+    "budgetStop": "Stopped: estimated spend ~${{spent}} reached the ${{cap}} budget cap. Raise or clear the cap in the run panel to continue.",
+    "skippedNoError": "Skipped — no error to handle",
+    "skippedUpstreamFailed": "Skipped — upstream failed"
+  },
+  "chat": {
+    "noOutput": "(no output)"
+  },
+  "scheduler": {
+    "addProviderAgent": "Add a provider and an agent first.",
+    "needAgent": "Flow needs at least one Agent node.",
+    "needProvider": "Flow needs at least one Provider node.",
+    "unknownHarness": "Agent \"{{harness}}\" has an unknown agent type — skipped.",
+    "connectEdge": "Connect a Provider → Agent edge before running."
+  },
+  "confirm": {
+    "discardFlow": "Discard current flow and start fresh?",
+    "replaceTemplate": "Replace the current flow with the \"{{label}}\" template?",
+    "clearAll": "Clear {{count}} nodes and all edges?"
+  },
+  "toast": {
+    "addProviderFirst": "Add a Provider node first, or load the \"Expert roundtable\" template.",
+    "expertAdded": "Added an expert. Click it to set its name + Instructions (persona).",
+    "autoLayoutFailed": "Auto Layout failed: {{error}}",
+    "chainsCompiled": "{{count}} chains compiled — applying chain[0] to Agent.",
+    "flowLoadedPerm": " · {{permission}} permission",
+    "flowLoaded": "Flow loaded → {{harness}} on {{provider}}{{perm}}. Pick a workspace to start.",
+    "saved": "Saved: {{path}}",
+    "saveFailed": "Save failed: {{error}}",
+    "unknownError": "unknown error",
+    "useInCodeFailed": "Couldn't use in Code: {{error}}",
+    "saveFailedShort": "save failed",
+    "activeInCode": "\"{{name}}\" is active in the Code tab — message it there to run the whole graph.",
+    "councilAdded": "Added a Council: source → Skeptic/Pragmatist/Critic → Synthesis. Wire a Provider into the agents to run it.",
+    "blueprintImported_one": "Imported {{count}} step as an agent chain. Wire a Provider into the first agent to run it.",
+    "blueprintImported_other": "Imported {{count}} steps as an agent chain. Wire a Provider into the first agent to run it.",
+    "templateLoaded": "Loaded template \"{{label}}\". Click Run flow to try it.",
+    "loaded": "Loaded \"{{name}}\"",
+    "openFailed": "Open failed: {{error}}",
+    "cleared": "Canvas cleared ({{count}} nodes)",
+    "undo": "UNDO"
+  },
+  "whiteboard": {
+    "loading": "Loading whiteboard…",
+    "saveFailed": "Whiteboard could not be saved — browser storage is full. Your sketch stays available in this session only."
+  },
+  "search": {
+    "placeholder": "Find node…",
+    "title": "Search nodes by label or type — Enter jumps to the next match, Shift+Enter previous",
+    "aria": "Search nodes"
+  },
+  "errorBranch": {
+    "handleTooltip": "Error output — wire to a node that should run only when this node fails"
+  },
+  "codexWrite": {
+    "consentTitle": "ALLOW CODEX WRITE",
+    "consentMessage": "The Codex agent will run in WRITE mode. It may create, modify, or delete files inside these folders only:\n\n{{folders}}\n\nNothing outside them is touched. Continue?",
+    "consentRun": "RUN",
+    "consentCancel": "CANCEL"
+  },
+  "canvas": {
+    "aria": "Flow canvas",
+    "undo": "Undo",
+    "undoTitle": "Undo (Ctrl+Z)",
+    "redo": "Redo",
+    "redoTitle": "Redo (Ctrl+Shift+Z)"
+  },
+  "webhookNode": {
+    "header": "trigger · {{source}}",
+    "state": {
+      "listening": "LISTENING",
+      "disarmed": "DISARMED",
+      "server-off": "SERVER OFF",
+      "server-down": "SERVER DOWN",
+      "error": "ERROR"
+    },
+    "help": {
+      "listening": "Arming…",
+      "disarmed": "Switched off — the endpoint answers 404 until you arm it.",
+      "server-off": "The local API server is off. Turn it on in Settings → Connections → OPENAI API to get a webhook URL.",
+      "server-down": "The local API server is not listening yet — it starts a moment after the app does.",
+      "error": "Could not arm this trigger."
+    },
+    "arm": "ARM",
+    "disarm": "DISARM",
+    "armAria": "Arm this webhook trigger",
+    "disarmAria": "Disarm this webhook trigger",
+    "copyUrl": "COPY URL",
+    "copied": "COPIED",
+    "copyUrlAria": "Copy the webhook URL, secret included",
+    "rotate": "NEW SECRET",
+    "rotateAria": "Generate a new secret — the URL you copied before stops working",
+    "autoRun": "Run the flow when an alert arrives",
+    "lastAlert": "Last: {{summary}} ({{count}} this session)",
+    "noAlerts": "No alerts yet.",
+    "loopbackHint": "This URL is local (127.0.0.1). TradingView's servers cannot reach it — POST from this machine, or expose it through a tunnel you run yourself.",
+    "signalOnly": "Inbound signal only: the alert becomes text. This node never places a trade."
+  },
+  "rifeNode": {
+    "header": "rife · interpolate",
+    "multiplierLabel": "Factor",
+    "multiplierTitle": "Frames per source frame — ×2 or ×4, one pass either way",
+    "sourceLabel": "Source clip",
+    "noSource": "Nothing wired in — connect a video result to the video plug.",
+    "checking": "Checking the engine…",
+    "unsupported": "No RIFE build is published for this platform.",
+    "install": "Install engine · {{size}}",
+    "installTitle": "Downloads the rife-ncnn-vulkan engine ({{size}}) once. After that, interpolation runs entirely on your machine.",
+    "installing": "Installing…",
+    "installHint": "One-time download. Nothing is sent anywhere — the engine runs on this machine.",
+    "installFailed": "The engine could not be installed.",
+    "runTitle": "Interpolate the wired clip and save a new file next to it",
+    "wireHint": "Wire a local video result into the video plug to run this.",
+    "localHint": "Fully local: reads the file on disk, runs on your GPU, and works in PRIVATE MODE."
+  }
+}

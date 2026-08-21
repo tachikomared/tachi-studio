@@ -1,0 +1,55 @@
+{
+  "comingSoon": "Fournisseurs (à venir)",
+  "taskTags": {
+    "agentic": {
+      "label": "Travaille seul",
+      "blurb": "Sait utiliser des outils et enchaîner plusieurs étapes tout seul — lire des fichiers, chercher, lancer des commandes — au lieu de seulement répondre."
+    },
+    "coding": {
+      "label": "Écrire du code",
+      "blurb": "Ses créateurs la présentent comme un modèle conçu pour la programmation ; l'affirmation et sa date sont indiquées sur le modèle."
+    },
+    "everyday": {
+      "label": "Questions du quotidien",
+      "blurb": "Tarifée dans le bas de gamme, c'est donc un choix par défaut raisonnable pour les questions courtes, les brouillons et les résumés."
+    },
+    "long-context": {
+      "label": "Documents longs",
+      "blurb": "Retient une très grande quantité de texte d'un coup — un long rapport, ou un dossier entier de notes."
+    },
+    "vision": {
+      "label": "Lit les images",
+      "blurb": "Vous pouvez joindre une capture d'écran ou une photo et poser des questions dessus."
+    },
+    "uncensored": {
+      "label": "Non censuré",
+      "blurb": "Le fournisseur décrit lui-même ce modèle comme non censuré — moins de refus de contenu. Sa propre affirmation, avec la date de lecture, est affichée sur le modèle."
+    },
+    "frontier": {
+      "label": "Haut de gamme",
+      "blurb": "Les modèles phares des fournisseurs, regroupés uniquement par prix : chacun facture au tarif le plus élevé de notre liste. Leur coût est le fait ; qu’ils soient les meilleurs pour votre tâche n’est pas promis."
+    },
+    "free": {
+      "label": "Ne coûte rien",
+      "blurb": "Gratuit dès maintenant — soit votre propre matériel, soit une offre gratuite vérifiée auprès du fournisseur à la date indiquée."
+    }
+  },
+  "priceBands": {
+    "free": {
+      "label": "Gratuit",
+      "blurb": "Rien n'est facturé pour ce modèle : le tarif affiché à côté de cette étiquette est de 0 $."
+    },
+    "budget": {
+      "label": "Bon marché",
+      "blurb": "Se situe dans la tranche la moins chère de notre liste. Le tarif exact est affiché à côté de cette étiquette."
+    },
+    "mid": {
+      "label": "Prix moyen",
+      "blurb": "Entre la tranche bon marché et la plus chère. Le tarif exact est affiché à côté de cette étiquette."
+    },
+    "premium": {
+      "label": "Les plus chers",
+      "blurb": "L'un des modèles les plus chers de la liste. Vérifiez le tarif à côté de cette étiquette avant de lancer un long travail."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+name: Feature request
+description: Something the app should do and does not
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation, not the solution — the best feature is often a different one than the one first asked for.
+    validations: { required: true }
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to happen?
+    validations: { required: true }
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: How do you work around it today?

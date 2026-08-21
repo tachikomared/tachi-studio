@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "로딩 중…"
+  },
+  "topbar": {
+    "badge": "대시보드"
+  },
+  "system": {
+    "title": "시스템",
+    "live": "● 실시간",
+    "os": "OS",
+    "release": "릴리스",
+    "host": "호스트",
+    "cpu": "CPU",
+    "cores": "{{count}}코어",
+    "app": "앱",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "앱 가동 시간",
+    "ram": "RAM",
+    "disk": "디스크",
+    "tachiProcess": "앱 프로세스: {{size}}"
+  },
+  "sidecars": {
+    "title": "백그라운드 서비스",
+    "upCount": "{{up}}/{{total}} 실행 중",
+    "none": "등록된 백그라운드 서비스 없음",
+    "viewLogTail": "로그 미리보기",
+    "logs": "로그",
+    "stop": "중지",
+    "start": "시작",
+    "startFailed": "시작 실패: {{error}}",
+    "stopFailed": "중지 실패: {{error}}"
+  },
+  "logs": {
+    "ariaLabel": "{{id}} 로그",
+    "header": "{{id}} · 로그 미리보기",
+    "live": "● 실시간 2s",
+    "close": "닫기",
+    "noFile": "이 서비스의 로그 파일이 아직 없습니다 — openclaude만 디스크에 기록됩니다.",
+    "empty": "로그 파일이 비어 있습니다."
+  },
+  "harnesses": {
+    "title": "에이전트 → 공급자",
+    "activeRouting": "활성 라우팅",
+    "ready": "준비 완료",
+    "idle": "유휴",
+    "provider": {
+      "freellmLocal": "FreeLLM (로컬 라우터)",
+      "anthropicOAuth": "Anthropic OAuth (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "실행 중 아님"
+    },
+    "harness": {
+      "directChat": "직접 채팅"
+    }
+  },
+  "providers": {
+    "title": "공급자",
+    "configured": "{{count}}개 구성됨",
+    "none": "구성된 공급자가 없습니다. 설정을 열어 키를 추가하세요.",
+    "connected": "연결됨",
+    "tier": {
+      "oauthPro": "OAuth & Pro",
+      "free": "무료 공급자",
+      "tools": "Tools"
+    },
+    "footer": "+ FreeLLM 라우터 (키 불필요) · free-claude-code — 둘 다 이 컴퓨터에서 응답하지만 프롬프트는 클라우드 제공자로 전달합니다"
+  },
+  "runtimes": {
+    "title": "이 컴퓨터에서 감지됨",
+    "rescan": "다시 검색",
+    "scanning": "검색 중…",
+    "state": {
+      "running": "실행 중",
+      "healthy": "정상",
+      "connected": "연결됨",
+      "installed": "준비",
+      "starting": "시작 중",
+      "stopped": "중지됨",
+      "not_installed": "미설치",
+      "error": "오류",
+      "unreachable": "연결 불가"
+    }
+  },
+  "conversations": {
+    "title": "대화",
+    "total": "전체",
+    "messages": "메시지",
+    "youWrote": "내가 작성함",
+    "modelWrote": "모델이 작성함",
+    "tokensUsed": "사용된 token",
+    "byProvider": "공급자별",
+    "none": "대화가 없습니다."
+  },
+  "workflow": {
+    "title": "Workflow 캔버스",
+    "open": "열기 ↗",
+    "description": "공급자, agent, 스킬 node를 그래프로 구성하세요. 출력을 입력에 연결하여 실행을 체이닝하세요.",
+    "edges": "엣지",
+    "inputs": "입력",
+    "providers": "공급자",
+    "outputs": "출력"
+  },
+  "aeon": {
+    "auth": "인증",
+    "signedIn": "로그인됨",
+    "notSignedIn": "로그인 안 됨",
+    "user": "사용자",
+    "ghClient": "gh 클라이언트",
+    "signInPrompt": "Aeon 탭을 열고 클릭하세요",
+    "signInButton": "GitHub에 로그인"
+  },
+  "audit": {
+    "title": "외부 요청 · {{count}}",
+    "loading": "로딩 중…",
+    "live": "실시간 5s",
+    "reload": "새로고침",
+    "clear": "지우기",
+    "explainer": "Tachi Studio 메인 프로세스가 GitHub, 선택한 LLM 공급자, Ollama 등에 직접 수행한 네트워크 호출입니다. 초록색 = 정상, 노란색 = 리디렉션, 빨간색 = 오류. 행을 클릭하면 전체 URL과 타이밍을 확인할 수 있습니다. 참고: 로컬 서비스 프로세스(OpenClaude, freellmapi) 내부의 호출과 온체인 지갑 RPC는 여기에 표시되지 않으므로, 이는 디버깅 보조 도구이지 완전한 송신 기록은 아닙니다.",
+    "filterAll": "전체",
+    "category": {
+      "other": "기타"
+    },
+    "emptyNone": "아직 기록된 네트워크 요청이 없습니다. 채팅 탭을 사용하거나 작업을 실행해 보세요.",
+    "emptyFilter": "선택한 필터와 일치하는 항목이 없습니다.",
+    "detail": {
+      "url": "URL",
+      "status": "상태",
+      "networkError": "네트워크 오류",
+      "duration": "소요 시간",
+      "reqSize": "요청 크기",
+      "resSize": "응답 크기",
+      "time": "시간",
+      "category": "카테고리"
+    }
+  },
+  "doctor": {
+    "title": "닥터",
+    "run": "검사 실행",
+    "running": "검사 중…",
+    "hint": "각 외부 바이너리(Piper, SD, yt-dlp, Whisper, llama.cpp, Chromium)와 FreeLLM 라우터를 프로브 명령으로 실제 실행하여 \"설치됨\" 플래그가 놓치는 손상된 설치를 찾아냅니다.",
+    "status": {
+      "ok": "정상",
+      "missing": "없음",
+      "broken": "손상",
+      "timeout": "시간 초과",
+      "error": "오류"
+    }
+  }
+}

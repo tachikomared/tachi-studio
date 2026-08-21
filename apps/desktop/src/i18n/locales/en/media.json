@@ -1,0 +1,570 @@
+{
+  "modalities": {
+    "image": "IMAGE",
+    "video": "VIDEO",
+    "music": "MUSIC",
+    "tts": "SPEECH (TTS)",
+    "stt": "TRANSCRIBE (STT)"
+  },
+  "topbar": {
+    "howTo": "How to",
+    "howToTitle": "Interactive walkthrough of the Media tab"
+  },
+  "tabs": {
+    "generate": "Generate",
+    "audioOverview": "Audio Overview",
+    "artifacts": "Artifacts"
+  },
+  "audioOverview": {
+    "subtitle": "Turn notes into a two-host podcast. The script is drafted by the keyless FreeLLM router — it runs on this machine but forwards your notes to a free cloud provider; the voices are 100% local (studio Kokoro or piper TTS), so nothing leaves your machine after the script.",
+    "titleLabel": "Title (optional)",
+    "titlePlaceholder": "e.g. Weekly research recap",
+    "sourceLabel": "Source notes",
+    "sourcePlaceholder": "Paste notes, an article, or a doc — the two hosts will discuss it…",
+    "sourceHint": "{{current}} chars — long sources are trimmed to ~{{max}} chars for the script model.",
+    "lengthLabel": "Length",
+    "length": {
+      "short": "Short (~1 min)",
+      "standard": "Standard (~3 min)"
+    },
+    "voices": {
+      "label": "Voices (local)",
+      "probing": "Checking local voices…",
+      "notInstalled": "No local TTS installed yet — download the studio voices above, or install piper in Generate → SPEECH (TTS) → provider LOCAL, then refresh.",
+      "none": "No local voices downloaded. Download the studio voices above, or a piper voice in Generate → SPEECH (TTS) → provider LOCAL, then refresh.",
+      "refresh": "Refresh",
+      "hostA": "Host A — curious anchor",
+      "hostB": "Host B — expert",
+      "single": "Only one voice is installed — both hosts share it (piper takes no rate options). Download a second voice for distinct hosts.",
+      "groupStudio": "STUDIO — KOKORO",
+      "groupPiper": "PIPER"
+    },
+    "scriptModel": {
+      "notConfigured": "No keyless script model configured yet — add a free provider in Settings → Providers, then refresh."
+    },
+    "kokoro": {
+      "cardTitle": "STUDIO VOICES — ~330 MB one-time download",
+      "cardBody": "10 studio-grade English voices (Kokoro TTS). Downloads once, then runs fully local and offline.",
+      "download": "Download",
+      "downloading": "Downloading… {{percent}}%",
+      "installedToast": "Studio voices ready.",
+      "downloadFailed": "Studio voices download failed"
+    },
+    "saveToLibrary": "Save to library",
+    "savingToLibrary": "Saving…",
+    "saveFailed": "Could not save to the media library",
+    "generate": "Create audio overview",
+    "cancel": "Cancel",
+    "status": {
+      "drafting": "Drafting script…",
+      "synthesizing": "Synthesizing {{n}}/{{m}}…",
+      "stitching": "Stitching audio…",
+      "ready": "Ready"
+    },
+    "error": {
+      "emptySource": "Paste some notes first.",
+      "llmDown": "The local FreeLLM router is not running yet — it starts with the app; wait a moment and retry.",
+      "scriptUnreachable": "The script model is not reachable right now — check Settings → Providers.",
+      "emptyReply": "The model returned an empty reply.",
+      "scriptFailed": "Script generation failed — {{reason}}",
+      "parseFailed": "The model did not return a valid script, even after one retry ({{reason}}).",
+      "synthFailed": "Voice synthesis failed on turn {{n}}/{{m}} — {{reason}}",
+      "stitchFailed": "Audio stitching failed — {{reason}}",
+      "noAudioReturned": "no audio returned"
+    },
+    "retry": "Retry",
+    "dismiss": "Dismiss",
+    "download": "Download .wav",
+    "result": {
+      "meta": "{{seconds}}s · {{turns}} turns"
+    },
+    "transcript": "Transcript",
+    "empty": "Paste notes on the left, pick a length and voices, and Create — you get a two-host podcast with a transcript, fully local voices."
+  },
+  "tour": {
+    "windowTitle": "How to use the Media tab",
+    "intro": {
+      "title": "The Media studio",
+      "body": "Generate images, video, music, speech (TTS) and transcripts (STT) from one place. Runs free on your machine — no key, no credits — or connect Surplus, Venice, or imgnAI for cloud models, each with its own catalog. Pick the provider at the top. Two sub-tabs up here: Generate (this one) and Artifacts (your saved library)."
+    },
+    "importUrl": {
+      "title": "Import from a URL",
+      "body": "Paste a link from YouTube, Instagram, X, or 1000+ other sites to pull a file straight into your media library — then remix it or use it as a reference image or video."
+    },
+    "modality": {
+      "title": "Pick a modality",
+      "body": "Choose what to create — the model list and controls adapt to it. Local covers image, video and speech (TTS) with models you download once and run for free; Surplus and Venice add music and transcripts (STT) plus their own cloud catalogs, and imgnAI adds another image/video catalog."
+    },
+    "localEngine": {
+      "title": "The local engine",
+      "body": "Download an open model here once — sizes are shown up front — then generate fully offline for free, with speed packs available to cut steps on supported models."
+    },
+    "model": {
+      "title": "Pick a model",
+      "body": "Each modality + provider lists its own models, and the controls change per model — sizes, voices, durations, aspect ratios appear only when that model supports them."
+    },
+    "prompt": {
+      "title": "Prompt + reference image",
+      "body": "Describe what you want and tune the per-model params. Models that support it show a \"Reference image\" control — for img2img / image EDITING, or as the first frame for image-to-video."
+    },
+    "generate": {
+      "title": "Generate",
+      "body": "Hit Generate. Local runs right here — no key, no credits, first run just downloads the model once. Image/TTS/STT are instant; video/music run async with a progress readout. Cloud providers need their own key: a funded Surplus key, a Venice key, or an imgnAI key."
+    },
+    "gallery": {
+      "title": "Your gallery + Artifacts",
+      "body": "Every result is saved here and survives restart — Save to a folder, Reveal on disk, Remix to reload its settings, or open fullscreen. The Artifacts sub-tab is the full library of everything you have made."
+    },
+    "workflow": {
+      "title": "Tip: build it as a node workflow",
+      "body": "Open the Nodes tab to chain it: a Prompt node writes the prompt, a Reference-Image node feeds a character, a Media node generates — and each run drops a result card you can branch from. Or open the Storyboard starter template to chain a local still into two local video scenes end to end."
+    }
+  },
+  "import": {
+    "title": "Import from URL",
+    "subtitle": "YouTube · Instagram · X · 1000+ sites — then remix or use as a reference",
+    "placeholder": "Paste a media URL…",
+    "fetch": "Fetch",
+    "download": "Download",
+    "downloadTitle": "Download into your media library",
+    "resolutionTitle": "Resolution",
+    "audioOnlyOnTitle": "Audio-only is on",
+    "audioOnlyLabel": "audio only",
+    "audioOnlyTitle": "Download just the audio track (e.g. for transcription / music)",
+    "disclaimer": "Personal use only — import content you own or have the rights to. Respects each platform's terms; no DRM circumvention.",
+    "error": {
+      "couldNotRead": "Could not read that URL.",
+      "downloadFailed": "Download failed."
+    },
+    "success": "Saved to your media library — remix or edit it below."
+  },
+  "composer": {
+    "modality": "Modality",
+    "provider": "Provider",
+    "model": "Model",
+    "loadingCatalog": "Loading catalog…",
+    "preset": "Preset",
+    "presetPlaceholder": "— pick a starter prompt —",
+    "perfPreset": "Performance",
+    "perfPresetPlaceholder": "— tier —",
+    "stylePreset": "Style",
+    "stylePresetPlaceholder": "— none —",
+    "loras": "LoRAs",
+    "lorasNone": "No LoRAs installed for this checkpoint.",
+    "lorasIncompatible": "{{count}} installed for a different base model.",
+    "loraWeight": "Weight",
+    "triggerWords": "Trigger words",
+    "vaeSwap": "VAE",
+    "vaeDefault": "— checkpoint default —",
+    "audioFile": "Audio file",
+    "changeFile": "Change file",
+    "chooseAudioFile": "Choose audio file",
+    "loadingParams": "Loading parameters…",
+    "noParams": "This model exposes no configurable parameters.",
+    "autoSaveFolder": "Auto-save folder",
+    "setFolder": "Set folder",
+    "loraUnknownFamily": "No base model recorded for this adapter — shown anyway; it may not apply.",
+    "lorasUnknownFamilyNote": "{{count}} with no recorded base model (marked ?).",
+    "loraTagFound": "Your prompt uses the LoRA \"{{name}}\" at strength {{weight}}.",
+    "loraTagUnknown": "Your prompt asks for a LoRA called \"{{name}}\", and nothing by that name is installed — it will be left out.",
+    "loraTagAmbiguous": "You have more than one LoRA called \"{{name}}\", so this one will be left out. Pick it from the list above instead."
+  },
+  "presets": {
+    "lightning": {
+      "label": "Lightning"
+    },
+    "speed": {
+      "label": "Speed"
+    },
+    "quality": {
+      "label": "Quality"
+    },
+    "prompt": {
+      "image": {
+        "cinematicPortrait": "Cinematic portrait",
+        "isometricRoom": "Isometric room",
+        "logoMark": "Logo / mark",
+        "conceptLandscape": "Concept landscape"
+      },
+      "video": {
+        "slowDollyPush": "Slow dolly push",
+        "droneReveal": "Drone reveal",
+        "productTurntable": "Product turntable"
+      },
+      "music": {
+        "lofiBeat": "Lo-fi beat",
+        "cinematicBuild": "Cinematic build",
+        "synthwave": "Synthwave"
+      },
+      "tts": {
+        "friendlyIntro": "Friendly intro",
+        "announcement": "Announcement"
+      }
+    }
+  },
+  "styles": {
+    "none": {
+      "label": "None"
+    },
+    "cinematic": {
+      "label": "Cinematic"
+    },
+    "photorealistic": {
+      "label": "Photorealistic"
+    },
+    "digital-art": {
+      "label": "Digital Art"
+    },
+    "anime": {
+      "label": "Anime"
+    },
+    "oil-painting": {
+      "label": "Oil Painting"
+    },
+    "pixel-art": {
+      "label": "Pixel Art"
+    },
+    "watercolor": {
+      "label": "Watercolor"
+    },
+    "neon-noir": {
+      "label": "Neon Noir"
+    },
+    "fantasy-epic": {
+      "label": "Fantasy Epic"
+    }
+  },
+  "local": {
+    "engine": "Voice model",
+    "piperChip": "PIPER",
+    "kokoro": {
+      "chip": "STUDIO — KOKORO",
+      "card": "10 studio-grade English voices (Kokoro TTS) — ~330 MB one-time download, then fully local and offline.",
+      "download": "Download studio voices (~330 MB)",
+      "downloading": "Downloading studio voices… {{percent}}%",
+      "installed": "studio voices installed · Kokoro TTS, English",
+      "downloadFailed": "Studio voices download failed"
+    },
+    "piper": {
+      "install": "Install piper (one-time)",
+      "installSized": "Install piper (one-time · {{size}})",
+      "installed": "piper installed · local TTS, CPU-fast",
+      "downloadVoice": "Download voice"
+    },
+    "sdCpp": {
+      "install": "Install sd.cpp (one-time)",
+      "installSized": "Install sd.cpp (one-time · {{size}})",
+      "installed": "sd.cpp installed · GPU auto (CUDA / Metal)",
+      "downloadModel": "Download model",
+      "update": "Update the image engine",
+      "updating": "Updating the engine…"
+    },
+    "engineSizeOne": "~{{size}} MB",
+    "engineSizeRange": "{{min}}–{{max}} MB",
+    "engineSizeRangeTitle": "The download depends on which build fits this machine — the CUDA build ships NVIDIA's runtime libraries alongside it.",
+    "switchToLocal": "Switch to Local — free, runs on your machine",
+    "switchToLocalTitle": "Local generation runs the sd.cpp engine on this machine: no key, no credits, nothing uploaded.",
+    "switchedToast": "Switched to the local engine — free, and nothing leaves your machine.",
+    "speedPackPitch": "{{name}} — {{size}} GB one-time. This render sampled {{steps}} passes; the pack needs 4, about {{ratio}}× fewer.",
+    "installFailed": "Install failed",
+    "retryInstall": "Retry install",
+    "modelInstalled": "✓ {{name}} · {{size}} GB · installed",
+    "modelLicense": "Licence: {{name}} — read it before downloading",
+    "voiceItem": "↓ {{name}} · {{size}} MB",
+    "modelItem": "↓ {{name}} · {{size}} GB",
+    "modelItemShared": "↓ {{name}} · {{size}} GB (saves {{saved}} GB — shares files with installed models)",
+    "modelSpeedPackDiscount": "speed pack only {{size}} GB more — its LoRA is already on disk",
+    "modelItemResume": "↻ {{name}} · resume · {{size}} GB left ({{done}} GB of {{total}} GB already downloaded)",
+    "fitVramOk": "Fits your GPU — needs ~{{need}} GB VRAM, you have {{have}} GB free",
+    "fitVramTight": "Tight — needs ~{{need}} GB VRAM, you have {{have}} GB free. It may still run at a smaller size or with the low-VRAM options.",
+    "fitRamOk": "Fits your machine — needs ~{{need}} GB RAM, you have {{have}} GB",
+    "fitRamTight": "Tight — needs ~{{need}} GB RAM, you have {{have}} GB. It may still run, more slowly.",
+    "speedPack": "↓ {{name}} · {{size}} GB",
+    "speedPackShared": "↓ {{name}} · {{size}} GB (saves {{saved}} GB — shares files with an installed pack)",
+    "speedPackInstalled": "✓ {{name}} · installed — Speed is on by default below",
+    "ipAdapter": "↓ Reference image (style / subject) · {{size}}",
+    "ipAdapterShared": "↓ Reference image (style / subject) · {{size}} (saves {{saved}} — shares its image reader with what you have)",
+    "ipAdapterInstalled": "✓ Reference image ready — attach a picture under Advanced below",
+    "ipAdapterNone": "No reference image for this model — hover for why.",
+    "speedPackNone": "No speed pack for this model — hover for why.",
+    "otherKindBadge": "{{kind}} · in progress",
+    "modalitySwitched": "Switched to {{modality}} — the download you started just finished."
+  },
+  "models": {
+    "error": {
+      "noLocalVoices": "No local voices yet — download one above.",
+      "installPiper": "Install piper above, then download a voice.",
+      "installKokoro": "Download the studio voices above (~330 MB, one-time).",
+      "noLocalModels": "No local {{kind}} models yet — download one above.",
+      "installSdCpp": "Install sd.cpp above, then download a model.",
+      "couldNotLoad": "Could not load models",
+      "noVenice": "No Venice models for this modality — add a Venice key in Settings.",
+      "noImgnai": "No imgnAI models for this modality — add your API key and secret in Settings → imgnAI Katana (app.imgnai.com/katana-api).",
+      "noPollinations": "Pollinations generates images only — switch the modality to IMAGE, or use Surplus/Venice.",
+      "noSurplus": "No models — add a Surplus key and fund USDC, or generate free on your own machine with the local engine.",
+      "noneAvailable": "No models available."
+    }
+  },
+  "firstRun": {
+    "cta": "First image — free · ~{{size}} GB one-time",
+    "ctaNoSize": "First image — free, runs on your machine",
+    "ctaHint": "One click: installs the local engine, takes the starter model, writes a prompt and renders. No key, no credits.",
+    "ctaTitle": "Installs the sd.cpp engine ({{engine}}), downloads {{name}}, then renders one image on this machine. Everything stays local.",
+    "step": {
+      "engine": "installing the engine",
+      "weights": "downloading the starter model",
+      "generate": "rendering your first image"
+    },
+    "progress": "First image · step {{step}}/{{total}} · {{label}} — {{line}}",
+    "failedTitle": "First image stopped at step {{step}}/{{total}} — {{label}}",
+    "resume": "Resume — continues from what already downloaded",
+    "dismiss": "Dismiss",
+    "error": {
+      "notReady": "The starter model is on disk but its controls did not load — press Resume."
+    }
+  },
+  "progress": {
+    "starting": "starting…",
+    "loadingModel": "loading model… {{percent}}%",
+    "decoding": "decoding…",
+    "downloading": "downloading {{name}}…",
+    "renderingLocally": "rendering locally…",
+    "queuedVenice": "queued on Venice…",
+    "queuedImgnai": "queued on imgnAI…",
+    "queuedPollinations": "queued on Pollinations…"
+  },
+  "livePreview": {
+    "label": "Preview — still rendering",
+    "alt": "A partly rendered preview of the image being generated"
+  },
+  "pollinations": {
+    "hint": "Free and keyless — no account, nothing to set up. A few seconds to a minute per image, depending on load; one image every 15 s (their anonymous limit). Cloud: your prompt is sent to pollinations.ai."
+  },
+  "actions": {
+    "change": "Change",
+    "clear": "Clear",
+    "save": "Save",
+    "reveal": "Reveal",
+    "fullscreen": "Fullscreen",
+    "generate": "Generate",
+    "transcribe": "Transcribe",
+    "working": "Working…",
+    "workingProgress": "Working · {{progress}}",
+    "stop": "Stop",
+    "stopping": "Stopping…",
+    "stopTitle": "Kill the running render. The GPU is freed immediately; nothing is saved."
+  },
+  "rife": {
+    "action": "RIFE 2×",
+    "title": "Double this clip's frame rate locally with rife-ncnn-vulkan. Saves a new file next to it; the original is untouched.",
+    "install": "RIFE 2× · install {{size}}",
+    "installTitle": "Downloads the rife-ncnn-vulkan engine ({{size}}) once. After that, frame interpolation runs entirely on your machine.",
+    "installing": "Installing…",
+    "running": "Interpolating…",
+    "stop": "Stop",
+    "saved": "Saved {{name}}",
+    "derived": "RIFE 2× · from: {{source}}",
+    "failed": "Frame interpolation failed",
+    "unsupported": "No RIFE build is published for this platform.",
+    "needsLocalFile": "Save this video first — frame interpolation runs on a file on disk."
+  },
+  "upscale": {
+    "action": "UPSCALE {{scale}}×",
+    "title": "Make this image {{scale}}× bigger with Real-ESRGAN, right here. No checkpoint is loaded and no prompt is needed — it works on the picture itself. Saves a new file next to it; the original is untouched.",
+    "install": "UPSCALE · install {{size}}",
+    "installTitle": "Downloads {{name}} ({{size}}) once. After that, upscaling runs entirely on your machine.",
+    "installing": "Installing…",
+    "running": "Upscaling…",
+    "saved": "Saved {{name}}",
+    "derived": "ESRGAN {{scale}}× · from: {{source}}",
+    "failed": "Upscaling failed"
+  },
+  "gallery": {
+    "empty": "No results yet. Pick a modality + model, enter a prompt, and Generate.",
+    "title": "Gallery ({{count}})",
+    "titleFull": "Gallery ({{count}}, full)",
+    "newest": "newest {{time}}",
+    "clearAll": "Clear all",
+    "clearAllConfirm": "Remove all {{count}} gallery entries? The files stay on disk — this only clears the list."
+  },
+  "entry": {
+    "pin": "PIN",
+    "pinned": "PINNED",
+    "pinToTop": "Pin to top",
+    "unpin": "Unpin",
+    "remix": "Remix",
+    "generatedAlt": "generated",
+    "remove": "Remove",
+    "removeConfirm": "Remove this entry from the gallery? The file stays on disk.",
+    "completedAfterPrivate": "AFTER PRIVATE MODE",
+    "completedAfterPrivateTitle": "This generation was already in flight when PRIVATE MODE was turned on, so it finished and saved instead of being blocked. Nothing new left this machine after the switch — refusing at that point would only have thrown away a result already sent."
+  },
+  "result": {
+    "failedNoOutput": "Generation failed — no output returned",
+    "failedReason": "Generation failed — {{reason}}",
+    "noOutput": "no output returned"
+  },
+  "genError": {
+    "title": "Generation failed",
+    "stoppedTitle": "Stopped",
+    "stoppedHint": "You stopped this render, so nothing was saved. The GPU is free again — start another run whenever you like.",
+    "hint": "If the run stopped before writing a file, it may have needed more GPU memory than was free — a shorter duration or a smaller size needs less.",
+    "dismiss": "Dismiss",
+    "unknown": "Generation failed for an unknown reason."
+  },
+  "preview": {
+    "close": "Close (Esc)",
+    "alt": "preview"
+  },
+  "restore": {
+    "button": "Restore from image",
+    "buttonTitle": "Drop a locally-generated PNG or click to pick — restores its generation params",
+    "success": "Params restored from image.",
+    "noMeta": "No tachi-gen metadata found in this image.",
+    "error": "Could not read image metadata."
+  },
+  "toast": {
+    "jobFailed": "Job failed",
+    "timedOut": "Timed out after 5 min — generate again to re-poll.",
+    "chooseAudio": "Choose an audio file to transcribe.",
+    "enterField": "Enter {{field}}.",
+    "loaded": "Loaded into composer.",
+    "loadedRerolled": "Loaded into composer (seed re-rolled).",
+    "nothingToSave": "Nothing to save.",
+    "savedTo": "Saved to {{path}}",
+    "providerFellBack": "{{provider}} does not generate {{modality}} — switched to Surplus."
+  },
+  "params": {
+    "videoI2vAvailable": "It is text→video only: starting from an image needs a Wan i2v checkpoint — {{model}} is available in the download panel.",
+    "advanced": "Advanced ({{count}})",
+    "on": "ON",
+    "off": "OFF",
+    "promptAutoFill": "This can be filled in automatically by connecting a text-generation step ahead of it.",
+    "prompt": {
+      "label": "Prompt"
+    },
+    "negative_prompt": {
+      "label": "Negative prompt",
+      "description": "What to avoid (artifacts, watermarks, extra limbs, …)."
+    },
+    "aspect_ratio": {
+      "label": "Aspect ratio"
+    },
+    "size": {
+      "label": "Size"
+    },
+    "n": {
+      "label": "Images",
+      "description": "How many images to generate in one run. The checkpoint loads once, but each image is sampled in full — 4 images take about 4x as long as 1. Each gets its own seed, counting up from the first."
+    },
+    "seed": {
+      "label": "Seed",
+      "description": "-1 = random. Lock a value to reproduce a result."
+    },
+    "steps": {
+      "label": "Steps"
+    },
+    "cfg": {
+      "label": "Guidance (CFG)",
+      "description": "How strictly to follow the prompt."
+    },
+    "sampler": {
+      "label": "Sampler"
+    },
+    "strength": {
+      "label": "img2img strength",
+      "description": "Only with an init image. 0 = keep init, 1 = ignore it."
+    },
+    "image_url": {
+      "label": "Init image",
+      "labelImg2img": "Reference image (img2img)",
+      "labelI2v": "Init frame (image→video)",
+      "description": "Optional starting image for img2img.",
+      "descriptionI2v": "Optional first frame (image→video)."
+    },
+    "duration": {
+      "label": "Duration (s)"
+    },
+    "resolution": {
+      "label": "Resolution"
+    },
+    "lyrics": {
+      "label": "Lyrics",
+      "description": "Optional. Required by lyrics_required models."
+    },
+    "instrumental": {
+      "label": "Instrumental"
+    },
+    "genre": {
+      "label": "Genre"
+    },
+    "input": {
+      "label": "Text",
+      "description": "The text to speak aloud."
+    },
+    "voice": {
+      "label": "Voice",
+      "description": "Voice id (model-specific)."
+    },
+    "response_format": {
+      "label": "Format"
+    },
+    "speed": {
+      "label": "Speed"
+    },
+    "file": {
+      "label": "Audio file",
+      "description": "The audio to transcribe."
+    },
+    "language": {
+      "label": "Language",
+      "description": "ISO code hint (e.g. \"en\"). Leave blank to auto-detect."
+    },
+    "translate": {
+      "label": "Translate to English"
+    },
+    "hires": {
+      "label": "Two-pass detail (hires fix)"
+    },
+    "hires_scale": {
+      "label": "Two-pass scale"
+    },
+    "speed_mode": {
+      "label": "Speed (distilled)"
+    },
+    "clip_skip": {
+      "label": "CLIP skip",
+      "description": "How many of the text encoder's last layers to ignore. 0 leaves it to the engine (1 for SD 1.x). Many Civitai SD 1.5 merges — anime ones especially — were trained at 2 and look flat and washed out at 1; if a checkpoint's own page names a CLIP skip, this is where it goes."
+    },
+    "vae_tiling": {
+      "label": "Tile the VAE decode",
+      "description": "Decode the picture in tiles instead of all at once. This is the flag that turns an out-of-memory death in the final decode into a finished render — on video it is the step that actually gets killed. Costs a little time and can leave faint seams between tiles."
+    },
+    "vae_conv_direct": {
+      "label": "Direct VAE convolutions",
+      "description": "Use the direct convolution path in the autoencoder. Lower peak memory in the decode for the same maths — try it before tiling, since it has no seams to trade."
+    },
+    "max_vram": {
+      "label": "VRAM budget",
+      "description": "Split each forward pass so the model does not have to fit in video memory at once — the engine's own answer to a model that is bigger than the card. \"auto\" uses the free VRAM the driver reports, keeping 1 GiB spare; a number is a hard budget in GiB. Off means no splitting, which is what every run has done until now."
+    },
+    "stream_layers": {
+      "label": "Stream layers",
+      "description": "Keep only the layers in use resident and prefetch the next ones — the rung after the budget on upstream's own ladder. It needs a VRAM budget set above, and it needs the model's weights held in RAM, which this turns on for you. Auto-fit below takes that placement back, so the two cannot both be on: with auto-fit the engine decides, and this is left off."
+    },
+    "auto_fit": {
+      "label": "Auto-fit to this machine",
+      "description": "Let the engine place the diffusion model, the text encoder and the autoencoder itself, from the model's size and the memory each device has free. It replaces the app's own placement (including keeping the text encoders on the CPU) and may split the model across more than one GPU."
+    },
+    "image": {
+      "referenceAlt": "reference",
+      "change": "Change image",
+      "choose": "Choose image"
+    },
+    "audio": {
+      "placeholder": "absolute path or pick a file",
+      "change": "Change file",
+      "choose": "Choose audio file"
+    }
+  }
+}

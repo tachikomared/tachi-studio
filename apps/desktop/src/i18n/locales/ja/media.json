@@ -1,0 +1,570 @@
+{
+  "modalities": {
+    "image": "画像",
+    "video": "ビデオ",
+    "music": "ミュージック",
+    "tts": "音声 (TTS)",
+    "stt": "トランスクライブ (STT)"
+  },
+  "topbar": {
+    "howTo": "方法",
+    "howToTitle": "メディアタブのインタラクティブウォークスルー"
+  },
+  "tabs": {
+    "generate": "生成",
+    "audioOverview": "音声概要",
+    "artifacts": "Artifacts"
+  },
+  "audioOverview": {
+    "subtitle": "メモを2人のホストによるポッドキャストに変換。スクリプトはキーレスの FreeLLM ルーターが作成します — このマシンで動きますが、メモは無料のクラウドプロバイダーに転送されます。音声は100%ローカル (スタジオ品質の Kokoro または piper TTS) なので、スクリプト以降はデータがマシンの外に出ることはありません。",
+    "titleLabel": "タイトル（任意）",
+    "titlePlaceholder": "例: 週次リサーチまとめ",
+    "sourceLabel": "ソースメモ",
+    "sourcePlaceholder": "メモ・記事・ドキュメントを貼り付け — 2人のホストが議論します…",
+    "sourceHint": "{{current}} 文字 — 長いソースはスクリプトモデル用に約 {{max}} 文字に切り詰められます。",
+    "lengthLabel": "長さ",
+    "length": {
+      "short": "短い（約1分）",
+      "standard": "標準（約3分）"
+    },
+    "voices": {
+      "label": "音声（ローカル）",
+      "probing": "ローカル音声を確認中…",
+      "notInstalled": "ローカル TTS がまだインストールされていません — 上のスタジオ音声をダウンロードするか、生成 → 音声 (TTS) → プロバイダー LOCAL で piper をインストールして、更新してください。",
+      "none": "ローカル音声がダウンロードされていません。上のスタジオ音声をダウンロードするか、生成 → 音声 (TTS) → プロバイダー LOCAL で piper の音声をダウンロードして、更新してください。",
+      "refresh": "更新",
+      "hostA": "ホスト A — 好奇心旺盛な司会",
+      "hostB": "ホスト B — 専門家",
+      "single": "音声が1つしかインストールされていません — 両ホストで共有します（piper は話速オプション非対応）。ホストを区別するには2つ目の音声をダウンロードしてください。",
+      "groupStudio": "スタジオ — KOKORO",
+      "groupPiper": "PIPER"
+    },
+    "scriptModel": {
+      "notConfigured": "キーレスのスクリプトモデルがまだ設定されていません — 設定 → プロバイダーで無料のプロバイダーを追加してから更新してください。"
+    },
+    "kokoro": {
+      "cardTitle": "スタジオ音声 — ~330 MB・初回のみダウンロード",
+      "cardBody": "スタジオ品質の英語音声10種 (Kokoro TTS)。一度ダウンロードすれば、以後は完全にローカル・オフラインで動作します。",
+      "download": "ダウンロード",
+      "downloading": "ダウンロード中… {{percent}}%",
+      "installedToast": "スタジオ音声の準備ができました。",
+      "downloadFailed": "スタジオ音声のダウンロードに失敗しました"
+    },
+    "saveToLibrary": "ライブラリーに保存",
+    "savingToLibrary": "保存中…",
+    "saveFailed": "メディアライブラリーに保存できませんでした",
+    "generate": "音声概要を作成",
+    "cancel": "キャンセル",
+    "status": {
+      "drafting": "スクリプト作成中…",
+      "synthesizing": "音声合成中 {{n}}/{{m}}…",
+      "stitching": "音声を結合中…",
+      "ready": "完了"
+    },
+    "error": {
+      "emptySource": "先にメモを貼り付けてください。",
+      "llmDown": "ローカルの FreeLLM ルーターがまだ起動していません — アプリと一緒に起動します。少し待ってから再試行してください。",
+      "scriptUnreachable": "スクリプトモデルに今アクセスできません — 設定 → プロバイダーを確認してください。",
+      "emptyReply": "モデルが空の応答を返しました。",
+      "scriptFailed": "スクリプト生成に失敗 — {{reason}}",
+      "parseFailed": "1回再試行しても、モデルは有効なスクリプトを返しませんでした（{{reason}}）。",
+      "synthFailed": "ターン {{n}}/{{m}} で音声合成に失敗 — {{reason}}",
+      "stitchFailed": "音声の結合に失敗 — {{reason}}",
+      "noAudioReturned": "音声が返されませんでした"
+    },
+    "retry": "再試行",
+    "dismiss": "閉じる",
+    "download": ".wav をダウンロード",
+    "result": {
+      "meta": "{{seconds}}秒 · {{turns}} ターン"
+    },
+    "transcript": "文字起こし",
+    "empty": "左側にメモを貼り付け、長さと音声を選んで作成 — 文字起こし付きの2人ホストのポッドキャストが、完全ローカルの音声で手に入ります。"
+  },
+  "tour": {
+    "windowTitle": "メディアタブの使い方",
+    "intro": {
+      "title": "メディアスタジオ",
+      "body": "1か所から画像、ビデオ、ミュージック、音声 (TTS)、トランスクリプト (STT)を生成。自分のマシンで無料で動作 — キー不要、クレジット不要 — またはSurplus、Venice、imgnAIを接続してクラウドモデルを使用、それぞれ独自のモデルカタログあり。上部でプロバイダーを選択。2つサブタブ上ここ: 生成 (このもの)とアーティファクト (保存ライブラリー)。"
+    },
+    "importUrl": {
+      "title": "URLからインポート",
+      "body": "YouTube、Instagram、X、または1000以上の他サイトからリンクをペーストして、ファイルを直接メディアライブラリーに取り込み — その後リミックスするか、参照画像・参照ビデオとして使用できます。"
+    },
+    "modality": {
+      "title": "モダリティを選択",
+      "body": "作成するもの選択 — モデルリストとコントロール適応。Localは画像、ビデオ、音声 (TTS)をカバー、一度ダウンロードすれば無料で実行；SurplusとVeniceはミュージックとトランスクリプト (STT)に加え独自クラウドカタログを追加、imgnAIはさらに別の画像/ビデオカタログを追加。"
+    },
+    "localEngine": {
+      "title": "ローカルエンジン",
+      "body": "ここでオープンモデルを一度だけダウンロード — サイズは事前表示 — その後完全オフライン・無料で生成；対応モデルには高速パックでステップ削減可能。"
+    },
+    "model": {
+      "title": "モデルを選択",
+      "body": "各モダリティ + プロバイダーはモデルリストしていて、コントロールはモデルごとに変わる — サイズ、音声、デュレーション、アスペクト比はそのモデルがサポートするときのみ現れます。"
+    },
+    "prompt": {
+      "title": "プロンプト + 参照画像",
+      "body": "何をしたいか説明してモデルごとパラメータを調整。サポートするモデルは「参照画像」コントロール表示 — img2img / 画像編集、または画像からビデオの最初フレーム。"
+    },
+    "generate": {
+      "title": "生成",
+      "body": "生成をヒット。Localはここで直接実行 — キー不要、クレジット不要、初回のみモデルを一度ダウンロード。画像/TTS/STTは即座; ビデオ/ミュージック非同期でプログレス読み出しで実行。クラウドプロバイダーは独自キーが必要: 資金Surplusキー、Veniceキー、またはimgnAIキー。"
+    },
+    "gallery": {
+      "title": "あなたのギャラリー + アーティファクト",
+      "body": "すべての結果ここ保存されて、再起動で生き残る — フォルダーに保存、ディスク上表示、リミックスしてセッティング再読み込み、またはフルスクリーン開く。アーティファクトサブタブはあなたが作成したすべてのフルライブラリー。"
+    },
+    "workflow": {
+      "title": "チップ: ノードワークフローのようにビルド",
+      "body": "ノードタブを開いて配線: プロンプトノードプロンプト書く、参照画像ノードキャラクター供給、メディアノード生成 — 各ラン結果カードドロップしてブランチ出来ます。またはStoryboardスターターテンプレートを開いて、ローカルスティルを2つのローカルビデオシーンに最初から最後までチェーン。"
+    }
+  },
+  "import": {
+    "title": "URLからインポート",
+    "subtitle": "YouTube・Instagram・X・1000以上のサイト — ダウンロード後にリミックスしたり参照として使用できます",
+    "placeholder": "メディアのURLを貼り付け…",
+    "fetch": "取得",
+    "download": "ダウンロード",
+    "downloadTitle": "メディアライブラリにダウンロード",
+    "resolutionTitle": "解像度",
+    "audioOnlyOnTitle": "音声のみがオンです",
+    "audioOnlyLabel": "音声のみ",
+    "audioOnlyTitle": "音声トラックのみダウンロード（文字起こしや音楽用など）",
+    "disclaimer": "個人利用のみ — 所有している、または権利を持つコンテンツのみインポートしてください。各プラットフォームの利用規約を尊重し、DRMの回避は行いません。",
+    "error": {
+      "couldNotRead": "このURLを読み取れませんでした。",
+      "downloadFailed": "ダウンロードに失敗しました。"
+    },
+    "success": "メディアライブラリに保存しました — 下でリミックスまたは編集できます。"
+  },
+  "composer": {
+    "modality": "モダリティ",
+    "provider": "プロバイダー",
+    "model": "モデル",
+    "loadingCatalog": "カタログ読み込み中…",
+    "preset": "プリセット",
+    "presetPlaceholder": "— スターティングプロンプトを選択 —",
+    "perfPreset": "パフォーマンス",
+    "perfPresetPlaceholder": "— ティア —",
+    "stylePreset": "スタイル",
+    "stylePresetPlaceholder": "— なし —",
+    "loras": "LoRA",
+    "lorasNone": "このチェックポイント用の LoRA はインストールされていません。",
+    "lorasIncompatible": "別のベースモデル用が {{count}} 件インストール済みです。",
+    "loraWeight": "強度",
+    "triggerWords": "トリガーワード",
+    "vaeSwap": "VAE",
+    "vaeDefault": "— モデル標準 —",
+    "audioFile": "オーディオファイル",
+    "changeFile": "ファイル変更",
+    "chooseAudioFile": "オーディオファイル選択",
+    "loadingParams": "パラメータ読み込み中…",
+    "noParams": "このモデルは設定パラメータを公開していません。",
+    "autoSaveFolder": "自動保存フォルダー",
+    "setFolder": "フォルダー設定",
+    "loraUnknownFamily": "このアダプターのベースモデルは記録されていません — それでも表示します。効かない場合があります。",
+    "lorasUnknownFamilyNote": "ベースモデル未記録が {{count}} 件（? 付き）。",
+    "loraTagFound": "プロンプトで LoRA「{{name}}」を強さ {{weight}} で使います。",
+    "loraTagUnknown": "プロンプトが「{{name}}」という LoRA を求めていますが、その名前のものは入っていないため使われません。",
+    "loraTagAmbiguous": "「{{name}}」という名前の LoRA が複数あるため、これは使われません。上の一覧から選んでください。"
+  },
+  "presets": {
+    "lightning": {
+      "label": "ライトニング"
+    },
+    "speed": {
+      "label": "スピード"
+    },
+    "quality": {
+      "label": "高品質"
+    },
+    "prompt": {
+      "image": {
+        "cinematicPortrait": "シネマティックポートレート",
+        "isometricRoom": "アイソメトリックな部屋",
+        "logoMark": "ロゴ／マーク",
+        "conceptLandscape": "コンセプト風景"
+      },
+      "video": {
+        "slowDollyPush": "ゆっくりドリーイン",
+        "droneReveal": "ドローンリビール",
+        "productTurntable": "プロダクトターンテーブル"
+      },
+      "music": {
+        "lofiBeat": "ローファイビート",
+        "cinematicBuild": "シネマティックな盛り上がり",
+        "synthwave": "シンセウェイブ"
+      },
+      "tts": {
+        "friendlyIntro": "フレンドリーな導入",
+        "announcement": "アナウンス"
+      }
+    }
+  },
+  "styles": {
+    "none": {
+      "label": "なし"
+    },
+    "cinematic": {
+      "label": "シネマティック"
+    },
+    "photorealistic": {
+      "label": "フォトリアル"
+    },
+    "digital-art": {
+      "label": "デジタルアート"
+    },
+    "anime": {
+      "label": "アニメ"
+    },
+    "oil-painting": {
+      "label": "油絵"
+    },
+    "pixel-art": {
+      "label": "ピクセルアート"
+    },
+    "watercolor": {
+      "label": "水彩"
+    },
+    "neon-noir": {
+      "label": "ネオンノワール"
+    },
+    "fantasy-epic": {
+      "label": "ファンタジーエピック"
+    }
+  },
+  "local": {
+    "engine": "音声モデル",
+    "piperChip": "PIPER",
+    "kokoro": {
+      "chip": "スタジオ — KOKORO",
+      "card": "スタジオ品質の英語音声10種 (Kokoro TTS) — ~330 MB の初回のみダウンロードで、以後は完全にローカル・オフライン。",
+      "download": "スタジオ音声をダウンロード (~330 MB)",
+      "downloading": "スタジオ音声をダウンロード中… {{percent}}%",
+      "installed": "スタジオ音声インストール済み · Kokoro TTS・英語",
+      "downloadFailed": "スタジオ音声のダウンロードに失敗しました"
+    },
+    "piper": {
+      "install": "piperをインストール (ワンタイム)",
+      "installed": "piperインストール · ローカルTTS、CPU高速",
+      "downloadVoice": "音声ダウンロード",
+      "installSized": "piperをインストール（初回のみ · {{size}}）"
+    },
+    "sdCpp": {
+      "install": "sd.cppをインストール (ワンタイム)",
+      "installed": "sd.cppインストール · GPUオート (CUDA / Metal)",
+      "downloadModel": "モデルダウンロード",
+      "installSized": "sd.cppをインストール（初回のみ · {{size}}）",
+      "update": "画像エンジンを更新",
+      "updating": "エンジンを更新中…"
+    },
+    "installFailed": "インストールに失敗しました",
+    "retryInstall": "インストールを再試行",
+    "modelInstalled": "✓ {{name}} · {{size}} GB · インストール済み",
+    "modelLicense": "ライセンス: {{name}} — ダウンロード前にお読みください",
+    "voiceItem": "↓ {{name}} · {{size}} MB",
+    "modelItem": "↓ {{name}} · {{size}} GB",
+    "modelItemShared": "↓ {{name}} · {{size}} GB（{{saved}} GB 節約 — インストール済みモデルとファイルを共有）",
+    "modelSpeedPackDiscount": "高速パックは追加 {{size}} GB のみ — その LoRA はすでにディスク上にあります",
+    "modelItemResume": "↻ {{name}} · 再開 · 残り {{size}} GB（{{total}} GB 中 {{done}} GB はダウンロード済み）",
+    "fitVramOk": "お使いの GPU に収まります — 約 {{need}} GB の VRAM が必要で、{{have}} GB 空いています",
+    "fitVramTight": "ぎりぎりです — 約 {{need}} GB の VRAM が必要で、{{have}} GB 空いています。小さいサイズや低 VRAM オプションなら動く可能性があります。",
+    "fitRamOk": "お使いのマシンに収まります — 約 {{need}} GB の RAM が必要で、{{have}} GB あります",
+    "fitRamTight": "ぎりぎりです — 約 {{need}} GB の RAM が必要で、{{have}} GB あります。動く可能性はありますが、遅くなります。",
+    "speedPack": "↓ {{name}} · {{size}} GB",
+    "speedPackShared": "↓ {{name}} · {{size}} GB（{{saved}} GB 節約 — 導入済みパックとファイルを共有）",
+    "speedPackInstalled": "✓ {{name}} · 導入済み — 下の「高速」が既定で有効",
+    "ipAdapter": "↓ 参照画像（スタイル / 被写体）· {{size}}",
+    "ipAdapterShared": "↓ 参照画像（スタイル / 被写体）· {{size}}（{{saved}} 節約 — 画像読み取りは既存のものと共用）",
+    "ipAdapterInstalled": "✓ 参照画像の準備完了 — 下の「詳細」で画像を添付してください",
+    "ipAdapterNone": "このモデルでは参照画像を使えません — 理由はカーソルを合わせると出ます。",
+    "speedPackNone": "このモデルに高速パックはありません — 理由はホバーで表示。",
+    "otherKindBadge": "{{kind}} · 進行中",
+    "modalitySwitched": "{{modality}} に切り替えました — 開始したダウンロードがちょうど完了しました。",
+    "engineSizeOne": "約{{size}} MB",
+    "engineSizeRange": "{{min}}–{{max}} MB",
+    "engineSizeRangeTitle": "ダウンロード量はこのマシンに合うビルド次第 — CUDAビルドはNVIDIAのランタイムも一緒に持ってきます。",
+    "switchToLocal": "ローカルに切り替え — 無料、自分のマシンで動く",
+    "switchToLocalTitle": "ローカル生成はこのマシンでsd.cppエンジンを実行：キー不要、クレジット不要、アップロードなし。",
+    "switchedToast": "ローカルエンジンに切り替えました — 無料で、何もマシンから出ません。",
+    "speedPackPitch": "{{name}} — {{size}} GB、初回のみ。今回のレンダリングは{{steps}}ステップ；このパックは4ステップで、約{{ratio}}分の1です。"
+  },
+  "models": {
+    "error": {
+      "noLocalVoices": "ローカル音声なし — 上の1つをダウンロード。",
+      "installPiper": "上のpiperをインストール、音声をダウンロード。",
+      "installKokoro": "上のスタジオ音声をダウンロードしてください (~330 MB、初回のみ)。",
+      "noLocalModels": "ローカル{{kind}}モデルなし — 上の1つをダウンロード。",
+      "installSdCpp": "上のsd.cppをインストール、モデルをダウンロード。",
+      "couldNotLoad": "モデル読み込めませんでした",
+      "noVenice": "このモダリティのVeniceモデルなし — 設定でVeniceキー追加。",
+      "noSurplus": "モデルなし — SurplusキーとUSDCの資金供給、またはローカルエンジンで自分のマシンで無料生成。",
+      "noneAvailable": "モデル利用なし。",
+      "noImgnai": "このモダリティには imgnAI モデルがありません — 設定 → imgnAI Katana で API Key と Secret を入力してください（app.imgnai.com/katana-api）。",
+      "noPollinations": "Pollinations は画像のみ生成します — モダリティを IMAGE に切り替えるか、Surplus/Venice をご利用ください。"
+    }
+  },
+  "firstRun": {
+    "cta": "最初の画像 — 無料 · 初回約{{size}} GB",
+    "ctaNoSize": "最初の画像 — 無料、自分のマシンで",
+    "ctaHint": "1クリック：ローカルエンジンを入れ、入門モデルを取り、プロンプトを書いてレンダリング。キーもクレジットも不要。",
+    "ctaTitle": "sd.cppエンジン（{{engine}}）を入れ、{{name}}をダウンロードし、このマシンで画像を1枚レンダリング。すべてローカルのままです。",
+    "step": {
+      "engine": "エンジンをインストール中",
+      "weights": "入門モデルをダウンロード中",
+      "generate": "最初の画像をレンダリング中"
+    },
+    "progress": "最初の画像 · ステップ{{step}}/{{total}} · {{label}} — {{line}}",
+    "failedTitle": "最初の画像がステップ{{step}}/{{total}}で停止 — {{label}}",
+    "resume": "再開 — ダウンロード済みの続きから",
+    "dismiss": "閉じる",
+    "error": {
+      "notReady": "入門モデルはディスクにありますが、設定が読み込まれませんでした — 「再開」を押してください。"
+    }
+  },
+  "progress": {
+    "starting": "開始中…",
+    "loadingModel": "モデル読み込み中… {{percent}}%",
+    "decoding": "デコード中…",
+    "downloading": "{{name}}ダウンロード中…",
+    "renderingLocally": "ローカル表示中…",
+    "queuedVenice": "Veniceでキューイング中…",
+    "queuedImgnai": "imgnAI でキュー待ち…",
+    "queuedPollinations": "Pollinations でキュー待ち…"
+  },
+  "livePreview": {
+    "label": "プレビュー — 生成中",
+    "alt": "生成中の画像の途中経過プレビュー"
+  },
+  "pollinations": {
+    "hint": "無料・キー不要 — アカウントも設定も不要です。1 枚あたり数秒〜1 分ほど（混雑状況によります）、15 秒に 1 枚（匿名利用の上限）。クラウド：プロンプトは pollinations.ai に送信されます。"
+  },
+  "actions": {
+    "change": "変更",
+    "clear": "クリア",
+    "save": "保存",
+    "reveal": "表示",
+    "fullscreen": "フルスクリーン",
+    "generate": "生成",
+    "transcribe": "トランスクライブ",
+    "working": "作業中…",
+    "workingProgress": "作業中 · {{progress}}",
+    "stop": "停止",
+    "stopping": "停止中…",
+    "stopTitle": "実行中のレンダリングを中断します。GPU はすぐに解放され、結果は保存されません。"
+  },
+  "rife": {
+    "action": "RIFE 2×",
+    "title": "rife-ncnn-vulkan でこのクリップのフレームレートをローカルで 2 倍にします。隣に新しいファイルを保存し、元のファイルは変更しません。",
+    "install": "RIFE 2× · インストール {{size}}",
+    "installTitle": "rife-ncnn-vulkan エンジン（{{size}}）を一度だけダウンロードします。以降、フレーム補間はすべてこの端末で実行されます。",
+    "installing": "インストール中…",
+    "running": "補間中…",
+    "stop": "停止",
+    "saved": "{{name}} を保存しました",
+    "derived": "RIFE 2× · 元: {{source}}",
+    "failed": "フレーム補間に失敗しました",
+    "unsupported": "このプラットフォーム向けの RIFE ビルドは公開されていません。",
+    "needsLocalFile": "先にこの動画を保存してください — フレーム補間はディスク上のファイルに対して動作します。"
+  },
+  "upscale": {
+    "action": "拡大 {{scale}}×",
+    "title": "この画像を Real-ESRGAN でここで {{scale}} 倍に拡大します。チェックポイントは読み込まれず、プロンプトも不要です — 画像そのものに対して動作します。隣に新しいファイルを保存し、元の画像はそのまま残ります。",
+    "install": "拡大 · {{size}} をダウンロード",
+    "installTitle": "{{name}}（{{size}}）を一度だけダウンロードします。以降、拡大はすべてお使いのマシン上で実行されます。",
+    "installing": "インストール中…",
+    "running": "拡大中…",
+    "saved": "{{name}} を保存しました",
+    "derived": "ESRGAN {{scale}}× · 元: {{source}}",
+    "failed": "拡大に失敗しました"
+  },
+  "gallery": {
+    "empty": "まだ結果なし。モダリティ + モデルを選択、プロンプト入力、生成。",
+    "title": "ギャラリー ({{count}})",
+    "titleFull": "ギャラリー（{{count}}、上限）",
+    "newest": "最新 {{time}}",
+    "clearAll": "すべてクリア",
+    "clearAllConfirm": "ギャラリーの {{count}} 件をすべて削除しますか？ ディスク上のファイルは残り、一覧だけが空になります。"
+  },
+  "entry": {
+    "pin": "ピン",
+    "pinned": "ピン済み",
+    "pinToTop": "トップにピン",
+    "unpin": "ピン外す",
+    "remix": "リミックス",
+    "generatedAlt": "生成",
+    "remove": "削除",
+    "removeConfirm": "この項目をギャラリーから削除しますか？ ディスク上のファイルは残ります。",
+    "completedAfterPrivate": "PRIVATE MODE 後に完了",
+    "completedAfterPrivateTitle": "この生成は PRIVATE MODE がオンになった時点ですでに送信済みだったため、ブロックされずに完了して保存されました。切り替え後にこの端末から新たに何かが送信されたわけではありません — この時点で拒否しても、すでに送信済みの結果を捨てるだけです。"
+  },
+  "result": {
+    "failedNoOutput": "生成失敗 — 出力なし",
+    "failedReason": "生成失敗 — {{reason}}",
+    "noOutput": "出力なし"
+  },
+  "genError": {
+    "title": "生成に失敗しました",
+    "stoppedTitle": "停止しました",
+    "stoppedHint": "このレンダリングを停止したため、何も保存されていません。GPU は解放されたので、いつでも再実行できます。",
+    "hint": "ファイルが書き出される前に処理が終わった場合、空き GPU メモリを超えた可能性があります — 長さを短く、サイズを小さくすると必要量が減ります。",
+    "dismiss": "閉じる",
+    "unknown": "不明な理由で生成に失敗しました。"
+  },
+  "preview": {
+    "close": "閉じる (Esc)",
+    "alt": "プレビュー"
+  },
+  "restore": {
+    "button": "画像から復元",
+    "buttonTitle": "ローカル生成した PNG をドロップするかクリックして選択 — 生成パラメータを復元します",
+    "success": "画像からパラメータを復元しました。",
+    "noMeta": "この画像に tachi-gen のメタデータが見つかりません。",
+    "error": "画像のメタデータを読み取れませんでした。"
+  },
+  "toast": {
+    "jobFailed": "ジョブ失敗",
+    "timedOut": "5分後タイムアウト — 再度生成して再ポーリング。",
+    "chooseAudio": "トランスクライブするオーディオファイル選択。",
+    "enterField": "{{field}}を入力。",
+    "loaded": "コンポーザーにロード。",
+    "loadedRerolled": "コンポーザーにロード (シード再ロール)。",
+    "nothingToSave": "保存するものなし。",
+    "savedTo": "{{path}}に保存",
+    "providerFellBack": "{{provider}} は {{modality}} を生成できません — Surplus に切り替えました。"
+  },
+  "params": {
+    "videoI2vAvailable": "テキスト→動画専用です。画像から始めるには Wan i2v のチェックポイントが必要で、{{model}} をダウンロードパネルから入手できます。",
+    "advanced": "詳細設定 ({{count}})",
+    "on": "ON",
+    "off": "OFF",
+    "promptAutoFill": "この項目は、前段にテキスト生成ステップを接続することで自動的に入力できます。",
+    "prompt": {
+      "label": "プロンプト"
+    },
+    "negative_prompt": {
+      "label": "ネガティブプロンプト",
+      "description": "避けたい要素（アーティファクト、透かし、余分な手足など）。"
+    },
+    "aspect_ratio": {
+      "label": "アスペクト比"
+    },
+    "size": {
+      "label": "サイズ"
+    },
+    "n": {
+      "label": "画像枚数",
+      "description": "1回の実行で生成する画像の枚数。チェックポイントは一度だけ読み込まれますが、各画像は最初から最後までサンプリングされます — 4枚は1枚の約4倍の時間がかかります。各画像には固有のシードが割り当てられ、最初のシードから順に増えていきます。"
+    },
+    "seed": {
+      "label": "シード値",
+      "description": "-1 = ランダム。値を固定すると結果を再現できます。"
+    },
+    "steps": {
+      "label": "ステップ数"
+    },
+    "cfg": {
+      "label": "ガイダンス強度 (CFG)",
+      "description": "プロンプトにどれだけ忠実に従うか。"
+    },
+    "sampler": {
+      "label": "サンプラー"
+    },
+    "strength": {
+      "label": "img2img 強度",
+      "description": "初期画像がある場合のみ有効。0 = 元画像を保持、1 = 無視。"
+    },
+    "image_url": {
+      "label": "初期画像",
+      "labelImg2img": "参照画像 (img2img)",
+      "labelI2v": "開始フレーム（画像→動画）",
+      "description": "img2img 用のオプションの初期画像。",
+      "descriptionI2v": "オプションの最初のフレーム（画像→動画）。"
+    },
+    "duration": {
+      "label": "デュレーション (s)"
+    },
+    "resolution": {
+      "label": "解像度"
+    },
+    "lyrics": {
+      "label": "歌詞",
+      "description": "任意。lyrics_required モデルでは必須です。"
+    },
+    "instrumental": {
+      "label": "インストゥルメンタル"
+    },
+    "genre": {
+      "label": "ジャンル"
+    },
+    "input": {
+      "label": "テキスト",
+      "description": "読み上げるテキスト。"
+    },
+    "voice": {
+      "label": "音声",
+      "description": "音声ID（モデル固有）。"
+    },
+    "response_format": {
+      "label": "フォーマット"
+    },
+    "speed": {
+      "label": "速度"
+    },
+    "file": {
+      "label": "オーディオファイル",
+      "description": "文字起こしする音声。"
+    },
+    "language": {
+      "label": "言語",
+      "description": "ISOコードのヒント（例:「en」）。空欄で自動検出。"
+    },
+    "translate": {
+      "label": "英語に翻訳"
+    },
+    "hires": {
+      "label": "2パス高精細化（hires fix）"
+    },
+    "hires_scale": {
+      "label": "2パス目の拡大率"
+    },
+    "speed_mode": {
+      "label": "スピード（蒸留版）"
+    },
+    "clip_skip": {
+      "label": "CLIPスキップ",
+      "description": "テキストエンコーダーの最後の層をいくつ無視するか。0はエンジン任せになります（SD 1.xでは1）。Civitaiの多くのSD 1.5マージ — 特にアニメ系 — はスキップ2で学習されており、1では平坦で色あせた見た目になります。チェックポイントのページにCLIP skipの指定があれば、ここに入力してください。"
+    },
+    "vae_tiling": {
+      "label": "VAEデコードをタイル分割",
+      "description": "画像を一度にではなくタイルに分けてデコードします。最終デコード時のメモリ不足によるクラッシュを、完成したレンダリングに変えるオプションです — 動画では実際に落ちやすいのがこのステップです。多少時間がかかり、タイル間にわずかな継ぎ目が残ることがあります。"
+    },
+    "vae_conv_direct": {
+      "label": "VAEの直接畳み込み",
+      "description": "オートエンコーダーで直接畳み込みパスを使用します。同じ計算でデコード時のピークメモリを削減します — 継ぎ目が出ないので、タイル分割より先に試してみてください。"
+    },
+    "max_vram": {
+      "label": "VRAM予算",
+      "description": "各順伝播を分割し、モデルがビデオメモリに一度に収まらなくてもよいようにします — カードより大きいモデルへのエンジン自身の対応策です。「auto」はドライバーが報告する空きVRAMを使い、1 GiBの余裕を残します。数値を指定すると、その値をGiB単位の固定予算として使います。「オフ」は分割なしを意味し、これはこれまでのすべての実行が行ってきた挙動です。"
+    },
+    "stream_layers": {
+      "label": "レイヤーをストリーミング",
+      "description": "使用中のレイヤーだけを常駐させ、次のレイヤーを先読みします — アップストリーム自身の段階の中で、予算の次の段にあたる設定です。上のVRAM予算が設定されていること、そしてモデルの重みがRAMに置かれていることが必要で、後者はこの設定が自動で有効にします。下の「自動フィット」はその配置を取り戻すため、両方を同時に有効にはできません。自動フィット時はエンジンが決めるので、この設定はオフのままになります。"
+    },
+    "auto_fit": {
+      "label": "このマシンに自動フィット",
+      "description": "拡散モデル、テキストエンコーダー、オートエンコーダー自体の配置を、モデルのサイズと各デバイスの空きメモリに基づいてエンジンに任せます。アプリ自身の配置（テキストエンコーダーをCPUに置くことを含む）を置き換え、モデルを複数のGPUに分割することもあります。"
+    },
+    "image": {
+      "referenceAlt": "参照",
+      "change": "画像変更",
+      "choose": "画像選択"
+    },
+    "audio": {
+      "placeholder": "絶対パスまたはファイル選択",
+      "change": "ファイル変更",
+      "choose": "オーディオファイル選択"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "comingSoon": "Providers (coming soon)",
+  "taskTags": {
+    "agentic": {
+      "label": "Works on its own",
+      "blurb": "Can use tools and take several steps by itself — reading files, searching, running commands — instead of only replying."
+    },
+    "coding": {
+      "label": "Writing code",
+      "blurb": "The people who made it publish it as a model built for programming; the claim and its date are shown on the model."
+    },
+    "everyday": {
+      "label": "Everyday questions",
+      "blurb": "Priced at the cheap end, so it is a sensible default for short questions, drafts and summaries."
+    },
+    "long-context": {
+      "label": "Long documents",
+      "blurb": "Holds a very large amount of text at once — a long report, or a whole folder of notes."
+    },
+    "vision": {
+      "label": "Reads images",
+      "blurb": "You can attach a screenshot or a photo and ask questions about it."
+    },
+    "uncensored": {
+      "label": "Uncensored",
+      "blurb": "The provider itself describes this model as uncensored — fewer content refusals. Its own claim, with the date we read it, is shown on the model."
+    },
+    "frontier": {
+      "label": "Top tier",
+      "blurb": "The vendors’ flagship models, grouped purely by price: every one of these bills at the top rate we list. Costing the most is the fact; being best for your task is not promised."
+    },
+    "free": {
+      "label": "Costs nothing",
+      "blurb": "Free to use right now — either your own hardware, or a free tier we checked against the provider on the date shown."
+    }
+  },
+  "priceBands": {
+    "free": {
+      "label": "No charge",
+      "blurb": "Nothing is billed for this one — the rate shown beside this label is $0."
+    },
+    "budget": {
+      "label": "Low cost",
+      "blurb": "At the cheap end of what we list. The exact rate is printed beside this label."
+    },
+    "mid": {
+      "label": "Mid-priced",
+      "blurb": "Between the cheap tier and the most expensive tier. The exact rate is printed beside this label."
+    },
+    "premium": {
+      "label": "Priciest",
+      "blurb": "Among the most expensive models we list. Check the rate beside this label before you start a long job."
+    }
+  }
+}

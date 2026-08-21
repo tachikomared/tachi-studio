@@ -1,0 +1,55 @@
+{
+  "comingSoon": "Proveedores (próximamente)",
+  "taskTags": {
+    "agentic": {
+      "label": "Trabaja solo",
+      "blurb": "Puede usar herramientas y dar varios pasos por su cuenta — leer archivos, buscar, ejecutar comandos — en lugar de solo responder."
+    },
+    "coding": {
+      "label": "Escribir código",
+      "blurb": "Quienes la crearon la publican como una modelo hecha para programar; la afirmación y su fecha se muestran en la modelo."
+    },
+    "everyday": {
+      "label": "Preguntas del día a día",
+      "blurb": "Su precio está en la gama barata, así que es una opción por defecto sensata para preguntas cortas, borradores y resúmenes."
+    },
+    "long-context": {
+      "label": "Documentos largos",
+      "blurb": "Retiene una cantidad enorme de texto a la vez — un informe extenso o una carpeta entera de notas."
+    },
+    "vision": {
+      "label": "Lee imágenes",
+      "blurb": "Puedes adjuntar una captura de pantalla o una foto y hacer preguntas sobre ella."
+    },
+    "uncensored": {
+      "label": "Sin censura",
+      "blurb": "El propio proveedor describe este modelo como sin censura: menos rechazos de contenido. Su propia afirmación, con la fecha en que la leímos, se muestra en el modelo."
+    },
+    "frontier": {
+      "label": "Gama alta",
+      "blurb": "Los modelos insignia de los proveedores, agrupados puramente por precio: cada uno factura a la tarifa más alta de nuestra lista. Que cuestan más es el hecho; que sean los mejores para tu tarea no se promete."
+    },
+    "free": {
+      "label": "No cuesta nada",
+      "blurb": "Gratis ahora mismo — o bien tu propio hardware, o bien un plan gratuito que verificamos con el proveedor en la fecha indicada."
+    }
+  },
+  "priceBands": {
+    "free": {
+      "label": "Sin coste",
+      "blurb": "No se cobra nada por este modelo: la tarifa que aparece junto a esta etiqueta es de $0."
+    },
+    "budget": {
+      "label": "Barato",
+      "blurb": "Está en la franja barata de lo que ofrecemos. La tarifa exacta se muestra junto a esta etiqueta."
+    },
+    "mid": {
+      "label": "Precio medio",
+      "blurb": "Entre la franja barata y la más cara. La tarifa exacta se muestra junto a esta etiqueta."
+    },
+    "premium": {
+      "label": "Los más caros",
+      "blurb": "Uno de los modelos más caros de la lista. Comprueba la tarifa junto a esta etiqueta antes de lanzar un trabajo largo."
+    }
+  }
+}

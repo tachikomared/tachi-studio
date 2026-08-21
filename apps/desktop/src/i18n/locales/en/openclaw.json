@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "OpenClaw Dashboard"
+  },
+  "actions": {
+    "reload": "Reload",
+    "openInBrowser": "Open in browser",
+    "openDocs": "Open docs"
+  },
+  "iframe": {
+    "title": "OpenClaw Dashboard"
+  },
+  "probing": {
+    "label": "Probing {{url}}…"
+  },
+  "unreachable": {
+    "title": "OpenClaw daemon not reachable",
+    "hint": "Start the OpenClaw daemon in a terminal, then click Reload:"
+  },
+  "status": {
+    "probing": "Probing",
+    "live": "Live",
+    "offline": "Offline"
+  }
+}

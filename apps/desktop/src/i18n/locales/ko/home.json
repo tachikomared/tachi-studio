@@ -1,0 +1,35 @@
+{
+  "heading": "무엇이든 물어보세요",
+  "subtitle": "11개의 무료 AI 공급자로 구동됩니다 — 클라우드가 필요 없습니다.",
+  "placeholder": "무슨 생각을 하고 계신가요?",
+  "startChat": "채팅 시작",
+  "slashHint": "/ 를 입력하면 명령어 목록",
+  "spent": "오늘 사용 — free tier",
+  "recent": "최근",
+  "quickStarts": {
+    "url": "URL 요약하기",
+    "code": "코드 설명하기",
+    "tweet": "트윗 작성하기",
+    "translate": "Translate",
+    "brainstorm": "아이디어 브레인스토밍",
+    "folder": "폴더를 agent로 열기"
+  },
+  "actions": {
+    "chat": "새 채팅",
+    "code": "폴더 코딩",
+    "design": "새 디자인",
+    "nodes": "노드 캔버스",
+    "models": "모델 받기"
+  },
+  "health": {
+    "spent": "30일 지출",
+    "apiUp": "로컬 API :{{port}}",
+    "apiDown": "로컬 API 꺼짐",
+    "open": "대시보드"
+  },
+  "recentTypes": {
+    "chat": "채팅",
+    "design": "디자인",
+    "flow": "플로우"
+  }
+}

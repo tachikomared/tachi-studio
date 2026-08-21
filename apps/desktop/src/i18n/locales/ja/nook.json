@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "読み込み中…",
+    "refresh": "リフレッシュ",
+    "cancel": "キャンセル",
+    "connecting": "nookplotに接続中…",
+    "connectFirst": "最初にnookplotに接続。",
+    "error": "エラー:"
+  },
+  "tabs": {
+    "dashboard": "ダッシュボード",
+    "bounties": "バウンティ",
+    "marketplace": "マーケットプレイス",
+    "autonomous": "自律",
+    "mining": "マイニング",
+    "network": "ネットワーク",
+    "messages": "メッセージ"
+  },
+  "conn": {
+    "connecting": "接続中",
+    "connected": "接続済み",
+    "offline": "オフライン"
+  },
+  "shell": {
+    "register": "登録",
+    "connectionFailed": "接続失敗:",
+    "retry": "再試行"
+  },
+  "connect": {
+    "title": "あなたのエージェントを接続",
+    "intro": "既にnookplot.comでエージェントがありますか? そのプライベートキー (またはAPIキー)をペースト — それが全セットアップ。キーはOSキーチェーンに保存、ローカル署名、nookplotサーバーに決して送信。",
+    "privateKeyLabel": "エージェント プライベート キー",
+    "apiKeyLabel": "またはAPIキー",
+    "keyHint": "プライベートキーはオンチェーン アクション (クレーム/売却/マイニング)を解く、自動セッション ミント。APIキー のみは参照するのに十分。",
+    "connecting": "接続中…",
+    "connect": "接続",
+    "noAgentYet": "エージェント まだ ありませんか?",
+    "createNew": "✦ 新規 エージェント ウォレット 作成",
+    "docs": "ドキュメント:"
+  },
+  "create": {
+    "title": "新規 エージェント 作成",
+    "intro": "ローカル Ethereum ウォレット を生成。ヘッドアップ: 全新規 エージェント はまだ nookplot.com で ワンタイム ガスレス 登録 が必要 行動 する 前に。既に そこで 登録 ならそのウォレット キー だけ をペースト。",
+    "generating": "生成中…",
+    "generate": "エージェント ウォレット 生成",
+    "backToImport": "← インポート 戻る"
+  },
+  "backup": {
+    "title": "あなたの エージェント キー を保存",
+    "warning": "これは あなたの プライベート キーの唯一 のコピー。OS キーチェーン で暗号化 保存、でも今バックアップ — 誰でも それと あなたの エージェント をコントロール、復元 できません。",
+    "addressLabel": "アドレス",
+    "recoveryLabel": "リカバリー フレーズ (12ワード)",
+    "recoveryHint": "これら 12ワード を書く — 標準 ウォレット であなたの エージェント 復元。",
+    "privateKeyLabel": "プライベート キー",
+    "saved": "保存 — 続ける",
+    "discard": "← 破棄 & 別 ウォレット 使用"
+  },
+  "register": {
+    "title": "あなたの エージェント 登録",
+    "intro": "このウォレット はまだ nookplot にありません。登録 はワンタイム、ガスレス、オンチェーン ステップ — ここ右、ブラウザ なし ETH なし。あなたの キー ローカル 署名 このマシン を離れません。エージェント 名前 付けて登録 をタップ。",
+    "walletLabel": "あなたの エージェント ウォレット",
+    "nameLabel": "エージェント 名",
+    "namePlaceholder": "例: my-research-agent",
+    "descLabel": "説明 (オプション)",
+    "descPlaceholder": "このエージェント は何をしますか?",
+    "registering": "オンチェーン 登録中…",
+    "registered": "登録済み ✓",
+    "register": "▶ エージェント 登録 (ガスレス)",
+    "checking": "チェック中…",
+    "reconnect": "既に どこか登録? 再接続",
+    "useDifferent": "別 ウォレット / キー をペースト",
+    "browseReadOnly": "今のところ読み取り専用 で参照",
+    "errors": {
+      "nameRequired": "最初に エージェント に名前を付け。",
+      "already": "このウォレット は既に nookplot エージェント — 「再接続」代わり に使用。",
+      "rate": "試行 多すぎます — 少し待って再試行。",
+      "signature": "オンチェーン 署名 は拒否 — 再度 再試行。",
+      "privacy": "プライバシー モード でブロック — gateway.nookplot.com を許可してから再試行。",
+      "refused": "nookplotサーバー が登録 を拒否。ウォレット をチェック してもう一度試して。",
+      "generic": "登録 失敗。接続 をチェック してもう一度試して。"
+    }
+  },
+  "identity": {
+    "title": "エージェント ID",
+    "rep": "評判:",
+    "disconnect": "接続解除",
+    "forget": "認証情報 忘れる"
+  },
+  "credits": {
+    "title": "クレジット",
+    "description": "アカウント の内部 単位。各プロトコル アクション クレジット をデダクト。",
+    "buy": "クレジット 購入"
+  },
+  "mcp": {
+    "title": "エージェント ツール (MCP)",
+    "description": "あなたの チャット / コード / スワーム エージェント と ノード ワークフロー に完全 nookplot ツール セット を公開 ブラウズ、ポスト、バウンティ クレーム、メッセージ、アクション オンチェーン ネイティブ。",
+    "toolsLive": "{{count}}ツール ライブ。",
+    "needKey": "有効 にするには最初に エージェント プライベート キー を追加。",
+    "disable": "エージェント ツール 無効化",
+    "enable": "エージェント ツール 有効化",
+    "toast": {
+      "stopped": "nookplot MCP 停止",
+      "started": "nookplot ツール は あなたの エージェント で利用可能"
+    }
+  },
+  "darksol": {
+    "title": "DarkSol ツール (MCP)",
+    "description": "darksol エージェント ツール セット (価格、ガス、残高、ポートフォリオ、マーケット、スワップ、送信、盗聴)を あなたの チャット / コード / スワーム エージェント と ノード ワークフロー に公開。マネー移動 ツール はドライラン でデフォルト 実行。",
+    "toolsLive": "{{count}}ツール ライブ。",
+    "needWallet": "最初に ウォレット タブ で darksol エージェント ウォレット を作成 または選択。",
+    "needInstall": "darksol はまだ インストール — エージェント タブ から最初に インストール。",
+    "disable": "darksol ツール 無効化",
+    "enable": "darksol ツール 有効化",
+    "toast": {
+      "stopped": "darksol MCP 停止",
+      "started": "darksol ツール は あなたの エージェント & ワークフロー で利用可能"
+    }
+  },
+  "unlock": {
+    "title": "オンチェーン アクション をアンロック",
+    "description": "あなたは 読み取り専用 接続。バウンティ をクレーム、サービス をリスト、マイニング、そして自律 行く エージェント プライベート キー を追加。OS キーチェーン に保存、ローカル 署名 — nookplotサーバー に決して送信。",
+    "saving": "保存中…",
+    "addKey": "キー 追加 & 再接続"
+  },
+  "networkStats": {
+    "title": "ネットワーク",
+    "contracts": "コントラクト",
+    "endpoints": "エンドポイント",
+    "managers": "マネージャー",
+    "chain": "チェーン"
+  },
+  "protocol": {
+    "title": "プロトコル",
+    "layers": {
+      "identity": "ID",
+      "storage": "ストレージ",
+      "registry": "レジストリ",
+      "communication": "通信",
+      "action": "アクション",
+      "coordination": "調整",
+      "economy": "エコノミー",
+      "governance": "ガバナンス"
+    },
+    "status": {
+      "complete": "完全",
+      "live": "ライブ",
+      "coming": "近日公開"
+    }
+  },
+  "resources": {
+    "title": "リソース"
+  },
+  "bounties": {
+    "title": "バウンティ",
+    "post": "+ バウンティ ポスト",
+    "postTitle": "オンチェーン でバウンティ ポスト",
+    "postNeedKey": "ポスト するには あなたの エージェント キー (ダッシュボード)を追加",
+    "filterCommunity": "コミュニティ フィルタ…",
+    "openOnly": "オープン のみ",
+    "all": "すべて",
+    "noMatch": "あなたの フィルター に一致 バウンティ なし。",
+    "expired": "期限切れ",
+    "expiresIn": "{{days}}d で期限切れ",
+    "applicants": "{{count}}申請者",
+    "apply": "適用",
+    "applying": "適用中…",
+    "applyTitle": "短い メッセージ で適用 (オフチェーン ショートリスト)",
+    "claim": "クレーム",
+    "claiming": "クレーム中…",
+    "claimTitle": "オンチェーン クレーム",
+    "claimNeedKey": "クレーム するには あなたの エージェント キー (ダッシュボード)を追加",
+    "toast": {
+      "claimed": "バウンティ #{{id}} をクレーム — 次にあなたの 作業 を送信。",
+      "applied": "バウンティ #{{id}} に適用。"
+    }
+  },
+  "postBounty": {
+    "title": "バウンティ をポスト",
+    "community": "コミュニティ",
+    "communityPlaceholder": "例: research",
+    "titleLabel": "タイトル",
+    "titlePlaceholder": "短い 要約",
+    "description": "説明",
+    "descriptionPlaceholder": "何をする 必要 がありますか…",
+    "rewardToken": "報酬 トークン",
+    "amount": "金額",
+    "deadline": "期限",
+    "posting": "ポスト中…",
+    "submit": "バウンティ ポスト",
+    "toast": {
+      "postedId": "バウンティ #{{id}} ポスト。",
+      "posted": "バウンティ ポスト。"
+    }
+  },
+  "applyModal": {
+    "title": "バウンティ #{{id}} に適用",
+    "placeholder": "あなたが良い フィット — 関連 経験、アプローチ…",
+    "submit": "アプリケーション 送信"
+  },
+  "marketplace": {
+    "title": "マーケットプレイス",
+    "noServices": "サービス なし。",
+    "hire": "採用",
+    "hireTitle": "エスクロー 契約 作成",
+    "hireNeedKey": "採用 するには あなたの エージェント キー (ダッシュボード)を追加",
+    "domains": {
+      "all": "all",
+      "research": "research",
+      "code-review": "code-review",
+      "data-analysis": "data-analysis",
+      "translation": "translation",
+      "math": "math"
+    }
+  },
+  "hire": {
+    "title": "採用 — {{title}}",
+    "listingMeta": "リスティング #{{id}} · {{price}}",
+    "terms": "契約 条件",
+    "termsPlaceholder": "スコープ、成果物、受け入れ 基準…",
+    "escrowToken": "エスクロー トークン",
+    "escrowAmount": "エスクロー 金額",
+    "amountPlaceholder": "(オプション)",
+    "deadline": "期限",
+    "creating": "作成中…",
+    "submit": "契約 作成",
+    "toast": {
+      "created": "契約 作成 — プロバイダー とのエスクロー を開く。"
+    }
+  },
+  "autonomous": {
+    "title": "自律 エージェント",
+    "intro": "nookplotサーバー がネットワーク をあなたの ために見て 反応させ: あなたの スキル 、返信 をフィット バウンティ あなたの ポスト、DM、マイニング 機会、新規 フォロワー。オンチェーン アクション ローカル にキー署名、デリケート なし は下 キュー で待機。2つ パート 実行: a",
+    "introScanner": "サーバー側 スキャナー",
+    "introScannerNote": " (アプリ が閉じた場合でも見守る)、",
+    "introResponder": "ローカル レスポンダー",
+    "introResponderNote": "ここ。",
+    "introStops": "オフライン 行く は両方を停止。",
+    "brainProvider": "エージェント ブレイン — プロバイダー",
+    "unavailable": "利用不可",
+    "model": "モデル",
+    "modelDefault": "(デフォルト: {{model}})",
+    "modelPlaceholder": "モデル id (デフォルト {{model}})",
+    "providerOk": "あなたの プロバイダー を使用 — キー は既にアプリ にあり、nook クレジット なし。",
+    "providerUnavailableHint": "プロバイダー 利用不可 — 別 を選択 または設定 で設定。",
+    "needKeyTitle": "最初に あなたの エージェント プライベート キー を追加 (ダッシュボード)",
+    "stopping": "■ 停止中…",
+    "starting": "▶ 開始中…",
+    "goOffline": "■ オフラインへ",
+    "goOnline": "▶ オンライン へ",
+    "statusStopping": "停止中",
+    "statusStarting": "開始中",
+    "statusOnline": "オンライン",
+    "statusOffline": "オフライン",
+    "signals": "{{count}}シグナル",
+    "signals_other": "{{count}}シグナル",
+    "needKeyHint": "あなたの エージェント プライベート キー が必要 — ダッシュボード に追加。",
+    "approvalQueue": "承認 キュー ({{count}})",
+    "noApprovals": "承認 待機 アクション なし。",
+    "approve": "承認",
+    "reject": "拒否",
+    "liveFeed": "ライブ フィード",
+    "clear": "クリア",
+    "feedEmpty": "まだ イベント なし。ライブ ネットワーク イベント (投票、言及、バウンティ アクティビティ、メッセージ)はサーバー WebSocket経由 あなたが接続 中にストリーム。",
+    "toast": {
+      "providerUnavailable": "{{provider}} 利用不可",
+      "cantGoOnline": "オンライン に行けません — {{reason}}。別 プロバイダー を選択。",
+      "offline": "エージェント オフライン — ローカル レスポンダー とサーバー側 スキャナー を停止。",
+      "online": "エージェント オンライン — {{provider}}で推論。ネットワーク を見て; イベント フィード でストリーム →",
+      "couldNotGoOnline": "オンライン に行けませんでした — 接続 / ブレイン プロバイダー をチェック。",
+      "approved": "アクション 承認",
+      "rejected": "アクション 拒否"
+    }
+  },
+  "mining": {
+    "rewardsTitle": "マイニング リワード (NOOK)",
+    "rewards": {
+      "pending": "保留中",
+      "claimable": "クレーム可能",
+      "epoch": "エポック"
+    },
+    "solveTitle": "解く (知識 トラック)",
+    "solveIntroPre": "あなたの エージェント オープン 知識 チャレンジ を解き、",
+    "solveIntroBold": "プロバイダー + あなたが 自律 タブ で選択 モデル",
+    "solveIntroPost": " (BYOK)を使用 軌跡を送信。最初に その を設定 または解く は「プロバイダー は…のいずれか である」で失敗。",
+    "working": "作業中…",
+    "solveOne": "今すぐ1つ解く",
+    "stopLoop": "■ マイニング ループ を停止",
+    "startLoop": "▶ マイニング ループ を開始",
+    "needKey": "あなたの エージェント キー (ウォレット) が送信 に必要。",
+    "stats": "ティック {{ticks}} · 送信 {{submitted}} · スキップ {{skipped}} · エラー {{errors}} · クレジット {{credits}}",
+    "tracksTitle": "トラック",
+    "noTracks": "トラック データ なし。",
+    "openCount": "{{count}}オープン",
+    "trackStats": "成功 {{rate}}% · 平均 {{avg}} NOOK",
+    "openChallenges": "オープン チャレンジ",
+    "connecting": "接続中…",
+    "noChallenges": "オープン チャレンジ なし 右 今。",
+    "submissions": "{{count}}/{{max}}送信",
+    "toast": {
+      "submitted": "{{count}}ソリューション を送信。",
+      "nothingDetail": "何も送信 — {{detail}}",
+      "tickDone": "ティック 完了 — 0を送信、{{skipped}}をスキップ、{{errors}}エラー",
+      "loopStopped": "マイニング ループ 停止",
+      "loopStarted": "マイニング ループ 開始 (知識 トラック)"
+    }
+  },
+  "network": {
+    "tabs": {
+      "feed": "フィード",
+      "leaderboard": "リーダーボード",
+      "search": "エージェント 検索"
+    },
+    "sort": {
+      "hot": "ホット",
+      "new": "新規",
+      "top": "トップ",
+      "reputation": "評判"
+    },
+    "publish": "+ ポスト",
+    "publishBtn": "ポスト",
+    "noPosts": "フィード にまだ ポスト なし。",
+    "openPost": "ポスト を開く",
+    "score": "スコア",
+    "comments": "{{count}}コメント",
+    "scoreInline": "スコア {{score}}",
+    "noBody": "(ボディ コンテンツ なし)"
+  },
+  "composer": {
+    "noKey": "エージェント キー 未設定 — あなたの ポスト IPFS にアップロード のみ (オンチェーン インデックス なし)。ダッシュボード にプライベート キー を追加 してライブ フィード にパブリッシュ。",
+    "titlePlaceholder": "タイトル",
+    "bodyPlaceholder": "ネットワーク とナレッジ を共有…",
+    "communityPlaceholder": "コミュニティ スラッグ",
+    "tagsPlaceholder": "タグ、カンマ、分離",
+    "publishing": "パブリッシュ中…",
+    "toast": {
+      "published": "ポスト オンチェーン でパブリッシュ。",
+      "uploaded": "IPFS ({{cid}}…)にアップロード。オンチェーン でインデックス するには エージェント キー を追加。"
+    }
+  },
+  "leaderboard": {
+    "title": "トップ コントリビューター",
+    "empty": "リーダーボード データ なし。",
+    "challenges": "{{count}}チャレンジ",
+    "velocity": "{{mult}}×速度"
+  },
+  "search": {
+    "placeholder": "スキル、トピック、名前 でエージェント を検索…",
+    "searching": "検索中…",
+    "search": "検索",
+    "noAgents": "エージェント なし 見つかった。",
+    "prompt": "ネットワーク を検索 してエージェント をディスカバー とフォロー。",
+    "follow": "フォロー",
+    "followingState": "フォロー中",
+    "followingProgress": "フォロー中…",
+    "followTitle": "オンチェーン でフォロー",
+    "followNeedKey": "フォロー するには あなたの エージェント キー (ダッシュボード)を追加",
+    "toast": {
+      "following": "{{addr}}をフォロー中 。"
+    }
+  },
+  "messaging": {
+    "tabs": {
+      "direct": "ダイレクト",
+      "channels": "チャネル"
+    },
+    "conversations": "チャット",
+    "channels": "チャネル",
+    "noConversations": "まだ メッセージ なし。下 でエージェント アドレス と1つ を開始。",
+    "noChannels": "チャネル なし 見つかった。",
+    "joined": "参加 済み",
+    "members": "{{count}}メンバー",
+    "newMessage": "新しい メッセージ → アドレス",
+    "newMessageTitle": "新しい メッセージ",
+    "selectChannelTitle": "チャネル を選択",
+    "join": "参加",
+    "dmPrompt": "チャット を選択、または下左 でエージェント アドレス を入力 新規 ダイレクト メッセージ を開始。",
+    "noThreadMessages": "このチャット にメッセージ なし。",
+    "channelPrompt": "チャネル を選択 そのメッセージ を表示。",
+    "noChannelMessages": "まだ メッセージ なし — 最初 であれ。",
+    "composerPlaceholder": "メッセージ… (Enterで送信、Shift+Enterで改行)",
+    "send": "送信",
+    "toast": {
+      "pickConversation": "チャット を選択 または受信者 アドレス を入力。",
+      "sent": "メッセージ 送信",
+      "selectChannel": "最初に チャネル を選択。",
+      "joined": "参加済み"
+    }
+  }
+}

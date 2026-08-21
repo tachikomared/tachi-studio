@@ -1,0 +1,177 @@
+﻿From f61f17a434ffe22ed345f2ec93f4069ff1747032 Mon Sep 17 00:00:00 2001
+From: smolemaru <axyenniiparen@gmail.com>
+Date: Wed, 10 Jun 2026 02:48:13 +0400
+Subject: [PATCH] feat(providers): add OVHcloud AI Endpoints + Scaleway
+ Generative APIs
+
+Two EU-hosted free providers (TachiDesk vendor patch):
+
+- OVHcloud AI Endpoints (platform 'ovh') - OpenAI-compatible at
+  oai.endpoints.kepler.ai.cloud.ovh.net/v1. The anonymous tier needs NO
+  key (~2 rpm; a key raises limits) - same placeholder-key convention as
+  Pollinations/LLM7. Catalog ids PROBED LIVE 2026-06-10 against the
+  keyless /v1/models (mind the mixed naming: Meta-Llama-3_3 with
+  underscores vs Llama-3.1 with dots - that is the live spelling).
+  Rows: Llama 3.3 70B, GPT-OSS 120B, Qwen3 Coder 30B, Llama 3.1 8B.
+- Scaleway Generative APIs (platform 'scaleway') - OpenAI-compatible at
+  api.scaleway.ai/v1, 1M free tokens with an IAM key (no card). Ids from
+  the 2026-05 free-coding-models audit; the health probe remains the
+  source of truth (a stale id just sinks in the fallback chain).
+
+Touched: shared Platform union, provider registrations, keys-route
+allowlist, KeysPage labels, models migration V12 (+fallback_config
+backfill, same shape as V11).
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+---
+ client/src/pages/KeysPage.tsx |  2 ++
+ server/src/db/index.ts        | 51 +++++++++++++++++++++++++++++++++++
+ server/src/providers/index.ts | 20 ++++++++++++++
+ server/src/routes/keys.ts     |  2 +-
+ shared/types.ts               |  4 ++-
+ 5 files changed, 77 insertions(+), 2 deletions(-)
+
+diff --git a/client/src/pages/KeysPage.tsx b/client/src/pages/KeysPage.tsx
+index 57aab1b..3d10765 100644
+--- a/client/src/pages/KeysPage.tsx
++++ b/client/src/pages/KeysPage.tsx
+@@ -24,6 +24,8 @@ const PLATFORMS: { value: Platform; label: string }[] = [
+   { value: 'kilo', label: 'Kilo Gateway (anon ok)' },
+   { value: 'pollinations', label: 'Pollinations (anon ok)' },
+   { value: 'llm7', label: 'LLM7 (anon ok)' },
++  { value: 'ovh', label: 'OVHcloud AI Endpoints (anon ok, EU)' },
++  { value: 'scaleway', label: 'Scaleway Generative APIs (EU)' },
+ ]
+ 
+ const statusDot: Record<string, string> = {
+diff --git a/server/src/db/index.ts b/server/src/db/index.ts
+index 90093ce..1f90f04 100644
+--- a/server/src/db/index.ts
++++ b/server/src/db/index.ts
+@@ -46,6 +46,7 @@ export function initDb(dbPath?: string): Database.Database {
+   migrateModelsV9(db);
+   migrateModelsV10(db);
+   migrateModelsV11(db);
++  migrateModelsV12(db);
+   ensureUnifiedKey(db);
+ 
+   console.log(`Database initialized at ${resolvedPath}`);
+@@ -929,6 +930,56 @@ function migrateModelsV11(db: Database.Database) {
+   apply();
+ }
+ 
++/**
++ * V12 (2026-06-10): add OVHcloud AI Endpoints + Scaleway Generative APIs.
++ *
++ *  - OVH: OpenAI-compatible, EU/GDPR. Anonymous tier needs NO key (~2 rpm);
++ *    same placeholder-key convention as Pollinations/LLM7 to be routable.
++ *  - Scaleway: OpenAI-compatible, EU. 1M free tokens, IAM key required
++ *    (no card).
++ *
++ * Model ids below come from provider docs (2026-05 research pass) and OVH/SCW
++ * rename SLOWLY but DO drift — the health probe (test-all-models / per-key
++ * health checks) is the source of truth; a 404 "unknown model" row just sinks
++ * in the fallback chain, it cannot break routing.
++ */
++function migrateModelsV12(db: Database.Database) {
++  const insert = db.prepare(`
++    INSERT OR IGNORE INTO models (platform, model_id, display_name, intelligence_rank, speed_rank, size_label, rpm_limit, rpd_limit, tpm_limit, tpd_limit, monthly_token_budget, context_window)
++    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
++  `);
++  const additions: Array<[string, string, string, number, number, string, number | null, number | null, number | null, number | null, string, number | null]> = [
++    // OVHcloud — anonymous ~2 rpm (keyed raises limits). EU-hosted.
++    // Ids PROBED LIVE 2026-06-10 against the keyless /v1/models (note the
++    // mixed naming: Meta-Llama-3_3 with underscores, Llama-3.1 with dots —
++    // that's how the live catalog actually spells them).
++    ['ovh',      'Meta-Llama-3_3-70B-Instruct',        'Llama 3.3 70B (OVH)',          17, 7, 'Large',  2, null, null, null, '~1M (anon 2rpm)', 131072],
++    ['ovh',      'gpt-oss-120b',                       'GPT-OSS 120B (OVH)',            6, 7, 'Large',  2, null, null, null, '~1M (anon 2rpm)', 131072],
++    ['ovh',      'Qwen3-Coder-30B-A3B-Instruct',       'Qwen3 Coder 30B (OVH)',        16, 7, 'Medium', 2, null, null, null, '~1M (anon 2rpm)', 131072],
++    ['ovh',      'Llama-3.1-8B-Instruct',              'Llama 3.1 8B (OVH)',           28, 8, 'Small',  2, null, null, null, '~1M (anon 2rpm)', 131072],
++
++    // Scaleway — 1M free tokens with an IAM key.
++    ['scaleway', 'llama-3.3-70b-instruct',             'Llama 3.3 70B (SCW)',          17, 7, 'Large',  null, null, null, null, '1M free tokens', 131072],
++    ['scaleway', 'qwen2.5-coder-32b-instruct',         'Qwen2.5 Coder 32B (SCW)',      20, 7, 'Medium', null, null, null, null, '1M free tokens',  32768],
++    ['scaleway', 'mistral-small-3.1-24b-instruct-2503','Mistral Small 3.1 24B (SCW)',  21, 8, 'Medium', null, null, null, null, '1M free tokens', 131072],
++  ];
++
++  const apply = db.transaction(() => {
++    for (const a of additions) insert.run(...a);
++    const missing = db.prepare(`
++      SELECT m.id FROM models m
++      LEFT JOIN fallback_config f ON m.id = f.model_db_id
++      WHERE f.id IS NULL ORDER BY m.intelligence_rank ASC
++    `).all() as { id: number }[];
++    if (missing.length > 0) {
++      const maxPriority = (db.prepare('SELECT COALESCE(MAX(priority), 0) AS mx FROM fallback_config').get() as { mx: number }).mx;
++      const addFb = db.prepare('INSERT INTO fallback_config (model_db_id, priority, enabled) VALUES (?, ?, 1)');
++      for (let i = 0; i < missing.length; i++) addFb.run(missing[i].id, maxPriority + i + 1);
++    }
++  });
++  apply();
++}
++
+ function ensureUnifiedKey(db: Database.Database) {
+   const existing = db.prepare("SELECT value FROM settings WHERE key = 'unified_api_key'").get() as { value: string } | undefined;
+   if (!existing) {
+diff --git a/server/src/providers/index.ts b/server/src/providers/index.ts
+index 101acb9..48f3859 100644
+--- a/server/src/providers/index.ts
++++ b/server/src/providers/index.ts
+@@ -133,6 +133,26 @@ register(new OpenAICompatProvider({
+   baseUrl: 'https://api.llm7.io/v1',
+ }));
+ 
++// OVHcloud AI Endpoints — OpenAI-compatible, EU/GDPR-hosted. The free
++// anonymous tier needs NO key (~2 rpm unauthenticated; an OVH key raises
++// limits). Same placeholder-key convention as Pollinations/LLM7: the router
++// filters on keys.length === 0, so add any non-empty string as the "key" to
++// make the platform routable. Slow models on the free tier — generous timeout.
++register(new OpenAICompatProvider({
++  platform: 'ovh',
++  name: 'OVHcloud AI Endpoints',
++  baseUrl: 'https://oai.endpoints.kepler.ai.cloud.ovh.net/v1',
++  timeoutMs: 60000,
++}));
++
++// Scaleway Generative APIs — OpenAI-compatible, EU-hosted. Free tier =
++// 1M tokens; needs an IAM secret key (no card).
++register(new OpenAICompatProvider({
++  platform: 'scaleway',
++  name: 'Scaleway Generative APIs',
++  baseUrl: 'https://api.scaleway.ai/v1',
++}));
++
+ // Chutes was evaluated for V11 and dropped: probe with a free-tier key
+ // returned 402 on every model — "Quota exceeded and account balance is
+ // $0.0, please pay with fiat or send tao". The "free" tier requires a
+diff --git a/server/src/routes/keys.ts b/server/src/routes/keys.ts
+index 2abcf73..873623c 100644
+--- a/server/src/routes/keys.ts
++++ b/server/src/routes/keys.ts
+@@ -12,7 +12,7 @@ export const keysRouter = Router();
+ const PLATFORMS = [
+   'google', 'groq', 'cerebras', 'sambanova', 'nvidia', 'mistral',
+   'openrouter', 'github', 'cohere', 'cloudflare', 'zhipu', 'ollama',
+-  'kilo', 'pollinations', 'llm7',
++  'kilo', 'pollinations', 'llm7', 'ovh', 'scaleway',
+ ] as const;
+ 
+ const addKeySchema = z.object({
+diff --git a/shared/types.ts b/shared/types.ts
+index 3f7c3ee..308a508 100644
+--- a/shared/types.ts
++++ b/shared/types.ts
+@@ -19,7 +19,9 @@ export type Platform =
+   | 'ollama'
+   | 'kilo'
+   | 'pollinations'
+-  | 'llm7';
++  | 'llm7'
++  | 'ovh'
++  | 'scaleway';
+ 
+ export interface Model {
+   id: number;
+-- 
+2.49.0.windows.1
+

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "OpenClaw-Dashboard"
+  },
+  "actions": {
+    "reload": "Neu laden",
+    "openInBrowser": "Im Browser öffnen",
+    "openDocs": "Dokumentation öffnen"
+  },
+  "iframe": {
+    "title": "OpenClaw-Dashboard"
+  },
+  "probing": {
+    "label": "Überprüfe {{url}}…"
+  },
+  "unreachable": {
+    "title": "OpenClaw-Daemon nicht erreichbar",
+    "hint": "Starten Sie den OpenClaw-Daemon in einem Terminal und klicken Sie dann auf Neu laden:"
+  },
+  "status": {
+    "probing": "Überprüfung läuft",
+    "live": "Live",
+    "offline": "Offline"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "ALLE",
+    "image": "BILD",
+    "video": "VIDEO",
+    "music": "MUSIK",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "Prompts durchsuchen…"
+  },
+  "empty": {
+    "none": "Noch keine Artefakte. Alles, was Sie generieren — im Media-Nodes oder von einem Media-Node auf der Nodes-Leinwand — landet hier.",
+    "noneHint": "Öffnen Sie die Media-Registerkarte, um Ihr erstes Artefakt zu generieren.",
+    "noMatch": "Keine Artefakte stimmen {{scope}}{{query}} überein.",
+    "noMatchFilter": "Dieser Filter"
+  },
+  "tile": {
+    "altFallback": "Artefakt",
+    "noPreview": "(keine Vorschau)",
+    "noPrompt": "(kein prompt)",
+    "pin": "ANHEFTEN",
+    "pinned": "ANGEHEFTET",
+    "pinTitle": "Oben anheften",
+    "unpinTitle": "Ablösen",
+    "completedAfterPrivate": "NACH PRIVATE MODE",
+    "completedAfterPrivateTitle": "Diese Generierung wurde bereits gesendet, als PRIVATE MODE aktiviert wurde, und wurde deshalb fertiggestellt und gespeichert statt blockiert zu werden. Danach hat nichts Neues diesen Rechner verlassen — eine Ablehnung an dieser Stelle hätte nur ein bereits gesendetes Ergebnis verworfen."
+  },
+  "actions": {
+    "fullscreen": "Vollbild",
+    "save": "Speichern",
+    "reveal": "Anzeigen"
+  },
+  "preview": {
+    "alt": "Vorschau",
+    "close": "Schließen (Esc)"
+  },
+  "pane": {
+    "preview": "VORSCHAU",
+    "code": "CODE",
+    "openInDesign": "IN DESIGN ÖFFNEN",
+    "restore": "WIEDERHERSTELLEN",
+    "viewingVersion": "ANSICHT v{{n}} VON {{max}} — NUR LESEN",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "Ältere Version",
+    "newerVersion": "Neuere Version",
+    "seedUser": "Aus Chat importiert: {{title}}",
+    "seedAssistant": "Aus einem Chat-Artifact übernommen — per Chat weiter iterieren."
+  }
+}

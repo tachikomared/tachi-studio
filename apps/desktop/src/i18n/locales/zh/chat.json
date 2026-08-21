@@ -1,0 +1,567 @@
+{
+  "sampler": {
+    "chip": "采样",
+    "chipTitle": "本对话的采样预设——控制回复的随机程度（temperature / top-p）",
+    "heading": "采样预设",
+    "preset": {
+      "fast": "精准",
+      "balanced": "均衡",
+      "creative": "创意",
+      "advanced": "高级"
+    },
+    "presetDesc": {
+      "fast": "精准专注——温度 0.3",
+      "balanced": "使用提供商默认值——不发送任何参数",
+      "creative": "自由多样——温度 0.9，top-p 0.95",
+      "advanced": "设置精确的温度与 top-p"
+    },
+    "temperature": "温度",
+    "topP": "Top-p",
+    "advancedHint": "精确参数——仅应用于本对话。",
+    "balancedNote": "“均衡”不发送任何采样参数——将使用提供商自身的默认值。"
+  },
+  "customEndpoint": {
+    "lanBadge": "局域网",
+    "cloudBadge": "云端",
+    "defaultName": "自定义端点",
+    "pickTitle": "为该端点选择或输入模型",
+    "loadError": "无法加载模型",
+    "noModels": "端点未返回模型 — 请在下方输入模型 ID。",
+    "loadingCatalog": "正在加载模型…",
+    "modelPlaceholder": "输入模型 ID…",
+    "useModel": "使用"
+  },
+  "capture": {
+    "prompt": "记住这个？",
+    "save": "保存",
+    "saved": "已保存到记忆"
+  },
+  "actions": {
+    "copy": "复制",
+    "download": "下载",
+    "regenerate": "重新生成",
+    "fork": "分叉 — 以此处之前的对话开启新聊天",
+    "forkLabel": "分叉",
+    "forked": "已分叉 — 您现在位于新分支"
+  },
+  "messages": {
+    "emptyState": "发送消息以开始聊天。",
+    "waiting": "等待响应…"
+  },
+  "message": {
+    "thinking": "思考中",
+    "error": "错误"
+  },
+  "reasoning": {
+    "label": "推理",
+    "thinking": "思考中…"
+  },
+  "sources": {
+    "label": "来源",
+    "hint": "取自附加的文件夹——点击来源可查看原文",
+    "chipTitle": "{{path}} · 第 {{start}}-{{end}} 行 · 匹配度 {{score}}",
+    "lines": "第 {{start}}-{{end}} 行",
+    "match": "匹配度 {{score}}",
+    "openFile": "显示文件"
+  },
+  "blocks": {
+    "empty": "(空)"
+  },
+  "meter": {
+    "title": "此对话中使用的 token：{{count}}",
+    "titleDanger": "此对话中使用的 token：{{count}} — 非常长，请开始新聊天获得最佳效果",
+    "ariaLabel": "对话 token：{{count}}",
+    "unit": "tok"
+  },
+  "topbar": {
+    "hideArtifacts": "隐藏工件",
+    "showArtifacts": "显示工件",
+    "hideArtifactsPanel": "隐藏工件面板",
+    "showArtifactsPanel": "显示工件面板",
+    "artifactsButton": "ARTIFACTS {{count}}",
+    "showHistory": "显示历史",
+    "showHistoryAria": "显示聊天历史",
+    "history": "历史",
+    "howToTitle": "此标签页的交互式演练",
+    "howTo": "如何使用"
+  },
+  "tour": {
+    "title": "如何使用 Chat 标签页",
+    "step1": {
+      "title": "这是 Chat 标签页",
+      "body": "普通的 AI 聊天 — 提问、粘贴文本、附加文件或图像。无需文件夹或设置。让我展示三个重要的东西。"
+    },
+    "step2": {
+      "title": "选择 AI 的来源",
+      "body": "这是提供商选择器。“免费”无需密钥；其他 — Venice、Bankr、Ollama、llama.cpp — 使用密钥或本地模型。模型列表显示能力标签 (vision · reasoning · tools)，以便您获得正确的。每个聊天记住自己的提供商。"
+    },
+    "step3": {
+      "title": "输入消息",
+      "body": "在这里写。您可以拖入文件/图像或粘贴屏幕截图。输入“/”使用 skill。每个聊天保持自己的对话记忆。"
+    },
+    "step4": {
+      "title": "发送",
+      "body": "按此发送按钮或按 Enter (Shift+Enter 换行)。回复在上面流入。随时使用“新建”开始新聊天。"
+    },
+    "step5": {
+      "title": "您已准备好",
+      "body": "选择提供商、输入、发送。上面的仪表显示对话有多满。从“如何使用”按钮重新打开此页面。"
+    }
+  },
+  "redZone": {
+    "toast": "此聊天变得很长 — AI 可能开始忘记较早的消息。开始新聊天获得最佳效果。",
+    "newChat": "新建聊天"
+  },
+  "compact": {
+    "button": "压缩",
+    "working": "压缩中…",
+    "title": "将较早的消息压缩为摘要以释放上下文——完整的对话记录仍保留在屏幕上",
+    "done": "已将 {{count}} 条消息压缩为摘要",
+    "failed": "无法压缩此对话——请重试",
+    "marker": "已压缩 {{count}} 条消息",
+    "markerTitle": "这些较早的消息将作为摘要发送以节省上下文。点击查看。",
+    "summaryLabel": "上下文摘要"
+  },
+  "history": {
+    "header": "历史 · {{count}}",
+    "new": "+ 新建",
+    "newChat": "新建聊天",
+    "hide": "隐藏历史",
+    "searchPlaceholder": "搜索聊天…",
+    "noMatches": "无匹配项。",
+    "noConversations": "尚无对话。",
+    "msgCount": "{{count}} 条消息",
+    "time": {
+      "justNow": "刚刚",
+      "minutesAgo": "{{count}} 分钟前",
+      "hoursAgo": "{{count}} 小时前",
+      "daysAgo": "{{count}} 天前"
+    },
+    "actions": {
+      "rename": "重命名",
+      "copyMd": "复制 md",
+      "copyMdTitle": "复制为 markdown",
+      "export": "导出",
+      "downloadTitle": "下载 markdown",
+      "downloadAria": "下载为 markdown",
+      "delete": "删除",
+      "deleteConfirm": "再次点击确认",
+      "deleteShort": "删除",
+      "deleteSure": "确定？"
+    },
+    "toast": {
+      "copiedMarkdown": "对话作为 markdown 复制到剪贴板",
+      "downloaded": "已下载 {{filename}}",
+      "deleted": "已删除“{{title}}”"
+    },
+    "untitled": "新对话",
+    "deepSearch": "消息内容（全文搜索）",
+    "pinnedSection": "已固定",
+    "pin": {
+      "pin": "固定",
+      "unpin": "取消固定",
+      "pinTitle": "固定——将此对话保持在历史顶部",
+      "unpinTitle": "取消固定此对话"
+    },
+    "folders": {
+      "new": "新建文件夹",
+      "defaultName": "新项目",
+      "unfiled": "未分类",
+      "prompt": "提示词",
+      "knowledge": "知识库",
+      "detach": "移除知识库",
+      "promptPlaceholder": "项目系统提示词——随此文件夹中的每个对话发送…",
+      "none": "无文件夹",
+      "moveTitle": "移动到文件夹",
+      "projectPowers": "已附加项目提示词/知识库",
+      "actionsTitle": "文件夹操作",
+      "settings": "文件夹设置",
+      "settingsTitle": "文件夹设置——指令、默认提供商/模型、知识库",
+      "instructions": "指令",
+      "defaultProviderModel": "默认提供商 / 模型",
+      "providerAppDefault": "应用默认",
+      "defaultModelPlaceholder": "自动",
+      "knowledgeLabel": "知识库文件夹",
+      "newChatInFolder": "在此文件夹中新建对话——沿用文件夹默认设置"
+    }
+  },
+  "artifacts": {
+    "header": "工件 · {{count}}",
+    "closeTitle": "关闭工件面板",
+    "closeAria": "关闭工件面板",
+    "empty": "此对话中尚无工件。",
+    "copied": "工件已复制到剪贴板",
+    "downloaded": "已下载 {{filename}}"
+  },
+  "toast": {
+    "copied": "已复制到剪贴板",
+    "copyFailed": "复制失败",
+    "codeCopied": "代码已复制到剪贴板"
+  },
+  "media": {
+    "save": "保存",
+    "reveal": "显示",
+    "savedTo": "保存到 {{path}}",
+    "nothingToSave": "此项目无内容可保存。",
+    "generatedImageAlt": "生成的图像",
+    "attachedImageAlt": "附加的图像",
+    "attachAudioToTranscribe": "附加音频文件以转录。",
+    "transcribeEcho": "转录：{{name}}",
+    "generationFailed": "媒体生成失败：{{error}}",
+    "noArtifactsReturned": "未返回任何工件。",
+    "jobFailed": "任务失败",
+    "pollTimeout": "仍在处理 — 5 分钟后超时。重试以重新轮询。"
+  },
+  "provider": {
+    "localityGroup": {
+      "local": "在这台机器上",
+      "relay": "在本机运行，但会转发出去",
+      "cloud": "在云端"
+    },
+    "listAria": "提供商",
+    "noKeyBadge": "无需密钥",
+    "readyNow": "{{total}} 个中有 {{count}} 个现在就能用，无需密钥。其余的需要在设置中填入密钥。",
+    "autoRouteNow": "此刻会发送到 {{provider}} · {{model}}",
+    "changeTitle": "更改此聊天的提供商",
+    "label": "提供商：",
+    "needsKey": "(登录 / 添加密钥)",
+    "autoLabel": "自动",
+    "autoBadge": "自动",
+    "autoHint": "自动选择：本地模型若能运行则用它，否则用免费的，再否则用默认提供商。",
+    "locality": {
+      "local": {
+        "badge": "本地",
+        "title": "在这台机器上运行，你的提示词不会离开本机。"
+      },
+      "relay": {
+        "badge": "中转",
+        "title": "由本机上的进程应答，但它会把你的提示词转发给云端服务商——提示词确实离开了本机。"
+      },
+      "cloud": {
+        "badge": "云端",
+        "title": "你的提示词会通过网络发送给远程服务商。"
+      }
+    }
+  },
+  "health": {
+    "ok": "可访问 — 最后健康检查通过",
+    "error": "无法访问 — 最后健康检查失败",
+    "checking": "检查提供商健康…",
+    "unknown": "健康状态未知",
+    "ariaLabel": "提供商健康：{{status}}"
+  },
+  "picker": {
+    "listAria": "模型",
+    "taskFilterAria": "按任务筛选模型",
+    "taskAll": "全部",
+    "taskAllTitle": "该提供商提供的所有模型，按系列分组。",
+    "taskEmpty": "这里没有标注适用于该任务的模型。本应用只标注能够证实的内容，所以没有标注的模型仍可能是合适的那一个。",
+    "modelLabel": "模型：",
+    "pickModel": "选择模型",
+    "offlineTitle": "显示精选目录 — 实时获取不可用",
+    "offlineBadge": "·离线",
+    "offlineCurated": "离线 — 显示精选目录 ({{error}})",
+    "priceRate": "输入 ${{in}}/百万 · 输出 ${{out}}/百万",
+    "priceFree": "$0 — 无需付费"
+  },
+  "bankr": {
+    "pickTitle": "选择要使用的 Bankr 模型",
+    "loadError": "无法加载 Bankr 模型",
+    "loadingCatalog": "加载 Bankr 目录…"
+  },
+  "venice": {
+    "pickTitle": "选择要使用的 Venice 模型",
+    "loadError": "无法加载 Venice 模型",
+    "loadingCatalog": "加载 Venice 目录…"
+  },
+  "imgnai": {
+    "pickTitle": "选择要使用的 imgnAI Katana 模型",
+    "loadingCatalog": "加载 imgnAI 目录…"
+  },
+  "surplus": {
+    "pickTitle": "选择要使用的 Surplus 模型",
+    "loadError": "无法加载 Surplus 模型",
+    "loadingCatalog": "加载 Surplus 目录…",
+    "modelAuto": "模型：自动",
+    "modelAutoTitle": "智能路由已开启 — 模型每条消息自动选择。关闭智能路由以选择一个。",
+    "smartOn": "智能开启",
+    "smartOff": "智能关闭",
+    "smartOnTitle": "智能路由开启 — 简单 prompt 使用廉价模型，困难 prompt 使用顶级模型 (自动)。点击关闭。",
+    "smartOffTitle": "智能路由关闭 — 使用您选择的模型。点击按任务难度自动路由。",
+    "smartAuto": "自动路由",
+    "smartAutoTitle": "模型为 AUTO — 每条消息按任务难度自动路由。选择一个模型以固定，或点击强制开启 SMART。",
+    "tuneTitle": "调整路由难度阈值",
+    "tuneHint": "难度阈值（越低越常用强模型）",
+    "tuneSimple": "SIMPLE 低于",
+    "tuneMid": "MID 低于",
+    "tuneReset": "重置",
+    "workflowOn": "工作流开启",
+    "workflowOff": "工作流关闭",
+    "workflowOnTitle": "工作流升级开启 — 真正困难的多步骤/agentic prompt 运行多 agent 工作流 (多个 agent 计划 + 执行) 而不是一个模型。较慢。点击禁用。",
+    "workflowOffTitle": "工作流升级关闭 — 打开以让真正困难的多步骤/agentic prompt 运行多 agent 工作流而不是单个模型 (高级、较慢、需要密钥)。"
+  },
+  "surplusMedia": {
+    "pickTitle": "选择要使用的 Surplus 媒体模型",
+    "pickModel": "选择媒体模型",
+    "mediaLabel": "媒体：",
+    "loadError": "无法加载 Surplus 媒体模型",
+    "loadingCatalog": "加载媒体目录…",
+    "noModels": "无媒体模型。添加 Surplus 密钥并资助 USDC。",
+    "modality": {
+      "image": "图像",
+      "video": "视频",
+      "music": "音乐",
+      "tts": "文本 → 语音",
+      "stt": "语音 → 文本"
+    }
+  },
+  "ollama": {
+    "pickTitle": "选择要聊天的 Ollama 模型",
+    "notAvailable": "Ollama 不可用",
+    "firstInstalled": "首先安装的模型",
+    "probing": "探测 Ollama…",
+    "noModelsPrefix": "尚未拉取任何模型。运行",
+    "noModelsSuffix": "或任何其他模型。"
+  },
+  "llamaCpp": {
+    "pickTitle": "选择要加载并聊天的已下载 llama.cpp 模型",
+    "startFailed": "启动模型失败",
+    "loading": "加载中…",
+    "loadingParen": "(加载中…)",
+    "selectModel": "选择模型",
+    "noModelsPrefix": "尚未下载任何 llama.cpp 模型。在",
+    "noModelsLink": "目录 → 推荐",
+    "running": "运行中",
+    "clickToLoad": "点击加载"
+  },
+  "freellmapi": {
+    "pickTitle": "为下一条消息选择模型",
+    "unavailable": "freellmapi 不可用",
+    "modelPinned": "模型：{{model}}",
+    "modelAuto": "模型：自动",
+    "modelUnavail": "模型：[不可用]",
+    "fallbackChain": "回退链",
+    "sortTitle": "循环回退排序顺序",
+    "sort": "排序：{{mode}}",
+    "sortUnavail": "排序：[不可用]",
+    "sortMode": {
+      "intelligence": "智能",
+      "speed": "速度",
+      "budget": "预算"
+    },
+    "routingTitle": "选择由哪个免费模型优先应答：智能 = 能力最强，快速 = 响应最快，省钱 = 成本最低（点击切换）。",
+    "routing": "路由：{{mode}}",
+    "routingUnavail": "路由：[不可用]",
+    "routingMode": {
+      "intelligence": "智能",
+      "speed": "快速",
+      "budget": "省钱"
+    }
+  },
+  "mediaControls": {
+    "size": "大小",
+    "count": "n",
+    "voice": "声音",
+    "seconds": "秒",
+    "lyrics": "歌词",
+    "defaultPlaceholder": "(默认)",
+    "optionalPlaceholder": "(可选)",
+    "changeAudio": "更改音频",
+    "attachAudio": "附加音频",
+    "working": "工作中…",
+    "workingProgress": "工作中 · {{progress}}",
+    "modality": {
+      "image": "图像",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "视频",
+      "music": "音乐"
+    },
+    "modalityWord": {
+      "image": "图像",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "视频",
+      "music": "音乐"
+    }
+  },
+  "composer": {
+    "attachTitle": "附加文件或图像",
+    "micStop": "停止听",
+    "micStart": "语音输入 (点击开始)",
+    "micStopAria": "停止听",
+    "micStartAria": "开始语音输入",
+    "rec": "录制",
+    "mic": "麦克风",
+    "transcribing": "转写中",
+    "placeholderStt": "附加音频文件以转录 (prompt 被忽略)",
+    "placeholderMedia": "描述要生成的 {{modality}}...",
+    "placeholderDefault": "输入命令或 prompt... (Shift+Enter 换行)",
+    "stop": "停止",
+    "stopTitle": "停止生成",
+    "send": "发送",
+    "sendAria": "发送消息",
+    "draftTokens": "+{{count}} 草稿",
+    "modeChip": "聊天",
+    "prompts": "{ }",
+    "promptsTitle": "提示词库 — 带变量的可复用模板",
+    "attachFolderTitle": "附加文件夹——聊天将从中提取相关上下文（本地语义索引）",
+    "folderIndexing": "正在索引文件夹…",
+    "folderIndexed": "文件夹已索引：{{count}} 个片段",
+    "folderIndexError": "文件夹索引失败",
+    "folderDetach": "移除文件夹",
+    "attachFull": "全文",
+    "attachRag": "RAG",
+    "attachFullTitle": "可放入上下文：约 {{tokens}} 个 token，≤ 模型 {{window}} token 窗口的 60% — 文件夹全文将随你的消息一起发送（不做检索）。",
+    "attachRagTitle": "约 {{tokens}} 个 token — 超出模型 {{window}} token 窗口，无法整体放入；改为每条消息检索最相关的片段。",
+    "attachRagFallbackTitle": "每条消息都会从文件夹中检索最相关的片段。",
+    "attachScanningTitle": "正在估算文件夹大小…",
+    "promptsLabel": "提示词",
+    "attachFolderLabel": "文件夹",
+    "attachLabel": "附件",
+    "editBranchSaved": "旧线程已作为“(branch)”聊天保留在历史中",
+    "inputAria": "消息输入框",
+    "folderChipAria": "已附加文件夹：{{folder}}",
+    "attachmentsAria": "附件（{{count}}）",
+    "blanksHint": "待填写：{{n}} 个 — Tab 跳转，Esc 直接发送",
+    "blanksDismiss": "直接发送"
+  },
+  "slash": {
+    "ariaLabel": "斜杠命令",
+    "skillsLabel": "Skills",
+    "toPick": "来选择",
+    "toDismiss": "来关闭"
+  },
+  "voice": {
+    "error": "语音：{{error}}"
+  },
+  "attachments": {
+    "image": "图像",
+    "remove": "移除",
+    "removeNamed": "移除附件 {{name}}"
+  },
+  "workspace": {
+    "noSession": "无活跃会话",
+    "loading": "加载中...",
+    "noToolCalls": "尚未记录工具调用",
+    "recentChanges": "最近的更改",
+    "state": "状态",
+    "openPanel": "打开工作空间面板",
+    "title": "工作空间",
+    "noWorkspace": "未选择工作空间。",
+    "pickFolder": "在 Agent 头部中选择文件夹以开始浏览文件。"
+  },
+  "workspaceState": {
+    "noTasks": "无任务",
+    "snapshot": "状态快照",
+    "phases": "阶段",
+    "blockers": "阻塞器",
+    "decisions": "决定",
+    "noData": "尚无状态数据"
+  },
+  "rightPanel": {
+    "provider": "提供商",
+    "online": "在线",
+    "model": "模型",
+    "usage": "使用",
+    "promptTokens": "Prompt：{{count}} tokens",
+    "completionTokens": "完成：{{count}} tokens",
+    "routing": "路由",
+    "routingHint": "启用 bankr-router 以获得路由洞察 (第 2 阶段)"
+  },
+  "compare": {
+    "useThis": "采用此回答",
+    "pickedNote": "已比较 {{count}} 个模型 — 选用 {{model}}",
+    "tokPerSec": "{{rate}} tok/s",
+    "tokPerSecEst": "~{{rate}} tok/s",
+    "tokPerSecNone": "— tok/s",
+    "ttft": "TTFT {{seconds}}秒",
+    "ttftNone": "TTFT —"
+  },
+  "panelPicker": {
+    "chipAuto": "面板 AUTO",
+    "chipCount": "面板·{{count}}",
+    "chipAutoTitle": "面板模型来自预设。点击可自行选择 — 云端和本地 (Ollama / llama.cpp) 模型可以并排回答。",
+    "chipCustomTitle": "自定义面板：{{models}}。点击编辑。",
+    "title": "Fusion / Compare 面板",
+    "autoRow": "AUTO",
+    "autoRowHint": "使用预设面板",
+    "cloudSection": "云端 — {{provider}}",
+    "ollamaSection": "Ollama — 本地",
+    "llamacppSection": "llama.cpp — 本地",
+    "loading": "探测中…",
+    "cloudEmpty": "目录不可用 — 请添加 API 密钥或检查网络连接。",
+    "ollamaEmpty": "尚未拉取任何 Ollama 模型。",
+    "llamacppEmpty": "尚未下载任何 GGUF 模型 — 请在目录中获取。",
+    "running": "运行中",
+    "willStart": "点击加载到 llama-server",
+    "starting": "正在加载模型…",
+    "startFailedGeneric": "无法启动 llama.cpp。",
+    "localTag": "LOCAL",
+    "hint": "2–6 个模型并行回答。本地模型在您的机器上运行；每列都会报告实测 tok/s + 首个 token 耗时。"
+  },
+  "fitPill": {
+    "gpu": "适配",
+    "cpu": "仅 CPU",
+    "tight": "紧张",
+    "tooBig": "太大",
+    "gpuTitle": "可放入 GPU 显存 — 快速",
+    "cpuTitle": "可放入内存 — 在 CPU / 部分 GPU 上运行（较慢）",
+    "tightTitle": "紧张 — 可能内存不足",
+    "tooBigTitle": "对这台机器来说太大了",
+    "sizeFromDiskTitle": "大小根据磁盘上的模型文件测得"
+  },
+  "starters": {
+    "try": "试试 ▸",
+    "summarizeUrl": {
+      "label": "总结一个网址",
+      "desc": "粘贴任意链接 — 用五个要点抓住重点。",
+      "prompt": "用 5 个要点总结这个页面，然后给出最重要的一条结论：\n<在此粘贴 URL>"
+    },
+    "explain": {
+      "label": "简单解释",
+      "desc": "任何概念，讲给刚入门的你听。",
+      "prompt": "简单解释一下<主题>，假设我很聪明但刚接触这个领域。用一个具体的类比。"
+    },
+    "compare": {
+      "label": "对比两个模型",
+      "desc": "同一个问题，并排作答 — 挑出最好的。",
+      "prompt": "对小团队来说，哪种规划方式更好：看板还是 Scrum？用 4 句话回答。"
+    }
+  },
+  "versions": {
+    "prev": "上一版本",
+    "next": "下一版本",
+    "counter": "v{{n}} / {{total}}"
+  },
+  "auto": {
+    "badge": "自动",
+    "routedTitle": "由 AUTO 路由器自动选择"
+  },
+  "reconnect": {
+    "retrying": "连接中断 — 正在重试 {{attempt}}/{{max}}",
+    "nextIn": "{{seconds}} 秒后重试",
+    "reason": "原因：{{reason}}"
+  },
+  "a11y": {
+    "transcript": "聊天记录",
+    "userMessage": "你的消息",
+    "assistantMessage": "助手回复",
+    "errorMessage": "助手错误",
+    "toolMessage": "工具调用：{{tool}}",
+    "thinking": "助手正在思考"
+  },
+  "fileChips": {
+    "label": "文件",
+    "revealAria": "在文件管理器中显示 {{name}}"
+  },
+  "openrouterPicker": {
+    "pickTitle": "选择要使用的 OpenRouter 模型",
+    "loadError": "无法加载 OpenRouter 模型",
+    "loadingCatalog": "正在加载 OpenRouter 目录…",
+    "freeBadge": "FREE",
+    "freeLimits": "免费档：每分钟 20 次 · 无额度时每天 50 次（他们公布的限制）。",
+    "freeGroup": "免费——实时定价 $0（{{count}}）",
+    "paidGroup": "付费（{{count}}）"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format": "tachiflow",
+  "formatVersion": 1,
+  "app": "tachi-studio",
+  "appVersion": "0.1.0",
+  "exportedAt": "2026-07-11T00:00:00.000Z",
+  "flow": {
+    "version": 1,
+    "name": "Prompt to Image",
+    "savedAt": "2026-07-11T00:00:00.000Z",
+    "nodes": [
+      {
+        "id": "p2i-writer",
+        "type": "prompt",
+        "position": { "x": 60, "y": 160 },
+        "data": {
+          "label": "Prompt writer",
+          "providerId": "freellmapi",
+          "endpoint": "localhost:8080",
+          "model": "auto",
+          "instruction": "You are a prompt engineer for an IMAGE generator. Take the user's idea and write ONE vivid, concrete image prompt: subject, composition, lighting, lens, mood, and style. Output ONLY the prompt — no preamble."
+        }
+      },
+      {
+        "id": "p2i-image",
+        "type": "media",
+        "position": { "x": 460, "y": 120 },
+        "data": { "label": "Image", "modality": "image", "prompt": "", "params": {} }
+      }
+    ],
+    "edges": [
+      { "id": "p2i-e1", "source": "p2i-writer", "target": "p2i-image", "sourceHandle": "E-src", "targetHandle": "prompt", "type": "link", "data": {} }
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "hero": {
+    "subtitlePage": "描述一个页面或应用。获得完整的独立设计 — 实时渲染，通过对话不断完善。",
+    "subtitleAnimate": "描述一个动态图形。获得 Remotion 动画 — 实时渲染，通过对话完善。",
+    "recentDesigns": "最近的设计"
+  },
+  "composer": {
+    "placeholderNew": "描述你想设计的页面或应用…",
+    "placeholderChange": "描述一个修改 — 例如“把主视觉改成深色并添加一行用户评价”",
+    "placeholderEditingV": "正在编辑 v{{n}} — 描述对这个版本的修改",
+    "preset": "预设",
+    "presetNone": "无预设",
+    "presetTitle": "品牌预设 — 生成时所用的成套设计系统（配色、字体、圆角、动效）",
+    "designMdChip": "DESIGN.md",
+    "designMdTitle": "在所附文件夹根目录发现 DESIGN.md — 将作为设计方向一并发送",
+    "files": "+ 文件",
+    "filesTitle": "附加文件作为上下文——文本/代码，或将视频/音频/GIF 作为页面资源",
+    "folder": "+ 文件夹",
+    "folderTitle": "为整个文件夹/项目设计",
+    "image": "+ 图片",
+    "imageTitleOn": "附加参考图片（按图设计）",
+    "imageTitleOff": "选择视觉模型以附加图片",
+    "interview": "访谈",
+    "interviewTitle": "设计前先问几个澄清问题（Claude Design 风格）。关闭 = 立即构建。",
+    "stop": "停止",
+    "ask": "提问",
+    "send": "发送",
+    "generate": "生成",
+    "askTitle": "先问澄清问题",
+    "imageChip": "图片",
+    "brand": "+ 品牌网址",
+    "brandTitle": "提取网站的颜色、字体和徽标，按其品牌设计",
+    "brandBusy": "正在读取网站…",
+    "brandPrompt": "粘贴网站网址——我会提取其颜色、字体和徽标作为品牌方向：",
+    "brandFailed": "无法读取该网站。",
+    "brandGo": "提取",
+    "brandClose": "关闭",
+    "brandAuto": "正在从 {{host}} 提取品牌…",
+    "assetAdded": "已附加 {{name}} —— 页面将引用 assets/{{name}}"
+  },
+  "mode": {
+    "page": "页面",
+    "animate": "动画",
+    "title": "静态页面或 Remotion 动画"
+  },
+  "provider": {
+    "none": "无",
+    "noLocal": "无本地提供商",
+    "loading": "加载中…",
+    "noModels": "无模型"
+  },
+  "project": {
+    "label": "项目",
+    "new": "+ 新项目",
+    "defaultName": "项目 {{n}}",
+    "namePlaceholder": "项目名称",
+    "ok": "OK",
+    "renameTitle": "重命名项目",
+    "title": "项目 — 对应磁盘上 TACHI Design/ 下的文件夹",
+    "folderBtn": "文件夹",
+    "setFolderBtn": "设置文件夹…",
+    "openFolderTitle": "打开此项目的文件夹。\n保存位置：{{dir}}",
+    "setFolderTitle": "更改设计的保存位置。\n当前：{{dir}}"
+  },
+  "sessions": {
+    "none": "还没有以前的设计。",
+    "button": "会话（{{count}}）",
+    "prevTitle": "此项目中以前的设计",
+    "new": "+ 新建",
+    "newTitle": "开始新设计",
+    "versionsTitle": "{{count}} 个版本",
+    "deleteTitle": "删除",
+    "kindAnim": "动画",
+    "kindPage": "页面"
+  },
+  "thread": {
+    "edit": "编辑",
+    "editTitle": "编辑此消息并从这里重新生成",
+    "editConfirm": "删除并编辑？",
+    "editConfirmTitle": "这会删除该消息及其之后的所有版本。再次点击以确认 — 或使用 ↩ 恢复，在不丢失任何内容的情况下取回旧版本。",
+    "restore": "恢复",
+    "restoreTitle": "把这个版本作为新版本取回 — 不会删除任何内容",
+    "restoredV": "已恢复 v{{n}}",
+    "restoredToast": "已将 v{{n}} 恢复为最新版本",
+    "designV": "设计 v{{n}}",
+    "showing": "（当前显示）",
+    "designing": "设计中…",
+    "sentWith": "随此消息发送"
+  },
+  "dropOpen": {
+    "title": "{{name}} 看起来是一个完整的 HTML 文档。",
+    "open": "作为设计打开",
+    "openTitle": "将其设为当前设计 — 预览、文本编辑、迭代和导出都会作用于它",
+    "attach": "作为上下文附加",
+    "attachTitle": "作为下一个提示的参考资料保留（截断为 6000 字符）",
+    "seedUser": "已导入 {{name}}",
+    "seedAssistant": "已导入 {{name}}",
+    "opened": "已打开 {{name}} — 通过聊天继续打磨",
+    "tooBig": "{{name}} 超过 {{cap}} 的预览上限 — 已改为作为上下文附加"
+  },
+  "view": {
+    "preview": "预览",
+    "code": "代码"
+  },
+  "artifact": {
+    "latest": "最新",
+    "latestTitle": "跳到最新版本",
+    "editText": "编辑文本",
+    "editing": "编辑中",
+    "editTitle": "点击预览中的任意文本即可就地编辑",
+    "copy": "复制",
+    "export": "导出",
+    "encoderInstall": "安装视频编码器 · {{size}}",
+    "encoderInstallTitle": "导出视频需要 Remotion 的编码器。它会从 Remotion 官方 npm 包一次性下载，而不是随应用打包——因为那个 FFmpeg 构建自己声明其许可证禁止再分发。不会上传任何东西，只是把文件下载给你。",
+    "encoderInstalling": "正在安装编码器… {{percent}}%",
+    "encoderReady": "视频编码器已安装",
+    "encoderFailed": "无法安装视频编码器",
+    "exportMp4": "导出 MP4",
+    "mp4Title": "渲染真正的 H.264 MP4（首次使用会下载受管 Chromium）",
+    "pngTitle": "导出整页 PNG",
+    "pdfTitle": "导出单页 PDF",
+    "wysiwygBar": "点击文本编辑 · Enter 保存 · Esc 取消",
+    "generating": "生成中…",
+    "noDoc": "还没有文档。",
+    "mp4ResTitle": "导出分辨率（2K/4K 为重新渲染，非放大）"
+  },
+  "msg": {
+    "herePage": "这是你的设计。",
+    "hereAnimation": "这是你的动画。",
+    "updatedPage": "设计已更新。",
+    "updatedAnimation": "动画已更新。",
+    "error": "遇到错误：{{error}}",
+    "discoveryFailed": "无法进行需求探询{{detail}}。在下方回答或直接点击生成。",
+    "tellMore": "再多说一点（受众、风格、必备板块），然后点击生成。",
+    "gatewayTimeout": "提供商重试 3 次后仍超时 — 当前负载过高。点击最后一条消息的 ↺ edit，一分钟后重发。"
+  },
+  "errors": {
+    "visionModel": "附加参考图片前请选择视觉模型（Claude / GPT / Gemini）。",
+    "fileUnsupported": "{{name}}：不支持的文件类型——请附加图片、视频/音频或文本/代码文件",
+    "assetFailed": "{{name}}: {{error}}"
+  },
+  "render": {
+    "starting": "启动中…"
+  },
+  "toast": {
+    "mp4Exported": "MP4 已导出 — 已在文件夹中显示",
+    "imgExported": "{{format}} 已导出 — 已在文件夹中显示",
+    "exportFailed": "导出失败",
+    "copied": "代码已复制",
+    "copyFailed": "复制失败",
+    "openedFolder": "已打开文件夹",
+    "failed": "失败",
+    "saveTo": "设计现在保存到 {{dir}}"
+  },
+  "examples": {
+    "page1": "AI 笔记应用的落地页 — 主视觉、功能网格、定价、页脚",
+    "page2": "加密投资组合仪表盘：余额卡片、持仓表格和图表",
+    "page3": "极简个人作品集：醒目的主视觉和项目画廊",
+    "page4": "精致的定价页：三档方案和月付/年付切换",
+    "anim1": "动画 Logo 揭示 — 字母弹性错落进入，然后光泽扫过",
+    "anim2": "动态字体开场：打出“TACHI”后爆裂成粒子",
+    "anim3": "循环渐变背景，漂浮几何图形",
+    "anim4": "产品功能亮点：卡片滑入，数字递增到 99%"
+  },
+  "engine": {
+    "remotion": "Remotion",
+    "hyperframes": "HyperFrames",
+    "title": "动画渲染器：Remotion（React → 导出 MP4）或 HyperFrames（HTML + GSAP 时间轴）"
+  },
+  "voiceover": {
+    "button": "音频",
+    "title": "配音 — 本地 TTS",
+    "voice": "声音",
+    "groupStudio": "录音室 — KOKORO",
+    "groupPiper": "PIPER",
+    "studioUnavailable": "录音室声音需要此构建的媒体库支持 — 请改选 PIPER 声音。",
+    "placeholder": "输入一句旁白…",
+    "synthesize": "合成",
+    "busy": "合成中…",
+    "files": "项目中的音频 — 生成器可以用它们配乐：",
+    "copy": "复制 staticFile()",
+    "copied": "已复制 ✓",
+    "noVoices": "尚未安装 TTS 声音。",
+    "installTts": "安装声音：Media → TTS",
+    "hint": "现在生成或完善动画并提到旁白 — 模型能看到这些文件并自行加入 <Audio>。"
+  },
+  "interview": {
+    "title": "快速访谈",
+    "suggested": "推荐",
+    "otherPlaceholder": "或输入自定义答案…",
+    "designIt": "开始设计",
+    "hint": "未回答 = 由你决定",
+    "youDecide": "由你决定"
+  },
+  "audio": {
+    "import": "+ 导入音频",
+    "importTitle": "添加 WAV/MP3 音效或音乐 — 动画可以使用",
+    "imported": "已导入：{{file}}",
+    "importFailed": "导入失败",
+    "noPath": "无法读取文件路径。"
+  },
+  "tour": {
+    "windowTitle": "如何使用 Design 标签页",
+    "mode": {
+      "title": "选择要构建的内容",
+      "body": "「页面」设计完整的网页或应用界面；「动画」制作动态图形。在「动画」模式下你还可以选择渲染器 — Remotion（React，可导出真正的 MP4）或 HyperFrames（HTML + GSAP 时间轴）。会话会记住自己的模式：重新打开旧设计时，这些开关会自动切回。"
+    },
+    "composer": {
+      "title": "描述它",
+      "body": "用平实的语言输入你的需求 — 可附加文件、整个文件夹或参考图片作为上下文。开启「快速访谈」后，第一轮会先问几个关键问题再开始构建；关闭它则立即构建。Cmd/Ctrl+Enter 发送。"
+    },
+    "brand": {
+      "title": "按品牌来设计",
+      "body": "在这里粘贴网站 URL — 它真实的配色、字体和文案会被提取成一个上下文芯片，供生成器读取。更简单的做法：把 URL 直接放进提示词，品牌信息会自动引入。"
+    },
+    "export": {
+      "title": "预览与导出",
+      "body": "每个版本都会在预览窗格中实时渲染 — 点击对话中的某个版本即可显示，或直接在预览中编辑文字。页面可导出为 HTML/PNG/PDF；动画可渲染成真正的 H.264 MP4，支持 1080p、2K 或 4K。"
+    }
+  }
+}

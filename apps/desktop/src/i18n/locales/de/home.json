@@ -1,0 +1,35 @@
+{
+  "heading": "Fragen Sie alles",
+  "subtitle": "Powered by 11 kostenlosen KI-Providern — keine Cloud erforderlich.",
+  "placeholder": "Was beschäftigt Sie?",
+  "startChat": "Chat starten",
+  "slashHint": "/ eingeben für Befehle",
+  "spent": "Heute ausgegeben — free tier",
+  "recent": "Letzte",
+  "quickStarts": {
+    "url": "URL zusammenfassen",
+    "code": "Code erklären",
+    "tweet": "Tweet schreiben",
+    "translate": "Übersetzen",
+    "brainstorm": "Ideen brainstormen",
+    "folder": "Ordner als Agent öffnen"
+  },
+  "actions": {
+    "chat": "Neuer Chat",
+    "code": "Ordner coden",
+    "design": "Neues Design",
+    "nodes": "Node-Canvas",
+    "models": "Modelle"
+  },
+  "health": {
+    "spent": "30-Tage-Ausgaben",
+    "apiUp": "Lokale API :{{port}}",
+    "apiDown": "Lokale API aus",
+    "open": "Dashboard"
+  },
+  "recentTypes": {
+    "chat": "Chat",
+    "design": "Design",
+    "flow": "Flow"
+  }
+}

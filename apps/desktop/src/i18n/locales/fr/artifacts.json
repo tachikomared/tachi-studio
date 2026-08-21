@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "TOUS",
+    "image": "IMAGE",
+    "video": "VIDÉO",
+    "music": "MUSIQUE",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "Rechercher des messages…"
+  },
+  "empty": {
+    "none": "Aucun artefact pour le moment. Tout ce que vous générez — dans le studio Media ou à partir d'un nœud media sur le canevas Nodes — arrive ici.",
+    "noneHint": "Ouvrez l'onglet Media pour générer le vôtre.",
+    "noMatch": "Aucun artefact ne correspond à {{scope}}{{query}}.",
+    "noMatchFilter": "ce filtre"
+  },
+  "tile": {
+    "altFallback": "artefact",
+    "noPreview": "(pas d'aperçu)",
+    "noPrompt": "(pas de message)",
+    "pin": "ÉPINGLER",
+    "pinned": "ÉPINGLÉ",
+    "pinTitle": "Épingler en haut",
+    "unpinTitle": "Dépingler",
+    "completedAfterPrivate": "APRÈS PRIVATE MODE",
+    "completedAfterPrivateTitle": "Cette génération était déjà en cours d'envoi quand PRIVATE MODE a été activé ; elle s'est donc terminée et enregistrée au lieu d'être bloquée. Rien de nouveau n'a quitté cette machine après le basculement — la refuser à ce stade aurait seulement jeté un résultat déjà envoyé."
+  },
+  "actions": {
+    "fullscreen": "Plein écran",
+    "save": "Enregistrer",
+    "reveal": "Révéler"
+  },
+  "preview": {
+    "alt": "aperçu",
+    "close": "Fermer (Esc)"
+  },
+  "pane": {
+    "preview": "APERÇU",
+    "code": "CODE",
+    "openInDesign": "OUVRIR DANS DESIGN",
+    "restore": "RESTAURER",
+    "viewingVersion": "AFFICHAGE v{{n}} SUR {{max}} — LECTURE SEULE",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "Version plus ancienne",
+    "newerVersion": "Version plus récente",
+    "seedUser": "Importé depuis le chat : {{title}}",
+    "seedAssistant": "Amorcé depuis un artefact de chat — itérez en discutant."
+  }
+}

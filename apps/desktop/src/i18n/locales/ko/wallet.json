@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "지갑",
+    "subtitle": "MULTI-CHAIN · App (nookplot · x402) + darksol agent 지갑"
+  },
+  "toast": {
+    "addressCopied": "주소 복사됨",
+    "backupDownloaded": "암호화된 백업 다운로드됨",
+    "walletImported": "지갑 가져오기 완료",
+    "walletRemoved": "이 기기에서 지갑이 제거됨",
+    "agentWalletRemoved": "Agent 지갑 \"{{agentName}}\" 제거됨"
+  },
+  "newKey": {
+    "backupNow": "지금 백업하세요 — 유일한 사본입니다",
+    "address": "주소",
+    "privateKey": "개인 키",
+    "done": "완료 — 지갑 열기"
+  },
+  "empty": {
+    "title": "지갑 없음",
+    "description": "앱 전체에서 사용하는 지갑 — nookplot, x402 결제, 모든 연동에 사용되는 단일 계정입니다. 비수탁형: 키는 OS 키체인에 암호화되어 저장되며, 복호화된 상태로 이 기기를 떠나지 않습니다.",
+    "creating": "생성 중…",
+    "create": "✦ 지갑 만들기",
+    "importKey": "개인 키 가져오기",
+    "keyPlaceholder": "0x…",
+    "import": "가져오기"
+  },
+  "account": {
+    "title": "계정 · {{label}}",
+    "noAddress": "—",
+    "copy": "복사"
+  },
+  "balances": {
+    "title": "잔액",
+    "allNetworks": "· 전체 네트워크",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 표시",
+    "hide": "👁 숨기기",
+    "refreshing": "새로고침 중…",
+    "refresh": "↻ 새로고침"
+  },
+  "backup": {
+    "title": "암호화된 백업",
+    "description": "비밀번호로 암호화된 키스토어 (Web3 Secret Storage — MetaMask/geth와 호환). 파일과 비밀번호를 안전하게 보관하세요. 함께 사용하면 어떤 기기에서든 agent를 복원할 수 있습니다.",
+    "password": "백업 비밀번호 (최소 8자)",
+    "download": "백업 다운로드"
+  },
+  "switch": {
+    "title": "지갑 전환",
+    "replaceTitle": "키 교체 · {{label}}",
+    "warning": "먼저 백업을 내보내세요 — 키를 교체하면 현재 지갑이 이 기기에서 제거됩니다.",
+    "agentName": "Agent 지갑 이름",
+    "keyPlaceholder": "개인 키 0x…",
+    "importKey": "키 가져오기",
+    "orKeystore": "또는 키스토어 JSON + 비밀번호",
+    "keystorePassword": "키스토어 비밀번호",
+    "importKeystore": "키스토어 가져오기"
+  },
+  "danger": {
+    "title": "신규 / 제거",
+    "generate": "새 지갑 생성",
+    "forget": "지갑 삭제",
+    "forgetNamed": "{{label}} 삭제"
+  },
+  "switcher": {
+    "account": "계정",
+    "activeSuffix": " ·활성",
+    "new": "+ 신규",
+    "newPrompt": "새 darksol agent 지갑 이름:",
+    "newTitle": "새 agent 지갑",
+    "newPlaceholder": "예: trading-bot",
+    "newOk": "만들기",
+    "newCancel": "취소"
+  },
+  "network": {
+    "all": "전체 네트워크"
+  },
+  "send": {
+    "title": "전송 · 모든 토큰",
+    "token": "토큰",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "받는 주소",
+    "recipientPlaceholder": "0x… / name.eth",
+    "amount": "수량",
+    "sending": "전송 중…",
+    "send": "전송",
+    "note": "선택한 네트워크에서 네이티브 토큰 + 모든 ERC-20 (또는 컨트랙트 주소 직접 입력). 크로스체인 → darksol agent (LI.FI) 사용.",
+    "toast": {
+      "success": "전송 완료 — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "자금 이체 · App → {{agentName}}",
+    "amount": "수량 (네이티브)",
+    "moving": "이체 중…",
+    "move": "이체",
+    "note": "App 지갑의 NOOK / x402 잔액은 그대로 유지됩니다.",
+    "toast": {
+      "success": "이체 완료 — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Agent 한도 · darksol agent-signer",
+    "maxPerTrade": "거래당 최대",
+    "daily": "일일 한도",
+    "dryRun": "Dry-run",
+    "on": "ON",
+    "off": "OFF",
+    "save": "한도 저장",
+    "toast": {
+      "saved": "한도 저장됨"
+    }
+  }
+}

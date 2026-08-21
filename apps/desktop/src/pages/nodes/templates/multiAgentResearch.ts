@@ -1,0 +1,82 @@
+// apps/desktop/src/pages/nodes/templates/multiAgentResearch.ts
+//
+// Multi-agent research — Topic → Researcher → Analyst → Writer chain on the
+// free local router (no key needed). Pure data (.tachiflow.json-shaped);
+// a byte-identical copy lives at examples/flows/multi-agent-research.tachiflow.json.
+
+import type { FlowTemplate } from './tachiflow'
+
+export const multiAgentResearch: FlowTemplate = {
+  id: 'multi-agent-research',
+  label: 'Multi-agent research',
+  description: 'Researcher gathers facts, Analyst distills them, Writer produces the final brief. Free — no key needed.',
+  file: {
+    format: 'tachiflow',
+    formatVersion: 1,
+    app: 'tachi-studio',
+    appVersion: '0.1.0',
+    exportedAt: '2026-07-11T00:00:00.000Z',
+    flow: {
+      version: 1,
+      name: 'Multi-agent research',
+      savedAt: '2026-07-11T00:00:00.000Z',
+      nodes: [
+        {
+          id: 'mar-prov',
+          type: 'provider',
+          position: { x: 40, y: 40 },
+          data: { label: 'Free models', providerId: 'freellmapi', model: 'auto' },
+        },
+        {
+          id: 'mar-topic',
+          type: 'text',
+          position: { x: 40, y: 280 },
+          data: {
+            label: 'Research topic',
+            text: 'The impact of local LLMs on developer workflows — replace with your topic.',
+            lastOutput: 'The impact of local LLMs on developer workflows — replace with your topic.',
+          },
+        },
+        {
+          id: 'mar-researcher',
+          type: 'agent',
+          position: { x: 400, y: 160 },
+          data: {
+            label: 'Researcher',
+            harnessId: 'openclaude',
+            systemPrompt: 'You are a meticulous researcher. Take the topic in the message and gather everything relevant you know: key facts, players, numbers, and open questions. Output an organized fact sheet — no fluff.',
+          },
+        },
+        {
+          id: 'mar-analyst',
+          type: 'agent',
+          position: { x: 760, y: 160 },
+          data: {
+            label: 'Analyst',
+            harnessId: 'openclaude',
+            systemPrompt: 'You are an analyst. Read the researcher\'s fact sheet above and distill it: the 5 most important findings, what they mean, and where the evidence is weakest. Be critical and concrete.',
+          },
+        },
+        {
+          id: 'mar-writer',
+          type: 'agent',
+          position: { x: 1120, y: 160 },
+          data: {
+            label: 'Writer',
+            harnessId: 'openclaude',
+            systemPrompt: 'You are a technical writer. Turn the analysis above into a crisp research brief: a one-paragraph summary, the key findings as bullets, and a short "what to watch next" section.',
+            final: true,
+          },
+        },
+      ],
+      edges: [
+        { id: 'mar-e1', source: 'mar-prov', target: 'mar-researcher', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: {} },
+        { id: 'mar-e2', source: 'mar-prov', target: 'mar-analyst', sourceHandle: 'E-src', targetHandle: 'NW-tgt', type: 'link', data: {} },
+        { id: 'mar-e3', source: 'mar-prov', target: 'mar-writer', sourceHandle: 'NE-src', targetHandle: 'NW-tgt', type: 'link', data: {} },
+        { id: 'mar-e4', source: 'mar-topic', target: 'mar-researcher', sourceHandle: 'E-src', targetHandle: 'SW-tgt', type: 'link', data: { instruction: 'the topic to research' } },
+        { id: 'mar-e5', source: 'mar-researcher', target: 'mar-analyst', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'distill the findings' } },
+        { id: 'mar-e6', source: 'mar-analyst', target: 'mar-writer', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'write the final brief' } },
+      ],
+    },
+  },
+}

@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "読み込み中…"
+  },
+  "topbar": {
+    "badge": "ダッシュボード"
+  },
+  "system": {
+    "title": "システム",
+    "live": "● ライブ",
+    "os": "OS",
+    "release": "リリース",
+    "host": "ホスト",
+    "cpu": "CPU",
+    "cores": "{{count}}コア",
+    "app": "アプリ",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "アプリアップタイム",
+    "ram": "RAM",
+    "disk": "ディスク",
+    "tachiProcess": "アプリプロセス: {{size}}"
+  },
+  "sidecars": {
+    "title": "バックグラウンドサービス",
+    "upCount": "{{up}}/{{total}}アップ",
+    "none": "バックグラウンドサービス登録なし",
+    "viewLogTail": "ログテール表示",
+    "logs": "ログ",
+    "stop": "停止",
+    "start": "開始",
+    "startFailed": "起動に失敗しました: {{error}}",
+    "stopFailed": "停止に失敗しました: {{error}}"
+  },
+  "logs": {
+    "ariaLabel": "{{id}}のログ",
+    "header": "{{id}} · ログテール",
+    "live": "● ライブ 2s",
+    "close": "閉じる",
+    "noFile": "このサービスのログファイルなし — openclaude のみディスクに書く。",
+    "empty": "ログファイルは空。"
+  },
+  "harnesses": {
+    "title": "エージェント → プロバイダー",
+    "activeRouting": "アクティブ ルーティング",
+    "ready": "準備完了",
+    "idle": "アイドル",
+    "provider": {
+      "freellmLocal": "FreeLLM (ローカルルーター)",
+      "anthropicOAuth": "Anthropic OAuth (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "停止中"
+    },
+    "harness": {
+      "directChat": "直接 チャット"
+    }
+  },
+  "providers": {
+    "title": "プロバイダー",
+    "configured": "{{count}}設定済み",
+    "none": "プロバイダー設定なし。キー追加するために設定を開く。",
+    "connected": "接続済み",
+    "tier": {
+      "oauthPro": "OAuth & Pro",
+      "free": "無料プロバイダー",
+      "tools": "ツール"
+    },
+    "footer": "+ FreeLLM ルーター (キー不要) · free-claude-code — どちらもこのマシンが応答しますが、プロンプトはクラウドのプロバイダーに転送されます"
+  },
+  "runtimes": {
+    "title": "このマシンで検出",
+    "rescan": "再スキャン",
+    "scanning": "スキャン中…",
+    "state": {
+      "running": "実行中",
+      "healthy": "健全",
+      "connected": "接続済み",
+      "installed": "準備完了",
+      "starting": "開始中",
+      "stopped": "停止",
+      "not_installed": "未インストール",
+      "error": "エラー",
+      "unreachable": "到達不可"
+    }
+  },
+  "conversations": {
+    "title": "チャット",
+    "total": "合計",
+    "messages": "メッセージ",
+    "youWrote": "あなた が書いた",
+    "modelWrote": "モデル が書いた",
+    "tokensUsed": "トークン使用",
+    "byProvider": "プロバイダー 別",
+    "none": "まだ チャット なし。"
+  },
+  "workflow": {
+    "title": "ワークフロー キャンバス",
+    "open": "開く ↗",
+    "description": "プロバイダー + エージェント + スキル ノド をグラフに構成。出力 を入力に配線 してラン チェーン。",
+    "edges": "エッジ",
+    "inputs": "入力",
+    "providers": "プロバイダー",
+    "outputs": "出力"
+  },
+  "aeon": {
+    "auth": "認証",
+    "signedIn": "サインイン済み",
+    "notSignedIn": "サインイン なし",
+    "user": "ユーザー",
+    "ghClient": "gh クライアント",
+    "signInPrompt": "Aeon タブ を開いて",
+    "signInButton": "GitHub にサインイン"
+  },
+  "audit": {
+    "title": "アウトバウンド リクエスト · {{count}}",
+    "loading": "読み込み中…",
+    "live": "ライブ 5s",
+    "reload": "再読み込み",
+    "clear": "クリア",
+    "explainer": "Tachi Studio のメインプロセスが直接行った ネットワーク コール — GitHub、選択 LLM プロバイダー、Ollama など。緑 = OK、黄 = リダイレクト、赤 = エラー。行 をクリック して完全 URL と タイミング。注: ローカルサービス プロセス (OpenClaude、freellmapi) 内のコール とオンチェーン ウォレット RPC はここに表示されません — これはデバッグ補助であり、完全な送信台帳ではありません。",
+    "filterAll": "すべて",
+    "category": {
+      "other": "その他"
+    },
+    "emptyNone": "まだ ネットワーク リクエスト 記録 なし。チャット タブ 使用 またはアクション トリガー。",
+    "emptyFilter": "選択 フィルター に一致 エントリ なし。",
+    "detail": {
+      "url": "URL",
+      "status": "ステータス",
+      "networkError": "ネットワーク エラー",
+      "duration": "デュレーション",
+      "reqSize": "リクエスト サイズ",
+      "resSize": "応答 サイズ",
+      "time": "時刻",
+      "category": "カテゴリー"
+    }
+  },
+  "doctor": {
+    "title": "ドクター",
+    "run": "チェック実行",
+    "running": "チェック中…",
+    "hint": "各外部バイナリ（Piper、SD、yt-dlp、Whisper、llama.cpp、Chromium）と FreeLLM ルーターをプローブコマンドで実際に実行し、「インストール済み」フラグでは見えない破損を検出します。",
+    "status": {
+      "ok": "正常",
+      "missing": "未導入",
+      "broken": "破損",
+      "timeout": "タイムアウト",
+      "error": "エラー"
+    }
+  }
+}

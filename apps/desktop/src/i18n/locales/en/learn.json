@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "Learn",
+    "intro": "A two-minute tour. No technical background needed — read top to bottom, or jump to a section."
+  },
+  "hero": {
+    "eyebrow": "First launch",
+    "title": "Welcome to Tachi Studio",
+    "intro": "One desk for working with AI. Five ways in — pick any and start. You can reopen this guide any time.",
+    "lines": {
+      "chat": "<strong>CHAT</strong> — text an AI assistant. Free, no setup.",
+      "code": "<strong>CODE</strong> — point it at a folder; it builds real things while you watch.",
+      "nodes": "<strong>NODES</strong> — wire steps into a visual workflow and run the whole pipeline.",
+      "design": "<strong>DESIGN</strong> — describe a page or motion graphic; watch it render live.",
+      "media": "<strong>MEDIA</strong> — generate images, video, music and voice."
+    },
+    "cta": {
+      "chat": "Open Chat",
+      "flow": "Try a starter flow",
+      "quickstart": "Read the quickstart"
+    },
+    "dismiss": "Dismiss"
+  },
+  "sections": {
+    "basics": {
+      "title": "What this app is",
+      "intro1": "Tachi Studio is a desk for working with AI. You can <strong>chat</strong> with it, or point it at a folder and have it <strong>build things for you</strong> — websites, scripts, small apps — while you watch.",
+      "intro2": "You do not need to install anything technical or open a terminal. Everything happens inside this window. A few ways in:",
+      "ways": {
+        "chat": "<strong>Chat</strong> — like texting an assistant. Free, no setup.",
+        "code": "<strong>Code</strong> — give it a folder + a task, it does real work in that folder.",
+        "media": "<strong>Media</strong> — generate images, video, music and voice (and transcribe audio).",
+        "nodes": "<strong>Nodes</strong> — wire those steps into a visual workflow and run the whole pipeline.",
+        "design": "<strong>Design</strong> — describe a web page or a motion graphic; watch it render live and refine it by chatting."
+      }
+    },
+    "chat": {
+      "title": "Just chat (the easy start)",
+      "steps": {
+        "open": "Click <strong>CHAT</strong> in the left sidebar.",
+        "type": "Type a question at the bottom and press Enter.",
+        "done": "That is it. The first provider is free and needs no key."
+      },
+      "note": "It remembers the conversation — ask a follow-up and it knows what you were talking about. Start a fresh topic with <strong>New</strong> (top right). Each chat keeps its own memory.",
+      "open": "Open Chat →",
+      "moreTitle": "Also in Chat",
+      "extras": {
+        "commands": "Type <strong>/</strong> to see the command list — <strong>/help</strong>, <strong>/compact</strong>, <strong>/model</strong>, <strong>/cost</strong>, <strong>/memory</strong>, <strong>/remember</strong>, <strong>/search</strong>, <strong>/loop</strong> and more. The same slash commands work in Chat, Code, and the HOME \"Ask anything\" box.",
+        "sources": "Attach a folder and ask about it — a grounded answer shows <strong>Sources</strong> chips underneath. Click one to expand the exact file text it used."
+      }
+    },
+    "code": {
+      "title": "Build things (the Code agent)",
+      "steps": {
+        "open": "Click <strong>CODE</strong> in the sidebar.",
+        "choose": "Click <strong>Choose folder</strong> (or drag a folder onto the page). This is the only place the AI is allowed to touch.",
+        "type": "Type what you want, e.g. <em>\"make a simple snake game in an html file\"</em>, and press the run button.",
+        "watch": "Watch it work. When it writes a file you can click <strong>[PREVIEW]</strong> to see it live — an HTML game actually plays right inside the app."
+      },
+      "note": "It can only read and write inside the folder you picked. It cannot wander into the rest of your computer.",
+      "open": "Open Code →",
+      "moreTitle": "Also in Code",
+      "extras": {
+        "tachiapp": "Want it to work on its own source? The pinned <strong>TACHIAPP</strong> row at the bottom of the sidebar opens a Code chat already pointed at Tachi Studio itself — no folder to pick.",
+        "spawnLoop": "Ask it to split a big task across several agents at once, or type <strong>/loop</strong> to keep working toward a goal on a repeating interval — a <strong>LOOP</strong> chip shows it is still running.",
+        "incomplete": "If a run stops before finishing, you will see an amber <strong>! Ended without completing</strong> badge instead of a false \"done\" — a nudge to keep going or give it more direction."
+      }
+    },
+    "media": {
+      "title": "Make images, video & music",
+      "steps": {
+        "open": "Click <strong>MEDIA</strong> in the sidebar.",
+        "pick": "Pick what to make (image, video, music, speech, transcript), a provider (Surplus or Venice) and a model.",
+        "prompt": "Type a prompt, optionally drop in a reference image, and press Generate."
+      },
+      "note": "Everything you make is saved in the <strong>Artifacts</strong> sub-tab. Models that support it can edit an image, or turn one into a video (image-to-video).",
+      "open": "Open Media →"
+    },
+    "buttons": {
+      "title": "What the Code buttons mean",
+      "intro": "Four small switches sit at the top of the Code tab. You can ignore them to start — the defaults are fine. Here is what each does:",
+      "table": {
+        "head": {
+          "button": "Button",
+          "plain": "In plain words",
+          "realName": "Real name"
+        },
+        "mode": {
+          "name": "Mode",
+          "plain": "Plan first, or just build it now"
+        },
+        "thinking": {
+          "name": "Thinking",
+          "plain": "How hard the AI reasons before acting"
+        },
+        "engine": {
+          "name": "Agent",
+          "plain": "Which coding agent does the work"
+        },
+        "gateway": {
+          "name": "Provider",
+          "plain": "Where the AI models come from"
+        }
+      },
+      "note": "The <strong>[CTX nn%]</strong> badge shows how full the AI's memory is. When it turns yellow then red, start a fresh session so it does not forget the early parts."
+    },
+    "private": {
+      "title": "Keep it private",
+      "intro": "<strong>Private Mode</strong> keeps everything on your machine. Cloud AI is blocked, and agents are stopped from reaching the internet at all.",
+      "steps": {
+        "palette": "Press <strong>Ctrl/Cmd + K</strong> to open the command palette.",
+        "toggle": "Type <em>\"Toggle Private Mode\"</em> and pick it.",
+        "badge": "A red <strong>[PRIVATE]</strong> badge appears at the top. Cloud providers show as <strong>[LOCKED]</strong>."
+      },
+      "note": "In Private Mode only local providers work (Ollama, or llama.cpp). Turn it off the same way to use cloud models again."
+    },
+    "providers": {
+      "title": "Connect your own AI (optional)",
+      "intro": "The free option works with zero setup. To use premium models, add a key:",
+      "steps": {
+        "settings": "Go to <strong>Settings</strong> (bottom of the sidebar) → Providers.",
+        "key": "Pick a provider, click <strong>Get key</strong> (opens the signup page), paste the key, click <strong>Test</strong>.",
+        "green": "Green means connected. Now you can pick that provider in Chat or Code."
+      },
+      "open": "Open Settings →"
+    },
+    "power": {
+      "title": "Power features (when you are ready)",
+      "list": {
+        "nodes": "<strong>Nodes</strong> — draw your own AI pipeline: wire a model to an agent, or chain text → image → video. Every run drops a result card you branch from; pick any model (Venice or local); save and switch flows like chats.",
+        "swarm": "<strong>Swarm</strong> — run several agents as a team on a shared task board.",
+        "parallel": "<strong>Parallel tasks</strong> — in Code, run a few agents at once, each in its own copy of the project.",
+        "inbox": "<strong>Inbox</strong> — instead of a popup for every permission, let requests stack up and approve them in a batch.",
+        "marketplace": "<strong>Connections</strong> — in Settings → Connections, browse a catalog of MCP tool servers and install one with a single click, no JSON to edit. Private Mode automatically keeps local-only servers running and blocks the rest.",
+        "scheduler": "<strong>Scheduled tasks</strong> — in Settings → Advanced → Scheduled, set a chat, Code run or flow to fire on a recurring schedule. It survives your machine going to sleep and catches up when it wakes."
+      },
+      "note": "None of these are needed to get value — they are there when you grow into them."
+    },
+    "tips": {
+      "title": "Handy shortcuts",
+      "list": {
+        "palette": "<strong>Ctrl/Cmd + K</strong> — command palette (do anything by typing).",
+        "send": "<strong>Enter</strong> — send. <strong>Shift + Enter</strong> — new line.",
+        "new": "<strong>New</strong> — start a fresh chat/session with a clean memory.",
+        "tooltip": "Hover any button — a tooltip explains it in plain words.",
+        "reconnect": "If a reply stalls, watch for a <strong>Retrying n/10</strong> banner — the connection dropped and is reconnecting itself into the same reply. No need to resend; just wait it out."
+      }
+    },
+    "design": {
+      "title": "Design — build a page or animation",
+      "steps": {
+        "open": "Click <strong>DESIGN</strong> in the sidebar.",
+        "pick": "Pick <strong>page</strong> (a static web page → export PNG/PDF) or <strong>animate</strong> (a motion graphic → export MP4).",
+        "engine": "In animate mode, choose a renderer: <strong>Remotion</strong> (renders to an MP4 video) or <strong>HyperFrames</strong> (an HTML + GSAP animation).",
+        "type": "Type what you want (\"a pricing page with three tiers\", \"a logo that spins in\"). It renders on the right; keep chatting to change it."
+      },
+      "note": "Everything auto-saves to a folder on disk, and you can click any text in a page preview to edit it in place. Export buttons are top-right.",
+      "open": "Open Design →"
+    }
+  },
+  "footer": {
+    "deepDocs": "Want the deep technical version? The full architecture and per-feature docs live in <code> docs/app/</code> inside the project — the in-app agent can read them to understand and extend Tachi Studio itself."
+  }
+}

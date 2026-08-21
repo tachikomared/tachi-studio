@@ -1,0 +1,933 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: smolemaru <axyenniiparen@gmail.com>
+Date: Sat, 1 Aug 2026 23:00:00 +0400
+Subject: [PATCH] feat(providers): strengthen the keyless free route
+ (Kilo + OpenCode Zen), and sink the dead upstreams
+
+TachiDesk vendor patch #2 — applies ON TOP OF freellmapi-ovh-scaleway.patch.
+
+This does not add a provider the user has to pick. It makes the ONE keyless
+free route stronger: more upstreams behind the single entry point, ordered by
+what actually answers, with the dead weight taken out of the failover path.
+
+Probed live 2026-08-01 (nonce in every prompt, so a cached 200 could not pass
+for a live answer). Every status code below was measured, not read from docs:
+
+  ADDED
+  - kilo  (api.kilo.ai/api/gateway) — 200 on every :free row with no usable
+    credential; a garbage bearer also 200s, so the header is ignored outright.
+    The platform was ALREADY registered upstream but carried one catalog row
+    and was never seeded a key, so the router skipped it. 8 rows added,
+    including a 1M-context nemotron, an omni/reasoning row and a coding row.
+  - zen   (opencode.ai/zen/v1)      — 200 keyless on all 6 free rows. Needs
+    `omitAuth`: a present-but-bogus bearer 401s. Ranked BELOW Kilo and treated
+    as best-effort — OpenCode's docs say these need billing details on file,
+    yet they answer without; that gap can close without warning.
+
+  DISABLED (measured dead — a 4xx upstream is worse than an absent one,
+  because it burns a failover attempt before the user gets an answer)
+  - ovh, all 4 rows — 403 x5 "Forbidden: authentication failed … generate a
+    new one at …/oauth/ovh/authorize". The anonymous tier V12 vendored this
+    platform FOR is gone, replaced by OAuth. Not rate-limiting; dead.
+  - pollinations openai-fast — 402 Payment Required x4 + a deprecation notice
+    for the legacy text API, and it took 22-24s to return that 402 twice.
+  - llm7, 4 of 5 rows — 400 "Model is currently unavailable" (stale ids).
+    codestral-latest still answers 200 and is KEPT enabled.
+
+  ORDERED
+  New rows would otherwise land at MAX(priority)+n, i.e. dead last, burying
+  the best upstream. Four rows get an explicit negative lead priority; the
+  rest sit at the tail. The lead band is small on purpose — the router's
+  penalty caps at MAX_PENALTY, so a lead row can sink but never fall past the
+  keyed providers, making each one a round-trip the user pays for if that
+  upstream dies. The 4th slot is a different vendor so a Kilo-wide outage
+  fails over across gateways instead of deeper into the same one.
+
+Disclosure that must not be lost: every Kilo :free row self-reports
+`mayTrainOnYourPrompts: true`. Kilo is now reachable WITHOUT the user picking
+it, so that fact is surfaced on the FreeLLM router's own surface in the host
+app (registry hint, Free Providers card, provider picker).
+
+ROUTING, added 2026-08-02 after a packaged driver run proved the free route was
+broken even where this patch HAD landed. Two defects, both in server/src/routes/
+proxy.ts, both measured on the shipped build:
+
+  1. A REJECTED CREDENTIAL WAS A DEAD END, NOT A FAILOVER. `isRetryableError`
+     matched 429/5xx/transport only, so a 401 fell to the `else` and became an
+     immediate 502 carrying the upstream's words verbatim
+     (`Provider error (Qwen3 Coder (free)): OpenRouter API error 401: User not
+     found.`). Twelve upstreams sat behind that row and none were tried.
+     Failover is the entire value of the router; a bad key is exactly the case
+     it exists for.
+     Fixed with a SEPARATE classifier, not by widening the retry one — the two
+     need different treatment. A 429 sinks the MODEL for a while; a 401
+     condemns the KEY. Retry alone would loop forever: the dynamic penalty caps
+     at MAX_PENALTY (10), so a permanently-401ing row can never sink past the
+     keyed providers and is re-picked on the next send. So the handler also
+     writes `status='invalid'`, which routeRequest() already filters BEFORE it
+     opens a socket. That is what makes the recovery permanent instead of
+     per-request, and the dashboard still shows the row with an honest status
+     so the user can see why a platform went quiet.
+
+  2. NO MODEL COULD BE PINNED FROM THE HOST APP. The composer sends
+     `${platform}/${modelId}` — it has to, because a bare id is ambiguous — and
+     the relay only ever looked up bare ids, so every pinned relay model 400'd.
+     Worse, `nvidia/nemotron-3-super-120b-a12b:free` exists on BOTH `openrouter`
+     and `kilo`, and the bare lookup returns whichever row was inserted first,
+     which left Kilo's copy unaddressable by any string a client could send.
+     Model resolution now tries BARE FIRST and only then splits on the FIRST
+     slash. That order is load-bearing: `nvidia` and `cohere` are both vendor
+     prefixes inside model ids AND platform names, so splitting first would
+     misread every vendor-prefixed id. Splitting on the first slash only keeps
+     the qualified form unambiguous — the platform set is closed, and everything
+     after that slash is the model id verbatim, however many slashes it holds.
+
+Touched: shared Platform union, OpenAICompatProvider (omitAuth), provider
+registrations, keys-route allowlist, KeysPage labels, models migration V13,
+proxy credential failover + platform-qualified model addressing, plus two
+regression tests — one pinning the failover order, one pinning the collision
+and the 401 failover.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+---
+diff --git a/client/src/pages/KeysPage.tsx b/client/src/pages/KeysPage.tsx
+index 3d10765..40c76a0 100644
+--- a/client/src/pages/KeysPage.tsx
++++ b/client/src/pages/KeysPage.tsx
+@@ -26,6 +26,7 @@ const PLATFORMS: { value: Platform; label: string }[] = [
+   { value: 'llm7', label: 'LLM7 (anon ok)' },
+   { value: 'ovh', label: 'OVHcloud AI Endpoints (anon ok, EU)' },
+   { value: 'scaleway', label: 'Scaleway Generative APIs (EU)' },
++  { value: 'zen', label: 'OpenCode Zen (no key — sending one 401s)' },
+ ]
+ 
+ const statusDot: Record<string, string> = {
+diff --git a/server/src/__tests__/db/v13-freeroute.test.ts b/server/src/__tests__/db/v13-freeroute.test.ts
+new file mode 100644
+index 0000000..feb4be7
+--- /dev/null
++++ b/server/src/__tests__/db/v13-freeroute.test.ts
+@@ -0,0 +1,80 @@
++import { describe, it, expect } from 'vitest';
++import { initDb } from '../../db/index.js';
++
++describe('V13 free-route shape', () => {
++  const db = initDb(':memory:');
++
++  const chain = db.prepare(`
++    SELECT m.platform, m.model_id, m.enabled, f.priority, f.enabled AS fb_enabled
++    FROM fallback_config f JOIN models m ON m.id = f.model_db_id
++    ORDER BY f.priority ASC
++  `).all() as Array<{ platform: string; model_id: string; enabled: number; priority: number; fb_enabled: number }>;
++
++  it('prints the head of the failover chain', () => {
++    // eslint-disable-next-line no-console
++    console.log('\n--- HEAD OF FAILOVER CHAIN ---');
++    for (const r of chain.slice(0, 10)) {
++      // eslint-disable-next-line no-console
++      console.log(`  p=${String(r.priority).padStart(4)}  ${r.platform.padEnd(13)} ${r.model_id.padEnd(50)} model.enabled=${r.enabled}`);
++    }
++    expect(chain.length).toBeGreaterThan(0);
++  });
++
++  it('the four lead slots are the keyless upstreams, Kilo first, Zen fourth', () => {
++    const head = chain.slice(0, 4).map(r => `${r.platform}:${r.model_id}`);
++    expect(head).toEqual([
++      'kilo:kilo-auto/free',
++      'kilo:nvidia/nemotron-3-ultra-550b-a55b:free',
++      'kilo:cohere/north-mini-code:free',
++      'zen:deepseek-v4-flash-free',
++    ]);
++  });
++
++  it('no ENABLED row of a measured-dead upstream sits ahead of the keyed providers', () => {
++    // Anything with a negative priority leads the chain. Nothing dead may be there.
++    const leaders = chain.filter(r => r.priority < 0 && r.enabled === 1);
++    for (const r of leaders) {
++      expect(['kilo', 'zen']).toContain(r.platform);
++    }
++  });
++
++  it('measured-dead rows are disabled so they cost no round-trip', () => {
++    const off = (platform: string, modelId: string) =>
++      (db.prepare('SELECT enabled FROM models WHERE platform = ? AND model_id = ?')
++        .get(platform, modelId) as { enabled: number } | undefined)?.enabled;
++
++    for (const id of ['Meta-Llama-3_3-70B-Instruct', 'gpt-oss-120b', 'Qwen3-Coder-30B-A3B-Instruct', 'Llama-3.1-8B-Instruct']) {
++      expect(off('ovh', id), `ovh/${id} must be disabled (403 keyless)`).toBe(0);
++    }
++    expect(off('pollinations', 'openai-fast'), 'pollinations 402').toBe(0);
++    for (const id of ['gpt-oss-20b', 'meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo', 'ministral-8b-2512', 'GLM-4.6V-Flash']) {
++      expect(off('llm7', id), `llm7/${id} must be disabled (400 unavailable)`).toBe(0);
++    }
++    // The one LLM7 row that still answers stays on.
++    expect(off('llm7', 'codestral-latest')).toBe(1);
++  });
++
++  it('LLM7 rate limit is stored per MINUTE, not its per-HOUR figure', () => {
++    // rpm_limit is pruned on a 60s window; LLM7 allows 100 per HOUR. Storing
++    // 100 here let the local limiter wave through an immediate post-429 retry.
++    const rows = db.prepare("SELECT model_id, rpm_limit FROM models WHERE platform = 'llm7'")
++      .all() as Array<{ model_id: string; rpm_limit: number | null }>;
++    expect(rows.length).toBeGreaterThan(0);
++    for (const r of rows) {
++      expect(r.rpm_limit, `llm7/${r.model_id} rpm_limit`).toBe(1);
++    }
++  });
++
++  it('all 14 new keyless rows exist and are enabled', () => {
++    const n = db.prepare("SELECT COUNT(*) AS c FROM models WHERE platform IN ('kilo','zen') AND enabled = 1").get() as { c: number };
++    // 9 kilo (8 new + the V11 nemotron-super row) + 6 zen
++    expect(n.c).toBe(15);
++  });
++
++  it('is idempotent — re-running initDb does not duplicate or reorder', () => {
++    const before = db.prepare('SELECT COUNT(*) AS c FROM fallback_config').get() as { c: number };
++    const db2 = initDb(':memory:');
++    const after = db2.prepare('SELECT COUNT(*) AS c FROM fallback_config').get() as { c: number };
++    expect(after.c).toBe(before.c);
++  });
++});
+diff --git a/server/src/__tests__/routes/proxy-model-addressing.test.ts b/server/src/__tests__/routes/proxy-model-addressing.test.ts
+new file mode 100644
+index 0000000..bcb67a7
+--- /dev/null
++++ b/server/src/__tests__/routes/proxy-model-addressing.test.ts
+@@ -0,0 +1,225 @@
++import { describe, it, expect, beforeAll, beforeEach, afterEach, vi } from 'vitest';
++import type { Express } from 'express';
++import { createApp } from '../../app.js';
++import { initDb, getDb, getUnifiedApiKey } from '../../db/index.js';
++
++// Two defects this file exists to keep dead, both found on a packaged build:
++//
++//   1. A pinned model was unaddressable. The host app's composer sends
++//      `${platform}/${modelId}` (it has to — a bare id is ambiguous), and the
++//      relay only ever looked up bare ids, so EVERY pinned relay model 400'd
++//      with "is not in the catalog".
++//   2. A model that exists on two platforms was reachable on only one.
++//      `nvidia/nemotron-3-super-120b-a12b:free` is served by BOTH openrouter
++//      and kilo; the bare lookup returns whichever row was inserted first, so
++//      Kilo's copy could not be addressed by any string a client could send.
++//
++// And one routing defect: a dead credential returned a 502 to the caller
++// instead of failing over, which made a single stale key take down a router
++// whose entire purpose is to survive exactly that.
++
++async function request(app: Express, method: string, path: string, body?: any, headers: Record<string, string> = {}) {
++  const server = app.listen(0);
++  const addr = server.address() as any;
++  const url = `http://127.0.0.1:${addr.port}${path}`;
++
++  // NOTE: uses the ORIGINAL fetch on purpose. These tests stub global.fetch to
++  // fake upstreams, and the stub would otherwise swallow the test's own call to
++  // the express app and return a canned 200 that never touched the router.
++  const res = await originalFetch(url, {
++    method,
++    headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers },
++    body: body ? JSON.stringify(body) : undefined,
++  });
++
++  const data = await res.text();
++  server.close();
++
++  let json: any = null;
++  try { json = JSON.parse(data); } catch { /* non-JSON body */ }
++
++  return { status: res.status, body: json, headers: res.headers, raw: data };
++}
++
++const originalFetch = global.fetch;
++
++function authHeaders() {
++  return { Authorization: `Bearer ${getUnifiedApiKey()}` };
++}
++
++function okCompletion(content = 'pong') {
++  return {
++    ok: true,
++    status: 200,
++    json: () => Promise.resolve({
++      id: 'chatcmpl-test', object: 'chat.completion', created: 0, model: 'm',
++      choices: [{ index: 0, message: { role: 'assistant', content }, finish_reason: 'stop' }],
++      usage: { prompt_tokens: 1, completion_tokens: 1, total_tokens: 2 },
++    }),
++  } as any;
++}
++
++// The literal shape OpenRouter returns for a revoked key. The relay's provider
++// reads `error.message` off the JSON body, so the fake has to answer json().
++function unauthorized() {
++  return {
++    ok: false,
++    status: 401,
++    statusText: 'Unauthorized',
++    json: () => Promise.resolve({ error: { message: 'User not found.', code: 401 } }),
++  } as any;
++}
++
++const MESSAGES = [{ role: 'user', content: 'ping' }];
++
++describe('proxy model addressing', () => {
++  let app: Express;
++
++  beforeAll(() => {
++    process.env.ENCRYPTION_KEY = '0'.repeat(64);
++    initDb(':memory:');
++    app = createApp();
++  });
++
++  beforeEach(async () => {
++    const db = getDb();
++    db.prepare('DELETE FROM api_keys').run();
++    db.prepare('DELETE FROM requests').run();
++    // Kilo needs a key row or the router skips the platform before it ever
++    // reaches the model — the exact bug that made Kilo invisible for a month.
++    const addKey = await request(app, 'POST', '/api/keys', {
++      platform: 'kilo', key: 'anonymous', label: 'anon',
++    });
++    expect(addKey.status).toBe(201);
++  });
++
++  afterEach(() => { vi.restoreAllMocks(); });
++
++  it('the collision is real: one model id, two platforms', () => {
++    const rows = getDb()
++      .prepare('SELECT platform FROM models WHERE model_id = ? ORDER BY id')
++      .all('nvidia/nemotron-3-super-120b-a12b:free') as Array<{ platform: string }>;
++    expect(rows.map(r => r.platform).sort()).toEqual(['kilo', 'openrouter']);
++  });
++
++  it('a bare colliding id resolves to the FIRST catalog row (openrouter), leaving kilo unreachable without a qualifier', async () => {
++    await request(app, 'POST', '/api/keys', { platform: 'openrouter', key: 'sk-or-test-000000000', label: 'or' });
++
++    const seen: string[] = [];
++    vi.spyOn(global, 'fetch').mockImplementation(async (url: any, init?: any) => {
++      const s = String(url);
++      if (s.includes('/chat/completions') && !s.includes('127.0.0.1')) { seen.push(s); return okCompletion(); }
++      return originalFetch(url, init);
++    });
++
++    const { status, headers } = await request(app, 'POST', '/v1/chat/completions', {
++      model: 'nvidia/nemotron-3-super-120b-a12b:free',
++      messages: MESSAGES,
++    }, authHeaders());
++
++    expect(status).toBe(200);
++    // Bare must keep meaning "the id as written" — `nvidia` is BOTH a vendor
++    // prefix and a platform name, so a split-first rule would break every
++    // OpenRouter/Kilo id that carries a vendor prefix.
++    expect(headers.get('X-Routed-Via')).toBe('openrouter/nvidia/nemotron-3-super-120b-a12b:free');
++    expect(seen.some(u => u.includes('openrouter.ai'))).toBe(true);
++  });
++
++  it('a platform-qualified id reaches THAT platform — the only way to address the kilo copy', async () => {
++    const seen: string[] = [];
++    vi.spyOn(global, 'fetch').mockImplementation(async (url: any, init?: any) => {
++      const s = String(url);
++      if (s.includes('/chat/completions') && !s.includes('127.0.0.1')) { seen.push(s); return okCompletion(); }
++      return originalFetch(url, init);
++    });
++
++    const { status, headers } = await request(app, 'POST', '/v1/chat/completions', {
++      model: 'kilo/nvidia/nemotron-3-super-120b-a12b:free',
++      messages: MESSAGES,
++    }, authHeaders());
++
++    expect(status).toBe(200);
++    expect(headers.get('X-Routed-Via')).toBe('kilo/nvidia/nemotron-3-super-120b-a12b:free');
++    expect(seen.some(u => u.includes('api.kilo.ai'))).toBe(true);
++    expect(seen.some(u => u.includes('openrouter.ai'))).toBe(false);
++  });
++
++  it('an unknown platform-qualified id still 400s, and says how to address one', async () => {
++    const { status, body } = await request(app, 'POST', '/v1/chat/completions', {
++      model: 'kilo/no-such-model',
++      messages: MESSAGES,
++    }, authHeaders());
++    expect(status).toBe(400);
++    expect(body.error.code).toBe('model_not_found');
++    expect(body.error.message).toContain('platform/model-id');
++  });
++});
++
++describe('proxy credential failover', () => {
++  let app: Express;
++
++  beforeAll(() => {
++    process.env.ENCRYPTION_KEY = '0'.repeat(64);
++    initDb(':memory:');
++    app = createApp();
++  });
++
++  beforeEach(() => {
++    const db = getDb();
++    db.prepare('DELETE FROM api_keys').run();
++    db.prepare('DELETE FROM requests').run();
++  });
++
++  afterEach(() => { vi.restoreAllMocks(); });
++
++  it('a 401 from one upstream fails over to the next instead of surfacing a 502', async () => {
++    // Two platforms with keys. OpenRouter answers 401 "User not found" — the
++    // literal body a revoked OpenRouter key returns, and the one that took the
++    // whole free route down on a packaged build.
++    await request(app, 'POST', '/api/keys', { platform: 'openrouter', key: 'sk-or-dead-key-000000', label: 'dead' });
++    await request(app, 'POST', '/api/keys', { platform: 'groq', key: 'gsk_live_key_000000', label: 'live' });
++
++    const seen: string[] = [];
++    vi.spyOn(global, 'fetch').mockImplementation(async (url: any, init?: any) => {
++      const s = String(url);
++      if (s.includes('127.0.0.1')) return originalFetch(url, init);
++      seen.push(s);
++      if (s.includes('openrouter.ai')) {
++        return unauthorized();
++      }
++      if (s.includes('api.groq.com')) return okCompletion();
++      return originalFetch(url, init);
++    });
++
++    const { status, body } = await request(app, 'POST', '/v1/chat/completions', {
++      messages: MESSAGES,
++    }, authHeaders());
++
++    expect(seen.some(u => u.includes('openrouter.ai'))).toBe(true);
++    expect(status).toBe(200);
++    expect(body.choices[0].message.content).toBe('pong');
++  });
++
++  it('the rejected key is marked invalid, so the NEXT request skips it entirely', async () => {
++    await request(app, 'POST', '/api/keys', { platform: 'openrouter', key: 'sk-or-dead-key-000000', label: 'dead' });
++    await request(app, 'POST', '/api/keys', { platform: 'groq', key: 'gsk_live_key_000000', label: 'live' });
++
++    vi.spyOn(global, 'fetch').mockImplementation(async (url: any, init?: any) => {
++      const s = String(url);
++      if (s.includes('127.0.0.1')) return originalFetch(url, init);
++      if (s.includes('openrouter.ai')) {
++        return unauthorized();
++      }
++      if (s.includes('api.groq.com')) return okCompletion();
++      return originalFetch(url, init);
++    });
++
++    await request(app, 'POST', '/v1/chat/completions', { messages: MESSAGES }, authHeaders());
++
++    const key = getDb().prepare("SELECT status FROM api_keys WHERE platform = 'openrouter'")
++      .get() as { status: string };
++    // Without this the 429 penalty (cap 10) is the only demotion there is, so a
++    // permanently-401ing row is re-picked on every send, forever.
++    expect(key.status).toBe('invalid');
++  });
++});
+diff --git a/server/src/db/index.ts b/server/src/db/index.ts
+index 1f90f04..477d95d 100644
+--- a/server/src/db/index.ts
++++ b/server/src/db/index.ts
+@@ -47,6 +47,7 @@ export function initDb(dbPath?: string): Database.Database {
+   migrateModelsV10(db);
+   migrateModelsV11(db);
+   migrateModelsV12(db);
++  migrateModelsV13(db);
+   ensureUnifiedKey(db);
+ 
+   console.log(`Database initialized at ${resolvedPath}`);
+@@ -980,6 +981,158 @@ function migrateModelsV12(db: Database.Database) {
+   apply();
+ }
+ 
++/**
++ * LLM7's free tier is 100 requests per HOUR — their own figure, and the budget
++ * string V11 seeded on those rows literally reads "100/hr". V11 nonetheless
++ * wrote 100 into `rpm_limit`, a column services/ratelimit.ts prunes on a
++ * 60-SECOND window. The local limiter therefore permitted ~100 sends a MINUTE
++ * against a provider allowing 100 an hour, and — the symptom that surfaced it —
++ * never refused the immediate retry after a 429, spending it on a guaranteed
++ * second 429. This schema has no hourly bucket, so the cap is expressed in the
++ * window that actually exists: 1/min = 60/hr, under the ceiling, and an instant
++ * retry is now refused locally instead of on the wire.
++ */
++const LLM7_RPM_FROM_HOURLY_CAP = 1;
++
++/**
++ * V13 (2026-08-01): make the KEYLESS free route actually strong.
++ *
++ * This migration does three things, all driven by live probes taken the day it
++ * was written (nonce in every prompt, so a cached 200 could not be mistaken for
++ * a live answer):
++ *
++ * 1. ADD the two keyless upstreams that answer today.
++ *    - Kilo Gateway: 200 on every :free row with NO usable credential (a
++ *      garbage bearer also returns 200 — the header is ignored). The platform
++ *      was already registered upstream but carried exactly ONE catalog row, and
++ *      the host app never seeded it a key, so the router skipped it entirely.
++ *      It is the single best addition available: 1M-context nemotron, an omni /
++ *      reasoning row, and a dedicated coding row, all tool-capable.
++ *    - OpenCode Zen: 200 keyless on all six free rows. Ranked BELOW Kilo and
++ *      explicitly best-effort — OpenCode's docs say these need billing details
++ *      on file, yet they answer without; that gap can close without warning.
++ *      Requires `omitAuth` (a present-but-bogus bearer 401s).
++ *
++ * 2. ORDER them deliberately instead of appending. New rows normally land at
++ *    MAX(priority)+n, i.e. dead last, which would have buried the best upstream
++ *    behind everything. Four rows get an explicit NEGATIVE lead priority so the
++ *    free route reaches them first; the rest are appended at the tail where they
++ *    are reachable but not dominant. The lead band is deliberately small: the
++ *    router's dynamic penalty caps at MAX_PENALTY (10), so a lead row can sink
++ *    but never fall past the keyed providers — every lead row is therefore a
++ *    round-trip the user pays for if that upstream goes down. Four is the budget,
++ *    and the fourth is a DIFFERENT vendor so a total Kilo outage still fails over
++ *    across gateways rather than deeper into the same one.
++ *
++ * 3. DISABLE what is measurably dead. An upstream that 4xxs is worse than an
++ *    absent one, because it burns a failover attempt before the user gets an
++ *    answer. Measured this day, all with the anonymous placeholder the host app
++ *    seeds:
++ *      - ovh (all 4 rows): 403 x5 "Forbidden: authentication failed …
++ *        generate a new one at …/oauth/ovh/authorize". The anonymous tier this
++ *        platform was vendored for in V12 is GONE, replaced by an OAuth flow —
++ *        it is not merely rate-limited.
++ *      - pollinations openai-fast: 402 Payment Required x4, carrying a
++ *        deprecation notice for the legacy text API — and it took 22-24s to
++ *        return that 402 twice, the most expensive possible way to fail.
++ *      - llm7: 4 of its 5 rows 400 "Model is currently unavailable" (stale ids).
++ *        `codestral-latest` still answers 200 and is KEPT.
++ *    Disabling the model row (rather than deleting it) is reversible from the
++ *    dashboard if a provider brings its free tier back.
++ */
++function migrateModelsV13(db: Database.Database) {
++  const insert = db.prepare(`
++    INSERT OR IGNORE INTO models (platform, model_id, display_name, intelligence_rank, speed_rank, size_label, rpm_limit, rpd_limit, tpm_limit, tpd_limit, monthly_token_budget, context_window)
++    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
++  `);
++
++  // Ids taken from each gateway's LIVE /models on 2026-08-01, not from docs.
++  // Kilo's `nvidia/nemotron-3.5-content-safety:free` is deliberately EXCLUDED:
++  // it is a safety classifier (tools=false), not a chat model.
++  const additions: Array<[string, string, string, number, number, string, number | null, number | null, number | null, number | null, string, number | null]> = [
++    // ── Kilo Gateway (keyless; every :free row reports mayTrainOnYourPrompts) ──
++    ['kilo', 'kilo-auto/free',                                    'Kilo Auto (Kilo)',              12, 8, 'Large',    null, null, null, null, '~2-3M (200/hr)',  256000],
++    ['kilo', 'nvidia/nemotron-3-ultra-550b-a55b:free',            'Nemotron 3 Ultra 550B (Kilo)',   2, 7, 'Frontier', null, null, null, null, '~2-3M (200/hr)', 1000000],
++    ['kilo', 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free','Nemotron 3 Nano Omni (Kilo)',   19, 9, 'Medium',   null, null, null, null, '~2-3M (200/hr)',  256000],
++    ['kilo', 'cohere/north-mini-code:free',                       'North Mini Code (Kilo)',        16, 9, 'Medium',   null, null, null, null, '~2-3M (200/hr)',  256000],
++    ['kilo', 'stepfun/step-3.7-flash:free',                       'Step 3.7 Flash (Kilo)',         15, 9, 'Medium',   null, null, null, null, '~2-3M (200/hr)',  262144],
++    ['kilo', 'inclusionai/ling-3.0-flash:free',                   'Ling 3.0 Flash (Kilo)',         15, 9, 'Medium',   null, null, null, null, '~2-3M (200/hr)',  262144],
++    ['kilo', 'poolside/laguna-s-2.1:free',                        'Laguna S 2.1 (Kilo)',           14, 8, 'Large',    null, null, null, null, '~2-3M (200/hr)',  262144],
++    ['kilo', 'poolside/laguna-xs-2.1:free',                       'Laguna XS 2.1 (Kilo)',          20, 9, 'Small',    null, null, null, null, '~2-3M (200/hr)',  262144],
++
++    // ── OpenCode Zen (keyless, header must be ABSENT; best-effort tier) ──
++    ['zen',  'deepseek-v4-flash-free',                            'DeepSeek V4 Flash (Zen)',        8, 9, 'Large',    null, null, null, null, 'free tier (best-effort)', 131072],
++    ['zen',  'nemotron-3-ultra-free',                             'Nemotron 3 Ultra (Zen)',         2, 7, 'Frontier', null, null, null, null, 'free tier (best-effort)', 131072],
++    ['zen',  'north-mini-code-free',                              'North Mini Code (Zen)',         16, 9, 'Medium',   null, null, null, null, 'free tier (best-effort)', 131072],
++    ['zen',  'mimo-v2.5-free',                                    'MiMo v2.5 (Zen)',               17, 9, 'Medium',   null, null, null, null, 'free tier (best-effort)', 131072],
++    ['zen',  'ling-3.0-flash-free',                               'Ling 3.0 Flash (Zen)',          15, 9, 'Medium',   null, null, null, null, 'free tier (best-effort)', 131072],
++    ['zen',  'laguna-s-2.1-free',                                 'Laguna S 2.1 (Zen)',            14, 8, 'Large',    null, null, null, null, 'free tier (best-effort)', 131072],
++  ];
++
++  // The failover head, best-answering first. Kilo leads (measured 200 on every
++  // probe); the 4th slot is Zen so a Kilo-wide outage crosses vendors.
++  const lead: Array<[string, string, number]> = [
++    ['kilo', 'kilo-auto/free',                         -20],  // auto-router, tools, 256k
++    ['kilo', 'nvidia/nemotron-3-ultra-550b-a55b:free', -19],  // 1M context
++    ['kilo', 'cohere/north-mini-code:free',            -18],  // coding
++    ['zen',  'deepseek-v4-flash-free',                 -17],  // different vendor
++  ];
++
++  // Measured dead on 2026-08-01 — see the block comment above.
++  const disable: Array<[string, string]> = [
++    ['ovh',          'Meta-Llama-3_3-70B-Instruct'],
++    ['ovh',          'gpt-oss-120b'],
++    ['ovh',          'Qwen3-Coder-30B-A3B-Instruct'],
++    ['ovh',          'Llama-3.1-8B-Instruct'],
++    ['pollinations', 'openai-fast'],
++    ['llm7',         'gpt-oss-20b'],
++    ['llm7',         'meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo'],
++    ['llm7',         'ministral-8b-2512'],
++    ['llm7',         'GLM-4.6V-Flash'],
++    // llm7 codestral-latest INTENTIONALLY absent — still 200.
++  ];
++
++  const apply = db.transaction(() => {
++    for (const a of additions) insert.run(...a);
++
++    // Explicit lead priorities. Upsert so a re-run re-asserts the intended
++    // order without duplicating rows (fallback_config is UNIQUE(model_db_id)).
++    const findId = db.prepare('SELECT id FROM models WHERE platform = ? AND model_id = ?');
++    const setLead = db.prepare(`
++      INSERT INTO fallback_config (model_db_id, priority, enabled) VALUES (?, ?, 1)
++      ON CONFLICT(model_db_id) DO UPDATE SET priority = excluded.priority, enabled = 1
++    `);
++    for (const [platform, modelId, priority] of lead) {
++      const row = findId.get(platform, modelId) as { id: number } | undefined;
++      if (row) setLead.run(row.id, priority);
++    }
++
++    // Everything else added here lands at the tail, same shape as V11/V12.
++    const missing = db.prepare(`
++      SELECT m.id FROM models m
++      LEFT JOIN fallback_config f ON m.id = f.model_db_id
++      WHERE f.id IS NULL ORDER BY m.intelligence_rank ASC
++    `).all() as { id: number }[];
++    if (missing.length > 0) {
++      const maxPriority = (db.prepare('SELECT COALESCE(MAX(priority), 0) AS mx FROM fallback_config').get() as { mx: number }).mx;
++      const addFb = db.prepare('INSERT INTO fallback_config (model_db_id, priority, enabled) VALUES (?, ?, 1)');
++      for (let i = 0; i < missing.length; i++) addFb.run(missing[i].id, maxPriority + i + 1);
++    }
++
++    // Sink the dead weight. `enabled = 0` on the model is checked by the router
++    // BEFORE any network call, so a disabled row costs nothing per send.
++    const off = db.prepare('UPDATE models SET enabled = 0 WHERE platform = ? AND model_id = ?');
++    for (const [platform, modelId] of disable) off.run(platform, modelId);
++
++    // Correct V11's per-hour-in-a-per-minute-column mistake (see the constant
++    // above). Guarded on the exact wrong value so this is idempotent and never
++    // clobbers a limit the operator changed by hand in the dashboard.
++    db.prepare("UPDATE models SET rpm_limit = ? WHERE platform = 'llm7' AND rpm_limit = 100")
++      .run(LLM7_RPM_FROM_HOURLY_CAP);
++  });
++  apply();
++}
++
+ function ensureUnifiedKey(db: Database.Database) {
+   const existing = db.prepare("SELECT value FROM settings WHERE key = 'unified_api_key'").get() as { value: string } | undefined;
+   if (!existing) {
+diff --git a/server/src/providers/index.ts b/server/src/providers/index.ts
+index 48f3859..5542925 100644
+--- a/server/src/providers/index.ts
++++ b/server/src/providers/index.ts
+@@ -107,6 +107,17 @@ register(new OpenAICompatProvider({
+ // (200 req/hr per IP) for the few :free routes still active; a Kilo API key
+ // raises the limit. Most named "free" routes in the docs have transitioned to
+ // paid ("free period ended") — probe before adding catalog rows.
++//
++// TachiDesk note (measured 2026-08-01): this is the strongest keyless upstream
++// in the pool and the catalog rows added in V13 make it actually reachable.
++// Two facts worth keeping:
++//   - Kilo IGNORES the Authorization header on :free rows entirely — a garbage
++//     bearer returns 200. So a Kilo key can never be validated, and `omitAuth`
++//     is deliberately NOT set here: the seeded placeholder is harmless and both
++//     `/api/gateway` and `/api/gateway/v1` answer 200 (both spellings probed).
++//   - Every :free row self-reports `mayTrainOnYourPrompts: true` in Kilo's own
++//     public catalog. That is disclosed on the FreeLLM router's surface in the
++//     host app; do not add Kilo rows anywhere that disclosure cannot follow.
+ register(new OpenAICompatProvider({
+   platform: 'kilo',
+   name: 'Kilo Gateway',
+@@ -153,6 +164,27 @@ register(new OpenAICompatProvider({
+   baseUrl: 'https://api.scaleway.ai/v1',
+ }));
+ 
++// OpenCode Zen — OpenAI-compatible, KEYLESS but header-sensitive (TachiDesk
++// vendor patch). Measured 2026-08-01 against `deepseek-v4-flash-free`:
++//   - no Authorization header      -> 200 + real completion
++//   - `Authorization: Bearer <any>` -> 401 {"type":"AuthError"}
++// so `omitAuth` is not a nicety here, it is the difference between working and
++// 401ing on every request. The placeholder key seeded for this platform exists
++// only to satisfy the router's "platform has >= 1 key" gate and never reaches
++// the wire.
++//
++// Ranked BELOW Kilo on purpose and treated as best-effort: OpenCode's own docs
++// say the free models require billing details on file, yet they answer with
++// none — an unintended gap that can close without notice. When it closes this
++// platform 401s and the router falls through to the next entry, which is the
++// designed behaviour, not an outage.
++register(new OpenAICompatProvider({
++  platform: 'zen',
++  name: 'OpenCode Zen',
++  baseUrl: 'https://opencode.ai/zen/v1',
++  omitAuth: true,
++}));
++
+ // Chutes was evaluated for V11 and dropped: probe with a free-tier key
+ // returned 402 on every model — "Quota exceeded and account balance is
+ // $0.0, please pay with fiat or send tao". The "free" tier requires a
+diff --git a/server/src/providers/openai-compat.ts b/server/src/providers/openai-compat.ts
+index 23fa43a..4104321 100644
+--- a/server/src/providers/openai-compat.ts
++++ b/server/src/providers/openai-compat.ts
+@@ -20,6 +20,18 @@ export class OpenAICompatProvider extends BaseProvider {
+   /** Per-provider HTTP timeout override. Cloud APIs finish in ~15s; locally-hosted
+    * inference (llama.cpp / vLLM on CPU) can take 30-120s for long prompts. Default 15000. */
+   private readonly timeoutMs: number;
++  /**
++   * Send NO `Authorization` header at all.
++   *
++   * The router only considers a platform that has at least one key row, so a
++   * keyless upstream still needs a placeholder key seeded — but some gateways
++   * reject a *present-but-bogus* bearer while serving the anonymous tier fine
++   * when the header is absent. OpenCode Zen is exactly that shape (measured
++   * 2026-08-01: no header -> 200; `Bearer anonymous` -> 401 AuthError). For
++   * those providers the placeholder key exists only to make the platform
++   * routable and must never reach the wire.
++   */
++  private readonly omitAuth: boolean;
+ 
+   constructor(opts: {
+     platform: Platform;
+@@ -28,6 +40,7 @@ export class OpenAICompatProvider extends BaseProvider {
+     extraHeaders?: Record<string, string>;
+     validateUrl?: string;
+     timeoutMs?: number;
++    omitAuth?: boolean;
+   }) {
+     super();
+     this.platform = opts.platform;
+@@ -36,6 +49,12 @@ export class OpenAICompatProvider extends BaseProvider {
+     this.extraHeaders = opts.extraHeaders ?? {};
+     this.validateUrl = opts.validateUrl;
+     this.timeoutMs = opts.timeoutMs ?? 15000;
++    this.omitAuth = opts.omitAuth ?? false;
++  }
++
++  /** Auth headers for this provider — empty when `omitAuth` is set. */
++  private authHeaders(apiKey: string): Record<string, string> {
++    return this.omitAuth ? {} : { 'Authorization': `Bearer ${apiKey}` };
+   }
+ 
+   async chatCompletion(
+@@ -47,7 +66,7 @@ export class OpenAICompatProvider extends BaseProvider {
+     const res = await this.fetchWithTimeout(`${this.baseUrl}/chat/completions`, {
+       method: 'POST',
+       headers: {
+-        'Authorization': `Bearer ${apiKey}`,
++        ...this.authHeaders(apiKey),
+         'Content-Type': 'application/json',
+         ...this.extraHeaders,
+       },
+@@ -83,7 +102,7 @@ export class OpenAICompatProvider extends BaseProvider {
+     const res = await this.fetchWithTimeout(`${this.baseUrl}/chat/completions`, {
+       method: 'POST',
+       headers: {
+-        'Authorization': `Bearer ${apiKey}`,
++        ...this.authHeaders(apiKey),
+         'Content-Type': 'application/json',
+         ...this.extraHeaders,
+       },
+@@ -141,7 +160,7 @@ export class OpenAICompatProvider extends BaseProvider {
+     const res = await this.fetchWithTimeout(url, {
+       method: 'GET',
+       headers: {
+-        'Authorization': `Bearer ${apiKey}`,
++        ...this.authHeaders(apiKey),
+         ...this.extraHeaders,
+       },
+     }, 10000);
+diff --git a/server/src/routes/keys.ts b/server/src/routes/keys.ts
+index 873623c..33ce581 100644
+--- a/server/src/routes/keys.ts
++++ b/server/src/routes/keys.ts
+@@ -12,7 +12,7 @@ export const keysRouter = Router();
+ const PLATFORMS = [
+   'google', 'groq', 'cerebras', 'sambanova', 'nvidia', 'mistral',
+   'openrouter', 'github', 'cohere', 'cloudflare', 'zhipu', 'ollama',
+-  'kilo', 'pollinations', 'llm7', 'ovh', 'scaleway',
++  'kilo', 'pollinations', 'llm7', 'ovh', 'scaleway', 'zen',
+ ] as const;
+ 
+ const addKeySchema = z.object({
+diff --git a/server/src/routes/proxy.ts b/server/src/routes/proxy.ts
+index b6eb772..6be36b3 100644
+--- a/server/src/routes/proxy.ts
++++ b/server/src/routes/proxy.ts
+@@ -199,6 +199,107 @@ function isRetryableError(err: any): boolean {
+     || msg.includes('500') || msg.includes('internal server error');
+ }
+ 
++/**
++ * The upstream rejected the CREDENTIAL, not the request.
++ *
++ * This class used to fall into the `else` below and become an immediate 502,
++ * which is how one dead key took the whole free route down: a stale OpenRouter
++ * key seeded into the relay answered `401 User not found`, the router surfaced
++ * it verbatim, and the twelve upstreams behind it were never tried. Failover is
++ * the entire value of this proxy — a bad credential is precisely the case it
++ * exists for.
++ *
++ * It is NOT merged into isRetryableError() because the two need different
++ * treatment: a 429 sinks the MODEL for a while, a 401 condemns the KEY. Retry
++ * alone would loop — the router's 429 penalty caps at MAX_PENALTY, so a
++ * permanently-401ing row can never sink past the keyed providers and would be
++ * re-picked on the next send, forever. So the handler also marks the key
++ * `status='invalid'`, which routeRequest() filters out before it opens a socket.
++ * That is what makes the recovery permanent instead of per-request.
++ *
++ * Matching is on the message text because providers report auth failure with
++ * wildly different bodies; every phrase below was taken from a real response.
++ */
++function isCredentialError(err: any): boolean {
++  const msg = (err.message ?? '').toLowerCase();
++  return msg.includes('401') || msg.includes('403')
++    || msg.includes('unauthorized') || msg.includes('unauthenticated')
++    || msg.includes('forbidden')
++    || msg.includes('invalid api key') || msg.includes('invalid_api_key')
++    || msg.includes('api key not valid') || msg.includes('incorrect api key')
++    || msg.includes('user not found')          // OpenRouter, revoked/deleted account
++    || msg.includes('authentication')          // "authentication failed", "Authentication required"
++    || msg.includes('permission_denied');
++}
++
++/**
++ * Condemn a key the upstream just rejected. `status='invalid'` is the flag
++ * routeRequest() already checks (`AND status != 'invalid'`), so this is the
++ * cheapest possible demotion: the very next request skips the platform before
++ * any network call. Deliberately does NOT delete or disable the row — the
++ * dashboard still shows it, with an honest status, so the user can see WHY the
++ * platform went quiet and replace the key.
++ */
++function markKeyInvalid(keyId: number, platform: string, reason: string): void {
++  try {
++    getDb()
++      .prepare("UPDATE api_keys SET status = 'invalid', last_checked_at = datetime('now') WHERE id = ?")
++      .run(keyId);
++    console.warn(
++      `[Proxy] key ${keyId} (${platform}) marked INVALID — upstream rejected the credential: `
++      + `${reason.slice(0, 120)}. It is now skipped by the router; replace it in the dashboard.`,
++    );
++  } catch (e) {
++    console.error('[Proxy] failed to mark key invalid:', e);
++  }
++}
++
++/**
++ * Resolve the client's `model` field to a catalog row id.
++ *
++ * TWO forms are accepted, and the order matters:
++ *
++ *   1. a bare catalog id            — `qwen/qwen3-coder:free`
++ *   2. a platform-qualified id      — `kilo/nvidia/nemotron-3-super-120b-a12b:free`
++ *
++ * Bare is tried FIRST so that ids which merely LOOK qualified keep working:
++ * `nvidia/...` and `cohere/...` are vendor prefixes inside a model id, and
++ * `nvidia` and `cohere` are also platform names. Trying bare first means an id
++ * that exists as written always wins, and the split is only reached when it
++ * doesn't.
++ *
++ * The qualified form is not cosmetic — it is the ONLY way to address a model on
++ * a specific platform. `nvidia/nemotron-3-super-120b-a12b:free` exists on BOTH
++ * `openrouter` and `kilo`; a bare lookup returns whichever row was inserted
++ * first (openrouter), which made the Kilo copy unreachable by any string the
++ * client could send. `kilo/nvidia/nemotron-3-super-120b-a12b:free` now reaches
++ * it. Splitting on the FIRST slash only is what makes this unambiguous: the
++ * platform is a closed set, everything after the first slash is the model id
++ * verbatim, however many slashes it contains.
++ */
++function resolveRequestedModel(requestedModel: string):
++  | { ok: true; id: number }
++  | { ok: false; reason: 'disabled' | 'not-found' } {
++  const db = getDb();
++
++  const enabled = db.prepare('SELECT id FROM models WHERE model_id = ? AND enabled = 1').get(requestedModel) as { id: number } | undefined;
++  if (enabled) return { ok: true, id: enabled.id };
++
++  const slash = requestedModel.indexOf('/');
++  if (slash > 0) {
++    const platform = requestedModel.slice(0, slash);
++    const modelId  = requestedModel.slice(slash + 1);
++    const qualified = db.prepare('SELECT id FROM models WHERE platform = ? AND model_id = ? AND enabled = 1').get(platform, modelId) as { id: number } | undefined;
++    if (qualified) return { ok: true, id: qualified.id };
++
++    const qualifiedOff = db.prepare('SELECT id FROM models WHERE platform = ? AND model_id = ?').get(platform, modelId) as { id: number } | undefined;
++    if (qualifiedOff) return { ok: false, reason: 'disabled' };
++  }
++
++  const disabled = db.prepare('SELECT id FROM models WHERE model_id = ?').get(requestedModel) as { id: number } | undefined;
++  return { ok: false, reason: disabled ? 'disabled' : 'not-found' };
++}
++
+ proxyRouter.post('/chat/completions', async (req: Request, res: Response) => {
+   const start = Date.now();
+ 
+@@ -279,16 +380,15 @@ proxyRouter.post('/chat/completions', async (req: Request, res: Response) => {
+     // Explicit "auto" → behave exactly like an omitted model field.
+     preferredModel = getStickyModel(messages);
+   } else if (requestedModel) {
+-    const db = getDb();
+-    const enabled = db.prepare('SELECT id FROM models WHERE model_id = ? AND enabled = 1').get(requestedModel) as { id: number } | undefined;
+-    if (enabled) {
+-      preferredModel = enabled.id;
++    const resolved = resolveRequestedModel(requestedModel);
++    if (resolved.ok) {
++      preferredModel = resolved.id;
+     } else {
+-      const disabled = db.prepare('SELECT id FROM models WHERE model_id = ?').get(requestedModel) as { id: number } | undefined;
+-      const reason = disabled ? 'is disabled' : 'is not in the catalog';
++      const reason = resolved.reason === 'disabled' ? 'is disabled' : 'is not in the catalog';
+       res.status(400).json({
+         error: {
+-          message: `Model '${requestedModel}' ${reason}. Use 'auto' (or omit the 'model' field) to auto-route, or call /v1/models for the available list.`,
++          message: `Model '${requestedModel}' ${reason}. Use 'auto' (or omit the 'model' field) to auto-route, `
++            + `address a specific platform's copy as 'platform/model-id', or call /v1/models for the available list.`,
+           type: 'invalid_request_error',
+           code: 'model_not_found',
+         },
+@@ -299,9 +399,14 @@ proxyRouter.post('/chat/completions', async (req: Request, res: Response) => {
+     preferredModel = getStickyModel(messages);
+   }
+ 
+-  // Retry loop: on 429/rate limit, skip that model+key and try the next one
++  // Retry loop: on 429/rate limit OR a rejected credential, skip that model+key
++  // and try the next one.
+   const skipKeys = new Set<string>();
+   let lastError: any = null;
++  // Kept so the exhaustion message can say WHY the chain ran out. Reporting a
++  // wall of dead credentials as "all models rate-limited" is the kind of wrong
++  // answer that sends the user looking in the wrong place.
++  let sawCredentialError = false;
+ 
+   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+     let route: RouteResult;
+@@ -312,8 +417,10 @@ proxyRouter.post('/chat/completions', async (req: Request, res: Response) => {
+       if (lastError) {
+         res.status(429).json({
+           error: {
+-            message: `All models rate-limited. Last error: ${lastError.message}`,
+-            type: 'rate_limit_error',
++            message: sawCredentialError
++              ? `No upstream could serve this request — at least one credential was rejected and has been marked invalid. Last error: ${lastError.message}`
++              : `All models rate-limited. Last error: ${lastError.message}`,
++            type: sawCredentialError ? 'provider_error' : 'rate_limit_error',
+           },
+         });
+       } else {
+@@ -409,6 +516,18 @@ proxyRouter.post('/chat/completions', async (req: Request, res: Response) => {
+       const latency = Date.now() - start;
+       logRequest(route.platform, route.modelId, 'error', estimatedInputTokens, 0, latency, err.message);
+ 
++      // A rejected CREDENTIAL is a failover case, not a dead end. Condemn the
++      // key so the router stops picking it at all, then advance to the next
++      // upstream on THIS request — the user still gets an answer.
++      if (isCredentialError(err)) {
++        markKeyInvalid(route.keyId, route.platform, err.message ?? '');
++        skipKeys.add(`${route.platform}:${route.modelId}:${route.keyId}`);
++        lastError = err;
++        sawCredentialError = true;
++        console.log(`[Proxy] credential rejected by ${route.displayName}, failing over (attempt ${attempt + 1}/${MAX_RETRIES})`);
++        continue;
++      }
++
+       if (isRetryableError(err)) {
+         // Put this model+key on cooldown and try the next one
+         const skipId = `${route.platform}:${route.modelId}:${route.keyId}`;
+@@ -420,7 +539,7 @@ proxyRouter.post('/chat/completions', async (req: Request, res: Response) => {
+         continue;
+       }
+ 
+-      // Non-retryable error (auth, 4xx, etc.): don't retry
++      // Non-retryable error (bad request, unsupported params, 4xx): don't retry
+       res.status(502).json({
+         error: {
+           message: `Provider error (${route.displayName}): ${err.message}`,
+diff --git a/shared/types.ts b/shared/types.ts
+index 308a508..18a0bb0 100644
+--- a/shared/types.ts
++++ b/shared/types.ts
+@@ -21,7 +21,8 @@ export type Platform =
+   | 'pollinations'
+   | 'llm7'
+   | 'ovh'
+-  | 'scaleway';
++  | 'scaleway'
++  | 'zen';
+ 
+ export interface Model {
+   id: number;

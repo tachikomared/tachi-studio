@@ -1,0 +1,567 @@
+{
+  "sampler": {
+    "chip": "サンプリング",
+    "chipTitle": "このチャットのサンプリングプリセット — 応答のランダムさを調整します（temperature / top-p）",
+    "heading": "サンプリングプリセット",
+    "preset": {
+      "fast": "精密",
+      "balanced": "バランス",
+      "creative": "創造的",
+      "advanced": "詳細"
+    },
+    "presetDesc": {
+      "fast": "精密で一貫 — temperature 0.3",
+      "balanced": "プロバイダーの既定値 — 何も送信しません",
+      "creative": "自由で多彩 — temp 0.9、top-p 0.95",
+      "advanced": "temperature と top-p を細かく設定"
+    },
+    "temperature": "温度",
+    "topP": "Top-p",
+    "advancedHint": "詳細なつまみ — このチャットにのみ適用されます。",
+    "balancedNote": "「バランス」はサンプリング設定を送信しません — プロバイダー自身の既定値が適用されます。"
+  },
+  "customEndpoint": {
+    "lanBadge": "LAN",
+    "cloudBadge": "クラウド",
+    "defaultName": "カスタムエンドポイント",
+    "pickTitle": "このエンドポイントのモデルを選択または入力",
+    "loadError": "モデルを読み込めませんでした",
+    "noModels": "エンドポイントがモデルを返しませんでした — 下にモデル ID を入力してください。",
+    "loadingCatalog": "モデルを読み込み中…",
+    "modelPlaceholder": "モデル ID を入力…",
+    "useModel": "使用"
+  },
+  "capture": {
+    "prompt": "これを記憶しますか？",
+    "save": "保存",
+    "saved": "メモリに保存しました"
+  },
+  "actions": {
+    "copy": "コピー",
+    "download": "ダウンロード",
+    "regenerate": "再生成",
+    "fork": "フォーク — ここまでの会話を引き継いだ新しいチャット",
+    "forkLabel": "フォーク",
+    "forked": "フォークしました — 新しいブランチにいます"
+  },
+  "messages": {
+    "emptyState": "メッセージを送信してチャットを開始。",
+    "waiting": "応答を待機中…"
+  },
+  "message": {
+    "thinking": "思考中",
+    "error": "エラー"
+  },
+  "reasoning": {
+    "label": "推論",
+    "thinking": "思考中…"
+  },
+  "sources": {
+    "label": "出典",
+    "hint": "添付フォルダから取得 — 出典をクリックすると元のテキストを表示します",
+    "chipTitle": "{{path}} · {{start}}-{{end}} 行 · 一致度 {{score}}",
+    "lines": "{{start}}-{{end}} 行",
+    "match": "一致度 {{score}}",
+    "openFile": "ファイルを表示"
+  },
+  "blocks": {
+    "empty": "(空)"
+  },
+  "meter": {
+    "title": "このチャットで使用したトークン: {{count}}",
+    "titleDanger": "このチャットで使用したトークン: {{count}} — 非常に長いため、最良の結果を得るために新しいチャットを開始してください",
+    "ariaLabel": "チャットトークン: {{count}}",
+    "unit": "トークン"
+  },
+  "topbar": {
+    "hideArtifacts": "アーティファクトを非表示",
+    "showArtifacts": "アーティファクトを表示",
+    "hideArtifactsPanel": "アーティファクトパネルを非表示",
+    "showArtifactsPanel": "アーティファクトパネルを表示",
+    "artifactsButton": "アーティファクト {{count}}",
+    "showHistory": "履歴を表示",
+    "showHistoryAria": "チャット履歴を表示",
+    "history": "履歴",
+    "howToTitle": "このタブのインタラクティブウォークスルー",
+    "howTo": "方法"
+  },
+  "tour": {
+    "title": "チャットタブの使い方",
+    "step1": {
+      "title": "これはチャットタブです",
+      "body": "プレーンなAIチャット — 質問、テキスト貼り付け、ファイルまたは画像をアタッチ。フォルダーまたはセットアップは不要。重要な3つのことをお見せします。"
+    },
+    "step2": {
+      "title": "AIがどこから来るかを選択",
+      "body": "これはプロバイダーピッカーです。「Free」はキー不要。他—Venice、Bankr、Ollama、llama.cpp—はキーまたはローカルモデルを使用。モデルリストは機能タグ(vision · reasoning · tools)を表示するので、正しいものを取得できます。各チャットは独自のプロバイダーを記憶。"
+    },
+    "step3": {
+      "title": "メッセージを入力",
+      "body": "ここに書く。ファイル/画像をドラッグできるか、スクリーンショットを貼り付けます。「/」を入力してスキルを使用。各チャットはチャットの独自のメモリーを保持。"
+    },
+    "step4": {
+      "title": "送信",
+      "body": "この送信ボタンを押すか、Enterを押します (Shift+Enterで新しい行)。返信が上にストリーミングされます。「New」でいつでも新しいチャットを開始。"
+    },
+    "step5": {
+      "title": "セットアップ完了",
+      "body": "プロバイダーを選択して、入力して、送信。上のメーターはチャットがどの程度満杯になっているか示します。「How to」ボタンからこれを再度開きます。"
+    }
+  },
+  "redZone": {
+    "toast": "このチャットは長くなっています — AIは初期メッセージを忘れ始める可能性があります。最良の結果を得るために新しいチャットを開始。",
+    "newChat": "新規チャット"
+  },
+  "compact": {
+    "button": "圧縮",
+    "working": "圧縮中…",
+    "title": "古いメッセージを要約に圧縮してコンテキストを解放します。会話全体は画面に残ります",
+    "done": "{{count}} 件のメッセージを要約に圧縮しました",
+    "failed": "このチャットを圧縮できませんでした。もう一度お試しください",
+    "marker": "{{count}} 件のメッセージを圧縮しました",
+    "markerTitle": "これらの古いメッセージは、コンテキストを節約するために要約として送信されます。クリックして表示します。",
+    "summaryLabel": "コンテキストの要約"
+  },
+  "history": {
+    "header": "履歴 · {{count}}",
+    "new": "+ 新規",
+    "newChat": "新規チャット",
+    "hide": "履歴を非表示",
+    "searchPlaceholder": "チャットを検索…",
+    "noMatches": "一致する項目なし。",
+    "noConversations": "まだチャットなし。",
+    "msgCount": "{{count}}メッセージ",
+    "time": {
+      "justNow": "たった今",
+      "minutesAgo": "{{count}}分前",
+      "hoursAgo": "{{count}}時間前",
+      "daysAgo": "{{count}}日前"
+    },
+    "actions": {
+      "rename": "名前変更",
+      "copyMd": "mdをコピー",
+      "copyMdTitle": "マークダウンとしてコピー",
+      "export": "エクスポート",
+      "downloadTitle": "マークダウンでダウンロード",
+      "downloadAria": "マークダウンでダウンロード",
+      "delete": "削除",
+      "deleteConfirm": "再度クリックして確認",
+      "deleteShort": "削除",
+      "deleteSure": "確認?"
+    },
+    "toast": {
+      "copiedMarkdown": "チャットはマークダウンとしてクリップボードにコピーされました",
+      "downloaded": "{{filename}}をダウンロード",
+      "deleted": "「{{title}}」を削除"
+    },
+    "untitled": "新しいチャット",
+    "deepSearch": "メッセージ内（全文検索）",
+    "folders": {
+      "new": "新しいフォルダ",
+      "defaultName": "新しいプロジェクト",
+      "unfiled": "未分類",
+      "prompt": "プロンプト",
+      "knowledge": "ナレッジ",
+      "detach": "ナレッジを解除",
+      "promptPlaceholder": "プロジェクトのシステムプロンプト — このフォルダの各チャットに送信されます…",
+      "none": "フォルダなし",
+      "moveTitle": "フォルダへ移動",
+      "projectPowers": "プロジェクトのプロンプト/ナレッジあり",
+      "actionsTitle": "フォルダ操作",
+      "settings": "フォルダ設定",
+      "settingsTitle": "フォルダ設定 — 指示、デフォルトのプロバイダー/モデル、ナレッジ",
+      "instructions": "指示",
+      "defaultProviderModel": "デフォルトのプロバイダー / モデル",
+      "providerAppDefault": "アプリのデフォルト",
+      "defaultModelPlaceholder": "自動",
+      "knowledgeLabel": "ナレッジフォルダ",
+      "newChatInFolder": "このフォルダで新規チャット — フォルダのデフォルト設定を引き継ぎます"
+    },
+    "pinnedSection": "ピン留め",
+    "pin": {
+      "pin": "ピン留め",
+      "unpin": "ピン解除",
+      "pinTitle": "ピン留め — このチャットを履歴の最上部に固定",
+      "unpinTitle": "このチャットのピン留めを解除"
+    }
+  },
+  "artifacts": {
+    "header": "アーティファクト · {{count}}",
+    "closeTitle": "アーティファクトパネルを閉じる",
+    "closeAria": "アーティファクトパネルを閉じる",
+    "empty": "このチャットにはまだアーティファクトがありません。",
+    "copied": "アーティファクトがクリップボードにコピーされました",
+    "downloaded": "{{filename}}をダウンロード"
+  },
+  "toast": {
+    "copied": "クリップボードにコピー",
+    "copyFailed": "コピー失敗",
+    "codeCopied": "コードがクリップボードにコピーされました"
+  },
+  "media": {
+    "save": "保存",
+    "reveal": "表示",
+    "savedTo": "{{path}}に保存",
+    "nothingToSave": "このアイテムを保存するものはありません。",
+    "generatedImageAlt": "生成画像",
+    "attachedImageAlt": "添付画像",
+    "attachAudioToTranscribe": "トランスクライブするオーディオファイルをアタッチ。",
+    "transcribeEcho": "トランスクライブ: {{name}}",
+    "generationFailed": "メディア生成失敗: {{error}}",
+    "noArtifactsReturned": "アーティファクトが返されませんでした。",
+    "jobFailed": "ジョブ失敗",
+    "pollTimeout": "まだ処理中 — 5分後にタイムアウト。再度実行して再度ポーリング。"
+  },
+  "provider": {
+    "localityGroup": {
+      "local": "このマシン上",
+      "relay": "このマシン上、ただし転送される",
+      "cloud": "クラウド上"
+    },
+    "listAria": "プロバイダー",
+    "noKeyBadge": "キー不要",
+    "readyNow": "{{total}} 件中 {{count}} 件はキーなしで今すぐ使えます。残りは設定でキーが必要です。",
+    "autoRouteNow": "現時点では {{provider}} · {{model}} に送信されます",
+    "changeTitle": "このチャットのプロバイダーを変更",
+    "label": "プロバイダー:",
+    "needsKey": "(サインイン / キーを追加)",
+    "autoLabel": "自動",
+    "autoBadge": "自動",
+    "autoHint": "自動選択：ハードウェアに収まればローカルモデル、なければ無料、それもなければ既定のプロバイダー。",
+    "locality": {
+      "local": {
+        "badge": "ローカル",
+        "title": "このマシン上で動作します。プロンプトはマシンの外に出ません。"
+      },
+      "relay": {
+        "badge": "中継",
+        "title": "このマシン上のプロセスが応答しますが、プロンプトはクラウドのプロバイダーに転送されます — プロンプトはマシンの外に出ます。"
+      },
+      "cloud": {
+        "badge": "クラウド",
+        "title": "プロンプトはインターネット経由でリモートのプロバイダーに送信されます。"
+      }
+    }
+  },
+  "health": {
+    "ok": "到達可能 — 最後のヘルスチェックは合格",
+    "error": "到達不可 — 最後のヘルスチェックは失敗",
+    "checking": "プロバイダーヘルスをチェック中…",
+    "unknown": "ヘルス不明",
+    "ariaLabel": "プロバイダーヘルス: {{status}}"
+  },
+  "picker": {
+    "listAria": "モデル",
+    "taskFilterAria": "タスクでモデルを絞り込む",
+    "taskAll": "すべて",
+    "taskAllTitle": "このプロバイダーが提供する全モデルを、ファミリー別にまとめたものです。",
+    "taskEmpty": "そのタスク向けと表示できるものはここにありません。本アプリは裏づけのあるものだけを表示するため、表示のないモデルが最適なこともあります。",
+    "modelLabel": "モデル:",
+    "pickModel": "モデルを選択",
+    "offlineTitle": "ライブフェッチが利用できないため、キュレーションされたカタログを表示中",
+    "offlineBadge": "·オフライン",
+    "offlineCurated": "オフライン — キュレーションされたカタログを表示中 ({{error}})",
+    "priceRate": "入力 ${{in}}/100万 · 出力 ${{out}}/100万",
+    "priceFree": "$0 — 支払いは不要です"
+  },
+  "bankr": {
+    "pickTitle": "使用するBankrモデルを選択",
+    "loadError": "Bankrモデルを読み込めませんでした",
+    "loadingCatalog": "Bankrカタログを読み込み中…"
+  },
+  "venice": {
+    "pickTitle": "使用するVeniceモデルを選択",
+    "loadError": "Veniceモデルを読み込めませんでした",
+    "loadingCatalog": "Veniceカタログを読み込み中…"
+  },
+  "imgnai": {
+    "pickTitle": "使用する imgnAI Katana モデルを選択",
+    "loadingCatalog": "imgnAI カタログを読み込み中…"
+  },
+  "surplus": {
+    "pickTitle": "使用するSurplusモデルを選択",
+    "loadError": "Surplusモデルを読み込めませんでした",
+    "loadingCatalog": "Surplusカタログを読み込み中…",
+    "modelAuto": "モデル: 自動",
+    "modelAutoTitle": "スマートルーティングがON — モデルはメッセージごとに自動選択。スマートをOFFにして1つを選択。",
+    "smartOn": "スマート ON",
+    "smartOff": "スマート OFF",
+    "smartOnTitle": "スマートルーティング ON — シンプルなプロンプトは安いモデルを使用、ハードなプロンプトはトップモデルを使用 (自動)。クリックでオフ。",
+    "smartOffTitle": "スマートルーティング OFF — 選択したモデルを使用。クリックしてタスク難易度でオートルート。",
+    "smartAuto": "オートルート",
+    "smartAutoTitle": "モデルが AUTO — 各メッセージは難易度で自動ルーティングされます。モデルを選んで固定するか、クリックして SMART を強制オン。",
+    "tuneTitle": "ルーティング難易度しきい値を調整",
+    "tuneHint": "難易度しきい値（低いほど強いモデルを多用）",
+    "tuneSimple": "SIMPLE 未満",
+    "tuneMid": "MID 未満",
+    "tuneReset": "リセット",
+    "workflowOn": "ワークフロー ON",
+    "workflowOff": "ワークフロー OFF",
+    "workflowOnTitle": "ワークフロー エスカレーション ON — 本当に難しい、複数ステップ/エージェント的なプロンプトは1つのモデルの代わりに複数エージェントワークフロー (複数エージェントが計画 + 実行)を実行。遅い。クリックで無効化。",
+    "workflowOffTitle": "ワークフロー エスカレーション OFF — 本当に難しい、複数ステップ/エージェント的なプロンプトが1つのモデルの代わりに複数エージェントワークフローを実行させるはオンにします (高度、遅い、キーが必要)。"
+  },
+  "surplusMedia": {
+    "pickTitle": "使用するSurplusメディアモデルを選択",
+    "pickModel": "メディアモデルを選択",
+    "mediaLabel": "メディア:",
+    "loadError": "Surplusメディアモデルを読み込めませんでした",
+    "loadingCatalog": "メディアカタログを読み込み中…",
+    "noModels": "メディアモデルなし。Surplusキーを追加してUSDCに資金を供給。",
+    "modality": {
+      "image": "画像",
+      "video": "ビデオ",
+      "music": "ミュージック",
+      "tts": "テキスト → 音声",
+      "stt": "音声 → テキスト"
+    }
+  },
+  "ollama": {
+    "pickTitle": "チャットするOllamaモデルを選択",
+    "notAvailable": "Ollamaは利用不可",
+    "firstInstalled": "最初にインストールされたモデル",
+    "probing": "Ollamaをプローブ中…",
+    "noModelsPrefix": "まだモデルがプルされていません。実行",
+    "noModelsSuffix": "または他のモデル。"
+  },
+  "llamaCpp": {
+    "pickTitle": "ダウンロードしたllama.cppモデルを選択してロード + チャット",
+    "startFailed": "モデルの開始に失敗",
+    "loading": "読み込み中…",
+    "loadingParen": "(読み込み中…)",
+    "selectModel": "モデルを選択",
+    "noModelsPrefix": "まだllama.cppモデルがダウンロードされていません。",
+    "noModelsLink": "Catalog → 推奨",
+    "running": "実行中",
+    "clickToLoad": "クリックしてロード"
+  },
+  "freellmapi": {
+    "pickTitle": "次のメッセージのモデルを選択",
+    "unavailable": "freellmapiは利用不可",
+    "modelPinned": "モデル: {{model}}",
+    "modelAuto": "モデル: 自動",
+    "modelUnavail": "モデル: [利用不可]",
+    "fallbackChain": "フォールバックチェーン",
+    "sortTitle": "フォールバックソート順序をサイクル",
+    "sort": "ソート: {{mode}}",
+    "sortUnavail": "ソート: [利用不可]",
+    "sortMode": {
+      "intelligence": "インテリジェンス",
+      "speed": "スピード",
+      "budget": "予算"
+    },
+    "routingTitle": "どの無料モデルが最初に回答するかを選択: スマート = 最高性能、高速 = 最速、低コスト = 最安 (クリックで切り替え)。",
+    "routing": "ルーティング: {{mode}}",
+    "routingUnavail": "ルーティング: [利用不可]",
+    "routingMode": {
+      "intelligence": "スマート",
+      "speed": "高速",
+      "budget": "低コスト"
+    }
+  },
+  "mediaControls": {
+    "size": "サイズ",
+    "count": "数",
+    "voice": "音声",
+    "seconds": "秒",
+    "lyrics": "歌詞",
+    "defaultPlaceholder": "(デフォルト)",
+    "optionalPlaceholder": "(オプション)",
+    "changeAudio": "オーディオを変更",
+    "attachAudio": "オーディオをアタッチ",
+    "working": "作業中…",
+    "workingProgress": "作業中 · {{progress}}",
+    "modality": {
+      "image": "画像",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "ビデオ",
+      "music": "ミュージック"
+    },
+    "modalityWord": {
+      "image": "画像",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "ビデオ",
+      "music": "ミュージック"
+    }
+  },
+  "composer": {
+    "attachTitle": "ファイルまたは画像をアタッチ",
+    "micStop": "聞くのをやめる",
+    "micStart": "音声入力 (クリックして開始)",
+    "micStopAria": "聞くのをやめる",
+    "micStartAria": "音声入力を開始",
+    "rec": "記録",
+    "mic": "マイク",
+    "transcribing": "文字起こし中",
+    "placeholderStt": "トランスクライブするオーディオファイルをアタッチ (プロンプトは無視)",
+    "placeholderMedia": "生成する{{modality}}を説明…",
+    "placeholderDefault": "コマンドまたはプロンプトを入力... (Shift+Enterで改行)",
+    "stop": "停止",
+    "stopTitle": "生成を停止",
+    "send": "送信",
+    "sendAria": "メッセージを送信",
+    "draftTokens": "+{{count}}ドラフト",
+    "modeChip": "チャット",
+    "prompts": "{ }",
+    "promptsTitle": "プロンプトライブラリ — 変数付きの再利用テンプレート",
+    "attachFolderTitle": "フォルダを添付 — チャットが関連コンテキストを取得します（ローカル意味インデックス）",
+    "folderIndexing": "フォルダをインデックス中…",
+    "folderIndexed": "フォルダをインデックス済み：{{count}} チャンク",
+    "folderIndexError": "フォルダのインデックスに失敗しました",
+    "folderDetach": "フォルダを外す",
+    "attachFull": "全文",
+    "attachRag": "RAG",
+    "attachFullTitle": "コンテキストに収まります: 約 {{tokens}} トークン ≤ モデルの {{window}} トークンウィンドウの 60% — フォルダの全文がメッセージと一緒に送信されます（検索なし）。",
+    "attachRagTitle": "約 {{tokens}} トークン — モデルの {{window}} トークンウィンドウには大きすぎるため、代わりにメッセージごとに最も関連性の高いチャンクを検索して使います。",
+    "attachRagFallbackTitle": "メッセージごとにフォルダから最も関連性の高いチャンクを検索します。",
+    "attachScanningTitle": "フォルダサイズを推定中…",
+    "promptsLabel": "プロンプト",
+    "attachFolderLabel": "フォルダ",
+    "attachLabel": "添付",
+    "editBranchSaved": "元のスレッドは履歴に「(branch)」チャットとして保存されました",
+    "inputAria": "メッセージ入力",
+    "folderChipAria": "添付フォルダー: {{folder}}",
+    "attachmentsAria": "添付ファイル ({{count}})",
+    "blanksHint": "未入力: {{n}} 件 — Tab で移動、Esc でそのまま送信",
+    "blanksDismiss": "そのまま送信"
+  },
+  "slash": {
+    "ariaLabel": "スラッシュコマンド",
+    "skillsLabel": "スキル",
+    "toPick": "を選択",
+    "toDismiss": "を閉じる"
+  },
+  "voice": {
+    "error": "音声: {{error}}"
+  },
+  "attachments": {
+    "image": "画像",
+    "remove": "削除",
+    "removeNamed": "添付ファイル {{name}} を削除"
+  },
+  "workspace": {
+    "noSession": "アクティブセッションなし",
+    "loading": "読み込み中...",
+    "noToolCalls": "ツール呼び出しはまだ記録されていません",
+    "recentChanges": "最近の変更",
+    "state": "状態",
+    "openPanel": "ワークスペースパネルを開く",
+    "title": "ワークスペース",
+    "noWorkspace": "ワークスペースが選択されていません。",
+    "pickFolder": "エージェントヘッダーでフォルダーを選択してファイル参照を開始。"
+  },
+  "workspaceState": {
+    "noTasks": "タスクなし",
+    "snapshot": "状態スナップショット",
+    "phases": "フェーズ",
+    "blockers": "ブロッカー",
+    "decisions": "意思決定",
+    "noData": "まだ状態データなし"
+  },
+  "rightPanel": {
+    "provider": "プロバイダー",
+    "online": "オンライン",
+    "model": "モデル",
+    "usage": "使用",
+    "promptTokens": "プロンプト: {{count}}トークン",
+    "completionTokens": "完了: {{count}}トークン",
+    "routing": "ルーティング",
+    "routingHint": "bankr-routerを有効にしてルーティングインサイト (フェーズ2)を取得"
+  },
+  "compare": {
+    "useThis": "この回答を採用",
+    "pickedNote": "{{count}} モデルを比較 — {{model}} を選択",
+    "tokPerSec": "{{rate}} tok/s",
+    "tokPerSecEst": "~{{rate}} tok/s",
+    "tokPerSecNone": "— tok/s",
+    "ttft": "TTFT {{seconds}}秒",
+    "ttftNone": "TTFT —"
+  },
+  "panelPicker": {
+    "chipAuto": "パネル AUTO",
+    "chipCount": "パネル·{{count}}",
+    "chipAutoTitle": "パネルのモデルはプリセット由来です。クリックして自分で選択 — クラウドとローカル (Ollama / llama.cpp) のモデルが並んで回答できます。",
+    "chipCustomTitle": "カスタムパネル: {{models}}。クリックして編集。",
+    "title": "Fusion / Compare パネル",
+    "autoRow": "AUTO",
+    "autoRowHint": "プリセットのパネルを使用",
+    "cloudSection": "クラウド — {{provider}}",
+    "ollamaSection": "Ollama — ローカル",
+    "llamacppSection": "llama.cpp — ローカル",
+    "loading": "プローブ中…",
+    "cloudEmpty": "カタログを利用できません — API キーを追加するか接続を確認してください。",
+    "ollamaEmpty": "Ollama モデルがプルされていません。",
+    "llamacppEmpty": "GGUF モデルがダウンロードされていません — Catalog で入手してください。",
+    "running": "実行中",
+    "willStart": "クリックして llama-server にロード",
+    "starting": "モデルを読み込み中…",
+    "startFailedGeneric": "llama.cpp を起動できませんでした。",
+    "localTag": "LOCAL",
+    "hint": "2–6 個のモデルが並列で回答します。ローカルモデルはお使いのマシンで実行され、各列に実測 tok/s + 最初のトークンまでの時間が表示されます。"
+  },
+  "fitPill": {
+    "gpu": "収まる",
+    "cpu": "CPUのみ",
+    "tight": "ギリギリ",
+    "tooBig": "大きすぎ",
+    "gpuTitle": "GPU メモリに収まります — 高速",
+    "cpuTitle": "RAM に収まります — CPU / 一部 GPU で実行（低速）",
+    "tightTitle": "ギリギリ — メモリ不足になる可能性があります",
+    "tooBigTitle": "このマシンには大きすぎます",
+    "sizeFromDiskTitle": "サイズはディスク上のモデルファイルから測定"
+  },
+  "starters": {
+    "try": "試す ▸",
+    "summarizeUrl": {
+      "label": "URLを要約",
+      "desc": "リンクを貼るだけ — 要点を5つの箇条書きで。",
+      "prompt": "このページを5つの箇条書きで要約して、最も重要なポイントを1つ教えて：\n<ここにURLを貼り付け>"
+    },
+    "explain": {
+      "label": "やさしく説明",
+      "desc": "どんな概念も、初心者向けにわかりやすく。",
+      "prompt": "<トピック>を、賢いけれどその分野は初めての人向けにやさしく説明して。具体的なアナロジーを1つ使って。"
+    },
+    "compare": {
+      "label": "2つのモデルを比較",
+      "desc": "同じ質問への回答を並べて — ベストを選ぶ。",
+      "prompt": "小さなチームにはカンバンとスクラムのどちらの計画手法が良い？4文で答えて。"
+    }
+  },
+  "versions": {
+    "prev": "前のバージョン",
+    "next": "次のバージョン",
+    "counter": "v{{n}} / {{total}}"
+  },
+  "auto": {
+    "badge": "自動",
+    "routedTitle": "AUTO ルーターが自動的に選択"
+  },
+  "reconnect": {
+    "retrying": "接続が切断されました — 再試行 {{attempt}}/{{max}}",
+    "nextIn": "次は {{seconds}} 秒後",
+    "reason": "原因: {{reason}}"
+  },
+  "a11y": {
+    "transcript": "チャットの記録",
+    "userMessage": "あなたのメッセージ",
+    "assistantMessage": "アシスタントの返信",
+    "errorMessage": "アシスタントのエラー",
+    "toolMessage": "ツール呼び出し: {{tool}}",
+    "thinking": "アシスタントが考えています"
+  },
+  "fileChips": {
+    "label": "ファイル",
+    "revealAria": "{{name}} をファイルマネージャーで表示"
+  },
+  "openrouterPicker": {
+    "pickTitle": "使用する OpenRouter モデルを選択",
+    "loadError": "OpenRouter モデルを読み込めませんでした",
+    "loadingCatalog": "OpenRouter カタログを読み込み中…",
+    "freeBadge": "FREE",
+    "freeLimits": "無料枠：毎分20リクエスト · クレジットなしで1日50回（公表されている制限）。",
+    "freeGroup": "無料 — ライブ価格 $0（{{count}}）",
+    "paidGroup": "有料（{{count}}）"
+  }
+}

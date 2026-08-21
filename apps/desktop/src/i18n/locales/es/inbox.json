@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "BANDEJA DE ENTRADA",
+    "pending": "[{{count}} pendientes]"
+  },
+  "actions": {
+    "approveAll": "[APROBAR TODOS]",
+    "clearResolved": "[LIMPIAR RESUELTOS]"
+  },
+  "footer": {
+    "modeLabel": "Modo:",
+    "mode": {
+      "immediate": "[INMEDIATO]",
+      "inbox": "[BANDEJA DE ENTRADA]"
+    },
+    "hints": "j/k mover  ·  Intro aprobar  ·  Supr negar  ·  Ctrl+A aprobar todo"
+  },
+  "empty": {
+    "title": "[ BANDEJA DE ENTRADA VACÍA ]",
+    "inbox": "Las solicitudes de permisos de herramientas llegarán aquí mientras se ejecuta tu agente. Aprueba o niega a tu propio ritmo — el agente espera hasta que decidas.",
+    "immediate": "Estás en modo INMEDIATO. Las solicitudes de permisos de herramientas aparecen en un modal de bloqueo en lugar de quedar en cola aquí. Cambia a BANDEJA DE ENTRADA de abajo para dejar que el agente se ejecute durante más tiempo y revise en lote más tarde."
+  },
+  "fields": {
+    "reason": "razón:",
+    "session": "sesión:",
+    "workingDir": "directorio de trabajo:"
+  },
+  "item": {
+    "approve": "[APROBAR]",
+    "approveAria": "aprobar solicitud",
+    "deny": "[NEGAR]",
+    "denyAria": "negar solicitud"
+  }
+}

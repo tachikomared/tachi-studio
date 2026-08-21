@@ -1,0 +1,400 @@
+{
+  "auth": {
+    "header": "GitHub 身份验证",
+    "intro": "Aeon 在 GitHub Actions 上运行。使用您的 GitHub 账户登录以继续。",
+    "signIn": "使用 GitHub 登录",
+    "waiting": "等待您在浏览器中授权…",
+    "deviceCode": "设备代码",
+    "copyHint": "将此代码复制到 GitHub 设备激活页面，然后点击下面的按钮。",
+    "openDevicePage": "打开 github.com/login/device",
+    "cancel": "取消"
+  },
+  "repoSetup": {
+    "header": "Fork aaronjmars/aeon",
+    "intro": {
+      "before": "Aeon 必须在您自己的 GitHub 存储库中运行，以便您可以存储 API 密钥并触发工作流。这将 fork",
+      "after": "到您的账户。"
+    },
+    "forking": "正在 fork…",
+    "forkRepo": "Fork 仓库",
+    "checking": "检查中…",
+    "alreadyForked": "我已手动 fork 过",
+    "errors": {
+      "notVisible": "Fork 已创建但仓库尚未可见。尝试下面的“我已 fork”。",
+      "notFound": "未找到 fork。请先在 GitHub 上 fork aaronjmars/aeon，然后再次点击此处。"
+    }
+  },
+  "ghNotInstalled": {
+    "header": "安装 GitHub CLI",
+    "requires": {
+      "before": "Aeon 需要",
+      "installFrom": "从",
+      "thenRestart": "安装它，然后重启 Tachi Studio。"
+    }
+  },
+  "forkBadge": {
+    "syncing": "[syncing…]",
+    "behind": "[fork {{count}} 落后]",
+    "title": "{{count}} 个提交落后上游 — 点击同步"
+  },
+  "page": {
+    "checkingStatus": "检查 gh 状态…"
+  },
+  "intro": {
+    "title": "AEON — 您的云端 AGENT",
+    "body": "Aeon 是在云端为您工作的 agent，即使关闭本应用它也在运行。它驻留在您自己的 GitHub fork（{{owner}}/aeon）中，通过 GitHub Actions 自主运行各种 skill——调研、监控、写作——可按计划执行，也可在您派发任务时执行。结果会出现在下方的“最近的运行”里，并推送到您连接的任意频道（Telegram、Discord、Slack、邮件）。"
+  },
+  "setup": {
+    "header": "设置（一次性）",
+    "hint": "提供商密钥 + 通知频道。若您的运行已正常，则说明已配置完成。"
+  },
+  "memory": {
+    "title": "记忆搜索",
+    "placeholder": "搜索记忆...",
+    "searching": "[搜索中...]",
+    "errorPrefix": "[错误]",
+    "noResults": "[无结果]"
+  },
+  "skills": {
+    "title": "Skills ({{filtered}}/{{total}})",
+    "filterPlaceholder": "过滤 skills…",
+    "refresh": "刷新",
+    "loading": "正在加载工作流…",
+    "noMatches": "无匹配项。",
+    "empty": {
+      "actionsDisabled": {
+        "title": "此 fork 上禁用了 GitHub Actions。",
+        "body": "出于安全考虑，fork 默认关闭 Actions。启用它们以注册 ~121 个 skill 工作流。下面一键启用 — 无需终端。"
+      },
+      "noWorkflows": {
+        "title": "尚未注册任何工作流。",
+        "body": "如果您刚启用 Actions，请给 GitHub 几秒钟，然后点击刷新。如果 skills 与上游不同步，请同步 fork。"
+      },
+      "enabling": "…启用中",
+      "enableActions": "▶ 启用 ACTIONS",
+      "syncing": "…同步中",
+      "syncFromUpstream": "⟲ 从上游同步",
+      "openActionsTab": "打开 Actions 标签页 ↗"
+    },
+    "analytics": {
+      "successRate": "成功率",
+      "streak": "连胜 (连续成功)",
+      "avgDuration": "平均耗时"
+    },
+    "run": {
+      "triggerTitle": "触发工作流",
+      "disabledTitle": "工作流已禁用",
+      "label": "▶ 运行"
+    },
+    "toast": {
+      "actionsEnabled": "在您的 fork 上启用了 GitHub Actions",
+      "synced": "Fork 从上游同步 ({{mergeType}})",
+      "upToDate": "Fork 已与上游同步",
+      "syncFailed": "同步失败：{{error}}"
+    },
+    "errors": {
+      "enableFailed": "启用 Actions 失败：{{error}}",
+      "syncFailed": "同步失败：{{error}}",
+      "triggerFailed": "触发 {{name}} 失败：{{error}}"
+    }
+  },
+  "composer": {
+    "header": "给 Aeon 一个任务",
+    "reloadTitle": "重新加载 skills",
+    "reload": "重新加载",
+    "workflowLabel": "工作流",
+    "noWorkflows": "尚未注册任何工作流。使用左边的 skills 卡启用您 fork 上的 Actions 并从上游同步 skills。",
+    "loadingOption": "加载中…",
+    "disabledOption": "{{name}} (已禁用)",
+    "loadingInputs": "加载输入…",
+    "noInputs": {
+      "before": "此工作流声明无",
+      "after": "输入。"
+    },
+    "hideAdvanced": "▾ 隐藏高级输入",
+    "showAdvanced": "▸ 显示高级输入",
+    "dispatching": "分发中…",
+    "dispatch": "▶ 分发",
+    "skillField": {
+      "before": "从您 fork 的",
+      "after": "目录中选择一个子 skill (找到 {{count}} 个)，或输入自定义名称。",
+      "examplePlaceholder": "例如 {{name}}",
+      "defaultPlaceholder": "skill-name"
+    },
+    "errors": {
+      "readInputs": "无法读取 {{path}} 的输入：{{error}}",
+      "pickSkill": "先选择一个 skill。",
+      "requiredEmpty": "必需字段“{{name}}”为空。",
+      "tooManyInputs": "输入过多 ({{count}}) — workflow_dispatch 上限为 {{max}}。"
+    },
+    "toast": {
+      "dispatched": "分发给 GitHub",
+      "dispatchFailed": "分发失败：{{error}}"
+    }
+  },
+  "dashboard": {
+    "stage": {
+      "idle": "空闲",
+      "downloading": "从 GitHub 获取仪表板源",
+      "extracting": "提取中",
+      "installingDeps": "安装仪表板依赖",
+      "installingGh": "获取 GitHub CLI (仅首次启动)",
+      "starting": "启动 Next.js 开发服务器",
+      "ready": "正在运行",
+      "error": "错误"
+    },
+    "resetConfirm": {
+      "message": "在下次启动时从 GitHub 重新下载仪表板？您的本地缓存将被清除 (~150 MB)。",
+      "ok": "重置"
+    },
+    "backTitle": "返回 Aeon 主页",
+    "back": "← Aeon 主页",
+    "label": "仪表板 ·",
+    "reloadIframeTitle": "重新加载仪表板 iframe",
+    "reload": "⟳ 重新加载",
+    "openInBrowser": "在浏览器中打开 ↗",
+    "stopTitle": "停止仪表板服务器",
+    "stop": "■ 停止",
+    "iframeTitle": "Aeon 仪表板",
+    "progress": {
+      "title": "{{stage}}…",
+      "body": "首次启动时在应用内安装 Aeon 的仪表板。这是一次性设置 — 后续启动将在几秒内开始。"
+    },
+    "launch": {
+      "errorTitle": "仪表板无法启动",
+      "title": "Aeon 仪表板",
+      "body": {
+        "before": "Aeon 附带自己的 Next.js 仪表板。点击启动，我们将从 GitHub 获取最新源代码，在应用内安装，并将其嵌入为此处的标签页。您的 GitHub OAuth 将自动传递 — 无需",
+        "after": "。"
+      },
+      "retry": "重试启动",
+      "launch": "启动仪表板",
+      "resetCacheTitle": "清除本地缓存并强制下次启动时重新下载",
+      "resetCache": "重置缓存",
+      "yourFork": "您在 GitHub 上的 fork ↗",
+      "source": {
+        "before": "源：",
+        "after": "。缓存在应用数据中 — 后续启动时重用。"
+      }
+    },
+    "prereq": {
+      "nodeMissing": {
+        "before": "未在 PATH 中检测到 Node.js — 从",
+        "after": "安装 (LTS 就可以)。"
+      },
+      "npmMissing": "未在 PATH 中检测到 npm — 与 Node.js 一起捆绑。"
+    }
+  },
+  "channels": {
+    "header": "频道 · Aeon 如何与您沟通",
+    "intro": "Aeon 原生支持这些 — 只需推送密钥，工作流就在下次运行时激活频道。无需修改工作流。",
+    "pushedBadge": "已推送给 GH ✓",
+    "pushing": "…推送中",
+    "pushMany": "推送 {{count}} 个密钥给 GitHub",
+    "pushOne": "推送密钥给 GitHub",
+    "toast": {
+      "pushed": "{{channel}} 密钥已推送 — 频道在下次 skill 运行时激活",
+      "pushFailed": "推送失败：{{error}}"
+    },
+    "items": {
+      "telegram": {
+        "label": "Telegram",
+        "description": "最受欢迎的频道 — Aeon 将 skill 输出作为消息发送，您可以用命令回复。使用 @BotFather 创建一个机器人，然后从您的账户发送 /start 给您的机器人。",
+        "helpLabel": "BotFather 教程"
+      },
+      "discord-webhook": {
+        "label": "Discord (仅出站)",
+        "description": "最简单的 Discord 设置 — 仅推送。频道 → 编辑频道 → 集成 → Webhook → 创建。无需机器人权限。",
+        "helpLabel": "Webhook 设置"
+      },
+      "discord-bot": {
+        "label": "Discord (入站 + 出站)",
+        "description": "完整的双向 Discord。discord.com/developers → 新建应用 → 机器人 → 启用消息内容意图，复制 bot token。使用 channels:history 范围邀请机器人到您的服务器。",
+        "helpLabel": "Discord 开发者门户"
+      },
+      "slack-webhook": {
+        "label": "Slack (仅出站)",
+        "description": "仅推送 Slack。api.slack.com → 您的应用 → 创建新应用 → 从头开始 → 传入 Webhook → 添加到频道 → 复制 URL。",
+        "helpLabel": "Slack webhook 文档"
+      },
+      "slack-bot": {
+        "label": "Slack (入站 + 出站)",
+        "description": "完整的双向 Slack。应用 → OAuth & 权限 → 添加 channels:history + reactions:write 范围 → 安装 → 复制 Bot User OAuth Token。频道 ID 在 URL 中。",
+        "helpLabel": "Bot token 文档"
+      },
+      "email": {
+        "label": "电子邮件 (SendGrid)",
+        "description": "Skill 输出作为样式化 HTML 电子邮件到达。sendgrid.com/settings/api_keys → 创建具有邮件发送权限的 API 密钥 → 复制。设置您希望通知发送到的收件人地址。",
+        "helpLabel": "SendGrid API 密钥"
+      }
+    },
+    "secretLabels": {
+      "TELEGRAM_BOT_TOKEN": "Bot token",
+      "TELEGRAM_CHAT_ID": "Chat ID",
+      "DISCORD_WEBHOOK_URL": "Webhook URL",
+      "DISCORD_BOT_TOKEN": "Bot token",
+      "DISCORD_CHANNEL_ID": "Channel ID",
+      "SLACK_WEBHOOK_URL": "Webhook URL",
+      "SLACK_BOT_TOKEN": "Bot token",
+      "SLACK_CHANNEL_ID": "Channel ID",
+      "SENDGRID_API_KEY": "SendGrid API key",
+      "NOTIFY_EMAIL_TO": "Recipient email"
+    }
+  },
+  "provider": {
+    "header": "提供商密钥 · 推送给 GitHub Actions",
+    "intro": {
+      "before": "这些密钥被推送到您的",
+      "after": "存储库作为 GitHub Actions 密钥，以便云端 skill 运行可以使用它们。本地 Chat 标签页密钥是分开的。"
+    },
+    "set": "设置",
+    "save": "保存",
+    "push": "推送",
+    "pushing": "…推送中",
+    "activating": "…激活中",
+    "localBadge": "本地 ✓",
+    "pushedBadge": "已推送给 GH ✓",
+    "activeGatewayBadge": "活跃提供商 ✓",
+    "activeGatewayTitle": "aeon.yml gateway.provider = {{mode}}",
+    "ghSecret": "GH 密钥 →",
+    "useDifferentKey": "使用不同的密钥",
+    "pushLocalButton": "推送本地 {{label}} 密钥给 GitHub",
+    "activateTitle": "在您的 fork 的 aeon.yml 中设置 gateway.provider={{mode}}",
+    "activateButton": "→ 激活 {{label}} (设置 aeon.yml gateway: {{mode}})",
+    "patch": {
+      "title": "OpenGateway 工作流补丁",
+      "applied": "已应用 ✓",
+      "notApplied": "未应用",
+      "body": {
+        "part1": "Aeon 的上游工作流不读取",
+        "part2": "或",
+        "part3": "。此一键补丁提交一个 4 行的任务级",
+        "part4": "块到您的 fork，以便 OpenGateway 密钥被 Claude Code 获取。"
+      },
+      "applying": "…应用中",
+      "applyButton": "应用补丁 (提交到 fork)",
+      "reverting": "…恢复中",
+      "revertButton": "恢复补丁"
+    },
+    "rows": {
+      "anthropic-oauth": {
+        "label": "Anthropic OAuth",
+        "description": "来自 /chat 的 Anthropic OAuth 刷新 token (Anthropic Pro 登录)。Aeon 工作流通过 Claude Code OAuth 模式使用此 — 推荐路径。"
+      },
+      "anthropic": {
+        "label": "Anthropic API 密钥",
+        "description": "直接 Anthropic API 密钥 (sk-ant-api03-…)。在非网关模式下由工作流作为 ANTHROPIC_API_KEY 读取。"
+      },
+      "bankr-gateway": {
+        "label": "Bankr",
+        "description": "Bankr LLM 密钥 (bk_…)。Aeon 原生支持 Bankr — 点击“激活”在 aeon.yml 中设置 gateway.provider=bankr。"
+      },
+      "opengateway": {
+        "label": "OpenGateway",
+        "description": "OpenGateway 密钥 (ogw_live_…)。推送两个密钥：ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN。需要下面的工作流补丁 — Aeon 不原生通过 OpenGateway 路由。"
+      }
+    },
+    "toast": {
+      "gatewayUpdated": "aeon.yml 已更新 — {{label}} 现在是活跃提供商",
+      "gatewayAlready": "{{label}} 已在 aeon.yml 中激活",
+      "activateFailed": "激活失败：{{error}}",
+      "patchAlready": "工作流已为 OpenGateway 打过补丁",
+      "patched": "已修补 fork 工作流 — OpenGateway 现在通过 Claude Code 接入",
+      "patchFailed": "补丁失败：{{error}}",
+      "reverted": "已恢复 OpenGateway 补丁 — 工作流回到上游形状",
+      "revertFailed": "恢复失败：{{error}}",
+      "pushedLocal": "推送本地 {{label}} 密钥给 {{owner}}/aeon 的 GitHub 密钥",
+      "pushFailed": "推送失败：{{error}}",
+      "savedExplicit": "{{label}} → {{secretName}} on {{owner}}/aeon"
+    }
+  },
+  "drawer": {
+    "tabs": {
+      "result": "结果",
+      "logs": "日志"
+    },
+    "resultTitle": "显示解析结果、生成的文件和 token 用量",
+    "resultTitleDisabled": "运行完成后可用",
+    "refresh": "刷新",
+    "reload": "重新加载",
+    "openOnGithubTitle": "在 GitHub 上打开",
+    "openOnGithub": "在 GitHub 上打开 ↗",
+    "closeTitle": "关闭 (Esc)",
+    "close": "关闭",
+    "jobs": {
+      "title": "任务 ({{count}})",
+      "waiting": "等待运行器…",
+      "none": "此运行中无任务。"
+    },
+    "logs": {
+      "title": "日志",
+      "live": "● 实时",
+      "fetching": "获取中…",
+      "queued": "任务已排队 — 等待运行器…",
+      "noOutput": "尚无日志输出。",
+      "selectJob": "选择一个任务来查看其日志。"
+    },
+    "errors": {
+      "loadJobs": "加载任务失败：{{error}}",
+      "logFetch": "[日志获取错误] {{error}}"
+    },
+    "result": {
+      "loadingLogs": "加载运行日志…",
+      "whatItDid": "它做了什么",
+      "noSummary": "Skill 在其最终输出中未发出结构化摘要。切换到日志查看原始运行。",
+      "filesProduced": "生成的文件",
+      "filesProducedCount": "生成的文件 ({{count}})",
+      "noFiles": "此运行中未检测到文件变化。",
+      "openFileTitle": "在 GitHub 上打开 {{path}}",
+      "open": "打开 ↗",
+      "commit": "提交",
+      "openShort": "打开 ↗",
+      "tokenUsage": "Token 用量",
+      "tokens": {
+        "cacheRead": "缓存读取",
+        "cacheCreation": "缓存创建"
+      },
+      "browseOutputs": "浏览输出",
+      "outputsTitle": "JSON 格式的 skill 输出 (Aeon 的仪表板源)",
+      "links": {
+        "outputs": "dashboard/outputs ↗",
+        "articles": "articles ↗",
+        "commits": "所有提交 ↗",
+        "thisRun": "此运行在 GitHub 上 ↗"
+      }
+    }
+  },
+  "runs": {
+    "header": "最近的运行",
+    "refresh": "刷新",
+    "loading": "加载运行…",
+    "empty": "尚无运行。触发一个 skill 以在此查看结果。",
+    "rerun": "▶ 重新运行",
+    "rerunTitle": "重新运行",
+    "deleteTitle": "删除运行",
+    "confirmDeleteTitle": "再次点击确认",
+    "sure": "确定？",
+    "row": {
+      "openTitle": "打开实时运行详情"
+    },
+    "card": {
+      "title": "点击打开 · 拖到队列重新运行",
+      "rerunTitle": "重新运行此工作流",
+      "confirmDeleteTitle": "再次点击确认删除"
+    },
+    "kanban": {
+      "todo": "已排队",
+      "running": "运行中",
+      "failed": "失败",
+      "done": "完成",
+      "dropHint": "↓ 放下重新运行"
+    },
+    "toast": {
+      "rerunning": "重新运行 {{name}}",
+      "rerunFailed": "重新运行失败：{{error}}",
+      "deleted": "已删除 {{name}}",
+      "deleteFailed": "删除失败：{{error}}",
+      "alreadyRunning": "已在运行"
+    }
+  }
+}

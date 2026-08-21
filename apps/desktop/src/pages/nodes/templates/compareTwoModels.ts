@@ -1,0 +1,81 @@
+// apps/desktop/src/pages/nodes/templates/compareTwoModels.ts
+//
+// Compare two models — one question fans out to two Prompt nodes on DIFFERENT
+// providers, then an impartial judge (free) compares the answers. Model A runs
+// free; Model B defaults to Bankr/Claude (swap the provider in the node if you
+// don't have a key). Mirror: examples/flows/compare-two-models.tachiflow.json.
+
+import type { FlowTemplate } from './tachiflow'
+
+export const compareTwoModels: FlowTemplate = {
+  id: 'compare-two-models',
+  label: 'Compare two models',
+  description: 'One question, two models answer side by side, a judge picks the winner. Model B defaults to Bankr/Claude.',
+  file: {
+    format: 'tachiflow',
+    formatVersion: 1,
+    app: 'tachi-studio',
+    appVersion: '0.1.0',
+    exportedAt: '2026-07-11T00:00:00.000Z',
+    flow: {
+      version: 1,
+      name: 'Compare two models',
+      savedAt: '2026-07-11T00:00:00.000Z',
+      nodes: [
+        {
+          id: 'ctm-q',
+          type: 'text',
+          position: { x: 40, y: 220 },
+          data: {
+            label: 'Question',
+            text: 'Explain quantum entanglement to a 10-year-old — replace with your question.',
+            lastOutput: 'Explain quantum entanglement to a 10-year-old — replace with your question.',
+          },
+        },
+        {
+          id: 'ctm-a',
+          type: 'prompt',
+          position: { x: 400, y: 60 },
+          data: {
+            label: 'Model A · free auto',
+            providerId: 'freellmapi',
+            endpoint: 'localhost:8080',
+            model: 'auto',
+            instruction: 'Answer the user\'s question thoroughly and clearly. Output only the answer.',
+          },
+        },
+        {
+          id: 'ctm-b',
+          type: 'prompt',
+          position: { x: 400, y: 360 },
+          data: {
+            label: 'Model B · Bankr Claude',
+            providerId: 'bankr',
+            endpoint: 'llm.bankr.bot/v1',
+            model: 'claude-sonnet-4.6',
+            instruction: 'Answer the user\'s question thoroughly and clearly. Output only the answer.',
+          },
+        },
+        {
+          id: 'ctm-judge',
+          type: 'prompt',
+          position: { x: 760, y: 210 },
+          data: {
+            label: 'Judge',
+            providerId: 'freellmapi',
+            endpoint: 'localhost:8080',
+            model: 'auto',
+            instruction: 'You are an impartial judge. Two answers to the same question appear above. Compare them on accuracy, clarity, and completeness. Declare a winner and justify the verdict in 3 short bullets.',
+            final: true,
+          },
+        },
+      ],
+      edges: [
+        { id: 'ctm-e1', source: 'ctm-q', target: 'ctm-a', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'the question' } },
+        { id: 'ctm-e2', source: 'ctm-q', target: 'ctm-b', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'the question' } },
+        { id: 'ctm-e3', source: 'ctm-a', target: 'ctm-judge', sourceHandle: 'E-src', targetHandle: 'NW-tgt', type: 'link', data: { instruction: 'answer A' } },
+        { id: 'ctm-e4', source: 'ctm-b', target: 'ctm-judge', sourceHandle: 'E-src', targetHandle: 'SW-tgt', type: 'link', data: { instruction: 'answer B' } },
+      ],
+    },
+  },
+}

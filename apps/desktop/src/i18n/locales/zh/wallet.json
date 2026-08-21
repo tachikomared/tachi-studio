@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "钱包",
+    "subtitle": "多链 · 应用 (nookplot · x402) + darksol agent 钱包"
+  },
+  "toast": {
+    "addressCopied": "地址已复制",
+    "backupDownloaded": "加密备份已下载",
+    "walletImported": "钱包已导入",
+    "walletRemoved": "从此设备删除钱包",
+    "agentWalletRemoved": "Agent 钱包“{{agentName}}”已删除"
+  },
+  "newKey": {
+    "backupNow": "现在备份 — 仅复制",
+    "address": "地址",
+    "privateKey": "私钥",
+    "done": "完成 — 打开钱包"
+  },
+  "empty": {
+    "title": "尚无钱包",
+    "description": "您的应用范围钱包 — 一个 nookplot、x402 付款和任何集成账户。非托管：密钥加密在您的 OS 密钥链中，永不未加密离开此设备。",
+    "creating": "创建中…",
+    "create": "✦ 创建钱包",
+    "importKey": "导入私钥",
+    "keyPlaceholder": "0x…",
+    "import": "导入"
+  },
+  "account": {
+    "title": "账户 · {{label}}",
+    "noAddress": "—",
+    "copy": "复制"
+  },
+  "balances": {
+    "title": "余额",
+    "allNetworks": "· 所有网络",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 显示",
+    "hide": "👁 隐藏",
+    "refreshing": "刷新中…",
+    "refresh": "↻ 刷新"
+  },
+  "backup": {
+    "title": "加密备份",
+    "description": "密码加密密钥库 (Web3 Secret Storage — 与 MetaMask/geth 兼容)。保持文件 + 密码安全；一起恢复您的 agent 在任何机器上。",
+    "password": "备份密码 (最少 8)",
+    "download": "下载备份"
+  },
+  "switch": {
+    "title": "切换钱包",
+    "replaceTitle": "替换密钥 · {{label}}",
+    "warning": "先导出备份 — 替换密钥从此设备删除当前钱包。",
+    "agentName": "Agent 钱包名称",
+    "keyPlaceholder": "私钥 0x…",
+    "importKey": "导入密钥",
+    "orKeystore": "或密钥库 JSON + 密码",
+    "keystorePassword": "密钥库密码",
+    "importKeystore": "导入密钥库"
+  },
+  "danger": {
+    "title": "新建 / 删除",
+    "generate": "生成新钱包",
+    "forget": "忘记钱包",
+    "forgetNamed": "忘记 {{label}}"
+  },
+  "switcher": {
+    "account": "账户",
+    "activeSuffix": " ·活跃",
+    "new": "+ 新建",
+    "newPrompt": "新 darksol agent 钱包名称：",
+    "newTitle": "新建 agent 钱包",
+    "newPlaceholder": "例如 trading-bot",
+    "newOk": "创建",
+    "newCancel": "取消"
+  },
+  "network": {
+    "all": "所有网络"
+  },
+  "send": {
+    "title": "发送 · 任何 token",
+    "token": "Token",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "收件人",
+    "recipientPlaceholder": "0x… / name.eth",
+    "amount": "金额",
+    "sending": "发送中…",
+    "send": "发送",
+    "note": "所选网络上的原生 + 任何 ERC-20 (或粘贴合约地址)。跨链 → 使用 darksol agent (LI.FI)。",
+    "toast": {
+      "success": "已发送 — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "资金 · 应用 → {{agentName}}",
+    "amount": "金额 (原生)",
+    "moving": "移动中…",
+    "move": "移动",
+    "note": "保持您的 NOOK / x402 余额在应用钱包上不被触及。",
+    "toast": {
+      "success": "已资助 — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Agent 限额 · darksol agent 签名者",
+    "maxPerTrade": "最大 / 交易",
+    "daily": "每日限额",
+    "dryRun": "干运行",
+    "on": "开",
+    "off": "关",
+    "save": "保存限额",
+    "toast": {
+      "saved": "限额已保存"
+    }
+  }
+}

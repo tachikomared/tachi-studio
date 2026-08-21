@@ -1,0 +1,441 @@
+/* ── STRUCTURE LAYER · tachikoma-red ─────────────────────────────────────────
+   Companion structure sheet for TACHIKOMA-RED · RED CRAB UNIT
+   (tachikoma-red.css). Same convention as comic-structure.css and
+   tachi-opus5-structure.css, no exceptions:
+     • every rule scoped under :root[data-theme="tachikoma-red"]
+     • element selectors + globals-owned container hooks ONLY
+     • geometry / texture / colour — no size, margin, padding, position
+     • no `cursor` declaration anywhere (test/unit/resizeCursor.test.ts)
+     • no drop-shadow on anything that may be transparent (ghost exclusion)
+
+   THE SHAPE: the ARMOUR CUT. Where OPUS-5 mills a symmetric bite, this unit is
+   panelled: one long steep bevel across the top-left and a short hard notch at
+   the bottom-right, so every control reads as a plate torn off a walker rather
+   than a rectangle with corners removed. Cards add a hazard-striped corner
+   flash; the composer becomes a full hexagonal hatch.
+
+   MOTION is louder here than in any shipped theme, and every piece of it is
+   colour/opacity/transform on decorative pseudo-elements — never layout — and
+   every one is killed in the reduced-motion block at the foot of the file.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ── GROUP A · Carapace mesh ─────────────────────────────────────────────────
+   Armour weave under the whole app: a fine diagonal twill in crimson plus a
+   wide optic scan rule. `.app-body` / `.tachi-route-enter` are globals.css
+   container hooks, so they are legal targets. `!important` is required because
+   AppShell sets the `background` SHORTHAND inline (which resets
+   background-image and wins on specificity). Static. */
+:root[data-theme="tachikoma-red"] body,
+:root[data-theme="tachikoma-red"] .app-body,
+:root[data-theme="tachikoma-red"] .tachi-route-enter {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(168, 18, 50, 0.055) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(to bottom, rgba(0, 229, 255, 0.030) 0 1px, transparent 1px 84px) !important;
+  background-attachment: fixed;
+}
+
+/* ── GROUP B · Buttons — the armour cut ──────────────────────────────────────
+   A long steep bevel off the top-left, a short hard notch off the bottom-right.
+   box-shadow is force-cleared (clip-path paints it away and would leave a torn
+   corner) and reissued as an optic drop-shadow that hugs the cut.
+   SOLID CONTROLS ONLY — filter: drop-shadow() traces ALPHA, not the border box,
+   so on a ghost button it would paint a cyan copy of the TEXT 3px down-right
+   (the bug that shipped in tachi-crab-structure and comic-structure, 22
+   buttons a screen). Match the full `background…: <value>` pair, never a bare
+   `: none` — that also catches `border-image: none` on the solid nav tiles. */
+/* B1 · THE CUT — every control, ghost included. clip-path clips the BORDER
+   BOX and never reads alpha, so the ghost hazard that governs drop-shadow does
+   not apply. Keeping the cut inside the ghost exclusion (as this sheet first
+   shipped) left ~90% of the app square — nearly every chip in the app sets
+   inline `background: transparent`. */
+:root[data-theme="tachikoma-red"] button:not(:disabled) {
+  clip-path: polygon(
+    14px 0, 100% 0,
+    100% calc(100% - 6px), calc(100% - 6px) 100%,
+    0 100%, 0 6px
+  );
+}
+/* B2 · THE OFFSET — solid controls only, for the alpha reason above, and never
+   the CHASSIS KEYS.
+
+   `[data-chassis-key]` is a neutral styling hook on the three window keys the
+   TK-05 slab mounts on its flank (components/TachikomaChrome.tsx → WindowKeys;
+   nothing in the app reads it, same pattern as [data-send-key] and
+   [data-scan-bar]). Those caps are MOULDED HARDWARE, not app controls: they are
+   opaque, so the ghost exclusion above let them through, and every one of them
+   was computing `filter: drop-shadow(3px 3px 0 #00e5ff)` — invisible, because
+   clip-path is applied AFTER the filter and eats the whole offset, but not free.
+   It contradicted the sheet's own cyan restraint (the slab is the one surface
+   cyan may not touch), and a filter promotes each key to its own compositing
+   layer for a shadow that can never be seen.
+
+   It is also the one exclusion that MUST be here rather than in the component:
+   the rule's `box-shadow: none !important` reached into the caps and deleted any
+   moulding they tried to declare, which is why they had to carry their relief on
+   a child span. Excluded, they own their own surface again. */
+:root[data-theme="tachikoma-red"] button:not(:disabled):not([data-chassis-key]):not(
+    [style*="background: transparent"],
+    [style*="background: none"],
+    [style*="background-color: transparent"]
+  ) {
+  box-shadow: none !important;
+  filter: drop-shadow(
+    var(--tk-cut-offset, 3px) var(--tk-cut-offset, 3px) 0 var(--tk-optic)
+  );
+}
+/* Press interplay — hover pushes the optic bleed out, press snaps it shut.
+   Driven through a custom property so the ghost-exclusion selector is written
+   once; setting the variable on a ghost button is inert. */
+:root[data-theme="tachikoma-red"] button:not(:disabled):hover  { --tk-cut-offset: 5px; }
+:root[data-theme="tachikoma-red"] button:not(:disabled):active { --tk-cut-offset: 0px; }
+:root[data-theme="tachikoma-red"] button:disabled { filter: none; }
+
+/* ── GROUP C · Optic sweep on hover ──────────────────────────────────────────
+   A cyan sensor line crosses the hovered control. Pure background-image, so it
+   reaches ghost buttons too (their only hover geometry, since they get no cut)
+   and can never trigger the alpha-tracing failure. */
+:root[data-theme="tachikoma-red"] button:not(:disabled):hover {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0 34%,
+    rgba(0, 229, 255, 0.22) 47%,
+    rgba(0, 229, 255, 0.05) 53%,
+    transparent 66% 100%
+  );
+}
+
+/* ── GROUP D · Inputs & selects — sensor slit ────────────────────────────────
+   Single-line fields stay rectangular: a clip-path here shears the text caret
+   at the edge. The mech read comes from a heavy rib, an inset double-rule and
+   a live optic underline seated INSIDE the box. Native controls excluded. */
+:root[data-theme="tachikoma-red"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+:root[data-theme="tachikoma-red"] select {
+  border: var(--border-width) solid var(--border-strong);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 40%);
+  box-shadow:
+    inset 0 0 0 1px var(--bg-base),
+    inset 0 -2px 0 rgba(0, 229, 255, 0.30);
+}
+/* INSET focus ring so no clip-path or overflow can shear it off. */
+:root[data-theme="tachikoma-red"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):focus,
+:root[data-theme="tachikoma-red"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):focus-visible,
+:root[data-theme="tachikoma-red"] select:focus,
+:root[data-theme="tachikoma-red"] select:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--tk-optic);
+}
+
+/* ── GROUP E · Textarea — hexagonal hatch ────────────────────────────────────
+   The composer is roomy enough for a real clip-path with no caret risk, so it
+   gets the full hatch: all four corners cut, long bevels left and right — the
+   access panel on the walker's back. */
+:root[data-theme="tachikoma-red"] textarea {
+  border: var(--border-width) solid var(--border-strong);
+  clip-path: polygon(
+    18px 0, calc(100% - 8px) 0,
+    100% 14px, 100% calc(100% - 18px),
+    calc(100% - 18px) 100%, 8px 100%,
+    0 calc(100% - 14px), 0 14px
+  );
+}
+:root[data-theme="tachikoma-red"] textarea:focus,
+:root[data-theme="tachikoma-red"] textarea:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--tk-optic);
+}
+
+/* ── GROUP F · Headings — targeting reticle ──────────────────────────────────
+   Not a bracket: a crimson corner lock at the top-left and an optic corner
+   lock at the bottom-right, the two halves of a targeting box that never
+   quite closes. position:relative is layout-neutral; both ticks are
+   pointer-events:none and a few px outset, so nothing reflows or collides. */
+:root[data-theme="tachikoma-red"] h1,
+:root[data-theme="tachikoma-red"] h2 { position: relative; }
+:root[data-theme="tachikoma-red"] h1::before,
+:root[data-theme="tachikoma-red"] h2::before {
+  content: "";
+  position: absolute; top: -4px; left: -8px;
+  width: 10px; height: 10px;
+  border-top: 2px solid var(--accent-hover);
+  border-left: 2px solid var(--accent-hover);
+  pointer-events: none;
+}
+:root[data-theme="tachikoma-red"] h1::after,
+:root[data-theme="tachikoma-red"] h2::after {
+  content: "";
+  position: absolute; bottom: -4px; right: -8px;
+  width: 10px; height: 10px;
+  border-bottom: 2px solid var(--tk-optic);
+  border-right: 2px solid var(--tk-optic);
+  pointer-events: none;
+}
+/* THE TICK IS ALWAYS CUT; THE BLINK IS A RUN LAMP (idle audit, 2026-07-27).
+   This animation used to run on EVERY h1 and h2 in the app, forever — a dozen
+   pseudo-elements pulsing opacity on a page nobody was doing anything on, which
+   is a compositor kept awake for a decoration. The corner lock is structure and
+   stays painted at all times; the pulse now means something: it runs only while
+   a run is in flight. `:root[data-run-active="1"]` is stamped by AppShell from
+   the SAME boolean the header scan bar rides (`chassisRunActive` over the agent
+   / nodes / chat stores), and both terminal states clear it, so the reticle can
+   never be left blinking. */
+:root[data-theme="tachikoma-red"][data-run-active="1"] h1::after,
+:root[data-theme="tachikoma-red"][data-run-active="1"] h2::after {
+  animation: tk-reticle 2.6s ease-in-out infinite;
+}
+@keyframes tk-reticle { 0%, 100% { opacity: 1; } 50% { opacity: 0.28; } }
+
+/* ── GROUP G · kbd — servo key ───────────────────────────────────────────────
+   Button geometry at key scale. kbd is always opaque (globals sets
+   background: var(--bg-elevated)), so the alpha hazard does not apply. */
+:root[data-theme="tachikoma-red"] kbd {
+  clip-path: polygon(
+    6px 0, 100% 0,
+    100% calc(100% - 3px), calc(100% - 3px) 100%,
+    0 100%, 0 3px
+  );
+  box-shadow: none !important;
+  filter: drop-shadow(1px 1px 0 var(--tk-optic));
+}
+
+/* ── GROUP H · Cards — hazard-flashed armour ─────────────────────────────────
+   .tachi-settings-card is the shared SettingsCard wrapper (a globals.css hook,
+   not a component class). Cut it like a hull panel, flash the top-left bevel
+   with hazard stripes, and reissue the inline hard offset as an optic
+   drop-shadow. background-color is pinned FIRST and deliberately: drop-shadow
+   traces alpha, so the plate must be guaranteed opaque before filtering. */
+:root[data-theme="tachikoma-red"] .tachi-settings-card {
+  background-color: var(--bg-surface);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 179, 0, 0.30) 0 6px,
+    rgba(10, 7, 8, 0.30) 6px 12px
+  );
+  background-repeat: no-repeat;
+  background-size: 74px 4px;
+  background-position: 20px 0;
+  clip-path: polygon(
+    20px 0, 100% 0,
+    100% calc(100% - 9px), calc(100% - 9px) 100%,
+    0 100%, 0 9px
+  );
+  box-shadow: none !important;
+  filter: drop-shadow(3px 3px 0 var(--tk-optic));
+}
+
+/* ── GROUP I · Scrollbars — optic rail ───────────────────────────────────────
+   The track is a dark rail with crimson sleeper marks; the thumb is a servo
+   block with a live optic cap, so scroll position reads as a moving actuator. */
+:root[data-theme="tachikoma-red"] ::-webkit-scrollbar { width: 12px; height: 12px; }
+:root[data-theme="tachikoma-red"] ::-webkit-scrollbar-track {
+  background-color: var(--bg-inset);
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0 6px, rgba(168, 18, 50, 0.35) 6px 8px);
+}
+:root[data-theme="tachikoma-red"] ::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border: 2px solid var(--bg-inset);
+  border-top-color: var(--tk-optic);
+  border-bottom-color: var(--tk-optic);
+}
+:root[data-theme="tachikoma-red"] ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-hover);
+}
+:root[data-theme="tachikoma-red"] ::-webkit-scrollbar-corner { background: var(--bg-inset); }
+
+/* ── GROUP J · Optic pulse ───────────────────────────────────────────────────
+   Anything globals.css already marks as live gets the eye: a cyan iris ring
+   opening out of the dot. Colour + shadow only, no layout. */
+@keyframes tk-optic {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.75), 0 0 6px rgba(0, 229, 255, 0.6); }
+  50%      { box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.00), 0 0 10px rgba(0, 229, 255, 0.9); }
+}
+:root[data-theme="tachikoma-red"] .tachi-pulse-dot,
+:root[data-theme="tachikoma-red"] .tachi-run-dot {
+  animation: tk-optic 1.25s ease-out infinite, tachi-pulse 1.2s ease-in-out infinite;
+}
+
+/* ── GROUP K · Selection — optic wash ────────────────────────────────────────
+   globals.css selects in var(--accent) + #fff. On this unit the highlight is
+   what the eye is looking at, so it selects in the optic. 15.4:1. */
+:root[data-theme="tachikoma-red"] ::selection {
+  background: var(--tk-optic);
+  color: var(--bg-base);
+}
+
+/* ── GROUP L · Permission card — HAZARD FRAME ────────────────────────────────
+   `[data-permission-card]` is a neutral styling hook on PermissionCard's root
+   (added for this rule; nothing in the app reads it). On this unit the card that
+   PAUSES THE MACHINE gets the machine's own warning livery: a hazard-striped
+   band across its top edge, above the amber border it already carries.
+
+   background-color is pinned FIRST because the component sets the `background`
+   SHORTHAND inline — which resets background-image — so the image needs
+   `!important` to land and the colour needs restating to stay opaque. No
+   clip-path here: the card holds five decision buttons and a scrollable diff,
+   and clip-path clips descendants (an ALLOW button under the cut would become
+   unclickable). No filter either — the card is full of text. */
+:root[data-theme="tachikoma-red"] [data-permission-card] {
+  background-color: var(--bg-elevated);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 179, 0, 0.55) 0 7px,
+    rgba(10, 7, 8, 0.55) 7px 14px
+  ) !important;
+  background-repeat: no-repeat;
+  background-size: 100% 5px;
+  background-position: 0 0;
+}
+
+/* ── GROUP M · SEND / RUN key — the notched cap ───────────────────────────────
+   `[data-send-key]` is on the chat SEND button and the Code tab's RUN button.
+   The mock draws SEND as a big cap with a chip cut out of it and an optic rim,
+   so the shared GROUP B armour cut is overridden with a deeper, asymmetric one.
+
+   GEOMETRY ONLY, and the rim comes for free: both keys are SOLID (accent
+   background), so they already inherit GROUP B's alpha-safe
+   `drop-shadow(<offset> var(--tk-optic))`, which hugs the CUT — a `border-color`
+   here would not, because a border draws the element's rectangle and clip-path
+   then shears it off along the diagonal. It would also need `!important` to beat
+   the components' inline `border` shorthand. So there is deliberately no border
+   or box-shadow declaration in this rule. */
+:root[data-theme="tachikoma-red"] [data-send-key] {
+  clip-path: polygon(
+    16px 0, 100% 0,
+    100% calc(100% - 10px), calc(100% - 10px) 100%,
+    0 100%, 0 10px
+  );
+}
+
+/* ── GROUP N · Tool-call family chips — servo tags ────────────────────────────
+   `[data-tool-family]` is the READ / WRITE / EDIT / BASH tag on every run-log
+   row. The mock prints them as stamped tags with a corner clipped, so they read
+   as a physical label rather than a coloured rectangle. The chips are always
+   opaque (the component fills them with the family colour), so the cut is safe;
+   they carry no shadow to reissue. */
+:root[data-theme="tachikoma-red"] [data-tool-family] {
+  clip-path: polygon(
+    4px 0, 100% 0,
+    100% calc(100% - 4px), calc(100% - 4px) 100%,
+    0 100%, 0 4px
+  );
+  box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+/* ── GROUP O · Context meter — optic ladder ────────────────────────────────────
+   `[data-ctx-meter]` is the [CTX nn%] badge. A context window is an instrument
+   reading, so the badge is a two-tier cell ladder rather than an empty outline:
+   dim cells run the full width, lit optic cells are clipped to `--ctx-fill`
+   (set inline by ContextMeter.tsx — see PATCH-01). Falls back to 0% when the
+   var is absent, so the badge degrades to the dim rack, never to solid cyan.
+   background-image only: the badge's border/text colour tracks the fill zone
+   (green → amber → red) and must keep winning, and a drop-shadow here would
+   trace the digits. `!important` for the GROUP A reason — the component's
+   inline `background: transparent` shorthand resets background-image and,
+   being inline, outranks any normal author rule. */
+:root[data-theme="tachikoma-red"] [data-ctx-meter] {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 229, 255, 0.42) 0 3px, rgba(0,0,0,0) 3px 6px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0 3px, rgba(0,0,0,0) 3px 6px) !important;
+  background-size: var(--ctx-fill, 0%) 100%, 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+}
+
+/* ── GROUP P · Window keys — ONE set, never two ───────────────────────────────
+   `[data-titlebar-controls]` is the TitleBar's own — □ × row (components/layout/
+   TitleBar.tsx). This theme mounts its OWN keys on the chassis flank
+   (TachikomaChrome's WindowKeys), wired to the same `window.tachi.window` IPC,
+   so with the row still up there are two live, identical key clusters ~50px
+   apart — live-found duplication, not a style nit.
+
+   Hidden HERE rather than branched in the component for the same reason every
+   other rule in this file lives here: the frame is a THEME decision, so the
+   theme that adds keys is the theme that takes the others away, and a theme
+   sheet cannot reach past its own `:root[data-theme=…]` scope — every
+   non-chassis theme keeps its row byte-identical. The BAR stays (it is the
+   window's drag region and carries the [PRIVATE] badge); only the three keys
+   go. `display: none` also drops them from the tab order, which is what we
+   want: two tab stops to the same action is the same defect for a keyboard. */
+/* !important is load-bearing: the row carries an INLINE display:flex
+   (TitleBar.tsx layout style), which beats any selector without it —
+   live-found as six window buttons on screen. [data-chassis-keys="1"] is
+   equally load-bearing: it is set by the chrome component ONLY while the
+   replacement flank keys are mounted — an unconditional hide left a
+   maximized window (flush stage drops the keys) with ZERO controls. */
+:root[data-theme="tachikoma-red"][data-chassis-keys="1"] [data-titlebar-controls] { display: none !important; }
+
+/* ── GROUP Q · The recessed screen — a milled well, not a border ──────────────
+   The SLAB chassis (TachikomaChrome.tsx, mock variant 2a) does not put the app
+   in a frame, it COUNTERBORES it into the plate. The mock draws that as four
+   stacked rings on `.screen`: a metal lip, a black gap, a second metal lip, and
+   one faint optic hairline INSIDE the glass — the only cyan allowed anywhere
+   near the outside of the display, and the reason the chassis itself carries
+   none.
+
+   globals.css owns the recess GEOMETRY (`:root[data-chassis] .app-body` —
+   position, inset, z-index, from the two custom properties the chrome computes).
+   This rule only re-COLOURS it, exactly like the tachi-opus5 sheet does for its
+   own frame; forking the geometry into a theme sheet is how two sources of truth
+   start. Specificity does the overriding — `[data-theme]` + `[data-chassis]`
+   beats the globals selector, so nothing here needs `!important`.
+
+   box-shadow, NEVER filter: drop-shadow. drop-shadow traces alpha and would
+   ghost every glyph inside the plate (the defect two structure themes shipped),
+   and any filter on this element would also become the containing block for the
+   `position: fixed` chassis keys. */
+:root[data-theme="tachikoma-red"][data-chassis] .app-body {
+  border-color: #47262e;
+  box-shadow:
+    0 0 0 2px #47262e,
+    0 0 0 8px #050304,
+    0 0 0 9px #6b4650,
+    inset 0 0 0 1px rgba(0, 229, 255, 0.13),
+    inset 0 14px 34px rgba(0, 0, 0, 0.95),
+    inset 0 -10px 26px rgba(0, 0, 0, 0.8);
+}
+
+/* ── GROUP R · Idle gate — the slab stops painting when nobody is looking ─────
+   Owner: "проверь что приложение просто так не гоняет GPU". The TK-05 chassis
+   is ALWAYS MOUNTED under this theme and its motion is not free: the LED iris
+   animates `box-shadow`, which is a PAINT property, so every frame of it
+   repaints the whole LED rack. Electron's `backgroundThrottling` does not save
+   us — it only fires when the page is minimised or fully occluded, and the
+   owner's window spends its life VISIBLE AND UNFOCUSED on a second monitor,
+   where nothing throttles at all.
+
+   AppShell stamps `data-window-focused` on :root (present on focus, REMOVED on
+   blur, seeded from `document.hasFocus()`), and this rule reads its absence.
+   `animation-play-state: paused` freezes the animation where it stands: no
+   ticks, no repaints, and the frame the user last saw is the frame that stays on
+   screen — nothing jumps when they come back. The OPUS-5 sheet carries the same
+   rule for its own frame, on the same attribute.
+
+   SCOPED TO THE CHASSIS, NEVER GLOBAL. `.tk-chassis` is the root element
+   TachikomaChrome renders (its one and only class). A blanket
+   `:root:not([data-window-focused]) *` would also freeze the run dots, the
+   streaming caret and every waiting indicator in the app — the things a user
+   alt-tabs AWAY to let finish, and the only motion in the product that is
+   actually load-bearing.
+
+   `!important` is load-bearing, twice over. The animations are INLINE styles on
+   the chassis leaves (`animation: 'tk-chassis-led …'` from the component), and
+   the `animation` shorthand resets `animation-play-state` to `running`; an
+   important author declaration is the only thing that outranks an inline normal
+   one. It also composes correctly with the reduced-motion block below: that one
+   sets `animation: none !important`, which wins on the NAME, so there is nothing
+   left to pause and reduced motion still kills everything outright. */
+:root[data-theme="tachikoma-red"]:not([data-window-focused]) .tk-chassis,
+:root[data-theme="tachikoma-red"]:not([data-window-focused]) .tk-chassis * {
+  animation-play-state: paused !important;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────────
+   Kill the reticle blink and the optic pulse. The mesh, the armour cuts, the
+   hazard flash, the rail and the sensor slits are all static and unaffected.
+   (The companion TachikomaChrome.tsx guards its own claw drift the same way.) */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="tachikoma-red"] h1::after,
+  :root[data-theme="tachikoma-red"] h2::after,
+  :root[data-theme="tachikoma-red"] .tachi-pulse-dot,
+  :root[data-theme="tachikoma-red"] .tachi-run-dot { animation: none !important; }
+}

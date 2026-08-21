@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "Tableau de bord OpenClaw"
+  },
+  "actions": {
+    "reload": "Recharger",
+    "openInBrowser": "Ouvrir dans le navigateur",
+    "openDocs": "Ouvrir la documentation"
+  },
+  "iframe": {
+    "title": "Tableau de bord OpenClaw"
+  },
+  "probing": {
+    "label": "Sondage {{url}}…"
+  },
+  "unreachable": {
+    "title": "Le démon OpenClaw n'est pas accessible",
+    "hint": "Démarrez le démon OpenClaw dans un terminal, puis cliquez sur Recharger :"
+  },
+  "status": {
+    "probing": "Sondage",
+    "live": "En direct",
+    "offline": "Hors ligne"
+  }
+}

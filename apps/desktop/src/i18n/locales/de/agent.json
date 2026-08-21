@@ -1,0 +1,566 @@
+{
+  "dropZone": {
+    "hint": "Ordner ablegen, um Workspace festzulegen"
+  },
+  "playbook": {
+    "tooltip": "Ein Playbook aus einer vorherigen Sitzung wurde als Kontext für diesen Workspace geladen.",
+    "loaded": "Playbook geladen"
+  },
+  "modeToggle": {
+    "planTooltip": "Plan-Modus — beschreiben und skizzieren vor der Ausführung",
+    "buildTooltip": "Build-Modus — sofort ausführen",
+    "plan": "Plan",
+    "build": "Build"
+  },
+  "agentsMd": {
+    "unknownError": "Unbekannter Fehler",
+    "tooltip": "AGENTS.md im Workspace-Stammverzeichnis generieren",
+    "generating": "Wird generiert…",
+    "generate": "AGENTS.md generieren"
+  },
+  "diff": {
+    "label": "DIFF"
+  },
+  "toolGroup": {
+    "someRunning": "Einige Tools laufen noch",
+    "count_one": "{{count}} Tool",
+    "count_other": "{{count}} Tools"
+  },
+  "toolCall": {
+    "aborted": "[ABGEBROCHEN]",
+    "abortedTooltip": "Sitzung beendet, bevor dieses Tool abgeschlossen wurde",
+    "running": "Läuft…",
+    "harnessReports": "Agent meldet: {{name}}",
+    "input": "EINGABE",
+    "result": "ERGEBNIS",
+    "noOutput": "(keine Ausgabe)",
+    "abortedPlaceholder": "[ABGEBROCHEN] — Sitzung beendet, bevor das Ergebnis ankam",
+    "runningPlaceholder": "Läuft — warten auf Ergebnis…"
+  },
+  "preview": {
+    "label": "VORSCHAU",
+    "openInBrowser": "[IM BROWSER ÖFFNEN]",
+    "openInBrowserTooltip": "Im Systembrowser öffnen",
+    "close": "[SCHLIESSEN]",
+    "closeTooltip": "Vorschau schließen",
+    "loading": "Wird geladen…",
+    "error": "Fehler: {{error}}",
+    "emptyHtml": "Konnte HTML nicht rendern (leerer Inhalt)",
+    "imageTooLarge": "Binary / Bild zu groß zum Anzeigen",
+    "truncated": "Zeige erste 1 MB (insgesamt {{total}} MB)",
+    "unsupported": "Vorschau wird für diesen Dateityp nicht unterstützt.",
+    "supportedPrefix": "Unterstützt:",
+    "binary": "Binärdatei ({{bytes}} Bytes) — kann nicht in der Vorschau angezeigt werden",
+    "saved": "Gespeichert",
+    "saveFailed": "Speichern fehlgeschlagen"
+  },
+  "filePreview": {
+    "closeTooltip": "Vorschau schließen",
+    "loading": "Wird geladen…",
+    "truncated": "Zeige erste 1 MB der Datei (insgesamt {{total}} MB)",
+    "binary": "Binärdatei ({{bytes}} Bytes)",
+    "saveCopy": "Kopie speichern",
+    "saveCopyTooltip": "Eine Kopie dieser Datei im Tachi-Studio-Artefaktordner speichern",
+    "saveCopySuccess": "Gespeichert unter {{path}}",
+    "saveCopyFailed": "Kopie konnte nicht gespeichert werden"
+  },
+  "permission": {
+    "owner": {
+      "code": "CODE-LAUF",
+      "tachiapp": "TACHIAPP-LAUF",
+      "hint": "Diese Freigabe gehört zu einem Lauf im anderen Tab. Eine Antwort gibt JENEN Lauf frei — das Tool läuft in dessen Arbeitsordner, nicht in diesem."
+    },
+    "morePending": "+{{n}} warten — entscheide zuerst diese",
+    "badge": "BERECHTIGUNG",
+    "paused": "— pausiert, wartet auf Ihre Genehmigung",
+    "risky": "RISKANT:",
+    "review": "ÜBERPRÜFUNG:",
+    "input": "EINGABE",
+    "allow": "Zulassen",
+    "allowHint": "Lassen Sie diesen Aufruf zu",
+    "deny": "Ablehnen",
+    "denyHint": "Ablehnen und diesen Tool-Aufruf abbrechen",
+    "alwaysAllowTool": "Tool immer zulassen",
+    "alwaysAllowToolHint": "{{toolName}} in dieser Sitzung immer zulassen",
+    "alwaysAllowFamily": "Familie immer zulassen",
+    "alwaysAllowFamilyHint": "Diese gesamte Tool-Familie in dieser Sitzung immer zulassen",
+    "allow30m": "30 Min zulassen",
+    "allow30mHint": "\"{{toolName}}\" die nächsten 30 Minuten ohne Nachfrage ausführen lassen — die Freigabe läuft stillschweigend ab",
+    "overlay": {
+      "title": "FREIGABE ERFORDERLICH",
+      "hint": "Ein Lauf ist blockiert, bis du antwortest — sichtbar in jedem Tab",
+      "goto": "ZUM LAUF",
+      "gotoHint": "Die Oberfläche öffnen, zu der dieser Lauf gehört, um das vollständige Protokoll zu sehen"
+    }
+  },
+  "slash": {
+    "status": {
+      "pendingReview": "ÜBERPRÜFUNG AUSSTEHEND",
+      "approved": "GENEHMIGT",
+      "applied": "ANGEWENDET",
+      "cancelled": "ABGEBROCHEN"
+    },
+    "risk": {
+      "low": "NIEDRIG",
+      "med": "MITTEL",
+      "high": "HOCH"
+    },
+    "approve": "[GENEHMIGEN]",
+    "apply": "[ANWENDEN]",
+    "cancel": "[ABBRECHEN]",
+    "rootCause": "GRUNDURSACHE",
+    "confidence": "[Zuverlässigkeit: {{confidence}}%]",
+    "solutions": "LÖSUNGEN",
+    "riskColumn": "RISIKO",
+    "risks": "RISIKEN",
+    "scope": "UMFANG",
+    "changes": "ÄNDERUNGEN",
+    "estimatedDiff": "GESCHÄTZTER DIFF",
+    "lines": "Zeilen",
+    "findings": "ERKENNTNISSE",
+    "summary": "ZUSAMMENFASSUNG",
+    "errors_one": "{{count}} Fehler",
+    "errors_other": "{{count}} Fehler",
+    "warnings_one": "{{count}} Warnung",
+    "warnings_other": "{{count}} Warnungen",
+    "infoCount": "{{count}} Info",
+    "goal": "ZIEL",
+    "phases": "PHASEN",
+    "phase": "Phase {{num}}: {{name}}",
+    "depends": "hängt ab von: {{depends}}",
+    "tasks": "Aufgaben: {{tasks}}",
+    "criticalPath": "KRITISCHER PFAD",
+    "errorCard": {
+      "title": "[SCHRÄGSTRICH-BEFEHL]",
+      "badge": "FEHLER",
+      "parseFailed": "Agent-Antwort konnte nicht als Schrägstrich-Plan geparst werden.",
+      "rawLogged": "Roher Text in Netzwerk-Audit protokolliert.",
+      "dismiss": "[SCHLIESSEN]"
+    }
+  },
+  "history": {
+    "time": {
+      "justNow": "eben",
+      "minutesAgo": "vor {{count}}m",
+      "hoursAgo": "vor {{count}}h",
+      "daysAgo": "vor {{count}}d"
+    },
+    "sessions": "Sitzungen · {{count}}",
+    "mainStore": "(Haupt-Store: {{status}})",
+    "new": "+ NEU",
+    "newTooltip": "Neue Sitzung — aktuelle archivieren und neu starten",
+    "newAria": "Neue Sitzung",
+    "hideTooltip": "Sitzungen ausblenden",
+    "hideAria": "Sitzungen ausblenden",
+    "viewingArchive": "● Archiv anzeigen",
+    "backToLiveTooltip": "Zurück zur Live-Sitzung",
+    "backToLive": "Zurück zu Live",
+    "continueAction": "fortsetzen",
+    "continueTooltip": "Diese Sitzung fortsetzen — wiederherstellen und weiterarbeiten",
+    "searchPlaceholder": "Sitzungen durchsuchen…",
+    "noMatches": "Keine Übereinstimmungen.",
+    "empty": "Noch keine früheren Sitzungen — abgeschlossene Durchgänge landen hier automatisch.",
+    "eventCount": "{{count}} Ereignis(se)",
+    "rename": "Umbenennen",
+    "renameAction": "umbenennen",
+    "delete": "Löschen",
+    "deleteAction": "löschen",
+    "confirmDeleteTooltip": "Klicken Sie erneut zur Bestätigung",
+    "sure": "sicher?",
+    "deletedToast": "Sitzung gelöscht"
+  },
+  "tile": {
+    "status": {
+      "idle": "[UNTÄTIG]",
+      "running": "[LÄUFT]",
+      "done": "[FERTIG]",
+      "error": "[FEHLER]",
+      "aborted": "[ABGEBROCHEN]"
+    },
+    "deleteTooltip": "Aufgabe löschen (Worktree + Branch)",
+    "deleteAria": "Aufgabe löschen",
+    "displayModeAria": "Kachel-Anzeigemodus",
+    "events": "EREIGNISSE",
+    "eventsTooltip": "Letzte Agent-Ereignisse + steps.json anzeigen",
+    "ptyTooltip": "xterm an Worktree-Shell anhängen",
+    "noOutput": "noch keine Ausgabe"
+  },
+  "grid": {
+    "unknownBranch": "(unbekannt)",
+    "deleteConfirmTitle": "PARALLELE AUFGABE LÖSCHEN?",
+    "deleteConfirmMessage": "Dies entfernt den Worktree und den Branch \"{{branchName}}\" zusammen mit unverschobenen Änderungen darin. Dies kann nicht rückgängig gemacht werden.",
+    "deleteConfirmOk": "LÖSCHEN",
+    "deleteConfirmCancel": "ABBRECHEN",
+    "newTask": "[+ NEUE PARALLELE AUFGABE]",
+    "running": "Laufen: {{running}}/{{total}}",
+    "empty": "Noch keine parallelen Aufgaben. Klicken Sie oben auf [+ NEUE PARALLELE AUFGABE], um eine zu erstellen."
+  },
+  "dialog": {
+    "nameRequired": "Aufgabenname ist erforderlich.",
+    "rootRequired": "Projekt-Stammverzeichnis ist erforderlich.",
+    "title": "Neue parallele Aufgabe",
+    "nameLabel": "Aufgabenname",
+    "namePlaceholder": "z. B. Login-Umleitung beheben",
+    "rootLabel": "Projekt-Stammverzeichnis",
+    "rootPlaceholder": "Absoluter Pfad zum Git-Repository",
+    "choose": "WÄHLEN…",
+    "baseBranchLabel": "Basis-Branch (optional)",
+    "baseBranchPlaceholder": "Standard: HEAD",
+    "branchPrefixLabel": "Branch-Präfix",
+    "branchPrefixPlaceholder": "Aufgabe",
+    "symlinkLabel": "Verzeichnisse in Worktree symlinken",
+    "errorPrefix": "FEHLER: {{error}}",
+    "cancel": "ABBRECHEN",
+    "create": "ERSTELLEN",
+    "creating": "WIRD ERSTELLT…"
+  },
+  "tour": {
+    "title": "So verwenden Sie die Registerkarte Code",
+    "intro": {
+      "title": "Dies ist die Registerkarte Code",
+      "body": "Hier liest und schreibt ein KI-Agent Dateien in einem Ordner auf Ihrem Computer — er kann echte Projekte bauen, reparieren und umgestalten. Lassen Sie mich die wichtigsten Steuerelemente zeigen."
+    },
+    "folder": {
+      "title": "Wählen Sie einen Ordner",
+      "body": "Wählen Sie zuerst den Projektordner, in dem der Agent arbeiten soll (oder ziehen Sie ihn herein). Nichts wird ausgeführt, bis Sie einen auswählen. Diese hervorgehobene Schaltfläche öffnet die Ordnerauswahl."
+    },
+    "controls": {
+      "title": "Ihre Steuerelemente",
+      "body": "Diese Reihe legt fest, WIE der Agent arbeitet: Modus (Plan = Beschreiben Sie zuerst einen Plan, Build = Machen Sie es jetzt), Agent (welcher Code-Agent) und Provider — woher die Modelle kommen (Free, OpenGateway, Bankr, Surplus oder Venice)."
+    },
+    "compose": {
+      "title": "Eingeben und senden",
+      "body": "Schreiben Sie, was Sie möchten, in das Feld unten und drücken Sie die Sendetaste (oder Eingabetaste). Der Agent zeigt seine Schritte, Datei-Edits und eine Vorschau, während er arbeitet."
+    },
+    "done": {
+      "title": "Das ist es",
+      "body": "Wählen Sie einen Ordner, wählen Sie Plan oder Build, geben Sie Ihre Aufgabe ein und senden Sie. Sie können jederzeit anhalten. Öffnen Sie diese Anleitung erneut über die Schaltfläche \"Anleitung\" oben."
+    }
+  },
+  "harness": {
+    "openClaudeHint": "Agent: OpenClaude — Claude-artiger Code-Agent (von gitlawb)",
+    "darkSolHint": "Agent: DarkSol — Agent-nativer Krypto-Terminal (Geldbörse / Handel / Abhören). Benötigt @darksol/terminal installiert + eine finanzierte Agent-Geldbörse.",
+    "tachiHint": "Eigener In-Process-Agent (Alpha)"
+  },
+  "header": {
+    "howTo": "Anleitung",
+    "howToTooltip": "Interaktive Anleitung für diese Registerkarte",
+    "buildWorkflow": "Workflow erstellen",
+    "buildWorkflowTooltip": "Erstellen Sie einen benutzerdefinierten Multi-Agent-Workflow visuell im Node-Editor",
+    "sessions": "Sitzungen",
+    "showSessionsTooltip": "Sitzungsverlauf anzeigen",
+    "folderTooltip": "Workspace-Ordner auswählen (oder Ordner auf die Seite ziehen & ablegen)",
+    "folderTooltipWorkflow": "Workflow aktiv — der Graph verwendet seine eigenen Folder-Nodes. Trennen Sie den Workflow, um einen Ordner hier zu verwenden.",
+    "chooseFolder": "Ordner wählen…"
+  },
+  "smartRouting": {
+    "on": "SMART AN",
+    "off": "SMART AUS",
+    "onTooltip": "Smart Routing AN — wählt automatisch ein Tool-zuverlässiges Modell für agentic Code. Klicken zum Ausschalten und manuell wählen.",
+    "offTooltip": "Smart Routing AUS — verwendet das Modell, das Sie ausgewählt haben. Klicken zum automatischen Auswählen eines Tool-zuverlässigen Modells."
+  },
+  "workflowBanner": {
+    "prefix": "Workflow",
+    "suffix": "läuft in der Composer unten — normale Agent-Steuerelemente pausiert.",
+    "running": "läuft: {{node}}…",
+    "edit": "In Nodes bearbeiten",
+    "editTooltip": "Öffnen Sie diesen Workflow in der Nodes-Leinwand, um ihn zu bearbeiten",
+    "detach": "Trennen",
+    "detachTooltip": "Trennen Sie den Workflow und kehren Sie zum normalen Agent zurück"
+  },
+  "archiveBanner": {
+    "text": "Letzte Sitzung anzeigen — schreibgeschützt. Composer deaktiviert.",
+    "back": "Zurück zu Live",
+    "backTooltip": "Zurück zur Live-Sitzung"
+  },
+  "logEmpty": {
+    "workflowPrefix": "Geben Sie eine Nachricht unten ein, um den",
+    "workflowSuffix": "Workflow auszuführen.",
+    "workflowHint": "Er verwendet die Provider, Ordner, Tools und Agents, die in den Graph verdrahtet sind — bearbeiten Sie ihn jederzeit in Nodes.",
+    "chooseFolder": "Wählen Sie einen Ordner oder ziehen Sie einen Ordner herein, um eine Agent-Sitzung zu starten."
+  },
+  "appMode": {
+    "title": "TACHIAPP",
+    "sourceLabel": "QUELLCODE",
+    "sourceTooltip": "Tachi-Studio-Quellcode: {{path}} (gefunden über: {{source}})",
+    "heroTitle": "Frag etwas über die App — oder sag ihr, was sie ändern soll.",
+    "heroBody": "Dieser Chat ist fest mit dem Quellcode von Tachi Studio verbunden. Er liest die App, beantwortet Fragen dazu und bearbeitet ihre eigenen Dateien. Kein Ordner zum Auswählen — nur Anbieter und Modell.",
+    "composerPlaceholder": "Frag etwas über die App oder beschreibe die Änderung… (Umschalt+Eingabe für neue Zeile)",
+    "chips": {
+      "featureLabel": "FUNKTION HINZUFÜGEN",
+      "featurePrompt": "Füge ein Tastenkürzel hinzu, das den aktuellen Chat leert. Zeig mir zuerst den Plan.",
+      "bugLabel": "FEHLER BEHEBEN",
+      "bugPrompt": "In einem schmalen Fenster wird es bei den Theme-Schaltflächen in der Seitenleiste eng. Finde die Ursache und behebe sie.",
+      "explainLabel": "ERKLÄREN, WIE ES FUNKTIONIERT",
+      "explainPrompt": "Erkläre, wie eine Nachricht vom Chat-Eingabefeld zum Modell und wieder zurück gelangt."
+    },
+    "locate": {
+      "title": "QUELLCODE FINDEN",
+      "body": "Tachi Studio hat seinen eigenen Quellordner nicht gefunden. Zeig ihn einmal — den mit AGENTS.md und apps/desktop darin — und die Frage kommt nie wieder.",
+      "action": "Ordner wählen",
+      "resolving": "Quellcode der App wird gesucht…"
+    }
+  },
+  "surfaceBusy": {
+    "title": "EIN ANDERER LAUF IST AKTIV",
+    "bodyCode": "Ein CODE-Lauf arbeitet noch. Dieser Chat startet, sobald er fertig ist — das Protokoll wird im Verlauf des CODE-Tabs abgelegt und öffnet sich dort automatisch.",
+    "bodyApp": "Ein TACHIAPP-Lauf arbeitet noch. Dieser Tab ist frei, sobald er fertig ist — das Protokoll wird im Verlauf des TACHIAPP-Chats abgelegt und öffnet sich dort automatisch.",
+    "composerPlaceholder": "Warte, bis der Lauf im anderen Tab fertig ist…"
+  },
+  "legend": {
+    "heading": "BEDEUTUNG DER OBEN BEFINDLICHEN SCHALTFLÄCHEN",
+    "modeLabel": "Modus",
+    "modeDesc": "Plan (zuerst beschreiben) oder Build (machen Sie es jetzt)",
+    "thinkingLabel": "Denken",
+    "thinkingDesc": "Wie hart die KI vor dem Handeln überlegt",
+    "engineLabel": "Agent",
+    "engineDesc": "Welcher Code-Agent ihn ausführt",
+    "gatewayLabel": "Provider",
+    "gatewayDesc": "Woher die KI-Modelle kommen",
+    "newHerePrefix": "Neu hier? Öffnen Sie",
+    "learnLink": "Learn",
+    "newHereSuffix": "für eine kurze Anleitung."
+  },
+  "status": {
+    "starting": "{{agent}} wird gestartet…",
+    "waiting": "Warten auf Antwort…"
+  },
+  "composer": {
+    "attachTooltip": "Datei(en) an den nächsten prompt anhängen",
+    "attachTooltipWorkflow": "Anhänge werden nicht im Workflow-Modus verwendet",
+    "attachAria": "Dateien anhängen",
+    "placeholderArchive": "Schreibgeschützt — letzte Sitzung anzeigen",
+    "placeholderWorkflow": "Nachricht an den Workflow \"{{name}}\"…",
+    "placeholderSelectTile": "Wählen Sie zuerst eine parallele Aufgabenkachel aus…",
+    "placeholderTask": "Was soll {{agent}} tun? (Umschalt+Eingabetaste für neue Zeile)",
+    "placeholderNoFolder": "Wählen Sie zuerst einen Ordner…",
+    "stop": "Agent anhalten",
+    "run": "Aufgabe ausführen",
+    "estFree": "gesch. $0 (kostenlose Route)",
+    "estBilledByModel": "Abrechnung nach Modell"
+  },
+  "provider": {
+    "freeHint": "Provider: Auto — wählt die beste gespeicherte Route: OpenGateway-Schlüssel → {{model}} (kostenlos), sonst Bankr-Schlüssel (kostenpflichtig, über Ihren Schlüssel abgerechnet), sonst der kostenlose lokale freellmapi-Router. Zeigt FREE nur, wenn die gewählte Route nichts kostet.",
+    "openGatewayHint": "Provider: OpenGateway — erzwingt gitlawbs OpenGateway; Agent-Läufe nutzen {{model}} (verifiziert kostenlos; Tagesquote für kostenlose Modelle; andere Modelle sind kostenpflichtig). Kein Bankr/freellmapi-Fallback.",
+    "bankrHint": "Provider: Bankr — Premium-Modelle mit Ihrem Bankr-Schlüssel (llm.bankr.bot).",
+    "surplusHint": "Provider: Surplus Intelligence — billigste Verkäufer-Routing über seinen Live-Modellkatalog. Benötigt einen inf_-Schlüssel (surplusintelligence.ai/buy).",
+    "veniceHint": "Provider: Venice — Datenschutz zuerst, OpenAI-kompatibel (Standard zai-org-glm-4.7). Benötigt einen Venice-Schlüssel (venice.ai/settings/api).",
+    "imgnaiHint": "Provider: imgnAI Katana — glm-5-2 / gpt-5-6 / deepseek über einen Schlüssel (Standard glm-5-2). Benötigt Ihren imgnAI-API-Schlüssel (Einstellungen → imgnAI Katana)."
+  },
+  "workflowSelector": {
+    "tooltip": "Führen Sie einen gespeicherten Nodes-Workflow direkt hier im Code-Chat aus",
+    "off": "Workflow: aus",
+    "none": "Keine (normaler Agent)",
+    "loading": "Wird geladen…",
+    "empty": "Noch keine gespeicherten Workflows. Erstellen Sie einen in Nodes und speichern Sie ihn.",
+    "savedAt": "Gespeichert {{date}}",
+    "buildNew": "+ Neuen in Nodes erstellen"
+  },
+  "depth": {
+    "normal": "NORMAL",
+    "normalHint": "Standardantwort — kein erweitertes Denken",
+    "think": "DENKEN",
+    "thinkHint": "Erweitertes Denken — 4 000 Token-Budget",
+    "ultra": "ULTRA",
+    "ultraHint": "Tiefes Denken — 32 000 Token-Budget"
+  },
+  "statusBadge": {
+    "idle": "Bereitschaft",
+    "starting": "Wird gestartet…",
+    "running": "Arbeitet",
+    "done": "Fertig",
+    "error": "Fehler",
+    "incomplete": "Gestoppt"
+  },
+  "incomplete": {
+    "badge": "Ohne Abschluss beendet",
+    "continue": "Fortsetzen",
+    "continueHint": "Eine Fortsetzungsnachricht an diese Sitzung senden",
+    "continueMessage": "Setze die Aufgabe fort. Ist sie bereits erledigt, rufe das Abschluss-Tool mit einer Zusammenfassung auf, was du geändert und wie du es verifiziert hast; wenn du nicht weiterkommst, sage genau warum.",
+    "detailFallback": "Der Lauf endete, ohne abzuschließen oder zusammenzufassen.",
+    "nudgedHint": "Es wurde bereits einmal zum Fortfahren aufgefordert."
+  },
+  "event": {
+    "running": "läuft…",
+    "preview": "[VORSCHAU]",
+    "previewTooltip": "Vorschau {{path}}",
+    "noOutput": "(keine Ausgabe)",
+    "done": "Fertig ({{reason}})",
+    "copy": "KOPIEREN",
+    "copied": "KOPIERT",
+    "copyTooltip": "Diese Nachricht kopieren",
+    "copyFailed": "Kopieren fehlgeschlagen",
+    "failed": "Lauf fehlgeschlagen",
+    "stopped": "Gestoppt"
+  },
+  "chain": {
+    "default": "Standard (bester gespeicherter Schlüssel, sonst kostenloser lokaler Router)",
+    "route": "Route",
+    "edit": "In Nodes bearbeiten",
+    "editTooltip": "Bearbeiten Sie den Agent-Flow in der Nodes-Leinwand"
+  },
+  "folder": {
+    "renameError": "umbenennen: {{error}}",
+    "deleteConfirm": "\"{{label}}\" löschen? Dies ist permanent.",
+    "deleteOk": "LÖSCHEN",
+    "deleteError": "löschen: {{error}}",
+    "showPanel": "Dateien-Panel anzeigen",
+    "files": "Dateien",
+    "back": "Zurück",
+    "forward": "Vorwärts",
+    "up": "Auf",
+    "newFile": "Neue Datei",
+    "newFolder": "Neuer Ordner",
+    "hidePanel": "Panel ausblenden",
+    "newFileHeader": "Neue Datei",
+    "newFolderHeader": "Neuer Ordner",
+    "fileNamePlaceholder": "Name.ext",
+    "folderNamePlaceholder": "Ordnername",
+    "create": "Erstellen",
+    "cancel": "Abbrechen",
+    "loading": "Wird geladen…",
+    "empty": "(leer — Rechtsklick zum Erstellen)",
+    "open": "Öffnen",
+    "preview": "Vorschau",
+    "previewInPanel": "Vorschau in Panel",
+    "rename": "Umbenennen",
+    "delete": "Löschen"
+  },
+  "fusion": {
+    "panel": "Fusions-Panel",
+    "planPanel": "Fusions-Plan-Panel",
+    "answered": "{{ok}}/{{total}} beantwortet",
+    "rerun": "erneut",
+    "rerunTitle": "{{model}} erneut ausführen",
+    "judge": "Richter",
+    "label": "Fusion",
+    "on": "Fusion an",
+    "titleOn": "Fusion AN — der Agent konsultiert ein Modell-Panel (fuse_plan) und synthetisiert seinen Plan vor der Ausführung",
+    "titleOff": "Fusion — der Agent konsultiert ein Modell-Panel für Planung (fuse_plan) und schwierige Entscheidungen (consult_panel)"
+  },
+  "checkpoint": {
+    "revert": "Zurücksetzen",
+    "revertTooltip": "Dateiänderungen des Agenten rückgängig machen — stellt den Workspace auf den Snapshot vor diesem Lauf zurück",
+    "reverted": "Änderungen des Agenten zurückgesetzt.",
+    "revertFailed": "Zurücksetzen fehlgeschlagen."
+  },
+  "codexChip": {
+    "installing": "Installation…",
+    "loggingIn": "Anmeldung…",
+    "titleLoading": "Codex-Agent wird geprüft…",
+    "titleInstall": "Codex-Agent (OpenAI Codex CLI) installieren — der CODE-Agent kann ihm dann Teilaufgaben übergeben",
+    "titleLogin": "Codex ist installiert, aber abgemeldet — Klick öffnet die ChatGPT-Anmeldung im Browser",
+    "titleOn": "Codex-Agent ist AN — der CODE-Agent kann Teilaufgaben delegieren, und du kannst direkt mit Codex sprechen, indem du eine Nachricht mit @codex beginnst. Klick zum Ausschalten.",
+    "titleOff": "Codex-Agent ist AUS — keine Delegation. Klick zum Einschalten. Direkter Chat: Nachricht mit @codex beginnen."
+  },
+  "codexCard": {
+    "write": "SCHREIBEN",
+    "readOnly": "NUR LESEN",
+    "writeTitle": "Codex lief mit Schreibrechten im Workspace — es konnte Dateien ändern",
+    "readOnlyTitle": "Codex lief schreibgeschützt — es konnte Dateien lesen, aber nicht ändern",
+    "task": "AUFGABE",
+    "output": "AUSGABE",
+    "partial": "TEILAUSGABE",
+    "error": "FEHLER",
+    "steps": "SCHRITTE",
+    "stepsCount": "{{count}} SCHRITTE",
+    "files": "DATEIEN",
+    "failed": "FEHLGESCHLAGEN",
+    "session": "Sitzung {{id}}",
+    "resumed": "fortgesetzt {{id}}",
+    "model": "Modell {{model}}",
+    "runningTitle": "Codex arbeitet an dieser Aufgabe…",
+    "runningPlaceholder": "An Codex delegiert — warte auf den Worker…",
+    "progress": "FORTSCHRITT",
+    "progressEarlier": "+{{count}} früher"
+  },
+  "codexReview": {
+    "review": "REVIEW",
+    "claim": "GEPRÜFTE AUSSAGE",
+    "focus": "Fokus",
+    "filesRequested": "Dateien",
+    "findingsCount": "{{count}} BEFUNDE",
+    "holds": "HÄLT STAND",
+    "holdsTitle": "Der Reviewer hat versucht, die Aussage zu widerlegen — ohne Erfolg",
+    "reviewed": "GEPRÜFT",
+    "notes": "NOTIZEN DES REVIEWERS",
+    "runningTitle": "Codex prüft diese Arbeit…",
+    "runningPlaceholder": "An den Codex-Reviewer geschickt — warte auf Befunde…"
+  },
+  "starters": {
+    "auditLabel": "DIESEN ORDNER AUDITIEREN",
+    "auditDesc": "PLAN-Modus, schreibgeschützt — der Agent kartiert den Code und berichtet. Keine Genehmigungen nötig.",
+    "auditCta": "ORDNER WÄHLEN ▸",
+    "auditPrompt": "Auditiere diese Codebasis: Kartiere die Architektur, nenne die 3 größten Risiken und schlage 3 schnelle Verbesserungen vor. Ändere nichts."
+  },
+  "advanced": {
+    "label": "Erweitert",
+    "summaryTooltip": "Aktuelle Route — klicken, um ERWEITERT zu öffnen",
+    "toggleTooltip": "Agent, Provider, Denken, Fusion, Rollen, Workflow — das komplette Cockpit",
+    "workflowLabel": "Workflow"
+  },
+  "trust": {
+    "safe": "Sicher",
+    "safeHint": "Vor jedem Dateischreiben, Shell-Befehl und externen Tool nachfragen",
+    "standard": "Standard",
+    "standardHint": "Lesen und Schreiben im Workspace laufen frei; Shell und externe Tools fragen nach",
+    "auto": "Auto",
+    "autoHint": "Führt auch nicht-destruktive Shell-Befehle ohne Nachfrage aus — destruktive fragen weiterhin nach"
+  },
+  "reconnect": {
+    "retrying": "Verbindung verloren — Versuch {{attempt}}/{{max}}",
+    "nextIn": "nächster in {{seconds}} s",
+    "reason": "Ursache: {{reason}}"
+  },
+  "loop": {
+    "cycle": "Schleife {{iteration}}/{{cap}}",
+    "stop": "Schleife stoppen",
+    "stopping": "Wird gestoppt…",
+    "stopHint": "Diesen Durchlauf beenden und dann nicht mehr wiederholen",
+    "goal": "Schleifenziel: {{goal}}"
+  },
+  "queue": {
+    "placeholder": "Lauf aktiv — Enter stellt deine Nachricht in die Warteschlange",
+    "label": "IN WARTESCHLANGE {{n}}",
+    "labelHint": "Wird automatisch und einzeln gesendet, sobald der aktuelle Lauf endet. Jede Nachricht übernimmt die dann geltenden Einstellungen. Nur Text — Anhänge werden nicht eingereiht.",
+    "paused": "WARTESCHLANGE PAUSIERT · {{n}}",
+    "pausedHint": "Der Lauf wurde gestoppt oder ist fehlgeschlagen, daher wird nichts von selbst gesendet. FORTSETZEN sendet die älteste Nachricht als nächsten Zug.",
+    "resume": "FORTSETZEN",
+    "resumeHint": "Automatisches Senden fortsetzen — die älteste Nachricht geht als nächster Zug raus",
+    "button": "Einreihen",
+    "buttonHint": "Diese Nachricht einreihen — sie wird gesendet, sobald der aktuelle Lauf endet",
+    "remove": "Aus der Warteschlange entfernen",
+    "full": "Warteschlange voll ({{cap}}) — entferne zuerst eine der Nachrichten."
+  },
+  "reset": {
+    "button": "zurücksetzen",
+    "tooltip": "Diesen Zug zurücksetzen — Chat, Code oder beides",
+    "chat": "CHAT ZURÜCKSETZEN",
+    "chatHint": "Verwirft diesen Zug und alles danach. Dateien bleiben unberührt.",
+    "code": "CODE ZURÜCKSETZEN",
+    "codeHint": "Stellt die Dateien so wieder her, wie sie vor diesem Zug waren.",
+    "both": "BEIDES ZURÜCKSETZEN",
+    "bothHint": "Stellt die Dateien wieder her und verwirft dann den Verlauf ab hier.",
+    "blocked": {
+      "running": "Ein Lauf ist aktiv — stoppe ihn zuerst.",
+      "archive": "Du siehst eine archivierte Sitzung.",
+      "harness": "Dieses Harness erstellt keine Datei-Snapshots.",
+      "not-taken": "Für diesen Zug wurde kein Datei-Snapshot erstellt.",
+      "aged-out": "Dieser Snapshot ist aus dem Checkpoint-Verlauf herausgefallen."
+    },
+    "confirmTitle": "ZUG ZURÜCKSETZEN",
+    "confirmChat": "Diesen Zug und alle folgenden Nachrichten verwerfen? Dateien bleiben unberührt.",
+    "confirmCode": "Die Arbeitsbereich-Dateien auf den Stand vor diesem Zug zurücksetzen? Alles seither Geänderte wird überschrieben.",
+    "confirmBoth": "Die Dateien wiederherstellen UND diesen Zug samt allem danach verwerfen?",
+    "codeRestored": "Dateien auf den Stand vor diesem Zug zurückgesetzt.",
+    "codeFailed": "Wiederherstellung fehlgeschlagen — die Dateien wurden nicht geändert.",
+    "noCheckpoint": "Für diesen Zug existiert kein Datei-Snapshot.",
+    "undo": "DIESES ZURÜCKSETZEN RÜCKGÄNGIG MACHEN",
+    "undone": "Zurücksetzen rückgängig gemacht.",
+    "undoFailed": "Das Zurücksetzen konnte nicht rückgängig gemacht werden."
+  },
+  "fileChips": {
+    "enlarge": "Zum Vergrößern klicken",
+    "shrink": "Zum Verkleinern klicken"
+  }
+}

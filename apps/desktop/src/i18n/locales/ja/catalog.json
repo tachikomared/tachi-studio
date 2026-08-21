@@ -1,0 +1,211 @@
+{
+  "tabCurated": "おすすめ",
+  "tabSearchHf": "HF を検索",
+  "tabInstalled": "インストール済み",
+  "searchPlaceholder": "例: qwen2.5 7b",
+  "filterByName": "名前で絞り込み…",
+  "searchButton": "検索",
+  "searchUnavailable": "検索を利用できません",
+  "emptyInstalled": "ローカルモデルがまだありません。「おすすめ」または「HF を検索」からダウンロードしてください。",
+  "confirmRemove": "このモデルをディスクから削除しますか？",
+  "removing": "削除中…",
+  "pullIncompatible": "Ollama はこのリポジトリを取得できませんでした。非対応の可能性があります（非標準またはマルチモーダルの GGUF）。bartowski / unsloth / lmstudio-community のモデルを試すか、「おすすめ」を使用してください。",
+  "download": "ダウンロード",
+  "run": "実行",
+  "remove": "削除",
+  "clear": "クリア",
+  "chooseQuant": "量子化を選択",
+  "recommended": "おすすめ",
+  "quant": "量子化",
+  "quants": "量子化",
+  "downloadSize": "ダウンロードサイズ:",
+  "starting": "開始中…",
+  "downloading": "ダウンロード中…",
+  "hfDownloadNotSupported": "任意の Hugging Face モデルを llama.cpp にダウンロードする機能は近日対応予定です。現在はおすすめモデルのみ対応しています。",
+  "ram": "RAM",
+  "free": "空き",
+  "gpu": "GPU",
+  "vram": "VRAM",
+  "cpu": "CPU",
+  "cores": "コア",
+  "unknown": "不明",
+  "fit": {
+    "gpu": "GPU に収まる（高速）",
+    "cpu": "CPU / 一部 GPU（低速）",
+    "tight": "ギリギリ — メモリ不足の可能性",
+    "too-big": "大きすぎます",
+    "sdcppNote": "実際のピークを決めるのは解像度とフレーム数 — オフロードフラグで大きく変わります。",
+    "sdcppVram": "~{{gb}} GB の VRAM が必要(解像度・オフロードフラグで変動します)"
+  },
+  "capabilities": {
+    "chat": "チャット",
+    "reasoning": "推論",
+    "vision": "ビジョン",
+    "code": "コード",
+    "tools": "ツール",
+    "image-gen": "画像生成",
+    "video-gen": "動画生成",
+    "music": "音楽",
+    "tts": "TTS",
+    "stt": "STT"
+  },
+  "notice": {
+    "downloadFailed": "ダウンロード失敗",
+    "installingLlama": "llama.cpp をインストール中…",
+    "loading": "{{name}} を読み込み中…",
+    "llamaInstallFailed": "llama.cpp のインストールに失敗",
+    "failedToStart": "モデルの起動に失敗",
+    "startingOllama": "Ollama を起動中…",
+    "removeFailed": "削除に失敗",
+    "whisperReady": "{{name}} の準備完了 — Chat でマイクを使って文字起こしできます。",
+    "nothingToStop": "停止できるものがありません — そのダウンロードは転送済みです。",
+    "stopNotYet": "転送中のみ停止できます。"
+  },
+  "stopDownload": "停止",
+  "favorite": "お気に入りに追加",
+  "unfavorite": "お気に入りから削除",
+  "sectionFavorites": "お気に入り",
+  "sectionRecent": "最近",
+  "sectionAll": "すべてのモデル",
+  "emptyCurated": "モデルレジストリを読み込めませんでした。",
+  "retry": "再試行",
+  "notAvailable": "利用不可",
+  "noMatches": "一致するモデルがありません — 検索条件を変更するかフィルタをクリアしてください。",
+  "tour": {
+    "windowTitle": "Catalog タブの使い方",
+    "search": {
+      "title": "モデルを探す",
+      "body": "ソースは 3 つ: おすすめ（厳選）、HF を検索（Hugging Face 全体）、インストール済み（すでにディスク上）。入力して絞り込み・検索し、機能チップでさらに絞れます — チャット、ビジョン、画像生成、TTS など。"
+    },
+    "hardware": {
+      "title": "あなたのハードウェアを検出",
+      "body": "このストリップはあなたの実際のマシンです — RAM、GPU、VRAM、CPU コア数。下のすべての適合判定は、一般的な推奨要件ではなく、この数値から計算されます。"
+    },
+    "fit": {
+      "title": "収まる?",
+      "body": "ローカルモデルには適合ピルが付きます — 収まる / ギリギリ / CPUのみ / 大きすぎ — さらに上のあなたの GPU と RAM から計算した VRAM 推定も表示。「収まる」は GPU で高速、「ギリギリ」は生成の途中でメモリ不足になる可能性があります。"
+    },
+    "download": {
+      "title": "ダウンロードして実行",
+      "body": "「ダウンロード」を押すと量子化ピッカーが開き、あなたのハードウェアに推奨の量子化がハイライトされます — 小さい量子化は品質と引き換えに収まりやすくなります。インストール後、ボタンは「実行」に変わり、モデルをロードしてそのままチャットが始まります。"
+    }
+  },
+  "openChat": "チャットを開く",
+  "tabCivitai": "Civitai",
+  "civitai": {
+    "searchPlaceholder": "例: dreamshaper、realistic vision",
+    "sfwNote": "SFW のみ",
+    "install": "インストール",
+    "loadMore": "さらに読み込む",
+    "loadingMore": "読み込み中…",
+    "empty": "表示するものがありません — 検索語や種別を変えてください。",
+    "emptyAfterError": "表示するものがありません — 上の検索が失敗しました。",
+    "tryAgain": "再試行",
+    "filteredNotice": "SFW フィルターで非表示: {{count}}",
+    "noPreview": "プレビューなし",
+    "triggerWords": "トリガー:",
+    "copyTrigger": "「{{word}}」をコピー",
+    "blockedFallback": "このアプリではこのモデルをインストールできません。",
+    "reveal": "18+ プレビューを表示",
+    "sortLabel": "並び替え",
+    "periodLabel": "期間",
+    "baseLabel": "ベースモデル",
+    "clearFilters": "フィルターをクリア",
+    "mode": {
+      "adult": "18+ 表示（civitai.red）",
+      "adultInert": "設定で 18+ は有効ですが、このページは安全モードで返されました — Civitai のキーを確認してください。"
+    },
+    "types": {
+      "all": "すべて",
+      "checkpoint": "Checkpoint",
+      "unet": "UNet",
+      "text-encoder": "テキストエンコーダー",
+      "clip": "CLIP",
+      "clip-vision": "CLIP Vision",
+      "vision-language": "VLM",
+      "llm": "LLM",
+      "lora": "LoRA",
+      "locon": "LoCon",
+      "embedding": "Embedding",
+      "vae": "VAE",
+      "controlnet": "ControlNet",
+      "upscaler": "アップスケーラー",
+      "motion": "モーション",
+      "dora": "DoRA",
+      "hypernetwork": "Hypernetwork",
+      "aesthetic": "審美",
+      "poses": "ポーズ",
+      "wildcards": "Wildcards",
+      "workflows": "ワークフロー",
+      "detection": "検出",
+      "other": "その他"
+    },
+    "groups": {
+      "models": "モデル",
+      "adapters": "アダプター",
+      "other": "その他のファイル"
+    },
+    "outlook": {
+      "runs": "単体でインストールして生成できます。",
+      "needs-base": "対応するベース checkpoint がディスクにある場合のみインストールできます。",
+      "later": "エンジンは対応していますが、アプリにはまだ画面がありません。",
+      "no": "閲覧のみ — このアプリではこの種類をインストールできません。"
+    },
+    "sort": {
+      "mostDownloaded": "ダウンロード数順",
+      "newest": "新着順",
+      "highestRated": "評価順"
+    },
+    "period": {
+      "allTime": "全期間",
+      "year": "1年",
+      "month": "1か月",
+      "week": "1週間",
+      "day": "1日"
+    },
+    "license": {
+      "noCommercial": "商用利用不可",
+      "noCommercialHint": "作者はこのモデルの商用利用を許可していません。",
+      "attribution": "クレジット必須",
+      "attributionHint": "作者はモデル使用時のクレジット表記を求めています。",
+      "noDerivatives": "派生不可",
+      "noDerivativesHint": "作者はマージや派生モデルを許可していません。"
+    },
+    "forMyModels": "自分のモデル向け",
+    "forMyModelsHint": "インストール済みのモデルファミリー向けのアドオンのみを表示します。",
+    "forMyModelsEmpty": "先にローカルの画像または動画モデルをインストールしてください — その後このフィルタが有効になります。",
+    "forMyModelsActive": "インストール済みに絞り込み: {{families}}",
+    "keyHint": "API キーはどこに入力しますか？",
+    "families": {
+      "sd15": "SD 1.5",
+      "sdxl": "SDXL",
+      "zimage": "Z-Image",
+      "wan": "Wan"
+    },
+    "detail": {
+      "title": "モデルの詳細",
+      "open": "詳細を開く",
+      "about": "このモデルについて",
+      "by": "作者: {{user}}",
+      "downloadsLabel": "ダウンロード数",
+      "likesLabel": "いいね数",
+      "published": "公開日 {{date}}",
+      "loading": "説明を読み込んでいます…",
+      "loadFailed": "このモデルの説明を読み込めませんでした。",
+      "noDescription": "投稿者は説明を書いていません。",
+      "descriptionTruncated": "説明が長いため、ここでは短縮して表示しています。",
+      "openOnCivitai": "Civitai で開く",
+      "thisVersion": "このバージョン",
+      "otherVersions": "他のバージョン",
+      "versionsHidden": "SFW フィルターで非表示になったバージョン数: {{count}}",
+      "versionsCapped": "{{total}} 件のうち {{shown}} 件のバージョンを表示しています。",
+      "signInRequired": "Civitai アカウントが必要です",
+      "openNamed": "{{name}} の詳細を開く"
+    }
+  },
+  "sdRemove": {
+    "frees": "ディスク上の {{size}} を解放します。",
+    "sharedStay": "共有コンポーネントは残ります — {{models}} がまだ使用しています。",
+    "sharedWith": "{{models}} とコンポーネントを共有"
+  }
+}

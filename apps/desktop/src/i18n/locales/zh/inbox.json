@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "收件箱",
+    "pending": "[{{count}} 待处理]"
+  },
+  "actions": {
+    "approveAll": "[全部批准]",
+    "clearResolved": "[清除已解决]"
+  },
+  "footer": {
+    "modeLabel": "模式：",
+    "mode": {
+      "immediate": "[立即]",
+      "inbox": "[收件箱]"
+    },
+    "hints": "j/k 移动  ·  Enter 批准  ·  Del 拒绝  ·  Ctrl+A 全部批准"
+  },
+  "empty": {
+    "title": "[ 收件箱空 ]",
+    "inbox": "工具权限请求将在您的 agent 运行时在此出现。按您自己的速度批准或拒绝 — agent 等待您决定。",
+    "immediate": "您在立即模式。工具权限请求弹出阻塞模式而不是在此排队。切换到下面的收件箱以让 agent 长时间运行并稍后批量审查。"
+  },
+  "fields": {
+    "reason": "原因：",
+    "session": "会话：",
+    "workingDir": "工作目录："
+  },
+  "item": {
+    "approve": "[批准]",
+    "approveAria": "批准请求",
+    "deny": "[拒绝]",
+    "denyAria": "拒绝请求"
+  }
+}

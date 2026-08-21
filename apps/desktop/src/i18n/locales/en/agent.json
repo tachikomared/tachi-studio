@@ -1,0 +1,566 @@
+{
+  "dropZone": {
+    "hint": "Drop folder to set workspace"
+  },
+  "playbook": {
+    "tooltip": "A playbook from a prior session has been loaded as context for this workspace.",
+    "loaded": "Playbook loaded"
+  },
+  "modeToggle": {
+    "planTooltip": "Plan mode — describe and outline before executing",
+    "buildTooltip": "Build mode — execute immediately",
+    "plan": "Plan",
+    "build": "Build"
+  },
+  "agentsMd": {
+    "unknownError": "Unknown error",
+    "tooltip": "Generate AGENTS.md in the workspace root",
+    "generating": "Generating…",
+    "generate": "Generate AGENTS.md"
+  },
+  "diff": {
+    "label": "DIFF"
+  },
+  "toolGroup": {
+    "someRunning": "Some tools still running",
+    "count_one": "{{count}} tool",
+    "count_other": "{{count}} tools"
+  },
+  "toolCall": {
+    "aborted": "[ABORTED]",
+    "abortedTooltip": "Session ended before this tool completed",
+    "running": "Running…",
+    "harnessReports": "Agent reports: {{name}}",
+    "input": "INPUT",
+    "result": "RESULT",
+    "noOutput": "(no output)",
+    "abortedPlaceholder": "[ABORTED] — session ended before result arrived",
+    "runningPlaceholder": "Running — waiting for result…"
+  },
+  "preview": {
+    "label": "PREVIEW",
+    "openInBrowser": "[OPEN IN BROWSER]",
+    "openInBrowserTooltip": "Open in system browser",
+    "close": "[CLOSE]",
+    "closeTooltip": "Close preview",
+    "loading": "Loading…",
+    "error": "Error: {{error}}",
+    "emptyHtml": "Could not render HTML (empty content)",
+    "imageTooLarge": "Binary / image too large to preview",
+    "truncated": "Showing first 1 MB ({{total}} MB total)",
+    "unsupported": "Preview not supported for this file type.",
+    "supportedPrefix": "Supported:",
+    "binary": "Binary file ({{bytes}} bytes) — cannot preview",
+    "saved": "Saved",
+    "saveFailed": "Save failed"
+  },
+  "filePreview": {
+    "closeTooltip": "Close preview",
+    "loading": "Loading…",
+    "truncated": "Showing first 1 MB of file ({{total}} MB total)",
+    "binary": "Binary file ({{bytes}} bytes)",
+    "saveCopy": "Save copy",
+    "saveCopyTooltip": "Save a copy of this file into your Tachi Studio artifacts folder",
+    "saveCopySuccess": "Saved to {{path}}",
+    "saveCopyFailed": "Could not save a copy"
+  },
+  "permission": {
+    "owner": {
+      "code": "CODE RUN",
+      "tachiapp": "TACHIAPP RUN",
+      "hint": "This approval belongs to a run on the other tab. Answering it unblocks THAT run — the tool executes in that run's workspace, not this one."
+    },
+    "morePending": "+{{n}} more waiting — decide this one first",
+    "badge": "PERMISSION",
+    "paused": "— paused, waiting for your approval",
+    "risky": "RISKY:",
+    "review": "REVIEW:",
+    "input": "INPUT",
+    "allow": "Allow",
+    "allowHint": "Allow this one call",
+    "deny": "Deny",
+    "denyHint": "Deny and abort this tool call",
+    "alwaysAllowTool": "Always allow tool",
+    "alwaysAllowToolHint": "Always allow {{toolName}} for this session",
+    "alwaysAllowFamily": "Always allow family",
+    "alwaysAllowFamilyHint": "Always allow this entire tool family for this session",
+    "allow30m": "Allow 30 min",
+    "allow30mHint": "Let \"{{toolName}}\" run without asking for the next 30 minutes — the grant expires silently",
+    "overlay": {
+      "title": "APPROVAL NEEDED",
+      "hint": "A run is blocked until you answer — this stays on every tab",
+      "goto": "GO TO RUN",
+      "gotoHint": "Open the surface that owns this run to see the full transcript"
+    }
+  },
+  "slash": {
+    "status": {
+      "pendingReview": "PENDING REVIEW",
+      "approved": "APPROVED",
+      "applied": "APPLIED",
+      "cancelled": "CANCELLED"
+    },
+    "risk": {
+      "low": "LOW",
+      "med": "MED",
+      "high": "HIGH"
+    },
+    "approve": "[APPROVE]",
+    "apply": "[APPLY]",
+    "cancel": "[CANCEL]",
+    "rootCause": "ROOT CAUSE",
+    "confidence": "[confidence: {{confidence}}%]",
+    "solutions": "SOLUTIONS",
+    "riskColumn": "RISK",
+    "risks": "RISKS",
+    "scope": "SCOPE",
+    "changes": "CHANGES",
+    "estimatedDiff": "ESTIMATED DIFF",
+    "lines": "lines",
+    "findings": "FINDINGS",
+    "summary": "SUMMARY",
+    "errors_one": "{{count}} error",
+    "errors_other": "{{count}} errors",
+    "warnings_one": "{{count}} warning",
+    "warnings_other": "{{count}} warnings",
+    "infoCount": "{{count}} info",
+    "goal": "GOAL",
+    "phases": "PHASES",
+    "phase": "Phase {{num}}: {{name}}",
+    "depends": "depends: {{depends}}",
+    "tasks": "tasks: {{tasks}}",
+    "criticalPath": "CRITICAL PATH",
+    "errorCard": {
+      "title": "[SLASH COMMAND]",
+      "badge": "ERROR",
+      "parseFailed": "Could not parse agent response as a slash plan.",
+      "rawLogged": "Raw text logged to network audit.",
+      "dismiss": "[DISMISS]"
+    }
+  },
+  "history": {
+    "time": {
+      "justNow": "just now",
+      "minutesAgo": "{{count}}m ago",
+      "hoursAgo": "{{count}}h ago",
+      "daysAgo": "{{count}}d ago"
+    },
+    "sessions": "Sessions · {{count}}",
+    "mainStore": "(main store: {{status}})",
+    "new": "+ NEW",
+    "newTooltip": "New session — archive current and start fresh",
+    "newAria": "New session",
+    "hideTooltip": "Hide sessions",
+    "hideAria": "Hide sessions",
+    "viewingArchive": "● Viewing archive",
+    "backToLiveTooltip": "Return to live session",
+    "backToLive": "Back to live",
+    "continueAction": "continue",
+    "continueTooltip": "Continue this session — restore it and keep working",
+    "searchPlaceholder": "Search sessions…",
+    "noMatches": "No matches.",
+    "empty": "No past sessions yet — completed runs land here automatically.",
+    "eventCount": "{{count}} ev",
+    "rename": "Rename",
+    "renameAction": "rename",
+    "delete": "Delete",
+    "deleteAction": "delete",
+    "confirmDeleteTooltip": "Click again to confirm",
+    "sure": "sure?",
+    "deletedToast": "Session deleted"
+  },
+  "tile": {
+    "status": {
+      "idle": "[IDLE]",
+      "running": "[RUNNING]",
+      "done": "[DONE]",
+      "error": "[ERROR]",
+      "aborted": "[ABORTED]"
+    },
+    "deleteTooltip": "Delete task (worktree + branch)",
+    "deleteAria": "Delete task",
+    "displayModeAria": "Tile display mode",
+    "events": "EVENTS",
+    "eventsTooltip": "Show recent agent events + steps.json",
+    "ptyTooltip": "Attach an xterm to the worktree shell",
+    "noOutput": "no output yet"
+  },
+  "grid": {
+    "unknownBranch": "(unknown)",
+    "deleteConfirmTitle": "DELETE PARALLEL TASK?",
+    "deleteConfirmMessage": "This removes the worktree and the branch \"{{branchName}}\" along with any uncommitted changes inside it. This cannot be undone.",
+    "deleteConfirmOk": "DELETE",
+    "deleteConfirmCancel": "CANCEL",
+    "newTask": "[+ NEW PARALLEL TASK]",
+    "running": "Running: {{running}}/{{total}}",
+    "empty": "No parallel tasks yet. Click [+ NEW PARALLEL TASK] above to spin one up."
+  },
+  "dialog": {
+    "nameRequired": "Task name is required.",
+    "rootRequired": "Project root is required.",
+    "title": "New Parallel Task",
+    "nameLabel": "Task name",
+    "namePlaceholder": "e.g. fix login redirect",
+    "rootLabel": "Project root",
+    "rootPlaceholder": "absolute path to git repo",
+    "choose": "CHOOSE...",
+    "baseBranchLabel": "Base branch (optional)",
+    "baseBranchPlaceholder": "defaults to HEAD",
+    "branchPrefixLabel": "Branch prefix",
+    "branchPrefixPlaceholder": "task",
+    "symlinkLabel": "Symlink dirs into worktree",
+    "errorPrefix": "ERROR: {{error}}",
+    "cancel": "CANCEL",
+    "create": "CREATE",
+    "creating": "CREATING..."
+  },
+  "tour": {
+    "title": "How to use the Code tab",
+    "intro": {
+      "title": "This is the Code tab",
+      "body": "Here an AI agent reads and writes files in a folder on your computer — it can build, fix, and refactor real projects. Let me point out the main controls."
+    },
+    "folder": {
+      "title": "Pick a folder",
+      "body": "First choose (or drag in) the project folder the agent should work in. Nothing runs until you pick one. This highlighted button opens the folder picker."
+    },
+    "controls": {
+      "title": "Your controls",
+      "body": "This row sets HOW the agent works: Mode (Plan = describe a plan first, Build = do it now), Agent (which coding agent), and Provider — where the models come from (Free, OpenGateway, Bankr, Surplus, or Venice)."
+    },
+    "compose": {
+      "title": "Type and send",
+      "body": "Write what you want in the box at the bottom and press the send button (or Enter). The agent will show its steps, file edits, and any preview as it works."
+    },
+    "done": {
+      "title": "That is it",
+      "body": "Pick a folder, choose Plan or Build, type your task, send. You can stop any time. Open this walkthrough again from the \"How to\" button up top."
+    }
+  },
+  "harness": {
+    "openClaudeHint": "Agent: OpenClaude — Claude-style coding agent (by gitlawb)",
+    "darkSolHint": "Agent: DarkSol — agent-native crypto terminal (wallet / trade / wiretap). Needs @darksol/terminal installed + a funded agent wallet.",
+    "tachiHint": "First-party in-process agent (alpha)"
+  },
+  "header": {
+    "howTo": "How to",
+    "howToTooltip": "Interactive walkthrough of this tab",
+    "buildWorkflow": "Build workflow",
+    "buildWorkflowTooltip": "Build a custom multi-agent workflow visually in the node editor",
+    "sessions": "sessions",
+    "showSessionsTooltip": "Show session history",
+    "folderTooltip": "Choose workspace folder (or drag & drop a folder onto the page)",
+    "folderTooltipWorkflow": "Workflow active — the graph uses its own Folder nodes. Detach the workflow to use a folder here.",
+    "chooseFolder": "Choose folder…"
+  },
+  "smartRouting": {
+    "on": "SMART ON",
+    "off": "SMART OFF",
+    "onTooltip": "Smart routing ON — auto-picks a tool-reliable model for agentic coding. Click to turn off and pick manually.",
+    "offTooltip": "Smart routing OFF — uses the model you picked. Click to auto-pick a tool-reliable model."
+  },
+  "workflowBanner": {
+    "prefix": "Workflow",
+    "suffix": "runs in the composer below — normal agent controls paused.",
+    "running": "running: {{node}}…",
+    "edit": "Edit in Nodes",
+    "editTooltip": "Open this workflow in the Nodes canvas to edit it",
+    "detach": "Detach",
+    "detachTooltip": "Detach the workflow and return to the normal agent"
+  },
+  "archiveBanner": {
+    "text": "Viewing past session — read-only. Composer disabled.",
+    "back": "Back to live",
+    "backTooltip": "Return to live session"
+  },
+  "logEmpty": {
+    "workflowPrefix": "Type a message below to run the",
+    "workflowSuffix": "workflow.",
+    "workflowHint": "It uses the providers, folders, tools, and agents wired into the graph — edit it any time in Nodes.",
+    "chooseFolder": "Choose or drag a folder to start an agent session."
+  },
+  "appMode": {
+    "title": "TACHIAPP",
+    "sourceLabel": "APP SOURCE",
+    "sourceTooltip": "Tachi Studio source: {{path}} (found via: {{source}})",
+    "heroTitle": "Ask about the app — or tell it what to change.",
+    "heroBody": "This chat is pinned to Tachi Studio's own source code. It reads the app, answers questions about it, and edits its own files. No folder to pick — just a provider and a model.",
+    "composerPlaceholder": "Ask about the app, or describe the change… (Shift+Enter for newline)",
+    "chips": {
+      "featureLabel": "ADD A FEATURE",
+      "featurePrompt": "Add a keyboard shortcut that clears the current chat. Show me the plan first.",
+      "bugLabel": "FIX A BUG",
+      "bugPrompt": "The theme buttons in the sidebar get cramped in a narrow window. Find out why and fix it.",
+      "explainLabel": "EXPLAIN HOW IT WORKS",
+      "explainPrompt": "Explain how a message travels from the chat composer to the model and back."
+    },
+    "locate": {
+      "title": "LOCATE APP SOURCE",
+      "body": "Tachi Studio could not find its own source folder. Point it at your checkout once — the one with AGENTS.md and apps/desktop inside — and it will never ask again.",
+      "action": "Choose folder",
+      "resolving": "Locating the app source…"
+    }
+  },
+  "surfaceBusy": {
+    "title": "ANOTHER RUN IS IN PROGRESS",
+    "bodyCode": "A CODE run is still working. This chat opens as soon as it finishes — that transcript parks onto the CODE tab's history rail and opens there automatically.",
+    "bodyApp": "A TACHIAPP run is still working. This tab is free as soon as it finishes — that transcript parks onto the TACHIAPP chat's history rail and opens there automatically.",
+    "composerPlaceholder": "Waiting for the run on the other tab to finish…"
+  },
+  "legend": {
+    "heading": "WHAT THE BUTTONS UP TOP MEAN",
+    "modeLabel": "Mode",
+    "modeDesc": "Plan (describe first) or Build (do it now)",
+    "thinkingLabel": "Thinking",
+    "thinkingDesc": "how hard the AI reasons before acting",
+    "engineLabel": "Agent",
+    "engineDesc": "which coding agent runs it",
+    "gatewayLabel": "Provider",
+    "gatewayDesc": "where the AI models come from",
+    "newHerePrefix": "New here? Open",
+    "learnLink": "Learn",
+    "newHereSuffix": "for a short walkthrough."
+  },
+  "status": {
+    "starting": "Starting {{agent}}…",
+    "waiting": "Waiting for response…"
+  },
+  "composer": {
+    "attachTooltip": "Attach file(s) to the next prompt",
+    "attachTooltipWorkflow": "Attachments are not used in workflow mode",
+    "attachAria": "Attach files",
+    "placeholderArchive": "Read-only — viewing past session",
+    "placeholderWorkflow": "Message the “{{name}}” workflow…",
+    "placeholderSelectTile": "Select a parallel task tile first…",
+    "placeholderTask": "What should {{agent}} do? (Shift+Enter for newline)",
+    "placeholderNoFolder": "Choose a folder first…",
+    "stop": "Stop agent",
+    "run": "Run task",
+    "estFree": "est $0 (free route)",
+    "estBilledByModel": "billed by model"
+  },
+  "provider": {
+    "freeHint": "Provider: Auto — picks your best stored route: OpenGateway key → {{model}} (free), else Bankr key (paid, billed to your key), else the free local freellmapi router. Shows FREE only when the picked route costs nothing.",
+    "openGatewayHint": "Provider: OpenGateway — forces gitlawb's OpenGateway; agent runs use {{model}} (verified free; daily free-model quota; other models are pay-as-you-go). No Bankr/freellmapi fallback.",
+    "bankrHint": "Provider: Bankr — premium models with your Bankr key (llm.bankr.bot).",
+    "surplusHint": "Provider: Surplus Intelligence — cheapest-seller routing across its live model catalog. Needs an inf_ key (surplusintelligence.ai/buy).",
+    "veniceHint": "Provider: Venice — privacy-first, OpenAI-compatible (default zai-org-glm-4.7). Needs a Venice key (venice.ai/settings/api).",
+    "imgnaiHint": "Provider: imgnAI Katana — glm-5-2 / gpt-5-6 / deepseek via one key (default glm-5-2). Needs your imgnAI API key (Settings → imgnAI Katana)."
+  },
+  "workflowSelector": {
+    "tooltip": "Run a saved Nodes workflow right here in the Code chat",
+    "off": "Workflow: off",
+    "none": "None (normal agent)",
+    "loading": "Loading…",
+    "empty": "No saved workflows yet. Build one in Nodes and save it.",
+    "savedAt": "Saved {{date}}",
+    "buildNew": "+ Build new in Nodes"
+  },
+  "depth": {
+    "normal": "NORMAL",
+    "normalHint": "Standard response — no extended thinking",
+    "think": "THINK",
+    "thinkHint": "Extended thinking — 4 000 token budget",
+    "ultra": "ULTRA",
+    "ultraHint": "Deep thinking — 32 000 token budget"
+  },
+  "statusBadge": {
+    "idle": "Standing by",
+    "starting": "Starting…",
+    "running": "Working",
+    "done": "Done",
+    "error": "Error",
+    "incomplete": "Stopped"
+  },
+  "incomplete": {
+    "badge": "Ended without completing",
+    "continue": "Continue",
+    "continueHint": "Send a continue message to this session",
+    "continueMessage": "Continue the task. If it is already complete, call the completion tool with a summary of what you changed and how you verified it; if you cannot proceed, say exactly why.",
+    "detailFallback": "The run stopped without completing or summarizing.",
+    "nudgedHint": "It was already asked once to continue."
+  },
+  "event": {
+    "running": "running…",
+    "preview": "[PREVIEW]",
+    "previewTooltip": "Preview {{path}}",
+    "noOutput": "(no output)",
+    "done": "Done ({{reason}})",
+    "copy": "COPY",
+    "copied": "COPIED",
+    "copyTooltip": "Copy this message",
+    "copyFailed": "Copy failed",
+    "failed": "Run failed",
+    "stopped": "Stopped"
+  },
+  "chain": {
+    "default": "Default (best stored key, else free local router)",
+    "route": "Route",
+    "edit": "Edit in Nodes",
+    "editTooltip": "Edit the agent flow in the Nodes canvas"
+  },
+  "folder": {
+    "renameError": "rename: {{error}}",
+    "deleteConfirm": "Delete \"{{label}}\"? This is permanent.",
+    "deleteOk": "DELETE",
+    "deleteError": "delete: {{error}}",
+    "showPanel": "Show files panel",
+    "files": "Files",
+    "back": "Back",
+    "forward": "Forward",
+    "up": "Up",
+    "newFile": "New file",
+    "newFolder": "New folder",
+    "hidePanel": "Hide panel",
+    "newFileHeader": "new file",
+    "newFolderHeader": "new folder",
+    "fileNamePlaceholder": "name.ext",
+    "folderNamePlaceholder": "folder-name",
+    "create": "Create",
+    "cancel": "Cancel",
+    "loading": "Loading…",
+    "empty": "(empty — right-click to create)",
+    "open": "Open",
+    "preview": "Preview",
+    "previewInPanel": "Preview in Panel",
+    "rename": "Rename",
+    "delete": "Delete"
+  },
+  "fusion": {
+    "panel": "Fusion panel",
+    "planPanel": "Fusion plan panel",
+    "answered": "{{ok}}/{{total}} answered",
+    "rerun": "re-run",
+    "rerunTitle": "Re-run {{model}}",
+    "judge": "judge",
+    "label": "Fusion",
+    "on": "Fusion on",
+    "titleOn": "Fusion ON — the agent consults a panel of models (fuse_plan) and synthesizes its plan before executing",
+    "titleOff": "Fusion — have the agent consult a model panel for planning (fuse_plan) + hard decisions (consult_panel)"
+  },
+  "checkpoint": {
+    "revert": "Revert",
+    "revertTooltip": "Undo the agent's file changes — restores the workspace to the snapshot taken before this run",
+    "reverted": "Reverted the agent's changes.",
+    "revertFailed": "Revert failed."
+  },
+  "codexChip": {
+    "installing": "installing…",
+    "loggingIn": "logging in…",
+    "titleLoading": "Checking Codex agent…",
+    "titleInstall": "Install the Codex agent (OpenAI Codex CLI) — the CODE agent can then delegate subtasks to it",
+    "titleLogin": "Codex is installed but logged out — click to open the ChatGPT login in your browser",
+    "titleOn": "Codex agent is ON — the CODE agent can delegate subtasks to it, and you can talk to Codex directly by starting a message with @codex. Click to turn OFF.",
+    "titleOff": "Codex agent is OFF — no delegation. Click to turn ON. Direct chat: start a message with @codex."
+  },
+  "codexCard": {
+    "write": "WRITE",
+    "readOnly": "READ-ONLY",
+    "writeTitle": "Codex ran with a workspace-write sandbox — it could change files",
+    "readOnlyTitle": "Codex ran read-only — it could inspect but not change files",
+    "task": "TASK",
+    "output": "OUTPUT",
+    "partial": "PARTIAL OUTPUT",
+    "error": "ERROR",
+    "steps": "STEPS",
+    "stepsCount": "{{count}} STEPS",
+    "files": "FILES",
+    "failed": "FAILED",
+    "session": "session {{id}}",
+    "resumed": "resumed {{id}}",
+    "model": "model {{model}}",
+    "runningTitle": "Codex is working on this task…",
+    "runningPlaceholder": "Delegated to Codex — waiting for the worker…",
+    "progress": "PROGRESS",
+    "progressEarlier": "+{{count}} earlier"
+  },
+  "codexReview": {
+    "review": "REVIEW",
+    "claim": "CLAIM UNDER REVIEW",
+    "focus": "focus",
+    "filesRequested": "files",
+    "findingsCount": "{{count}} FINDINGS",
+    "holds": "HOLDS",
+    "holdsTitle": "The reviewer tried to refute the claim and could not",
+    "reviewed": "REVIEWED",
+    "notes": "REVIEWER NOTES",
+    "runningTitle": "Codex is reviewing this work…",
+    "runningPlaceholder": "Sent to the Codex reviewer — waiting for findings…"
+  },
+  "starters": {
+    "auditLabel": "AUDIT THIS FOLDER",
+    "auditDesc": "PLAN mode, read-only — the agent maps the code and reports. No approvals needed.",
+    "auditCta": "PICK A FOLDER ▸",
+    "auditPrompt": "Audit this codebase: map the architecture, call out the top 3 risks, and suggest 3 quick wins. Do not change anything."
+  },
+  "advanced": {
+    "label": "Advanced",
+    "summaryTooltip": "Current route — click to open ADVANCED",
+    "toggleTooltip": "Agent, provider, thinking, fusion, roles, workflow — the full cockpit",
+    "workflowLabel": "Workflow"
+  },
+  "trust": {
+    "safe": "Safe",
+    "safeHint": "Ask before every file write, shell command and external tool",
+    "standard": "Standard",
+    "standardHint": "Reads and in-workspace writes run free; shell and external tools ask",
+    "auto": "Auto",
+    "autoHint": "Also runs non-destructive shell commands without asking — destructive ones still ask"
+  },
+  "reconnect": {
+    "retrying": "Connection lost — retrying {{attempt}}/{{max}}",
+    "nextIn": "next in {{seconds}}s",
+    "reason": "Cause: {{reason}}"
+  },
+  "loop": {
+    "cycle": "Loop {{iteration}}/{{cap}}",
+    "stop": "Stop loop",
+    "stopping": "Stopping…",
+    "stopHint": "Finish this cycle, then stop looping",
+    "goal": "Loop goal: {{goal}}"
+  },
+  "queue": {
+    "placeholder": "Run in progress — Enter queues your message for when it finishes",
+    "label": "QUEUED {{n}}",
+    "labelHint": "Sends automatically, one at a time, when the current run finishes. Each message inherits the settings in force at that moment. Text only — attachments are not queued.",
+    "paused": "QUEUE PAUSED · {{n}}",
+    "pausedHint": "The run stopped or failed, so nothing fires on its own. RESUME sends the oldest queued message as the next turn.",
+    "resume": "RESUME",
+    "resumeHint": "Resume automatic sending — the oldest queued message goes out as the next turn",
+    "button": "Queue",
+    "buttonHint": "Queue this message — it sends automatically when the current run finishes",
+    "remove": "Remove from the queue",
+    "full": "Queue is full ({{cap}}) — remove one of the queued messages first."
+  },
+  "reset": {
+    "button": "reset",
+    "tooltip": "Reset this turn — chat, code, or both",
+    "chat": "RESET CHAT",
+    "chatHint": "Drop this turn and everything after it. Files untouched.",
+    "code": "RESET CODE",
+    "codeHint": "Restore the files to how they were before this turn.",
+    "both": "RESET BOTH",
+    "bothHint": "Restore the files, then drop the transcript from here.",
+    "blocked": {
+      "running": "A run is in flight — stop it first.",
+      "archive": "You are viewing an archived session.",
+      "harness": "This harness takes no file checkpoints.",
+      "not-taken": "No file snapshot was taken for this turn.",
+      "aged-out": "This snapshot has aged out of the checkpoint history."
+    },
+    "confirmTitle": "RESET TURN",
+    "confirmChat": "Drop this turn and every message after it? Files are not touched.",
+    "confirmCode": "Restore the workspace files to how they were before this turn? Anything changed since will be overwritten.",
+    "confirmBoth": "Restore the workspace files AND drop this turn and everything after it?",
+    "codeRestored": "Files restored to before this turn.",
+    "codeFailed": "Restore failed — the files were not changed.",
+    "noCheckpoint": "No file snapshot exists for this turn.",
+    "undo": "UNDO THIS RESET",
+    "undone": "Reset undone.",
+    "undoFailed": "Could not undo the reset."
+  },
+  "fileChips": {
+    "enlarge": "Click to enlarge",
+    "shrink": "Click to shrink"
+  }
+}

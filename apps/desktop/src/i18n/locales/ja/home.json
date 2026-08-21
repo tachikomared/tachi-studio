@@ -1,0 +1,35 @@
+{
+  "heading": "何でも質問",
+  "subtitle": "11の無料AIプロバイダーが提供 — クラウドは不要。",
+  "placeholder": "何が思いついた?",
+  "startChat": "チャット開始",
+  "slashHint": "/ でコマンド一覧",
+  "spent": "今日使用 — 無料枠",
+  "recent": "最近",
+  "quickStarts": {
+    "url": "URLを要約",
+    "code": "コードを説明",
+    "tweet": "ツイート書く",
+    "translate": "翻訳",
+    "brainstorm": "アイデア出し",
+    "folder": "フォルダーをエージェントで開く"
+  },
+  "actions": {
+    "chat": "新しいチャット",
+    "code": "フォルダをコーディング",
+    "design": "新しいデザイン",
+    "nodes": "ノードキャンバス",
+    "models": "モデル入手"
+  },
+  "health": {
+    "spent": "30日間の支出",
+    "apiUp": "ローカル API :{{port}}",
+    "apiDown": "ローカル API オフ",
+    "open": "ダッシュボード"
+  },
+  "recentTypes": {
+    "chat": "チャット",
+    "design": "デザイン",
+    "flow": "フロー"
+  }
+}

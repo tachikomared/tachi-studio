@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "受信箱",
+    "pending": "[{{count}}保留中]"
+  },
+  "actions": {
+    "approveAll": "[すべて承認]",
+    "clearResolved": "[解決済みをクリア]"
+  },
+  "footer": {
+    "modeLabel": "モード:",
+    "mode": {
+      "immediate": "[即座]",
+      "inbox": "[受信箱]"
+    },
+    "hints": "j/k移動  ·  Enter承認  ·  Del拒否  ·  Ctrl+Aすべて承認"
+  },
+  "empty": {
+    "title": "[ 受信箱が空 ]",
+    "inbox": "ツール権限リクエストはエージェント実行中ここに登録されます。独自ペースで承認または拒否 — エージェントはあなたが決定するまで待機。",
+    "immediate": "あなたは即座モードにいます。ツール権限リクエストはここの代わりにブロッキングモーダルポップアップ。下の「受信箱」に切り替えてエージェントを長く実行し、後で一括確認できます。"
+  },
+  "fields": {
+    "reason": "理由:",
+    "session": "セッション:",
+    "workingDir": "workingDir:"
+  },
+  "item": {
+    "approve": "[承認]",
+    "approveAria": "リクエストを承認",
+    "deny": "[拒否]",
+    "denyAria": "リクエストを拒否"
+  }
+}

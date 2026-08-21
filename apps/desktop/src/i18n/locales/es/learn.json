@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "Aprender",
+    "intro": "Un tour de dos minutos. Sin trasfondo técnico necesario — lee de arriba a abajo, o salta a una sección."
+  },
+  "hero": {
+    "eyebrow": "Primer inicio",
+    "title": "Te damos la bienvenida a Tachi Studio",
+    "intro": "Un escritorio para trabajar con IA. Cinco formas de empezar — elige cualquiera. Puedes volver a abrir esta guía cuando quieras.",
+    "lines": {
+      "chat": "<strong>CHAT</strong> — escribe a un asistente de IA. Gratis, sin configuración.",
+      "code": "<strong>CODE</strong> — apúntalo a una carpeta; construye cosas reales mientras miras.",
+      "nodes": "<strong>NODES</strong> — conecta pasos en un flujo visual y ejecuta toda la canalización.",
+      "design": "<strong>DESIGN</strong> — describe una página o un gráfico animado y velo renderizarse en vivo.",
+      "media": "<strong>MEDIA</strong> — genera imágenes, vídeo, música y voz."
+    },
+    "cta": {
+      "chat": "Abrir Chat",
+      "flow": "Probar un flujo inicial",
+      "quickstart": "Leer la guía rápida"
+    },
+    "dismiss": "Descartar"
+  },
+  "sections": {
+    "basics": {
+      "title": "Qué es esta aplicación",
+      "intro1": "Tachi Studio es un escritorio para trabajar con IA. Puedes <strong>chatear</strong> con ella, o apuntarla a una carpeta y hacer que <strong>construya cosas para ti</strong> — sitios web, scripts, pequeñas aplicaciones — mientras observas.",
+      "intro2": "No necesitas instalar nada técnico o abrir una terminal. Todo sucede dentro de esta ventana. Algunas formas de hacerlo:",
+      "ways": {
+        "chat": "<strong>Chat</strong> — como enviar mensajes de texto a un asistente. Gratis, sin configuración.",
+        "code": "<strong>Code</strong> — dale una carpeta + una tarea, hace trabajo real en esa carpeta.",
+        "media": "<strong>Media</strong> — genera imágenes, video, música y voz (y transcribe audio).",
+        "nodes": "<strong>Nodes</strong> — conecta esos pasos en un flujo de trabajo visual y ejecuta todo el pipeline.",
+        "design": "<strong>Diseño</strong> — describe una página web o un motion graphic; míralo renderizar en vivo y refínalo por chat."
+      }
+    },
+    "chat": {
+      "title": "Solo chat (el comienzo fácil)",
+      "steps": {
+        "open": "Haz clic en <strong>CHAT</strong> en la barra lateral izquierda.",
+        "type": "Escribe una pregunta en la parte inferior y presiona Intro.",
+        "done": "Eso es todo. El primer proveedor es gratuito y no necesita clave."
+      },
+      "note": "Recuerda la conversación — haz una pregunta de seguimiento y sabe de qué estabas hablando. Comienza un nuevo tema con <strong>Nuevo</strong> (arriba a la derecha). Cada chat mantiene su propio recuerdo.",
+      "open": "Abrir Chat →",
+      "moreTitle": "También en Chat",
+      "extras": {
+        "commands": "Escribe <strong>/</strong> para ver la lista de comandos — <strong>/help</strong>, <strong>/compact</strong>, <strong>/model</strong>, <strong>/cost</strong>, <strong>/memory</strong>, <strong>/remember</strong>, <strong>/search</strong>, <strong>/loop</strong> y más. Los mismos comandos con barra funcionan en Chat, Code y en el cuadro «Pregunta lo que sea» de HOME.",
+        "sources": "Adjunta una carpeta y pregunta sobre ella — una respuesta fundamentada muestra chips de <strong>Sources</strong> debajo. Haz clic en uno para expandir el texto exacto del archivo que usó."
+      }
+    },
+    "code": {
+      "title": "Construir cosas (el agente de Code)",
+      "steps": {
+        "open": "Haz clic en <strong>CODE</strong> en la barra lateral.",
+        "choose": "Haz clic en <strong>Elegir carpeta</strong> (o arrastra una carpeta a la página). Este es el único lugar donde la IA puede tocar.",
+        "type": "Escribe lo que quieres, p. ej. <em>\"hacer un juego simple de snake en un archivo html\"</em>, y presiona el botón ejecutar.",
+        "watch": "Míralo funcionar. Cuando escriba un archivo puedes hacer clic en <strong>[PREVISUALIZACIÓN]</strong> para verlo en directo — un juego HTML realmente se juega dentro de la aplicación."
+      },
+      "note": "Solo puede leer y escribir dentro de la carpeta que elegiste. No puede vagar en el resto de tu computadora.",
+      "open": "Abrir Code →",
+      "moreTitle": "También en Code",
+      "extras": {
+        "tachiapp": "¿Quieres que trabaje sobre su propio código fuente? La fila fija <strong>TACHIAPP</strong> al final de la barra lateral abre un chat de Code ya apuntado a la propia Tachi Studio — sin carpeta que elegir.",
+        "spawnLoop": "Pídele que divida una tarea grande entre varios agentes a la vez, o escribe <strong>/loop</strong> para seguir trabajando hacia un objetivo en un intervalo repetido — un chip <strong>LOOP</strong> muestra que sigue en marcha.",
+        "incomplete": "Si una ejecución se detiene antes de terminar, verás una insignia ámbar <strong>! Ended without completing</strong> en lugar de un falso «hecho» — un aviso para continuar o darle más dirección."
+      }
+    },
+    "media": {
+      "title": "Hacer imágenes, video y música",
+      "steps": {
+        "open": "Haz clic en <strong>MEDIA</strong> en la barra lateral.",
+        "pick": "Elige qué hacer (imagen, video, música, habla, transcripción), un proveedor (Surplus o Venice) y un modelo.",
+        "prompt": "Escribe un prompt, opcionalmente suelta una imagen de referencia, y presiona Generar."
+      },
+      "note": "Todo lo que hagas se guarda en la subpestaña <strong>Artefactos</strong>. Los modelos que lo admitan pueden editar una imagen o convertir una en video (imagen a video).",
+      "open": "Abrir Media →"
+    },
+    "buttons": {
+      "title": "Qué significan los botones de Code",
+      "intro": "Cuatro pequeños interruptores se sientan en la parte superior de la pestaña Code. Puedes ignorarlos para comenzar — los valores por defecto están bien. Aquí está lo que hace cada uno:",
+      "table": {
+        "head": {
+          "button": "Botón",
+          "plain": "En palabras simples",
+          "realName": "Nombre real"
+        },
+        "mode": {
+          "name": "Modo",
+          "plain": "Planificar primero, o simplemente construirlo ahora"
+        },
+        "thinking": {
+          "name": "Pensamiento",
+          "plain": "Cuánto razona la IA antes de actuar"
+        },
+        "engine": {
+          "name": "Agente",
+          "plain": "Qué agente de codificación hace el trabajo"
+        },
+        "gateway": {
+          "name": "Proveedor",
+          "plain": "De dónde vienen los modelos de IA"
+        }
+      },
+      "note": "El distintivo <strong>[CTX nn%]</strong> muestra qué tan llena está la memoria de la IA. Cuando se vuelve amarillo y luego rojo, inicia una sesión nueva para que no olvide las partes tempranas."
+    },
+    "private": {
+      "title": "Mantenerlo privado",
+      "intro": "El <strong>PRIVATE MODE</strong> mantiene todo en tu máquina. Se bloquea la IA en la nube, y los agentes se detienen de alcanzar internet en absoluto.",
+      "steps": {
+        "palette": "Presiona <strong>Ctrl/Cmd + K</strong> para abrir la paleta de comandos.",
+        "toggle": "Escribe <em>\"Toggle PRIVATE MODE\"</em> y selecciónalo.",
+        "badge": "Un distintivo rojo <strong>[PRIVATE]</strong> aparece en la parte superior. Los proveedores en la nube aparecen como <strong>[LOCKED]</strong>."
+      },
+      "note": "En PRIVATE MODE solo funcionan los proveedores locales (Ollama, o llama.cpp). Apágalo de la misma manera para usar modelos en la nube nuevamente."
+    },
+    "providers": {
+      "title": "Conecta tu propia IA (opcional)",
+      "intro": "La opción gratuita funciona con configuración cero. Para usar modelos premium, agrega una clave:",
+      "steps": {
+        "settings": "Ve a <strong>Configuración</strong> (parte inferior de la barra lateral) → Proveedores.",
+        "key": "Elige un proveedor, haz clic en <strong>Obtener clave</strong> (abre la página de registro), pega la clave, haz clic en <strong>Probar</strong>.",
+        "green": "Verde significa conectado. Ahora puedes elegir ese proveedor en Chat o Code."
+      },
+      "open": "Abrir Configuración →"
+    },
+    "power": {
+      "title": "Características avanzadas (cuando estés listo)",
+      "list": {
+        "nodes": "<strong>Nodes</strong> — dibuja tu propio pipeline de IA: conecta un modelo a un agente, o encadena texto → imagen → video. Cada ejecución suelta una tarjeta de resultado de la que puedes ramificar; elige cualquier modelo (Venice o local); guarda y cambia flujos como chats.",
+        "swarm": "<strong>Swarm</strong> — ejecuta varios agentes como un equipo en un tablero de tareas compartidas.",
+        "parallel": "<strong>Tareas paralelas</strong> — en Code, ejecuta algunos agentes a la vez, cada uno en su propia copia del proyecto.",
+        "inbox": "<strong>Bandeja de entrada</strong> — en lugar de un popup para cada permiso, deja que las solicitudes se acumulen y apruébalas en lote.",
+        "marketplace": "<strong>Connections</strong> — en Settings → Connections, explora un catálogo de servidores de herramientas MCP e instala uno con un solo clic, sin editar JSON. Private Mode mantiene automáticamente solo los servidores locales activos y bloquea el resto.",
+        "scheduler": "<strong>Tareas programadas</strong> — en Settings → Advanced → Scheduled, configura un chat, una ejecución de Code o un flow para que se dispare en un horario recurrente. Sobrevive a que tu máquina se duerma y se pone al día cuando despierta."
+      },
+      "note": "Ninguno de estos es necesario para obtener valor — están allí cuando crezcas en ellos."
+    },
+    "tips": {
+      "title": "Atajos útiles",
+      "list": {
+        "palette": "<strong>Ctrl/Cmd + K</strong> — paleta de comandos (haz cualquier cosa escribiendo).",
+        "send": "<strong>Intro</strong> — enviar. <strong>Shift + Intro</strong> — nueva línea.",
+        "new": "<strong>Nuevo</strong> — comienza un chat/sesión nuevo con una memoria limpia.",
+        "tooltip": "Pasa el mouse sobre cualquier botón — un tooltip lo explica en palabras simples.",
+        "reconnect": "Si una respuesta se atasca, fíjate en el banner <strong>Retrying n/10</strong> — la conexión se cayó y se está reconectando sola, dentro de la misma respuesta. No hace falta reenviar; solo espera."
+      }
+    },
+    "design": {
+      "title": "Diseño — crea una página o animación",
+      "steps": {
+        "open": "Haz clic en <strong>DESIGN</strong> en la barra lateral.",
+        "pick": "Elige <strong>page</strong> (página estática → exportar PNG/PDF) o <strong>animate</strong> (motion graphic → exportar MP4).",
+        "engine": "En modo animate, elige un renderizador: <strong>Remotion</strong> (renderiza a un vídeo MP4) o <strong>HyperFrames</strong> (animación HTML + GSAP).",
+        "type": "Escribe lo que quieres (\"una página de precios con tres niveles\", \"un logo que gira al entrar\"). Se renderiza a la derecha; sigue chateando para cambiarlo."
+      },
+      "note": "Todo se guarda automáticamente en una carpeta del disco, y puedes hacer clic en cualquier texto de la vista previa para editarlo. Los botones de exportar están arriba a la derecha.",
+      "open": "Abrir Diseño →"
+    }
+  },
+  "footer": {
+    "deepDocs": "¿Quieres la versión técnica profunda? La arquitectura completa y los documentos por característica viven en <code> docs/app/</code> dentro del proyecto — el agente en la aplicación puede leerlos para entender y extender Tachi Studio."
+  }
+}

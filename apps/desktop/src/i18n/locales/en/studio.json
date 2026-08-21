@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "Loading…"
+  },
+  "topbar": {
+    "badge": "Dashboard"
+  },
+  "system": {
+    "title": "System",
+    "live": "● LIVE",
+    "os": "OS",
+    "release": "Release",
+    "host": "Host",
+    "cpu": "CPU",
+    "cores": "{{count}} cores",
+    "app": "App",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "App uptime",
+    "ram": "RAM",
+    "disk": "Disk",
+    "tachiProcess": "app process: {{size}}"
+  },
+  "sidecars": {
+    "title": "Background Services",
+    "upCount": "{{up}}/{{total}} up",
+    "none": "No background services registered",
+    "viewLogTail": "View log tail",
+    "logs": "logs",
+    "stop": "stop",
+    "start": "start",
+    "startFailed": "Start failed: {{error}}",
+    "stopFailed": "Stop failed: {{error}}"
+  },
+  "logs": {
+    "ariaLabel": "Logs for {{id}}",
+    "header": "{{id}} · log tail",
+    "live": "● LIVE 2s",
+    "close": "close",
+    "noFile": "No log file for this service yet — only openclaude writes to disk.",
+    "empty": "Log file is empty."
+  },
+  "harnesses": {
+    "title": "Agents → Providers",
+    "activeRouting": "Active routing",
+    "ready": "ready",
+    "idle": "idle",
+    "provider": {
+      "freellmLocal": "FreeLLM (local router)",
+      "anthropicOAuth": "Anthropic OAuth (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "not running"
+    },
+    "harness": {
+      "directChat": "Direct chat"
+    }
+  },
+  "providers": {
+    "title": "Providers",
+    "configured": "{{count}} configured",
+    "none": "No providers configured. Open Settings to add a key.",
+    "connected": "connected",
+    "tier": {
+      "oauthPro": "OAuth & Pro",
+      "free": "Free providers",
+      "tools": "Tools"
+    },
+    "footer": "+ FreeLLM router (no key required) · free-claude-code — both answer from this machine and forward your prompt to a cloud provider"
+  },
+  "runtimes": {
+    "title": "Detected on this machine",
+    "rescan": "rescan",
+    "scanning": "Scanning…",
+    "state": {
+      "running": "RUNNING",
+      "healthy": "HEALTHY",
+      "connected": "CONNECTED",
+      "installed": "READY",
+      "starting": "STARTING",
+      "stopped": "STOPPED",
+      "not_installed": "NOT INSTALLED",
+      "error": "ERROR",
+      "unreachable": "UNREACHABLE"
+    }
+  },
+  "conversations": {
+    "title": "Conversations",
+    "total": "Total",
+    "messages": "Messages",
+    "youWrote": "You wrote",
+    "modelWrote": "Model wrote",
+    "tokensUsed": "Tokens used",
+    "byProvider": "By provider",
+    "none": "No conversations yet."
+  },
+  "workflow": {
+    "title": "Workflow Canvas",
+    "open": "open ↗",
+    "description": "Compose provider + agent + skill nodes into a graph. Wire outputs into inputs to chain runs.",
+    "edges": "Edges",
+    "inputs": "Inputs",
+    "providers": "Providers",
+    "outputs": "Outputs"
+  },
+  "aeon": {
+    "auth": "Auth",
+    "signedIn": "signed in",
+    "notSignedIn": "not signed in",
+    "user": "User",
+    "ghClient": "gh client",
+    "signInPrompt": "Open Aeon tab and click",
+    "signInButton": "Sign in to GitHub"
+  },
+  "audit": {
+    "title": "Outbound requests · {{count}}",
+    "loading": "loading…",
+    "live": "LIVE 5s",
+    "reload": "Reload",
+    "clear": "Clear",
+    "explainer": "Network calls the Tachi Studio main process made directly — to GitHub, your chosen LLM provider, Ollama, etc. Green = OK, yellow = redirected, red = error. Click a row for the full URL and timing. Note: calls made inside local service processes (OpenClaude, freellmapi) and on-chain wallet RPC are NOT shown here, so this is a debugging aid, not a complete egress ledger.",
+    "filterAll": "All",
+    "category": {
+      "other": "Other"
+    },
+    "emptyNone": "No network requests recorded yet. Use the chat tab or trigger an action.",
+    "emptyFilter": "No entries match the selected filter.",
+    "detail": {
+      "url": "URL",
+      "status": "Status",
+      "networkError": "network error",
+      "duration": "Duration",
+      "reqSize": "Req size",
+      "resSize": "Res size",
+      "time": "Time",
+      "category": "Category"
+    }
+  },
+  "doctor": {
+    "title": "Doctor",
+    "run": "Run check",
+    "running": "Checking…",
+    "hint": "Executes every external binary (Piper, SD, yt-dlp, Whisper, llama.cpp, Chromium) and the FreeLLM router with a probe command — catches broken installs that \"installed\" flags miss.",
+    "status": {
+      "ok": "ok",
+      "missing": "missing",
+      "broken": "broken",
+      "timeout": "timeout",
+      "error": "error"
+    }
+  }
+}

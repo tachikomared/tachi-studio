@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "Lernen",
+    "intro": "Ein zwei-minütiger Rundgang. Kein technischer Hintergrund erforderlich — lesen Sie von oben nach unten oder springen Sie zu einem Abschnitt."
+  },
+  "hero": {
+    "eyebrow": "Erster Start",
+    "title": "Willkommen bei Tachi Studio",
+    "intro": "Ein Schreibtisch für die Arbeit mit KI. Fünf Wege zum Einstieg — wählen Sie einen. Sie können diese Anleitung jederzeit erneut öffnen.",
+    "lines": {
+      "chat": "<strong>CHAT</strong> — schreiben Sie einem KI-Assistenten. Kostenlos, keine Einrichtung.",
+      "code": "<strong>CODE</strong> — richten Sie ihn auf einen Ordner; er erledigt echte Arbeit, während Sie zusehen.",
+      "nodes": "<strong>NODES</strong> — verdrahten Sie Schritte zu einem visuellen Workflow und führen Sie die ganze Pipeline aus.",
+      "design": "<strong>DESIGN</strong> — beschreiben Sie eine Seite oder eine Animation und sehen Sie zu, wie sie live gerendert wird.",
+      "media": "<strong>MEDIA</strong> — erzeugen Sie Bilder, Video, Musik und Stimme."
+    },
+    "cta": {
+      "chat": "Chat öffnen",
+      "flow": "Einen Starter-Flow ausprobieren",
+      "quickstart": "Schnellstart lesen"
+    },
+    "dismiss": "Verwerfen"
+  },
+  "sections": {
+    "basics": {
+      "title": "Was diese App ist",
+      "intro1": "Tachi Studio ist ein Schreibtisch für die Zusammenarbeit mit KI. Sie können mit ihr <strong>chatten</strong>, oder auf einen Ordner zeigen und sie <strong>Dinge für Sie bauen</strong> lassen — Websites, Scripts, kleine Apps — während Sie zusehen.",
+      "intro2": "Sie müssen nichts Technisches installieren oder ein Terminal öffnen. Alles geschieht in diesem Fenster. Ein paar Möglichkeiten:",
+      "ways": {
+        "chat": "<strong>Chat</strong> — wie das Schreiben mit einem Assistenten. Kostenlos, keine Einrichtung erforderlich.",
+        "code": "<strong>Code</strong> — geben Sie ihr einen Ordner + eine Aufgabe, sie verrichtet echte Arbeit in diesem Ordner.",
+        "media": "<strong>Media</strong> — generieren Sie Bilder, Video, Musik und Sprache (und transkribieren Sie Audio).",
+        "nodes": "<strong>Nodes</strong> — verdrahten Sie diese Schritte in einen visuellen Workflow und führen Sie die ganze Pipeline aus.",
+        "design": "<strong>Design</strong> — beschreibe eine Webseite oder eine Motion-Grafik; sieh das Live-Rendering und verfeinere es per Chat."
+      }
+    },
+    "chat": {
+      "title": "Nur chatten (der einfache Einstieg)",
+      "steps": {
+        "open": "Klicken Sie auf <strong>CHAT</strong> in der linken Seitenleiste.",
+        "type": "Geben Sie unten eine Frage ein und drücken Sie Eingabetaste.",
+        "done": "Das ist es. Der erste Provider ist kostenlos und benötigt keinen Schlüssel."
+      },
+      "note": "Er merkt sich das Gespräch — stellen Sie eine Nachfrage und er weiß, worüber Sie sprechten. Starten Sie ein neues Thema mit <strong>Neu</strong> (oben rechts). Jeder Chat speichert sein eigenes Memory.",
+      "open": "Chat öffnen →",
+      "moreTitle": "Auch in Chat",
+      "extras": {
+        "commands": "Tippen Sie <strong>/</strong>, um die Befehlsliste zu sehen — <strong>/help</strong>, <strong>/compact</strong>, <strong>/model</strong>, <strong>/cost</strong>, <strong>/memory</strong>, <strong>/remember</strong>, <strong>/search</strong>, <strong>/loop</strong> und mehr. Dieselben Slash-Befehle funktionieren in Chat, Code und im HOME-Feld „Frag irgendwas“.",
+        "sources": "Hängen Sie einen Ordner an und fragen Sie danach — eine belegte Antwort zeigt darunter <strong>Sources</strong>-Chips. Klicken Sie auf einen, um den exakten Dateitext aufzuklappen, der verwendet wurde."
+      }
+    },
+    "code": {
+      "title": "Bauen Sie Dinge (der Code-Agent)",
+      "steps": {
+        "open": "Klicken Sie auf <strong>CODE</strong> in der Seitenleiste.",
+        "choose": "Klicken Sie auf <strong>Ordner wählen</strong> (oder ziehen Sie einen Ordner auf die Seite). Dies ist der einzige Ort, an dem die KI anfassen darf.",
+        "type": "Geben Sie ein, was Sie möchten, z. B. <em>\"mache ein einfaches Snake-Spiel in einer HTML-Datei\"</em>, und drücken Sie die Run-Schaltfläche.",
+        "watch": "Beobachten Sie es arbeiten. Wenn es eine Datei schreibt, können Sie auf <strong>[VORSCHAU]</strong> klicken, um sie live zu sehen — ein HTML-Spiel wird tatsächlich direkt in der App abgespielt."
+      },
+      "note": "Es kann nur im ausgewählten Ordner lesen und schreiben. Es kann nicht in den Rest Ihres Computers wandern.",
+      "open": "Code öffnen →",
+      "moreTitle": "Auch in Code",
+      "extras": {
+        "tachiapp": "Soll es an seinem eigenen Quellcode arbeiten? Die angeheftete Zeile <strong>TACHIAPP</strong> unten in der Seitenleiste öffnet einen Code-Chat, der bereits auf Tachi Studio selbst zeigt — kein Ordner auszuwählen.",
+        "spawnLoop": "Bitten Sie es, eine große Aufgabe auf mehrere Agents gleichzeitig aufzuteilen, oder tippen Sie <strong>/loop</strong>, um in wiederkehrenden Intervallen auf ein Ziel hinzuarbeiten — ein <strong>LOOP</strong>-Chip zeigt, dass es noch läuft.",
+        "incomplete": "Bricht ein Lauf ab, bevor er fertig ist, sehen Sie ein bernsteinfarbenes <strong>! Ended without completing</strong>-Badge statt eines falschen „fertig“ — ein Anstoß, weiterzumachen oder mehr Richtung zu geben."
+      }
+    },
+    "media": {
+      "title": "Erstellen Sie Bilder, Videos und Musik",
+      "steps": {
+        "open": "Klicken Sie auf <strong>MEDIA</strong> in der Seitenleiste.",
+        "pick": "Wählen Sie, was Sie erstellen möchten (Bild, Video, Musik, Sprache, Transkript), einen Provider (Surplus oder Venice) und ein Modell.",
+        "prompt": "Geben Sie einen prompt ein, legen Sie optional ein Referenzbild ab und drücken Sie Generieren."
+      },
+      "note": "Alles, was Sie erstellen, wird in der Unterregisterkarte <strong>Artefakte</strong> gespeichert. Modelle, die es unterstützen, können ein Bild bearbeiten oder eines in ein Video umwandeln (Bild-zu-Video).",
+      "open": "Media öffnen →"
+    },
+    "buttons": {
+      "title": "Bedeutung der Code-Schaltflächen",
+      "intro": "Vier kleine Schalter sitzen oben auf der Code-Registerkarte. Sie können sie zunächst ignorieren — die Standardeinstellungen sind in Ordnung. Hier ist, was jeder tut:",
+      "table": {
+        "head": {
+          "button": "Schaltfläche",
+          "plain": "In einfachen Worten",
+          "realName": "Echter Name"
+        },
+        "mode": {
+          "name": "Modus",
+          "plain": "Plan zuerst oder bauen Sie es jetzt"
+        },
+        "thinking": {
+          "name": "Denken",
+          "plain": "Wie hart die KI überlegt, bevor sie handelt"
+        },
+        "engine": {
+          "name": "Agent",
+          "plain": "Welcher Code-Agent verrichtet die Arbeit"
+        },
+        "gateway": {
+          "name": "Provider",
+          "plain": "Woher die KI-Modelle kommen"
+        }
+      },
+      "note": "Das <strong>[CTX nn%]</strong>-Badge zeigt, wie voll das Speicher der KI ist. Wenn es gelb und dann rot wird, starten Sie eine neue Sitzung, damit es die frühen Teile nicht vergisst."
+    },
+    "private": {
+      "title": "Halten Sie es privat",
+      "intro": "<strong>PRIVATE MODE</strong> hält alles auf Ihrer Maschine. Cloud-KI ist blockiert, und Agents werden daran gehindert, das Internet zu erreichen.",
+      "steps": {
+        "palette": "Drücken Sie <strong>Strg/Cmd + K</strong>, um die Befehlspalette zu öffnen.",
+        "toggle": "Geben Sie <em>\"Toggle Private Mode\"</em> ein und wählen Sie sie.",
+        "badge": "Ein rotes <strong>[PRIVATE]</strong>-Badge erscheint oben. Cloud-Provider zeigen als <strong>[LOCKED]</strong>."
+      },
+      "note": "Im PRIVATE MODE funktionieren nur lokale Anbieter (Ollama oder llama.cpp). Schalten Sie es aus, um Cloud-Modelle wieder zu verwenden."
+    },
+    "providers": {
+      "title": "Verbinden Sie Ihre eigene KI (optional)",
+      "intro": "Die kostenlose Option funktioniert mit null Einrichtung. Um Premium-Modelle zu verwenden, fügen Sie einen Schlüssel hinzu:",
+      "steps": {
+        "settings": "Gehen Sie zu <strong>Einstellungen</strong> (unten in der Seitenleiste) → Provider.",
+        "key": "Wählen Sie einen Provider, klicken Sie auf <strong>Schlüssel abrufen</strong> (öffnet die Anmeldeseite), fügen Sie den Schlüssel ein, klicken Sie auf <strong>Testen</strong>.",
+        "green": "Grün bedeutet verbunden. Jetzt können Sie diesen Provider in Chat oder Code auswählen."
+      },
+      "open": "Einstellungen öffnen →"
+    },
+    "power": {
+      "title": "Leistungsmerkmale (wenn Sie bereit sind)",
+      "list": {
+        "nodes": "<strong>Nodes</strong> — zeichnen Sie Ihre eigene KI-Pipeline: verdrahten Sie ein Modell mit einem Agent oder verketten Sie Text → Bild → Video. Jeder Durchgang lässt eine Resultatskarte fallen, von der Sie verzweigen können; wählen Sie ein beliebiges Modell (Venice oder lokal); speichern und wechseln Sie Flows wie Chats.",
+        "swarm": "<strong>Swarm</strong> — führen Sie mehrere Agents als Team an einer gemeinsamen Tafel aus.",
+        "parallel": "<strong>Parallele Aufgaben</strong> — in Code, führen Sie ein paar Agents gleichzeitig aus, jeder in seiner eigenen Kopie des Projekts.",
+        "inbox": "<strong>Inbox</strong> — statt eines Popups für jede Berechtigung, lassen Sie Anfragen stapeln und genehmigen Sie sie in einem Batch.",
+        "marketplace": "<strong>Connections</strong> — in Settings → Connections durchsuchen Sie einen Katalog von MCP-Tool-Servern und installieren einen mit einem Klick, ohne JSON zu bearbeiten. Private Mode hält automatisch nur lokale Server am Laufen und blockiert den Rest.",
+        "scheduler": "<strong>Geplante Aufgaben</strong> — in Settings → Advanced → Scheduled legen Sie fest, dass ein Chat, ein Code-Lauf oder ein Flow nach wiederkehrendem Zeitplan startet. Er übersteht den Schlafmodus Ihres Rechners und holt beim Aufwachen nach."
+      },
+      "note": "Keiner dieser Punkte ist erforderlich, um einen Nutzen zu erhalten — sie sind da, wenn Sie darin aufwachsen."
+    },
+    "tips": {
+      "title": "Hilfreiche Verknüpfungen",
+      "list": {
+        "palette": "<strong>Strg/Cmd + K</strong> — Befehlspalette (machen Sie alles durch Eingeben).",
+        "send": "<strong>Eingabetaste</strong> — senden. <strong>Umschalt + Eingabetaste</strong> — neue Zeile.",
+        "new": "<strong>Neu</strong> — starten Sie einen neuen Chat/eine neue Sitzung mit sauberem Memory.",
+        "tooltip": "Zeigen Sie auf eine beliebige Schaltfläche — ein Tooltip erklärt sie in einfachen Worten.",
+        "reconnect": "Stockt eine Antwort, achten Sie auf ein <strong>Retrying n/10</strong>-Banner — die Verbindung ist abgebrochen und verbindet sich von selbst neu, in dieselbe Antwort hinein. Kein erneutes Senden nötig, einfach abwarten."
+      }
+    },
+    "design": {
+      "title": "Design — Seite oder Animation erstellen",
+      "steps": {
+        "open": "Klicke auf <strong>DESIGN</strong> in der Seitenleiste.",
+        "pick": "Wähle <strong>page</strong> (statische Seite → PNG/PDF-Export) oder <strong>animate</strong> (Motion-Grafik → MP4-Export).",
+        "engine": "Im animate-Modus wähle einen Renderer: <strong>Remotion</strong> (rendert ein MP4-Video) oder <strong>HyperFrames</strong> (HTML- + GSAP-Animation).",
+        "type": "Tippe, was du willst („eine Preisseite mit drei Stufen“, „ein Logo, das sich hereindreht“). Es rendert rechts; per Chat weiter ändern."
+      },
+      "note": "Alles wird automatisch in einem Ordner auf der Festplatte gespeichert, und du kannst in der Seitenvorschau jeden Text anklicken und direkt bearbeiten. Die Export-Buttons sind oben rechts.",
+      "open": "Design öffnen →"
+    }
+  },
+  "footer": {
+    "deepDocs": "Mögen Sie die tiefe technische Version? Die vollständige Architektur und dokumentationen pro Funktion befinden sich in <code> docs/app/</code> im Projekt — der In-App-Agent kann sie lesen, um Tachi Studio selbst zu verstehen und zu erweitern."
+  }
+}

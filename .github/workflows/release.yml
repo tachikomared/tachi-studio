@@ -1,0 +1,160 @@
+# .github/workflows/release.yml
+#
+# Cross-OS release matrix for tagged versions. Builds + publishes signed
+# (when secrets present) installers + portable artifacts for:
+#   - macOS:   x64 + arm64 universal DMG + zip (hardened runtime, notarized when key present)
+#   - Windows: x64 NSIS installer (signed when WIN_CERTS set)
+#   - Linux:   x64 AppImage + .deb + .rpm
+#
+# Lifted from hermes-desktop's release pipeline + electron-builder cross-OS docs.
+# Concurrency control prevents two simultaneous tag pushes from racing.
+# Sidecars are built before electron-builder runs so packaged
+# artifacts contain freellmapi / etc.
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  # Rehearsal without minting a tag. A release pipeline that has only ever been
+  # described is a release pipeline that has never been tested; this is how you
+  # find out it works before the day it matters.
+  workflow_dispatch:
+
+# Avoid racing two release runs for the same tag (e.g. retag → re-push).
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false   # let an existing release finish — don't break drafts mid-flight
+
+jobs:
+  build:
+    name: Build · ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    # GITHUB_TOKEN has defaulted to contents:read since 2023, so without this the
+    # very first tagged run 403s when electron-builder tries to create the draft
+    # release — after a full three-OS build has already succeeded.
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        # Version comes from package.json's `packageManager` — see ci.yml.
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      # Sidecars (freellmapi, etc.) are built here so
+      # electron-builder's `extraResources` glob picks them up at package time.
+      - name: Prepare sidecars
+        run: pnpm --filter tachi-studio-desktop run prepare:sidecars
+
+      - name: Build renderer + main
+        # The renderer bundle needs more heap than a hosted runner gives node by
+        # default: the macOS leg died with "Reached heap limit — JavaScript heap
+        # out of memory" (SIGABRT, exit 134). It never appeared locally because
+        # the maintainer's machine has far more RAM than a runner.
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
+        run: pnpm --filter tachi-studio-desktop build
+
+      # macOS notarization key (only effective when APPLE_API_KEY is set).
+      # When unset the step short-circuits and the build produces an
+      # un-notarized artifact (still runnable on dev machines).
+      - name: Prepare macOS notarization key
+        if: matrix.os == 'macos-latest' && env.APPLE_API_KEY != ''
+        run: |
+          mkdir -p ~/private_keys/
+          echo "$APPLE_API_KEY" > ~/private_keys/AuthKey_${APPLE_API_KEY_ID}.p8
+        env:
+          APPLE_API_KEY:    ${{ secrets.APPLE_API_KEY }}
+          APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+
+      - name: Package + publish (drafts a GitHub release)
+        run: pnpm --filter tachi-studio-desktop exec electron-builder --config electron-builder.json --publish always
+        env:
+          GH_TOKEN:                  ${{ secrets.GITHUB_TOKEN }}
+          # macOS code-sign + notarization (optional — unsigned build otherwise)
+          CSC_LINK:                  ${{ secrets.MAC_CERTS }}
+          CSC_KEY_PASSWORD:          ${{ secrets.MAC_CERTS_PASSWORD }}
+          # ALL THREE OR NONE. app-builder-lib throws when some-but-not-all of
+          # APPLE_API_KEY / _KEY_ID / _ISSUER are set, so passing two of them was
+          # a build failure waiting for the day the first secret was added.
+          APPLE_API_KEY:             ${{ secrets.APPLE_API_KEY }}
+          APPLE_API_KEY_ID:          ${{ secrets.APPLE_API_KEY_ID }}
+          APPLE_API_ISSUER:          ${{ secrets.APPLE_API_ISSUER }}
+          # Windows code-sign (optional)
+          WIN_CSC_LINK:              ${{ secrets.WIN_CERTS }}
+          WIN_CSC_KEY_PASSWORD:      ${{ secrets.WIN_CERTS_PASSWORD }}
+
+      # Sanity: confirm the produced binaries match the expected arch. On macOS
+      # this catches the classic "I built on M1 but published an x64-only DMG"
+      # mistake by running `file` on the contained app.
+      - name: Verify macOS arch
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          set -e
+          for app in apps/desktop/release-build/mac*/*.app; do
+            echo "::group::$app"
+            file "$app/Contents/MacOS/"*
+            echo "::endgroup::"
+          done
+
+      # SHA256SUMS for everything so users can verify downloads independently
+      # of the GitHub-Releases attestation.
+      - name: Generate checksums (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          cd apps/desktop/release-build
+          # Hash all release-shaped artifacts that live next to the AppImage.
+          ls *.AppImage *.deb *.rpm *.snap 2>/dev/null | xargs -I{} sha256sum "{}" > SHA256SUMS || true
+          cat SHA256SUMS || true
+
+      - name: Generate checksums (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          Set-Location apps/desktop/release-build
+          # BOTH artifacts: the installer and the portable folder zip. Hashing
+          # only the .exe would publish a zip nobody can verify.
+          Get-ChildItem *.exe, *.zip | ForEach-Object {
+            "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)"
+          } | Out-File -Encoding utf8 SHA256SUMS
+
+      - name: Generate checksums (macOS)
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          cd apps/desktop/release-build
+          # Hash DMGs + zips (the user-facing distributables).
+          ls *.dmg *.zip 2>/dev/null | xargs -I{} shasum -a 256 "{}" > SHA256SUMS || true
+
+      - name: Upload diagnostic artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.os }}
+          if-no-files-found: warn
+          path: |
+            apps/desktop/release-build/*.dmg
+            apps/desktop/release-build/*.zip
+            apps/desktop/release-build/*.exe
+            apps/desktop/release-build/*.AppImage
+            apps/desktop/release-build/*.deb
+            apps/desktop/release-build/*.rpm
+            apps/desktop/release-build/SHA256SUMS

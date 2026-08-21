@@ -1,0 +1,58 @@
+{
+  "format": "tachiflow",
+  "formatVersion": 1,
+  "app": "tachi-studio",
+  "appVersion": "0.1.0",
+  "exportedAt": "2026-07-11T00:00:00.000Z",
+  "flow": {
+    "version": 1,
+    "name": "Brainstorm and decide",
+    "savedAt": "2026-07-11T00:00:00.000Z",
+    "nodes": [
+      {
+        "id": "bd-prov",
+        "type": "provider",
+        "position": { "x": 40, "y": 200 },
+        "data": { "label": "Free models", "providerId": "freellmapi", "model": "auto" }
+      },
+      {
+        "id": "bd-optimist",
+        "type": "agent",
+        "position": { "x": 400, "y": 60 },
+        "data": {
+          "label": "Optimist",
+          "harnessId": "openclaude",
+          "systemPrompt": "You are the Optimist. Brainstorm the strongest possible case and the boldest ideas for the user's topic. Be generative: at least 5 concrete, distinct ideas, each in one sentence."
+        }
+      },
+      {
+        "id": "bd-skeptic",
+        "type": "agent",
+        "position": { "x": 400, "y": 360 },
+        "data": {
+          "label": "Skeptic",
+          "harnessId": "openclaude",
+          "systemPrompt": "You are the Skeptic. Read the Optimist's ideas above and stress-test them: risks, costs, failure modes. Kill the weak ones, keep the strong ones, and say why."
+        }
+      },
+      {
+        "id": "bd-decider",
+        "type": "agent",
+        "position": { "x": 760, "y": 200 },
+        "data": {
+          "label": "Decider",
+          "harnessId": "openclaude",
+          "systemPrompt": "You are the Decider. Read the Optimist and the Skeptic above, then commit to ONE recommendation and lay out a short action plan (3 steps). No hedging.",
+          "final": true
+        }
+      }
+    ],
+    "edges": [
+      { "id": "bd-e1", "source": "bd-prov", "target": "bd-optimist", "sourceHandle": "NE-src", "targetHandle": "W-tgt", "type": "link", "data": {} },
+      { "id": "bd-e2", "source": "bd-prov", "target": "bd-skeptic", "sourceHandle": "SE-src", "targetHandle": "W-tgt", "type": "link", "data": {} },
+      { "id": "bd-e3", "source": "bd-prov", "target": "bd-decider", "sourceHandle": "E-src", "targetHandle": "SW-tgt", "type": "link", "data": {} },
+      { "id": "bd-e4", "source": "bd-optimist", "target": "bd-skeptic", "sourceHandle": "S-src", "targetHandle": "N-tgt", "type": "link", "data": { "instruction": "stress-test these ideas" } },
+      { "id": "bd-e5", "source": "bd-skeptic", "target": "bd-decider", "sourceHandle": "E-src", "targetHandle": "W-tgt", "type": "link", "data": { "instruction": "make the call" } }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "TODOS",
+    "image": "IMAGEN",
+    "video": "VIDEO",
+    "music": "MÚSICA",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "Buscar prompts…"
+  },
+  "empty": {
+    "none": "Sin artefactos aún. Todo lo que generes — en el estudio Media o desde un nodo media en el lienzo Nodes — llega aquí.",
+    "noneHint": "Abre la pestaña Media para generar el primero.",
+    "noMatch": "Sin artefactos que coincidan con {{scope}}{{query}}.",
+    "noMatchFilter": "este filtro"
+  },
+  "tile": {
+    "altFallback": "artefacto",
+    "noPreview": "(sin previsualización)",
+    "noPrompt": "(sin prompt)",
+    "pin": "ANCLAR",
+    "pinned": "ANCLADO",
+    "pinTitle": "Anclar arriba",
+    "unpinTitle": "Desanclar",
+    "completedAfterPrivate": "TRAS PRIVATE MODE",
+    "completedAfterPrivateTitle": "Esta generación ya se estaba enviando cuando se activó PRIVATE MODE, así que terminó y se guardó en lugar de bloquearse. Nada nuevo salió de esta máquina después del cambio — rechazarla en ese punto solo habría descartado un resultado que ya se había enviado."
+  },
+  "actions": {
+    "fullscreen": "Pantalla completa",
+    "save": "Guardar",
+    "reveal": "Revelar"
+  },
+  "preview": {
+    "alt": "previsualización",
+    "close": "Cerrar (Esc)"
+  },
+  "pane": {
+    "preview": "VISTA PREVIA",
+    "code": "CÓDIGO",
+    "openInDesign": "ABRIR EN DESIGN",
+    "restore": "RESTAURAR",
+    "viewingVersion": "VIENDO v{{n}} DE {{max}} — SOLO LECTURA",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "Versión más antigua",
+    "newerVersion": "Versión más reciente",
+    "seedUser": "Importado del chat: {{title}}",
+    "seedAssistant": "Sembrado desde un artefacto del chat — itera chateando."
+  }
+}

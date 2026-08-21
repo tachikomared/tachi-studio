@@ -1,0 +1,35 @@
+{
+  "heading": "Demandez n'importe quoi",
+  "subtitle": "Alimenté par 11 fournisseurs IA gratuits — aucun cloud requis.",
+  "placeholder": "Qu'est-ce qui vous préoccupe ?",
+  "startChat": "Commencer le chat",
+  "slashHint": "Tapez / pour les commandes",
+  "spent": "dépensé aujourd'hui — free tier",
+  "recent": "Récent",
+  "quickStarts": {
+    "url": "Résumer une URL",
+    "code": "Expliquer le code",
+    "tweet": "Écrire un tweet",
+    "translate": "Traduire",
+    "brainstorm": "Brainstormer des idées",
+    "folder": "Ouvrir le dossier comme agent"
+  },
+  "actions": {
+    "chat": "Nouveau chat",
+    "code": "Coder un dossier",
+    "design": "Nouveau design",
+    "nodes": "Canevas de nœuds",
+    "models": "Modèles"
+  },
+  "health": {
+    "spent": "dépense 30 jours",
+    "apiUp": "API locale :{{port}}",
+    "apiDown": "API locale off",
+    "open": "Tableau de bord"
+  },
+  "recentTypes": {
+    "chat": "chat",
+    "design": "design",
+    "flow": "flux"
+  }
+}

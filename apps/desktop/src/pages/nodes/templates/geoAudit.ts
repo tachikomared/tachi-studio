@@ -1,0 +1,119 @@
+// apps/desktop/src/pages/nodes/templates/geoAudit.ts
+//
+// GEO audit — Generative Engine Optimization (BATCH35 lane B; adopted community
+// idea "GEO-workflow"). SEO asks "will Google rank this page?"; GEO asks "will
+// an answer engine QUOTE this page, and will it get us right when it does?".
+//
+// Shape: two Text inputs (the page, and the prompts you want to win) → an
+// Inventory pass → an answer-engine SIMULATION that may only use what the page
+// actually says → prioritized Recommendations → a graded Report card.
+//
+// PROVIDER-AGNOSTIC BY CONSTRUCTION. Every step is a plain text agent on ONE
+// provider node — no web tool, no function calling, no media, so it runs on the
+// bundled free router with no key AND on Bankr/OpenGateway/Surplus/Ollama by
+// swapping that single node. The page content is PASTED rather than fetched for
+// exactly this reason: a fetch tool would pin the template to a tool-capable
+// model and turn a free template into a paid one.
+//
+// Pure data (.tachiflow.json-shaped); a byte-identical copy lives at
+// examples/flows/geo-audit.tachiflow.json (parity: tachiflowPortability.test.ts).
+
+import type { FlowTemplate } from './tachiflow'
+
+export const geoAudit: FlowTemplate = {
+  id: 'geo-audit',
+  label: 'GEO audit (answer-engine optimization)',
+  description: 'Paste a page and the questions you want to win — the flow simulates how an answer engine would use it, then grades it and lists the fixes. Free — no key needed.',
+  file: {
+    format: 'tachiflow',
+    formatVersion: 1,
+    app: 'tachi-studio',
+    appVersion: '0.1.0',
+    exportedAt: '2026-07-27T00:00:00.000Z',
+    flow: {
+      version: 1,
+      name: 'GEO audit',
+      savedAt: '2026-07-27T00:00:00.000Z',
+      nodes: [
+        {
+          id: 'geo-prov',
+          type: 'provider',
+          position: { x: 40, y: 40 },
+          data: { label: 'Free models', providerId: 'freellmapi', model: 'auto' },
+        },
+        {
+          id: 'geo-page',
+          type: 'text',
+          position: { x: 40, y: 240 },
+          data: {
+            label: 'Page under audit',
+            text: 'URL: https://example.com/pricing\n\n--- PAGE TEXT ---\nPaste the page copy here (headings, body, FAQ, any schema/JSON-LD you have).',
+            lastOutput: 'URL: https://example.com/pricing\n\n--- PAGE TEXT ---\nPaste the page copy here (headings, body, FAQ, any schema/JSON-LD you have).',
+          },
+        },
+        {
+          id: 'geo-queries',
+          type: 'text',
+          position: { x: 40, y: 480 },
+          data: {
+            label: 'Prompts to win',
+            text: 'One per line — the questions you want an assistant to cite you for.\nWhat is the best tool for X?\nHow much does X cost?\nIs X better than <competitor>?',
+            lastOutput: 'One per line — the questions you want an assistant to cite you for.\nWhat is the best tool for X?\nHow much does X cost?\nIs X better than <competitor>?',
+          },
+        },
+        {
+          id: 'geo-inventory',
+          type: 'agent',
+          position: { x: 400, y: 180 },
+          data: {
+            label: 'Content inventory',
+            harnessId: 'openclaude',
+            systemPrompt: 'You inventory a web page for GENERATIVE ENGINE OPTIMIZATION. From the page in the message, extract, using ONLY what the page says: 1) the primary entity and how it is named (list every variant); 2) every factual claim, one per line, marked [sourced] when the page attributes it and [bare] when it does not; 3) every number, price, date and unit; 4) the heading outline; 5) question-shaped sections (FAQ, "how to", comparisons); 6) any structured data present (JSON-LD, tables, definition lists). Finally list what a reader still cannot learn from this page. Invent nothing — if the page is silent on something, say so.',
+          },
+        },
+        {
+          id: 'geo-simulate',
+          type: 'agent',
+          position: { x: 760, y: 180 },
+          data: {
+            label: 'Answer-engine simulation',
+            harnessId: 'openclaude',
+            systemPrompt: 'You are simulating an ANSWER ENGINE that has retrieved only this one page. For EACH target prompt in the message, write the answer you could give using nothing but the inventory above, then state: would you cite this page at all (yes/no) and why; which exact sentence you would quote; what you would have to hedge, guess, or attribute to someone else; and where a competitor page would beat it. Be blunt — a prompt this page cannot answer is the most useful finding here. End with the prompts the page currently LOSES.',
+          },
+        },
+        {
+          id: 'geo-recommend',
+          type: 'agent',
+          position: { x: 1120, y: 180 },
+          data: {
+            label: 'GEO recommendations',
+            harnessId: 'openclaude',
+            systemPrompt: 'You are a GEO strategist. Turn the simulation above into a prioritized fix list. Group by: QUOTABILITY (self-contained sentences, one claim each, numbers with units and dates), COVERAGE (the missing answers, as the exact H2/H3 to add), EVIDENCE (which bare claims need a source, and what kind), STRUCTURE (schema.org type, FAQ/HowTo blocks, tables, an answer-first opening paragraph), ENTITY (consistent naming, disambiguation, the one-line definition to repeat verbatim). Each item: the concrete edit, the prompt it wins, effort (S/M/L) and impact (high/med/low). Order by impact-per-effort. No generic SEO advice — every item must trace to something the simulation actually found.',
+          },
+        },
+        {
+          id: 'geo-report',
+          type: 'agent',
+          position: { x: 1480, y: 180 },
+          data: {
+            label: 'Report card',
+            harnessId: 'openclaude',
+            systemPrompt: 'Produce the REPORT CARD, and nothing else. Start with a markdown table: Dimension | Grade (A-F) | Why — one row each for Quotability, Coverage, Evidence, Structure, Entity clarity. Then an overall grade and a one-sentence verdict. Then "Top 3 actions this week" as three numbered, concrete edits taken from the recommendations. Then "Prompts you would win after those fixes". Keep the whole card under 400 words: grade honestly, and never award a grade the analysis above does not support.',
+            final: true,
+          },
+        },
+      ],
+      edges: [
+        { id: 'geo-e1', source: 'geo-prov', target: 'geo-inventory', sourceHandle: 'E-src', targetHandle: 'NW-tgt', type: 'link', data: {} },
+        { id: 'geo-e2', source: 'geo-prov', target: 'geo-simulate', sourceHandle: 'NE-src', targetHandle: 'NW-tgt', type: 'link', data: {} },
+        { id: 'geo-e3', source: 'geo-prov', target: 'geo-recommend', sourceHandle: 'NE-src', targetHandle: 'NW-tgt', type: 'link', data: {} },
+        { id: 'geo-e4', source: 'geo-prov', target: 'geo-report', sourceHandle: 'NE-src', targetHandle: 'NW-tgt', type: 'link', data: {} },
+        { id: 'geo-e5', source: 'geo-page', target: 'geo-inventory', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'the page to audit' } },
+        { id: 'geo-e6', source: 'geo-queries', target: 'geo-simulate', sourceHandle: 'E-src', targetHandle: 'SW-tgt', type: 'link', data: { instruction: 'the prompts to win' } },
+        { id: 'geo-e7', source: 'geo-inventory', target: 'geo-simulate', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'answer only from this inventory' } },
+        { id: 'geo-e8', source: 'geo-simulate', target: 'geo-recommend', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'turn the losses into fixes' } },
+        { id: 'geo-e9', source: 'geo-recommend', target: 'geo-report', sourceHandle: 'E-src', targetHandle: 'W-tgt', type: 'link', data: { instruction: 'grade it' } },
+      ],
+    },
+  },
+}

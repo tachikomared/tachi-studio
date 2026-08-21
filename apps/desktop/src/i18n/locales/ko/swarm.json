@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "Swarm 탭 사용 방법",
+    "step1": {
+      "title": "Swarm 탭입니다",
+      "body": "고급 기능: 하나의 git 저장소에서 여러 AI agents를 동시에 실행합니다. .gnap/ 폴더에 소규모 상태 파일을 커밋하는 방식으로 조율됩니다 — 저장소 내부에 공유 할 일 목록, agent 목록, 메시지 로그가 생성됩니다."
+    },
+    "step2": {
+      "title": "Swarm 시작하기",
+      "body": "git 저장소를 지정하고 agents를 구동하려면 [NEW SWARM]을 클릭하세요. .gnap/ 내부에만 기록하므로 코드는 안전합니다. 이미 만든 swarm에 다시 연결하려면 [OPEN EXISTING]을 사용하세요."
+    },
+    "step3": {
+      "title": "화면 구성",
+      "body": "열리면 대시보드에 세 가지 패널이 표시됩니다: agents(작업 중인 주체), kanban 보드(단계별로 이동하는 작업), 모든 커밋의 실시간 피드. Agents가 작업하는 동안 자동으로 업데이트됩니다."
+    },
+    "step4": {
+      "title": "활용 시점",
+      "body": "Swarm은 코드베이스에서 병렬 multi-agent 작업을 위한 기능입니다 — 실험적이며 Code 탭보다 복잡합니다. Agent가 하나만 필요하다면 Code를 사용하세요. \"사용 방법\"에서 다시 열 수 있습니다."
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(열린 swarm 없음)",
+    "loading": "· 로딩 중…"
+  },
+  "actions": {
+    "newSwarm": "[NEW SWARM]",
+    "openExisting": "[OPEN EXISTING]",
+    "howTo": "[HOW TO]",
+    "howToTitle": "Swarm이란 무엇인가요? 안내해 주세요",
+    "open": "[OPEN]",
+    "refresh": "[REFRESH]"
+  },
+  "empty": {
+    "title": "열린 SWARM 없음",
+    "descBefore": "Swarm은 하나의 저장소를 함께 작업하는 AI 에이전트 팀입니다. 공유 보드에서 작업을 나누고 모든 단계를 기록합니다. 모든 조율 정보는 작은",
+    "descAfter": " 폴더 안에만 저장되어 코드는 그대로 유지됩니다. 새 swarm을 만들거나 기존 것을 여세요.",
+    "pathRequired": "경로를 입력해야 합니다",
+    "pathPlaceholder": "…또는 경로 직접 입력",
+    "recent": "최근 항목"
+  },
+  "agents": {
+    "header": "AGENTS ({{count}})",
+    "empty": "등록된 agents가 없습니다.",
+    "register": "[REGISTER AGENT]",
+    "idPlaceholder": "id (예: alice)",
+    "namePlaceholder": "이름 (선택 사항)",
+    "roleLabel": "역할:",
+    "heartbeatLabel": "hb:",
+    "cancel": "취소",
+    "add": "추가",
+    "idRequired": "id는 필수입니다",
+    "registerFailed": "registerAgent 실패"
+  },
+  "kanban": {
+    "header": "작업 ({{count}})",
+    "claimed": "[CLAIMED]",
+    "newTask": "+ 새 작업",
+    "titlePlaceholder": "제목",
+    "descPlaceholder": "설명 (선택 사항)",
+    "cancel": "취소",
+    "add": "추가",
+    "actionOpen": "열기",
+    "titleRequired": "제목은 필수입니다",
+    "detail": {
+      "titlePrefix": "작업 ·",
+      "close": "닫기",
+      "comments": "댓글 ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "피드",
+    "counts": "{{commits}}개 커밋 · {{messages}}개 메시지",
+    "empty": "아직 내용이 없습니다. Swarm이 실행되면 커밋과 메시지가 여기에 표시됩니다.",
+    "commit": "커밋",
+    "noSubject": "(제목 없음)",
+    "moreFiles": "+ {{count}}개 더",
+    "msg": "MSG"
+  },
+  "messaging": {
+    "header": "메시지",
+    "registerPrompt": "Agent 간 채널을 열려면 agents를 등록하세요.",
+    "noMessages": "메시지가 없습니다.",
+    "ctxLabel": "ctx:",
+    "unreadTitle_one": "읽지 않은 메시지 {{count}}개",
+    "unreadTitle_other": "읽지 않은 메시지 {{count}}개",
+    "sendTestTitle": "{{name}}에게 테스트 handoff 보내기",
+    "sendTestButton": "[SEND TEST HANDOFF → {{name}}]",
+    "testHandoff": {
+      "task": "수정된 모듈의 diff를 검토하세요",
+      "context": "{{name}}에서 handoff됨"
+    }
+  },
+  "dialog": {
+    "title": "NEW SWARM",
+    "descBefore": "Swarm을 호스팅할 git 저장소를 선택하세요.",
+    "descAfter": " 디렉터리가 내부에 생성됩니다(또는 재사용됩니다).",
+    "pathPlaceholder": "/저장소/경로",
+    "pick": "[PICK]",
+    "cancel": "취소",
+    "create": "생성",
+    "creating": "생성 중...",
+    "pathRequired": "디렉터리 경로를 선택하거나 입력해 주세요.",
+    "initFailed": "initSwarm 실패"
+  }
+}

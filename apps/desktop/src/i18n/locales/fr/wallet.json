@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "Portefeuille",
+    "subtitle": "MULTI-CHAÎNE · Application (nookplot · x402) + portefeuilles d'agent darksol"
+  },
+  "toast": {
+    "addressCopied": "Adresse copiée",
+    "backupDownloaded": "Sauvegarde chiffrée téléchargée",
+    "walletImported": "Portefeuille importé",
+    "walletRemoved": "Portefeuille supprimé de cet appareil",
+    "agentWalletRemoved": "Portefeuille d'agent « {{agentName}} » supprimé"
+  },
+  "newKey": {
+    "backupNow": "Sauvegardez cela maintenant — seule copie",
+    "address": "Adresse",
+    "privateKey": "Clé privée",
+    "done": "Terminé — ouvrir le portefeuille"
+  },
+  "empty": {
+    "title": "Pas de portefeuille pour le moment",
+    "description": "Votre portefeuille à l'échelle de l'application — un seul compte pour nookplot, les paiements x402 et toute intégration. Non-dépositaire : la clé est chiffrée dans votre keychain du système d'exploitation et ne quitte jamais cet appareil non chiffré.",
+    "creating": "Création…",
+    "create": "✦ Créer un portefeuille",
+    "importKey": "Importer la clé privée",
+    "keyPlaceholder": "0x…",
+    "import": "Importer"
+  },
+  "account": {
+    "title": "Compte · {{label}}",
+    "noAddress": "—",
+    "copy": "Copier"
+  },
+  "balances": {
+    "title": "Soldes",
+    "allNetworks": "· tous les réseaux",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 afficher",
+    "hide": "👁 masquer",
+    "refreshing": "actualisation…",
+    "refresh": "↻ actualiser"
+  },
+  "backup": {
+    "title": "Sauvegarde chiffrée",
+    "description": "Keystore chiffré par mot de passe (Web3 Secret Storage — fonctionne avec MetaMask/geth). Gardez le fichier + le mot de passe sûrs ; ensemble, ils restaurent votre agent sur n'importe quelle machine.",
+    "password": "Mot de passe de sauvegarde (min 8)",
+    "download": "Télécharger la sauvegarde"
+  },
+  "switch": {
+    "title": "Changer de portefeuille",
+    "replaceTitle": "Remplacer la clé · {{label}}",
+    "warning": "Exportez d'abord une sauvegarde — remplacer la clé supprime le portefeuille actuel de cet appareil.",
+    "agentName": "Nom du portefeuille d'agent",
+    "keyPlaceholder": "Clé privée 0x…",
+    "importKey": "Importer la clé",
+    "orKeystore": "ou JSON du keystore + mot de passe",
+    "keystorePassword": "mot de passe du keystore",
+    "importKeystore": "Importer le keystore"
+  },
+  "danger": {
+    "title": "Nouveau / supprimer",
+    "generate": "Générer un nouveau portefeuille",
+    "forget": "Oublier le portefeuille",
+    "forgetNamed": "Oublier {{label}}"
+  },
+  "switcher": {
+    "account": "compte",
+    "activeSuffix": " ·actif",
+    "new": "+ Nouveau",
+    "newPrompt": "Nouveau nom du portefeuille d'agent darksol :",
+    "newTitle": "Nouveau portefeuille d'agent",
+    "newPlaceholder": "ex. trading-bot",
+    "newOk": "Créer",
+    "newCancel": "Annuler"
+  },
+  "network": {
+    "all": "Tous les réseaux"
+  },
+  "send": {
+    "title": "Envoyer · n'importe quel jeton",
+    "token": "Jeton",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "Destinataire",
+    "recipientPlaceholder": "0x… / nom.eth",
+    "amount": "Montant",
+    "sending": "Envoi…",
+    "send": "Envoyer",
+    "note": "Native + n'importe quel ERC-20 sur le réseau sélectionné (ou collez une adresse de contrat). Multi-chaîne → utilisez l'agent darksol (LI.FI).",
+    "toast": {
+      "success": "Envoyé — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "Financement · Application → {{agentName}}",
+    "amount": "Montant (natif)",
+    "moving": "Déplacement…",
+    "move": "Déplacer",
+    "note": "Gardez votre solde NOOK / x402 sur le portefeuille d'application intouché.",
+    "toast": {
+      "success": "Financé — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Limites d'agent · signataire d'agent darksol",
+    "maxPerTrade": "Max / échange",
+    "daily": "Limite quotidienne",
+    "dryRun": "Essai à vide",
+    "on": "ACTIVÉ",
+    "off": "DÉSACTIVÉ",
+    "save": "Enregistrer les limites",
+    "toast": {
+      "saved": "Limites enregistrées"
+    }
+  }
+}

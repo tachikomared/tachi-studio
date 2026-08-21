@@ -1,0 +1,221 @@
+{
+  "hero": {
+    "subtitlePage": "Beschreibe eine Seite oder App. Erhalte ein vollständiges, eigenständiges Design — live gerendert, per Chat verfeinert.",
+    "subtitleAnimate": "Beschreibe eine Motion-Grafik. Erhalte eine Remotion-Animation — live gerendert, per Chat verfeinert.",
+    "recentDesigns": "Letzte Designs"
+  },
+  "composer": {
+    "placeholderNew": "Beschreibe die Seite oder App, die du gestalten willst…",
+    "placeholderChange": "Beschreibe eine Änderung — z. B. „mach den Hero dunkel und füge Testimonials hinzu“",
+    "placeholderEditingV": "Bearbeite v{{n}} — beschreibe eine Änderung an DIESER Version",
+    "preset": "Preset",
+    "presetNone": "Kein Preset",
+    "presetTitle": "Marken-Preset — ein kuratiertes Designsystem (Palette, Typografie, Radien, Motion), in dem generiert wird",
+    "designMdChip": "DESIGN.md",
+    "designMdTitle": "DESIGN.md im Wurzelverzeichnis des angehängten Ordners gefunden — es wird als Design-Vorgabe mitgesendet",
+    "files": "+ Dateien",
+    "filesTitle": "Dateien als Kontext anhängen — Text/Code, oder Video/Audio/GIF als Seiten-Assets",
+    "folder": "+ Ordner",
+    "folderTitle": "Design für einen ganzen Ordner/ein Projekt",
+    "image": "+ Bild",
+    "imageTitleOn": "Referenzbild anhängen (Design daran ausrichten)",
+    "imageTitleOff": "Wähle ein Vision-Modell, um ein Bild anzuhängen",
+    "interview": "Interview",
+    "interviewTitle": "Vor dem Design ein paar Rückfragen stellen (Claude-Design-Stil). Aus = sofort bauen.",
+    "stop": "STOPP",
+    "ask": "FRAGEN",
+    "send": "SENDEN",
+    "generate": "GENERIEREN",
+    "askTitle": "Zuerst Rückfragen stellen",
+    "imageChip": "Bild",
+    "brand": "+ Marke per URL",
+    "brandTitle": "Farben, Schriften & Logo einer Website extrahieren, um in ihrer Marke zu gestalten",
+    "brandBusy": "Lese Website…",
+    "brandPrompt": "Website-URL einfügen — ich extrahiere Farben, Schriften & Logo als Marken-Richtung:",
+    "brandFailed": "Website konnte nicht gelesen werden.",
+    "brandGo": "Extrahieren",
+    "brandClose": "Schließen",
+    "brandAuto": "Marke von {{host}} wird extrahiert…",
+    "assetAdded": "{{name}} angehängt — die Seite referenziert assets/{{name}}"
+  },
+  "mode": {
+    "page": "Seite",
+    "animate": "Animation",
+    "title": "Statische Seite oder Remotion-Animation"
+  },
+  "provider": {
+    "none": "Keiner",
+    "noLocal": "Kein lokaler Anbieter",
+    "loading": "lädt…",
+    "noModels": "keine Modelle"
+  },
+  "project": {
+    "label": "Projekt",
+    "new": "+ Neues Projekt",
+    "defaultName": "Projekt {{n}}",
+    "namePlaceholder": "Projektname",
+    "ok": "OK",
+    "renameTitle": "Projekt umbenennen",
+    "title": "Projekt — entspricht einem Ordner unter TACHI Design/",
+    "folderBtn": "Ordner",
+    "setFolderBtn": "Ordner festlegen…",
+    "openFolderTitle": "Projektordner öffnen.\nGespeichert unter: {{dir}}",
+    "setFolderTitle": "Speicherort der Designs ändern.\nAktuell: {{dir}}"
+  },
+  "sessions": {
+    "none": "Noch keine früheren Designs.",
+    "button": "Sitzungen ({{count}})",
+    "prevTitle": "Frühere Designs in diesem Projekt",
+    "new": "+ Neu",
+    "newTitle": "Neues Design starten",
+    "versionsTitle": "{{count}} Version(en)",
+    "deleteTitle": "Löschen",
+    "kindAnim": "anim",
+    "kindPage": "seite"
+  },
+  "thread": {
+    "edit": "bearbeiten",
+    "editTitle": "Diese Nachricht bearbeiten und ab hier neu generieren",
+    "editConfirm": "löschen & bearbeiten?",
+    "editConfirmTitle": "Das LÖSCHT diese Nachricht und alle folgenden Versionen. Zum Bestätigen erneut klicken — oder ↩ wiederherstellen nutzen, um eine alte Version ohne Verlust zurückzuholen.",
+    "restore": "wiederherstellen",
+    "restoreTitle": "Diese Version als NEUE Version zurückholen — nichts wird gelöscht",
+    "restoredV": "v{{n}} wiederhergestellt",
+    "restoredToast": "v{{n}} als neueste Version wiederhergestellt",
+    "designV": "Design v{{n}}",
+    "showing": "(angezeigt)",
+    "designing": "entwerfe…",
+    "sentWith": "Mit dieser Nachricht gesendet"
+  },
+  "dropOpen": {
+    "title": "{{name}} sieht nach einem vollständigen HTML-Dokument aus.",
+    "open": "Als Design öffnen",
+    "openTitle": "Zum aktuellen Design machen — Vorschau, Textbearbeitung, Verfeinern und Export arbeiten damit",
+    "attach": "Als Kontext anhängen",
+    "attachTitle": "Als Referenzmaterial für den nächsten Prompt behalten (auf 6000 Zeichen gekürzt)",
+    "seedUser": "{{name}} importiert",
+    "seedAssistant": "{{name}} importiert",
+    "opened": "{{name}} geöffnet — im Chat verfeinern",
+    "tooBig": "{{name}} überschreitet das Vorschau-Limit von {{cap}} — stattdessen als Kontext angehängt"
+  },
+  "view": {
+    "preview": "Vorschau",
+    "code": "Code"
+  },
+  "artifact": {
+    "latest": "Neueste",
+    "latestTitle": "Zur neuesten Version springen",
+    "editText": "Text bearbeiten",
+    "editing": "Bearbeiten",
+    "editTitle": "Beliebigen Text in der Vorschau anklicken und direkt bearbeiten",
+    "copy": "Kopieren",
+    "export": "Export",
+    "encoderInstall": "Video-Encoder installieren · {{size}}",
+    "encoderInstallTitle": "Der Videoexport braucht Remotions Encoder. Er wird einmalig aus Remotions offiziellem npm-Paket geladen statt mitgeliefert, weil dieser FFmpeg-Build angibt, seine Lizenz verbiete die Weitergabe. Es wird nichts verschickt – der Download kommt zu dir.",
+    "encoderInstalling": "Encoder wird installiert… {{percent}} %",
+    "encoderReady": "Video-Encoder installiert",
+    "encoderFailed": "Video-Encoder konnte nicht installiert werden",
+    "exportMp4": "MP4 exportieren",
+    "mp4Title": "Rendert ein echtes H.264-MP4 (lädt beim ersten Mal ein verwaltetes Chromium)",
+    "pngTitle": "Ganzseitiges PNG exportieren",
+    "pdfTitle": "Einseitiges PDF exportieren",
+    "wysiwygBar": "Text anklicken zum Bearbeiten · Enter speichert · Esc bricht ab",
+    "generating": "generiere…",
+    "noDoc": "Noch kein Dokument.",
+    "mp4ResTitle": "Export-Auflösung (2K/4K neu gerendert, kein Upscaling)"
+  },
+  "msg": {
+    "herePage": "Hier ist dein Design.",
+    "hereAnimation": "Hier ist deine Animation.",
+    "updatedPage": "Design aktualisiert.",
+    "updatedAnimation": "Animation aktualisiert.",
+    "error": "Ein Fehler ist aufgetreten: {{error}}",
+    "discoveryFailed": "Discovery fehlgeschlagen{{detail}}. Antworte unten oder klicke GENERIEREN.",
+    "tellMore": "Erzähl mir etwas mehr (Zielgruppe, Stil, Pflicht-Sektionen), dann klicke GENERIEREN.",
+    "gatewayTimeout": "Der Provider hat nach 3 Versuchen ein Timeout — er ist überlastet. ↺ edit auf der letzten Nachricht und in einer Minute erneut senden."
+  },
+  "errors": {
+    "visionModel": "Wähle ein Vision-Modell (Claude / GPT / Gemini), bevor du ein Referenzbild anhängst.",
+    "fileUnsupported": "{{name}}: nicht unterstützter Dateityp — hänge Bilder, Video/Audio oder Text-/Code-Dateien an",
+    "assetFailed": "{{name}}: {{error}}"
+  },
+  "render": {
+    "starting": "Starte…"
+  },
+  "toast": {
+    "mp4Exported": "MP4 exportiert — im Ordner angezeigt",
+    "imgExported": "{{format}} exportiert — im Ordner angezeigt",
+    "exportFailed": "Export fehlgeschlagen",
+    "copied": "Code kopiert",
+    "copyFailed": "Kopieren fehlgeschlagen",
+    "openedFolder": "Ordner geöffnet",
+    "failed": "Fehlgeschlagen",
+    "saveTo": "Designs werden jetzt gespeichert unter {{dir}}"
+  },
+  "examples": {
+    "page1": "Eine Landingpage für eine KI-Notiz-App — Hero, Feature-Grid, Preise, Footer",
+    "page2": "Ein Krypto-Portfolio-Dashboard mit Saldo-Karten, Positions-Tabelle und Charts",
+    "page3": "Ein minimalistisches Portfolio mit markantem Hero und Projektgalerie",
+    "page4": "Eine elegante Preisseite mit drei Stufen und Monat/Jahr-Umschalter",
+    "anim1": "Ein animiertes Logo-Reveal — Buchstaben federn gestaffelt ein, dann ein Glanz-Sweep",
+    "anim2": "Ein Kinetic-Typo-Intro, das „TACHI“ tippt und in Partikel zerspringt",
+    "anim3": "Ein looping Verlaufs-Hintergrund mit schwebenden geometrischen Formen",
+    "anim4": "Ein Feature-Callout: eine Karte gleitet herein, eine Zahl zählt auf 99 % hoch"
+  },
+  "engine": {
+    "remotion": "Remotion",
+    "hyperframes": "HyperFrames",
+    "title": "Animations-Renderer: Remotion (React → MP4-Export) oder HyperFrames (HTML + GSAP-Timeline)"
+  },
+  "voiceover": {
+    "button": "AUDIO",
+    "title": "VOICEOVER — lokales TTS",
+    "voice": "Stimme",
+    "groupStudio": "STUDIO — KOKORO",
+    "groupPiper": "PIPER",
+    "studioUnavailable": "Studio-Stimmen benötigen die Medienbibliothek dieses Builds — wählen Sie stattdessen eine PIPER-Stimme.",
+    "placeholder": "Sprechertext eingeben…",
+    "synthesize": "Synthetisieren",
+    "busy": "Synthese…",
+    "files": "Audio im Projekt — der Generator kann damit vertonen:",
+    "copy": "staticFile() kopieren",
+    "copied": "kopiert ✓",
+    "noVoices": "Noch keine TTS-Stimme installiert.",
+    "installTts": "Stimme installieren: Media → TTS",
+    "hint": "Generieren oder verfeinern Sie die Animation und erwähnen Sie die Erzählung — das Modell sieht diese Dateien und fügt <Audio> selbst hinzu."
+  },
+  "interview": {
+    "title": "Kurzes Interview",
+    "suggested": "empfohlen",
+    "otherPlaceholder": "oder eigenen Text eingeben…",
+    "designIt": "Designen",
+    "hint": "Unbeantwortet = du entscheidest",
+    "youDecide": "du entscheidest"
+  },
+  "audio": {
+    "import": "+ Sound importieren",
+    "importTitle": "WAV/MP3 hinzufügen — Animationen können ihn verwenden",
+    "imported": "Importiert: {{file}}",
+    "importFailed": "Import fehlgeschlagen",
+    "noPath": "Dateipfad konnte nicht gelesen werden."
+  },
+  "tour": {
+    "windowTitle": "So verwendest du den Design-Tab",
+    "mode": {
+      "title": "Wähle, was du baust",
+      "body": "SEITE entwirft eine komplette Webseite oder einen App-Screen; ANIMATION baut eine Motion-Grafik. In ANIMATION wählst du auch den Renderer — Remotion (React, echter MP4-Export) oder HyperFrames (HTML + GSAP-Timeline). Sessions merken sich ihren Modus: Beim Wiederöffnen eines alten Designs springen diese Schalter automatisch zurück."
+    },
+    "composer": {
+      "title": "Beschreib es",
+      "body": "Tippe in einfachen Worten, was du willst — hänge Dateien, einen ganzen Ordner oder ein Referenzbild als Kontext an. Mit aktiviertem Interview stellt der erste Zug ein paar kluge Fragen, bevor etwas gebaut wird; schalte es aus, um sofort zu bauen. Cmd/Ctrl+Enter sendet."
+    },
+    "brand": {
+      "title": "Im Look einer Marke designen",
+      "body": "Füge hier eine Website-URL ein — ihre echte Palette, Schriften und Texte werden in einen Kontext-Chip extrahiert, den der Generator liest. Noch einfacher: Zieh eine URL direkt in deinen Prompt, und die Marke wird automatisch übernommen."
+    },
+    "export": {
+      "title": "Vorschau & Export",
+      "body": "Jede Version rendert live im Vorschaufenster — klicke auf eine Version im Thread, um sie anzuzeigen, oder bearbeite Text direkt in der Vorschau. Exportiere Seiten als HTML/PNG/PDF; Animationen rendern zu einem echten H.264-MP4 in 1080p, 2K oder 4K."
+    }
+  }
+}

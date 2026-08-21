@@ -1,0 +1,221 @@
+{
+  "hero": {
+    "subtitlePage": "Describe a page or app. Get a complete, self-contained design — rendered live, refined by chatting.",
+    "subtitleAnimate": "Describe a motion graphic. Get a Remotion animation — rendered live, refined by chatting.",
+    "recentDesigns": "Recent designs"
+  },
+  "composer": {
+    "placeholderNew": "Describe the page or app you want to design…",
+    "placeholderChange": "Describe a change — e.g. \"make the hero dark and add a testimonials row\"",
+    "placeholderEditingV": "Editing v{{n}} — describe a change to THIS version",
+    "preset": "Preset",
+    "presetNone": "No preset",
+    "presetTitle": "Brand preset — a curated design system (palette, type, radius, motion) the generator designs in",
+    "designMdChip": "DESIGN.md",
+    "designMdTitle": "DESIGN.md found at the root of the attached folder — it is sent as design direction",
+    "files": "+ Files",
+    "filesTitle": "Attach files as context — text/code, or video/audio/gif as page assets",
+    "folder": "+ Folder",
+    "folderTitle": "Design for a whole folder/project",
+    "image": "+ Image",
+    "imageTitleOn": "Attach a reference image (design to match)",
+    "imageTitleOff": "Pick a vision model to attach an image",
+    "interview": "Interview",
+    "interviewTitle": "Ask a few clarifying questions before designing (Claude Design style). Off = build immediately.",
+    "stop": "STOP",
+    "ask": "ASK",
+    "send": "SEND",
+    "generate": "GENERATE",
+    "askTitle": "Ask clarifying questions first",
+    "imageChip": "image",
+    "brand": "+ Brand URL",
+    "brandTitle": "Extract a site's colors, fonts & logo to design in its brand",
+    "brandBusy": "Reading site…",
+    "brandPrompt": "Paste a site URL — I'll extract its colors, fonts & logo as a brand direction:",
+    "brandFailed": "Could not read that site.",
+    "brandGo": "Extract",
+    "brandClose": "Close",
+    "brandAuto": "Pulling brand from {{host}}…",
+    "assetAdded": "Attached {{name}} — the page will reference assets/{{name}}"
+  },
+  "mode": {
+    "page": "page",
+    "animate": "animate",
+    "title": "Static page or Remotion animation"
+  },
+  "provider": {
+    "none": "None",
+    "noLocal": "No local provider",
+    "loading": "loading…",
+    "noModels": "no models"
+  },
+  "project": {
+    "label": "Project",
+    "new": "+ New project",
+    "defaultName": "Project {{n}}",
+    "namePlaceholder": "Project name",
+    "ok": "OK",
+    "renameTitle": "Rename project",
+    "title": "Project — maps to an on-disk folder under TACHI Design/",
+    "folderBtn": "Folder",
+    "setFolderBtn": "Set folder…",
+    "openFolderTitle": "Open this project's folder.\nSaving under: {{dir}}",
+    "setFolderTitle": "Change where designs save.\nCurrently: {{dir}}"
+  },
+  "sessions": {
+    "none": "No previous designs yet.",
+    "button": "Sessions ({{count}})",
+    "prevTitle": "Previous designs in this project",
+    "new": "+ New",
+    "newTitle": "Start a new design",
+    "versionsTitle": "{{count}} version(s)",
+    "deleteTitle": "Delete",
+    "kindAnim": "anim",
+    "kindPage": "page"
+  },
+  "thread": {
+    "edit": "edit",
+    "editTitle": "Edit this message and regenerate from here",
+    "editConfirm": "delete & edit?",
+    "editConfirmTitle": "This DELETES this message and every version after it. Click again to confirm — or use ↩ restore to bring an old version back without losing anything.",
+    "restore": "restore",
+    "restoreTitle": "Bring this version back as a NEW version — nothing is deleted",
+    "restoredV": "Restored v{{n}}",
+    "restoredToast": "Restored v{{n}} as the latest version",
+    "designV": "Design v{{n}}",
+    "showing": "(showing)",
+    "designing": "designing…",
+    "sentWith": "Sent with this message"
+  },
+  "dropOpen": {
+    "title": "{{name}} looks like a complete HTML document.",
+    "open": "Open as design",
+    "openTitle": "Make it the current design — preview, edit text, refine and export all work on it",
+    "attach": "Attach as context",
+    "attachTitle": "Keep it as reference material for the next prompt (trimmed to 6000 characters)",
+    "seedUser": "Imported {{name}}",
+    "seedAssistant": "Imported {{name}}",
+    "opened": "Opened {{name}} — refine it by chatting",
+    "tooBig": "{{name}} is over the {{cap}} preview limit — attached as context instead"
+  },
+  "view": {
+    "preview": "preview",
+    "code": "code"
+  },
+  "artifact": {
+    "latest": "Latest",
+    "latestTitle": "Jump to the latest version",
+    "editText": "Edit text",
+    "editing": "Editing",
+    "editTitle": "Click any text in the preview to edit it in place",
+    "copy": "Copy",
+    "export": "Export",
+    "encoderInstall": "Install video encoder · {{size}}",
+    "encoderInstallTitle": "Video export needs Remotion's encoder. It is downloaded once from Remotion's official npm package rather than bundled with the app, because that build of FFmpeg states its own licence forbids redistribution. Nothing is sent anywhere — the download comes to you.",
+    "encoderInstalling": "Installing encoder… {{percent}}%",
+    "encoderReady": "Video encoder installed",
+    "encoderFailed": "Could not install the video encoder",
+    "exportMp4": "Export MP4",
+    "mp4Title": "Render a real H.264 MP4 (downloads a managed Chromium on first use)",
+    "pngTitle": "Export a full-page PNG",
+    "pdfTitle": "Export a single-page PDF",
+    "wysiwygBar": "Click any text to edit · Enter saves · Esc cancels",
+    "generating": "generating…",
+    "noDoc": "No document yet.",
+    "mp4ResTitle": "Export resolution (2K/4K re-render, not upscale)"
+  },
+  "msg": {
+    "herePage": "Here is your design.",
+    "hereAnimation": "Here is your animation.",
+    "updatedPage": "Updated the design.",
+    "updatedAnimation": "Updated the animation.",
+    "error": "I hit an error: {{error}}",
+    "discoveryFailed": "Couldn't run discovery{{detail}}. Answer below or just hit GENERATE.",
+    "tellMore": "Tell me a bit more (audience, vibe, must-have sections), then hit GENERATE.",
+    "gatewayTimeout": "The provider timed out after 3 attempts — it is under load. Hit ↺ edit on your last message and resend in a minute."
+  },
+  "errors": {
+    "visionModel": "Pick a vision model (Claude / GPT / Gemini) before attaching a reference image.",
+    "fileUnsupported": "{{name}}: unsupported file type — attach images, video/audio, or text/code files",
+    "assetFailed": "{{name}}: {{error}}"
+  },
+  "render": {
+    "starting": "Starting…"
+  },
+  "toast": {
+    "mp4Exported": "MP4 exported — revealed in folder",
+    "imgExported": "{{format}} exported — revealed in folder",
+    "exportFailed": "Export failed",
+    "copied": "Code copied",
+    "copyFailed": "Copy failed",
+    "openedFolder": "Opened folder",
+    "failed": "Failed",
+    "saveTo": "Designs now save to {{dir}}"
+  },
+  "examples": {
+    "page1": "A landing page for an AI note-taking app — hero, feature grid, pricing, footer",
+    "page2": "A crypto portfolio dashboard with balance cards, a holdings table, and charts",
+    "page3": "A minimalist personal portfolio with a bold hero and project gallery",
+    "page4": "A sleek pricing page with three tiers and a monthly/yearly toggle",
+    "anim1": "An animated logo reveal — letters stagger in with a spring, then a glow sweep",
+    "anim2": "A kinetic typography intro that types out \"TACHI\" then explodes into particles",
+    "anim3": "A looping gradient background with floating geometric shapes",
+    "anim4": "A product feature callout: a card slides in, a number counts up to 99%"
+  },
+  "engine": {
+    "remotion": "Remotion",
+    "hyperframes": "HyperFrames",
+    "title": "Animation renderer: Remotion (React → MP4 export) or HyperFrames (HTML + GSAP timeline)"
+  },
+  "voiceover": {
+    "button": "AUDIO",
+    "title": "VOICEOVER — local TTS",
+    "voice": "voice",
+    "groupStudio": "STUDIO — KOKORO",
+    "groupPiper": "PIPER",
+    "studioUnavailable": "Studio voices need the media-library surface of this build — pick a PIPER voice instead.",
+    "placeholder": "Type a narration line…",
+    "synthesize": "Synthesize",
+    "busy": "Synthesizing…",
+    "files": "Audio in this project — the generator can score with these:",
+    "copy": "copy staticFile()",
+    "copied": "copied ✓",
+    "noVoices": "No TTS voice installed yet.",
+    "installTts": "Install a voice: Media → TTS",
+    "hint": "Now generate or refine the animation and mention the narration — the model sees these files and adds <Audio> itself."
+  },
+  "interview": {
+    "title": "Quick interview",
+    "suggested": "suggested",
+    "otherPlaceholder": "or type your own…",
+    "designIt": "Design it",
+    "hint": "Unanswered questions = you decide",
+    "youDecide": "you decide"
+  },
+  "audio": {
+    "import": "+ Import sound",
+    "importTitle": "Add a WAV/MP3 sound or music file — animations can score with it",
+    "imported": "Imported {{file}}",
+    "importFailed": "Import failed",
+    "noPath": "Could not read the file path — drop the file from disk, not from an archive."
+  },
+  "tour": {
+    "windowTitle": "How to use the Design tab",
+    "mode": {
+      "title": "Pick what you're building",
+      "body": "PAGE designs a full web page or app screen; ANIMATE builds a motion graphic. In ANIMATE you also pick the renderer — Remotion (React, real MP4 export) or HyperFrames (HTML + GSAP timeline). Sessions remember their mode: reopening an old design flips these toggles back for you."
+    },
+    "composer": {
+      "title": "Describe it",
+      "body": "Type what you want in plain words — attach files, a whole folder, or a reference image as context. With Interview on, the first turn asks a few smart questions before building anything; switch it off to build immediately. Cmd/Ctrl+Enter sends."
+    },
+    "brand": {
+      "title": "Design in a brand",
+      "body": "Paste a site URL here — its real palette, fonts and copy are extracted into a context chip the generator reads. Even easier: drop a URL straight into your prompt and the brand is pulled in automatically."
+    },
+    "export": {
+      "title": "Preview & export",
+      "body": "Every version renders live in the preview pane — click a version in the thread to show it, or edit text right in the preview. Export pages as HTML/PNG/PDF; animations render to a real H.264 MP4 at 1080p, 2K or 4K."
+    }
+  }
+}

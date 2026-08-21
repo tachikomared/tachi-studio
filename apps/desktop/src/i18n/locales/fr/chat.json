@@ -1,0 +1,567 @@
+{
+  "sampler": {
+    "chip": "ÉCHANTILL.",
+    "chipTitle": "Préréglage d'échantillonnage pour ce chat — règle le caractère aléatoire des réponses (temperature / top-p)",
+    "heading": "PRÉRÉGLAGE D'ÉCHANTILLONNAGE",
+    "preset": {
+      "fast": "RAPIDE",
+      "balanced": "ÉQUILIBRÉ",
+      "creative": "CRÉATIF",
+      "advanced": "AVANCÉ"
+    },
+    "presetDesc": {
+      "fast": "Précis et ciblé — température 0.3",
+      "balanced": "Valeurs par défaut du fournisseur — rien n'est envoyé",
+      "creative": "Libre et varié — temp 0.9, top-p 0.95",
+      "advanced": "Définir la température et le top-p exacts"
+    },
+    "temperature": "Température",
+    "topP": "Top-p",
+    "advancedHint": "Réglages exacts — appliqués à ce chat uniquement.",
+    "balancedNote": "ÉQUILIBRÉ n'envoie aucun réglage d'échantillonnage — les valeurs par défaut du fournisseur s'appliquent."
+  },
+  "customEndpoint": {
+    "lanBadge": "LAN-LOCAL",
+    "cloudBadge": "CLOUD",
+    "defaultName": "Point de terminaison personnalisé",
+    "pickTitle": "Choisissez ou saisissez un modèle pour ce point de terminaison",
+    "loadError": "Impossible de charger les modèles",
+    "noModels": "Le point de terminaison n’a renvoyé aucun modèle — saisissez un id de modèle ci-dessous.",
+    "loadingCatalog": "Chargement des modèles…",
+    "modelPlaceholder": "saisissez un id de modèle…",
+    "useModel": "Utiliser"
+  },
+  "capture": {
+    "prompt": "Mémoriser ceci ?",
+    "save": "Enregistrer",
+    "saved": "Enregistré en mémoire"
+  },
+  "actions": {
+    "copy": "COPIER",
+    "download": "TÉLÉCHARGER",
+    "regenerate": "RÉGÉNÉRER",
+    "fork": "Fork — nouveau chat amorcé avec la conversation jusqu'ici",
+    "forkLabel": "Fork",
+    "forked": "Forké — vous êtes maintenant dans la nouvelle branche"
+  },
+  "messages": {
+    "emptyState": "Envoyez un message pour commencer à discuter.",
+    "waiting": "En attente de réponse…"
+  },
+  "message": {
+    "thinking": "RÉFLEXION",
+    "error": "ERREUR"
+  },
+  "reasoning": {
+    "label": "raisonnement",
+    "thinking": "réflexion…"
+  },
+  "sources": {
+    "label": "Sources",
+    "hint": "Extrait du dossier joint — cliquez sur une source pour voir le texte exact",
+    "chipTitle": "{{path}} · lignes {{start}}-{{end}} · correspondance {{score}}",
+    "lines": "lignes {{start}}-{{end}}",
+    "match": "correspondance {{score}}",
+    "openFile": "Afficher le fichier"
+  },
+  "blocks": {
+    "empty": "(vide)"
+  },
+  "meter": {
+    "title": "Jetons utilisés cette conversation : {{count}}",
+    "titleDanger": "Jetons utilisés cette conversation : {{count}} — très long, commencez un chat frais pour de meilleurs résultats",
+    "ariaLabel": "Jetons de conversation : {{count}}",
+    "unit": "jeton"
+  },
+  "topbar": {
+    "hideArtifacts": "Masquer les artefacts",
+    "showArtifacts": "Afficher les artefacts",
+    "hideArtifactsPanel": "Masquer le panneau des artefacts",
+    "showArtifactsPanel": "Afficher le panneau des artefacts",
+    "artifactsButton": "ARTEFACTS {{count}}",
+    "showHistory": "Afficher l'historique",
+    "showHistoryAria": "Afficher l'historique de chat",
+    "history": "historique",
+    "howToTitle": "Visite guidée interactive de cet onglet",
+    "howTo": "Comment faire"
+  },
+  "tour": {
+    "title": "Comment utiliser l'onglet Chat",
+    "step1": {
+      "title": "Ceci est l'onglet Chat",
+      "body": "Un simple chat IA — posez des questions, collez du texte, joignez des fichiers ou des images. Aucun dossier ni configuration requise. Laissez-moi vous montrer les trois choses qui importent."
+    },
+    "step2": {
+      "title": "Choisissez d'où vient l'IA",
+      "body": "Ceci est le sélecteur de fournisseur. « Gratuit » n'a besoin d'aucune clé ; les autres — Venice, Bankr, Ollama, llama.cpp — utilisent une clé ou un modèle local. La liste des modèles affiche des étiquettes de capacité (vision · raisonnement · outils) afin que vous obteniez le bon. Chaque chat se souvient de son propre fournisseur."
+    },
+    "step3": {
+      "title": "Tapez votre message",
+      "body": "Écrivez ici. Vous pouvez glisser-déposer des fichiers/images ou coller une capture d'écran. Tapez « / » pour utiliser un skill. Chaque chat conserve sa propre mémoire de la conversation."
+    },
+    "step4": {
+      "title": "L'envoyer",
+      "body": "Appuyez sur ce bouton Envoyer ou appuyez sur Entrée (Maj+Entrée pour une nouvelle ligne). La réponse diffuse ci-dessus. Commencez un chat frais à tout moment avec « Nouveau »."
+    },
+    "step5": {
+      "title": "Vous êtes prêt",
+      "body": "Choisissez un fournisseur, tapez, envoyez. Le compteur en haut montre le remplissage de la conversation. Rouvrez ceci à partir du bouton « Comment faire »."
+    }
+  },
+  "redZone": {
+    "toast": "Ce chat devient long — l'IA peut commencer à oublier les messages antérieurs. Commencez un chat frais pour de meilleurs résultats.",
+    "newChat": "Nouveau chat"
+  },
+  "compact": {
+    "button": "COMPACTER",
+    "working": "COMPACTAGE…",
+    "title": "Compresser les anciens messages en un résumé pour libérer du contexte — toute la conversation reste affichée",
+    "done": "{{count}} messages compactés en un résumé",
+    "failed": "Impossible de compacter cette conversation — réessayez",
+    "marker": "{{count}} messages compactés",
+    "markerTitle": "Ces messages plus anciens sont envoyés sous forme de résumé pour économiser du contexte. Cliquez pour l’afficher.",
+    "summaryLabel": "Résumé du contexte"
+  },
+  "history": {
+    "header": "Historique · {{count}}",
+    "new": "+ NOUVEAU",
+    "newChat": "Nouveau chat",
+    "hide": "Masquer l'historique",
+    "searchPlaceholder": "Rechercher des chats…",
+    "noMatches": "Aucune correspondance.",
+    "noConversations": "Aucune conversation pour le moment.",
+    "msgCount": "{{count}} msgs",
+    "time": {
+      "justNow": "à l'instant",
+      "minutesAgo": "il y a {{count}}m",
+      "hoursAgo": "il y a {{count}}h",
+      "daysAgo": "il y a {{count}}j"
+    },
+    "actions": {
+      "rename": "renommer",
+      "copyMd": "copier md",
+      "copyMdTitle": "Copier en tant que markdown",
+      "export": "exporter",
+      "downloadTitle": "Télécharger en markdown",
+      "downloadAria": "Télécharger en markdown",
+      "delete": "Supprimer",
+      "deleteConfirm": "Cliquez à nouveau pour confirmer",
+      "deleteShort": "suppr",
+      "deleteSure": "sûr ?"
+    },
+    "toast": {
+      "copiedMarkdown": "Conversation copiée dans le presse-papiers en markdown",
+      "downloaded": "{{filename}} téléchargé",
+      "deleted": "« {{title}} » supprimé"
+    },
+    "untitled": "Nouvelle discussion",
+    "deepSearch": "Dans les messages (texte intégral)",
+    "folders": {
+      "new": "Nouveau dossier",
+      "defaultName": "Nouveau projet",
+      "unfiled": "Sans dossier",
+      "prompt": "Prompt",
+      "knowledge": "Connaissances",
+      "detach": "Détacher les connaissances",
+      "promptPlaceholder": "Prompt système du projet — envoyé avec chaque chat de ce dossier…",
+      "none": "Aucun dossier",
+      "moveTitle": "Déplacer vers un dossier",
+      "projectPowers": "Prompt/connaissances de projet attachés",
+      "actionsTitle": "Actions du dossier",
+      "settings": "Paramètres du dossier",
+      "settingsTitle": "Paramètres du dossier — instructions, fournisseur/modèle par défaut, connaissances",
+      "instructions": "Instructions",
+      "defaultProviderModel": "Fournisseur / modèle par défaut",
+      "providerAppDefault": "Défaut de l'app",
+      "defaultModelPlaceholder": "auto",
+      "knowledgeLabel": "Dossier de connaissances",
+      "newChatInFolder": "Nouveau chat dans ce dossier — reprend les réglages par défaut du dossier"
+    },
+    "pinnedSection": "Épinglés",
+    "pin": {
+      "pin": "Épingler",
+      "unpin": "Désépingler",
+      "pinTitle": "Épingler — garder ce chat en haut de l'historique",
+      "unpinTitle": "Désépingler ce chat"
+    }
+  },
+  "artifacts": {
+    "header": "Artifacts · {{count}}",
+    "closeTitle": "Fermer le panneau des artefacts",
+    "closeAria": "Fermer le panneau des artefacts",
+    "empty": "Aucun artefact dans cette conversation pour le moment.",
+    "copied": "Artefact copié dans le presse-papiers",
+    "downloaded": "{{filename}} téléchargé"
+  },
+  "toast": {
+    "copied": "Copié dans le presse-papiers",
+    "copyFailed": "La copie a échouée",
+    "codeCopied": "Code copié dans le presse-papiers"
+  },
+  "media": {
+    "save": "Enregistrer",
+    "reveal": "Révéler",
+    "savedTo": "Enregistré dans {{path}}",
+    "nothingToSave": "Rien à enregistrer pour cet élément.",
+    "generatedImageAlt": "image générée",
+    "attachedImageAlt": "image jointe",
+    "attachAudioToTranscribe": "Joignez un fichier audio à transcrire.",
+    "transcribeEcho": "Transcrire : {{name}}",
+    "generationFailed": "La génération media a échouée : {{error}}",
+    "noArtifactsReturned": "Aucun artefact retourné.",
+    "jobFailed": "Le travail a échoué",
+    "pollTimeout": "Toujours en traitement — délai d'attente dépassé après 5 min. Réessayez pour relancer."
+  },
+  "provider": {
+    "localityGroup": {
+      "local": "Sur cette machine",
+      "relay": "Sur cette machine, mais transmis",
+      "cloud": "Dans le cloud"
+    },
+    "listAria": "Fournisseurs",
+    "noKeyBadge": "sans clé",
+    "readyNow": "{{count}} sur {{total}} fonctionnent dès maintenant sans clé. Les autres en réclament une dans les réglages.",
+    "autoRouteNow": "Pour l'instant, cela part vers {{provider}} · {{model}}",
+    "changeTitle": "Changer de fournisseur pour ce chat",
+    "label": "fournisseur :",
+    "needsKey": "(se connecter / ajouter une clé)",
+    "autoLabel": "Auto",
+    "autoBadge": "AUTO",
+    "autoHint": "Choix auto : modèle local s'il tient, sinon gratuit, sinon votre fournisseur par défaut.",
+    "locality": {
+      "local": {
+        "badge": "LOCAL",
+        "title": "Tourne sur cette machine. Votre requête ne la quitte jamais."
+      },
+      "relay": {
+        "badge": "RELAIS",
+        "title": "Un processus local répond, mais il transmet votre requête à un fournisseur cloud — votre requête quitte bien cette machine."
+      },
+      "cloud": {
+        "badge": "CLOUD",
+        "title": "Votre requête part sur internet vers un fournisseur distant."
+      }
+    }
+  },
+  "health": {
+    "ok": "Accessible — le dernier contrôle de santé a réussi",
+    "error": "Inaccessible — le dernier contrôle de santé a échoué",
+    "checking": "Vérification de la santé du fournisseur…",
+    "unknown": "Santé inconnue",
+    "ariaLabel": "santé du fournisseur : {{status}}"
+  },
+  "picker": {
+    "listAria": "Modèles",
+    "taskFilterAria": "Filtrer les modèles par tâche",
+    "taskAll": "Tous",
+    "taskAllTitle": "Tous les modèles proposés par ce fournisseur, regroupés par famille.",
+    "taskEmpty": "Rien ici n'est étiqueté pour cette tâche. L'application n'étiquette que ce qu'elle peut prouver : un modèle sans étiquette peut très bien être le bon.",
+    "modelLabel": "modèle :",
+    "pickModel": "choisir un modèle",
+    "offlineTitle": "Affichage du catalogue curé — récupération en direct indisponible",
+    "offlineBadge": "·hors ligne",
+    "offlineCurated": "Hors ligne — affichage du catalogue curé ({{error}})",
+    "priceRate": "{{in}} $/M en entrée · {{out}} $/M en sortie",
+    "priceFree": "0 $ — rien à payer"
+  },
+  "bankr": {
+    "pickTitle": "Choisir quel modèle Bankr utiliser",
+    "loadError": "Impossible de charger les modèles Bankr",
+    "loadingCatalog": "Chargement du catalogue Bankr…"
+  },
+  "venice": {
+    "pickTitle": "Choisir quel modèle Venice utiliser",
+    "loadError": "Impossible de charger les modèles Venice",
+    "loadingCatalog": "Chargement du catalogue Venice…"
+  },
+  "imgnai": {
+    "pickTitle": "Choisir quel modèle imgnAI Katana utiliser",
+    "loadingCatalog": "Chargement du catalogue imgnAI…"
+  },
+  "surplus": {
+    "pickTitle": "Choisir quel modèle Surplus utiliser",
+    "loadError": "Impossible de charger les modèles Surplus",
+    "loadingCatalog": "Chargement du catalogue Surplus…",
+    "modelAuto": "MODÈLE : AUTO",
+    "modelAutoTitle": "Le routage intelligent est ACTIVÉ — le modèle est choisi automatiquement par message. Désactivez SMART pour en choisir un.",
+    "smartOn": "SMART ACTIVÉ",
+    "smartOff": "SMART DÉSACTIVÉ",
+    "smartOnTitle": "Routage intelligent ACTIVÉ — les messages simples utilisent des modèles bon marché, les messages difficiles utilisent les meilleurs modèles (auto). Cliquez pour désactiver.",
+    "smartOffTitle": "Routage intelligent DÉSACTIVÉ — utilise le modèle que vous avez choisi. Cliquez pour acheminer automatiquement par difficulté de tâche.",
+    "smartAuto": "AUTO ROUTE",
+    "smartAutoTitle": "Modèle en AUTO — chaque message est routé automatiquement selon la difficulté. Choisissez un modèle pour le fixer, ou cliquez pour forcer SMART.",
+    "tuneTitle": "Régler les seuils de difficulté du routage",
+    "tuneHint": "seuils de difficulté (plus bas = modèles puissants plus souvent)",
+    "tuneSimple": "SIMPLE sous",
+    "tuneMid": "MID sous",
+    "tuneReset": "réinitialiser",
+    "workflowOn": "WORKFLOW ACTIVÉ",
+    "workflowOff": "WORKFLOW DÉSACTIVÉ",
+    "workflowOnTitle": "Escalade WORKFLOW ACTIVÉE — un message véritablement difficile, multi-étapes/agentic exécute un workflow multi-agent (plusieurs agents planifient + exécutent) au lieu d'un modèle. Plus lent. Cliquez pour désactiver.",
+    "workflowOffTitle": "Escalade WORKFLOW DÉSACTIVÉE — activez pour que les messages véritablement difficiles et multi-étapes/agentic exécutent un workflow multi-agent au lieu d'un seul modèle (avancé, plus lent, nécessite une clé)."
+  },
+  "surplusMedia": {
+    "pickTitle": "Choisir quel modèle media Surplus utiliser",
+    "pickModel": "choisir un modèle media",
+    "mediaLabel": "media :",
+    "loadError": "Impossible de charger les modèles media Surplus",
+    "loadingCatalog": "Chargement du catalogue media…",
+    "noModels": "Aucun modèle media. Ajoutez une clé Surplus et financez l'USDC.",
+    "modality": {
+      "image": "IMAGE",
+      "video": "VIDÉO",
+      "music": "MUSIQUE",
+      "tts": "TEXTE → PAROLE",
+      "stt": "PAROLE → TEXTE"
+    }
+  },
+  "ollama": {
+    "pickTitle": "Choisir quel modèle Ollama avec lequel discuter",
+    "notAvailable": "Ollama non disponible",
+    "firstInstalled": "Premier modèle installé",
+    "probing": "Sondage d'Ollama…",
+    "noModelsPrefix": "Aucun modèle tiré pour le moment. Exécutez",
+    "noModelsSuffix": "ou tout autre modèle."
+  },
+  "llamaCpp": {
+    "pickTitle": "Choisir quel modèle llama.cpp téléchargé charger + discuter",
+    "startFailed": "Impossible de démarrer le modèle",
+    "loading": "chargement…",
+    "loadingParen": "(chargement…)",
+    "selectModel": "sélectionner un modèle",
+    "noModelsPrefix": "Aucun modèle llama.cpp téléchargé pour le moment. Obtenez-en un dans",
+    "noModelsLink": "Catalog → Recommended",
+    "running": "en cours",
+    "clickToLoad": "cliquez pour charger"
+  },
+  "freellmapi": {
+    "pickTitle": "Choisir un modèle pour le prochain message",
+    "unavailable": "freellmapi indisponible",
+    "modelPinned": "MODÈLE : {{model}}",
+    "modelAuto": "MODÈLE : AUTO",
+    "modelUnavail": "MODÈLE : [indispon]",
+    "fallbackChain": "chaîne de secours",
+    "sortTitle": "Cycle d'ordre de tri de secours",
+    "sort": "TRI : {{mode}}",
+    "sortUnavail": "TRI : [indispon]",
+    "sortMode": {
+      "intelligence": "intel",
+      "speed": "vitesse",
+      "budget": "budget"
+    },
+    "routingTitle": "Choisit quel modèle gratuit répond en premier : intel = le plus capable, rapide = le plus véloce, éco = le moins cher (cliquer pour changer).",
+    "routing": "ROUTAGE : {{mode}}",
+    "routingUnavail": "ROUTAGE : [indispon]",
+    "routingMode": {
+      "intelligence": "intel",
+      "speed": "rapide",
+      "budget": "éco"
+    }
+  },
+  "mediaControls": {
+    "size": "taille",
+    "count": "n",
+    "voice": "voix",
+    "seconds": "secondes",
+    "lyrics": "paroles",
+    "defaultPlaceholder": "(par défaut)",
+    "optionalPlaceholder": "(optionnel)",
+    "changeAudio": "Changer l'audio",
+    "attachAudio": "Joindre l'audio",
+    "working": "travail…",
+    "workingProgress": "travail · {{progress}}",
+    "modality": {
+      "image": "image",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "vidéo",
+      "music": "musique"
+    },
+    "modalityWord": {
+      "image": "image",
+      "tts": "tts",
+      "stt": "stt",
+      "video": "vidéo",
+      "music": "musique"
+    }
+  },
+  "composer": {
+    "attachTitle": "Attacher un fichier ou une image",
+    "micStop": "Arrêter l'écoute",
+    "micStart": "Entrée vocale (cliquez pour démarrer)",
+    "micStopAria": "Arrêter l'écoute",
+    "micStartAria": "Démarrer l'entrée vocale",
+    "rec": "REC",
+    "mic": "MIC",
+    "transcribing": "TRANSCRIPTION",
+    "placeholderStt": "Joignez un fichier audio à transcrire (message ignoré)",
+    "placeholderMedia": "Décrivez le {{modality}} à générer...",
+    "placeholderDefault": "Entrez la commande ou le message… (Maj+Entrée pour une nouvelle ligne)",
+    "stop": "Arrêter",
+    "stopTitle": "Arrêter la génération",
+    "send": "Envoyer",
+    "sendAria": "Envoyer le message",
+    "draftTokens": "+{{count}} brouillon",
+    "modeChip": "Chat",
+    "prompts": "{ }",
+    "promptsTitle": "Bibliothèque de prompts — modèles réutilisables avec variables",
+    "attachFolderTitle": "Joindre un dossier — le chat en extraira le contexte pertinent (index sémantique local)",
+    "folderIndexing": "Indexation du dossier…",
+    "folderIndexed": "Dossier indexé : {{count}} fragments",
+    "folderIndexError": "Échec de l'indexation du dossier",
+    "folderDetach": "Détacher le dossier",
+    "attachFull": "COMPLET",
+    "attachRag": "RAG",
+    "attachFullTitle": "Tient dans le contexte : ~{{tokens}} tokens ≤ 60 % de la fenêtre de {{window}} tokens du modèle — le texte complet du dossier est envoyé avec votre message (sans récupération).",
+    "attachRagTitle": "~{{tokens}} tokens — trop volumineux pour la fenêtre de {{window}} tokens du modèle ; les extraits les plus pertinents sont récupérés à chaque message.",
+    "attachRagFallbackTitle": "Les extraits les plus pertinents du dossier sont récupérés à chaque message.",
+    "attachScanningTitle": "Estimation de la taille du dossier…",
+    "promptsLabel": "Prompts",
+    "attachFolderLabel": "Dossier",
+    "attachLabel": "Joindre",
+    "editBranchSaved": "Ancien fil conservé comme chat « (branch) » dans l'Historique",
+    "inputAria": "Champ de message",
+    "folderChipAria": "Dossier joint : {{folder}}",
+    "attachmentsAria": "Pièces jointes ({{count}})",
+    "blanksHint": "Champs à remplir : {{n}} — Tab pour naviguer, Échap pour envoyer tel quel",
+    "blanksDismiss": "envoyer tel quel"
+  },
+  "slash": {
+    "ariaLabel": "Commandes slash",
+    "skillsLabel": "Skills",
+    "toPick": "à choisir",
+    "toDismiss": "à rejeter"
+  },
+  "voice": {
+    "error": "Voix : {{error}}"
+  },
+  "attachments": {
+    "image": "image",
+    "remove": "Retirer",
+    "removeNamed": "Retirer la pièce jointe {{name}}"
+  },
+  "workspace": {
+    "noSession": "Aucune session active",
+    "loading": "Chargement...",
+    "noToolCalls": "Aucun appel outil enregistré pour le moment",
+    "recentChanges": "Changements récents",
+    "state": "État",
+    "openPanel": "Ouvrir le panneau de l'espace de travail",
+    "title": "ESPACE DE TRAVAIL",
+    "noWorkspace": "Aucun espace de travail sélectionné.",
+    "pickFolder": "Choisissez un dossier dans l'en-tête Agent pour commencer à parcourir les fichiers."
+  },
+  "workspaceState": {
+    "noTasks": "Aucune tâche",
+    "snapshot": "SNAPSHOT D'ÉTAT",
+    "phases": "PHASES",
+    "blockers": "BLOQUEURS",
+    "decisions": "DÉCISIONS",
+    "noData": "Aucune donnée d'état pour le moment"
+  },
+  "rightPanel": {
+    "provider": "Fournisseur",
+    "online": "En ligne",
+    "model": "Modèle",
+    "usage": "Utilisation",
+    "promptTokens": "Message : {{count}} jetons",
+    "completionTokens": "Complément : {{count}} jetons",
+    "routing": "Acheminement",
+    "routingHint": "Activer bankr-router pour les insights d'acheminement (Phase 2)"
+  },
+  "compare": {
+    "useThis": "Utiliser cette réponse",
+    "pickedNote": "{{count}} modèles comparés — {{model}} retenu",
+    "tokPerSec": "{{rate}} tok/s",
+    "tokPerSecEst": "~{{rate}} tok/s",
+    "tokPerSecNone": "— tok/s",
+    "ttft": "TTFT {{seconds}}s",
+    "ttftNone": "TTFT —"
+  },
+  "panelPicker": {
+    "chipAuto": "PANNEAU AUTO",
+    "chipCount": "PANNEAU·{{count}}",
+    "chipAutoTitle": "Les modèles du panneau viennent du préréglage. Cliquez pour choisir les vôtres — les modèles cloud ET locaux (Ollama / llama.cpp) peuvent répondre côte à côte.",
+    "chipCustomTitle": "Panneau personnalisé : {{models}}. Cliquez pour modifier.",
+    "title": "Panneau Fusion / Compare",
+    "autoRow": "AUTO",
+    "autoRowHint": "utiliser le panneau du préréglage",
+    "cloudSection": "Cloud — {{provider}}",
+    "ollamaSection": "Ollama — local",
+    "llamacppSection": "llama.cpp — local",
+    "loading": "sondage…",
+    "cloudEmpty": "Catalogue indisponible — ajoutez une clé API ou vérifiez votre connexion.",
+    "ollamaEmpty": "Aucun modèle Ollama tiré.",
+    "llamacppEmpty": "Aucun modèle GGUF téléchargé — obtenez-en un dans le Catalogue.",
+    "running": "en cours",
+    "willStart": "cliquez pour charger dans llama-server",
+    "starting": "chargement du modèle…",
+    "startFailedGeneric": "Impossible de démarrer llama.cpp.",
+    "localTag": "LOCAL",
+    "hint": "2–6 modèles répondent en parallèle. Les modèles locaux tournent sur votre machine ; chaque colonne affiche les tok/s mesurés + le temps jusqu'au premier token."
+  },
+  "fitPill": {
+    "gpu": "TIENT",
+    "cpu": "CPU SEUL",
+    "tight": "JUSTE",
+    "tooBig": "TROP GROS",
+    "gpuTitle": "Tient dans la mémoire GPU — rapide",
+    "cpuTitle": "Tient dans la RAM — s'exécute sur CPU / GPU partiel (plus lent)",
+    "tightTitle": "Juste — risque de manquer de mémoire",
+    "tooBigTitle": "Trop volumineux pour cette machine",
+    "sizeFromDiskTitle": "taille mesurée à partir du fichier du modèle sur le disque"
+  },
+  "starters": {
+    "try": "ESSAYER ▸",
+    "summarizeUrl": {
+      "label": "RÉSUMER UNE URL",
+      "desc": "Collez un lien — l'essentiel en cinq puces.",
+      "prompt": "Résume cette page en 5 puces, puis donne-moi le point à retenir le plus important :\n<collez l'URL ici>"
+    },
+    "explain": {
+      "label": "EXPLIQUER SIMPLEMENT",
+      "desc": "N'importe quel concept, expliqué comme à un débutant.",
+      "prompt": "Explique <sujet> simplement, comme si j'étais intelligent mais nouveau dans le domaine. Utilise une analogie concrète."
+    },
+    "compare": {
+      "label": "COMPARER DEUX MODÈLES",
+      "desc": "Même question, réponses côte à côte — choisissez la meilleure.",
+      "prompt": "Quelle approche de planification est meilleure pour une petite équipe : kanban ou scrum ? Réponds en 4 phrases."
+    }
+  },
+  "versions": {
+    "prev": "Version précédente",
+    "next": "Version suivante",
+    "counter": "v{{n}} / {{total}}"
+  },
+  "auto": {
+    "badge": "AUTO",
+    "routedTitle": "Choisi automatiquement par le routeur AUTO"
+  },
+  "reconnect": {
+    "retrying": "Connexion perdue — nouvelle tentative {{attempt}}/{{max}}",
+    "nextIn": "prochaine dans {{seconds}} s",
+    "reason": "Cause : {{reason}}"
+  },
+  "a11y": {
+    "transcript": "Transcription du chat",
+    "userMessage": "Votre message",
+    "assistantMessage": "Réponse de l'assistant",
+    "errorMessage": "Erreur de l'assistant",
+    "toolMessage": "Appel d'outil : {{tool}}",
+    "thinking": "L'assistant réfléchit"
+  },
+  "fileChips": {
+    "label": "Fichiers",
+    "revealAria": "Afficher {{name}} dans le gestionnaire de fichiers"
+  },
+  "openrouterPicker": {
+    "pickTitle": "Choisir le modèle OpenRouter à utiliser",
+    "loadError": "Impossible de charger les modèles OpenRouter",
+    "loadingCatalog": "Chargement du catalogue OpenRouter…",
+    "freeBadge": "FREE",
+    "freeLimits": "Palier gratuit : 20 requêtes/min · 50/jour sans crédits (leurs limites publiées).",
+    "freeGroup": "Gratuits — 0 $ au catalogue en direct ({{count}})",
+    "paidGroup": "Payants ({{count}})"
+  }
+}

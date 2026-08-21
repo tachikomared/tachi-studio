@@ -1,0 +1,570 @@
+{
+  "modalities": {
+    "image": "BILD",
+    "video": "VIDEO",
+    "music": "MUSIK",
+    "tts": "SPRACHE (TTS)",
+    "stt": "TRANSKRIBIEREN (STT)"
+  },
+  "topbar": {
+    "howTo": "Anleitung",
+    "howToTitle": "Interaktive Anleitung der Media-Registerkarte"
+  },
+  "tabs": {
+    "generate": "Generieren",
+    "audioOverview": "Audio-Überblick",
+    "artifacts": "Artifacts"
+  },
+  "audioOverview": {
+    "subtitle": "Verwandeln Sie Notizen in einen Podcast mit zwei Moderatoren. Das Skript entwirft der schlüssellose FreeLLM-Router — er läuft auf dieser Maschine, leitet Ihre Notizen aber an einen kostenlosen Cloud-Anbieter weiter; die Stimmen sind 100% lokal (Studio-Kokoro oder piper TTS), nach dem Skript verlässt also nichts Ihren Rechner.",
+    "titleLabel": "Titel (optional)",
+    "titlePlaceholder": "z. B. Wöchentlicher Forschungsüberblick",
+    "sourceLabel": "Quellnotizen",
+    "sourcePlaceholder": "Fügen Sie Notizen, einen Artikel oder ein Dokument ein — die beiden Moderatoren besprechen es…",
+    "sourceHint": "{{current}} Zeichen — lange Quellen werden für das Skript-Modell auf ~{{max}} Zeichen gekürzt.",
+    "lengthLabel": "Länge",
+    "length": {
+      "short": "Kurz (~1 Min.)",
+      "standard": "Standard (~3 Min.)"
+    },
+    "voices": {
+      "label": "Stimmen (lokal)",
+      "probing": "Lokale Stimmen werden geprüft…",
+      "notInstalled": "Noch kein lokales TTS installiert — laden Sie oben die Studio-Stimmen herunter oder installieren Sie piper unter Generieren → SPRACHE (TTS) → Anbieter LOCAL und aktualisieren Sie dann.",
+      "none": "Keine lokalen Stimmen heruntergeladen. Laden Sie oben die Studio-Stimmen herunter oder eine piper-Stimme unter Generieren → SPRACHE (TTS) → Anbieter LOCAL und aktualisieren Sie dann.",
+      "refresh": "Aktualisieren",
+      "hostA": "Moderator A — neugieriger Anchor",
+      "hostB": "Moderator B — Experte",
+      "single": "Nur eine Stimme ist installiert — beide Moderatoren teilen sie sich (piper akzeptiert keine Tempo-Optionen). Laden Sie eine zweite Stimme für unterscheidbare Moderatoren herunter.",
+      "groupStudio": "STUDIO — KOKORO",
+      "groupPiper": "PIPER"
+    },
+    "scriptModel": {
+      "notConfigured": "Noch kein schlüsselloses Skript-Modell konfiguriert — füge einen kostenlosen Provider in Einstellungen → Provider hinzu und aktualisiere dann."
+    },
+    "kokoro": {
+      "cardTitle": "STUDIO-STIMMEN — ~330 MB, einmaliger Download",
+      "cardBody": "10 englische Stimmen in Studioqualität (Kokoro TTS). Wird einmal heruntergeladen und läuft danach vollständig lokal und offline.",
+      "download": "Herunterladen",
+      "downloading": "Wird heruntergeladen… {{percent}}%",
+      "installedToast": "Studio-Stimmen bereit.",
+      "downloadFailed": "Download der Studio-Stimmen fehlgeschlagen"
+    },
+    "saveToLibrary": "In Bibliothek speichern",
+    "savingToLibrary": "Wird gespeichert…",
+    "saveFailed": "Speichern in der Medienbibliothek fehlgeschlagen",
+    "generate": "Audio-Überblick erstellen",
+    "cancel": "Abbrechen",
+    "status": {
+      "drafting": "Skript wird entworfen…",
+      "synthesizing": "Synthese {{n}}/{{m}}…",
+      "stitching": "Audio wird zusammengefügt…",
+      "ready": "Fertig"
+    },
+    "error": {
+      "emptySource": "Fügen Sie zuerst Notizen ein.",
+      "llmDown": "Der lokale FreeLLM-Router läuft noch nicht — er startet mit der App; warten Sie einen Moment und versuchen Sie es erneut.",
+      "scriptUnreachable": "Das Skript-Modell ist gerade nicht erreichbar — prüfe Einstellungen → Provider.",
+      "emptyReply": "Das Modell hat eine leere Antwort zurückgegeben.",
+      "scriptFailed": "Skript-Erstellung fehlgeschlagen — {{reason}}",
+      "parseFailed": "Das Modell hat auch nach einem erneuten Versuch kein gültiges Skript zurückgegeben ({{reason}}).",
+      "synthFailed": "Sprachsynthese fehlgeschlagen bei Beitrag {{n}}/{{m}} — {{reason}}",
+      "stitchFailed": "Zusammenfügen des Audios fehlgeschlagen — {{reason}}",
+      "noAudioReturned": "kein Audio zurückgegeben"
+    },
+    "retry": "Erneut versuchen",
+    "dismiss": "Ausblenden",
+    "download": ".wav herunterladen",
+    "result": {
+      "meta": "{{seconds}}s · {{turns}} Beiträge"
+    },
+    "transcript": "Transkript",
+    "empty": "Fügen Sie links Notizen ein, wählen Sie Länge und Stimmen und klicken Sie auf Erstellen — Sie erhalten einen Podcast mit zwei Moderatoren samt Transkript, mit vollständig lokalen Stimmen."
+  },
+  "tour": {
+    "windowTitle": "So verwenden Sie die Media-Registerkarte",
+    "intro": {
+      "title": "Das Media-Studio",
+      "body": "Generieren Sie Bilder, Videos, Musik, Sprache (TTS) und Transkripte (STT) von einem Ort aus. Läuft kostenlos auf Ihrem Rechner — kein Schlüssel, keine Credits — oder verbinden Sie Surplus, Venice oder imgnAI für Cloud-Modelle, jeweils mit eigenem Katalog. Wählen Sie den Provider oben. Zwei Unterregisterkarten hier oben: Generate (diese) und Artifacts (Ihre gespeicherte Bibliothek)."
+    },
+    "importUrl": {
+      "title": "Import per URL",
+      "body": "Fügen Sie einen Link von YouTube, Instagram, X oder 1000+ weiteren Seiten ein, um eine Datei direkt in Ihre Medienbibliothek zu holen — dann remixen Sie sie oder verwenden Sie sie als Referenzbild oder -video."
+    },
+    "modality": {
+      "title": "Wählen Sie eine Modalität",
+      "body": "Wählen Sie, was Sie erstellen möchten — die Modellliste und Steuerelemente passen sich daran an. Local deckt Bild, Video und Sprache (TTS) mit Modellen ab, die Sie einmal herunterladen und dann kostenlos ausführen; Surplus und Venice fügen Musik und Transkripte (STT) plus eigene Cloud-Kataloge hinzu, und imgnAI fügt einen weiteren Bild-/Video-Katalog hinzu."
+    },
+    "localEngine": {
+      "title": "Die lokale Engine",
+      "body": "Laden Sie hier einmal ein offenes Modell herunter — die Größe wird vorher angezeigt — und generieren Sie dann vollständig offline und kostenlos; für unterstützte Modelle stehen Speed-Pakete bereit, die die Schritte reduzieren."
+    },
+    "model": {
+      "title": "Wählen Sie ein Modell",
+      "body": "Jede Modalität + Provider listet ihre eigenen Modelle auf, und die Steuerelemente ändern sich pro Modell — Größen, Stimmen, Dauern, Seitenverhältnisse erscheinen nur, wenn dieses Modell sie unterstützt."
+    },
+    "prompt": {
+      "title": "Prompt + Referenzbild",
+      "body": "Beschreiben Sie, was Sie möchten, und optimieren Sie die Parameter pro Modell. Modelle, die es unterstützen, zeigen ein Steuerelement \"Referenzbild\" — für img2img / Bildbearbeitung oder als erstes Frame für Bild-zu-Video."
+    },
+    "generate": {
+      "title": "Generieren",
+      "body": "Drücken Sie Generieren. Local läuft direkt hier — kein Schlüssel, keine Credits, der erste Lauf lädt das Modell nur einmal herunter. Bild/TTS/STT sind sofort; Video/Musik laufen asynchron mit Fortschrittsanzeige. Cloud-Provider benötigen einen eigenen Schlüssel: einen finanzierten Surplus-Schlüssel, einen Venice-Schlüssel oder einen imgnAI-Schlüssel."
+    },
+    "gallery": {
+      "title": "Ihre Galerie + Artefakte",
+      "body": "Jedes Ergebnis wird hier gespeichert und bleibt nach dem Neustart — In einen Ordner speichern, Auf der Festplatte anzeigen, Remixen, um seine Einstellungen neu zu laden, oder im Vollbildmodus öffnen. Die Unterregisterkarte Artifacts ist die komplette Bibliothek von allem, was Sie gemacht haben."
+    },
+    "workflow": {
+      "title": "Tipp: Erstellen Sie es als Knoten-Workflow",
+      "body": "Öffnen Sie die Registerkarte Nodes, um sie zu verketten: Ein Prompt-Node schreibt den prompt, ein Reference-Image-Node speist einen Charakter, ein Media-Node generiert — und jeder Durchgang lässt eine Resultatskarte fallen, von der Sie verzweigen können. Oder öffnen Sie die Storyboard-Vorlage, um ein lokales Standbild mit zwei lokalen Videoszenen durchgängig zu verketten."
+    }
+  },
+  "import": {
+    "title": "Import per URL",
+    "subtitle": "YouTube · Instagram · X · über 1000 Seiten — danach remixen oder als Referenz verwenden",
+    "placeholder": "Medien-URL einfügen…",
+    "fetch": "Abrufen",
+    "download": "Herunterladen",
+    "downloadTitle": "In Ihre Medienbibliothek herunterladen",
+    "resolutionTitle": "Auflösung",
+    "audioOnlyOnTitle": "Nur-Audio ist aktiviert",
+    "audioOnlyLabel": "nur Audio",
+    "audioOnlyTitle": "Nur die Audiospur herunterladen (z. B. für Transkription / Musik)",
+    "disclaimer": "Nur für den persönlichen Gebrauch — importieren Sie nur Inhalte, die Ihnen gehören oder für die Sie die Rechte besitzen. Respektiert die Nutzungsbedingungen jeder Plattform; keine Umgehung von DRM.",
+    "error": {
+      "couldNotRead": "Diese URL konnte nicht gelesen werden.",
+      "downloadFailed": "Download fehlgeschlagen."
+    },
+    "success": "In Ihrer Medienbibliothek gespeichert — remixen oder unten bearbeiten."
+  },
+  "composer": {
+    "modality": "Modalität",
+    "provider": "Provider",
+    "model": "Modell",
+    "loadingCatalog": "Katalog wird geladen…",
+    "preset": "Voreinstellung",
+    "presetPlaceholder": "— Wählen Sie einen Starter-Prompt —",
+    "perfPreset": "Leistung",
+    "perfPresetPlaceholder": "— Stufe —",
+    "stylePreset": "Stil",
+    "stylePresetPlaceholder": "— keiner —",
+    "loras": "LoRAs",
+    "lorasNone": "Keine LoRAs für dieses Modell installiert.",
+    "lorasIncompatible": "{{count}} für ein anderes Basismodell installiert.",
+    "loraWeight": "Gewicht",
+    "triggerWords": "Auslösewörter",
+    "vaeSwap": "VAE",
+    "vaeDefault": "— Standard des Modells —",
+    "audioFile": "Audiodatei",
+    "changeFile": "Datei ändern",
+    "chooseAudioFile": "Audiodatei auswählen",
+    "loadingParams": "Parameter werden geladen…",
+    "noParams": "Dieses Modell macht keine konfigurierbaren Parameter verfügbar.",
+    "autoSaveFolder": "Auto-Save-Ordner",
+    "setFolder": "Ordner einstellen",
+    "loraUnknownFamily": "Für diesen Adapter ist kein Basismodell hinterlegt — trotzdem angezeigt; er wirkt möglicherweise nicht.",
+    "lorasUnknownFamilyNote": "{{count}} ohne hinterlegtes Basismodell (mit ? markiert).",
+    "loraTagFound": "Dein Prompt nutzt das LoRA „{{name}}“ mit Stärke {{weight}}.",
+    "loraTagUnknown": "Dein Prompt verlangt ein LoRA namens „{{name}}“, und keines mit diesem Namen ist installiert – es wird weggelassen.",
+    "loraTagAmbiguous": "Du hast mehrere LoRAs mit dem Namen „{{name}}“, dieses wird deshalb weggelassen. Wähle es oben in der Liste aus."
+  },
+  "presets": {
+    "lightning": {
+      "label": "Blitz"
+    },
+    "speed": {
+      "label": "Tempo"
+    },
+    "quality": {
+      "label": "Qualität"
+    },
+    "prompt": {
+      "image": {
+        "cinematicPortrait": "Kinoreifes Porträt",
+        "isometricRoom": "Isometrischer Raum",
+        "logoMark": "Logo / Marke",
+        "conceptLandscape": "Konzept-Landschaft"
+      },
+      "video": {
+        "slowDollyPush": "Langsamer Dolly-Push",
+        "droneReveal": "Drohnen-Reveal",
+        "productTurntable": "Produkt-Drehteller"
+      },
+      "music": {
+        "lofiBeat": "Lo-Fi-Beat",
+        "cinematicBuild": "Kinoreifer Aufbau",
+        "synthwave": "Synthwave"
+      },
+      "tts": {
+        "friendlyIntro": "Freundliche Einleitung",
+        "announcement": "Ankündigung"
+      }
+    }
+  },
+  "styles": {
+    "none": {
+      "label": "Keiner"
+    },
+    "cinematic": {
+      "label": "Filmisch"
+    },
+    "photorealistic": {
+      "label": "Fotorealistisch"
+    },
+    "digital-art": {
+      "label": "Digitale Kunst"
+    },
+    "anime": {
+      "label": "Anime"
+    },
+    "oil-painting": {
+      "label": "Ölgemälde"
+    },
+    "pixel-art": {
+      "label": "Pixel-Art"
+    },
+    "watercolor": {
+      "label": "Aquarell"
+    },
+    "neon-noir": {
+      "label": "Neon-Noir"
+    },
+    "fantasy-epic": {
+      "label": "Fantasy-Epos"
+    }
+  },
+  "local": {
+    "engine": "Stimmmodell",
+    "piperChip": "PIPER",
+    "kokoro": {
+      "chip": "STUDIO — KOKORO",
+      "card": "10 englische Stimmen in Studioqualität (Kokoro TTS) — ~330 MB einmaliger Download, danach vollständig lokal und offline.",
+      "download": "Studio-Stimmen herunterladen (~330 MB)",
+      "downloading": "Studio-Stimmen werden heruntergeladen… {{percent}}%",
+      "installed": "Studio-Stimmen installiert · Kokoro TTS, Englisch",
+      "downloadFailed": "Download der Studio-Stimmen fehlgeschlagen"
+    },
+    "piper": {
+      "install": "piper installieren (einmalig)",
+      "installed": "piper installiert · lokales TTS, CPU-schnell",
+      "downloadVoice": "Stimme herunterladen",
+      "installSized": "piper installieren (einmalig · {{size}})"
+    },
+    "sdCpp": {
+      "install": "sd.cpp installieren (einmalig)",
+      "installed": "sd.cpp installiert · GPU-Auto (CUDA / Metal)",
+      "downloadModel": "Modell herunterladen",
+      "installSized": "sd.cpp installieren (einmalig · {{size}})",
+      "update": "Bild-Engine aktualisieren",
+      "updating": "Engine wird aktualisiert…"
+    },
+    "installFailed": "Installation fehlgeschlagen",
+    "retryInstall": "Installation wiederholen",
+    "modelInstalled": "✓ {{name}} · {{size}} GB · installiert",
+    "modelLicense": "Lizenz: {{name}} — vor dem Download lesen",
+    "voiceItem": "↓ {{name}} · {{size}} MB",
+    "modelItem": "↓ {{name}} · {{size}} GB",
+    "modelItemShared": "↓ {{name}} · {{size}} GB (spart {{saved}} GB — teilt Dateien mit installierten Modellen)",
+    "modelSpeedPackDiscount": "Speed-Paket kostet nur {{size}} GB mehr — sein LoRA liegt schon auf der Platte",
+    "modelItemResume": "↻ {{name}} · fortsetzen · {{size}} GB übrig ({{done}} GB von {{total}} GB bereits geladen)",
+    "fitVramOk": "Passt auf Ihre GPU — braucht ~{{need}} GB VRAM, {{have}} GB frei",
+    "fitVramTight": "Knapp — braucht ~{{need}} GB VRAM, {{have}} GB frei. Es kann dennoch in kleinerer Größe oder mit den Low-VRAM-Optionen laufen.",
+    "fitRamOk": "Passt auf Ihren Rechner — braucht ~{{need}} GB RAM, Sie haben {{have}} GB",
+    "fitRamTight": "Knapp — braucht ~{{need}} GB RAM, Sie haben {{have}} GB. Es kann dennoch laufen, nur langsamer.",
+    "speedPack": "↓ {{name}} · {{size}} GB",
+    "speedPackShared": "↓ {{name}} · {{size}} GB (spart {{saved}} GB — teilt Dateien mit einem installierten Paket)",
+    "speedPackInstalled": "✓ {{name}} · installiert — Speed ist unten aktiviert",
+    "ipAdapter": "↓ Referenzbild (Stil / Motiv) · {{size}}",
+    "ipAdapterShared": "↓ Referenzbild (Stil / Motiv) · {{size}} (spart {{saved}} – teilt seinen Bildleser mit dem, was du schon hast)",
+    "ipAdapterInstalled": "✓ Referenzbild bereit – hänge unten unter „Erweitert“ ein Bild an",
+    "ipAdapterNone": "Für dieses Modell gibt es kein Referenzbild – zeig mit der Maus darauf, um zu sehen warum.",
+    "speedPackNone": "Kein Speed-Paket für dieses Modell — für den Grund den Mauszeiger darüber halten.",
+    "otherKindBadge": "{{kind}} · läuft",
+    "modalitySwitched": "Zu {{modality}} gewechselt — der gestartete Download ist gerade fertig geworden.",
+    "engineSizeOne": "~{{size}} MB",
+    "engineSizeRange": "{{min}}–{{max}} MB",
+    "engineSizeRangeTitle": "Der Download hängt davon ab, welcher Build zu dieser Maschine passt — der CUDA-Build bringt zusätzlich NVIDIAs Runtime-Bibliotheken mit.",
+    "switchToLocal": "Auf Local umschalten — kostenlos, auf Ihrem Rechner",
+    "switchToLocalTitle": "Lokale Generierung führt die sd.cpp-Engine auf diesem Rechner aus: kein Schlüssel, keine Credits, nichts wird hochgeladen.",
+    "switchedToast": "Auf die lokale Engine umgeschaltet — kostenlos, und nichts verlässt Ihren Rechner.",
+    "speedPackPitch": "{{name}} — {{size}} GB einmalig. Dieser Render brauchte {{steps}} Sampling-Durchläufe; das Pack braucht 4, etwa {{ratio}}× weniger."
+  },
+  "models": {
+    "error": {
+      "noLocalVoices": "Noch keine lokalen Stimmen — laden Sie eine oben herunter.",
+      "installPiper": "Installieren Sie piper oben, dann laden Sie eine Stimme herunter.",
+      "installKokoro": "Laden Sie oben die Studio-Stimmen herunter (~330 MB, einmalig).",
+      "noLocalModels": "Noch keine lokalen {{kind}}-Modelle — laden Sie eines oben herunter.",
+      "installSdCpp": "Installieren Sie sd.cpp oben, dann laden Sie ein Modell herunter.",
+      "couldNotLoad": "Modelle konnten nicht geladen werden",
+      "noVenice": "Keine Venice-Modelle für diese Modalität — fügen Sie einen Venice-Schlüssel in den Einstellungen hinzu.",
+      "noSurplus": "Keine Modelle — fügen Sie einen Surplus-Schlüssel hinzu und finanzieren Sie USDC, oder generieren Sie mit der lokalen Engine kostenlos auf Ihrem Rechner.",
+      "noneAvailable": "Keine Modelle verfügbar.",
+      "noImgnai": "Keine imgnAI-Modelle für diese Modalität — tragen Sie API-Schlüssel und Secret unter Einstellungen → imgnAI Katana ein (app.imgnai.com/katana-api).",
+      "noPollinations": "Pollinations erzeugt nur Bilder — stellen Sie die Modalität auf IMAGE um oder verwenden Sie Surplus/Venice."
+    }
+  },
+  "firstRun": {
+    "cta": "Erstes Bild — kostenlos · ~{{size}} GB einmalig",
+    "ctaNoSize": "Erstes Bild — kostenlos, auf Ihrem Rechner",
+    "ctaHint": "Ein Klick: installiert die lokale Engine, nimmt das Startmodell, schreibt einen Prompt und rendert. Ohne Schlüssel, ohne Credits.",
+    "ctaTitle": "Installiert die sd.cpp-Engine ({{engine}}), lädt {{name}} herunter und rendert ein Bild auf diesem Rechner. Alles bleibt lokal.",
+    "step": {
+      "engine": "Engine wird installiert",
+      "weights": "Startmodell wird heruntergeladen",
+      "generate": "Ihr erstes Bild wird gerendert"
+    },
+    "progress": "Erstes Bild · Schritt {{step}}/{{total}} · {{label}} — {{line}}",
+    "failedTitle": "Erstes Bild bei Schritt {{step}}/{{total}} gestoppt — {{label}}",
+    "resume": "Fortsetzen — ab dem, was schon heruntergeladen ist",
+    "dismiss": "Schließen",
+    "error": {
+      "notReady": "Das Startmodell liegt auf der Platte, aber seine Regler wurden nicht geladen — drücken Sie Fortsetzen."
+    }
+  },
+  "progress": {
+    "starting": "wird gestartet…",
+    "loadingModel": "Modell wird geladen… {{percent}}%",
+    "decoding": "wird dekodiert…",
+    "downloading": "{{name}} wird heruntergeladen…",
+    "renderingLocally": "wird lokal gerendert…",
+    "queuedVenice": "in Venice in der Warteschlange…",
+    "queuedImgnai": "in der imgnAI-Warteschlange…",
+    "queuedPollinations": "in der Pollinations-Warteschlange…"
+  },
+  "livePreview": {
+    "label": "Vorschau — wird noch gerendert",
+    "alt": "Teilweise gerenderte Vorschau des Bildes, das erzeugt wird"
+  },
+  "pollinations": {
+    "hint": "Kostenlos und ohne Schlüssel — kein Konto, nichts einzurichten. Wenige Sekunden bis eine Minute pro Bild, je nach Auslastung; ein Bild alle 15 s (deren anonymes Limit). Cloud: Ihr Prompt wird an pollinations.ai gesendet."
+  },
+  "actions": {
+    "change": "Ändern",
+    "clear": "Löschen",
+    "save": "Speichern",
+    "reveal": "Anzeigen",
+    "fullscreen": "Vollbild",
+    "generate": "Generieren",
+    "transcribe": "Transkribieren",
+    "working": "Läuft…",
+    "workingProgress": "Läuft · {{progress}}",
+    "stop": "Stopp",
+    "stopping": "Wird gestoppt…",
+    "stopTitle": "Bricht das laufende Rendering ab. Die GPU wird sofort frei; nichts wird gespeichert."
+  },
+  "rife": {
+    "action": "RIFE 2×",
+    "title": "Verdoppelt die Bildrate dieses Clips lokal mit rife-ncnn-vulkan. Legt eine neue Datei daneben an; das Original bleibt unberührt.",
+    "install": "RIFE 2× · installieren {{size}}",
+    "installTitle": "Lädt die rife-ncnn-vulkan-Engine ({{size}}) einmalig herunter. Danach läuft die Frame-Interpolation vollständig auf deinem Rechner.",
+    "installing": "Wird installiert…",
+    "running": "Interpolation läuft…",
+    "stop": "Stopp",
+    "saved": "Gespeichert: {{name}}",
+    "derived": "RIFE 2× · aus: {{source}}",
+    "failed": "Frame-Interpolation fehlgeschlagen",
+    "unsupported": "Für diese Plattform wird kein RIFE-Build veröffentlicht.",
+    "needsLocalFile": "Speichere dieses Video zuerst — die Interpolation arbeitet auf einer Datei auf der Festplatte."
+  },
+  "upscale": {
+    "action": "VERGRÖSSERN {{scale}}×",
+    "title": "Dieses Bild mit Real-ESRGAN {{scale}}× größer machen, direkt hier. Es wird kein Checkpoint geladen und kein Prompt benötigt — es arbeitet am Bild selbst. Speichert eine neue Datei daneben; das Original bleibt unberührt.",
+    "install": "VERGRÖSSERN · {{size}} laden",
+    "installTitle": "Lädt {{name}} ({{size}}) einmalig herunter. Danach läuft das Vergrößern vollständig auf Ihrem Rechner.",
+    "installing": "Installiere…",
+    "running": "Vergrößere…",
+    "saved": "{{name}} gespeichert",
+    "derived": "ESRGAN {{scale}}× · aus: {{source}}",
+    "failed": "Vergrößern fehlgeschlagen"
+  },
+  "gallery": {
+    "empty": "Noch keine Ergebnisse. Wählen Sie eine Modalität + Modell, geben Sie einen prompt ein und generieren Sie.",
+    "title": "Galerie ({{count}})",
+    "titleFull": "Galerie ({{count}}, voll)",
+    "newest": "neuestes {{time}}",
+    "clearAll": "Alle löschen",
+    "clearAllConfirm": "Alle {{count}} Galerie-Einträge entfernen? Die Dateien bleiben auf der Festplatte — nur die Liste wird geleert."
+  },
+  "entry": {
+    "pin": "ANHEFTEN",
+    "pinned": "ANGEHEFTET",
+    "pinToTop": "Oben anheften",
+    "unpin": "Ablösen",
+    "remix": "Remixen",
+    "generatedAlt": "generiert",
+    "remove": "Entfernen",
+    "removeConfirm": "Diesen Eintrag aus der Galerie entfernen? Die Datei bleibt auf der Festplatte.",
+    "completedAfterPrivate": "NACH PRIVATE MODE",
+    "completedAfterPrivateTitle": "Diese Generierung wurde bereits gesendet, als PRIVATE MODE aktiviert wurde, und wurde deshalb fertiggestellt und gespeichert statt blockiert zu werden. Danach hat nichts Neues diesen Rechner verlassen — eine Ablehnung an dieser Stelle hätte nur ein bereits gesendetes Ergebnis verworfen."
+  },
+  "result": {
+    "failedNoOutput": "Generierung fehlgeschlagen — keine Ausgabe zurückgegeben",
+    "failedReason": "Generierung fehlgeschlagen — {{reason}}",
+    "noOutput": "Keine Ausgabe zurückgegeben"
+  },
+  "genError": {
+    "title": "Generierung fehlgeschlagen",
+    "stoppedTitle": "Gestoppt",
+    "stoppedHint": "Sie haben diesen Lauf gestoppt, daher wurde nichts gespeichert. Die GPU ist wieder frei — starten Sie einen neuen Lauf, wann immer Sie möchten.",
+    "hint": "Wenn der Lauf endete, bevor eine Datei geschrieben wurde, brauchte er womöglich mehr GPU-Speicher als frei war — eine kürzere Dauer oder eine kleinere Größe braucht weniger.",
+    "dismiss": "Schließen",
+    "unknown": "Die Generierung ist aus unbekanntem Grund fehlgeschlagen."
+  },
+  "preview": {
+    "close": "Schließen (Esc)",
+    "alt": "Vorschau"
+  },
+  "restore": {
+    "button": "Aus Bild wiederherstellen",
+    "buttonTitle": "Ziehe ein lokal generiertes PNG hierher oder klicke zum Auswählen — stellt seine Generierungsparameter wieder her",
+    "success": "Parameter aus Bild wiederhergestellt.",
+    "noMeta": "Keine tachi-gen-Metadaten in diesem Bild gefunden.",
+    "error": "Bildmetadaten konnten nicht gelesen werden."
+  },
+  "toast": {
+    "jobFailed": "Job fehlgeschlagen",
+    "timedOut": "Zeitüberschreitung nach 5 Min. — generieren Sie erneut, um erneut abzurufen.",
+    "chooseAudio": "Wählen Sie eine Audiodatei zum Transkribieren.",
+    "enterField": "Geben Sie {{field}} ein.",
+    "loaded": "In Composer geladen.",
+    "loadedRerolled": "In Composer geladen (Seed neu geworfen).",
+    "nothingToSave": "Nichts zu speichern.",
+    "savedTo": "Gespeichert in {{path}}",
+    "providerFellBack": "{{provider}} erzeugt kein {{modality}} — auf Surplus umgestellt."
+  },
+  "params": {
+    "videoI2vAvailable": "Nur Text→Video: Um von einem Bild auszugehen, wird ein Wan-i2v-Checkpoint benötigt — {{model}} steht im Download-Bereich bereit.",
+    "advanced": "Erweitert ({{count}})",
+    "on": "AN",
+    "off": "AUS",
+    "promptAutoFill": "Dieses Feld kann automatisch ausgefüllt werden, indem Sie einen Textgenerierungsschritt davor schalten.",
+    "prompt": {
+      "label": "Prompt"
+    },
+    "negative_prompt": {
+      "label": "Negativer Prompt",
+      "description": "Was vermieden werden soll (Artefakte, Wasserzeichen, zusätzliche Gliedmaßen, …)."
+    },
+    "aspect_ratio": {
+      "label": "Seitenverhältnis"
+    },
+    "size": {
+      "label": "Größe"
+    },
+    "n": {
+      "label": "Bilder",
+      "description": "Wie viele Bilder in einem Durchlauf erzeugt werden. Der Checkpoint wird einmal geladen, aber jedes Bild wird vollständig gesampelt — 4 Bilder dauern etwa 4-mal so lange wie 1. Jedes erhält einen eigenen Seed, aufsteigend ab dem ersten."
+    },
+    "seed": {
+      "label": "Seed",
+      "description": "-1 = zufällig. Legen Sie einen Wert fest, um ein Ergebnis zu reproduzieren."
+    },
+    "steps": {
+      "label": "Schritte"
+    },
+    "cfg": {
+      "label": "Steuerungsstärke (CFG)",
+      "description": "Wie strikt der Prompt befolgt wird."
+    },
+    "sampler": {
+      "label": "Sampler"
+    },
+    "strength": {
+      "label": "img2img-Stärke",
+      "description": "Nur mit einem Startbild. 0 = Original beibehalten, 1 = es ignorieren."
+    },
+    "image_url": {
+      "label": "Startbild",
+      "labelImg2img": "Referenzbild (img2img)",
+      "labelI2v": "Startbild (Bild→Video)",
+      "description": "Optionales Startbild für img2img.",
+      "descriptionI2v": "Optionaler erster Frame (Bild→Video)."
+    },
+    "duration": {
+      "label": "Dauer (s)"
+    },
+    "resolution": {
+      "label": "Auflösung"
+    },
+    "lyrics": {
+      "label": "Songtext",
+      "description": "Optional. Wird von lyrics_required-Modellen benötigt."
+    },
+    "instrumental": {
+      "label": "Instrumental"
+    },
+    "genre": {
+      "label": "Genre"
+    },
+    "input": {
+      "label": "Text",
+      "description": "Der Text, der vorgelesen werden soll."
+    },
+    "voice": {
+      "label": "Stimme",
+      "description": "Stimmen-ID (modellspezifisch)."
+    },
+    "response_format": {
+      "label": "Format"
+    },
+    "speed": {
+      "label": "Geschwindigkeit"
+    },
+    "file": {
+      "label": "Audiodatei",
+      "description": "Das zu transkribierende Audio."
+    },
+    "language": {
+      "label": "Sprache",
+      "description": "ISO-Code-Hinweis (z. B. „en“). Leer lassen für automatische Erkennung."
+    },
+    "translate": {
+      "label": "Ins Englische übersetzen"
+    },
+    "hires": {
+      "label": "Zweistufige Detailschärfe (hires fix)"
+    },
+    "hires_scale": {
+      "label": "Skalierung der zweiten Stufe"
+    },
+    "speed_mode": {
+      "label": "Geschwindigkeit (destilliert)"
+    },
+    "clip_skip": {
+      "label": "CLIP-Skip",
+      "description": "Wie viele der letzten Schichten des Text-Encoders ignoriert werden. 0 überlässt es der Engine (1 für SD 1.x). Viele Civitai-SD-1.5-Merges — besonders Anime-Modelle — wurden mit Skip 2 trainiert und wirken bei 1 flach und ausgewaschen; wenn die Seite eines Checkpoints einen CLIP-Skip nennt, gehört er hierher."
+    },
+    "vae_tiling": {
+      "label": "VAE-Dekodierung kacheln",
+      "description": "Das Bild in Kacheln statt auf einmal dekodieren. Das ist die Option, die einen Speicherüberlauf bei der finalen Dekodierung in ein fertiges Render verwandelt — bei Video ist das genau der Schritt, der sonst abbricht. Kostet etwas Zeit und kann feine Nähte zwischen den Kacheln hinterlassen."
+    },
+    "vae_conv_direct": {
+      "label": "Direkte VAE-Faltungen",
+      "description": "Nutzt den direkten Faltungspfad im Autoencoder. Geringerer Speicherbedarf bei der Dekodierung bei gleicher Mathematik — vor dem Kacheln ausprobieren, da es keine Nähte hinterlässt."
+    },
+    "max_vram": {
+      "label": "VRAM-Budget",
+      "description": "Teilt jeden Vorwärtsdurchlauf auf, damit das Modell nicht komplett in den Videospeicher passen muss — die eigene Antwort der Engine auf ein Modell, das größer als die Karte ist. „auto“ nutzt den vom Treiber gemeldeten freien VRAM und lässt 1 GiB Reserve; eine Zahl ist ein festes Budget in GiB. „Aus“ bedeutet keine Aufteilung — so wie bisher jeder Durchlauf ablief."
+    },
+    "stream_layers": {
+      "label": "Schichten streamen",
+      "description": "Hält nur die gerade genutzten Schichten im Speicher und lädt die nächsten vorab — die Stufe nach dem Budget auf der eigenen Leiter der Engine. Sie braucht ein oben gesetztes VRAM-Budget und sie braucht die Modellgewichte im RAM, was diese Option für Sie einschaltet. Die Auto-Anpassung weiter unten nimmt diese Platzierung wieder an sich, beide lassen sich also nicht gleichzeitig nutzen: bei Auto-Anpassung entscheidet die Engine, und diese Option bleibt aus."
+    },
+    "auto_fit": {
+      "label": "Automatisch an dieses Gerät anpassen",
+      "description": "Lässt die Engine das Diffusionsmodell, den Text-Encoder und den Autoencoder selbst platzieren — anhand der Modellgröße und des freien Speichers jedes Geräts. Ersetzt die eigene Platzierung der App (einschließlich der Text-Encoder auf der CPU) und kann das Modell auf mehr als eine GPU aufteilen."
+    },
+    "image": {
+      "referenceAlt": "Referenz",
+      "change": "Bild ändern",
+      "choose": "Bild auswählen"
+    },
+    "audio": {
+      "placeholder": "Absoluter Pfad oder Datei auswählen",
+      "change": "Datei ändern",
+      "choose": "Audiodatei auswählen"
+    }
+  }
+}

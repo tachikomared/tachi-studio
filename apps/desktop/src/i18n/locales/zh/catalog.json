@@ -1,0 +1,211 @@
+{
+  "tabCurated": "推荐",
+  "tabSearchHf": "搜索 HF",
+  "tabInstalled": "已安装",
+  "searchPlaceholder": "例如 qwen2.5 7b",
+  "filterByName": "按名称筛选…",
+  "searchButton": "搜索",
+  "searchUnavailable": "搜索不可用",
+  "emptyInstalled": "暂无本地模型。从“推荐”或“搜索 HF”下载一个。",
+  "confirmRemove": "从磁盘移除此模型？",
+  "stopDownload": "停止",
+  "favorite": "添加到收藏",
+  "unfavorite": "从收藏移除",
+  "sectionFavorites": "收藏",
+  "sectionRecent": "最近",
+  "sectionAll": "全部模型",
+  "removing": "移除中…",
+  "pullIncompatible": "Ollama 无法拉取此仓库。它可能不兼容（非标准或多模态 GGUF）。请尝试 bartowski / unsloth / lmstudio-community 的模型，或使用“推荐”。",
+  "download": "下载",
+  "run": "运行",
+  "remove": "移除",
+  "clear": "清除",
+  "chooseQuant": "选择量化",
+  "recommended": "推荐",
+  "quant": "量化",
+  "quants": "量化",
+  "downloadSize": "下载大小：",
+  "starting": "开始…",
+  "downloading": "下载中…",
+  "hfDownloadNotSupported": "将任意 Hugging Face 模型下载到 llama.cpp 即将推出。目前仅支持推荐的模型。",
+  "ram": "RAM",
+  "free": "空闲",
+  "gpu": "GPU",
+  "vram": "VRAM",
+  "cpu": "CPU",
+  "cores": "核",
+  "unknown": "未知",
+  "fit": {
+    "gpu": "适配 GPU（快）",
+    "cpu": "CPU / 部分 GPU（较慢）",
+    "tight": "紧张 — 可能内存不足",
+    "too-big": "太大",
+    "sdcppNote": "分辨率和帧数决定真实峰值 — 卸载参数会改变一切。",
+    "sdcppVram": "需要约 {{gb}} GB 显存(分辨率/卸载参数会影响这个数值)"
+  },
+  "capabilities": {
+    "chat": "聊天",
+    "reasoning": "推理",
+    "vision": "视觉",
+    "code": "代码",
+    "tools": "工具",
+    "image-gen": "图像生成",
+    "video-gen": "视频生成",
+    "music": "音乐",
+    "tts": "TTS",
+    "stt": "STT"
+  },
+  "notice": {
+    "downloadFailed": "下载失败",
+    "installingLlama": "正在安装 llama.cpp…",
+    "loading": "正在加载 {{name}}…",
+    "llamaInstallFailed": "llama.cpp 安装失败",
+    "failedToStart": "启动模型失败",
+    "startingOllama": "正在启动 Ollama…",
+    "removeFailed": "移除失败",
+    "whisperReady": "{{name}} 已就绪 — 在 Chat 中使用麦克风转写。",
+    "nothingToStop": "无可停止 — 该下载已传输完成。",
+    "stopNotYet": "仅在传输进行中可以停止。"
+  },
+  "emptyCurated": "无法加载模型库。",
+  "retry": "重试",
+  "notAvailable": "暂不可用",
+  "noMatches": "没有匹配的模型 — 调整搜索或清除筛选。",
+  "tour": {
+    "windowTitle": "如何使用 Catalog 标签页",
+    "search": {
+      "title": "找到一个模型",
+      "body": "三个来源：推荐（精选）、搜索 HF（整个 Hugging Face）和已安装（已在磁盘上）。输入即可筛选或搜索，还可以用能力标签缩小范围 — 聊天、视觉、图像生成、TTS 等。"
+    },
+    "hardware": {
+      "title": "已检测到你的硬件",
+      "body": "这一栏是你的真实机器 — RAM、GPU、VRAM 和 CPU 核心数。下面的每个适配结论都是根据这些数字计算的，而不是笼统的配置要求。"
+    },
+    "fit": {
+      "title": "放得下吗？",
+      "body": "本地模型会有一个适配标签 — 适配 / 紧张 / 仅 CPU / 太大 — 以及根据上面你的 GPU 和 RAM 计算出的 VRAM 估算。「适配」表示在 GPU 上运行很快；「紧张」可能在生成中途内存不足。"
+    },
+    "download": {
+      "title": "下载并运行",
+      "body": "「下载」会打开量化选择器，并高亮为你的硬件推荐的量化 — 更小的量化以质量换取适配。安装完成后，按钮会变成「运行」：加载模型并直接进入与它的对话。"
+    }
+  },
+  "openChat": "打开聊天",
+  "tabCivitai": "Civitai",
+  "civitai": {
+    "searchPlaceholder": "例如 dreamshaper、realistic vision",
+    "sfwNote": "仅限 SFW",
+    "install": "安装",
+    "loadMore": "加载更多",
+    "loadingMore": "加载中…",
+    "empty": "没有可显示的内容 — 换个搜索词或换个类型。",
+    "emptyAfterError": "没有可显示的内容 — 上面的搜索失败了。",
+    "tryAgain": "重试",
+    "filteredNotice": "已被 SFW 过滤器隐藏：{{count}}",
+    "noPreview": "无预览",
+    "triggerWords": "触发词：",
+    "copyTrigger": "复制“{{word}}”",
+    "blockedFallback": "本应用无法安装该模型。",
+    "reveal": "显示 18+ 预览",
+    "sortLabel": "排序",
+    "periodLabel": "时间范围",
+    "baseLabel": "基础模型",
+    "clearFilters": "清除筛选",
+    "mode": {
+      "adult": "18+ 浏览（civitai.red）",
+      "adultInert": "设置中已开启 18+，但本页返回的是安全内容 — 请检查 Civitai 密钥。"
+    },
+    "types": {
+      "all": "全部",
+      "checkpoint": "Checkpoint",
+      "unet": "UNet",
+      "text-encoder": "文本编码器",
+      "clip": "CLIP",
+      "clip-vision": "CLIP Vision",
+      "vision-language": "VLM",
+      "llm": "LLM",
+      "lora": "LoRA",
+      "locon": "LoCon",
+      "embedding": "Embedding",
+      "vae": "VAE",
+      "controlnet": "ControlNet",
+      "upscaler": "放大器",
+      "motion": "运动",
+      "dora": "DoRA",
+      "hypernetwork": "Hypernetwork",
+      "aesthetic": "美学",
+      "poses": "姿势",
+      "wildcards": "Wildcards",
+      "workflows": "工作流",
+      "detection": "检测",
+      "other": "其他"
+    },
+    "groups": {
+      "models": "模型",
+      "adapters": "适配器",
+      "other": "其他文件"
+    },
+    "outlook": {
+      "runs": "可独立安装并生成。",
+      "needs-base": "仅当磁盘上已有匹配的基础 checkpoint 时才能安装。",
+      "later": "引擎支持，但应用尚无对应界面。",
+      "no": "仅供浏览 — 本应用无法安装该类型。"
+    },
+    "sort": {
+      "mostDownloaded": "下载最多",
+      "newest": "最新",
+      "highestRated": "评分最高"
+    },
+    "period": {
+      "allTime": "全部时间",
+      "year": "一年",
+      "month": "一个月",
+      "week": "一周",
+      "day": "一天"
+    },
+    "license": {
+      "noCommercial": "禁止商用",
+      "noCommercialHint": "作者不允许对该模型进行任何商业使用。",
+      "attribution": "需要署名",
+      "attributionHint": "作者要求使用该模型时注明出处。",
+      "noDerivatives": "禁止衍生",
+      "noDerivativesHint": "作者不允许融合或衍生模型。"
+    },
+    "forMyModels": "适配我的模型",
+    "forMyModelsHint": "仅显示适用于已安装模型系列的附加组件。",
+    "forMyModelsEmpty": "请先安装本地图像或视频模型 — 之后此筛选才会生效。",
+    "forMyModelsActive": "已限定为你已安装的：{{families}}",
+    "keyHint": "API 密钥填在哪里？",
+    "families": {
+      "sd15": "SD 1.5",
+      "sdxl": "SDXL",
+      "zimage": "Z-Image",
+      "wan": "Wan"
+    },
+    "detail": {
+      "title": "模型详情",
+      "open": "查看详情",
+      "about": "关于此模型",
+      "by": "作者：{{user}}",
+      "downloadsLabel": "下载量",
+      "likesLabel": "点赞数",
+      "published": "发布于 {{date}}",
+      "loading": "正在加载描述…",
+      "loadFailed": "无法加载该模型的描述。",
+      "noDescription": "上传者没有填写描述。",
+      "descriptionTruncated": "描述过长，此处显示的是节选。",
+      "openOnCivitai": "在 Civitai 上打开",
+      "thisVersion": "当前版本",
+      "otherVersions": "其他版本",
+      "versionsHidden": "被 SFW 过滤器隐藏的版本数：{{count}}",
+      "versionsCapped": "显示 {{total}} 个版本中的 {{shown}} 个。",
+      "signInRequired": "需要 Civitai 账号",
+      "openNamed": "查看 {{name}} 的详情"
+    }
+  },
+  "sdRemove": {
+    "frees": "将释放 {{size}} 磁盘空间。",
+    "sharedStay": "共享组件将保留 — {{models}} 仍在使用它们。",
+    "sharedWith": "与 {{models}} 共享组件"
+  }
+}

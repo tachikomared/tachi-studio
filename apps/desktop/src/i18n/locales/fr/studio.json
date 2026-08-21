@@ -1,0 +1,152 @@
+{
+  "common": {
+    "loading": "Chargement…"
+  },
+  "topbar": {
+    "badge": "Tableau de bord"
+  },
+  "system": {
+    "title": "Système",
+    "live": "● EN DIRECT",
+    "os": "OS",
+    "release": "Version",
+    "host": "Hôte",
+    "cpu": "CPU",
+    "cores": "{{count}} cœurs",
+    "app": "Application",
+    "electron": "Electron",
+    "node": "Node",
+    "appUptime": "Disponibilité de l'application",
+    "ram": "RAM",
+    "disk": "Disque",
+    "tachiProcess": "processus app : {{size}}"
+  },
+  "sidecars": {
+    "title": "Services en arrière-plan",
+    "upCount": "{{up}}/{{total}} actif",
+    "none": "Aucun service en arrière-plan enregistré",
+    "viewLogTail": "Afficher la fin du journal",
+    "logs": "journaux",
+    "stop": "arrêter",
+    "start": "démarrer",
+    "startFailed": "Échec du démarrage : {{error}}",
+    "stopFailed": "Échec de l'arrêt : {{error}}"
+  },
+  "logs": {
+    "ariaLabel": "Journaux pour {{id}}",
+    "header": "{{id}} · fin du journal",
+    "live": "● EN DIRECT 2s",
+    "close": "fermer",
+    "noFile": "Aucun fichier journal pour ce service pour le moment — seul openclaude écrit sur disque.",
+    "empty": "Le fichier journal est vide."
+  },
+  "harnesses": {
+    "title": "Agents → Fournisseurs",
+    "activeRouting": "Acheminement actif",
+    "ready": "prêt",
+    "idle": "inactif",
+    "provider": {
+      "freellmLocal": "FreeLLM (routeur local)",
+      "anthropicOAuth": "Anthropic OAuth (Pro/Max)"
+    },
+    "note": {
+      "sidecarStopped": "à l'arrêt"
+    },
+    "harness": {
+      "directChat": "Chat direct"
+    }
+  },
+  "providers": {
+    "title": "Fournisseurs",
+    "configured": "{{count}} configuré",
+    "none": "Aucun fournisseur configuré. Ouvrez Settings pour ajouter une clé.",
+    "connected": "connecté",
+    "tier": {
+      "oauthPro": "OAuth & Pro",
+      "free": "Fournisseurs gratuits",
+      "tools": "Outils"
+    },
+    "footer": "+ Routeur FreeLLM (aucune clé requise) · free-claude-code — tous deux répondent depuis cette machine et transmettent votre requête à un fournisseur cloud"
+  },
+  "runtimes": {
+    "title": "Détecté sur cette machine",
+    "rescan": "rescanner",
+    "scanning": "Scannage…",
+    "state": {
+      "running": "EN COURS",
+      "healthy": "SAIN",
+      "connected": "CONNECTÉ",
+      "installed": "PRÊT",
+      "starting": "DÉMARRAGE",
+      "stopped": "ARRÊTÉ",
+      "not_installed": "PAS INSTALLÉ",
+      "error": "ERREUR",
+      "unreachable": "INACCESSIBLE"
+    }
+  },
+  "conversations": {
+    "title": "Conversations",
+    "total": "Total",
+    "messages": "Messages",
+    "youWrote": "Vous avez écrit",
+    "modelWrote": "Le modèle a écrit",
+    "tokensUsed": "Jetons utilisés",
+    "byProvider": "Par fournisseur",
+    "none": "Aucune conversation pour le moment."
+  },
+  "workflow": {
+    "title": "Canevas de flux",
+    "open": "ouvrir ↗",
+    "description": "Composez les nœuds fournisseur + agent + skill dans un graphe. Connectez les sorties aux entrées pour chaîner les exécutions.",
+    "edges": "Bords",
+    "inputs": "Entrées",
+    "providers": "Fournisseurs",
+    "outputs": "Sorties"
+  },
+  "aeon": {
+    "auth": "Authentification",
+    "signedIn": "connecté",
+    "notSignedIn": "non connecté",
+    "user": "Utilisateur",
+    "ghClient": "client gh",
+    "signInPrompt": "Ouvrez l'onglet Aeon et cliquez",
+    "signInButton": "Se connecter à GitHub"
+  },
+  "audit": {
+    "title": "Requêtes sortantes · {{count}}",
+    "loading": "chargement…",
+    "live": "EN DIRECT 5s",
+    "reload": "Recharger",
+    "clear": "Effacer",
+    "explainer": "Appels réseau que le processus principal de Tachi Studio a faits directement — vers GitHub, votre fournisseur LLM choisi, Ollama, etc. Vert = OK, jaune = redirigé, rouge = erreur. Cliquez sur une ligne pour l'URL complète et le minutage. Note : les appels faits à l'intérieur des processus de services locaux (OpenClaude, freellmapi) et le RPC de portefeuille on-chain ne sont PAS affichés ici — c'est donc une aide au débogage, pas un registre d'egress complet.",
+    "filterAll": "Tous",
+    "category": {
+      "other": "Autre"
+    },
+    "emptyNone": "Aucune requête réseau enregistrée pour le moment. Utilisez l'onglet chat ou déclenchez une action.",
+    "emptyFilter": "Aucune entrée ne correspond au filtre sélectionné.",
+    "detail": {
+      "url": "URL",
+      "status": "Statut",
+      "networkError": "erreur réseau",
+      "duration": "Durée",
+      "reqSize": "Taille Req",
+      "resSize": "Taille Res",
+      "time": "Temps",
+      "category": "Catégorie"
+    }
+  },
+  "doctor": {
+    "title": "Docteur",
+    "run": "Vérifier",
+    "running": "Vérification…",
+    "hint": "Exécute chaque binaire externe (Piper, SD, yt-dlp, Whisper, llama.cpp, Chromium) et le routeur FreeLLM avec une commande de test — détecte les installations cassées que le drapeau « installé » ne voit pas.",
+    "status": {
+      "ok": "ok",
+      "missing": "absent",
+      "broken": "cassé",
+      "timeout": "timeout",
+      "error": "erreur"
+    }
+  }
+}

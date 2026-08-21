@@ -1,0 +1,566 @@
+{
+  "dropZone": {
+    "hint": "拖放文件夹以设置工作空间"
+  },
+  "playbook": {
+    "tooltip": "先前会话的 playbook 已作为此工作空间的上下文加载。",
+    "loaded": "已加载 Playbook"
+  },
+  "modeToggle": {
+    "planTooltip": "计划模式 — 在执行前描述和概述",
+    "buildTooltip": "构建模式 — 立即执行",
+    "plan": "计划",
+    "build": "构建"
+  },
+  "agentsMd": {
+    "unknownError": "未知错误",
+    "tooltip": "在工作空间根目录中生成 AGENTS.md",
+    "generating": "生成中…",
+    "generate": "生成 AGENTS.md"
+  },
+  "diff": {
+    "label": "DIFF"
+  },
+  "toolGroup": {
+    "someRunning": "某些工具仍在运行",
+    "count_one": "{{count}} 个工具",
+    "count_other": "{{count}} 个工具"
+  },
+  "toolCall": {
+    "aborted": "[已中止]",
+    "abortedTooltip": "会话在此工具完成前结束",
+    "running": "运行中…",
+    "harnessReports": "Agent 报告：{{name}}",
+    "input": "输入",
+    "result": "结果",
+    "noOutput": "(无输出)",
+    "abortedPlaceholder": "[已中止] — 会话在结果到达前结束",
+    "runningPlaceholder": "运行中 — 等待结果…"
+  },
+  "preview": {
+    "label": "预览",
+    "openInBrowser": "[在浏览器中打开]",
+    "openInBrowserTooltip": "在系统浏览器中打开",
+    "close": "[关闭]",
+    "closeTooltip": "关闭预览",
+    "loading": "加载中…",
+    "error": "错误：{{error}}",
+    "emptyHtml": "无法渲染 HTML (内容为空)",
+    "imageTooLarge": "二进制 / 图像过大无法预览",
+    "truncated": "显示前 1 MB (总共 {{total}} MB)",
+    "unsupported": "不支持此文件类型的预览。",
+    "supportedPrefix": "支持：",
+    "binary": "二进制文件 ({{bytes}} 字节) — 无法预览",
+    "saved": "已保存",
+    "saveFailed": "保存失败"
+  },
+  "filePreview": {
+    "closeTooltip": "关闭预览",
+    "loading": "加载中…",
+    "truncated": "显示文件的前 1 MB (总共 {{total}} MB)",
+    "binary": "二进制文件 ({{bytes}} 字节)",
+    "saveCopy": "保存副本",
+    "saveCopyTooltip": "将此文件的副本保存到 Tachi Studio 工件文件夹",
+    "saveCopySuccess": "已保存到 {{path}}",
+    "saveCopyFailed": "无法保存副本"
+  },
+  "permission": {
+    "owner": {
+      "code": "CODE 运行",
+      "tachiapp": "TACHIAPP 运行",
+      "hint": "此审批属于另一个标签页的运行。作答会放行那个运行——工具在那个运行的工作目录里执行，不是这里。"
+    },
+    "morePending": "还有 {{n}} 个等待中 — 请先处理这一个",
+    "badge": "权限",
+    "paused": "— 已暂停，等待您的批准",
+    "risky": "风险：",
+    "review": "审查：",
+    "input": "输入",
+    "allow": "允许",
+    "allowHint": "允许此单个调用",
+    "deny": "拒绝",
+    "denyHint": "拒绝并中止此工具调用",
+    "alwaysAllowTool": "始终允许工具",
+    "alwaysAllowToolHint": "在此会话中始终允许 {{toolName}}",
+    "alwaysAllowFamily": "始终允许系列",
+    "alwaysAllowFamilyHint": "在此会话中始终允许整个工具系列",
+    "allow30m": "允许 30 分钟",
+    "allow30mHint": "让“{{toolName}}”在接下来的 30 分钟内无需询问即可运行 — 授权到期后自动失效",
+    "overlay": {
+      "title": "需要授权",
+      "hint": "有一次运行正在等待你的回答 — 该卡片在任何标签页都会显示",
+      "goto": "前往运行",
+      "gotoHint": "打开拥有这次运行的界面，查看完整记录"
+    }
+  },
+  "slash": {
+    "status": {
+      "pendingReview": "待审查",
+      "approved": "已批准",
+      "applied": "已应用",
+      "cancelled": "已取消"
+    },
+    "risk": {
+      "low": "低",
+      "med": "中",
+      "high": "高"
+    },
+    "approve": "[批准]",
+    "apply": "[应用]",
+    "cancel": "[取消]",
+    "rootCause": "根本原因",
+    "confidence": "[confidence: {{confidence}}%]",
+    "solutions": "解决方案",
+    "riskColumn": "风险",
+    "risks": "风险",
+    "scope": "范围",
+    "changes": "变化",
+    "estimatedDiff": "估计的 DIFF",
+    "lines": "行",
+    "findings": "发现",
+    "summary": "摘要",
+    "errors_one": "{{count}} 个错误",
+    "errors_other": "{{count}} 个错误",
+    "warnings_one": "{{count}} 个警告",
+    "warnings_other": "{{count}} 个警告",
+    "infoCount": "{{count}} 信息",
+    "goal": "目标",
+    "phases": "阶段",
+    "phase": "阶段 {{num}}：{{name}}",
+    "depends": "依赖：{{depends}}",
+    "tasks": "任务：{{tasks}}",
+    "criticalPath": "关键路径",
+    "errorCard": {
+      "title": "[斜杠命令]",
+      "badge": "错误",
+      "parseFailed": "无法将 agent 响应解析为斜杠计划。",
+      "rawLogged": "原始文本已记录到网络审计。",
+      "dismiss": "[关闭]"
+    }
+  },
+  "history": {
+    "time": {
+      "justNow": "刚刚",
+      "minutesAgo": "{{count}} 分钟前",
+      "hoursAgo": "{{count}} 小时前",
+      "daysAgo": "{{count}} 天前"
+    },
+    "sessions": "会话 · {{count}}",
+    "mainStore": "(主存储：{{status}})",
+    "new": "+ 新建",
+    "newTooltip": "新会话 — 存档当前会话并重新开始",
+    "newAria": "新会话",
+    "hideTooltip": "隐藏会话",
+    "hideAria": "隐藏会话",
+    "viewingArchive": "● 查看存档",
+    "backToLiveTooltip": "返回实时会话",
+    "backToLive": "返回实时",
+    "continueAction": "继续",
+    "continueTooltip": "继续此会话 — 恢复并继续工作",
+    "searchPlaceholder": "搜索会话…",
+    "noMatches": "无匹配项。",
+    "empty": "尚无过去的会话 — 已完成的运行会自动存档。",
+    "eventCount": "{{count}} 个事件",
+    "rename": "重命名",
+    "renameAction": "重命名",
+    "delete": "删除",
+    "deleteAction": "删除",
+    "confirmDeleteTooltip": "再次点击确认",
+    "sure": "确定？",
+    "deletedToast": "会话已删除"
+  },
+  "tile": {
+    "status": {
+      "idle": "[空闲]",
+      "running": "[运行中]",
+      "done": "[完成]",
+      "error": "[错误]",
+      "aborted": "[已中止]"
+    },
+    "deleteTooltip": "删除任务 (worktree + 分支)",
+    "deleteAria": "删除任务",
+    "displayModeAria": "瓷砖显示模式",
+    "events": "事件",
+    "eventsTooltip": "显示最近的 agent 事件 + steps.json",
+    "ptyTooltip": "将 xterm 附加到 worktree shell",
+    "noOutput": "尚无输出"
+  },
+  "grid": {
+    "unknownBranch": "(未知)",
+    "deleteConfirmTitle": "删除平行任务？",
+    "deleteConfirmMessage": "这将删除 worktree 和分支“{{branchName}}”以及其中的任何未提交更改。这无法撤销。",
+    "deleteConfirmOk": "删除",
+    "deleteConfirmCancel": "取消",
+    "newTask": "[+ 新建平行任务]",
+    "running": "运行中：{{running}}/{{total}}",
+    "empty": "尚无平行任务。点击上面的 [+ 新建平行任务] 来启动一个。"
+  },
+  "dialog": {
+    "nameRequired": "任务名称是必需的。",
+    "rootRequired": "项目根是必需的。",
+    "title": "新建平行任务",
+    "nameLabel": "任务名称",
+    "namePlaceholder": "例如修复登录重定向",
+    "rootLabel": "项目根",
+    "rootPlaceholder": "git 仓库的绝对路径",
+    "choose": "选择...",
+    "baseBranchLabel": "基础分支 (可选)",
+    "baseBranchPlaceholder": "默认为 HEAD",
+    "branchPrefixLabel": "分支前缀",
+    "branchPrefixPlaceholder": "task",
+    "symlinkLabel": "Symlink 目录到 worktree",
+    "errorPrefix": "错误：{{error}}",
+    "cancel": "取消",
+    "create": "创建",
+    "creating": "创建中..."
+  },
+  "tour": {
+    "title": "如何使用 Code 标签页",
+    "intro": {
+      "title": "这是 Code 标签页",
+      "body": "这里 AI agent 在您计算机上的文件夹中读写文件 — 它可以构建、修复和重构真实项目。让我指出主要控件。"
+    },
+    "folder": {
+      "title": "选择文件夹",
+      "body": "首先选择 (或拖入) agent 应该工作的项目文件夹。在您选择前不会运行任何内容。这个突出显示的按钮打开文件夹选择器。"
+    },
+    "controls": {
+      "title": "您的控件",
+      "body": "此行设置 agent 的工作方式：模式 (计划 = 先描述计划，构建 = 现在执行)、Agent (哪个编码 agent)、提供商 — 模型的来源 (免费、OpenGateway、Bankr、Surplus 或 Venice)。"
+    },
+    "compose": {
+      "title": "输入并发送",
+      "body": "在下面的框中写下您想要的内容，然后按发送按钮 (或 Enter)。Agent 将显示其步骤、文件编辑和任何预览。"
+    },
+    "done": {
+      "title": "就是这样",
+      "body": "选择文件夹、选择计划或构建、输入任务、发送。您可以随时停止。从上面的“如何”按钮再次打开此演练。"
+    }
+  },
+  "harness": {
+    "openClaudeHint": "Agent：OpenClaude — Claude 风格编码 agent (由 gitlawb)",
+    "darkSolHint": "Agent：DarkSol — agent 原生加密终端 (钱包 / 交易 / 窃听)。需要安装 @darksol/terminal + 有资金的 agent 钱包。",
+    "tachiHint": "第一方进程内代理（Alpha）"
+  },
+  "header": {
+    "howTo": "如何使用",
+    "howToTooltip": "此标签页的交互式演练",
+    "buildWorkflow": "构建工作流",
+    "buildWorkflowTooltip": "在节点编辑器中以视觉方式构建自定义多 agent 工作流",
+    "sessions": "会话",
+    "showSessionsTooltip": "显示会话历史",
+    "folderTooltip": "选择工作空间文件夹 (或将文件夹拖放到页面上)",
+    "folderTooltipWorkflow": "工作流活跃 — 图形使用其自己的文件夹节点。分离工作流以在此处使用文件夹。",
+    "chooseFolder": "选择文件夹…"
+  },
+  "smartRouting": {
+    "on": "智能开启",
+    "off": "智能关闭",
+    "onTooltip": "智能路由开启 — 自动为 agentic 编码选择工具可靠的模型。点击关闭并手动选择。",
+    "offTooltip": "智能路由关闭 — 使用您选择的模型。点击自动选择工具可靠的模型。"
+  },
+  "workflowBanner": {
+    "prefix": "工作流",
+    "suffix": "在下面的编辑框中运行 — 正常 agent 控件已暂停。",
+    "running": "运行中：{{node}}…",
+    "edit": "在节点中编辑",
+    "editTooltip": "在节点画布中打开此工作流进行编辑",
+    "detach": "分离",
+    "detachTooltip": "分离工作流并返回正常 agent"
+  },
+  "archiveBanner": {
+    "text": "查看过去的会话 — 只读。编辑框已禁用。",
+    "back": "返回实时",
+    "backTooltip": "返回实时会话"
+  },
+  "logEmpty": {
+    "workflowPrefix": "在下面输入消息以运行",
+    "workflowSuffix": "工作流。",
+    "workflowHint": "它使用接入图形的提供商、文件夹、工具和 agent — 可随时在节点中编辑。",
+    "chooseFolder": "选择或拖放文件夹以启动 agent 会话。"
+  },
+  "appMode": {
+    "title": "TACHIAPP",
+    "sourceLabel": "应用源码",
+    "sourceTooltip": "Tachi Studio 源码：{{path}}（来源：{{source}}）",
+    "heroTitle": "问问这个应用——或者直接告诉它要改什么。",
+    "heroBody": "这个对话固定连接到 Tachi Studio 自己的源代码。它会读取应用代码、回答相关问题，并修改自己的文件。无需选择文件夹——只需选好提供方和模型。",
+    "composerPlaceholder": "询问应用，或描述你想要的改动…（Shift+Enter 换行）",
+    "chips": {
+      "featureLabel": "添加功能",
+      "featurePrompt": "添加一个清空当前对话的快捷键。先给我看方案。",
+      "bugLabel": "修复缺陷",
+      "bugPrompt": "窗口变窄时侧边栏的主题按钮会挤在一起。找出原因并修好。",
+      "explainLabel": "讲讲它是怎么工作的",
+      "explainPrompt": "讲讲一条消息如何从聊天输入框走到模型，再返回界面。"
+    },
+    "locate": {
+      "title": "定位应用源码",
+      "body": "Tachi Studio 没能找到自己的源码文件夹。请指定一次——里面有 AGENTS.md 和 apps/desktop 的那个——之后不会再问。",
+      "action": "选择文件夹",
+      "resolving": "正在定位应用源码…"
+    }
+  },
+  "surfaceBusy": {
+    "title": "另一个运行正在进行",
+    "bodyCode": "CODE 的运行仍在进行。它一结束这个对话就可用——那段记录会归档到 CODE 标签页的历史栏，并自动在那里打开。",
+    "bodyApp": "TACHIAPP 的运行仍在进行。它一结束这个标签页就可用——那段记录会归档到 TACHIAPP 对话的历史栏，并自动在那里打开。",
+    "composerPlaceholder": "等待另一个标签页的运行结束…"
+  },
+  "legend": {
+    "heading": "上面按钮的含义",
+    "modeLabel": "模式",
+    "modeDesc": "计划 (先描述) 或构建 (现在执行)",
+    "thinkingLabel": "思考",
+    "thinkingDesc": "AI 在执行前推理的深度",
+    "engineLabel": "Agent",
+    "engineDesc": "哪个编码 agent 运行它",
+    "gatewayLabel": "提供商",
+    "gatewayDesc": "AI 模型的来源",
+    "newHerePrefix": "新来这里？打开",
+    "learnLink": "学习",
+    "newHereSuffix": "看简短演练。"
+  },
+  "status": {
+    "starting": "启动 {{agent}}…",
+    "waiting": "等待响应…"
+  },
+  "composer": {
+    "attachTooltip": "将文件附加到下一个 prompt",
+    "attachTooltipWorkflow": "工作流模式中不使用附件",
+    "attachAria": "附加文件",
+    "placeholderArchive": "只读 — 查看过去的会话",
+    "placeholderWorkflow": "给“{{name}}”工作流发消息…",
+    "placeholderSelectTile": "先选择一个平行任务瓷砖…",
+    "placeholderTask": "{{agent}} 应该做什么？(Shift+Enter 换行)",
+    "placeholderNoFolder": "先选择文件夹…",
+    "stop": "停止 agent",
+    "run": "运行任务",
+    "estFree": "预估 $0（免费路由）",
+    "estBilledByModel": "按模型计费"
+  },
+  "provider": {
+    "freeHint": "提供商：Auto — 选择你已保存的最佳路由：OpenGateway 密钥 → {{model}}（免费），否则 Bankr 密钥（付费，从你的密钥计费），否则免费本地 freellmapi 路由器。仅当所选路由零费用时才显示 FREE。",
+    "openGatewayHint": "提供商：OpenGateway — 强制使用 gitlawb 的 OpenGateway；代理运行使用 {{model}}（已验证免费；免费模型有每日配额；其他模型按量计费）。无 Bankr/freellmapi 回退。",
+    "bankrHint": "提供商：Bankr — 使用您的 Bankr 密钥的高级模型 (llm.bankr.bot)。",
+    "surplusHint": "提供商：Surplus Intelligence — 跨其实时模型目录的最便宜卖家路由。需要 inf_ 密钥 (surplusintelligence.ai/buy)。",
+    "veniceHint": "提供商：Venice — 隐私第一，OpenAI 兼容 (默认 zai-org-glm-4.7)。需要 Venice 密钥 (venice.ai/settings/api)。",
+    "imgnaiHint": "提供商：imgnAI Katana — 一个密钥即可使用 glm-5-2 / gpt-5-6 / deepseek (默认 glm-5-2)。需要 imgnAI API Key（设置 → imgnAI Katana）。"
+  },
+  "workflowSelector": {
+    "tooltip": "在 Code 聊天中运行保存的节点工作流",
+    "off": "工作流：关闭",
+    "none": "无 (正常 agent)",
+    "loading": "加载中…",
+    "empty": "尚无保存的工作流。在节点中构建一个并保存。",
+    "savedAt": "保存于 {{date}}",
+    "buildNew": "+ 在节点中构建新的"
+  },
+  "depth": {
+    "normal": "正常",
+    "normalHint": "标准响应 — 无扩展思考",
+    "think": "思考",
+    "thinkHint": "扩展思考 — 4 000 token 预算",
+    "ultra": "超级",
+    "ultraHint": "深度思考 — 32 000 token 预算"
+  },
+  "statusBadge": {
+    "idle": "待命",
+    "starting": "启动中…",
+    "running": "工作中",
+    "done": "完成",
+    "error": "错误",
+    "incomplete": "已停止"
+  },
+  "incomplete": {
+    "badge": "未完成即结束",
+    "continue": "继续",
+    "continueHint": "向此会话发送继续消息",
+    "continueMessage": "继续完成任务。如果任务已经完成，请调用完成工具并附上摘要，说明你改了什么以及如何验证；如果无法继续，请准确说明原因。",
+    "detailFallback": "本次运行未完成任务也未做总结就停止了。",
+    "nudgedHint": "已经请求过它继续一次。"
+  },
+  "event": {
+    "running": "运行中…",
+    "preview": "[预览]",
+    "previewTooltip": "预览 {{path}}",
+    "noOutput": "(无输出)",
+    "done": "完成 ({{reason}})",
+    "copy": "复制",
+    "copied": "已复制",
+    "copyTooltip": "复制此消息",
+    "copyFailed": "复制失败",
+    "failed": "运行失败",
+    "stopped": "已停止"
+  },
+  "chain": {
+    "default": "默认（最佳已存密钥，否则免费本地路由器）",
+    "route": "路由",
+    "edit": "在节点中编辑",
+    "editTooltip": "在节点画布中编辑 agent 流"
+  },
+  "folder": {
+    "renameError": "重命名：{{error}}",
+    "deleteConfirm": "删除“{{label}}”？这是永久的。",
+    "deleteOk": "删除",
+    "deleteError": "删除：{{error}}",
+    "showPanel": "显示文件面板",
+    "files": "文件",
+    "back": "返回",
+    "forward": "前进",
+    "up": "上一级",
+    "newFile": "新建文件",
+    "newFolder": "新建文件夹",
+    "hidePanel": "隐藏面板",
+    "newFileHeader": "新建文件",
+    "newFolderHeader": "新建文件夹",
+    "fileNamePlaceholder": "name.ext",
+    "folderNamePlaceholder": "folder-name",
+    "create": "创建",
+    "cancel": "取消",
+    "loading": "加载中…",
+    "empty": "(空 — 右键创建)",
+    "open": "打开",
+    "preview": "预览",
+    "previewInPanel": "在面板中预览",
+    "rename": "重命名",
+    "delete": "删除"
+  },
+  "fusion": {
+    "panel": "融合面板",
+    "planPanel": "融合计划面板",
+    "answered": "已回答 {{ok}}/{{total}}",
+    "rerun": "重跑",
+    "rerunTitle": "重跑 {{model}}",
+    "judge": "评判",
+    "label": "Fusion",
+    "on": "Fusion 开",
+    "titleOn": "Fusion 已开启 — 代理在执行前咨询模型面板（fuse_plan）并综合其计划",
+    "titleOff": "Fusion — 让代理在规划（fuse_plan）和困难决策（consult_panel）时咨询模型面板"
+  },
+  "checkpoint": {
+    "revert": "还原",
+    "revertTooltip": "撤销代理的文件更改——将工作区恢复到本次运行前的快照",
+    "reverted": "已还原代理的更改。",
+    "revertFailed": "还原失败。"
+  },
+  "codexChip": {
+    "installing": "安装中…",
+    "loggingIn": "登录中…",
+    "titleLoading": "正在检查 Codex agent…",
+    "titleInstall": "安装 Codex agent（OpenAI Codex CLI）— CODE agent 即可向它委派子任务",
+    "titleLogin": "Codex 已安装但未登录 — 点击在浏览器中打开 ChatGPT 登录",
+    "titleOn": "Codex agent 已开启 — CODE agent 可向它委派子任务；以 @codex 开头发送消息即可直接与 Codex 对话。点击关闭。",
+    "titleOff": "Codex agent 已关闭 — 不委派。点击开启。直接对话：以 @codex 开头发送消息。"
+  },
+  "codexCard": {
+    "write": "可写",
+    "readOnly": "只读",
+    "writeTitle": "Codex 以工作区可写沙箱运行 — 它可以修改文件",
+    "readOnlyTitle": "Codex 以只读方式运行 — 只能查看，不能修改文件",
+    "task": "任务",
+    "output": "输出",
+    "partial": "部分输出",
+    "error": "错误",
+    "steps": "步骤",
+    "stepsCount": "{{count}} 个步骤",
+    "files": "文件",
+    "failed": "失败",
+    "session": "会话 {{id}}",
+    "resumed": "续接 {{id}}",
+    "model": "模型 {{model}}",
+    "runningTitle": "Codex 正在执行该任务…",
+    "runningPlaceholder": "已委派给 Codex — 正在等待 worker 返回…",
+    "progress": "进度",
+    "progressEarlier": "更早 +{{count}}"
+  },
+  "codexReview": {
+    "review": "评审",
+    "claim": "被评审的结论",
+    "focus": "重点",
+    "filesRequested": "文件",
+    "findingsCount": "{{count}} 项问题",
+    "holds": "成立",
+    "holdsTitle": "评审者尝试推翻该结论但未能成功",
+    "reviewed": "已评审",
+    "notes": "评审者笔记",
+    "runningTitle": "Codex 正在评审这次改动…",
+    "runningPlaceholder": "已发送给 Codex 评审 — 正在等待问题清单…"
+  },
+  "starters": {
+    "auditLabel": "审计这个文件夹",
+    "auditDesc": "计划模式，只读 — agent 梳理代码并汇报。无需任何批准。",
+    "auditCta": "选择文件夹 ▸",
+    "auditPrompt": "审计这个代码库：梳理架构，指出最重要的 3 个风险，并建议 3 个速赢改进。不要改动任何内容。"
+  },
+  "advanced": {
+    "label": "高级",
+    "summaryTooltip": "当前路由 — 点击打开高级",
+    "toggleTooltip": "Agent、提供商、思考、Fusion、角色、工作流 — 完整驾驶舱",
+    "workflowLabel": "工作流"
+  },
+  "trust": {
+    "safe": "安全",
+    "safeHint": "每次文件写入、shell 命令和外部工具前都会询问",
+    "standard": "标准",
+    "standardHint": "读取和工作空间内写入自由运行；shell 和外部工具会询问",
+    "auto": "自动",
+    "autoHint": "非破坏性 shell 命令也无需询问直接运行 — 破坏性命令仍会询问"
+  },
+  "reconnect": {
+    "retrying": "连接中断 — 正在重试 {{attempt}}/{{max}}",
+    "nextIn": "{{seconds}} 秒后重试",
+    "reason": "原因：{{reason}}"
+  },
+  "loop": {
+    "cycle": "循环 {{iteration}}/{{cap}}",
+    "stop": "停止循环",
+    "stopping": "正在停止…",
+    "stopHint": "完成本轮后停止循环",
+    "goal": "循环目标：{{goal}}"
+  },
+  "queue": {
+    "placeholder": "运行进行中 — 按 Enter 将消息排队，运行结束后自动发送",
+    "label": "已排队 {{n}}",
+    "labelHint": "当前运行结束后自动逐条发送。每条消息使用发送那一刻生效的设置。仅文本 — 附件不会排队。",
+    "paused": "队列已暂停 · {{n}}",
+    "pausedHint": "运行已停止或失败，因此不会自动发送。点击“继续”会把队列中最早的消息作为下一轮发出。",
+    "resume": "继续",
+    "resumeHint": "恢复自动发送 — 队列中最早的消息将作为下一轮发出",
+    "button": "排队",
+    "buttonHint": "将这条消息排队 — 当前运行结束后自动发送",
+    "remove": "从队列中移除",
+    "full": "队列已满（{{cap}}）— 请先移除一条排队的消息。"
+  },
+  "reset": {
+    "button": "重置",
+    "tooltip": "重置此轮 — 对话、代码或两者",
+    "chat": "重置对话",
+    "chatHint": "丢弃此轮及其之后的内容，不改动文件。",
+    "code": "重置代码",
+    "codeHint": "把文件恢复到此轮开始之前的状态。",
+    "both": "两者都重置",
+    "bothHint": "先恢复文件，再从此处丢弃对话记录。",
+    "blocked": {
+      "running": "有任务正在运行 — 请先停止。",
+      "archive": "你正在查看已归档的会话。",
+      "harness": "该 harness 不会创建文件快照。",
+      "not-taken": "此轮没有创建文件快照。",
+      "aged-out": "该快照已从检查点历史中淘汰。"
+    },
+    "confirmTitle": "重置此轮",
+    "confirmChat": "丢弃此轮及其之后的所有消息？不会改动文件。",
+    "confirmCode": "将工作区文件恢复到此轮开始之前的状态？此后的所有改动都会被覆盖。",
+    "confirmBoth": "恢复文件并丢弃此轮及其之后的所有内容？",
+    "codeRestored": "文件已恢复到此轮开始之前的状态。",
+    "codeFailed": "恢复失败 — 文件未被修改。",
+    "noCheckpoint": "此轮没有可用的文件快照。",
+    "undo": "撤销这次重置",
+    "undone": "已撤销重置。",
+    "undoFailed": "无法撤销这次重置。"
+  },
+  "fileChips": {
+    "enlarge": "点击放大",
+    "shrink": "点击缩小"
+  }
+}

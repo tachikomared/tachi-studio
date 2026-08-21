@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "スワーム タブ の使い方",
+    "step1": {
+      "title": "これは スワーム タブ",
+      "body": "詳細: 1つの git リポジトリ で複数 AI エージェント を同時実行。彼ら は .gnap/ フォルダー — 共有 TODO ボード、エージェント リスト、メッセージ ログ 内 小ステータス ファイル をコミット して調整。"
+    },
+    "step2": {
+      "title": "スワーム を開始",
+      "body": "[新規 スワーム]をクリック して git リポジトリ を指し エージェント をスピンアップ。.gnap/ の中 のみ 書く、だからあなたの コード は安全。[既存を開く]を使用 して既に作成 した1つ を再連結。"
+    },
+    "step3": {
+      "title": "何が見えるか",
+      "body": "開いたら、ダッシュボード は3つペイン を示す: エージェント (誰が作業)、kanban ボード (ステージ越えて タスク を移動)、すべてのコミット のライブ フィード。エージェント が作業 する時に更新。"
+    },
+    "step4": {
+      "title": "いつ使用するか",
+      "body": "スワーム はコードベース 上 パラレル マルチエージェント 作業 — 実験的でコード タブ より複雑。1つ エージェント だけ 欲しい なら コード タブ 使用。「方法」から再度開く。"
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(スワーム 開く なし)",
+    "loading": "· 読み込み中…"
+  },
+  "actions": {
+    "newSwarm": "[新規 スワーム]",
+    "openExisting": "[既存を開く]",
+    "howTo": "[方法]",
+    "howToTitle": "スワーム は何? ウォークスルー してください",
+    "open": "[開く]",
+    "refresh": "[リフレッシュ]"
+  },
+  "empty": {
+    "title": "スワーム なし 開く",
+    "descBefore": "Swarm は 1 つのリポジトリをチームで扱う AI エージェントの集まりです。共有ボードでタスクを分担し、全ステップを記録します。連携情報はすべて小さな",
+    "descAfter": " フォルダーに収まるため、コードには手を触れません。新しい swarm を作るか、既存のものを開いてください。",
+    "pathRequired": "パス は必須",
+    "pathPlaceholder": "…またはパス タイプ",
+    "recent": "最近"
+  },
+  "agents": {
+    "header": "エージェント ({{count}})",
+    "empty": "まだ エージェント 登録 なし。",
+    "register": "[エージェント 登録]",
+    "idPlaceholder": "id (例: alice)",
+    "namePlaceholder": "名前 (オプション)",
+    "roleLabel": "ロール:",
+    "heartbeatLabel": "hb:",
+    "cancel": "キャンセル",
+    "add": "追加",
+    "idRequired": "id は必須",
+    "registerFailed": "registerAgent 失敗"
+  },
+  "kanban": {
+    "header": "タスク ({{count}})",
+    "claimed": "[要求]",
+    "newTask": "+ 新規 タスク",
+    "titlePlaceholder": "タイトル",
+    "descPlaceholder": "説明 (オプション)",
+    "cancel": "キャンセル",
+    "add": "追加",
+    "actionOpen": "開く",
+    "titleRequired": "タイトル は必須",
+    "detail": {
+      "titlePrefix": "タスク ·",
+      "close": "閉じる",
+      "comments": "コメント ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "フィード",
+    "counts": "{{commits}}コミット · {{messages}}メッセージ",
+    "empty": "まだ なし。コミット とメッセージ スワーム 実行 時に現れます。",
+    "commit": "コミット",
+    "noSubject": "(対象 なし)",
+    "moreFiles": "+ {{count}}もっと",
+    "msg": "メッセージ"
+  },
+  "messaging": {
+    "header": "メッセージ",
+    "registerPrompt": "エージェント 登録 してエージェント 間 チャネル を開く。",
+    "noMessages": "メッセージ なし。",
+    "ctxLabel": "ctx:",
+    "unreadTitle_one": "{{count}}未読 メッセージ",
+    "unreadTitle_other": "{{count}}未読 メッセージ",
+    "sendTestTitle": "テスト ハンドオフ {{name}}に送信",
+    "sendTestButton": "[テスト ハンドオフ → {{name}}を送信]",
+    "testHandoff": {
+      "task": "触れた モジュール の差分 をレビュー",
+      "context": "{{name}}からハンドオフ"
+    }
+  },
+  "dialog": {
+    "title": "新規 スワーム",
+    "descBefore": "スワーム ホスト git リポジトリ を選択。",
+    "descAfter": "ディレクトリ は (またはリユース)その中 作成。",
+    "pathPlaceholder": "/リポジトリ/パス",
+    "pick": "[選択]",
+    "cancel": "キャンセル",
+    "create": "作成",
+    "creating": "作成中...",
+    "pathRequired": "ディレクトリ パス をピック またはタイプ してください。",
+    "initFailed": "initSwarm 失敗"
+  }
+}

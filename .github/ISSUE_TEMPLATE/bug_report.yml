@@ -1,0 +1,50 @@
+name: Bug report
+description: Something in the app does not work
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. The most useful bug report says what you did,
+        what happened, and what you expected instead — in that order.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, and what the app did.
+      placeholder: |
+        1. Opened the Media tab
+        2. Chose SD-Turbo and pressed Generate
+        3. The progress bar reached 40% and stopped, with no error
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Bottom of the sidebar, or Dashboard → System.
+      placeholder: "0.1.0"
+    validations: { required: true }
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows 11, Windows 10, macOS, Linux, Other]
+    validations: { required: true }
+  - type: input
+    id: hardware
+    attributes:
+      label: GPU and memory (only for local generation problems)
+      placeholder: "RTX 3060 12 GB, 32 GB RAM"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Anything the app told you
+      description: >
+        Errors from the doctor panel on the Dashboard, or the console
+        (Ctrl+`). Please remove API keys and personal paths before pasting.
+      render: text

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "Панель инструментов OpenClaw"
+  },
+  "actions": {
+    "reload": "Перезагрузить",
+    "openInBrowser": "Открыть в браузере",
+    "openDocs": "Открыть документы"
+  },
+  "iframe": {
+    "title": "Панель инструментов OpenClaw"
+  },
+  "probing": {
+    "label": "Проверка {{url}}…"
+  },
+  "unreachable": {
+    "title": "OpenClaw демон недоступен",
+    "hint": "Запустите демон OpenClaw в терминале, затем нажмите Перезагрузить:"
+  },
+  "status": {
+    "probing": "Проверка",
+    "live": "Live",
+    "offline": "Оффлайн"
+  }
+}

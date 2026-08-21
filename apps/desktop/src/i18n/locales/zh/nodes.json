@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "本地",
+    "free": "免费云端",
+    "unknown": "价格未知"
+  },
+  "repair": {
+    "title": "流程需要设置",
+    "summary_one": "此流程引用了 1 项尚未就绪的内容。",
+    "summary_other": "此流程引用了 {{count}} 项尚未就绪的内容。",
+    "openAnyway": "仍然打开",
+    "openAnywayTitle": "对此流程忽略 — 按原样打开",
+    "persistFailedTitle": "未保存",
+    "persistFailed": "画布更改未被保存 — 请导出您的流程。",
+    "fix": {
+      "providers": "添加密钥",
+      "catalog": "打开目录",
+      "settings": "打开设置",
+      "skills": "打开技能",
+      "pickFolder": "选择文件夹",
+      "generic": "修复"
+    },
+    "problem": {
+      "providerKey": "未连接 — 请添加此提供方的 API 密钥后再运行。",
+      "localModel": "本地模型“{{model}}”尚未下载。",
+      "engineOff": "模型“{{model}}”已下载，但本地引擎未运行它。",
+      "folderEmpty": "尚未选择文件夹 — 请选择一个作为智能体的工作区。",
+      "folderMissing": "在此设备上未找到文件夹：{{path}}",
+      "skillMissing": "技能“{{skill}}”尚未安装。",
+      "codexMissing": "Codex 尚未安装。",
+      "segmentLength": "链式场景请求 {{frames}} 帧 — 链式视频每个场景上限为 {{cap}} 帧（约 5 秒），此场景会被截断。请再加一个场景，而不是加长这一个。",
+      "rifeNoInput": "这个补帧节点上没有连接任何能产出视频的内容 —— 请连接视频节点、它的结果卡片，或另一个补帧节点。",
+      "rifeMissing": "补帧引擎尚未安装。请在节点上的按钮安装 —— 只需下载一次，按钮上会显示大小。",
+      "generic": "运行此流程前需要先完成设置。"
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "删除节点",
+    "toggleMain": "切换主输出"
+  },
+  "unknownNode": {
+    "title": "未知节点",
+    "originalTypeLabel": "原始类型",
+    "hint": "此节点类型未在此版本中注册。其数据已保留，运行流程时将被跳过。"
+  },
+  "agentNode": {
+    "mainSet": "标记为主 (最终) 输出",
+    "mainUnset": "这是主/最终输出 — 点击取消设置",
+    "modelFromUpstream": "模型 ← 上游提供商",
+    "instructionsLabel": "说明 (可选 · @ 引用)",
+    "instructionsPlaceholder": "这个 agent 是谁？例如 '您是严格的代码审查员。' 输入 @ 引用上游节点。",
+    "runTitle": "仅使用上游输出运行此 agent",
+    "empty": "(agent 未生成文本)"
+  },
+  "promptNode": {
+    "mainSet": "标记为主 (最终) 输出",
+    "mainUnset": "最终输出 — 点击取消设置",
+    "providerLabel": "提供商",
+    "modelLabel": "模型",
+    "visionSuffix": " · 视觉",
+    "noLocalModels": "无本地模型 — 在状态 → llama.cpp 中下载一个。",
+    "modelIdPlaceholder": "模型 id",
+    "instructionLabel": "说明 (@ 引用)",
+    "instructionPlaceholder": "例如 '为以下内容写一个生动的、详细的图像生成 prompt：一个霓虹灯城市的夜晚。' 输入 @ 折叠上游节点。",
+    "visionWarning": "视觉 ▸ 图像接入，但此模型无法读取图像 — 选择视觉模型 (Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…) 使用它。",
+    "runTitle": "运行此 prompt 节点 — 生成 prompt 文本",
+    "empty": "(尚未生成 prompt)",
+    "library": "{ } 模板库",
+    "libraryTitle": "从提示词库插入模板"
+  },
+  "folderNode": {
+    "header": "文件夹 · 工作空间",
+    "noFolder": "未选择文件夹",
+    "pickTitle": "选择工作空间文件夹",
+    "change": "更改文件夹",
+    "choose": "选择文件夹",
+    "hint": "接入此处的 agents 可以读/写文件 (根据您授予的角色)，沙箱化到此文件夹。"
+  },
+  "internetNode": {
+    "grants": "授予：web_fetch(url)",
+    "hint": "接入此处的 agents 可以获取公共 URL。在 PRIVATE MODE 中被阻止。"
+  },
+  "mcpNode": {
+    "urlPlaceholder": "空白 = 内置服务器",
+    "hint": "接入此处的 agents 获得此 MCP 服务器的工具。在 PRIVATE MODE 中限制为安全列表。"
+  },
+  "textNode": {
+    "label": "文本 — 主题 / 简介",
+    "placeholder": "prompt 应该是什么？例如 '宣传 $TACHI — 霓虹灯野蛮派、病毒式、加密炒作。' 使用 @ 或将其接入 prompt / 媒体节点下游引用。",
+    "hintBefore": "输出 = 此文本。使用",
+    "hintAfter": "从另一个节点引用，或将其接入 prompt / 媒体节点。"
+  },
+  "noteNode": {
+    "badge": "便签",
+    "placeholder": "便签 — 记录标签、待办或上下文。不参与运行。",
+    "cycleColor": "更换颜色",
+    "anchor": "锚定 {{count}} 个节点 — 它们随此便签一起移动",
+    "dragHint": "拖动会一并移动便签内的节点。按住 Alt 仅移动便签。"
+  },
+  "subflowNode": {
+    "badge": "子流程",
+    "labelPlaceholder": "子流程",
+    "labelAria": "子流程名称",
+    "count": "{{n}} 个节点",
+    "expand": "展开",
+    "expandTitle": "展开 — 恢复折叠的节点及其连接",
+    "hint": "已折叠的分组。隐藏的节点仍会随流程运行。"
+  },
+  "imageRefNode": {
+    "tooLarge": "图像过大 ({{size}} MB，最多 12)。",
+    "readError": "无法读取文件。",
+    "label": "参考图像 (初始帧 / 风格参考)",
+    "altFallback": "参考",
+    "replace": "替换图像…",
+    "choose": "选择图像…",
+    "removeImage": "删除图像",
+    "clear": "清除",
+    "hint1": "接入到",
+    "hintVideoImage": "视频 / 图像",
+    "hint2": "节点 = 其参考图像 (图像到视频初始帧)。接入到",
+    "hint3": "节点 = 文本模型看到它 (视觉) 并写它。需要能够看的模型。"
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ 输出",
+    "titlePlain": "输出",
+    "regen": "↻ 重新生成",
+    "regenTitle": "重新生成 — 重新运行源节点",
+    "regenAria": "重新生成",
+    "deleteResult": "删除结果",
+    "noOutput": "(无输出)",
+    "branchHint": "分支 ▸ 接入新 prompt / 媒体节点到此结果以继续链。",
+    "pin": "固定",
+    "pinned": "▪ 已固定",
+    "pinTitle": "固定此结果 — 全部运行时将直接复用，而不重新运行（重新付费）该节点",
+    "unpinTitle": "取消固定 — 全部运行时将重新运行该节点",
+    "pinnedChip": "已固定 — 全部运行时复用",
+    "costTitle": "此节点上次运行的预估成本（按字符数/4 估算 token，采用所接模型的费率）",
+    "followUp": "跟进",
+    "followUpLabel": "跟进",
+    "followUpTitle": "从此结果分支出跟进 agent — 它会将此输出作为其上下文",
+    "variantTitle": "扇出变体 {{n}} — 源节点的多次并列运行之一"
+  },
+  "mediaNode": {
+    "noLocalVoices": "无本地声音 — 在媒体 → 本地中下载一个。",
+    "installPiper": "在媒体 → 本地中安装 piper + 下载声音。",
+    "noLocalModels": "无本地 {{kind}} 模型 — 在媒体 → 本地中下载一个。",
+    "installSdCpp": "在媒体 → 本地中安装 sd.cpp + 下载模型。",
+    "providerLabel": "提供商",
+    "providerLocal": "本地",
+    "modelLabel": "模型",
+    "staleModel": "{{id}}（未安装）",
+    "noModels": "无模型 — 添加 Surplus 密钥 + 资助 USDC。",
+    "noModelsErr": "无模型 ({{error}})",
+    "promptLabel": "Prompt",
+    "promptWired1": "Prompt 从上游节点接入 — 其输出用作 prompt。断开",
+    "promptWired2": "插头以在此处输入。",
+    "promptLabelRef": "Prompt (@ 引用上游节点)",
+    "promptPlaceholder": "描述要生成的内容… (或接入 prompt 节点到 prompt 插头)",
+    "imageWired1": "参考图像从上游节点接入 — 其图像被使用。断开",
+    "imageWired2": "插头以在此处选择。",
+    "required": "必需：",
+    "runTitle": "使用此节点的 prompt + 参数生成",
+    "perfPreset": "性能",
+    "perfPresetPlaceholder": "— 档位 —",
+    "stylePreset": "风格"
+  },
+  "resultCard": {
+    "collapse": "折叠结果卡",
+    "expand": "展开结果卡",
+    "toggleAria": "折叠/展开结果卡片：{{title}}"
+  },
+  "runUI": {
+    "runDefault": "仅运行此节点",
+    "run": "运行",
+    "running": "运行中…",
+    "pin": "钉住",
+    "pinned": "钉住 ●",
+    "pinTitle": "将此输出作为下游节点的固定参考钉住",
+    "pinnedTitle": "钉住：下游运行重用此输出而无需重新运行。点击取消钉住。",
+    "clearTitle": "清除此节点的缓存输出",
+    "clearAria": "清除输出",
+    "clearBusyTitle": "节点运行时无法清除 — 请先停止运行",
+    "noOutput": "(无输出)",
+    "generatedAlt": "生成的",
+    "toDesignAudio": "→ Design 音频",
+    "toDesignAudioTitle": "将此音频复制到 Design 音频 — 动画可通过 staticFile() 使用",
+    "toDesignAudioDone": "已保存到 Design 音频：{{file}}",
+    "retry": "重试 {{attempt}}/{{attempts}}",
+    "fanoutTitle": "扇出 ×{{count}} — 运行会将此节点执行 {{count}} 次，生成各自独立的结果卡片。点击可切换（×1 · ×2 · ×4）。",
+    "fanoutAria": "扇出 ×{{count}}",
+    "fanoutRunning": "运行 {{current}}/{{total}}",
+    "fanoutStop": "停止",
+    "fanoutStopTitle": "在当前变体完成后停止扇出",
+    "stopRun": "停止",
+    "stopRunTitle": "停止本次生成 — 立即结束本地引擎进程",
+    "statusDone": "{{title}}：运行完成",
+    "statusError": "{{title}}：运行失败"
+  },
+  "quickAdd": {
+    "addConnected": "添加连接的节点",
+    "menuAria": "添加连接的节点",
+    "header": "添加 + 连接"
+  },
+  "referenceField": {
+    "placeholder": "输入或 @ 引用上游节点…",
+    "resolvesTo": "解析为",
+    "empty": "(空 — 上游节点尚无输出)"
+  },
+  "edgeSidecar": {
+    "placeholder": "边说明...",
+    "hint": "输入保存 · Esc 取消"
+  },
+  "edge": {
+    "removeConnection": "删除连接",
+    "editLabel": "编辑边标签"
+  },
+  "paneMenu": {
+    "aria": "画布上下文菜单",
+    "tidyUp": "整理",
+    "tidyUpTitle": "使用 ELK 分层布局自动排列所有节点",
+    "addNode": "添加节点…",
+    "addNodeTitle": "在此位置快速添加节点",
+    "kindAgent": "Agent",
+    "kindPrompt": "Prompt",
+    "kindText": "文本",
+    "kindMedia": "图像（媒体）",
+    "kindProvider": "提供商"
+  },
+  "group": {
+    "toSubflow": "分组 → 子流程",
+    "title": "将选中的 {{n}} 个节点折叠为一个子流程"
+  },
+  "merge": {
+    "toFollowUp": "合并 → 后续",
+    "title": "将选中的 {{n}} 个结果合并为一个综合它们的后续智能体",
+    "label": "合并",
+    "systemPrompt": "将上游结果综合成一个答案。"
+  },
+  "nodeMenu": {
+    "aria": "节点右键菜单",
+    "group": "分组为子流程",
+    "duplicate": "复制",
+    "delete": "删除"
+  },
+  "emptyCanvas": {
+    "title": "空画布",
+    "addNode": "点击调色板中的模板以添加节点。",
+    "connect": "拖动处理程序以连接节点。",
+    "delete": "悬停节点并点击 × 删除，或选择 + 按 Del / 退格。",
+    "starters": "…或从模板开始"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "多 Agent 研究",
+        "description": "研究员收集事实，分析师提炼要点，撰写者产出最终简报。免费 — 无需密钥。"
+      },
+      "brainstorm-decide": {
+        "label": "头脑风暴并决策",
+        "description": "乐观者抛出想法，怀疑者做压力测试，决策者敲定一个方案。免费 — 无需密钥。"
+      },
+      "prompt-to-image": {
+        "label": "提示词 → 图像",
+        "description": "一个免费文本模型写出生动的图像提示词，再喂给图像节点。输入你的想法并运行。"
+      },
+      "compare-two-models": {
+        "label": "对比两个模型",
+        "description": "同一个问题，两个模型并排作答，由裁判选出胜者。模型 B 默认为 Bankr/Claude。"
+      },
+      "rag-over-folder": {
+        "label": "对文件夹做 RAG",
+        "description": "选择一个文件夹并提问 — Agent 会搜索你的文件并给出带引用的回答。需要 Bankr 密钥。"
+      },
+      "summarize-url": {
+        "label": "总结 URL",
+        "description": "把链接粘贴到文本节点 — 支持联网的 Agent 会抓取页面并进行总结。需要 Bankr 密钥。"
+      },
+      "geo-audit": {
+        "label": "GEO 审计（面向答案引擎的优化）",
+        "description": "粘贴页面和你想赢得的问题——流程会模拟答案引擎如何使用它，然后打分并列出修改项。免费，无需密钥。"
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio（多提供商 · 辩论 → 图像 + 视频）",
+      "description": "一个先辩论、后创作的创意团队。Bankr 智能体提出创意，OpenGateway 智能体进行批评，Surplus 智能体做出最终决定 —— 随后 Prompt 节点撰写图像提示词（Surplus image），Scenarist 编写视频脚本（Surplus video）。每个智能体使用不同的提供商、模型、MCP/网页工具和权限。需要 Bankr + OpenGateway + Surplus 密钥（生成媒体需要有余额的 Surplus 密钥）。展示 / 测试用画布。"
+    },
+    "storyboard": {
+      "label": "分镜脚本（连续场景 · 本地）",
+      "description": "连续场景：一张静帧开启故事，场景 1 将其动画化，场景 2 从场景 1 的最后一帧开始 —— 应用会自动为你提取该帧。输入你的故事前提，选择本地模型，然后运行 Run flow。诚实的限制：每个场景都是一次独立的约 5 秒渲染，并经过完整的像素往返，因此随着链条变长，颜色和人物一致性的偏差会累积，且每个场景都要各自承担一次模型加载。把它当作几个场景组成的分镜脚本，而不是一部长片。"
+    },
+    "prompt-to-image": {
+      "label": "Prompt → 图像",
+      "description": "一个免费的文本模型撰写生动的图像提示词，然后传给图像节点。在 Prompt 节点中输入你的想法并运行，然后运行图像节点（需要 Surplus 密钥）。"
+    },
+    "viral-video": {
+      "label": "Prompt → 病毒式 → 视频",
+      "description": "Concept writer 起草创意，Viral rewriter 将其改写为富有节奏感的文本转视频提示词，再传给视频节点。撰写是免费的；生成视频需要 Surplus 密钥。"
+    },
+    "improve-prompt-image": {
+      "label": "优化提示词 → 图像",
+      "description": "把粗略的图像提示词粘贴到 Prompt 节点 —— 免费文本模型会打磨它并传给图像节点。先运行 Prompt 节点，再运行图像节点。"
+    },
+    "expert-roundtable": {
+      "label": "专家圆桌会议（多智能体对话）",
+      "description": "Frontend、Backend 与 SEO 专家依次发言 —— 每一位都在前一位的基础上展开 —— 最后由 CEO 综合出最终方案。编辑每个智能体的 Instructions 以自定义人设，或点击“Add expert”。打开“Chat with flow”即可与整个团队对话。"
+    },
+    "code-helper": {
+      "label": "代码助手（文件）",
+      "description": "一个智能体（Bankr/Claude）在你选择的文件夹中读写文件。选择一个文件夹，然后运行。"
+    },
+    "build-review": {
+      "label": "Build & Review（文件，多智能体）",
+      "description": "Builder（Bankr/Claude）在你的文件夹中编写文件，然后 Reviewer 对其进行检查。选择一个文件夹，然后运行。"
+    },
+    "writer-reviewer": {
+      "label": "Writer 到 Reviewer",
+      "description": "Writer 起草内容，Reviewer 进行批评并加以改进。"
+    },
+    "research-summarize": {
+      "label": "Research 到 Summary",
+      "description": "Researcher 收集要点，Summarizer 将其浓缩总结。"
+    },
+    "code-review": {
+      "label": "Code 到 Review",
+      "description": "Coder 编写代码，Reviewer 检查其中的错误。"
+    }
+  },
+  "palette": {
+    "title": "节点调色板",
+    "searchPlaceholder": "搜索…",
+    "searchAria": "搜索调色板",
+    "noMatches": "无匹配项。",
+    "footer": "拖到画布上，或点击插入。",
+    "dropHint": "松开以添加节点",
+    "addNode": "添加 {{label}} 节点",
+    "addRole": "添加 {{label}} 角色节点",
+    "groups": {
+      "providers": "提供商",
+      "prompt": "Prompt",
+      "inputs": "输入",
+      "agents": "Agents",
+      "tools": "工具",
+      "media": "媒体",
+      "annotate": "批注",
+      "roles": "角色",
+      "triggers": "触发器"
+    },
+    "aria": "节点调色板"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "版本 — 每次保存都会留下快照",
+      "openAria": "显示版本",
+      "title": "版本",
+      "loading": "正在读取历史…",
+      "empty": "暂无版本 — 保存此流程后会生成快照。",
+      "failed": "无法读取版本：{{error}}",
+      "unreadable": "快照无法读取",
+      "identical": "无变化",
+      "nodesAdded": "+{{n}} 个节点",
+      "nodesRemoved": "-{{n}} 个节点",
+      "edgesAdded": "+{{n}} 条连线",
+      "edgesRemoved": "-{{n}} 条连线",
+      "params": "{{n}} 个参数",
+      "justNow": "刚刚",
+      "minutesAgo": "{{n}} 分钟前",
+      "hoursAgo": "{{n}} 小时前",
+      "daysAgo": "{{n}} 天前",
+      "size": "{{n}} KB",
+      "restore": "恢复",
+      "restoreTitle": "恢复此版本 — 当前状态会先存为快照，可撤销",
+      "restored": "已从早期版本恢复“{{name}}”",
+      "restoreFailed": "恢复失败：{{error}}"
+    },
+    "scheduleTitle": "为该流程设置定时运行",
+    "scheduleAria": "为该流程设置定时",
+    "title": "流",
+    "refreshTitle": "刷新列表",
+    "refreshAria": "刷新",
+    "newTitle": "保存当前画布并开始新的",
+    "newFlow": "+ 新建流",
+    "empty": "尚无保存的流。构建一个并点击保存，或 + 新建流。",
+    "rename": "ren",
+    "renameTitle": "重命名流",
+    "confirmDelete": "确定？",
+    "confirmDeleteTitle": "再次点击确认删除",
+    "deleteTitle": "删除流",
+    "templates": "模板",
+    "import": "⇧ 导入",
+    "importTitle": "导入 .tachiflow.json 流文件",
+    "importAria": "导入流",
+    "imported": "已导入「{{name}}」",
+    "importFailed": "导入失败：{{error}}",
+    "notTachiflow": "不是 .tachiflow.json 文件",
+    "unsupportedVersion": "这个 .tachiflow.json 来自更新版本的应用 — 请更新 TACHI STUDIO 后再导入。",
+    "exportTitle": "导出为 .tachiflow.json",
+    "exportAria": "导出流",
+    "exported": "已导出 {{file}}",
+    "exportFailed": "导出失败：{{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "将当前画布导出为内嵌流程的 PNG — 可重新导入",
+    "pngExported": "已导出 {{file}}",
+    "pngExportFailed": "PNG 导出失败：{{error}}",
+    "pngNoFlow": "此 PNG 中未找到内嵌流程",
+    "saveFailed": "保存失败：{{error}}",
+    "cfaBlocked": "Windows 受控文件夹访问正在阻止写入 文档\\Tachi Studio — 请在 Windows 安全中心允许 Tachi Studio，否则应用会将数据存放在 {{fallback}}",
+    "aria": "已保存的流",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "打开流",
+    "renameAria": "重命名流",
+    "deleteAria": "删除流",
+    "confirmDeleteAria": "确认删除"
+  },
+  "config": {
+    "aria": "节点配置",
+    "header": "配置 · {{type}}",
+    "close": "关闭",
+    "closeEsc": "关闭 (Esc)",
+    "deleteNode": "删除节点",
+    "deleteTitle": "删除此节点及其边",
+    "duplicateNode": "复制节点",
+    "duplicateTitle": "克隆此节点及其全部设置（Ctrl+D）",
+    "fields": {
+      "label": "标签",
+      "model": "模型",
+      "provider": "提供商",
+      "endpoint": "端点",
+      "harness": "Agent",
+      "systemPrompt": "系统 prompt",
+      "final": "最终 (主输出)",
+      "instruction": "说明",
+      "roleId": "角色 id",
+      "description": "描述",
+      "permissionTier": "权限等级",
+      "workspacePath": "工作空间路径",
+      "serverUrl": "服务器 URL",
+      "modality": "模态",
+      "promptTemplate": "Prompt 模板",
+      "size": "大小",
+      "count": "数量 (n)",
+      "voice": "声音",
+      "format": "格式",
+      "duration": "持续时间 (s)",
+      "resolution": "分辨率",
+      "audioPath": "音频路径",
+      "autoSaveDir": "自动保存目录",
+      "codexAllowWrite": "允许写入（workspace-write 沙箱）",
+      "retries": "失败时重试次数",
+      "retryDelay": "重试延迟 (毫秒)"
+    },
+    "placeholders": {
+      "nodeLabel": "节点标签",
+      "modelId": "模型 id",
+      "systemPrompt": "这个 agent 是谁？例如 '您是严格的代码审查员。'",
+      "instruction": "什么样的 prompt…",
+      "serverUrl": "空白 = 内置服务器",
+      "surplusModelId": "剩余模型 id",
+      "autoSaveDir": "回退保存文件夹"
+    },
+    "hints": {
+      "modelFromProvider": "模型来自上游提供商节点。",
+      "internet": "向接入的 agent 授予网络获取 (出口策略门控)。",
+      "codexAllowWrite": "Codex 只能在已连接的文件夹内创建、修改或删除文件。关闭 = 只读分析。",
+      "codexWriteNeedsFolder": "连接一个文件夹节点以启用写入模式——它仅作用于该文件夹，绝不影响整个应用存储。",
+      "retries": "失败时最多重新运行此节点 3 次。0 = 关闭。只有最终失败才记录错误或进入错误分支。",
+      "retryDelay": "两次尝试之间等待这么长时间。"
+    },
+    "sections": {
+      "input": "输入",
+      "params": "参数",
+      "output": "输出"
+    },
+    "io": {
+      "noInputs": "未连接输入",
+      "inputEmpty": "— 暂无输出",
+      "noOutput": "尚未运行",
+      "showMore": "展开更多",
+      "showLess": "收起",
+      "statusOk": "成功",
+      "statusError": "失败",
+      "statusIdle": "未运行",
+      "errorLabel": "错误",
+      "costTitle": "该节点上次运行的预估费用（按字符数/4 的 token 估算，使用所连模型的价格）"
+    },
+    "retries": {
+      "decrease": "减少重试",
+      "increase": "增加重试"
+    }
+  },
+  "blueprint": {
+    "title": "导入蓝图",
+    "close": "关闭",
+    "description": "粘贴带编号步骤的 markdown。每个步骤成为一个 agent 节点 (标签 = 标题，系统 prompt = 正文)，接入从上到下进入链。",
+    "placeholder": "粘贴编号计划，例如\n\n1. 研究\n收集主题上的源并总结关键事实。\n\n2. 草稿\n从上面的研究写第一份草稿。\n\n3. 审查\n批评草稿并列出具体修复。",
+    "stepsDetected_one": "{{count}} 步检测",
+    "stepsDetected_other": "{{count}} 步检测",
+    "noSteps": "未找到编号步骤。使用“1.”、“2)”等开始行。",
+    "final": "(最终)",
+    "cancel": "取消",
+    "import": "导入",
+    "importCount": "导入 ({{count}})",
+    "importTitleReady": "生成 agent 链",
+    "importTitleEmpty": "先粘贴编号步骤"
+  },
+  "howto": {
+    "title": "如何构建工作流",
+    "closeAria": "关闭演练",
+    "closeTitle": "关闭 (恢复您的画布)",
+    "back": "返回",
+    "next": "下一个",
+    "restore": "恢复我的画布",
+    "restoreTitle": "删除示例并恢复画布",
+    "keep": "保留示例",
+    "keepTitle": "在画布上保留示例",
+    "restoreNote": "关闭时恢复您的画布 — 除非您选择“保留示例”。",
+    "steps": {
+      "intro": {
+        "title": "什么是工作流？",
+        "body": "工作流是您在此画布上接入的 AI 步骤链 — 文本、prompt、图像、视频、音乐。我将在您面前构建一个简单的两步示例；按下一个并观看。(您运行的每一步都掉其结果卡，您可以分支。)"
+      },
+      "provider": {
+        "title": "步骤 1 — 提供商",
+        "body": "提供商是 AI 模型的来源。我们使用免密钥的 FreeLLM 路由器 — 无需密钥。每个 agent 都需要一个提供商作为其“大脑”。"
+      },
+      "agent": {
+        "title": "步骤 2 — Agent",
+        "body": "Agent 做真实工作。这一个是写者。在真实画布上，您从左边的调色板添加节点 (拖出一个)。"
+      },
+      "wire": {
+        "title": "步骤 3 — 接入它们",
+        "body": "通过从一个节点的边缘拖到另一个来连接提供商到写者。现在写者有一个大脑 (其模型)。连线刚出现。"
+      },
+      "second": {
+        "title": "步骤 4 — 添加第二步",
+        "body": "添加第二个 Agent (审查员) 并连接写者到审查员。那条线上的标签 (“需要审查”) 是路由 prompt — 它告诉流何时继续。您现在有一个 2 步工作流。"
+      },
+      "run": {
+        "title": "步骤 5 — 运行它",
+        "body": "那是一个完整的工作流。点击突出显示的“运行流”按钮 (现在发光)，然后“全部运行”以按顺序运行每个节点。每步掉结果卡 — 从任何卡分支新节点以继续，或点击卡的重新生成以重新卷。"
+      },
+      "beyond": {
+        "title": "超越 agents",
+        "body": "调色板有更多：文本节点 (主题/简介)、参考图像节点 (供应字符或风格)、媒体节点 (图像、视频、音乐、TTS、STT — 通过 Venice 或 Surplus)，以及可以看到接入图像 (视觉) 的 prompt 节点。任何提供商工作 — Venice、Bankr、Ollama、llama.cpp — 内联显示模型能力标签。在左边的流列表中保存画布并像聊天一样在它们之间切换。"
+      }
+    }
+  },
+  "toolbar": {
+    "title": "节点画布",
+    "howToBuild": "如何构建",
+    "howToBuildTitle": "交互式演练 — 一步步构建您的第一个工作流",
+    "templates": "模板 ▾",
+    "templatesTitle": "插入现成示例工作流",
+    "council": "委员会",
+    "councilTitle": "生成委员会：源 agent 分散到怀疑论者 / 实用主义者 / 批评家，他们供养最终综合 agent",
+    "importBlueprint": "导入蓝图",
+    "importBlueprintTitle": "粘贴带编号步骤的 markdown 以生成 agent 节点的顺序链",
+    "flowNamePlaceholder": "流名称...",
+    "flowNameAria": "流名称",
+    "new": "新建",
+    "newTitle": "新建 — 丢弃当前流",
+    "open": "打开",
+    "openTitle": "打开 .tachi-flow.json 文件",
+    "save": "保存",
+    "saveTitle": "将流保存为 .tachi-flow.json",
+    "clear": "清除",
+    "clearTitle": "清除所有节点和边",
+    "autoLayout": "自动布局",
+    "layingOut": "正在布局...",
+    "autoLayoutTitle": "使用 ELK 分层算法自动布局节点",
+    "whiteboard": "白板",
+    "whiteboardTitle": "切换草图白板 — 在单独的画布上手绘图表和笔记；下方的流程保持不变",
+    "runFlow": "运行流",
+    "runFlowTitle": "编译并执行此图一次，然后显示结果",
+    "addExpert": "+ 添加专家",
+    "addExpertTitle": "添加新角色 agent 并接入到圆桌讨论 (在首席执行官/主节点前)",
+    "chatWithFlow": "与流聊天",
+    "chatWithFlowTitle": "与整个团队交谈 — 每个专家回应，主 agent 综合",
+    "openInCode": "在 Code 标签页中打开",
+    "openInCodeTitle": "将此流发送给 Code 标签页作为 agent 会话 (单一 agent)",
+    "runInCode": "▸ 在 Code 聊天中运行",
+    "runInCodeTitle": "保存整个图并从 Code 聊天运行 — 在此处发消息执行完整多 agent 网络",
+    "nodeCount_one": "{{count}} 个节点",
+    "nodeCount_other": "{{count}} 个节点",
+    "edgeCount_one": "{{count}} 条边",
+    "edgeCount_other": "{{count}} 条边",
+    "templatesMenuAria": "入门模板"
+  },
+  "runPanel": {
+    "title": "运行流",
+    "close": "关闭",
+    "initialMessage": "初始消息 (仅网络模式)",
+    "initialPlaceholder": "可选 — 留空以仅运行流。Prompt 节点携带自己的说明。",
+    "runAll": "▸ 全部运行 (按顺序)",
+    "runAllTitle": "运行每个节点一次，按依赖顺序从上到下 (prompt → prompt → 媒体)。每个节点的输出供应下一个 — 整个管道一键。",
+    "running": "运行中…",
+    "runningStep": "运行 {{step}}/{{total}}{{label}}…",
+    "stop": "■ 在当前步后停止",
+    "stopTitle": "在当前节点完成后停止运行 (无节点中止)。",
+    "runNetwork": "作为一个网络运行",
+    "runNetworkTitle": "替代：一个共享 agent 工具包网络通过 (agents 共享状态 — 用于圆桌讨论)。使用上面的初始消息。链接的 prompt→prompt 可能在某些提供商上返回空。",
+    "idleBefore": "按",
+    "idleStrong": "▸ 全部运行",
+    "idleAfter": "以执行每个节点一次，按依赖顺序 — 每个节点的输出流入下一个，画布实时填充。(下面的消息框仅供可选“作为一个网络运行”模式使用。)",
+    "runningNode": "运行节点 {{step}}/{{total}}{{label}}… (看画布 — 每个节点填充后完成)",
+    "runningFlow": "运行流…",
+    "runFailed": "运行失败",
+    "noAgentOutput": "流运行但未生成 agent 输出。",
+    "step": "步骤 {{n}} · {{agent}}",
+    "finalSuffix": " (最终)",
+    "noTextOutput": "(无文本输出)",
+    "finalAnswer": "最终答案",
+    "empty": "(空)",
+    "budgetLabel": "预算上限 $",
+    "budgetOff": "关",
+    "budgetTitle": "在预估花费超过此金额（美元）前停止运行。留空 = 无上限。估算采用各节点所接模型的费率；本地模型免费。",
+    "retrySuffix": " · 重试 {{attempt}}/{{attempts}}",
+    "aria": "运行流",
+    "doneAria": "运行完成"
+  },
+  "chatPanel": {
+    "title": "与流聊天",
+    "clear": "清除",
+    "clearTitle": "清除对话",
+    "close": "关闭",
+    "empty": "发送消息 — 流中的每个专家权衡 (每个建立在前一个之上)，主 agent 综合决定。所有想法都显示；对话记住跨转。提示：加载“专家圆桌讨论”模板或点击“+ 添加专家”，并标记节点“主”以选择谁综合。",
+    "you": "您",
+    "error": "错误",
+    "flow": "流",
+    "roundtable": "团队圆桌讨论",
+    "decisionSuffix": " · 决定",
+    "noOutput": "(无输出)",
+    "thinking": "流正在思考…",
+    "inputPlaceholder": "给流发消息… (Cmd/Ctrl+Enter 发送)",
+    "send": "发送",
+    "sending": "发送中…",
+    "aria": "与流聊天"
+  },
+  "media": {
+    "output": "媒体输出",
+    "failed": "失败。",
+    "noTranscript": "(无转录)",
+    "noArtifact": "完成 — 未返回工件。",
+    "generatedAlt": "生成的",
+    "modalities": {
+      "image": "图像",
+      "video": "视频",
+      "music": "音乐",
+      "speech": "语音",
+      "transcript": "转录"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "图执行 IPC 不可用。",
+      "nothingToRun": "无内容可运行 — 添加 prompt、Agent 或媒体节点。",
+      "cycle": "图中检测到循环 — 无法按顺序运行。相关节点：{{nodes}}"
+    },
+    "errorPrefix": "错误",
+    "budgetStop": "已停止：预估花费 ~${{spent}} 已达到 ${{cap}} 预算上限。请在运行面板中提高或清除上限以继续。",
+    "skippedNoError": "已跳过 — 没有需要处理的错误",
+    "skippedUpstreamFailed": "已跳过 — 上游节点失败"
+  },
+  "chat": {
+    "noOutput": "(无输出)"
+  },
+  "scheduler": {
+    "addProviderAgent": "先添加提供商和 agent。",
+    "needAgent": "流需要至少一个 Agent 节点。",
+    "needProvider": "流需要至少一个提供商节点。",
+    "unknownHarness": "Agent“{{harness}}”的 agent 类型未知 — 已跳过。",
+    "connectEdge": "在运行前连接提供商 → Agent 边。"
+  },
+  "confirm": {
+    "discardFlow": "丢弃当前流并重新开始？",
+    "replaceTemplate": "用“{{label}}”模板替换当前流？",
+    "clearAll": "清除 {{count}} 个节点和所有边？"
+  },
+  "toast": {
+    "addProviderFirst": "先添加提供商节点，或加载“专家圆桌讨论”模板。",
+    "expertAdded": "已添加专家。点击它以设置其名称 + 说明 (角色)。",
+    "autoLayoutFailed": "自动布局失败：{{error}}",
+    "chainsCompiled": "{{count}} 条链已编译 — 应用 chain[0] 到 Agent。",
+    "flowLoadedPerm": " · {{permission}} 权限",
+    "flowLoaded": "流已加载 → {{harness}} on {{provider}}{{perm}}。选择工作空间开始。",
+    "saved": "已保存：{{path}}",
+    "saveFailed": "保存失败：{{error}}",
+    "unknownError": "未知错误",
+    "useInCodeFailed": "无法在代码中使用：{{error}}",
+    "saveFailedShort": "保存失败",
+    "activeInCode": "“{{name}}”在 Code 标签页中活跃 — 在那里给它发消息以运行整个图。",
+    "councilAdded": "已添加委员会：源 → 怀疑论者/实用主义者/批评家 → 综合。接入提供商到 agents 以运行。",
+    "blueprintImported_one": "导入 {{count}} 步作为 agent 链。接入提供商到第一个 agent 以运行。",
+    "blueprintImported_other": "导入 {{count}} 步作为 agent 链。接入提供商到第一个 agent 以运行。",
+    "templateLoaded": "已加载模板“{{label}}”。点击运行流来尝试。",
+    "loaded": "已加载“{{name}}”",
+    "openFailed": "打开失败：{{error}}",
+    "cleared": "画布已清空（{{count}} 个节点）",
+    "undo": "撤销"
+  },
+  "whiteboard": {
+    "loading": "正在加载白板…",
+    "saveFailed": "白板无法保存 — 浏览器存储已满。您的草图仅在本次会话中可用。"
+  },
+  "search": {
+    "placeholder": "查找节点…",
+    "title": "按标签或类型搜索节点 — Enter 跳到下一个匹配，Shift+Enter 上一个",
+    "aria": "搜索节点"
+  },
+  "errorBranch": {
+    "handleTooltip": "错误输出 — 连接到仅在此节点失败时才运行的节点"
+  },
+  "codexWrite": {
+    "consentTitle": "允许 CODEX 写入",
+    "consentMessage": "Codex 代理将以写入模式运行。它只能在以下文件夹内创建、修改或删除文件：\n\n{{folders}}\n\n不会触及这些文件夹以外的任何内容。是否继续？",
+    "consentRun": "运行",
+    "consentCancel": "取消"
+  },
+  "canvas": {
+    "aria": "流程画布",
+    "undo": "撤销",
+    "undoTitle": "撤销 (Ctrl+Z)",
+    "redo": "重做",
+    "redoTitle": "重做 (Ctrl+Shift+Z)"
+  },
+  "webhookNode": {
+    "header": "触发器 · {{source}}",
+    "state": {
+      "listening": "监听中",
+      "disarmed": "已关闭",
+      "server-off": "服务器已关闭",
+      "server-down": "服务器未就绪",
+      "error": "错误"
+    },
+    "help": {
+      "listening": "正在启用…",
+      "disarmed": "已关闭——在你启用之前，该端点一律返回 404。",
+      "server-off": "本地 API 服务器已关闭。请在 设置 → 连接 → OPENAI API 中开启，以获取 webhook 地址。",
+      "server-down": "本地 API 服务器还未开始监听——它会在应用启动后稍晚就绪。",
+      "error": "无法启用该触发器。"
+    },
+    "arm": "启用",
+    "disarm": "关闭",
+    "armAria": "启用此 webhook 触发器",
+    "disarmAria": "关闭此 webhook 触发器",
+    "copyUrl": "复制地址",
+    "copied": "已复制",
+    "copyUrlAria": "复制 webhook 地址（含密钥）",
+    "rotate": "换新密钥",
+    "rotateAria": "生成新密钥——之前复制的地址将失效",
+    "autoRun": "收到警报时运行流程",
+    "lastAlert": "最近：{{summary}}（本次会话 {{count}} 条）",
+    "noAlerts": "暂无警报。",
+    "loopbackHint": "该地址是本机地址（127.0.0.1）。TradingView 的服务器无法访问它——请从本机 POST，或通过你自己搭建的隧道对外暴露。",
+    "signalOnly": "仅入站信号：警报只会变成文本。该节点绝不会下单。"
+  },
+  "rifeNode": {
+    "header": "rife · 补帧",
+    "multiplierLabel": "倍率",
+    "multiplierTitle": "每一原始帧生成的帧数 —— ×2 与 ×4 都只需一次运算",
+    "sourceLabel": "源视频",
+    "noSource": "尚未连接任何内容 —— 请把视频结果接到 video 插口。",
+    "checking": "正在检查引擎…",
+    "unsupported": "该平台没有发布 RIFE 构建版本。",
+    "install": "安装引擎 · {{size}}",
+    "installTitle": "只需下载一次 rife-ncnn-vulkan 引擎（{{size}}）。之后补帧将完全在本机运行。",
+    "installing": "正在安装…",
+    "installHint": "只需下载一次。不会向任何地方发送数据 —— 引擎在本机运行。",
+    "installFailed": "引擎安装失败。",
+    "runTitle": "对已连接的视频补帧，并在旁边保存为新文件",
+    "wireHint": "把本地视频结果接到 video 插口后即可运行。",
+    "localHint": "完全本地：读取磁盘文件，在你的 GPU 上计算，隐私模式下同样可用。"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "学ぶ",
+    "intro": "2分間のツアー。技術的背景は不要 — トップからボトムまで読むか、セクションにジャンプ。"
+  },
+  "hero": {
+    "eyebrow": "初回起動",
+    "title": "Tachi Studio へようこそ",
+    "intro": "AI と作業するためのデスク。始め方は5通り — どれか一つ選んで始めましょう。このガイドはいつでも開き直せます。",
+    "lines": {
+      "chat": "<strong>CHAT</strong> — AI アシスタントにメッセージを送る。無料、セットアップ不要。",
+      "code": "<strong>CODE</strong> — フォルダーを指定すると、見ている前で実際の作業をこなします。",
+      "nodes": "<strong>NODES</strong> — 手順を視覚的なワークフローに配線し、パイプライン全体を実行。",
+      "design": "<strong>DESIGN</strong> — ページやモーショングラフィックを説明すると、その場でレンダリングされます。",
+      "media": "<strong>MEDIA</strong> — 画像・動画・音楽・音声を生成。"
+    },
+    "cta": {
+      "chat": "Chat を開く",
+      "flow": "スターターフローを試す",
+      "quickstart": "クイックスタートを読む"
+    },
+    "dismiss": "閉じる"
+  },
+  "sections": {
+    "basics": {
+      "title": "このアプリが何か",
+      "intro1": "Tachi StudioはAIと作業するためのデスク。<strong>チャット</strong>したり、フォルダーを指して<strong>もの構築</strong>させたり—ウェブサイト、スクリプト、小アプリ—見ていたり出来ます。",
+      "intro2": "何も技術的にインストールしたり、ターミナルを開く必要はありません。すべてはこのウィンドウ内で起こります。いくつかの方法:",
+      "ways": {
+        "chat": "<strong>チャット</strong> — アシスタントにテキストメッセージを送信するみたい。無料、セットアップなし。",
+        "code": "<strong>コード</strong> — フォルダー + タスク与えて、フォルダーで実際に作業。",
+        "media": "<strong>メディア</strong> — 画像、ビデオ、ミュージック、音声生成 (と音声トランスクライブ)。",
+        "nodes": "<strong>ノード</strong> — ステップを視覚的なワークフローに配線して、パイプライン全体を実行。",
+        "design": "<strong>デザイン</strong> — Webページやモーショングラフィックを説明すると、ライブレンダリングを見ながらチャットで洗練できます。"
+      }
+    },
+    "chat": {
+      "title": "ただチャット (簡単スタート)",
+      "steps": {
+        "open": "左側バーで<strong>Chat</strong>をクリック。",
+        "type": "下部で質問を入力してEnterを押す。",
+        "done": "以上です。最初のプロバイダーは無料でキー不要。"
+      },
+      "note": "チャット記憶 — フォローアップを質問すれば何について話していたか知っている。<strong>新規</strong> (右上)で新しいトピック開始。各チャットは独自メモリー保持。",
+      "open": "チャットを開く →",
+      "moreTitle": "Chat にはこんな機能も",
+      "extras": {
+        "commands": "<strong>/</strong> を入力するとコマンド一覧が表示されます — <strong>/help</strong>、<strong>/compact</strong>、<strong>/model</strong>、<strong>/cost</strong>、<strong>/memory</strong>、<strong>/remember</strong>、<strong>/search</strong>、<strong>/loop</strong> など。同じスラッシュコマンドが Chat、Code、そして HOME の「何でも聞いてください」ボックスでも使えます。",
+        "sources": "フォルダーを添付して質問すると、根拠のある回答の下に <strong>Sources</strong> チップが表示されます。クリックすると使用したファイルの正確なテキストが展開されます。"
+      }
+    },
+    "code": {
+      "title": "もの構築 (コードエージェント)",
+      "steps": {
+        "open": "サイドバーで<strong>Code</strong>をクリック。",
+        "choose": "<strong>フォルダーを選択</strong> (またはフォルダーをページにドラッグ)をクリック。ここはAIが触れることができる唯一の場所。",
+        "type": "何をしたいか、例えば<em>「HTMLファイルで単純スネークゲーム作る」</em>を入力してrun ボタンを押す。",
+        "watch": "動作を観察。ファイルを書くとき<strong>[プレビュー]</strong>をクリックしてライブで表示 — HTMLゲーム実際にアプリ内で再生。"
+      },
+      "note": "フォルダー内でのみ読み書きできます。コンピューター残りに行けません。",
+      "open": "コードを開く →",
+      "moreTitle": "Code にはこんな機能も",
+      "extras": {
+        "tachiapp": "アプリ自身のソースコードを触らせたい? サイドバー下部に固定された <strong>TACHIAPP</strong> の行は、あらかじめ Tachi Studio 自身を指した Code チャットを開きます — フォルダー選択は不要。",
+        "spawnLoop": "大きなタスクを複数のエージェントに一気に分割させたり、<strong>/loop</strong> と入力して繰り返し間隔で目標に向けて動き続けさせたりできます — <strong>LOOP</strong> チップがまだ実行中であることを示します。",
+        "incomplete": "実行が完了せずに止まると、偽の「完了」ではなく琥珀色の <strong>! Ended without completing</strong> バッジが表示されます — 続行するか、より詳しい指示を与える合図です。"
+      }
+    },
+    "media": {
+      "title": "画像、ビデオ & ミュージック作成",
+      "steps": {
+        "open": "サイドバーで<strong>Media</strong>をクリック。",
+        "pick": "何を作成するか (画像、ビデオ、ミュージック、音声、トランスクリプト)、プロバイダー (SurplusまたはVenice)、モデルを選択。",
+        "prompt": "プロンプト入力して、オプションで参照画像をドロップして、生成をクリック。"
+      },
+      "note": "作成したすべては<strong>Artifacts</strong>サブタブに保存。サポートするモデルは画像編集したり、1つをビデオに変換 (画像からビデオ)できます。",
+      "open": "メディアを開く →"
+    },
+    "buttons": {
+      "title": "Code タブのボタンの意味",
+      "intro": "4つの小さいスイッチが Code タブの上部にあります。開始するために無視できます — デフォルトは良いです。各ボタンが何するか:",
+      "table": {
+        "head": {
+          "button": "ボタン",
+          "plain": "プレーン言葉で",
+          "realName": "実名"
+        },
+        "mode": {
+          "name": "モード",
+          "plain": "最初にプラン、またはすぐにビルド"
+        },
+        "thinking": {
+          "name": "思考",
+          "plain": "行動する前にAIがどう深く推論するか"
+        },
+        "engine": {
+          "name": "エージェント",
+          "plain": "どのコーディングエージェントが作業する"
+        },
+        "gateway": {
+          "name": "プロバイダー",
+          "plain": "AIモデルがどこから来るか"
+        }
+      },
+      "note": "The <strong>[CTX nn%]</strong>バッジはAIメモリーがどう満杯か示す。黄色から赤に変わるとき新規セッション開始して初期部分を忘れ始めます。"
+    },
+    "private": {
+      "title": "プライベートに保つ",
+      "intro": "<strong>PRIVATE MODE</strong>はすべてあなたのマシンに保つ。クラウドAIはブロックされて、エージェントはインターネットに到達するように停止。",
+      "steps": {
+        "palette": "<strong>Ctrl/Cmd + K</strong>を押してコマンドパレットを開く。",
+        "toggle": "<em>「Toggle PRIVATE MODE」</em>を入力して選択。",
+        "badge": "赤い<strong>[PRIVATE]</strong>バッジがトップに現れます。クラウドプロバイダーは<strong>[LOCKED]</strong>として表示。"
+      },
+      "note": "PRIVATE MODE 内ではローカルプロバイダーのみ機能 (Ollama、またはllama.cpp)。クラウドモデルを再度使用するために同じ方法でオフに。"
+    },
+    "providers": {
+      "title": "自分のAIを接続 (オプション)",
+      "intro": "無料オプションはゼロセットアップで機能。プレミアムモデルを使用するにはキー追加:",
+      "steps": {
+        "settings": "<strong>Settings</strong> (サイドバー下部) → プロバイダーに行く。",
+        "key": "プロバイダーを選択、<strong>キー取得</strong>をクリック (サインアップページを開く)、キー貼り付け、<strong>テスト</strong>をクリック。",
+        "green": "緑は接続。これであなたはチャットまたはコードでそのプロバイダーを選択できます。"
+      },
+      "open": "設定を開く →"
+    },
+    "power": {
+      "title": "パワーフィーチャ (あなたが準備できたら)",
+      "list": {
+        "nodes": "<strong>Nodes</strong> — 独自のAIパイプラインを描く: モデルをエージェントに配線、またはテキストをチェーン → 画像 → ビデオ。すべてのラン結果カードをドロップしてブランチでき; モデル (Veniceまたはローカル)を選択; フロー保存とチャットみたいに切り替え。",
+        "swarm": "<strong>Swarm</strong> — 複数エージェントを共有タスクボードで実行。",
+        "parallel": "<strong>パラレルタスク</strong> — Code で複数エージェント実行、各自プロジェクトコピーで。",
+        "inbox": "<strong>Inbox</strong> — すべての権限でポップアップの代わりにリクエストをスタックさせて一括承認。",
+        "marketplace": "<strong>Connections</strong> — Settings → Connections で MCP ツールサーバーのカタログを閲覧し、ワンクリックでインストール、JSON編集不要。Private Mode ではローカル限定サーバーだけ自動的に動き続け、それ以外はブロックされます。",
+        "scheduler": "<strong>スケジュールされたタスク</strong> — Settings → Advanced → Scheduled で、チャット、Code の実行、または flow を繰り返しスケジュールで起動するよう設定できます。マシンのスリープを乗り越え、起きたときに追いつきます。"
+      },
+      "note": "これらのどれもが値を取得するために必要ではありません — あなたが成長するときそこにあります。"
+    },
+    "tips": {
+      "title": "ハンディショートカット",
+      "list": {
+        "palette": "<strong>Ctrl/Cmd + K</strong> — コマンドパレット (入力でなんでもする)。",
+        "send": "<strong>Enter</strong> — 送信。 <strong>Shift + Enter</strong> — 新しい行。",
+        "new": "<strong>新規</strong> — クリーンメモリーでフレッシュチャット/セッション開始。",
+        "tooltip": "あらゆるボタンをホバー — プレーン言葉で説明するツールチップ。",
+        "reconnect": "返信が止まったら <strong>Retrying n/10</strong> バナーに注目 — 接続が切れて、同じ返信の中で自動的に再接続しています。再送不要、そのまま待てば大丈夫です。"
+      }
+    },
+    "design": {
+      "title": "デザイン — ページやアニメを作る",
+      "steps": {
+        "open": "サイドバーの <strong>DESIGN</strong> をクリック。",
+        "pick": "<strong>page</strong>（静的ページ → PNG/PDF書き出し）または <strong>animate</strong>（モーショングラフィック → MP4書き出し）を選択。",
+        "engine": "animateモードでレンダラーを選択：<strong>Remotion</strong>（MP4動画にレンダリング）または <strong>HyperFrames</strong>（HTML + GSAPアニメーション）。",
+        "type": "作りたいものを入力（「3プランの料金ページ」「回転して現れるロゴ」）。右側にレンダリングされ、チャットを続けて変更できます。"
+      },
+      "note": "すべてディスク上のフォルダーに自動保存され、ページプレビューのテキストをクリックしてその場で編集できます。書き出しボタンは右上です。",
+      "open": "デザインを開く →"
+    }
+  },
+  "footer": {
+    "deepDocs": "深い技術バージョンがほしい? フルアーキテクチャとフィーチャごとドキュメントはプロジェクト内<code>docs/app/</code>に住んでいます — 内蔵エージェントはこれらを読んでTachi Studio自体を理解し拡張できます。"
+  }
+}

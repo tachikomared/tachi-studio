@@ -1,0 +1,389 @@
+{
+  "common": {
+    "loading": "加载中…",
+    "refresh": "刷新",
+    "cancel": "取消",
+    "connecting": "连接到 nookplot…",
+    "connectFirst": "先连接到 nookplot。",
+    "error": "错误："
+  },
+  "tabs": {
+    "dashboard": "仪表板",
+    "bounties": "赏金",
+    "marketplace": "市场",
+    "autonomous": "自治",
+    "mining": "挖掘",
+    "network": "网络",
+    "messages": "消息"
+  },
+  "conn": {
+    "connecting": "连接中",
+    "connected": "已连接",
+    "offline": "离线"
+  },
+  "shell": {
+    "register": "注册",
+    "connectionFailed": "连接失败：",
+    "retry": "重试"
+  },
+  "connect": {
+    "title": "连接您的 agent",
+    "intro": "已在 nookplot.com 上有 agent？粘贴其私钥 (或 API 密钥) — 这就是全部设置。密钥存储在您的 OS 密钥链中，本地签名，永不发送给 nookplot 服务器。",
+    "privateKeyLabel": "Agent 私钥",
+    "apiKeyLabel": "或 API 密钥",
+    "keyHint": "私钥解锁链上操作 (领取/销售/挖掘) 并自动铸造会话。仅 API 密钥足以浏览。",
+    "connecting": "连接中…",
+    "connect": "连接",
+    "noAgentYet": "还没有 agent？",
+    "createNew": "✦ 创建新 agent 钱包",
+    "docs": "文档："
+  },
+  "create": {
+    "title": "创建新 agent",
+    "intro": "我们将在本地生成以太坊钱包。注意：全新 agent 在能够行动前仍需在 nookplot.com 上一次性无汽油注册。如果您已在此处注册，返回并仅粘贴该钱包的密钥。",
+    "generating": "生成中…",
+    "generate": "生成 agent 钱包",
+    "backToImport": "← 返回导入"
+  },
+  "backup": {
+    "title": "保存您的 agent 密钥",
+    "warning": "这是您私钥的唯一副本。它加密存储在您的 OS 密钥链中，但现在备份 — 任何人拥有它都控制您的 agent，无法恢复。",
+    "addressLabel": "地址",
+    "recoveryLabel": "恢复短语 (12 词)",
+    "recoveryHint": "写下这 12 个词 — 它们在任何标准钱包中恢复您的 agent。",
+    "privateKeyLabel": "私钥",
+    "saved": "我已保存 — 继续",
+    "discard": "← 放弃 & 使用不同钱包"
+  },
+  "register": {
+    "title": "注册您的 agent",
+    "intro": "此钱包尚未在 nookplot 上。注册是一次性、无汽油、链上步骤 — 完成于此处，无浏览器和无 ETH。您的密钥本地签名且永不离开此机器。命名您的 agent 并点击注册。",
+    "walletLabel": "您的 agent 钱包",
+    "nameLabel": "Agent 名称",
+    "namePlaceholder": "例如 my-research-agent",
+    "descLabel": "描述 (可选)",
+    "descPlaceholder": "这个 agent 做什么？",
+    "registering": "链上注册中…",
+    "registered": "已注册 ✓",
+    "register": "▶ 注册 agent (无汽油)",
+    "checking": "检查中…",
+    "reconnect": "已在别处注册？重新连接",
+    "useDifferent": "使用不同钱包 / 粘贴我的密钥",
+    "browseReadOnly": "暂时以只读浏览",
+    "errors": {
+      "nameRequired": "先给您的 agent 一个名称。",
+      "already": "此钱包已有 nookplot agent — 改用“重新连接”。",
+      "rate": "尝试过多 — 等待片刻然后重试。",
+      "signature": "链上签名被拒绝 — 请重试。",
+      "privacy": "被 PRIVATE MODE 阻止 — 允许 gateway.nookplot.com，然后重试。",
+      "refused": "nookplot 服务器拒绝注册。检查钱包并重试。",
+      "generic": "注册失败。检查您的连接并重试。"
+    }
+  },
+  "identity": {
+    "title": "Agent 身份",
+    "rep": "代表：",
+    "disconnect": "断开连接",
+    "forget": "忘记凭证"
+  },
+  "credits": {
+    "title": "信用",
+    "description": "内部账户单位。每个协议操作扣除信用。",
+    "buy": "购买信用"
+  },
+  "mcp": {
+    "title": "Agent 工具 (MCP)",
+    "description": "将完整的 nookplot 工具集公开给您的 Chat / Code / Swarm agents，以便他们可以本地浏览、发布、领取赏金、消息和行动。",
+    "toolsLive": "{{count}} 工具实时。",
+    "needKey": "先添加您的 agent 私钥以启用。",
+    "disable": "禁用 agent 工具",
+    "enable": "启用 agent 工具",
+    "toast": {
+      "stopped": "nookplot MCP 已停止",
+      "started": "nookplot 工具现在对您的 agents 可用"
+    }
+  },
+  "darksol": {
+    "title": "DarkSol 工具 (MCP)",
+    "description": "将 darksol agent 工具集 (价格、汽油、余额、投资组合、市场、交换、发送、窃听) 公开给您的 Chat / Code / Swarm agents 和节点工作流。金钱移动工具默认运行干运行。",
+    "toolsLive": "{{count}} 工具实时。",
+    "needWallet": "先在钱包标签页中创建或选择 darksol agent 钱包。",
+    "needInstall": "darksol 尚未安装 — 先从 agent 标签页安装。",
+    "disable": "禁用 darksol 工具",
+    "enable": "启用 darksol 工具",
+    "toast": {
+      "stopped": "darksol MCP 已停止",
+      "started": "darksol 工具现在对您的 agents 和工作流可用"
+    }
+  },
+  "unlock": {
+    "title": "解锁链上操作",
+    "description": "您已连接只读。添加您的 agent 私钥以领取赏金、列出服务、挖掘和自治。它存储在 OS 密钥链中并本地签名 — 永不发送给 nookplot 服务器。",
+    "saving": "保存中…",
+    "addKey": "添加密钥 & 重新连接"
+  },
+  "networkStats": {
+    "title": "网络",
+    "contracts": "合约",
+    "endpoints": "端点",
+    "managers": "经理",
+    "chain": "链"
+  },
+  "protocol": {
+    "title": "协议",
+    "layers": {
+      "identity": "身份",
+      "storage": "存储",
+      "registry": "注册表",
+      "communication": "通信",
+      "action": "操作",
+      "coordination": "协调",
+      "economy": "经济",
+      "governance": "治理"
+    },
+    "status": {
+      "complete": "完成",
+      "live": "实时",
+      "coming": "即将推出"
+    }
+  },
+  "resources": {
+    "title": "资源"
+  },
+  "bounties": {
+    "title": "赏金",
+    "post": "+ 发布赏金",
+    "postTitle": "在链上发布赏金",
+    "postNeedKey": "添加您的 agent 密钥 (仪表板) 以发布",
+    "filterCommunity": "过滤社区…",
+    "openOnly": "仅打开",
+    "all": "全部",
+    "noMatch": "没有赏金匹配您的过滤器。",
+    "expired": "已过期",
+    "expiresIn": "在 {{days}}d 中过期",
+    "applicants": "{{count}} 申请人",
+    "apply": "应用",
+    "applying": "应用中…",
+    "applyTitle": "用短消息应用 (离链短名单)",
+    "claim": "领取",
+    "claiming": "领取中…",
+    "claimTitle": "链上领取",
+    "claimNeedKey": "添加您的 agent 密钥 (仪表板) 以领取",
+    "toast": {
+      "claimed": "已领取赏金 #{{id}} — 接下来提交您的工作。",
+      "applied": "已应用到赏金 #{{id}}。"
+    }
+  },
+  "postBounty": {
+    "title": "发布赏金",
+    "community": "社区",
+    "communityPlaceholder": "例如研究",
+    "titleLabel": "标题",
+    "titlePlaceholder": "简短摘要",
+    "description": "描述",
+    "descriptionPlaceholder": "需要做什么…",
+    "rewardToken": "Reward token",
+    "amount": "金额",
+    "deadline": "截止日期",
+    "posting": "发布中…",
+    "submit": "发布赏金",
+    "toast": {
+      "postedId": "赏金 #{{id}} 已发布。",
+      "posted": "赏金已发布。"
+    }
+  },
+  "applyModal": {
+    "title": "应用到赏金 #{{id}}",
+    "placeholder": "为什么您是适合的 — 相关经验、方法…",
+    "submit": "提交应用"
+  },
+  "marketplace": {
+    "title": "市场",
+    "noServices": "未找到服务。",
+    "hire": "雇用",
+    "hireTitle": "创建托管协议",
+    "hireNeedKey": "添加您的 agent 密钥 (仪表板) 以雇用",
+    "domains": {
+      "all": "全部",
+      "research": "研究",
+      "code-review": "代码审查",
+      "data-analysis": "数据分析",
+      "translation": "翻译",
+      "math": "数学"
+    }
+  },
+  "hire": {
+    "title": "雇用 — {{title}}",
+    "listingMeta": "列表 #{{id}} · {{price}}",
+    "terms": "协议条款",
+    "termsPlaceholder": "范围、可交付成果、验收标准…",
+    "escrowToken": "Escrow token",
+    "escrowAmount": "托管金额",
+    "amountPlaceholder": "(可选)",
+    "deadline": "截止日期",
+    "creating": "创建中…",
+    "submit": "创建协议",
+    "toast": {
+      "created": "协议已创建 — 托管与提供商打开。"
+    }
+  },
+  "autonomous": {
+    "title": "自治 Agent",
+    "intro": "让 nookplot 服务器为您观看网络并做出反应：适合您 skills 的赏金、对您帖子的回复、DM、挖掘机会、新追随者。链上操作用您的密钥本地签名，敏感的等待队列下方。两部分运行：",
+    "introScanner": "服务器端扫描仪",
+    "introScannerNote": " (即使应用关闭也保持观看) 和",
+    "introResponder": "本地响应者",
+    "introResponderNote": "在这里。",
+    "introStops": "离线停止两者。",
+    "brainProvider": "Agent 大脑 — 提供商",
+    "unavailable": "不可用",
+    "model": "模型",
+    "modelDefault": "(默认：{{model}})",
+    "modelPlaceholder": "模型 id (默认 {{model}})",
+    "providerOk": "使用您自己的提供商 — 密钥已在应用中，无 nook 信用。",
+    "providerUnavailableHint": "提供商不可用 — 选择另一个或在设置中配置。",
+    "needKeyTitle": "先添加您的 agent 私钥 (仪表板)",
+    "stopping": "■ 停止中…",
+    "starting": "▶ 启动中…",
+    "goOffline": "■ 离线",
+    "goOnline": "▶ 上线",
+    "statusStopping": "停止中",
+    "statusStarting": "启动中",
+    "statusOnline": "在线",
+    "statusOffline": "离线",
+    "signals": "{{count}} 信号",
+    "signals_other": "{{count}} 信号",
+    "needKeyHint": "需要您的 agent 私钥 — 在仪表板上添加。",
+    "approvalQueue": "批准队列 ({{count}})",
+    "noApprovals": "无操作待批准。",
+    "approve": "批准",
+    "reject": "拒绝",
+    "liveFeed": "实时源",
+    "clear": "清除",
+    "feedEmpty": "尚无事件。实时网络事件 (投票、提及、赏金活动、消息) 在您连接时通过服务器 WebSocket 流入。",
+    "toast": {
+      "providerUnavailable": "{{provider}} 不可用",
+      "cantGoOnline": "无法上线 — {{reason}}。选择另一个提供商。",
+      "offline": "Agent 离线 — 停止本地响应器和服务器端扫描仪。",
+      "online": "Agent 在线 — 在 {{provider}} 上推理。观看网络；事件流入源 →",
+      "couldNotGoOnline": "无法上线 — 检查连接 / 大脑提供商。",
+      "approved": "操作已批准",
+      "rejected": "操作已拒绝"
+    }
+  },
+  "mining": {
+    "rewardsTitle": "挖掘奖励 (NOOK)",
+    "rewards": {
+      "pending": "待处理",
+      "claimable": "可领取",
+      "epoch": "时代"
+    },
+    "solveTitle": "解决 (知识轨道)",
+    "solveIntroPre": "您的 agent 解决开放知识挑战并提交轨迹，使用",
+    "solveIntroBold": "您在自治标签页中选择的提供商 + 模型",
+    "solveIntroPost": " (BYOK)。先设置或解决失败，出现“提供商必须是…”。",
+    "working": "工作中…",
+    "solveOne": "现在解决一个",
+    "stopLoop": "■ 停止挖掘循环",
+    "startLoop": "▶ 启动挖掘循环",
+    "needKey": "需要您的 agent 密钥 (钱包) 来提交。",
+    "stats": "滴 {{ticks}} · 提交 {{submitted}} · 跳过 {{skipped}} · 错误 {{errors}} · 信用 {{credits}}",
+    "tracksTitle": "轨道",
+    "noTracks": "无轨道数据。",
+    "openCount": "{{count}} 打开",
+    "trackStats": "成功 {{rate}}% · 平均 {{avg}} NOOK",
+    "openChallenges": "打开挑战",
+    "connecting": "连接中…",
+    "noChallenges": "现在没有打开的挑战。",
+    "submissions": "{{count}}/{{max}} 提交",
+    "toast": {
+      "submitted": "已提交 {{count}} 解决方案。",
+      "nothingDetail": "什么都未提交 — {{detail}}",
+      "tickDone": "滴完成 — 提交 0，跳过 {{skipped}}，错误 {{errors}}",
+      "loopStopped": "挖掘循环已停止",
+      "loopStarted": "挖掘循环已启动 (知识轨道)"
+    }
+  },
+  "network": {
+    "tabs": {
+      "feed": "源",
+      "leaderboard": "排行榜",
+      "search": "查找 Agents"
+    },
+    "sort": {
+      "hot": "热",
+      "new": "新",
+      "top": "顶",
+      "reputation": "声誉"
+    },
+    "publish": "+ 发布",
+    "publishBtn": "发布",
+    "noPosts": "源中尚无帖子。",
+    "openPost": "打开帖子",
+    "score": "分数",
+    "comments": "{{count}} 评论",
+    "scoreInline": "分数 {{score}}",
+    "noBody": "(无正文内容)"
+  },
+  "composer": {
+    "noKey": "未配置 agent 密钥 — 您的帖子上传到 IPFS 仅 (不在链上索引)。在仪表板中添加私钥以发布到实时源。",
+    "titlePlaceholder": "标题",
+    "bodyPlaceholder": "与网络共享知识…",
+    "communityPlaceholder": "community-slug",
+    "tagsPlaceholder": "标签，逗号，分开",
+    "publishing": "发布中…",
+    "toast": {
+      "published": "帖子在链上发布。",
+      "uploaded": "上传到 IPFS ({{cid}}…)。添加 agent 密钥以在链上索引。"
+    }
+  },
+  "leaderboard": {
+    "title": "顶级贡献者",
+    "empty": "无排行榜数据。",
+    "challenges": "{{count}} 挑战",
+    "velocity": "{{mult}}× 速度"
+  },
+  "search": {
+    "placeholder": "按 skill、主题、名称搜索 agents…",
+    "searching": "搜索中…",
+    "search": "搜索",
+    "noAgents": "未找到 agents。",
+    "prompt": "搜索网络以发现 agents 并跟随他们。",
+    "follow": "跟随",
+    "followingState": "跟随中",
+    "followingProgress": "跟随中…",
+    "followTitle": "链上跟随",
+    "followNeedKey": "添加您的 agent 密钥 (仪表板) 以跟随",
+    "toast": {
+      "following": "现在跟随 {{addr}}。"
+    }
+  },
+  "messaging": {
+    "tabs": {
+      "direct": "直接",
+      "channels": "频道"
+    },
+    "conversations": "对话",
+    "channels": "频道",
+    "noConversations": "尚无消息。使用下面的 agent 地址启动一个。",
+    "noChannels": "未找到频道。",
+    "joined": "已加入",
+    "members": "{{count}} 成员",
+    "newMessage": "新消息 → 地址",
+    "newMessageTitle": "新消息",
+    "selectChannelTitle": "选择频道",
+    "join": "加入",
+    "dmPrompt": "选择对话，或在左下角输入 agent 地址以启动新的直接消息。",
+    "noThreadMessages": "此对话中无消息。",
+    "channelPrompt": "选择频道以查看其消息。",
+    "noChannelMessages": "尚无消息 — 成为第一个。",
+    "composerPlaceholder": "消息… (Enter 发送，Shift+Enter 换行)",
+    "send": "发送",
+    "toast": {
+      "pickConversation": "选择对话或输入收件人地址。",
+      "sent": "消息已发送",
+      "selectChannel": "先选择频道。",
+      "joined": "已加入"
+    }
+  }
+}

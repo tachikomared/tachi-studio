@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "Cómo usar la pestaña Swarm",
+    "step1": {
+      "title": "Esta es la pestaña Swarm",
+      "body": "Avanzado: ejecuta VARIOS agentes de IA en un repositorio git a la vez. Se coordinan comprometiendo pequeños archivos de estado en una carpeta .gnap/ — un tablero compartido de tareas pendientes, lista de agentes y registro de mensajes dentro de tu repositorio."
+    },
+    "step2": {
+      "title": "Inicia un enjambre",
+      "body": "Haz clic en [NUEVO ENJAMBRE] para apuntarlo a un repositorio git e iniciar agentes. Solo escribe dentro de .gnap/, así que tu código es seguro. Usa [ABRIR EXISTENTE] para reconectarte a uno que ya hayas hecho."
+    },
+    "step3": {
+      "title": "Lo que verás",
+      "body": "Una vez abierto, el panel de control muestra tres paneles: los agentes (quién está trabajando), un tablero kanban (tareas moviéndose a través de etapas), y un feed en directo de cada confirmación. Se actualiza mientras trabajan los agentes."
+    },
+    "step4": {
+      "title": "Cuándo usarlo",
+      "body": "Swarm es para trabajo multiagente paralelo en una base de código — es experimental e involucrado que la pestaña Code. Si solo quieres un agente, usa Code. Reabre esto desde \"Cómo\"."
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(sin enjambre abierto)",
+    "loading": "· cargando…"
+  },
+  "actions": {
+    "newSwarm": "[NUEVO ENJAMBRE]",
+    "openExisting": "[ABRIR EXISTENTE]",
+    "howTo": "[CÓMO]",
+    "howToTitle": "¿Qué es un enjambre? Enséñame paso a paso",
+    "open": "[ABRIR]",
+    "refresh": "[REFRESCAR]"
+  },
+  "empty": {
+    "title": "SIN ENJAMBRE ABIERTO",
+    "descBefore": "Un swarm es un equipo de agentes de IA trabajando juntos en un repositorio: se reparten tareas en un tablero común y registran cada paso. Toda la coordinación vive en una pequeña carpeta",
+    "descAfter": " — tu código queda intacto. Crea un swarm nuevo o reabre uno existente.",
+    "pathRequired": "La ruta es requerida",
+    "pathPlaceholder": "…o escribe una ruta",
+    "recent": "RECIENTE"
+  },
+  "agents": {
+    "header": "AGENTES ({{count}})",
+    "empty": "Sin agentes registrados aún.",
+    "register": "[REGISTRAR AGENTE]",
+    "idPlaceholder": "id (p. ej. alice)",
+    "namePlaceholder": "nombre (opcional)",
+    "roleLabel": "rol:",
+    "heartbeatLabel": "hb:",
+    "cancel": "Cancelar",
+    "add": "Agregar",
+    "idRequired": "id es requerido",
+    "registerFailed": "registerAgent falló"
+  },
+  "kanban": {
+    "header": "TAREAS ({{count}})",
+    "claimed": "[RECLAMADO]",
+    "newTask": "+ NUEVA TAREA",
+    "titlePlaceholder": "título",
+    "descPlaceholder": "descripción (opcional)",
+    "cancel": "Cancelar",
+    "add": "Agregar",
+    "actionOpen": "ABRIR",
+    "titleRequired": "título es requerido",
+    "detail": {
+      "titlePrefix": "TAREA ·",
+      "close": "Cerrar",
+      "comments": "COMENTARIOS ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "FEED",
+    "counts": "{{commits}} confirmaciones · {{messages}} msgs",
+    "empty": "Nada aún. Confirmaciones y mensajes aparecerán aquí mientras se ejecuta el enjambre.",
+    "commit": "confirmar",
+    "noSubject": "(sin asunto)",
+    "moreFiles": "+ {{count}} más",
+    "msg": "MSG"
+  },
+  "messaging": {
+    "header": "MENSAJES",
+    "registerPrompt": "Registra agentes para abrir canales entre agentes.",
+    "noMessages": "Sin mensajes.",
+    "ctxLabel": "ctx:",
+    "unreadTitle_one": "{{count}} mensaje no leído",
+    "unreadTitle_other": "{{count}} mensajes no leídos",
+    "sendTestTitle": "Enviar un traspaso de prueba a {{name}}",
+    "sendTestButton": "[ENVIAR TRASPASO DE PRUEBA → {{name}}]",
+    "testHandoff": {
+      "task": "Revisa el diff en el módulo tocado",
+      "context": "Traspasado de {{name}}"
+    }
+  },
+  "dialog": {
+    "title": "NUEVO ENJAMBRE",
+    "descBefore": "Elige un repositorio git para hospedar el enjambre. Un directorio",
+    "descAfter": "se creará (o reutilizará) dentro de él.",
+    "pathPlaceholder": "/ruta/a/repo",
+    "pick": "[ELEGIR]",
+    "cancel": "CANCELAR",
+    "create": "CREAR",
+    "creating": "CREANDO...",
+    "pathRequired": "Por favor elige o escribe una ruta de directorio.",
+    "initFailed": "initSwarm falló"
+  }
+}

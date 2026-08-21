@@ -1,0 +1,256 @@
+{
+  "actions": {
+    "newChat": "+ 新規チャット",
+    "routines": "ルーチン",
+    "customize": "カスタマイズ",
+    "providers": "プロバイダー",
+    "tachiapp": "TACHIAPP",
+    "tachiappHint": "このアプリについて質問するか、変更したいことを伝えてください — 自分自身のソースを編集します",
+    "approvalPending": "承認待ち {{n}} 件 — 回答するまで実行は停止しています"
+  },
+  "sidebar": {
+    "newSession": "+ 新規セッション",
+    "workspace": "ワークスペース",
+    "openCanvas": "+ キャンバスを開く",
+    "media": "Media",
+    "newMedia": "+ 新規メディア",
+    "artifacts": "Artifacts",
+    "newSwarm": "+ 新規スワーム",
+    "openInbox": "受信箱を開く",
+    "llmNodes": "+ LLMノード",
+    "addRuntime": "ローカルサーバーを追加",
+    "settings": "設定",
+    "runSkill": "+ スキルを実行",
+    "configure": "設定",
+    "secrets": "シークレット",
+    "dashboard": "ダッシュボード",
+    "postBounty": "+ バウンティをポスト",
+    "browseNetwork": "ネットワークを参照",
+    "mineNook": "NOOKをマイニング",
+    "toasts": {
+      "routinesSoon": "ルーチン — 近日公開!",
+      "workspaceSoon": "ワークスペース管理 — 近日公開!",
+      "addRuntimeHint": "ローカルサーバーを追加 — Ollama/Claude Codeを手動でインストールして、Tachi Studioを再起動して検出。"
+    },
+    "newDesign": "+ 新しいデザイン",
+    "recentDesigns": "最近のデザイン",
+    "noRecentDesigns": "まだデザインがありません",
+    "untitledDesign": "無題のデザイン",
+    "recent": "最近",
+    "noRecentSwarms": "最近のスワームはありません",
+    "more": "その他",
+    "moreHint": "その他のタブ — スワーム、ダッシュボード、カタログ、Aeon、Nook、学ぶ",
+    "learnHint": "学ぶ — 各タブの短いウォークスルー",
+    "wallet": "ウォレット",
+    "walletExpand": "ウォレット残高を表示",
+    "walletCollapse": "ウォレット残高を非表示"
+  },
+  "theme": {
+    "dark": "ダーク",
+    "light": "ライト",
+    "neon": "ネオン",
+    "comic": "コミック",
+    "opus5": "オーパス5",
+    "tk05": "TK-05",
+    "moreHint": "すべてのテーマ — 設定 → 外観"
+  },
+  "language": "言語",
+  "errors": {
+    "generic": "問題が発生しました。再試行するか、設定でプロバイダーを確認してください。",
+    "noKey": "このプロバイダーのAPIキーがありません — 設定 → プロバイダーで追加するか、キー不要の無料プロバイダーを選んでください。",
+    "auth": "プロバイダーがAPIキーを拒否しました — 設定 → プロバイダーで確認してください。",
+    "rateLimit": "レート制限に達しました — 少し待って再試行するか、モデル/プロバイダーを変更してください。",
+    "quota": "プロバイダーのクォータ/クレジットを使い切りました — プランを確認するかプロバイダーを変更してください。",
+    "contextLength": "会話がこのモデルのコンテキスト長を超えています — 新しいチャットを開始するか、より大きなコンテキストのモデルに切り替えてください。",
+    "network": "プロバイダーへの接続に問題があります — 接続を確認してください（プライベートモードが通信をブロックしている可能性）。",
+    "upstream": "プロバイダー側でサーバーエラーが発生しました — しばらくして再試行してください。"
+  },
+  "quickask": {
+    "placeholder": "なんでも聞いてください…",
+    "ask": "質問",
+    "asking": "…",
+    "thinking": "考え中…",
+    "hintEmpty": "Enter で質問 · Esc で閉じる",
+    "footer": "quick ask · キー不要の FreeLLM ルーター",
+    "copy": "コピー",
+    "openApp": "アプリを開く",
+    "routerDown": "ローカルルーターが起動していません — 先にアプリを開いてください。"
+  },
+  "prompts": {
+    "search": "テンプレートを検索…",
+    "saveCurrent": "+ 現在を保存",
+    "titlePlaceholder": "テンプレート名…",
+    "save": "保存",
+    "empty": "テンプレートはまだありません。お気に入りのプロンプトを保存しましょう。",
+    "insert": "挿入",
+    "delete": "テンプレートを削除"
+  },
+  "split": {
+    "hint": "ドラッグでサイズ変更 · ダブルクリックで折りたたみ"
+  },
+  "footerHints": {
+    "chat": "Enter で送信 · {{mod}}+K でパレット · {{mod}}+Shift+Space でクイック質問",
+    "code": "Enter でタスク実行 · ↺ でチェックポイントに戻す",
+    "nodes": "{{mod}}+Enter で全実行 · {{mod}}+Z で元に戻す",
+    "design": "{{mod}}+Enter で送信 · ↺ 編集で巻き戻し",
+    "media": "プロンプト → 生成 · Esc でプレビューを閉じる",
+    "catalog": "量子化ピルをクリックして適合を確認",
+    "swarm": "新規スワームでリポジトリを開く · フィードにエージェントのコミットが流れる",
+    "dashboard": "システム統計をライブ表示 · 3 秒ごとに自動更新"
+  },
+  "activity": {
+    "title": "アクティビティ",
+    "stop": "停止",
+    "stopping": "停止中…",
+    "dismiss": "閉じる",
+    "more": "他 {{n}} 件",
+    "less": "折りたたむ",
+    "open": "このタスクを開く",
+    "failed": "失敗",
+    "done": "完了",
+    "cancelled": "キャンセル済み",
+    "label": {
+      "generate": "生成中",
+      "render": "動画の書き出し",
+      "migrate": "モデルを移動中",
+      "rife": "フレーム補間",
+      "audioOverview": "音声概要"
+    },
+    "notify": {
+      "imageReady": "画像が完成しました",
+      "videoReady": "動画が完成しました",
+      "genFailed": "生成に失敗しました",
+      "installed": "{{name}} をインストールしました",
+      "installFailed": "{{name}} のインストールに失敗しました",
+      "renderDone": "動画の書き出しが完了しました",
+      "renderFailed": "動画の書き出しに失敗しました",
+      "rifeDone": "フレーム補間が完了しました",
+      "rifeFailed": "フレーム補間に失敗しました",
+      "took": "所要時間 {{elapsed}}",
+      "audioOverviewReady": "音声概要が完成しました",
+      "audioOverviewFailed": "音声概要に失敗しました"
+    }
+  },
+  "audioOverview": {
+    "stage": {
+      "script": "台本を作成中…",
+      "voices": "音声 {{n}}/{{m}}",
+      "mix": "ミックス中…",
+      "saving": "保存中…"
+    },
+    "saved": "ディスクに保存しました",
+    "reveal": "ファイルを表示",
+    "saveFailed": "ディスクに保存できません: {{reason}}"
+  },
+  "downloads": {
+    "title": "ダウンロード",
+    "pause": "一時停止",
+    "resume": "再開",
+    "retry": "再試行",
+    "cancel": "ダウンロードをキャンセル (部分ファイルを削除)",
+    "dismiss": "閉じる",
+    "paused": "一時停止中",
+    "queued": "待機中",
+    "verifying": "検証中",
+    "done": "完了",
+    "error": "エラー",
+    "verifiedSha": "SHA-256 検証済み",
+    "verifiedSize": "サイズ検証済み"
+  },
+  "observability": {
+    "compaction": "圧縮",
+    "tokensSaved": "節約トークン（推定）",
+    "charsSaved": "節約文字数",
+    "promptCache": "プロンプトキャッシュ",
+    "cachedInputTokens": "キャッシュされた入力トークン",
+    "cacheHitRatio": "ヒット率（キャッシュ / 入力）",
+    "legacyHarnessTag": "旧ハーネス",
+    "legacyHarnessNote": "実際に処理したゲートウェイに費用が計上されるようになる前に、ハーネス自身の名前で記録された支出です。履歴として残します — 台帳は後から書き換えません。"
+  },
+  "commands": {
+    "popupLabel": "スラッシュコマンド",
+    "popupHint": "↑↓ 移動 · ↵ / Tab 選択 · esc 閉じる",
+    "groupCommands": "コマンド",
+    "groupSkills": "スキル",
+    "dismiss": "閉じる",
+    "unknown": "不明なコマンド /{{name}} です。/help で利用できるコマンドを確認するか、// で始めるとスラッシュをそのまま送信できます。",
+    "wrongSurfaceChat": "/{{name}} は Chat タブでのみ使えます。",
+    "wrongSurfaceHarness": "/{{name}} は Code タブでのみ使えます。",
+    "unavailable": "/{{name}} は今ここでは使えません。",
+    "help": {
+      "desc": "ここで使えるコマンドをすべて表示",
+      "title": "利用できるコマンド",
+      "escape": "// で始めるとスラッシュをそのまま送信できます。"
+    },
+    "new": {
+      "desc": "新しいチャットを始める"
+    },
+    "compact": {
+      "desc": "古いやり取りを要約してコンテキストを空ける",
+      "done": "圧縮しました — 古いやり取りは要約になりましたが、履歴はそのままです。",
+      "failed": "まだ圧縮できるものがありません。"
+    },
+    "init": {
+      "desc": "このフォルダの AGENTS.md を生成",
+      "done": "{{path}} を書き出しました",
+      "failed": "AGENTS.md を生成できませんでした: {{reason}}"
+    },
+    "model": {
+      "desc": "現在のモデルを表示、または切り替え",
+      "args": "[名前]",
+      "current": "現在のモデル: {{model}}",
+      "switched": "モデル → {{model}}",
+      "noMatch": "「{{name}}」に一致するモデルやプロバイダはありません。"
+    },
+    "cost": {
+      "desc": "セッションと 30 日間の費用を表示",
+      "title": "費用",
+      "session": "このセッション: {{value}}",
+      "sessionTokens": "約 {{count}} トークン",
+      "window": "直近 {{days}} 日: ${{total}} / 予算 ${{budget}}",
+      "provider": "  {{provider}} — ${{usd}}",
+      "none": "  課金対象の費用はまだ記録されていません"
+    },
+    "memory": {
+      "desc": "保存済みのメモリ項目を表示",
+      "title": "メモリ項目 ({{count}})",
+      "empty": "メモリ項目はまだありません — /remember <テキスト> で追加できます。"
+    },
+    "remember": {
+      "desc": "メモリに項目を保存",
+      "args": "<テキスト>",
+      "saved": "記憶しました: {{text}}",
+      "needsText": "使い方: /remember <テキスト>",
+      "failed": "その項目を保存できませんでした。"
+    },
+    "rewind": {
+      "desc": "直前のメッセージを編集してやり直す",
+      "done": "直前のメッセージを入力欄に戻しました。編集して送信してください。",
+      "none": "巻き戻せるメッセージがありません。"
+    },
+    "search": {
+      "desc": "このクエリでウェブ検索を強制する",
+      "args": "<クエリ>",
+      "needsQuery": "使い方: /search <クエリ>",
+      "disabled": "ウェブ検索がオフです — 設定でオンにし、Brave か Tavily のキーを追加してください。"
+    },
+    "plan": {
+      "desc": "コードに触れる前に作業を計画する"
+    },
+    "review": {
+      "desc": "重大度別の構造化コードレビュー"
+    },
+    "troubleshoot": {
+      "desc": "不具合の根本原因を特定して修正案を出す"
+    },
+    "refactor": {
+      "desc": "振る舞いを変えないリファクタリングを計画する"
+    },
+    "loop": {
+      "desc": "目標を達成するまでサイクルを繰り返す",
+      "args": "[n] <目標>",
+      "needsGoal": "使い方: /loop [n] <目標> — 例: /loop 3 すべてのテストを通す",
+      "needsTachi": "/loop には TACHI ハーネスが必要です — ADVANCED で選択してから再送してください。"
+    }
+  }
+}

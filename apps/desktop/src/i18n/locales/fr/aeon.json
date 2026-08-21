@@ -1,0 +1,400 @@
+{
+  "auth": {
+    "header": "Authentification GitHub",
+    "intro": "Aeon fonctionne sur GitHub Actions. Connectez-vous avec votre compte GitHub pour continuer.",
+    "signIn": "Se connecter avec GitHub",
+    "waiting": "En attente de votre autorisation dans le navigateur…",
+    "deviceCode": "Code de l'appareil",
+    "copyHint": "Copiez ce code dans la page d'activation d'appareil GitHub, puis cliquez sur le bouton ci-dessous.",
+    "openDevicePage": "Ouvrir github.com/login/device",
+    "cancel": "Annuler"
+  },
+  "repoSetup": {
+    "header": "Créer un fork de aaronjmars/aeon",
+    "intro": {
+      "before": "Aeon doit fonctionner dans votre propre référentiel GitHub afin que vous puissiez stocker les secrets API et déclencher les workflows. Cela créera un fork de",
+      "after": "sur votre compte."
+    },
+    "forking": "Création du fork…",
+    "forkRepo": "Créer un fork",
+    "checking": "Vérification…",
+    "alreadyForked": "Je l'ai déjà créé un fork manuellement",
+    "errors": {
+      "notVisible": "Fork créé mais le référentiel n'est pas encore visible. Essayez « Je l'ai déjà créé un fork » ci-dessous.",
+      "notFound": "Aucun fork trouvé. Créez d'abord un fork de aaronjmars/aeon sur GitHub, puis cliquez à nouveau ici."
+    }
+  },
+  "ghNotInstalled": {
+    "header": "Installer GitHub CLI",
+    "requires": {
+      "before": "Aeon nécessite",
+      "installFrom": "Installez-le à partir de",
+      "thenRestart": "puis redémarrez Tachi Studio."
+    }
+  },
+  "forkBadge": {
+    "syncing": "[synchronisation…]",
+    "behind": "[fork {{count}} derrière]",
+    "title": "{{count}} commit(s) derrière l'amont — cliquez pour synchroniser"
+  },
+  "page": {
+    "checkingStatus": "Vérification de l'état gh…"
+  },
+  "memory": {
+    "title": "Recherche en mémoire",
+    "placeholder": "rechercher en mémoire...",
+    "searching": "[recherche...]",
+    "errorPrefix": "[erreur]",
+    "noResults": "[aucun résultat]"
+  },
+  "skills": {
+    "title": "Skills ({{filtered}}/{{total}})",
+    "filterPlaceholder": "Filtrer les skills…",
+    "refresh": "Actualiser",
+    "loading": "Chargement des workflows…",
+    "noMatches": "Aucune correspondance.",
+    "empty": {
+      "actionsDisabled": {
+        "title": "GitHub Actions est désactivé sur ce fork.",
+        "body": "Les forks sont livrés avec Actions désactivées pour des raisons de sécurité. Activez-les pour enregistrer les ~121 workflows de skills. Un clic ci-dessous — aucun terminal requis."
+      },
+      "noWorkflows": {
+        "title": "Aucun workflow enregistré pour le moment.",
+        "body": "Si vous venez d'activer Actions, attendez quelques secondes sur GitHub puis cliquez sur actualiser. Si les skills sont obsolètes par rapport à l'amont, synchronisez le fork."
+      },
+      "enabling": "…activation",
+      "enableActions": "▶ ACTIVER LES ACTIONS",
+      "syncing": "…synchronisation",
+      "syncFromUpstream": "⟲ SYNCHRONISER À PARTIR DE L'AMONT",
+      "openActionsTab": "Ouvrir l'onglet Actions ↗"
+    },
+    "analytics": {
+      "successRate": "Taux de réussite",
+      "streak": "Séquence (succès consécutifs)",
+      "avgDuration": "Durée moyenne"
+    },
+    "run": {
+      "triggerTitle": "Déclencher le workflow",
+      "disabledTitle": "Le workflow est désactivé",
+      "label": "▶ Exécuter"
+    },
+    "toast": {
+      "actionsEnabled": "GitHub Actions activé sur votre fork",
+      "synced": "Fork synchronisé à partir de l'amont ({{mergeType}})",
+      "upToDate": "Fork déjà à jour avec l'amont",
+      "syncFailed": "Synchronisation échouée : {{error}}"
+    },
+    "errors": {
+      "enableFailed": "Impossible d'activer Actions : {{error}}",
+      "syncFailed": "Synchronisation échouée : {{error}}",
+      "triggerFailed": "Impossible de déclencher {{name}} : {{error}}"
+    }
+  },
+  "composer": {
+    "header": "Donnez une tâche à Aeon",
+    "reloadTitle": "Recharger les skills",
+    "reload": "Recharger",
+    "workflowLabel": "Workflow",
+    "noWorkflows": "Aucun workflow enregistré pour le moment. Utilisez la carte Skills sur la gauche pour activer Actions sur votre fork et synchroniser les skills à partir de l'amont.",
+    "loadingOption": "Chargement…",
+    "disabledOption": "{{name}} (désactivé)",
+    "loadingInputs": "Chargement des entrées…",
+    "noInputs": {
+      "before": "Ce workflow ne déclare aucune",
+      "after": "entrées."
+    },
+    "hideAdvanced": "▾ Masquer les entrées avancées",
+    "showAdvanced": "▸ Afficher les entrées avancées",
+    "dispatching": "Dispatch…",
+    "dispatch": "▶ Dispatch",
+    "skillField": {
+      "before": "Choisissez un sous-skill du répertoire",
+      "after": "de votre fork ({{count}} trouvés), ou tapez un nom personnalisé.",
+      "examplePlaceholder": "ex. {{name}}",
+      "defaultPlaceholder": "skill-name"
+    },
+    "errors": {
+      "readInputs": "Impossible de lire les entrées pour {{path}} : {{error}}",
+      "pickSkill": "Choisissez d'abord un skill.",
+      "requiredEmpty": "Le champ obligatoire « {{name}} » est vide.",
+      "tooManyInputs": "Trop d'entrées ({{count}}) — workflow_dispatch est limité à {{max}}."
+    },
+    "toast": {
+      "dispatched": "Envoyé à GitHub",
+      "dispatchFailed": "L'envoi a échoué : {{error}}"
+    }
+  },
+  "dashboard": {
+    "stage": {
+      "idle": "Inactif",
+      "downloading": "Téléchargement de la source du tableau de bord depuis GitHub",
+      "extracting": "Extraction",
+      "installingDeps": "Installation des dépendances du tableau de bord",
+      "installingGh": "Téléchargement de GitHub CLI (premier lancement uniquement)",
+      "starting": "Démarrage du serveur de développement Next.js",
+      "ready": "En direct",
+      "error": "Erreur"
+    },
+    "resetConfirm": {
+      "message": "Télécharger à nouveau le tableau de bord depuis GitHub au prochain lancement ? Votre cache local sera supprimé (~150 MB).",
+      "ok": "RÉINITIALISER"
+    },
+    "backTitle": "Retour à la page d'accueil d'Aeon",
+    "back": "← Accueil d'Aeon",
+    "label": "TABLEAU DE BORD ·",
+    "reloadIframeTitle": "Recharger l'iframe du tableau de bord",
+    "reload": "⟳ Recharger",
+    "openInBrowser": "Ouvrir dans le navigateur ↗",
+    "stopTitle": "Arrêter le serveur du tableau de bord",
+    "stop": "■ Arrêter",
+    "iframeTitle": "Tableau de bord d'Aeon",
+    "progress": {
+      "title": "{{stage}}…",
+      "body": "Le premier lancement installe le tableau de bord d'Aeon à l'intérieur de l'application. C'est une configuration unique — les lancements suivants démarrent en quelques secondes."
+    },
+    "launch": {
+      "errorTitle": "Le tableau de bord n'a pas pu être lancé",
+      "title": "Tableau de bord d'Aeon",
+      "body": {
+        "before": "Aeon est livré avec son propre tableau de bord Next.js. Cliquez sur Lancer et nous allons récupérer la dernière source depuis GitHub, l'installer à l'intérieur de l'application et l'intégrer comme onglet ici. Votre OAuth GitHub est transmis automatiquement — aucune",
+        "after": "requis."
+      },
+      "retry": "Relancer",
+      "launch": "Lancer le tableau de bord",
+      "resetCacheTitle": "Effacer le cache local et forcer le téléchargement au prochain lancement",
+      "resetCache": "Réinitialiser le cache",
+      "yourFork": "Votre fork sur GitHub ↗",
+      "source": {
+        "before": "Source :",
+        "after": ". Mis en cache dans les données d'application — réutilisé aux lancements suivants."
+      }
+    },
+    "prereq": {
+      "nodeMissing": {
+        "before": "Node.js non détecté sur PATH — installez-le à partir de",
+        "after": "(LTS convient)."
+      },
+      "npmMissing": "npm non détecté sur PATH — fourni avec Node.js."
+    }
+  },
+  "channels": {
+    "header": "Canaux · comment Aeon vous parle",
+    "intro": "Aeon supporte nativement ceux-ci — il suffit de pousser le(s) secret(s) et le workflow active le canal à la prochaine exécution. Aucune modification de workflow requise.",
+    "pushedBadge": "ENVOYÉ À GH ✓",
+    "pushing": "…envoi",
+    "pushMany": "Envoyer {{count}} secrets à GitHub",
+    "pushOne": "Envoyer le secret à GitHub",
+    "toast": {
+      "pushed": "Secrets de {{channel}} envoyés — canal actif à la prochaine exécution de skill",
+      "pushFailed": "L'envoi a échoué : {{error}}"
+    },
+    "items": {
+      "telegram": {
+        "label": "Telegram",
+        "description": "Canal le plus populaire — Aeon envoie les résultats des skills sous forme de messages et vous pouvez répondre avec des commandes. Créez un bot avec @BotFather, puis envoyez /start à votre bot à partir de votre compte.",
+        "helpLabel": "Tutoriel BotFather"
+      },
+      "discord-webhook": {
+        "label": "Discord (sortant uniquement)",
+        "description": "Configuration Discord la plus simple — envoi uniquement. Canal → Modifier le canal → Intégrations → Webhooks → Créer. Aucune permission de bot requise.",
+        "helpLabel": "Configuration du webhook"
+      },
+      "discord-bot": {
+        "label": "Discord (bidirectionnel)",
+        "description": "Discord bidirectionnel complet. discord.com/developers → Nouvelle application → Bot → activer l'intention de contenu des messages, copier le jeton de bot. Invitez le bot à votre serveur avec la portée channels:history.",
+        "helpLabel": "Portail pour développeurs Discord"
+      },
+      "slack-webhook": {
+        "label": "Slack (sortant uniquement)",
+        "description": "Slack envoi uniquement. api.slack.com → Vos applications → Créer une nouvelle application → À partir de zéro → Webhooks entrants → Ajouter au canal → copier l'URL.",
+        "helpLabel": "Documentation des webhooks Slack"
+      },
+      "slack-bot": {
+        "label": "Slack (bidirectionnel)",
+        "description": "Slack bidirectionnel complet. Application → OAuth & Permissions → ajouter les portées channels:history + reactions:write → installer → copier Bot User OAuth Token. L'ID du canal est dans l'URL.",
+        "helpLabel": "Documentation du jeton bot"
+      },
+      "email": {
+        "label": "Email (SendGrid)",
+        "description": "Les résultats des skills arrivent sous forme d'e-mails HTML stylisés. sendgrid.com/settings/api_keys → Créer une clé API avec la permission Mail Send → copier. Définissez l'adresse de destinataire à laquelle vous souhaitez que les notifications soient envoyées.",
+        "helpLabel": "Clés API SendGrid"
+      }
+    },
+    "secretLabels": {
+      "TELEGRAM_BOT_TOKEN": "Jeton de bot",
+      "TELEGRAM_CHAT_ID": "ID du chat",
+      "DISCORD_WEBHOOK_URL": "URL du webhook",
+      "DISCORD_BOT_TOKEN": "Jeton de bot",
+      "DISCORD_CHANNEL_ID": "ID du canal",
+      "SLACK_WEBHOOK_URL": "URL du webhook",
+      "SLACK_BOT_TOKEN": "Jeton de bot",
+      "SLACK_CHANNEL_ID": "ID du canal",
+      "SENDGRID_API_KEY": "Clé API SendGrid",
+      "NOTIFY_EMAIL_TO": "E-mail du destinataire"
+    }
+  },
+  "provider": {
+    "header": "Secrets du fournisseur · envoyés à GitHub Actions",
+    "intro": {
+      "before": "Ces clés sont envoyées à votre",
+      "after": "repo en tant que secrets GitHub Actions afin que les exécutions de skills côté cloud puissent les utiliser. La clé de l'onglet Chat local est séparée."
+    },
+    "set": "DÉFINIR",
+    "save": "Enregistrer",
+    "push": "Envoyer",
+    "pushing": "…envoi",
+    "activating": "…activation",
+    "localBadge": "LOCAL ✓",
+    "pushedBadge": "ENVOYÉ À GH ✓",
+    "activeGatewayBadge": "FOURNISSEUR ACTIF ✓",
+    "activeGatewayTitle": "aeon.yml gateway.provider = {{mode}}",
+    "ghSecret": "Secret GH →",
+    "useDifferentKey": "Utiliser une clé différente",
+    "pushLocalButton": "Envoyer la clé {{label}} locale à GitHub",
+    "activateTitle": "Définissez gateway.provider={{mode}} dans le fichier aeon.yml de votre fork",
+    "activateButton": "→ Activer {{label}} (définit aeon.yml gateway: {{mode}})",
+    "patch": {
+      "title": "Patch de workflow OpenGateway",
+      "applied": "APPLIQUÉ ✓",
+      "notApplied": "NON APPLIQUÉ",
+      "body": {
+        "part1": "Le workflow amont d'Aeon ne lit pas",
+        "part2": "ou",
+        "part3": ". Ce patch en un clic valide un bloc de 4 lignes de niveau job",
+        "part4": "sur votre fork afin que les secrets OpenGateway soient récupérés par Claude Code."
+      },
+      "applying": "…application",
+      "applyButton": "Appliquer le patch (s'engage sur le fork)",
+      "reverting": "…annulation",
+      "revertButton": "Annuler le patch"
+    },
+    "rows": {
+      "anthropic-oauth": {
+        "label": "OAuth Anthropic",
+        "description": "Jeton d'actualisation OAuth Anthropic à partir de /chat (connexion Anthropic Pro). Le workflow Aeon l'utilise via le mode OAuth Claude Code — chemin recommandé."
+      },
+      "anthropic": {
+        "label": "Clé API Anthropic",
+        "description": "Clé API Anthropic directe (sk-ant-api03-…). Lue par le workflow comme ANTHROPIC_API_KEY quand ce n'est pas en mode gateway."
+      },
+      "bankr-gateway": {
+        "label": "Bankr",
+        "description": "Clé LLM Bankr (bk_…). Aeon supporte nativement Bankr — cliquez sur « Activer » pour définir gateway.provider=bankr dans aeon.yml."
+      },
+      "opengateway": {
+        "label": "OpenGateway",
+        "description": "Clé OpenGateway (ogw_live_…). Envoie deux secrets : ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN. Nécessite le patch de workflow ci-dessous — Aeon n'achemine pas nativement via OpenGateway."
+      }
+    },
+    "toast": {
+      "gatewayUpdated": "aeon.yml mis à jour — {{label}} est maintenant le fournisseur actif",
+      "gatewayAlready": "{{label}} était déjà actif dans aeon.yml",
+      "activateFailed": "L'activation a échoué : {{error}}",
+      "patchAlready": "Le workflow est déjà patchée pour OpenGateway",
+      "patched": "Patch du workflow du fork — OpenGateway maintenant connecté via Claude Code",
+      "patchFailed": "Le patch a échoué : {{error}}",
+      "reverted": "Patch d'OpenGateway annulé — workflow revenu à la forme amont",
+      "revertFailed": "L'annulation a échouée : {{error}}",
+      "pushedLocal": "Clé {{label}} locale envoyée aux secrets GitHub pour {{owner}}/aeon",
+      "pushFailed": "L'envoi a échoué : {{error}}",
+      "savedExplicit": "{{label}} → {{secretName}} sur {{owner}}/aeon"
+    }
+  },
+  "drawer": {
+    "tabs": {
+      "result": "RÉSULTAT",
+      "logs": "JOURNAUX"
+    },
+    "resultTitle": "Afficher le résultat analysé, les fichiers produits et l'utilisation des jetons",
+    "resultTitleDisabled": "Disponible après la fin de l'exécution",
+    "refresh": "Actualiser",
+    "reload": "Recharger",
+    "openOnGithubTitle": "Ouvrir sur GitHub",
+    "openOnGithub": "Ouvrir sur GitHub ↗",
+    "closeTitle": "Fermer (Esc)",
+    "close": "Fermer",
+    "jobs": {
+      "title": "Travaux ({{count}})",
+      "waiting": "En attente du runner…",
+      "none": "Aucun travail dans cette exécution."
+    },
+    "logs": {
+      "title": "Journaux",
+      "live": "● EN DIRECT",
+      "fetching": "récupération…",
+      "queued": "Le travail est en file d'attente — en attente d'un runner…",
+      "noOutput": "Aucune sortie de journal pour le moment.",
+      "selectJob": "Sélectionnez un travail pour afficher ses journaux."
+    },
+    "errors": {
+      "loadJobs": "Impossible de charger les travaux : {{error}}",
+      "logFetch": "[erreur de récupération de journal] {{error}}"
+    },
+    "result": {
+      "loadingLogs": "Chargement des journaux d'exécution…",
+      "whatItDid": "Ce qu'il a fait",
+      "noSummary": "Le skill n'a pas émis de résumé structuré dans sa sortie finale. Basculez vers JOURNAUX pour l'exécution brute.",
+      "filesProduced": "Fichiers produits",
+      "filesProducedCount": "Fichiers produits ({{count}})",
+      "noFiles": "Aucune modification de fichier détectée dans cette exécution.",
+      "openFileTitle": "Ouvrir {{path}} sur GitHub",
+      "open": "ouvert ↗",
+      "commit": "Engager",
+      "openShort": "Ouvrir ↗",
+      "tokenUsage": "Utilisation des jetons",
+      "tokens": {
+        "cacheRead": "lecture du cache",
+        "cacheCreation": "création du cache"
+      },
+      "browseOutputs": "Parcourir les sorties",
+      "outputsTitle": "Sorties de skill au format JSON (feed du tableau de bord d'Aeon)",
+      "links": {
+        "outputs": "dashboard/outputs ↗",
+        "articles": "articles ↗",
+        "commits": "tous les commits ↗",
+        "thisRun": "cette exécution sur GitHub ↗"
+      }
+    }
+  },
+  "runs": {
+    "header": "Exécutions récentes",
+    "refresh": "Actualiser",
+    "loading": "Chargement des exécutions…",
+    "empty": "Aucune exécution pour le moment. Déclenchez un skill pour voir les résultats ici.",
+    "rerun": "▶ RÉEXÉCUTER",
+    "rerunTitle": "Réexécuter",
+    "deleteTitle": "Supprimer l'exécution",
+    "confirmDeleteTitle": "Cliquez à nouveau pour confirmer",
+    "sure": "SÛR ?",
+    "row": {
+      "openTitle": "Ouvrir le détail de l'exécution en direct"
+    },
+    "card": {
+      "title": "Cliquez pour ouvrir · glissez en file d'attente pour réexécuter",
+      "rerunTitle": "Réexécuter ce workflow",
+      "confirmDeleteTitle": "Cliquez à nouveau pour confirmer la suppression"
+    },
+    "kanban": {
+      "todo": "En file d'attente",
+      "running": "En cours",
+      "failed": "Échoué",
+      "done": "Terminé",
+      "dropHint": "↓ déposer pour réexécuter"
+    },
+    "toast": {
+      "rerunning": "Réexécution de {{name}}",
+      "rerunFailed": "La réexécution a échouée : {{error}}",
+      "deleted": "{{name}} supprimé",
+      "deleteFailed": "La suppression a échouée : {{error}}",
+      "alreadyRunning": "Déjà en cours"
+    }
+  },
+  "intro": {
+    "title": "AEON — VOTRE AGENT DANS LE CLOUD",
+    "body": "Aeon est votre agent qui travaille pour vous dans le cloud, même quand cette application est fermée. Il vit dans votre propre fork GitHub ({{owner}}/aeon) et exécute des skills — recherche, veille, rédaction — de façon autonome via GitHub Actions, selon un planning ou dès que vous lui confiez une tâche. Les résultats arrivent dans Exécutions récentes ci-dessous et dans tout canal que vous connectez (Telegram, Discord, Slack, e-mail)."
+  },
+  "setup": {
+    "header": "CONFIGURATION (UNE SEULE FOIS)",
+    "hint": "Secrets des fournisseurs + canaux de notification. Déjà fait si vos exécutions fonctionnent."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "INBOX",
+    "pending": "[{{count}} ausstehend]"
+  },
+  "actions": {
+    "approveAll": "[ALLE GENEHMIGEN]",
+    "clearResolved": "[GELÖSTE LÖSCHEN]"
+  },
+  "footer": {
+    "modeLabel": "Modus:",
+    "mode": {
+      "immediate": "[UNMITTELBAR]",
+      "inbox": "[INBOX]"
+    },
+    "hints": "j/k verschieben  ·  Eingabetaste genehmigen  ·  Entf. ablehnen  ·  Strg+A alle genehmigen"
+  },
+  "empty": {
+    "title": "[ INBOX LEER ]",
+    "inbox": "Anfragen zur Tool-Berechtigung werden hier eingegeben, während Ihr Agent läuft. Genehmigen oder lehnen Sie diese in Ihrem eigenen Tempo ab — der Agent wartet, bis Sie sich entscheiden.",
+    "immediate": "Sie befinden sich im UNMITTELBAREN Modus. Tool-Berechtigungsanfragen zeigen ein blockierendes Modal statt hier in der Warteschlange zu stehen. Wechseln Sie unten zur INBOX, um den Agent lange laufen zu lassen und später einen Batch-Review durchzuführen."
+  },
+  "fields": {
+    "reason": "Grund:",
+    "session": "Sitzung:",
+    "workingDir": "ArbeitsVerzeichnis:"
+  },
+  "item": {
+    "approve": "[GENEHMIGEN]",
+    "approveAria": "Anfrage genehmigen",
+    "deny": "[ABLEHNEN]",
+    "denyAria": "Anfrage ablehnen"
+  }
+}

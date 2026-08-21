@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "Dashboard de OpenClaw"
+  },
+  "actions": {
+    "reload": "Recargar",
+    "openInBrowser": "Abrir en navegador",
+    "openDocs": "Abrir docs"
+  },
+  "iframe": {
+    "title": "Dashboard de OpenClaw"
+  },
+  "probing": {
+    "label": "Sondando {{url}}…"
+  },
+  "unreachable": {
+    "title": "Demonio de OpenClaw no alcanzable",
+    "hint": "Inicia el demonio de OpenClaw en una terminal y luego haz clic en Recargar:"
+  },
+  "status": {
+    "probing": "Sondando",
+    "live": "En directo",
+    "offline": "Sin conexión"
+  }
+}

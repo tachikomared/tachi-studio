@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "학습",
+    "intro": "2분 투어. 기술적인 배경 지식이 없어도 됩니다 — 위에서 아래로 읽거나, 원하는 섹션으로 바로 이동하세요."
+  },
+  "hero": {
+    "eyebrow": "첫 실행",
+    "title": "Tachi Studio에 오신 것을 환영합니다",
+    "intro": "AI와 함께 작업하는 작업 공간입니다. 시작하는 방법은 다섯 가지 — 아무거나 골라 시작하세요. 이 안내는 언제든 다시 열 수 있습니다.",
+    "lines": {
+      "chat": "<strong>CHAT</strong> — AI 비서에게 메시지를 보냅니다. 무료이며 설정이 필요 없습니다.",
+      "code": "<strong>CODE</strong> — 폴더를 지정하면 눈앞에서 실제 작업을 수행합니다.",
+      "nodes": "<strong>NODES</strong> — 단계를 시각적 워크플로로 연결하고 전체 파이프라인을 실행합니다.",
+      "design": "<strong>DESIGN</strong> — 페이지나 모션 그래픽을 설명하면 실시간으로 렌더링되는 것을 볼 수 있습니다.",
+      "media": "<strong>MEDIA</strong> — 이미지, 동영상, 음악, 음성을 생성합니다."
+    },
+    "cta": {
+      "chat": "Chat 열기",
+      "flow": "스타터 플로우 사용해 보기",
+      "quickstart": "빠른 시작 읽기"
+    },
+    "dismiss": "닫기"
+  },
+  "sections": {
+    "basics": {
+      "title": "이 앱이란",
+      "intro1": "Tachi Studio는 AI와 함께 작업하기 위한 데스크입니다. <strong>채팅</strong>을 하거나, 폴더를 지정해서 웹사이트, 스크립트, 소규모 앱 등을 <strong>대신 만들도록</strong> 할 수 있습니다 — 작업하는 과정을 지켜보면서요.",
+      "intro2": "기술적인 것을 설치하거나 터미널을 열 필요가 없습니다. 모든 것이 이 창 안에서 이루어집니다. 시작하는 몇 가지 방법:",
+      "ways": {
+        "chat": "<strong>Chat</strong> — 비서에게 문자를 보내는 것처럼. 무료이며 별도 설정이 필요 없습니다.",
+        "code": "<strong>Code</strong> — 폴더와 작업을 지정하면, 해당 폴더에서 실제 작업을 수행합니다.",
+        "media": "<strong>Media</strong> — 이미지, 동영상, 음악, 음성을 생성하고 (오디오를 텍스트로 변환하기도).",
+        "nodes": "<strong>Nodes</strong> — 이 단계들을 시각적 workflow로 연결하고 전체 파이프라인을 실행합니다.",
+        "design": "<strong>디자인</strong> — 웹 페이지나 모션 그래픽을 설명하면 실시간 렌더링을 보며 채팅으로 다듬을 수 있습니다."
+      }
+    },
+    "chat": {
+      "title": "채팅만 하기 (쉬운 시작)",
+      "steps": {
+        "open": "왼쪽 사이드바에서 <strong>CHAT</strong>을 클릭합니다.",
+        "type": "하단에 질문을 입력하고 Enter를 누릅니다.",
+        "done": "이게 전부입니다. 첫 번째 제공업체는 무료이며 키가 필요 없습니다."
+      },
+      "note": "대화 내용을 기억합니다 — 이어서 질문하면 무엇을 이야기하고 있었는지 알고 있습니다. 새로운 주제는 <strong>새로 만들기</strong>(오른쪽 상단)로 시작하세요. 각 채팅은 자체 메모리를 유지합니다.",
+      "open": "Chat 열기 →",
+      "moreTitle": "Chat에서 더 할 수 있는 것",
+      "extras": {
+        "commands": "<strong>/</strong>를 입력하면 명령어 목록이 나타납니다 — <strong>/help</strong>, <strong>/compact</strong>, <strong>/model</strong>, <strong>/cost</strong>, <strong>/memory</strong>, <strong>/remember</strong>, <strong>/search</strong>, <strong>/loop</strong> 등. 동일한 슬래시 명령어가 Chat, Code, 그리고 HOME의 \"무엇이든 물어보세요\" 입력창에서도 작동합니다.",
+        "sources": "폴더를 첨부하고 그것에 대해 질문하세요 — 근거가 있는 답변 아래에 <strong>Sources</strong> 칩이 표시됩니다. 하나를 클릭하면 사용된 정확한 파일 내용이 펼쳐집니다."
+      }
+    },
+    "code": {
+      "title": "무언가 만들기 (Code agent)",
+      "steps": {
+        "open": "사이드바에서 <strong>CODE</strong>를 클릭합니다.",
+        "choose": "<strong>폴더 선택</strong>을 클릭하거나 (또는 페이지에 폴더를 끌어다 놓으세요). 이곳만이 AI가 접근할 수 있는 유일한 곳입니다.",
+        "type": "원하는 것을 입력하세요. 예: <em>\"html 파일로 간단한 스네이크 게임 만들어줘\"</em>, 그리고 실행 버튼을 누릅니다.",
+        "watch": "작업하는 것을 지켜보세요. 파일을 작성하면 <strong>[PREVIEW]</strong>를 클릭해서 실시간으로 확인할 수 있습니다 — HTML 게임이 앱 안에서 바로 실행됩니다."
+      },
+      "note": "지정한 폴더 내에서만 파일을 읽고 쓸 수 있습니다. 컴퓨터의 다른 곳으로는 접근할 수 없습니다.",
+      "open": "Code 열기 →",
+      "moreTitle": "Code에서 더 할 수 있는 것",
+      "extras": {
+        "tachiapp": "앱이 자기 자신의 소스 코드를 다루게 하고 싶으신가요? 사이드바 하단에 고정된 <strong>TACHIAPP</strong> 행을 누르면 이미 Tachi Studio 자체를 가리키는 Code 채팅이 열립니다 — 폴더를 고를 필요가 없습니다.",
+        "spawnLoop": "큰 작업을 여러 agent에 한 번에 나눠 맡기거나, <strong>/loop</strong>를 입력해 반복되는 간격으로 목표를 향해 계속 작업하게 할 수 있습니다 — <strong>LOOP</strong> 칩이 아직 실행 중임을 보여줍니다.",
+        "incomplete": "실행이 끝나지 못하고 멈추면, 거짓으로 \"완료\"라고 표시하는 대신 호박색 <strong>! Ended without completing</strong> 배지가 나타납니다 — 계속 진행하거나 더 구체적인 지시를 달라는 신호입니다."
+      }
+    },
+    "media": {
+      "title": "이미지, 동영상 & 음악 만들기",
+      "steps": {
+        "open": "사이드바에서 <strong>MEDIA</strong>를 클릭합니다.",
+        "pick": "만들 것을 선택합니다(이미지, 동영상, 음악, 음성, 자막), 제공업체(Surplus 또는 Venice)와 모델을 선택합니다.",
+        "prompt": "prompt를 입력하고, 필요하면 참조 이미지를 첨부한 뒤 생성 버튼을 누릅니다."
+      },
+      "note": "만든 모든 것은 <strong>Artifacts</strong> 하위 탭에 저장됩니다. 지원하는 모델은 이미지를 편집하거나, 이미지를 동영상으로 변환할 수 있습니다(image-to-video).",
+      "open": "Media 열기 →"
+    },
+    "buttons": {
+      "title": "Code 버튼이 의미하는 것",
+      "intro": "Code 탭 상단에 작은 스위치 네 개가 있습니다. 처음에는 무시해도 됩니다 — 기본값으로도 충분합니다. 각 버튼의 기능:",
+      "table": {
+        "head": {
+          "button": "버튼",
+          "plain": "쉬운 설명",
+          "realName": "실제 이름"
+        },
+        "mode": {
+          "name": "Mode",
+          "plain": "먼저 계획할지, 아니면 바로 만들지"
+        },
+        "thinking": {
+          "name": "Thinking",
+          "plain": "AI가 행동하기 전에 얼마나 깊이 추론할지"
+        },
+        "engine": {
+          "name": "에이전트",
+          "plain": "어떤 코딩 agent가 작업을 수행할지"
+        },
+        "gateway": {
+          "name": "공급자",
+          "plain": "AI 모델이 어디서 오는지"
+        }
+      },
+      "note": "<strong>[CTX nn%]</strong> 배지는 AI의 메모리가 얼마나 찼는지 보여줍니다. 노란색에서 빨간색으로 바뀌면, 새 세션을 시작하여 앞부분을 잊지 않도록 하세요."
+    },
+    "private": {
+      "title": "비공개 유지하기",
+      "intro": "<strong>PRIVATE MODE</strong>는 모든 것을 기기 안에 보관합니다. 클라우드 AI는 차단되고, agents는 인터넷에 전혀 접근하지 못하도록 중단됩니다.",
+      "steps": {
+        "palette": "<strong>Ctrl/Cmd + K</strong>를 눌러 명령 팔레트를 엽니다.",
+        "toggle": "<em>\"Toggle Private Mode\"</em>를 입력하고 선택합니다.",
+        "badge": "상단에 빨간색 <strong>[PRIVATE]</strong> 배지가 나타납니다. 클라우드 제공업체는 <strong>[LOCKED]</strong>으로 표시됩니다."
+      },
+      "note": "PRIVATE MODE에서는 로컬 공급자만 작동합니다(Ollama 또는 llama.cpp). 클라우드 모델을 다시 사용하려면 같은 방법으로 끄세요."
+    },
+    "providers": {
+      "title": "나만의 AI 연결하기 (선택 사항)",
+      "intro": "무료 옵션은 설정 없이 바로 사용 가능합니다. 프리미엄 모델을 사용하려면 키를 추가하세요:",
+      "steps": {
+        "settings": "사이드바 하단의 <strong>Settings</strong>로 이동 → Providers.",
+        "key": "제공업체를 선택하고, <strong>키 받기</strong>를 클릭(가입 페이지가 열림)한 후 키를 붙여넣고 <strong>테스트</strong>를 클릭합니다.",
+        "green": "초록색이면 연결된 것입니다. 이제 Chat이나 Code에서 해당 제공업체를 선택할 수 있습니다."
+      },
+      "open": "Settings 열기 →"
+    },
+    "power": {
+      "title": "고급 기능 (준비가 됐을 때)",
+      "list": {
+        "nodes": "<strong>Nodes</strong> — 나만의 AI 파이프라인을 그립니다: 모델을 agent에 연결하거나, 텍스트 → 이미지 → 동영상으로 체이닝합니다. 매 실행마다 분기할 수 있는 결과 카드가 생성됩니다. 임의의 모델(Venice 또는 로컬)을 선택하고, 채팅처럼 flows를 저장하고 전환할 수 있습니다.",
+        "swarm": "<strong>Swarm</strong> — 여러 agents를 팀으로 구성해 공유 작업 보드에서 함께 실행합니다.",
+        "parallel": "<strong>병렬 작업</strong> — Code에서 여러 agents를 동시에 실행하고, 각각 프로젝트의 자체 복사본에서 작업합니다.",
+        "inbox": "<strong>Inbox</strong> — 모든 권한 요청마다 팝업이 뜨는 대신, 요청을 쌓아두고 한꺼번에 승인합니다.",
+        "marketplace": "<strong>Connections</strong> — Settings → Connections에서 MCP 도구 서버 카탈로그를 둘러보고 클릭 한 번으로 설치할 수 있습니다. JSON을 편집할 필요가 없습니다. Private Mode에서는 로컬 전용 서버만 자동으로 계속 실행되고 나머지는 차단됩니다.",
+        "scheduler": "<strong>예약 작업</strong> — Settings → Advanced → Scheduled에서 채팅, Code 실행, 또는 flow가 반복 일정에 따라 실행되도록 설정할 수 있습니다. 컴퓨터가 절전 모드에 들어가도 유지되며, 깨어나면 밀린 작업을 따라잡습니다."
+      },
+      "note": "이 중 어느 것도 가치를 얻기 위해 꼭 필요하지는 않습니다 — 익숙해졌을 때 활용하면 됩니다."
+    },
+    "tips": {
+      "title": "유용한 단축키",
+      "list": {
+        "palette": "<strong>Ctrl/Cmd + K</strong> — 명령 팔레트(타이핑으로 무엇이든 실행).",
+        "send": "<strong>Enter</strong> — 전송. <strong>Shift + Enter</strong> — 줄 바꿈.",
+        "new": "<strong>새로 만들기</strong> — 깨끗한 메모리로 새 채팅/세션을 시작합니다.",
+        "tooltip": "아무 버튼에나 마우스를 올리면 — 툴팁이 쉬운 말로 설명해 줍니다.",
+        "reconnect": "답변이 멈춘 것 같으면 <strong>Retrying n/10</strong> 배너를 확인하세요 — 연결이 끊어졌다가 같은 답변 안으로 스스로 재연결되는 중입니다. 다시 보낼 필요 없이 그냥 기다리면 됩니다."
+      }
+    },
+    "design": {
+      "title": "디자인 — 페이지나 애니메이션 만들기",
+      "steps": {
+        "open": "사이드바에서 <strong>DESIGN</strong>을 클릭하세요.",
+        "pick": "<strong>page</strong>(정적 페이지 → PNG/PDF 내보내기) 또는 <strong>animate</strong>(모션 그래픽 → MP4 내보내기)를 선택하세요.",
+        "engine": "animate 모드에서 렌더러를 선택하세요: <strong>Remotion</strong>(MP4 영상으로 렌더링) 또는 <strong>HyperFrames</strong>(HTML + GSAP 애니메이션).",
+        "type": "원하는 것을 입력하세요(\"3개 요금제 가격 페이지\", \"회전하며 등장하는 로고\"). 오른쪽에 렌더링되며 채팅을 이어 수정합니다."
+      },
+      "note": "모든 것은 디스크의 폴더에 자동 저장되며, 페이지 미리보기의 아무 텍스트나 클릭해 바로 편집할 수 있습니다. 내보내기 버튼은 오른쪽 위에 있습니다.",
+      "open": "디자인 열기 →"
+    }
+  },
+  "footer": {
+    "deepDocs": "심층 기술 문서를 원하시나요? 전체 아키텍처 및 기능별 문서는 프로젝트 내 <code> docs/app/</code>에 있습니다 — 앱 내 agent가 이를 읽어 Tachi Studio 자체를 이해하고 확장할 수 있습니다."
+  }
+}

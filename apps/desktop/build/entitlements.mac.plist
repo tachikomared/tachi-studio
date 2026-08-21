@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTD/PropertyList-1.0.dtd">
+<!--
+  TachiDesk macOS entitlements for hardened-runtime + notarization.
+
+  We need:
+    - com.apple.security.cs.allow-jit              → V8/Electron JIT
+    - com.apple.security.cs.allow-unsigned-executable-memory → embedded sidecars
+        (node, llama.cpp, whisper, sd.cpp)
+    - com.apple.security.cs.allow-dyld-environment-variables → sidecar CLI env knobs
+    - com.apple.security.cs.disable-library-validation → loading bundled binaries that
+        weren't signed by us (downloaded engine binaries, community builds)
+    - com.apple.security.inherit                   → child processes inherit our perms
+
+  Network / files / device entitlements are intentionally OMITTED — Electron
+  doesn't need them and adding them widens the attack surface.
+-->
+<plist version="1.0">
+  <dict>
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <true/>
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+    <key>com.apple.security.inherit</key>
+    <true/>
+  </dict>
+</plist>

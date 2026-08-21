@@ -1,0 +1,256 @@
+{
+  "actions": {
+    "newChat": "+ Nuevo chat",
+    "routines": "Rutinas",
+    "customize": "Personalizar",
+    "providers": "Proveedores",
+    "tachiapp": "TACHIAPP",
+    "tachiappHint": "Pregunta sobre esta app o dile qué cambiar: edita su propio código",
+    "approvalPending": "{{n}} aprobación pendiente — una ejecución está bloqueada hasta que respondas"
+  },
+  "sidebar": {
+    "newSession": "+ Nueva sesión",
+    "workspace": "Espacio de trabajo",
+    "openCanvas": "+ Abrir lienzo",
+    "media": "Medios",
+    "newMedia": "+ Nuevos medios",
+    "artifacts": "Artefactos",
+    "newSwarm": "+ Nuevo enjambre",
+    "openInbox": "Abrir bandeja de entrada",
+    "llmNodes": "+ Nodos LLM",
+    "addRuntime": "Agregar servidor local",
+    "settings": "Configuración",
+    "runSkill": "+ Ejecutar skill",
+    "configure": "Configurar",
+    "secrets": "Secretos",
+    "dashboard": "Dashboard",
+    "postBounty": "+ Publicar recompensa",
+    "browseNetwork": "Examinar red",
+    "mineNook": "Minar NOOK",
+    "toasts": {
+      "routinesSoon": "Rutinas — ¡próximamente!",
+      "workspaceSoon": "Gestión del espacio de trabajo — ¡próximamente!",
+      "addRuntimeHint": "Agregar servidor local — instala Ollama/Claude Code manualmente y luego reinicia Tachi Studio para detectarlos."
+    },
+    "newDesign": "+ Nuevo diseño",
+    "recentDesigns": "Diseños recientes",
+    "noRecentDesigns": "Aún no hay diseños",
+    "untitledDesign": "Diseño sin título",
+    "recent": "Recientes",
+    "noRecentSwarms": "Sin enjambres recientes",
+    "more": "Más",
+    "moreHint": "Más pestañas — Swarm, Dashboard, Catalog, Aeon, Nook, Learn",
+    "learnHint": "Learn — recorrido breve por cada pestaña",
+    "wallet": "Billetera",
+    "walletExpand": "Mostrar saldos de la billetera",
+    "walletCollapse": "Ocultar saldos de la billetera"
+  },
+  "theme": {
+    "dark": "Oscuro",
+    "light": "Claro",
+    "neon": "Neón",
+    "comic": "Cómic",
+    "opus5": "Opus5",
+    "tk05": "TK-05",
+    "moreHint": "Todos los temas — Ajustes → Apariencia"
+  },
+  "language": "Idioma",
+  "errors": {
+    "generic": "Algo salió mal. Reintenta o revisa el proveedor en Ajustes.",
+    "noKey": "No hay clave API para este proveedor — añádela en Ajustes → Proveedores o elige el proveedor gratuito sin clave.",
+    "auth": "El proveedor rechazó la clave API — revísala en Ajustes → Proveedores.",
+    "rateLimit": "Límite de peticiones alcanzado — espera un momento y reintenta, o cambia de modelo/proveedor.",
+    "quota": "Cuota o créditos del proveedor agotados — revisa tu plan o cambia de proveedor.",
+    "contextLength": "La conversación es demasiado larga para este modelo — inicia un chat nuevo o usa un modelo con más contexto.",
+    "network": "Problema de red al contactar al proveedor — revisa tu conexión (o el Modo Privado bloqueando el tráfico).",
+    "upstream": "El proveedor tuvo un error de servidor — reintenta en un momento."
+  },
+  "quickask": {
+    "placeholder": "Pregunta lo que sea…",
+    "ask": "Preguntar",
+    "asking": "…",
+    "thinking": "pensando…",
+    "hintEmpty": "Enter para preguntar · Esc para cerrar",
+    "footer": "quick ask · router FreeLLM sin claves",
+    "copy": "copiar",
+    "openApp": "abrir app",
+    "routerDown": "El router local no está activo — abre la app primero."
+  },
+  "prompts": {
+    "search": "Buscar plantillas…",
+    "saveCurrent": "+ guardar actual",
+    "titlePlaceholder": "Nombre de la plantilla…",
+    "save": "Guardar",
+    "empty": "Aún no hay plantillas. Guarda aquí tus mejores prompts.",
+    "insert": "Insertar",
+    "delete": "Eliminar plantilla"
+  },
+  "split": {
+    "hint": "Arrastra para redimensionar · Doble clic para plegar"
+  },
+  "footerHints": {
+    "chat": "Enter envía · {{mod}}+K paleta · {{mod}}+Shift+Space quick-ask",
+    "code": "Enter ejecuta la tarea · ↺ revierte al checkpoint",
+    "nodes": "{{mod}}+Enter ejecuta todo · {{mod}}+Z deshace",
+    "design": "{{mod}}+Enter envía · ↺ edita para rebobinar",
+    "media": "Prompt → Generar · Esc cierra la vista previa",
+    "catalog": "Haz clic en una pastilla de cuantización para ver si cabe",
+    "swarm": "NUEVO ENJAMBRE abre un repo · el feed emite los commits de los agentes",
+    "dashboard": "Estadísticas del sistema en vivo · se actualizan cada 3 s"
+  },
+  "activity": {
+    "title": "Actividad",
+    "stop": "Detener",
+    "stopping": "Deteniendo…",
+    "dismiss": "Descartar",
+    "more": "+{{n}} más",
+    "less": "Mostrar menos",
+    "open": "Ir a esta tarea",
+    "failed": "Error",
+    "done": "Listo",
+    "cancelled": "Cancelado",
+    "label": {
+      "generate": "Generando",
+      "render": "Exportación de vídeo",
+      "migrate": "Moviendo modelos",
+      "rife": "Interpolación de fotogramas",
+      "audioOverview": "Resumen de audio"
+    },
+    "notify": {
+      "imageReady": "Imagen lista",
+      "videoReady": "Vídeo listo",
+      "genFailed": "Error en la generación",
+      "installed": "{{name}} instalado",
+      "installFailed": "Error al instalar {{name}}",
+      "renderDone": "Exportación de vídeo terminada",
+      "renderFailed": "Error en la exportación de vídeo",
+      "rifeDone": "Interpolación de fotogramas terminada",
+      "rifeFailed": "Error en la interpolación de fotogramas",
+      "took": "tardó {{elapsed}}",
+      "audioOverviewReady": "Resumen de audio listo",
+      "audioOverviewFailed": "El resumen de audio falló"
+    }
+  },
+  "audioOverview": {
+    "stage": {
+      "script": "redactando guión…",
+      "voices": "voces {{n}}/{{m}}",
+      "mix": "mezclando…",
+      "saving": "guardando…"
+    },
+    "saved": "Guardado en disco",
+    "reveal": "Mostrar archivo",
+    "saveFailed": "No se guardó en disco: {{reason}}"
+  },
+  "downloads": {
+    "title": "Descargas",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "retry": "Reintentar",
+    "cancel": "Cancelar descarga (elimina el archivo parcial)",
+    "dismiss": "Descartar",
+    "paused": "Pausado",
+    "queued": "En cola",
+    "verifying": "Verificando",
+    "done": "Completado",
+    "error": "Error",
+    "verifiedSha": "SHA-256 verificado",
+    "verifiedSize": "Tamaño verificado"
+  },
+  "observability": {
+    "compaction": "Compactación",
+    "tokensSaved": "tokens ahorrados (est.)",
+    "charsSaved": "caracteres ahorrados",
+    "promptCache": "Caché de prompt",
+    "cachedInputTokens": "tokens de entrada en caché",
+    "cacheHitRatio": "tasa de aciertos (caché / entrada)",
+    "legacyHarnessTag": "harness heredado",
+    "legacyHarnessNote": "Gasto del harness registrado antes de que se atribuyera a la pasarela que lo sirvió. Se conserva como historial: un libro de cuentas no se edita a posteriori."
+  },
+  "commands": {
+    "popupLabel": "Comandos de barra",
+    "popupHint": "↑↓ mover · ↵ / Tab elegir · esc cerrar",
+    "groupCommands": "Comandos",
+    "groupSkills": "Habilidades",
+    "dismiss": "Descartar",
+    "unknown": "Comando desconocido /{{name}}. Escribe /help para ver los disponibles, o empieza el mensaje con // para enviar una barra literal.",
+    "wrongSurfaceChat": "/{{name}} solo funciona en la pestaña Chat.",
+    "wrongSurfaceHarness": "/{{name}} solo funciona en la pestaña Code.",
+    "unavailable": "/{{name}} no está disponible aquí ahora mismo.",
+    "help": {
+      "desc": "Listar todos los comandos disponibles aquí",
+      "title": "COMANDOS DISPONIBLES",
+      "escape": "Empieza un mensaje con // para enviar una barra literal."
+    },
+    "new": {
+      "desc": "Empezar un chat nuevo"
+    },
+    "compact": {
+      "desc": "Resumir los turnos antiguos para liberar contexto",
+      "done": "Compactado — los turnos antiguos son ahora un resumen. La transcripción no cambia.",
+      "failed": "Todavía no hay nada que compactar."
+    },
+    "init": {
+      "desc": "Generar AGENTS.md para esta carpeta",
+      "done": "Escrito {{path}}",
+      "failed": "No se pudo generar AGENTS.md: {{reason}}"
+    },
+    "model": {
+      "desc": "Ver el modelo actual o cambiar a otro",
+      "args": "[nombre]",
+      "current": "Modelo actual: {{model}}",
+      "switched": "Modelo → {{model}}",
+      "noMatch": "Ningún modelo o proveedor coincide con «{{name}}»."
+    },
+    "cost": {
+      "desc": "Mostrar el gasto de la sesión y de 30 días",
+      "title": "GASTO",
+      "session": "Esta sesión: {{value}}",
+      "sessionTokens": "~{{count}} tokens",
+      "window": "Últimos {{days}} días: ${{total}} de ${{budget}} de presupuesto",
+      "provider": "  {{provider}} — ${{usd}}",
+      "none": "  aún no hay gasto con precio registrado"
+    },
+    "memory": {
+      "desc": "Mostrar los datos guardados en memoria",
+      "title": "DATOS EN MEMORIA ({{count}})",
+      "empty": "Aún no hay datos guardados — añade uno con /remember <texto>."
+    },
+    "remember": {
+      "desc": "Guardar un dato en la memoria",
+      "args": "<texto>",
+      "saved": "Recordado: {{text}}",
+      "needsText": "Uso: /remember <texto>",
+      "failed": "No se pudo guardar ese dato."
+    },
+    "rewind": {
+      "desc": "Editar tu último mensaje y volver a ejecutar desde ahí",
+      "done": "Tu último mensaje ha vuelto al editor — edítalo y envíalo.",
+      "none": "No hay ningún mensaje al que retroceder."
+    },
+    "search": {
+      "desc": "Forzar una búsqueda web para esta consulta",
+      "args": "<consulta>",
+      "needsQuery": "Uso: /search <consulta>",
+      "disabled": "La búsqueda web está desactivada — actívala en Ajustes y añade una clave de Brave o Tavily."
+    },
+    "plan": {
+      "desc": "Planificar el trabajo antes de tocar código"
+    },
+    "review": {
+      "desc": "Revisión de código estructurada por severidad"
+    },
+    "troubleshoot": {
+      "desc": "Encontrar la causa raíz de un fallo y proponer arreglos"
+    },
+    "refactor": {
+      "desc": "Planificar una refactorización que preserve el comportamiento"
+    },
+    "loop": {
+      "desc": "Repetir ciclos hasta cumplir el objetivo",
+      "args": "[n] <objetivo>",
+      "needsGoal": "Uso: /loop [n] <objetivo> — p. ej. /loop 3 que pasen todas las pruebas",
+      "needsTachi": "/loop necesita el harness TACHI — selecciónalo en ADVANCED y envía de nuevo."
+    }
+  }
+}

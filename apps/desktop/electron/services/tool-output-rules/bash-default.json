@@ -1,0 +1,8 @@
+{
+  "id": "bash/default",
+  "matches": { "toolName": "Bash" },
+  "transforms": { "stripAnsi": true, "dedupeAdjacent": true },
+  "success": { "head": 8, "tail": 8, "maxChars": 4000 },
+  "failure": { "head": 12, "tail": 20, "maxChars": 6000 },
+  "preserveOnFailure": true
+}

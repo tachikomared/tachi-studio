@@ -1,0 +1,36 @@
+/* ── tachi-neon ────────────────────────────────────────────────────────────
+   A synthwave / cyberpunk take on the brutalist system. Same hard-offset
+   shadow language as the other two themes, but the offset is CYAN while the
+   accents are hot MAGENTA — a dual-tone chromatic look. Deep indigo-black
+   surfaces keep the neon legible. Every variable mirrors tachi-dark/bankr so
+   the whole app themes automatically; no component needs to know about neon.
+   ─────────────────────────────────────────────────────────────────────── */
+:root[data-theme="tachi-neon"] {
+  --bg-base:       #0b0a16;
+  --bg-surface:    #13111f;
+  --bg-elevated:   #1a1730;
+  --bg-inset:      #080711;
+  --bg-sidebar:    #100e1d;
+  --accent:        #ff2d95;
+  --accent-hover:  #ff5cae;
+  --accent-alt:    #05d9e8;
+  --accent-muted:  #2a1230;
+  --accent-text:   #ffd6f0;
+  --text-primary:  #f7f0ff;
+  --text-muted:    #9a8cb8;
+  --text-dim:      #574d6e;
+  --border:        #3a2d5c;
+  --border-strong: #6d4aff;
+  /* ONE semantic red — alias of --danger (see tachi-dark.css note). */
+  --destructive:   var(--danger);
+  --success:       #3affb0;
+  --warning:       #ffd23f;
+  --danger:        #ff3864;
+  --info:          #4dc4ff;
+  /* Cyan offset shadow against magenta accents = the signature synthwave glow. */
+  --shadow-hard:   3px 3px 0 #05d9e8;
+  /* Larger offset variant for hover "lift" — same color, bigger shadow. */
+  --shadow-hard-lg: 6px 6px 0 #05d9e8;
+  --shadow-soft:   3px 3px 0 rgba(5,217,232,0.30);
+  --border-width:  2px;
+}

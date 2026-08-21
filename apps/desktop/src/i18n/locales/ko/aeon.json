@@ -1,0 +1,400 @@
+{
+  "auth": {
+    "header": "GitHub 인증",
+    "intro": "Aeon은 GitHub Actions에서 실행됩니다. 계속하려면 GitHub 계정으로 로그인하세요.",
+    "signIn": "GitHub으로 로그인",
+    "waiting": "브라우저에서 승인을 기다리는 중…",
+    "deviceCode": "기기 코드",
+    "copyHint": "이 코드를 GitHub 기기 활성화 페이지에 입력한 후 아래 버튼을 클릭하세요.",
+    "openDevicePage": "github.com/login/device 열기",
+    "cancel": "취소"
+  },
+  "repoSetup": {
+    "header": "aaronjmars/aeon 포크",
+    "intro": {
+      "before": "Aeon은 API 시크릿을 저장하고 workflow를 트리거하기 위해 사용자의 GitHub 저장소에서 실행되어야 합니다. 아래 저장소를",
+      "after": "계정으로 포크합니다."
+    },
+    "forking": "포크 중…",
+    "forkRepo": "저장소 포크",
+    "checking": "확인 중…",
+    "alreadyForked": "이미 직접 포크했습니다",
+    "errors": {
+      "notVisible": "포크가 생성되었지만 저장소가 아직 표시되지 않습니다. 아래 \"이미 포크했습니다\"를 시도해 보세요.",
+      "notFound": "포크를 찾을 수 없습니다. GitHub에서 aaronjmars/aeon을 먼저 포크한 후 여기를 다시 클릭하세요."
+    }
+  },
+  "ghNotInstalled": {
+    "header": "GitHub CLI 설치",
+    "requires": {
+      "before": "Aeon에는",
+      "installFrom": "다음에서 설치하세요:",
+      "thenRestart": "그런 다음 Tachi Studio를 다시 시작하세요."
+    }
+  },
+  "forkBadge": {
+    "syncing": "[동기화 중…]",
+    "behind": "[포크 {{count}}개 뒤처짐]",
+    "title": "upstream보다 커밋 {{count}}개 뒤처짐 — 클릭하여 동기화"
+  },
+  "page": {
+    "checkingStatus": "gh 상태 확인 중…"
+  },
+  "intro": {
+    "title": "AEON — 클라우드 속 나의 에이전트",
+    "body": "Aeon은 이 앱이 꺼져 있어도 클라우드에서 나를 위해 일하는 에이전트입니다. 내 GitHub 포크({{owner}}/aeon)에 상주하며 리서치, 모니터링, 글쓰기 같은 스킬을 GitHub Actions로 자율 실행합니다 — 예약된 일정에 따라, 또는 작업을 보낼 때마다. 결과는 아래 최근 실행과 연결한 모든 채널(Telegram, Discord, Slack, 이메일)에 도착합니다."
+  },
+  "setup": {
+    "header": "설정 (최초 1회)",
+    "hint": "Provider 시크릿 + 알림 채널. 실행이 잘 되고 있다면 이미 완료된 것입니다."
+  },
+  "memory": {
+    "title": "Memory 검색",
+    "placeholder": "memory 검색...",
+    "searching": "[검색 중...]",
+    "errorPrefix": "[오류]",
+    "noResults": "[결과 없음]"
+  },
+  "skills": {
+    "title": "Skills ({{filtered}}/{{total}})",
+    "filterPlaceholder": "skills 필터…",
+    "refresh": "새로고침",
+    "loading": "workflow 불러오는 중…",
+    "noMatches": "일치하는 항목 없음.",
+    "empty": {
+      "actionsDisabled": {
+        "title": "이 포크에서 GitHub Actions가 비활성화되어 있습니다.",
+        "body": "포크는 보안상의 이유로 Actions가 꺼진 상태로 제공됩니다. ~121개의 skill workflow를 등록하려면 활성화하세요. 아래 원클릭으로 가능 — 터미널 불필요."
+      },
+      "noWorkflows": {
+        "title": "아직 등록된 workflow가 없습니다.",
+        "body": "방금 Actions를 활성화했다면, GitHub에 몇 초 정도 기다린 후 새로고침을 클릭하세요. skills가 upstream과 맞지 않으면 포크를 동기화하세요."
+      },
+      "enabling": "…활성화 중",
+      "enableActions": "▶ ENABLE ACTIONS",
+      "syncing": "…동기화 중",
+      "syncFromUpstream": "⟲ SYNC FROM UPSTREAM",
+      "openActionsTab": "Actions 탭 열기 ↗"
+    },
+    "analytics": {
+      "successRate": "성공률",
+      "streak": "연속 성공 횟수",
+      "avgDuration": "평균 소요 시간"
+    },
+    "run": {
+      "triggerTitle": "workflow 트리거",
+      "disabledTitle": "workflow가 비활성화되어 있습니다",
+      "label": "▶ 실행"
+    },
+    "toast": {
+      "actionsEnabled": "포크에서 GitHub Actions가 활성화되었습니다",
+      "synced": "upstream에서 포크가 동기화되었습니다 ({{mergeType}})",
+      "upToDate": "포크가 이미 upstream과 최신 상태입니다",
+      "syncFailed": "동기화 실패: {{error}}"
+    },
+    "errors": {
+      "enableFailed": "Actions 활성화 실패: {{error}}",
+      "syncFailed": "동기화 실패: {{error}}",
+      "triggerFailed": "{{name}} 트리거 실패: {{error}}"
+    }
+  },
+  "composer": {
+    "header": "Aeon에 작업 지시",
+    "reloadTitle": "skills 새로고침",
+    "reload": "새로고침",
+    "workflowLabel": "Workflow",
+    "noWorkflows": "아직 등록된 workflow가 없습니다. 왼쪽 Skills 카드를 사용하여 포크에서 Actions를 활성화하고 upstream에서 skills를 동기화하세요.",
+    "loadingOption": "불러오는 중…",
+    "disabledOption": "{{name}} (비활성화됨)",
+    "loadingInputs": "입력값 불러오는 중…",
+    "noInputs": {
+      "before": "이 workflow에는 선언된",
+      "after": "입력값이 없습니다."
+    },
+    "hideAdvanced": "▾ 고급 입력값 숨기기",
+    "showAdvanced": "▸ 고급 입력값 보기",
+    "dispatching": "발송 중…",
+    "dispatch": "▶ 발송",
+    "skillField": {
+      "before": "포크의",
+      "after": "디렉토리에서 하위 skill을 선택하거나 ({{count}}개 발견) 직접 이름을 입력하세요.",
+      "examplePlaceholder": "예: {{name}}",
+      "defaultPlaceholder": "skill-name"
+    },
+    "errors": {
+      "readInputs": "{{path}} 입력값을 읽을 수 없습니다: {{error}}",
+      "pickSkill": "먼저 skill을 선택하세요.",
+      "requiredEmpty": "필수 필드 \"{{name}}\"이 비어 있습니다.",
+      "tooManyInputs": "입력값이 너무 많습니다 ({{count}}개) — workflow_dispatch 최대 {{max}}개 제한."
+    },
+    "toast": {
+      "dispatched": "GitHub에 발송되었습니다",
+      "dispatchFailed": "발송 실패: {{error}}"
+    }
+  },
+  "dashboard": {
+    "stage": {
+      "idle": "대기 중",
+      "downloading": "GitHub에서 대시보드 소스 가져오는 중",
+      "extracting": "압축 해제 중",
+      "installingDeps": "대시보드 의존성 설치 중",
+      "installingGh": "GitHub CLI 가져오는 중 (최초 실행 시에만)",
+      "starting": "Next.js 개발 서버 시작 중",
+      "ready": "실행 중",
+      "error": "오류"
+    },
+    "resetConfirm": {
+      "message": "다음 실행 시 GitHub에서 대시보드를 다시 다운로드하시겠습니까? 로컬 캐시가 삭제됩니다 (~150 MB).",
+      "ok": "초기화"
+    },
+    "backTitle": "Aeon 홈으로 돌아가기",
+    "back": "← Aeon 홈",
+    "label": "DASHBOARD ·",
+    "reloadIframeTitle": "대시보드 iframe 새로고침",
+    "reload": "⟳ 새로고침",
+    "openInBrowser": "브라우저에서 열기 ↗",
+    "stopTitle": "대시보드 서버 중지",
+    "stop": "■ 중지",
+    "iframeTitle": "Aeon 대시보드",
+    "progress": {
+      "title": "{{stage}}…",
+      "body": "최초 실행 시 앱 내부에 Aeon의 대시보드를 설치합니다. 이는 일회성 설정으로 — 이후 실행 시 몇 초 안에 시작됩니다."
+    },
+    "launch": {
+      "errorTitle": "대시보드를 실행할 수 없습니다",
+      "title": "Aeon 대시보드",
+      "body": {
+        "before": "Aeon에는 자체 Next.js 대시보드가 포함되어 있습니다. Launch를 클릭하면 GitHub에서 최신 소스를 가져와 앱 내부에 설치하고 탭으로 임베드합니다. GitHub OAuth는 자동으로 전달되므로",
+        "after": "이 필요하지 않습니다."
+      },
+      "retry": "다시 실행",
+      "launch": "대시보드 실행",
+      "resetCacheTitle": "로컬 캐시를 삭제하고 다음 실행 시 강제로 재다운로드",
+      "resetCache": "캐시 초기화",
+      "yourFork": "GitHub의 내 포크 ↗",
+      "source": {
+        "before": "소스:",
+        "after": ". 앱 데이터에 캐시됨 — 이후 실행 시 재사용됩니다."
+      }
+    },
+    "prereq": {
+      "nodeMissing": {
+        "before": "PATH에서 Node.js가 감지되지 않습니다 —",
+        "after": "에서 설치하세요 (LTS 버전 권장)."
+      },
+      "npmMissing": "PATH에서 npm이 감지되지 않습니다 — Node.js에 번들로 포함되어 있습니다."
+    }
+  },
+  "channels": {
+    "header": "Channels · Aeon이 알림을 보내는 방법",
+    "intro": "Aeon은 이 채널들을 기본적으로 지원합니다 — 시크릿을 푸시하기만 하면 다음 실행 시 workflow가 채널을 활성화합니다. workflow 수정이 필요하지 않습니다.",
+    "pushedBadge": "GH에 푸시됨 ✓",
+    "pushing": "…푸시 중",
+    "pushMany": "{{count}}개 시크릿을 GitHub에 푸시",
+    "pushOne": "시크릿을 GitHub에 푸시",
+    "toast": {
+      "pushed": "{{channel}} 시크릿이 푸시되었습니다 — 다음 skill 실행 시 채널이 활성화됩니다",
+      "pushFailed": "푸시 실패: {{error}}"
+    },
+    "items": {
+      "telegram": {
+        "label": "Telegram",
+        "description": "가장 인기 있는 채널 — Aeon이 skill 출력을 메시지로 전송하고 명령으로 답장할 수 있습니다. @BotFather로 봇을 만든 후 계정에서 봇에게 /start를 전송하세요.",
+        "helpLabel": "BotFather 튜토리얼"
+      },
+      "discord-webhook": {
+        "label": "Discord (발신 전용)",
+        "description": "가장 간단한 Discord 설정 — 푸시 전용입니다. 채널 → 채널 편집 → 연동 → Webhooks → 만들기. 봇 권한이 필요하지 않습니다.",
+        "helpLabel": "Webhook 설정"
+      },
+      "discord-bot": {
+        "label": "Discord (수신 + 발신)",
+        "description": "완전한 양방향 Discord. discord.com/developers → 새 Application → Bot → Message Content intent 활성화, 봇 토큰 복사. channels:history 범위로 서버에 봇을 초대하세요.",
+        "helpLabel": "Discord Developer Portal"
+      },
+      "slack-webhook": {
+        "label": "Slack (발신 전용)",
+        "description": "푸시 전용 Slack. api.slack.com → Your Apps → Create New App → From scratch → Incoming Webhooks → Add to channel → URL 복사.",
+        "helpLabel": "Slack webhook 문서"
+      },
+      "slack-bot": {
+        "label": "Slack (수신 + 발신)",
+        "description": "완전한 양방향 Slack. App → OAuth & Permissions → channels:history + reactions:write 범위 추가 → 설치 → Bot User OAuth Token 복사. Channel ID는 URL에서 확인 가능합니다.",
+        "helpLabel": "봇 토큰 문서"
+      },
+      "email": {
+        "label": "이메일 (SendGrid)",
+        "description": "Skill 출력이 스타일링된 HTML 이메일로 도착합니다. sendgrid.com/settings/api_keys → Mail Send 권한으로 API Key 생성 → 복사. 알림을 받을 수신자 주소를 설정하세요.",
+        "helpLabel": "SendGrid API 키"
+      }
+    },
+    "secretLabels": {
+      "TELEGRAM_BOT_TOKEN": "봇 토큰",
+      "TELEGRAM_CHAT_ID": "Chat ID",
+      "DISCORD_WEBHOOK_URL": "Webhook URL",
+      "DISCORD_BOT_TOKEN": "봇 토큰",
+      "DISCORD_CHANNEL_ID": "Channel ID",
+      "SLACK_WEBHOOK_URL": "Webhook URL",
+      "SLACK_BOT_TOKEN": "봇 토큰",
+      "SLACK_CHANNEL_ID": "Channel ID",
+      "SENDGRID_API_KEY": "SendGrid API 키",
+      "NOTIFY_EMAIL_TO": "수신자 이메일"
+    }
+  },
+  "provider": {
+    "header": "Provider 시크릿 · GitHub Actions에 푸시",
+    "intro": {
+      "before": "이 키들은",
+      "after": "저장소에 GitHub Actions 시크릿으로 푸시되어 클라우드 측 skill 실행에 사용됩니다. 로컬 Chat 탭 키는 별도입니다."
+    },
+    "set": "설정됨",
+    "save": "저장",
+    "push": "푸시",
+    "pushing": "…푸시 중",
+    "activating": "…활성화 중",
+    "localBadge": "로컬 ✓",
+    "pushedBadge": "GH에 푸시됨 ✓",
+    "activeGatewayBadge": "활성 PROVIDER ✓",
+    "activeGatewayTitle": "aeon.yml gateway.provider = {{mode}}",
+    "ghSecret": "GH 시크릿 →",
+    "useDifferentKey": "다른 키 사용",
+    "pushLocalButton": "로컬 {{label}} 키를 GitHub에 푸시",
+    "activateTitle": "포크의 aeon.yml에 gateway.provider={{mode}} 설정",
+    "activateButton": "→ {{label}} 활성화 (aeon.yml gateway: {{mode}} 설정)",
+    "patch": {
+      "title": "OpenGateway workflow 패치",
+      "applied": "적용됨 ✓",
+      "notApplied": "미적용",
+      "body": {
+        "part1": "Aeon의 upstream workflow는",
+        "part2": "또는",
+        "part3": "을 읽지 않습니다. 이 원클릭 패치는 4줄의 job 레벨",
+        "part4": "블록을 포크에 커밋하여 OpenGateway 시크릿이 Claude Code에서 인식되도록 합니다."
+      },
+      "applying": "…적용 중",
+      "applyButton": "패치 적용 (포크에 커밋)",
+      "reverting": "…되돌리는 중",
+      "revertButton": "패치 되돌리기"
+    },
+    "rows": {
+      "anthropic-oauth": {
+        "label": "Anthropic OAuth",
+        "description": "Anthropic /chat에서 가져온 OAuth 갱신 토큰 (Anthropic Pro 로그인). Aeon workflow는 Claude Code OAuth 모드를 통해 이를 사용합니다 — 권장 방식입니다."
+      },
+      "anthropic": {
+        "label": "Anthropic API 키",
+        "description": "직접 Anthropic API 키 (sk-ant-api03-…). gateway 모드가 아닐 때 workflow가 ANTHROPIC_API_KEY로 읽습니다."
+      },
+      "bankr-gateway": {
+        "label": "Bankr",
+        "description": "Bankr LLM 키 (bk_…). Aeon은 Bankr를 기본 지원합니다 — \"활성화\"를 클릭하여 aeon.yml에 gateway.provider=bankr를 설정하세요."
+      },
+      "opengateway": {
+        "label": "OpenGateway",
+        "description": "OpenGateway 키 (ogw_live_…). 두 가지 시크릿을 푸시합니다: ANTHROPIC_BASE_URL + ANTHROPIC_AUTH_TOKEN. 아래 workflow 패치가 필요합니다 — Aeon은 OpenGateway를 통한 라우팅을 기본 지원하지 않습니다."
+      }
+    },
+    "toast": {
+      "gatewayUpdated": "aeon.yml이 업데이트되었습니다 — {{label}}이 이제 활성 provider입니다",
+      "gatewayAlready": "{{label}}이 이미 aeon.yml에서 활성 상태입니다",
+      "activateFailed": "활성화 실패: {{error}}",
+      "patchAlready": "Workflow가 이미 OpenGateway용으로 패치되어 있습니다",
+      "patched": "포크 workflow가 패치되었습니다 — OpenGateway가 이제 Claude Code를 통해 연결됩니다",
+      "patchFailed": "패치 실패: {{error}}",
+      "reverted": "OpenGateway 패치가 되돌려졌습니다 — workflow가 upstream 상태로 복원됩니다",
+      "revertFailed": "되돌리기 실패: {{error}}",
+      "pushedLocal": "로컬 {{label}} 키가 {{owner}}/aeon의 GitHub 시크릿으로 푸시되었습니다",
+      "pushFailed": "푸시 실패: {{error}}",
+      "savedExplicit": "{{label}} → {{owner}}/aeon의 {{secretName}}"
+    }
+  },
+  "drawer": {
+    "tabs": {
+      "result": "결과",
+      "logs": "로그"
+    },
+    "resultTitle": "파싱된 결과, 생성된 파일, token 사용량 표시",
+    "resultTitleDisabled": "실행 완료 후 사용 가능",
+    "refresh": "새로고침",
+    "reload": "새로고침",
+    "openOnGithubTitle": "GitHub에서 열기",
+    "openOnGithub": "GitHub에서 열기 ↗",
+    "closeTitle": "닫기 (Esc)",
+    "close": "닫기",
+    "jobs": {
+      "title": "Jobs ({{count}})",
+      "waiting": "runner 대기 중…",
+      "none": "이 실행에 job이 없습니다."
+    },
+    "logs": {
+      "title": "로그",
+      "live": "● 실시간",
+      "fetching": "가져오는 중…",
+      "queued": "Job이 대기열에 있습니다 — runner를 기다리는 중…",
+      "noOutput": "아직 로그 출력이 없습니다.",
+      "selectJob": "로그를 보려면 job을 선택하세요."
+    },
+    "errors": {
+      "loadJobs": "jobs 불러오기 실패: {{error}}",
+      "logFetch": "[로그 가져오기 오류] {{error}}"
+    },
+    "result": {
+      "loadingLogs": "실행 로그 불러오는 중…",
+      "whatItDid": "수행 내용",
+      "noSummary": "skill이 최종 출력에 구조화된 요약을 내보내지 않았습니다. 원시 실행 결과는 LOGS로 전환하세요.",
+      "filesProduced": "생성된 파일",
+      "filesProducedCount": "생성된 파일 ({{count}}개)",
+      "noFiles": "이 실행에서 파일 변경이 감지되지 않았습니다.",
+      "openFileTitle": "GitHub에서 {{path}} 열기",
+      "open": "열기 ↗",
+      "commit": "커밋",
+      "openShort": "열기 ↗",
+      "tokenUsage": "Token 사용량",
+      "tokens": {
+        "cacheRead": "캐시 읽기",
+        "cacheCreation": "캐시 생성"
+      },
+      "browseOutputs": "출력 탐색",
+      "outputsTitle": "JSON 형식의 skill 출력 (Aeon 대시보드 피드)",
+      "links": {
+        "outputs": "dashboard/outputs ↗",
+        "articles": "articles ↗",
+        "commits": "모든 커밋 ↗",
+        "thisRun": "GitHub의 이 실행 ↗"
+      }
+    }
+  },
+  "runs": {
+    "header": "최근 실행",
+    "refresh": "새로고침",
+    "loading": "실행 목록 불러오는 중…",
+    "empty": "아직 실행 기록이 없습니다. skill을 트리거하여 결과를 확인하세요.",
+    "rerun": "▶ 재실행",
+    "rerunTitle": "재실행",
+    "deleteTitle": "실행 삭제",
+    "confirmDeleteTitle": "다시 클릭하여 확인",
+    "sure": "확실합니까?",
+    "row": {
+      "openTitle": "실시간 실행 세부 정보 열기"
+    },
+    "card": {
+      "title": "클릭하여 열기 · 대기열로 드래그하여 재실행",
+      "rerunTitle": "이 workflow 재실행",
+      "confirmDeleteTitle": "다시 클릭하여 삭제 확인"
+    },
+    "kanban": {
+      "todo": "대기 중",
+      "running": "실행 중",
+      "failed": "실패",
+      "done": "완료",
+      "dropHint": "↓ 드롭하여 재실행"
+    },
+    "toast": {
+      "rerunning": "{{name}} 재실행 중",
+      "rerunFailed": "재실행 실패: {{error}}",
+      "deleted": "{{name}} 삭제됨",
+      "deleteFailed": "삭제 실패: {{error}}",
+      "alreadyRunning": "이미 실행 중입니다"
+    }
+  }
+}

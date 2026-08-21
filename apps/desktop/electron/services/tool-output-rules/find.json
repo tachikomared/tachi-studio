@@ -1,0 +1,9 @@
+{
+  "id": "bash/find",
+  "matches": { "toolName": "Bash", "stdoutContains": ["find ", "find.exe"] },
+  "transforms": { "stripAnsi": true, "dedupeAdjacent": true },
+  "success": { "head": 100, "tail": 0, "maxChars": 8000 },
+  "failure": { "head": 20, "tail": 20, "maxChars": 4000 },
+  "preserveOnFailure": false,
+  "suffixOnTruncation": "+{n} more"
+}

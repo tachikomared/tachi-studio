@@ -1,0 +1,50 @@
+{
+  "toolbar": {
+    "title": "[FREELLMAPI] 仪表板"
+  },
+  "actions": {
+    "reload": "[重新加载]",
+    "openInBrowser": "[在浏览器中打开]"
+  },
+  "iframe": {
+    "title": "freellmapi 仪表板"
+  },
+  "status": {
+    "probing": "[探测中]",
+    "ready": "[就绪]",
+    "unreachable": "[无法访问]"
+  },
+  "probing": {
+    "label": "[探测中] {{url}}"
+  },
+  "unreachable": {
+    "title": "[无法访问] freellmapi 无响应",
+    "body": "freellmapi 随 Tachi Studio 自动启动。如果启动失败，请检查仪表板页面的服务错误，然后点击重新加载：",
+    "portLine": "端口：{{port}}"
+  },
+  "errors": {
+    "healthFalse": "服务健康检查返回 false — freellmapi 可能仍在启动"
+  },
+  "api": {
+    "title": "在你的代码中调用",
+    "tabs": {
+      "curl": "curl",
+      "python": "Python",
+      "javascript": "JavaScript"
+    },
+    "copy": "[复制]",
+    "copied": "[已复制 — 含真实密钥]",
+    "copiedNoKey": "[已复制 — 占位密钥]",
+    "keyNote": "复制时会插入你的真实 API 密钥 — 代码片段中仅显示 {{placeholder}}。适用于任何 OpenAI 兼容 SDK；模型 \"auto\" 会路由到 FreeLLM / llama.cpp。",
+    "status": {
+      "running": "[ 运行中 ]",
+      "stopped": "[ 已停止 ]",
+      "disabled": "[ 已禁用 ]"
+    }
+  },
+  "disclosure": {
+    "title": "免费线路——背后是什么",
+    "trainsOnPrompts": "此路由器背后的部分免费上游可能会使用你的提示词进行训练（Kilo 的免费模型在其自有目录中已如此声明）。请勿发送机密或隐私数据——那些请使用本地提供方。",
+    "trainsBadge": "可能使用你的提示词训练"
+  }
+}

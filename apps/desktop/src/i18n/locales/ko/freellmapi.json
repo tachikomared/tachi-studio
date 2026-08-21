@@ -1,0 +1,50 @@
+{
+  "toolbar": {
+    "title": "[FREELLMAPI] 대시보드"
+  },
+  "actions": {
+    "reload": "[새로고침]",
+    "openInBrowser": "[브라우저에서 열기]"
+  },
+  "iframe": {
+    "title": "freellmapi 대시보드"
+  },
+  "status": {
+    "probing": "[연결 확인 중]",
+    "ready": "[준비됨]",
+    "unreachable": "[연결 불가]"
+  },
+  "probing": {
+    "label": "[연결 확인 중] {{url}}"
+  },
+  "unreachable": {
+    "title": "[연결 불가] freellmapi가 응답하지 않습니다",
+    "body": "freellmapi는 Tachi Studio와 함께 자동으로 시작됩니다. 시작에 실패했다면 Dashboard 페이지에서 서비스 오류를 확인한 후 새로고침을 클릭하세요:",
+    "portLine": "포트: {{port}}"
+  },
+  "errors": {
+    "healthFalse": "서비스 상태 확인이 false를 반환했습니다 — freellmapi가 아직 시작 중일 수 있습니다"
+  },
+  "api": {
+    "title": "코드에서 사용하기",
+    "tabs": {
+      "curl": "curl",
+      "python": "Python",
+      "javascript": "JavaScript"
+    },
+    "copy": "[복사]",
+    "copied": "[복사됨 — 키 포함]",
+    "copiedNoKey": "[복사됨 — 자리표시자 키]",
+    "keyNote": "복사하면 실제 API 키가 삽입됩니다 — 스니펫에는 {{placeholder}}로 표시됩니다. 모든 OpenAI 호환 SDK에서 작동하며, 모델 \"auto\"는 FreeLLM / llama.cpp로 라우팅됩니다.",
+    "status": {
+      "running": "[ 실행 중 ]",
+      "stopped": "[ 중지됨 ]",
+      "disabled": "[ 비활성화 ]"
+    }
+  },
+  "disclosure": {
+    "title": "무료 경로 — 그 뒤에 있는 것",
+    "trainsOnPrompts": "이 라우터 뒤의 일부 무료 업스트림은 사용자의 프롬프트를 학습에 사용할 수 있습니다(Kilo의 무료 모델은 자체 카탈로그에 그렇게 명시하고 있습니다). 기밀이나 개인 데이터는 보내지 말고, 그런 경우에는 로컬 제공자를 사용하세요.",
+    "trainsBadge": "프롬프트가 학습에 쓰일 수 있음"
+  }
+}

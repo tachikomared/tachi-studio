@@ -1,0 +1,152 @@
+{
+  "steps": {
+    "welcome": "ようこそ",
+    "privacy": "プライバシー",
+    "provider": "プロバイダー",
+    "vibe": "ビベ",
+    "done": "完了"
+  },
+  "footer": {
+    "step": "ステップ {{current}} / {{total}}",
+    "skipAll": "すべてスキップ"
+  },
+  "nav": {
+    "back": "戻る",
+    "continue": "続ける"
+  },
+  "welcome": {
+    "heading": "ゼロターミナルAIワークベンチ",
+    "builtBy": "TachikomaRedがBankrで構築",
+    "features": {
+      "chat": "あんなモデルとチャット — Anthropic、Ollama、OpenRouter、無料枠",
+      "code": "エージェント ループでコード出荷、ターミナル不要",
+      "aeon": "Aeon HQ: kanban + GitHub Actionsで実行スキル"
+    },
+    "continue": "続ける",
+    "skip": "オンボーディング スキップ",
+    "choose": "進め方を選ぶ",
+    "cards": {
+      "local": {
+        "title": "ローカルで実行",
+        "desc": "あなたのハードウェアに合わせて選ばれたモデルをダウンロードし、このマシンで実行します。アカウント不要、キー不要。",
+        "hint": "次へ: モデルカタログ"
+      },
+      "cloud": {
+        "title": "API キーを持ち込む",
+        "desc": "クラウドプロバイダー — Bankr、Anthropic、OpenRouter — を自分のキーで接続します。",
+        "hint": "次へ: キー入力フォーム"
+      },
+      "explore": {
+        "title": "まず見てみる",
+        "desc": "セットアップを飛ばして見て回りましょう。モデルやキーは後から設定で追加できます。",
+        "hint": "次へ: そのまま開始"
+      }
+    },
+    "privacyNote": "プロンプトがこのマシンに留まるのは、ローカルモデル（Ollama または llama.cpp）を使うときだけです。キー不要のルーターは無料のクラウドプロバイダーに転送します。"
+  },
+  "privacy": {
+    "heading": "どのように開始しますか?",
+    "subtext": "コマンド パレット → 「Toggle PRIVATE MODE」でいつでも切り替えできます。",
+    "free": {
+      "title": "無料 + 高速",
+      "recommended": "推奨",
+      "tagline": "(すべての人 — チャットへの最速パス)",
+      "features": {
+        "cloud": "クラウド プロバイダー有効",
+        "freeTier": "無料枠デフォルト",
+        "oneClick": "ワンクリック チャット",
+        "noKey": "pollinations / llm7のキー不要"
+      },
+      "pick": "[ 無料 + 高速を選択 ]"
+    },
+    "private": {
+      "title": "プライベート + ローカル",
+      "strict": "厳格",
+      "tagline": "(パラノイド / 暗号ネイティブ — ローカルのみ)",
+      "features": {
+        "cloudLocked": "クラウド プロバイダー ロック",
+        "ollamaOnly": "ollama のみ許可",
+        "noEgress": "ネットワーク 出口 なし",
+        "toolsDenied": "ツール 呼び出し デニーリスト"
+      },
+      "pick": "[ プライベート + ローカル を選択 ]"
+    },
+    "skipForNow": "今のところスキップ"
+  },
+  "provider": {
+    "heading": "プロバイダーを選択",
+    "subtext": "これは後で設定で変更できます。",
+    "privateBanner": {
+      "title": "[ PRIVATE MODE ACTIVE ]",
+      "body": "ローカル プロバイダー のみ選択できます。クラウド プロバイダー はロック — 後で PRIVATE MODE をオフにしてそれらを有効化。"
+    },
+    "list": {
+      "freellmapi": "無料枠、APIキーは不要。共有レート制限が適用。",
+      "bankr-gateway": "BankrキーをペーストしてBankrクラウドプロバイダーを使用。",
+      "anthropic-oauth": "Anthropic ProまたはMaxアカウントでOAuthログイン。",
+      "ollama": "このマシンで実行Ollamaを経由ローカル推論。キー不要。",
+      "openrouter": "OpenRouter OAuthを経由数百個のモデルにアクセス。"
+    },
+    "selected": "選択済み",
+    "locked": "ロック",
+    "lockedTitle": "PRIVATE MODE でブロック — ローカル プロバイダー (Ollama)のみ許可",
+    "bankrKey": "Bankrキー",
+    "test": "テスト",
+    "hints": {
+      "connected": "接続済み",
+      "authInvalid": "キー拒否 (401/403)。キーを再確認。",
+      "degraded": "アップストリーム エラーで応答。",
+      "unreachable": "ホスト到達不可 — ネットワークまたはURLをチェック。"
+    },
+    "skipStep": "ステップをスキップ",
+    "testStates": {
+      "ok": "OK",
+      "auth": "認証エラー",
+      "noNet": "接続なし",
+      "warn": "警告"
+    },
+    "gpuBanner": {
+      "title": "GPU 利用可能",
+      "body": "{{gpu}}（{{vram}}）を検出 — GPU で完全ローカルにモデルを実行できます。今はプロバイダーを選択し、ローカルモデルは設定 → llama.cpp でいつでも追加できます。"
+    }
+  },
+  "vibe": {
+    "heading": "ビベを選択",
+    "subtext": "最初に何をしたい?",
+    "selected": "選択済み",
+    "list": {
+      "chat": {
+        "label": "チャット",
+        "desc": "モデルとただ話す",
+        "detail": "あんなプロバイダーで開放的チャット。Q&A、ライティング、ブレーンストーミング最良。"
+      },
+      "code": {
+        "label": "コード",
+        "desc": "エージェント でフィーチャー出荷",
+        "detail": "あなたのマシンでコード読む、書く、実行するエージェント ループ。ゼロ ターミナル必要。"
+      },
+      "aeon": {
+        "label": "Aeon HQ",
+        "desc": "GitHub Actionsで kanban + スキル",
+        "detail": "kanbanボードからクラウド エージェント ディスパッチ。スキル をフォークで GitHub Actions で実行。"
+      }
+    }
+  },
+  "done": {
+    "status": "セットアップ 完了",
+    "heading": "セットアップ完了。",
+    "hints": {
+      "chat": "チャット へ行ってチャット開始。",
+      "code": "エージェント モード を開いてタスク説明 — これはあなたのマシンでコード読み書き実行。",
+      "aeon": "Aeon HQ を開く、リポジトリをフォーク、最初スキルをディスパッチ。",
+      "default": "サイドバーを探索して開始。",
+      "local": "次はモデルカタログが開きます — あなたのハードウェアに合ったサイズのモデルを手に入れましょう。"
+    },
+    "next": {
+      "settings": "追加プロバイダーまたはテーマを設定するために設定を開く",
+      "shortcut": "いつでも Cmd/Ctrl+, を使用して設定にジャンプ",
+      "sidebar": "Chat、Agent、Dashboard、Aeon HQ のサイドバーをチェック"
+    },
+    "open": "Tachi Studio を開く"
+  }
+}

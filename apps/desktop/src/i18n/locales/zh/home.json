@@ -1,0 +1,35 @@
+{
+  "heading": "问任何东西",
+  "subtitle": "由 11 个免费 AI 提供商提供支持 — 无需云。",
+  "placeholder": "您在想什么？",
+  "startChat": "开始聊天",
+  "slashHint": "输入 / 查看命令",
+  "spent": "今天花费 — free tier",
+  "recent": "最近",
+  "quickStarts": {
+    "url": "总结 URL",
+    "code": "解释代码",
+    "tweet": "写推文",
+    "translate": "翻译",
+    "brainstorm": "头脑风暴",
+    "folder": "以 agent 形式打开文件夹"
+  },
+  "actions": {
+    "chat": "新对话",
+    "code": "编码文件夹",
+    "design": "新设计",
+    "nodes": "节点画布",
+    "models": "获取模型"
+  },
+  "health": {
+    "spent": "30天支出",
+    "apiUp": "本地 API :{{port}}",
+    "apiDown": "本地 API 关闭",
+    "open": "仪表盘"
+  },
+  "recentTypes": {
+    "chat": "对话",
+    "design": "设计",
+    "flow": "流程"
+  }
+}

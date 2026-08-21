@@ -1,0 +1,52 @@
+name: CI
+
+# The enforcement loop (audit M0): typecheck + both test suites + build on every
+# push/PR. The whole test suite runs in ~2s, so the gate is nearly free. Sidecars
+# are NOT downloaded here — they're extraResources at package time, and the build
+# doesn't need them — which also keeps the freellmapi clone/build out of CI.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  verify:
+    # All three platforms. The unit suite used to carry Windows path assumptions
+    # that nobody could see — it passed for months and failed the first time it
+    # ever ran on Linux, because `C:\Fake…` is a RELATIVE path to a POSIX runner.
+    # fail-fast is off, so one platform's failure still reports the others.
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        # No version here on purpose: pnpm/action-setup reads `packageManager`
+        # from package.json, so the toolchain is pinned in ONE place. Hardcoding
+        # 9 here is what made the first real release run fail on all three
+        # runners — overrides moved to pnpm-workspace.yaml in pnpm 10, which a
+        # pnpm 9 install cannot see, so --frozen-lockfile reported a config
+        # mismatch against a lockfile written by 11.
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: 'pnpm' }
+      - run: pnpm install --frozen-lockfile
+      - name: Typecheck (renderer + main)
+        run: pnpm -F tachi-studio-desktop typecheck
+      - name: Test (core)
+        run: pnpm -F core test
+      - name: Test (desktop)
+        run: pnpm -F tachi-studio-desktop test
+      - name: Build (electron-vite)
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
+        run: pnpm -F tachi-studio-desktop build
+      # THIRD_PARTY_NOTICES.md is generated from the production dependency graph
+      # and SHIPS INSIDE the installer (electron-builder extraResources), which
+      # is what makes staleness a licensing problem rather than a tidiness one.
+      # The generator refuses to classify a licence family it has never seen, so
+      # this also fails the day a new copyleft dependency arrives.
+      - name: Third-party notices are current
+        run: node scripts/gen-notices.mjs --check

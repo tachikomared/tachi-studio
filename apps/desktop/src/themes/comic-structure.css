@@ -1,0 +1,210 @@
+/* ── STRUCTURE LAYER ─────────────────────────────────────────────────────────
+   themes/<id>-structure.css — the OPTIONAL second stylesheet a theme may ship to
+   change GEOMETRY, not just palette. A palette theme (comic.css) only re-defines
+   CSS variables; a structure layer re-shapes the actual elements — chamfered
+   corners, corner-tick decorations, halftone texture, stepped input notches.
+
+   CONVENTION (see recipes/ADDING-A-THEME.md → "Structure layer"):
+   • Every rule MUST be scoped under :root[data-theme="<id>"] so it is inert
+     unless this exact theme is active — it never leaks into the other themes.
+   • Target ELEMENT selectors + a few broad container hook classes ONLY:
+     button, input, textarea, select, kbd, h1/h2, body, and existing hook
+     classes (.tachi-settings-card). NEVER a component-specific class — every
+     component is inline-styled and must stay untouched.
+   • Geometry only: clip-path / filter / pseudo-element decorations / background
+     texture. NO size / margin / padding / layout changes — a structure theme
+     must never reflow the app or break legibility.
+
+   COMIC — "BLUEPRINT COMIC": inked graphic-novel panel. Chamfered (corner-cut)
+   buttons carrying a hard BLACK cel shadow, halftone dot paper, [ bracketed ]
+   headings, heavy-framed inputs with a stepped diagonal notch. The palette lives
+   in comic.css; this file owns the shapes.
+
+   drop-shadow, not box-shadow: a box-shadow is painted OUTSIDE the border-box and
+   is therefore CLIPPED AWAY by clip-path. filter: drop-shadow() is applied to the
+   already-clipped raster, so the cel shadow faithfully traces the chamfered
+   octagon. Wherever we clip, we kill box-shadow (incl. inline hard-offset shadows,
+   hence !important) and reissue the offset as a drop-shadow.
+
+   prefers-reduced-motion: every effect here is STATIC (no animation), so it is
+   inherently reduced-motion-safe; the press micro-motion that DOES animate lives
+   in globals.css and is already guarded there.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ── GROUP A · Buttons — chamfered octagon + black cel drop-shadow ───────────
+   Cut all four corners into a subtle octagon and cast the signature hard black
+   offset via filter so it hugs the cut shape. box-shadow is force-cleared so no
+   inline hard-offset survives to be clipped into a torn corner.
+
+   A1 · THE CUT — every control, ghost included. clip-path clips the BORDER
+   BOX; it never reads the alpha channel, so the ghost hazard that governs
+   drop-shadow does not apply here. Keeping the cut inside the ghost exclusion
+   (as this sheet first shipped) silently left every ghost button square —
+   every sidebar nav item, RECENT row and micro-label carries inline
+   `background: transparent` and was never chamfered (the same latent cosmetic
+   PATCH-01 fixed in tachi-opus5-structure.css / tachikoma-red-structure.css).
+
+   A2 · THE OFFSET — SOLID CONTROLS ONLY — see the "drop-shadow duplicates
+   ghost text" rule in recipes/ADDING-A-THEME.md. filter: drop-shadow() traces
+   an element's ALPHA, not its box. On a ghost button the only opaque pixels
+   are the glyphs, so the shadow would paint a black COPY OF THE TEXT 3px
+   down-right — every sidebar nav item, RECENT row and micro-label would read
+   as doubled/struck through. GROUP B's hover halftone still reaches ghost
+   buttons.
+
+   The ghost test keys off the inline background every button in this app
+   carries (components are inline-styled, and the structure layer may not
+   target component classes). Match the VALUE, not a bare `none`: a loose
+   `[style*=": none"]` also catches `border-image: none` and would strip the
+   chamfer from solid buttons. */
+:root[data-theme="comic"] button:not(:disabled) {
+  clip-path: polygon(
+    6px 0, calc(100% - 6px) 0,
+    100% 6px, 100% calc(100% - 6px),
+    calc(100% - 6px) 100%, 6px 100%,
+    0 calc(100% - 6px), 0 6px
+  );
+}
+:root[data-theme="comic"] button:not(:disabled):not(
+    [style*="background: transparent"],
+    [style*="background: none"],
+    [style*="background-color: transparent"]
+  ) {
+  box-shadow: none !important;
+  filter: drop-shadow(
+    var(--comic-cel-offset, 3px) var(--comic-cel-offset, 3px) 0 var(--border-strong)
+  );
+}
+
+/* Press interplay — globals.css still owns the transform (hover nudges up-left,
+   :active lands 2px down-right). Here we only grow / collapse the cel shadow so
+   the drop-shadow behaves like the box-shadow it replaced. Retuning it through
+   a custom property keeps the long ghost-exclusion selector written once;
+   setting the variable on a ghost button is inert (it applies no filter). */
+:root[data-theme="comic"] button:not(:disabled):hover  { --comic-cel-offset: 4px; }
+:root[data-theme="comic"] button:not(:disabled):active { --comic-cel-offset: 0px; }
+/* Disabled buttons stay flat — no chamfer shadow, no clip torn corner. */
+:root[data-theme="comic"] button:disabled {
+  filter: none;
+}
+
+/* ── GROUP B · Halftone dot paper ───────────────────────────────────────────
+   A cheap pure-CSS halftone: a tiled radial-gradient dot grid over the paper
+   base. Static (no animation) → reduced-motion-safe by construction. */
+:root[data-theme="comic"] body {
+  background-color: var(--bg-base);
+  background-image: radial-gradient(var(--text-primary) 0.8px, transparent 1px);
+  background-size: 7px 7px;
+  background-attachment: fixed;
+}
+/* Ghost/transparent buttons pick up a faint halftone fill on hover — the inked
+   "shading" tick from the mock, layered only on the hovered control. */
+:root[data-theme="comic"] button:not(:disabled):hover {
+  background-image: radial-gradient(var(--text-primary) 0.7px, transparent 1px);
+  background-size: 5px 5px;
+}
+
+/* ── GROUP C · Heading corner-tick brackets ─────────────────────────────────
+   [ bracketed ] look from the mock: L-shaped ink ticks at the top-left and
+   bottom-right corners of h1/h2 titles, drawn with pseudo-element borders.
+   position:relative is layout-neutral; the ticks are pointer-events:none and
+   only a few px outset, so they never collide with adjacent content or reflow. */
+:root[data-theme="comic"] h1,
+:root[data-theme="comic"] h2 {
+  position: relative;
+}
+:root[data-theme="comic"] h1::before,
+:root[data-theme="comic"] h2::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -6px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
+  pointer-events: none;
+}
+:root[data-theme="comic"] h1::after,
+:root[data-theme="comic"] h2::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: -6px;
+  width: 7px;
+  height: 7px;
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+  pointer-events: none;
+}
+
+/* ── GROUP D · Text inputs & selects — heavy ink double-frame ────────────────
+   Single-line fields keep clean rectangles (no clip-path → the caret is never
+   clipped at the edges). The comic feel comes from a thick ink border plus an
+   inset "double-rule" line, and a thick BLACK focus ring instead of the thin
+   accent outline. Excludes checkbox/radio/range/color/file (native controls). */
+:root[data-theme="comic"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+:root[data-theme="comic"] select {
+  border: var(--border-width) solid var(--border);
+  box-shadow: inset 0 0 0 1px var(--bg-base);
+}
+:root[data-theme="comic"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):focus,
+:root[data-theme="comic"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):focus-visible,
+:root[data-theme="comic"] select:focus,
+:root[data-theme="comic"] select:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--border-strong);
+}
+
+/* ── GROUP E · Textareas — stepped diagonal notch ───────────────────────────
+   The multi-line surface is roomy enough to carry a real clip-path notch with
+   zero risk of clipping text (generous internal padding). Top-right and
+   bottom-left get a stepped cut → the diagonal "torn panel" signature. The
+   thick focus ring is an INSET shadow so the clip-path can't shear it off. */
+:root[data-theme="comic"] textarea {
+  border: var(--border-width) solid var(--border);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    calc(100% - 12px) 5px,
+    100% 5px,
+    100% 100%,
+    12px 100%,
+    12px calc(100% - 5px),
+    0 calc(100% - 5px)
+  );
+}
+:root[data-theme="comic"] textarea:focus,
+:root[data-theme="comic"] textarea:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--border-strong);
+}
+
+/* ── GROUP F · kbd chip — chamfered mini-key ─────────────────────────────────
+   Match the button geometry at small scale: cut corners + a 1px ink drop-shadow
+   replacing the clipped box-shadow that globals.css gives kbd. */
+:root[data-theme="comic"] kbd {
+  clip-path: polygon(
+    3px 0, calc(100% - 3px) 0,
+    100% 3px, 100% calc(100% - 3px),
+    calc(100% - 3px) 100%, 3px 100%,
+    0 calc(100% - 3px), 0 3px
+  );
+  box-shadow: none !important;
+  filter: drop-shadow(1px 1px 0 var(--border-strong));
+}
+
+/* ── GROUP G · Card container hook — chamfered inked panel ───────────────────
+   .tachi-settings-card is the shared card wrapper (SettingsCard). Chamfer it
+   like a comic panel and reissue its inline hard-offset shadow as a drop-shadow
+   so the cel shadow follows the cut. box-shadow:none !important is required to
+   defeat the component's INLINE box-shadow (which would otherwise be clipped). */
+:root[data-theme="comic"] .tachi-settings-card {
+  clip-path: polygon(
+    10px 0, 100% 0,
+    100% calc(100% - 10px), calc(100% - 10px) 100%,
+    0 100%, 0 10px
+  );
+  box-shadow: none !important;
+  filter: drop-shadow(3px 3px 0 var(--border-strong));
+}

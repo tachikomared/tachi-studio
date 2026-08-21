@@ -1,0 +1,55 @@
+{
+  "comingSoon": "Provider (in Kürze verfügbar)",
+  "taskTags": {
+    "agentic": {
+      "label": "Arbeitet selbstständig",
+      "blurb": "Kann Werkzeuge benutzen und mehrere Schritte allein gehen — Dateien lesen, suchen, Befehle ausführen — statt nur zu antworten."
+    },
+    "coding": {
+      "label": "Code schreiben",
+      "blurb": "Die Hersteller veröffentlichen es als Modell fürs Programmieren; die Aussage und ihr Datum stehen am Modell."
+    },
+    "everyday": {
+      "label": "Alltagsfragen",
+      "blurb": "Im günstigen Preisbereich und damit eine sinnvolle Voreinstellung für kurze Fragen, Entwürfe und Zusammenfassungen."
+    },
+    "long-context": {
+      "label": "Lange Dokumente",
+      "blurb": "Hält sehr viel Text auf einmal — einen langen Bericht oder einen ganzen Ordner voller Notizen."
+    },
+    "vision": {
+      "label": "Liest Bilder",
+      "blurb": "Sie können einen Screenshot oder ein Foto anhängen und Fragen dazu stellen."
+    },
+    "uncensored": {
+      "label": "Unzensiert",
+      "blurb": "Der Anbieter selbst beschreibt dieses Modell als unzensiert — weniger Inhaltsverweigerungen. Seine eigene Aussage samt Lesedatum wird am Modell angezeigt."
+    },
+    "frontier": {
+      "label": "Spitzenklasse",
+      "blurb": "Die Flaggschiff-Modelle der Anbieter, rein nach Preis gruppiert: jedes rechnet zum höchsten Satz unserer Liste ab. Dass sie am meisten kosten, ist Fakt; dass sie für Ihre Aufgabe am besten sind, wird nicht versprochen."
+    },
+    "free": {
+      "label": "Kostet nichts",
+      "blurb": "Jetzt gerade kostenlos — entweder Ihre eigene Hardware oder ein kostenloser Tarif, den wir am angegebenen Datum beim Anbieter geprüft haben."
+    }
+  },
+  "priceBands": {
+    "free": {
+      "label": "Kostenlos",
+      "blurb": "Für dieses Modell wird nichts berechnet — der Preis neben diesem Hinweis beträgt 0 $."
+    },
+    "budget": {
+      "label": "Günstig",
+      "blurb": "Gehört zum günstigen Ende unserer Liste. Der genaue Preis steht neben diesem Hinweis."
+    },
+    "mid": {
+      "label": "Mittleres Preisniveau",
+      "blurb": "Zwischen der günstigen und der teuersten Stufe. Der genaue Preis steht neben diesem Hinweis."
+    },
+    "premium": {
+      "label": "Am teuersten",
+      "blurb": "Eines der teuersten Modelle in unserer Liste. Prüfe den Preis neben diesem Hinweis, bevor du einen langen Auftrag startest."
+    }
+  }
+}

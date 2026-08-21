@@ -1,0 +1,152 @@
+{
+  "steps": {
+    "welcome": "Bienvenue",
+    "privacy": "Confidentialité",
+    "provider": "Fournisseur",
+    "vibe": "Vibe",
+    "done": "Terminé"
+  },
+  "footer": {
+    "step": "Étape {{current}} sur {{total}}",
+    "skipAll": "Sauter tout"
+  },
+  "nav": {
+    "back": "Retour",
+    "continue": "Continuer"
+  },
+  "welcome": {
+    "heading": "Établi d'IA sans terminal",
+    "builtBy": "Construit par TachikomaRed sur Bankr",
+    "features": {
+      "chat": "Discuter avec n'importe quel modèle — Anthropic, Ollama, OpenRouter, free tier",
+      "code": "Livrer du code avec une boucle agentic, aucun terminal requis",
+      "aeon": "Aeon HQ : kanban + skills fonctionnant sur GitHub Actions"
+    },
+    "continue": "Continuer",
+    "skip": "Sauter l'onboarding",
+    "choose": "Choisissez votre voie",
+    "cards": {
+      "local": {
+        "title": "EXÉCUTER EN LOCAL",
+        "desc": "Téléchargez un modèle choisi pour votre matériel et exécutez-le sur cette machine. Pas de compte, pas de clé.",
+        "hint": "SUITE : CATALOGUE DE MODÈLES"
+      },
+      "cloud": {
+        "title": "APPORTER SA CLÉ API",
+        "desc": "Connectez un fournisseur cloud — Bankr, Anthropic, OpenRouter — avec votre propre clé.",
+        "hint": "SUITE : FORMULAIRE DE CLÉ"
+      },
+      "explore": {
+        "title": "JUSTE EXPLORER",
+        "desc": "Sautez la configuration et regardez autour de vous. Ajoutez un modèle ou une clé plus tard dans Settings.",
+        "hint": "SUITE : ENTRÉE DIRECTE"
+      }
+    },
+    "privacyNote": "Vos requêtes restent sur cette machine uniquement avec un modèle local (Ollama ou llama.cpp) — le routeur sans clé les transmet à des fournisseurs cloud gratuits."
+  },
+  "privacy": {
+    "heading": "Comment voulez-vous commencer ?",
+    "subtext": "Vous pouvez basculer à tout moment via Palette de commandes → « Toggle PRIVATE MODE ».",
+    "free": {
+      "title": "GRATUIT + RAPIDE",
+      "recommended": "RECOMMANDÉ",
+      "tagline": "(pour tout le monde — chemin le plus rapide vers le chat)",
+      "features": {
+        "cloud": "fournisseurs cloud activés",
+        "freeTier": "défauts du free tier",
+        "oneClick": "chat en un clic",
+        "noKey": "aucune clé requise pour pollinations / llm7"
+      },
+      "pick": "[ CHOISIR GRATUIT + RAPIDE ]"
+    },
+    "private": {
+      "title": "PRIVATE + LOCAL",
+      "strict": "STRICT",
+      "tagline": "(paranoïaque / natif crypto — local uniquement)",
+      "features": {
+        "cloudLocked": "fournisseurs cloud verrouillés",
+        "ollamaOnly": "uniquement ollama autorisé",
+        "noEgress": "pas d'egress réseau",
+        "toolsDenied": "appels d'outils dénié"
+      },
+      "pick": "[ CHOISIR PRIVATE + LOCAL ]"
+    },
+    "skipForNow": "Sauter pour maintenant"
+  },
+  "provider": {
+    "heading": "Choisir un fournisseur",
+    "subtext": "Vous pouvez changer cela plus tard dans Settings.",
+    "privateBanner": {
+      "title": "[ PRIVATE MODE ACTIVE ]",
+      "body": "Seuls les fournisseurs locaux peuvent être sélectionnés. Les fournisseurs cloud sont verrouillés — basculez PRIVATE MODE off plus tard pour les activer."
+    },
+    "list": {
+      "freellmapi": "free tier, aucune clé API requise. Les limites de tarification partagées s'appliquent.",
+      "bankr-gateway": "Collez votre clé Bankr LLM pour utiliser le fournisseur cloud Bankr.",
+      "anthropic-oauth": "Connexion OAuth avec votre compte Anthropic Pro ou Max.",
+      "ollama": "Inférence locale via Ollama fonctionnant sur cette machine. Aucune clé requise.",
+      "openrouter": "Accédez à des centaines de modèles via OpenRouter OAuth."
+    },
+    "selected": "SÉLECTIONNÉ",
+    "locked": "LOCKED",
+    "lockedTitle": "Bloqué en PRIVATE MODE — seuls les fournisseurs locaux (Ollama) sont autorisés",
+    "bankrKey": "Clé Bankr",
+    "test": "Test",
+    "hints": {
+      "connected": "Connecté",
+      "authInvalid": "Clé rejetée (401/403). Vérifiez à nouveau la clé.",
+      "degraded": "L'amont a répondu avec une erreur.",
+      "unreachable": "Hôte inaccessible — vérifiez le réseau ou l'URL."
+    },
+    "skipStep": "Sauter l'étape",
+    "testStates": {
+      "ok": "OK",
+      "auth": "REFUSÉ",
+      "noNet": "SANS RÉSEAU",
+      "warn": "ALERTE"
+    },
+    "gpuBanner": {
+      "title": "GPU prêt",
+      "body": "{{gpu}} ({{vram}}) détecté — vous pouvez exécuter des modèles entièrement en local sur votre GPU. Choisissez un fournisseur ; ajoutez des modèles locaux à tout moment dans Paramètres → llama.cpp."
+    }
+  },
+  "vibe": {
+    "heading": "Choisir une vibe",
+    "subtext": "Que voulez-vous faire en premier ?",
+    "selected": "SÉLECTIONNÉ",
+    "list": {
+      "chat": {
+        "label": "Chat",
+        "desc": "Juste parler à un modèle",
+        "detail": "Conversation ouverte avec n'importe quel fournisseur. Meilleur pour les questions/réponses, l'écriture, le brainstorming."
+      },
+      "code": {
+        "label": "Code",
+        "desc": "Livrer des fonctionnalités avec un agent",
+        "detail": "Boucle agentic qui lit, écrit et exécute du code sur votre machine. Zéro terminal requis."
+      },
+      "aeon": {
+        "label": "Aeon HQ",
+        "desc": "Kanban + skills sur GitHub Actions",
+        "detail": "Dispatcher des agents cloud à partir d'un tableau kanban. Les skills s'exécutent dans GitHub Actions sur votre fork."
+      }
+    }
+  },
+  "done": {
+    "status": "CONFIGURATION COMPLÈTE",
+    "heading": "Vous êtes configuré.",
+    "hints": {
+      "chat": "Allez à Chat et démarrez une conversation.",
+      "code": "Ouvrez le mode Agent et décrivez une tâche — il lira, écrira et exécutera du code pour vous.",
+      "aeon": "Ouvrez Aeon HQ, créez un fork du repo et dispatcher votre premier skill.",
+      "default": "Explorez la barre latérale pour commencer.",
+      "local": "Le catalogue de modèles s'ouvre ensuite — prenez un modèle taillé pour votre matériel."
+    },
+    "next": {
+      "settings": "Ouvrir Settings pour configurer des fournisseurs supplémentaires ou des thèmes",
+      "shortcut": "Utilisez Cmd/Ctrl+, pour sauter à Settings à tout moment",
+      "sidebar": "Vérifiez la barre latérale pour Chat, Agent, Dashboard et Aeon HQ"
+    },
+    "open": "Ouvrir Tachi Studio"
+  }
+}

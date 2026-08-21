@@ -1,0 +1,485 @@
+{
+  "id": 4201,
+  "name": "Realistic Vision V6.0 B1",
+  "type": "Checkpoint",
+  "description": "<p><strong><span style=\"color:rgb(21, 170, 191)\">Check my exclusive models on Mage: </span></strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/4371756b27bf52e7a1146dc6fe2d969c\"><strong><span style=\"color:rgb(230, 73, 128)\">ParagonXL</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/df67a9f27f19629a98cb0fb619d1949a\"><strong><span style=\"color:rgb(230, 73, 128)\">NovaXL</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/d8db06ae964310acb4e090eec03984df\"><strong><span style=\"color:rgb(230, 73, 128)\">NovaXL Lightning</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/541da1e10976ab82976a5cacc770a413\"><strong><span style=\"color:rgb(230, 73, 128)\">NovaXL V2</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/a56d2680c464ef25b8c66df126b3f706\"><strong><span style=\"color:rgb(230, 73, 128)\">NovaXL Pony</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/b0ab6733c3be2408c93523d57a605371\"><strong><span style=\"color:rgb(230, 73, 128)\">NovaXL Pony Lightning</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/e3b01cd493ed86ed8e4708751b1c9165\"><strong><span style=\"color:rgb(230, 73, 128)\">RealDreamXL</span></strong></a><strong> / </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://www.mage.space/play/ef062fc389c3f8723002428290c1158c\"><strong><span style=\"color:rgb(230, 73, 128)\">RealDreamXL Lightning</span></strong></a></p><p><strong><span style=\"color:rgb(130, 201, 30)\">Recommendations for using the Hyper model:</span><br /><span style=\"color:rgb(130, 201, 30)\">Sampler = </span><u><span style=\"color:rgb(130, 201, 30)\">DPM SDE++ Karras</span></u><span style=\"color:rgb(130, 201, 30)\"> or </span><u><span style=\"color:rgb(130, 201, 30)\">another</span></u><span style=\"color:rgb(130, 201, 30)\"> / 4-6+ steps<br />CFG Scale = 1.5-2.0 (</span><u><span style=\"color:rgb(130, 201, 30)\">the lower the value, the more mutations, but the less contrast</span></u><span style=\"color:rgb(130, 201, 30)\">)</span></strong></p><p><strong><span style=\"color:rgb(130, 201, 30)\">I also recommend using </span><u><span style=\"color:rgb(130, 201, 30)\">ADetailer</span></u><span style=\"color:rgb(130, 201, 30)\"> for generation (some examples were generated with ADetailer, this will be noted in the image comments).</span></strong></p><p>This model is available on <a target=\"_blank\" rel=\"ugc\" href=\"http://Mage.Space\"><strong>Mage.Space</strong></a><strong> (main sponsor)</strong>.<br />You can also support me directly on <a target=\"_blank\" rel=\"ugc\" href=\"https://boosty.to/sg_161222\"><strong><u><span style=\"color:rgb(250, 176, 5)\">Boosty</span></u></strong></a>.</p><pre><code>Realistic Vision V6.0 (B2 - Full Re-train) Status (Updated: Apr. 4, 2024):\n- Training Images: +3400 (B1: 3000)\n- Training Steps: +724k (B1: 664k)\n- Approximate percentage of completion: ~30%</code></pre><p>All models, including <strong>Realistic Vision (VAE / noVAE)</strong> are also on <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/SG161222\"><strong>Hugging Face</strong></a></p><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong>Please read this! How to remove strong contrast.</strong></p><p>To make the image less contrasty you can use LoRA <strong>[</strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/58390/detail-tweaker-lora-lora\"><strong>Detail Tweaker LoRA</strong></a><strong>]</strong> in a negative value.</p><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong><span style=\"color:rgb(253, 126, 20)\">Orange Color</span></strong> <strong>= Optional</strong></p><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong>I use this template to get good generation results:</strong></p><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong>Prompt:</strong></p><p>RAW photo, <em>subject</em>, 8k uhd, dslr, soft lighting, high quality, film grain, Fujifilm XT3</p><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong>Negative Prompt:</strong></p><p></p><ul><li><p>(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime), text, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, <a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/72437/baddream-unrealisticdream-negative-embeddings\"><strong><span style=\"color:rgb(253, 126, 20)\">UnrealisticDream</span></strong></a></p><p></p></li><li><p>(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, disconnected limbs, mutation, mutated, ugly, disgusting, amputation, <a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/72437/baddream-unrealisticdream-negative-embeddings\"><strong><span style=\"color:rgb(253, 126, 20)\">UnrealisticDream</span></strong></a></p></li></ul><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong>Euler A or DPM++ SDE Karras</strong></p><p><strong>CFG Scale 3,5 - 7</strong></p><p><strong><span style=\"color:rgb(253, 126, 20)\">Hires. fix</span> with </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/lokCX/4x-Ultrasharp/tree/main\"><strong><span style=\"color:rgb(253, 126, 20)\">4x-UltraSharp upscaler</span></strong></a></p><p><strong>Denoising strength <span style=\"color:rgb(253, 126, 20)\">0.25-0.45</span></strong></p><p><strong>Upscale by 1.1-2.0</strong></p><p><strong>Clip Skip 1-2</strong></p><p><strong><span style=\"color:rgb(253, 126, 20)\">ENSD 31337</span></strong></p><p><span style=\"color:rgb(44, 45, 46)\">ᅠ</span></p><p><strong>Thanks to the creators of these models for their work. Without them it would not have been possible to create this model.</strong></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/1173?modelVersionId=4635\"><strong>HassanBlend 1.5.1.2</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/sdhassan\"><strong>sdhassan</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/2661?modelVersionId=15640\"><strong>Uber Realistic Porn Merge (URPM)</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/saftle\"><strong>saftle</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/3666?modelVersionId=4048\"><strong>Protogen x3.4 (Photorealism)</strong></a><strong> + </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/3816?modelVersionId=4229\"><strong>Protogen x5.3 (Photorealism)</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/darkstorm2150\"><strong>darkstorm2150</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/3950?modelVersionId=5180\"><strong>Art &amp; Eros (aEros)</strong></a><strong> + </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/1654?modelVersionId=1798\"><strong>RealEldenApocalypse</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/aine_captain\"><strong>aine_captain</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/3811?modelVersionId=4224\"><strong>Dreamlike Photoreal 2.0</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/sviasem\"><strong>sviasem</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/3758?modelVersionId=4167\"><strong>HASDX</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/bestjammer\"><strong>bestjammer</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/1265/analog-diffusion\"><strong>Analog Diffusion</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/wavymulder\"><strong>wavymulder</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/4041/woopwoop-photo\"><strong>WoopWoop-Photo</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/zoidbb\"><strong>zoidbb</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/16804?modelVersionId=29682\"><strong>Life Like Diffusion</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/lutherjonna409\"><strong>lutherjonna409</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/81458?modelVersionId=86437\"><strong>AbsoluteReality</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/Lykon\"><strong>Lykon</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/15003?modelVersionId=89680\"><strong>CyberRealistic</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/Cyberdelia\"><strong>Cyberdelia</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/8030?modelVersionId=101080\"><strong>Analog Madness</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/CornmeisterNL\"><strong>CornmeisterNL</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/57319/a-zovya-photoreal\"><strong>A-Zovya Photoreal</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/Zovya\"><strong>Zovya</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/28059?modelVersionId=109115\"><strong>ICBINP - \"I Can't Believe It's Not Photography\"</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/residentchiefnz\"><strong>residentchiefnz</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/25694?modelVersionId=105035\"><strong>epiCRealism</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/epinikion\"><strong>epinikion</strong></a></p><p><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/models/46422?modelVersionId=106157\"><strong>Juggernaut</strong></a><strong> by </strong><a target=\"_blank\" rel=\"ugc\" href=\"https://civitai.com/user/KandooAI\"><strong>KandooAI</strong></a></p>",
+  "poi": false,
+  "minor": false,
+  "nsfw": false,
+  "nsfwLevel": 15,
+  "tags": [
+    "photorealistic",
+    "anatomical",
+    "realistic",
+    "semi-realistic",
+    "base model",
+    "cgi"
+  ],
+  "creator": {
+    "username": "SG_161222",
+    "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/41ce091f-1006-491f-916d-873a9c80dfde/width=96/SG_161222.jpeg"
+  },
+  "allowNoCredit": false,
+  "allowCommercialUse": "{Image,RentCivit,Rent}",
+  "allowDerivatives": true,
+  "stats": {
+    "downloadCount": 2285931,
+    "thumbsUpCount": 52737,
+    "thumbsDownCount": 94,
+    "commentCount": 0
+  },
+  "modelVersions": [
+    {
+      "id": 501240,
+      "name": "V5.1 Hyper (VAE)",
+      "baseModel": "SD 1.5 Hyper",
+      "baseModelType": "Standard",
+      "description": null,
+      "nsfwLevel": 15,
+      "publishedAt": "2024-05-12T06:24:13.109Z",
+      "downloadUrl": "https://civitai.com/api/download/models/501240",
+      "files": [
+        {
+          "sizeKB": 2082642.474609375,
+          "name": "realisticVisionV60B1_v51HyperVAE.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "pruned"
+          },
+          "hashes": {
+            "SHA256": "F47E942AD4C30D863AD7F53CB60145FFCD2118845DFA705CE8BD6B42E90C4A13"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/501240",
+          "primary": true
+        },
+        {
+          "sizeKB": 4165133.80078125,
+          "name": "realisticVisionV60B1_v51HyperVAE.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "0928B30687250B4CA459ADF9735BDEABBC0933B1E4E6FD352DF0A7D15596053F"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/501240?type=Model&format=SafeTensor&size=full&fp=fp16"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/5403901a-3e55-4aa2-b1a5-958aba35223b/original=true/12221833.jpeg",
+          "nsfwLevel": 2,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1c65dc07-2e32-4e76-a0b7-458c450ff1ae/original=true/12221824.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/9d8e6d7d-7a26-44b4-a02d-131f53fd5d77/original=true/12221845.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/73c8d3eb-59cc-473d-a1d7-c601f964d476/original=true/12221829.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/b2ef3250-d5c5-4abd-aba4-1382f38dcbdf/original=true/12221870.jpeg",
+          "nsfwLevel": 4,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/def97a4c-40ed-4880-985e-498d6ed2110d/original=true/12221832.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/490a4cd2-e258-4fdf-b5c1-2988665bb914/original=true/12221826.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/0d197b8c-e430-47cb-9da9-0bf5c3597663/original=true/12221844.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1e1892dd-070a-4cee-a844-8f15a1e9fa26/original=true/12221835.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1280,
+          "height": 1920
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/aff2aece-4527-4d96-a24b-4be8f012c184/original=true/12221847.jpeg",
+          "nsfwLevel": 2,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/02edf44e-5cb3-4311-9790-1f0aa53efac0/original=true/12221825.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/23da34d3-9fd8-49b5-bef7-74653914fd30/original=true/12221840.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/a84ad265-2ae7-476f-a8aa-df4fe0c12d3b/original=true/12221839.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/e1bdf76f-b143-497a-8ead-df5233cc6773/original=true/12221843.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/849daead-b16a-4600-a8d8-87582133ae0c/original=true/12221841.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/49d25dd6-6e2d-4279-bb1f-580989a3843d/original=true/12221846.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/13fda889-12e9-4cd6-aad7-e86a47482e94/original=true/12221838.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/61bc78fd-ba56-4ba8-94e4-aae7b163638d/original=true/12221842.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/84867f56-dfa9-49d5-b642-e55cee86c070/original=true/12221837.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4ac35203-70bb-4ab4-8589-64a443568ba6/original=true/12221874.jpeg",
+          "nsfwLevel": 8,
+          "type": "image",
+          "width": 1280,
+          "height": 1792
+        }
+      ]
+    },
+    {
+      "id": 501286,
+      "name": "V5.1 Hyper-Inpaint (VAE)",
+      "baseModel": "SD 1.5 Hyper",
+      "baseModelType": "Inpainting",
+      "description": null,
+      "nsfwLevel": 1,
+      "publishedAt": "2024-05-12T07:02:08.427Z",
+      "downloadUrl": "https://civitai.com/api/download/models/501286",
+      "files": [
+        {
+          "sizeKB": 2082695.26171875,
+          "name": "realisticVisionV60B1_v51HyperInpaintVAE.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "pruned"
+          },
+          "hashes": {
+            "SHA256": "CB372C879506C865B000BAA3944CC8A4C7E8E3248D2150634989E9F9B6448AA4"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/501286",
+          "primary": true
+        },
+        {
+          "sizeKB": 4165238.15234375,
+          "name": "realisticVisionV60B1_v51HyperInpaintVAE.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "7417B4EC2D9888AED340D2ABAAE8D4AC36037FECEAE1838121D506FF547374B7"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/501286?type=Model&format=SafeTensor&size=full&fp=fp16"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/14f129fe-ed7b-402e-be55-8a7988116a6f/original=true/12224341.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1024,
+          "height": 1536
+        }
+      ]
+    },
+    {
+      "id": 130072,
+      "name": "V5.1 (VAE)",
+      "baseModel": "SD 1.5",
+      "baseModelType": "Standard",
+      "description": "<p>The required VAE is already baked into the model.<br /><br />This version (Code_1284) is a fix for many issues of 5.0 (<u>artifacts, ugly faces, masculine female faces, small eyes, poor compatibility with LoRA and TI</u>). In terms of realism this model may be worse than 5.0, but I tried to minimize losses.</p>",
+      "nsfwLevel": 7,
+      "publishedAt": "2023-07-31T08:27:16.052Z",
+      "downloadUrl": "https://civitai.com/api/download/models/130072",
+      "files": [
+        {
+          "sizeKB": 4165379.6484375,
+          "name": "realisticVisionV60B1_v51VAE.ckpt",
+          "type": "Model",
+          "metadata": {
+            "format": "PickleTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "139AC005D4D1E33C6335F5651ABB3D2E4654DC0520AEDFEA07909BDD20435518"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130072?type=Model&format=PickleTensor&size=full&fp=fp16"
+        },
+        {
+          "sizeKB": 4165133.78515625,
+          "name": "realisticVisionV60B1_v51VAE.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "EF76AA2332635F4352463343BEEC9C5AAE3BD107A73C0FD7221ABBBCF8BD5470"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130072?type=Model&format=SafeTensor&size=full&fp=fp16"
+        },
+        {
+          "sizeKB": 2082642.474609375,
+          "name": "realisticVisionV60B1_v51VAE.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "pruned"
+          },
+          "hashes": {
+            "SHA256": "15012C538F503CE2EBFC2C8547B268C75CCDAFF7A281DB55399940FF1D70E21D"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130072",
+          "primary": true
+        },
+        {
+          "sizeKB": 2082928.98046875,
+          "name": "realisticVisionV60B1_v51VAE.ckpt",
+          "type": "Model",
+          "metadata": {
+            "format": "PickleTensor",
+            "fp": "fp16",
+            "size": "pruned"
+          },
+          "hashes": {
+            "SHA256": "392DEF60E49AE3E5C3A5EE64407DBAF7609C8A4E88ECB771340077BB14538097"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130072?type=Model&format=PickleTensor&size=pruned&fp=fp16"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/0dcee20e-415c-42c3-92bc-d596f9b45289/original=true/2375288.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1f4c40ba-2047-4ab5-9c14-95800d78d23b/original=true/1804575.jpeg",
+          "nsfwLevel": 4,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/7052f043-d0ac-4893-936c-e07a62948726/original=true/2023636.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 768
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/d26fd45e-147a-43a3-b95f-ba447c3cb1e0/original=true/1804580.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/6589ff8f-8835-488e-93cd-648c4da10fe1/original=true/2025535.jpeg",
+          "nsfwLevel": 2,
+          "type": "image",
+          "width": 768,
+          "height": 960
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/779b4456-dbdc-406b-8987-62ffa1b484a0/original=true/1804583.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/624cc2f7-e78f-44ac-9b35-9db11246da35/original=true/1804579.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/3c4be239-ae12-4d6e-8e25-8b57237d842d/original=true/1804578.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/6bb97f12-2768-4f62-b986-27ec083f2fbf/original=true/1804582.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 960,
+          "height": 1440
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/a7e7715b-ab13-4cdc-9699-ee72ff5250c0/original=true/1804577.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        }
+      ]
+    },
+    {
+      "id": 130090,
+      "name": "V5.1-inpainting (VAE)",
+      "baseModel": "SD 1.5",
+      "baseModelType": "Inpainting",
+      "description": "<p><strong><u>NOT FOR TRAINING!</u></strong></p><p>Model for <strong>inpainting</strong> and <strong>outpainting</strong>.<br />Make sure that the model name has the ending <strong>-inpainting</strong>.</p><p>The required VAE is already baked into the model.<br /><br />This version (Code_1284) is a fix for many issues of 5.0 (<u>artifacts, ugly faces, masculine female faces, small eyes, poor compatibility with LoRA and TI</u>). In terms of realism this model may be worse than 5.0, but I tried to minimize losses.</p>",
+      "nsfwLevel": 1,
+      "publishedAt": "2023-07-31T09:03:08.591Z",
+      "downloadUrl": "https://civitai.com/api/download/models/130090",
+      "files": [
+        {
+          "sizeKB": 2082695.099609375,
+          "name": "realisticVisionV60B1_v51VAE-inpainting.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "pruned"
+          },
+          "hashes": {
+            "SHA256": "F0D4872D24835C04E6C20840A17D043A3A4FA52AEA0D327AA32850A3FABAF191"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130090",
+          "primary": true
+        },
+        {
+          "sizeKB": 2083067.963867188,
+          "name": "realisticVisionV60B1_v51VAE-inpainting.ckpt",
+          "type": "Model",
+          "metadata": {
+            "format": "PickleTensor",
+            "fp": "fp16",
+            "size": "pruned"
+          },
+          "hashes": {
+            "SHA256": "9069A162AE7D49C8D21BFC7F1363C05BF22DA2CBCB9312FC3B12CF3F7CB28C02"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130090?type=Model&format=PickleTensor&size=pruned&fp=fp16"
+        },
+        {
+          "sizeKB": 4165238.15234375,
+          "name": "realisticVisionV60B1_v51VAE-inpainting.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "4DAFABA867B2BD894BF3E1F075A5F68CCB9209DFF9ACA75E01F8826F7F9EDD1F"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130090?type=Model&format=SafeTensor&size=full&fp=fp16"
+        },
+        {
+          "sizeKB": 4165507.79296875,
+          "name": "realisticVisionV60B1_v51VAE-inpainting.ckpt",
+          "type": "Model",
+          "metadata": {
+            "format": "PickleTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "9AE8E9632C05FC45B6DA168AC4C25CDF6CA59BA3CD487B08974B5B2A54839629"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/130090?type=Model&format=PickleTensor&size=full&fp=fp16"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/11f42321-1c67-493b-873f-25563a3b6821/original=true/1804915.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 640,
+          "height": 960
+        }
+      ]
+    }
+  ]
+}

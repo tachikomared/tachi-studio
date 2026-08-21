@@ -1,0 +1,275 @@
+{
+  "id": 260267,
+  "name": "Animagine XL V3.1",
+  "type": "Checkpoint",
+  "description": "<p><strong>Animagine XL 3.1 </strong>is an update in the Animagine XL V3 series, enhancing the previous version, Animagine XL 3.0. This open-source, anime-themed text-to-image model has been improved for generating anime-style images with higher quality. It includes a broader range of characters from well-known anime series, an optimized dataset, and new aesthetic tags for better image creation. Built on Stable Diffusion XL, Animagine XL 3.1 aims to be a valuable resource for anime fans, artists, and content creators by producing accurate and detailed representations of anime characters.</p><h2 id=\"heading-2230\">Model Details</h2><ul><li><p><strong>Developed by</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/cagliostrolab\"><strong><u>Cagliostro Research Lab</u></strong></a></p></li><li><p><strong>In collaboration with</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"http://SeaArt.ai\"><strong><u>SeaArt.ai</u></strong></a></p></li><li><p><strong>Model type</strong>: Diffusion-based text-to-image generative model</p></li><li><p><strong>Model Description</strong>: Animagine XL 3.1 generates high-quality anime images from textual prompts. It boasts enhanced hand anatomy, improved concept understanding, and advanced prompt interpretation.</p></li><li><p><strong>License</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"https://freedevproject.org/faipl-1.0-sd/\"><strong><u>Fair AI Public License 1.0-SD</u></strong></a></p></li><li><p><strong>Fine-tuned from</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/cagliostrolab/animagine-xl-3.0\"><strong><u>Animagine XL 3.0</u></strong></a></p></li></ul><p></p><h2 id=\"heading-2231\"><strong>Usage Guidelines</strong></h2><h3 id=\"heading-2232\">Tag Ordering</h3><p>For optimal results, it's recommended to follow the structured prompt template because we train the model like this:</p><pre><code>1girl/1boy, character name, from what series, everything else in any order.\n</code></pre><h2 id=\"heading-2233\">Special Tags</h2><p>Animagine XL 3.1 utilizes special tags to steer the result toward quality, rating, creation date and aesthetic. While the model can generate images without these tags, using them can help achieve better results.</p><h3 id=\"heading-2234\">Quality Modifiers</h3><p>Quality tags now consider both scores and post ratings to ensure a balanced quality distribution. We've refined labels for greater clarity, such as changing 'high quality' to 'great quality'.</p><pre><code>\nQuality Modifier\tScore Criterion\nmasterpiece\t        &gt; 95%\nbest quality\t        &gt; 85% &amp; ≤ 95%\ngreat quality\t        &gt; 75% &amp; ≤ 85%\ngood quality\t        &gt; 50% &amp; ≤ 75%\nnormal quality\t        &gt; 25% &amp; ≤ 50%\nlow quality\t        &gt; 10% &amp; ≤ 25%\nworst quality\t        ≤ 10%</code></pre><h3 id=\"heading-2235\">Rating Modifiers</h3><p>We've also streamlined our rating tags for simplicity and clarity, aiming to establish global rules that can be applied across different models. For example, the tag 'rating: general' is now simply 'general', and 'rating: sensitive' has been condensed to 'sensitive'.</p><pre><code>\nRating Modifier\t    Rating Criterion\nsafe\t            General\nsensitive\t    Sensitive\nnsfw\t            Questionable\nexplicit, nsfw\t    Explicit</code></pre><h3 id=\"heading-2236\">Year Modifier</h3><p>We've also redefined the year range to steer results towards specific modern or vintage anime art styles more accurately. This update simplifies the range, focusing on relevance to current and past eras.</p><pre><code>\nYear Tag\tYear Range\nnewest\t        2021 to 2024\nrecent\t        2018 to 2020\nmid\t        2015 to 2017\nearly\t        2011 to 2014\noldest\t        2005 to 2010</code></pre><h3 id=\"heading-2237\">Aesthetic Tags</h3><p>We've enhanced our tagging system with aesthetic tags to refine content categorization based on visual appeal. These tags are derived from evaluations made by a specialized ViT (Vision Transformer) image classification model, specifically trained on anime data. For this purpose, we utilized the model <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/shadowlilac/aesthetic-shadow-v2\"><strong><u>shadowlilac/aesthetic-shadow-v2</u></strong></a>, which assesses the aesthetic value of content before it undergoes training. This ensures that each piece of content is not only relevant and accurate but also visually appealing.</p><pre><code>\nAesthetic Tag\t       Score Range\nvery aesthetic\t       &gt; 0.71\naesthetic\t       &gt; 0.45 &amp; &lt; 0.71\ndispleasing\t       &gt; 0.27 &amp; &lt; 0.45\nvery displeasing       ≤ 0.27</code></pre><h2 id=\"heading-2238\">Recommended settings</h2><p>To guide the model towards generating high-aesthetic images, use negative prompts like:</p><pre><code>nsfw, lowres, (bad), text, error, fewer, extra, missing, worst quality, jpeg artifacts, low quality, watermark, unfinished, displeasing, oldest, early, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract]\n</code></pre><p>For higher quality outcomes, prepend prompts with:</p><pre><code>masterpiece, best quality, very aesthetic, absurdres\n</code></pre><p>it’s recommended to use a lower classifier-free guidance (CFG Scale) of around 5-7, sampling steps below 30, and to use Euler Ancestral (Euler a) as a sampler.</p><h3 id=\"heading-2239\">Multi Aspect Resolution</h3><p>This model supports generating images at the following dimensions:</p><pre><code>Dimensions\tAspect Ratio\n1024 x 1024\t1:1 Square\n1152 x 896\t9:7\n896 x 1152\t7:9\n1216 x 832\t19:13\n832 x 1216\t13:19\n1344 x 768\t7:4 Horizontal\n768 x 1344\t4:7 Vertical\n1536 x 640\t12:5 Horizontal\n640 x 1536\t5:12 Vertical</code></pre><h3 id=\"heading-2240\"><strong>Acknowledgements</strong></h3><p>The development and release of Animagine XL 3.1 would not have been possible without the invaluable contributions and support from the following individuals and organizations:</p><ul><li><p><a target=\"_blank\" rel=\"ugc\" href=\"http://SeaArt.ai\"><strong><u>SeaArt.ai</u></strong></a>: Our collaboration partner and sponsor.</p></li><li><p><a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/shadowlilac\"><strong><u>Shadow Lilac</u></strong></a>: For providing the aesthetic classification model, <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/shadowlilac/aesthetic-shadow-v2\"><strong><u>aesthetic-shadow-v2</u></strong></a>.</p></li><li><p><a target=\"_blank\" rel=\"ugc\" href=\"https://github.com/derrian-distro\"><strong><u>Derrian Distro</u></strong></a>: For their custom learning rate scheduler, adapted from <a target=\"_blank\" rel=\"ugc\" href=\"https://github.com/derrian-distro/LoRA_Easy_Training_Scripts/blob/main/custom_scheduler/LoraEasyCustomOptimizer/CustomOptimizers.py\"><strong><u>LoRA Easy Training Scripts</u></strong></a>.</p></li><li><p><a target=\"_blank\" rel=\"ugc\" href=\"https://github.com/kohya-ss\"><strong><u>Kohya SS</u></strong></a>: For their comprehensive training scripts.</p></li><li><p><strong>Cagliostrolab Collaborators</strong>: For their dedication to model training, project management, and data curation.</p></li><li><p><strong>Early Testers</strong>: For their valuable feedback and quality assurance efforts.</p></li><li><p><strong>NovelAI</strong>: For their innovative approach to aesthetic tagging, which served as an inspiration for our implementation.</p></li></ul><p>Thank you all for your support and expertise in pushing the boundaries of anime-style image generation.</p><p></p><h2 id=\"heading-2241\"><strong>Limitations</strong></h2><p>While Animagine XL 3.1 represents a significant advancement in anime-style image generation, it is important to acknowledge its limitations:</p><ol><li><p><strong>Anime-Focused</strong>: This model is specifically designed for generating anime-style images and is not suitable for creating realistic photos.</p></li><li><p><strong>Prompt Complexity</strong>: This model may not be suitable for users who expect high-quality results from short or simple prompts. The training focus was on concept understanding rather than aesthetic refinement, which may require more detailed and specific prompts to achieve the desired output.</p></li><li><p><strong>Prompt Format</strong>: Animagine XL 3.1 is optimized for Danbooru-style tags rather than natural language prompts. For best results, users are encouraged to format their prompts using the appropriate tags and syntax.</p></li><li><p><strong>Anatomy and Hand Rendering</strong>: Despite the improvements made in anatomy and hand rendering, there may still be instances where the model produces suboptimal results in these areas.</p></li><li><p><strong>Dataset Size</strong>: The dataset used for training Animagine XL 3.1 consists of approximately 870,000 images. When combined with the previous iteration's dataset (1.2 million), the total training data amounts to around 2.1 million images. While substantial, this dataset size may still be considered limited in scope for an \"ultimate\" anime model.</p></li><li><p><strong>NSFW Content</strong>: Animagine XL 3.1 has been designed to generate more balanced NSFW content. However, it is important to note that the model may still produce NSFW results, even if not explicitly prompted.</p></li></ol><p>By acknowledging these limitations, we aim to provide transparency and set realistic expectations for users of Animagine XL 3.1. Despite these constraints, we believe that the model represents a significant step forward in anime-style image generation and offers a powerful tool for artists, designers, and enthusiasts alike.</p><h2 id=\"heading-2242\">License</h2><p>Based on Animagine XL 3.0, Animagine XL 3.1 falls under <a target=\"_blank\" rel=\"ugc\" href=\"https://freedevproject.org/faipl-1.0-sd/\"><strong><u>Fair AI Public License 1.0-SD</u></strong></a> license, which is compatible with Stable Diffusion models’ license. Key points:</p><ol><li><p><strong>Modification Sharing:</strong> If you modify Animagine XL 3.1, you must share both your changes and the original license.</p></li><li><p><strong>Source Code Accessibility:</strong> If your modified version is network-accessible, provide a way (like a download link) for others to get the source code. This applies to derived models too.</p></li><li><p><strong>Distribution Terms:</strong> Any distribution must be under this license or another with similar rules.</p></li><li><p><strong>Compliance:</strong> Non-compliance must be fixed within 30 days to avoid license termination, emphasizing transparency and adherence to open-source values.</p></li></ol><p>The choice of this license aims to keep Animagine XL 3.1 open and modifiable, aligning with open source community spirit. It protects contributors and users, encouraging a collaborative, ethical open-source community. This ensures the model not only benefits from communal input but also respects open-source development freedoms.<br /><br />Finally Cagliostro Lab Server open to public <a target=\"_blank\" rel=\"ugc\" href=\"https://discord.gg/cqh9tZgbGc\"><strong><u>https://discord.gg/cqh9tZgbGc</u></strong></a></p><p>Feel free to join our discord server.<br />If you want to donate or buy us a coffee you can donate <a rel=\"ugc\" href=\"https://ko-fi.com/linaqruf\"><strong><u>Here</u></strong></a></p><p>Thank you very much ^_^</p>",
+  "poi": false,
+  "minor": false,
+  "nsfw": false,
+  "nsfwLevel": 1,
+  "tags": [
+    "anime",
+    "base model"
+  ],
+  "creator": {
+    "username": "CagliostroLab",
+    "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c9165913-a7c8-488e-8975-ef9fd88722d7/width=96/CagliostroLab.jpeg"
+  },
+  "allowNoCredit": true,
+  "allowCommercialUse": "{Image,RentCivit,Rent}",
+  "allowDerivatives": true,
+  "stats": {
+    "downloadCount": 277145,
+    "thumbsUpCount": 18619,
+    "thumbsDownCount": 28,
+    "commentCount": 333
+  },
+  "modelVersions": [
+    {
+      "id": 403131,
+      "name": "v3.1",
+      "baseModel": "SDXL 1.0",
+      "baseModelType": "Standard",
+      "description": null,
+      "nsfwLevel": 1,
+      "publishedAt": "2024-03-21T06:33:04.436Z",
+      "downloadUrl": "https://civitai.com/api/download/models/403131",
+      "files": [
+        {
+          "sizeKB": 6775708.765625,
+          "name": "animagineXLV31_v31.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp16",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "E3C47AEDB06418C6C331443CD89F2B3B3B34B7ED2102A3D4C4408A8D35AAD6B0"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/403131",
+          "primary": true
+        },
+        {
+          "sizeKB": 326798.01171875,
+          "name": "sdxl_vae.safetensors",
+          "type": "VAE",
+          "metadata": {
+            "format": "SafeTensor"
+          },
+          "hashes": {
+            "SHA256": "63AEECB90FF7BC1C115395962D3E803571385B61938377BC7089B36E81E92E2E"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/403131?type=VAE&format=SafeTensor"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/b50708a9-a0a2-4a62-a688-cbd15abb65e4/original=true/8301359.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c428d81e-b679-4dc7-a5aa-7f62d679873d/original=true/8301357.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4fa2eba0-771c-4379-bee4-b31e56d68e27/original=true/8301358.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f5369369-ac3e-463a-8ff6-3a9fa487e50d/original=true/8301365.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c48df73e-75d2-4e54-ac56-086b2b855d51/original=true/8301356.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/3b7e6fc0-3862-4e74-aecf-7d20acb136e7/original=true/8301362.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/16100d87-3d3a-4abc-a15e-29a68fefba38/original=true/8301366.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/8165e1fc-c518-4b9b-aa7b-5a2dc9c2d0a6/original=true/8301367.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1824,
+          "height": 1248
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/65c9d60c-60b2-4b64-986c-c7e708ef60ca/original=true/8301360.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1824,
+          "height": 1248
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4f4e1fe3-f103-4ae7-ba7d-e21000695a63/original=true/8301363.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1824,
+          "height": 1248
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c5e3c03e-2fa0-4aab-8b32-699c7225709c/original=true/8301364.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1968,
+          "height": 1248
+        }
+      ]
+    },
+    {
+      "id": 293564,
+      "name": "v3.0",
+      "baseModel": "SDXL 1.0",
+      "baseModelType": "Standard",
+      "description": "<p>ANIMAGINE XL 3.0</p><p>Huggingface link: <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/cagliostrolab/animagine-xl-3.0\">https://huggingface.co/cagliostrolab/animagine-xl-3.0</a></p><p>Gradio Demo : <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/spaces/Linaqruf/animagine-xl\">https://huggingface.co/spaces/Linaqruf/animagine-xl</a></p><p>Official Blog Release: <a target=\"_blank\" rel=\"ugc\" href=\"https://cagliostrolab.net/posts/animagine-xl-v3-release\">https://cagliostrolab.net/posts/animagine-xl-v3-release</a></p><p>Support us at: <a target=\"_blank\" rel=\"ugc\" href=\"https://ko-fi.com/linaqruf\">https://ko-fi.com/linaqruf</a></p><p><strong>Overview</strong></p><p><strong>Animagine XL 3.0</strong> is the latest version of the sophisticated open-source anime text-to-image model, building upon the capabilities of its predecessor, Animagine XL 2.0. Developed based on Stable Diffusion XL, this iteration boasts superior image generation with notable improvements in hand anatomy, efficient tag ordering, and enhanced knowledge about anime concepts. Unlike the previous iteration, we focused to make the model learn concepts rather than aesthetic.</p><p><strong>Animagine XL 3.0</strong> was trained on a 2x A100 GPU with 80GB memory for 21 days or over 500 gpu hours. For further information please visit our <a target=\"_blank\" rel=\"ugc\" href=\"https://cagliostrolab.net/posts/animagine-xl-v3-release\">official blog</a> or <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/cagliostrolab/animagine-xl-3.0\">huggingface repository.</a></p><p>Model Details</p><ul><li><p><strong>Developed by</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/cagliostrolab\"><strong><u>Cagliostro Research Lab</u></strong></a></p></li><li><p><strong>Model type</strong>: Diffusion-based text-to-image generative model</p></li><li><p><strong>Model Description</strong>: Animagine XL 3.0 is engineered to generate high-quality anime images from textual prompts. It features enhanced hand anatomy, better concept understanding, and prompt interpretation, making it the most advanced model in its series.</p></li><li><p><strong>License</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"https://freedevproject.org/faipl-1.0-sd/\"><strong><u>Fair AI Public License 1.0-SD</u></strong></a></p></li><li><p><strong>Finetuned from model</strong>: <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/Linaqruf/animagine-xl-2.0\"><strong><u>Animagine XL 2.0</u></strong></a></p></li></ul>",
+      "nsfwLevel": 1,
+      "publishedAt": "2024-01-10T13:57:46.063Z",
+      "downloadUrl": "https://civitai.com/api/download/models/293564",
+      "files": [
+        {
+          "sizeKB": 6775604.111328125,
+          "name": "animagineXLV31_v30.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp32",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "1449E5B0B9DE87B0F414C5F29CB11CE3B3DC61FA2B320E784C9441720BF7B766"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/293564",
+          "primary": true
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/a6e71784-afec-4a83-876f-1df167381e44/original=true/5352351.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/76e8f93e-678a-4976-8403-5a08bcd39034/original=true/5352345.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/4153b9e0-64b3-48af-9eb2-d935bb3ea7db/original=true/5352352.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1728,
+          "height": 1344
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/dcfa3f5a-72f0-45bd-85d5-84824c1940bd/original=true/5352348.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1728,
+          "height": 1344
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c8f8f31c-060f-4e30-a9b7-4848f2a7dd4e/original=true/5352346.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1728,
+          "height": 1344
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/1047fffe-4d2a-4d63-bdc5-bbc91f26d09a/original=true/5352347.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        }
+      ]
+    },
+    {
+      "id": 297102,
+      "name": "v3.0-base",
+      "baseModel": "SDXL 1.0",
+      "baseModelType": "Standard",
+      "description": "<p><strong>Animagine XL 3.0 Base</strong> is the foundational version of the sophisticated anime text-to-image model, <strong>Animagine XL 3.0</strong>. This base version encompasses the initial two stages of the model's development, focusing on establishing core functionalities and refining key aspects. It lays the groundwork for the full capabilities realized in Animagine XL 3.0. As part of the broader Animagine XL 3.0 project, it employs a two-stage development process rooted in transfer learning. This approach effectively addresses problems in UNet after the first stage of training is finished, such as broken anatomy.</p><p>However, this model is not recommended for inference. It is advised to use this model as a foundation to build upon. For inference purposes, please use <a target=\"_blank\" rel=\"ugc\" href=\"https://huggingface.co/cagliostrolab/animagine-xl-3.0\"><strong><u>Animagine XL 3.0</u></strong></a>.</p>",
+      "nsfwLevel": 1,
+      "publishedAt": "2024-01-14T10:15:26.018Z",
+      "downloadUrl": "https://civitai.com/api/download/models/297102",
+      "files": [
+        {
+          "sizeKB": 6775626.236328125,
+          "name": "animagineXLV31_v30Base.safetensors",
+          "type": "Model",
+          "metadata": {
+            "format": "SafeTensor",
+            "fp": "fp32",
+            "size": "full"
+          },
+          "hashes": {
+            "SHA256": "5514A7430537FC0055E7BE4DF9CBF67CF01A89E98E1B6A89E542D71AA39A5ECA"
+          },
+          "downloadUrl": "https://civitai.com/api/download/models/297102",
+          "primary": true
+        }
+      ],
+      "images": [
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/2b415746-dddb-45ff-9b73-e82aa31f4dee/original=true/5479613.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/32147029-5663-4203-be44-86690b0c6788/original=true/5479611.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/d219303c-6667-4be1-af76-af2a74961eaa/original=true/5479610.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 896,
+          "height": 1152
+        },
+        {
+          "url": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/3146c1b9-e582-4f9f-b9ed-472697ebd986/original=true/5479612.jpeg",
+          "nsfwLevel": 1,
+          "type": "image",
+          "width": 1344,
+          "height": 1728
+        }
+      ]
+    }
+  ]
+}

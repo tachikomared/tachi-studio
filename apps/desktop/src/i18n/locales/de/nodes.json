@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "lokal",
+    "free": "kostenlos, Cloud",
+    "unknown": "Preis unbekannt"
+  },
+  "repair": {
+    "title": "Flow benötigt Einrichtung",
+    "summary_one": "Dieser Flow verweist auf 1 Element, das noch nicht bereit ist.",
+    "summary_other": "Dieser Flow verweist auf {{count}} Elemente, die noch nicht bereit sind.",
+    "openAnyway": "Trotzdem öffnen",
+    "openAnywayTitle": "Für diesen Flow ausblenden — unverändert öffnen",
+    "persistFailedTitle": "Speichert nicht",
+    "persistFailed": "Canvas-Änderungen werden NICHT gespeichert — exportieren Sie Ihren Flow.",
+    "fix": {
+      "providers": "Schlüssel hinzufügen",
+      "catalog": "Katalog öffnen",
+      "settings": "Einstellungen öffnen",
+      "skills": "Skills öffnen",
+      "pickFolder": "Ordner wählen",
+      "generic": "Beheben"
+    },
+    "problem": {
+      "providerKey": "Nicht verbunden — füge den API-Schlüssel dieses Anbieters hinzu, um ihn auszuführen.",
+      "localModel": "Lokales Modell „{{model}}“ ist nicht heruntergeladen.",
+      "engineOff": "Modell „{{model}}“ ist heruntergeladen, aber die lokale Engine führt es nicht aus.",
+      "folderEmpty": "Noch kein Ordner gewählt — wähle einen als Arbeitsbereich für den Agenten.",
+      "folderMissing": "Ordner auf diesem Computer nicht gefunden: {{path}}",
+      "skillMissing": "Skill „{{skill}}“ ist nicht installiert.",
+      "codexMissing": "Codex ist noch nicht installiert.",
+      "segmentLength": "Verkettete Szene fordert {{frames}} Bilder an — verkettetes Video ist auf {{cap}} (~5 s) pro Szene begrenzt und diese wird gekürzt. Füge lieber eine weitere Szene hinzu.",
+      "rifeNoInput": "Mit diesem Interpolationsknoten ist nichts verbunden, das ein Video liefern könnte — verbinde einen Video-Knoten, dessen Ergebniskarte oder einen weiteren Interpolationsknoten.",
+      "rifeMissing": "Die Engine für Frame-Interpolation ist nicht installiert. Installiere sie direkt auf dem Knoten — ein einmaliger Download, dessen Größe die Schaltfläche anzeigt.",
+      "generic": "Erfordert Einrichtung, bevor dieser Flow läuft."
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "Knoten löschen",
+    "toggleMain": "Hauptausgabe ein/aus"
+  },
+  "unknownNode": {
+    "title": "Unbekannter Knoten",
+    "originalTypeLabel": "Ursprünglicher Typ",
+    "hint": "Dieser Knotentyp ist in diesem Build nicht registriert. Seine Daten bleiben erhalten und er wird beim Ausführen des Flows übersprungen."
+  },
+  "agentNode": {
+    "mainSet": "Als Hauptausgabe (endgültig) markieren",
+    "mainUnset": "Dies ist die Haupt-/Endausgabe — klicken zum Aufheben",
+    "modelFromUpstream": "Modell ← Upstream-Provider",
+    "instructionsLabel": "Anweisungen (optional · @ zum Referenzieren)",
+    "instructionsPlaceholder": "Wer ist dieser Agent? Z. B. 'Sie sind ein strenger Code-Reviewer.' Geben Sie @ ein, um einen Upstream-Knoten zu referenzieren.",
+    "runTitle": "Führen Sie nur diesen Agent mit Upstream-Ausgaben aus",
+    "empty": "(Agent hat keinen Text produziert)"
+  },
+  "promptNode": {
+    "mainSet": "Als Hauptausgabe (endgültig) markieren",
+    "mainUnset": "Endausgabe — klicken zum Aufheben",
+    "providerLabel": "Provider",
+    "modelLabel": "Modell",
+    "visionSuffix": " · Vision",
+    "noLocalModels": "Keine lokalen Modelle — laden Sie einen in Status → llama.cpp herunter.",
+    "modelIdPlaceholder": "Modell-ID",
+    "instructionLabel": "Anweisung (@ zum Referenzieren)",
+    "instructionPlaceholder": "Z. B. 'Schreiben Sie einen lebendigen, detaillierten Image-Generations-prompt für: eine Neon-Stadt in der Nacht.' Geben Sie @ ein, um einen Upstream-Knoten zu falten.",
+    "visionWarning": "VISION ▸ Bild verdrahtet, aber dieses Modell kann keine Bilder lesen — wählen Sie ein Vision-Modell (Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…), um es zu verwenden.",
+    "runTitle": "Führen Sie diesen Prompt-Knoten aus — generieren Sie den Prompt-Text",
+    "empty": "(noch kein Prompt generiert)",
+    "library": "{ } Bibliothek",
+    "libraryTitle": "Vorlage aus der Prompt-Bibliothek einfügen"
+  },
+  "folderNode": {
+    "header": "Ordner · Workspace",
+    "noFolder": "Kein Ordner ausgewählt",
+    "pickTitle": "Wählen Sie den Workspace-Ordner",
+    "change": "Ordner ändern",
+    "choose": "Ordner auswählen",
+    "hint": "Hier verdrahtete Agents können Dateien lesen/schreiben (je nach der Role, die Sie gewähren), auf diesen Ordner beschränkt."
+  },
+  "internetNode": {
+    "grants": "Gewährungen: web_fetch(url)",
+    "hint": "Hier verdrahtete Agents können öffentliche URLs abrufen. Blockiert im PRIVATE MODE."
+  },
+  "mcpNode": {
+    "urlPlaceholder": "Leer = integrierter Server",
+    "hint": "Hier verdrahtete Agents erhalten die Tools dieses MCP-Servers. Auf die sichere Liste im PRIVATE MODE beschränkt."
+  },
+  "textNode": {
+    "label": "Text — das Thema / kurze Zusammenfassung",
+    "placeholder": "Worum soll sich der prompt drehen? Z. B. 'Werben Sie für $TACHI — Neon-Brutalist, viral, Krypto-Hype.' Referenzieren Sie es nachgelagert mit @ oder verdrahten Sie es in einen Prompt / Media-Knoten.",
+    "hintBefore": "Ausgabe = dieser Text. Referenzieren Sie ihn aus einem anderen Knoten mit ",
+    "hintAfter": ", oder verdrahten Sie ihn in einen Prompt / Media-Knoten."
+  },
+  "noteNode": {
+    "badge": "NOTIZ",
+    "placeholder": "Notizzettel — notiere ein Label, eine Aufgabe oder Kontext. Nicht Teil der Ausführung.",
+    "cycleColor": "Farbe ändern",
+    "anchor": "Verankert {{count}} Knoten — sie bewegen sich mit dieser Notiz",
+    "dragHint": "Ziehen bewegt auch die Knoten in der Notiz. Halte Alt, um nur die Notiz zu bewegen."
+  },
+  "subflowNode": {
+    "badge": "Subflow",
+    "labelPlaceholder": "Subflow",
+    "labelAria": "Subflow-Name",
+    "count": "{{n}} Knoten",
+    "expand": "Aufklappen",
+    "expandTitle": "Aufklappen — die eingeklappten Knoten und ihre Verbindungen wiederherstellen",
+    "hint": "Eingeklappte Gruppe. Die ausgeblendeten Knoten laufen weiterhin im Flow mit."
+  },
+  "imageRefNode": {
+    "tooLarge": "Bild zu groß ({{size}} MB, max. 12).",
+    "readError": "Konnte die Datei nicht lesen.",
+    "label": "Referenzbild (Init-Frame / Style-Ref)",
+    "altFallback": "Referenz",
+    "replace": "Bild ersetzen…",
+    "choose": "Bild auswählen…",
+    "removeImage": "Bild entfernen",
+    "clear": "Löschen",
+    "hint1": "Verdrahten in einen ",
+    "hintVideoImage": "Video / Bild",
+    "hint2": "-Knoten = sein Referenzbild (Init-Frame für Bild-zu-Video). Verdrahten in einen ",
+    "hint3": "-Knoten = das Text-Modell SIEHT es (Vision) und schreibt darüber. Benötigt ein Vision-fähiges Modell."
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ Ausgabe",
+    "titlePlain": "Ausgabe",
+    "regen": "↻ REGEN",
+    "regenTitle": "Regenerieren — führen Sie den Quell-Knoten erneut aus",
+    "regenAria": "Regenerieren",
+    "deleteResult": "Ergebnis löschen",
+    "noOutput": "(keine Ausgabe)",
+    "branchHint": "Branch ▸ verdrahten Sie einen neuen Prompt / Media-Knoten aus diesem Ergebnis, um die Kette fortzusetzen.",
+    "pin": "PIN",
+    "pinned": "▪ GEPINNT",
+    "pinTitle": "Dieses Ergebnis anpinnen — »Alle ausführen« verwendet es wieder, statt den Knoten erneut auszuführen (und erneut zu bezahlen)",
+    "unpinTitle": "Lösen — »Alle ausführen« führt diesen Knoten wieder erneut aus",
+    "pinnedChip": "GEPINNT — ALLE AUSFÜHREN VERWENDET DIES WIEDER",
+    "costTitle": "Geschätzte Kosten des letzten Laufs dieses Knotens (Zeichen/4-Token-Rechnung mit den Tarifen des verdrahteten Modells)",
+    "followUp": "Follow-up",
+    "followUpLabel": "Follow-up",
+    "followUpTitle": "Verzweigen Sie einen Follow-up-Agent aus diesem Ergebnis — er liest diese Ausgabe als seinen Kontext",
+    "variantTitle": "Vervielfachungs-Variante {{n}} — einer von mehreren Geschwister-Läufen des Quellknotens"
+  },
+  "mediaNode": {
+    "noLocalVoices": "Keine lokalen Stimmen — laden Sie eine in Media → Local herunter.",
+    "installPiper": "Installieren Sie Piper + laden Sie eine Stimme in Media → Local herunter.",
+    "noLocalModels": "Keine lokalen {{kind}}-Modelle — laden Sie einen in Media → Local herunter.",
+    "installSdCpp": "Installieren Sie sd.cpp + laden Sie ein Modell in Media → Local herunter.",
+    "providerLabel": "Provider",
+    "providerLocal": "Lokal",
+    "modelLabel": "Modell",
+    "staleModel": "{{id}} (nicht installiert)",
+    "noModels": "Keine Modelle — fügen Sie einen Surplus-Schlüssel + Fonds-USDC hinzu.",
+    "noModelsErr": "Keine Modelle ({{error}})",
+    "promptLabel": "Prompt",
+    "promptWired1": "Prompt wird aus einem Upstream-Knoten verdrahtet — seine Ausgabe wird als prompt verwendet. Trennen Sie den ",
+    "promptWired2": "-Stecker, um hier einen einzugeben.",
+    "promptLabelRef": "Prompt (@ zum Referenzieren eines Upstream-Knotens)",
+    "promptPlaceholder": "Beschreiben Sie, was zu generieren ist… (oder verdrahten Sie einen Prompt-Knoten in den prompt-Stecker)",
+    "imageWired1": "Referenzbild wird aus einem Upstream-Knoten verdrahtet — sein Bild wird verwendet. Trennen Sie den ",
+    "imageWired2": "-Stecker, um hier eines auszuwählen.",
+    "required": "Erforderlich:",
+    "runTitle": "Generieren Sie mit dem Prompt + Parametern dieses Knotens",
+    "perfPreset": "Leistung",
+    "perfPresetPlaceholder": "— Stufe —",
+    "stylePreset": "Stil"
+  },
+  "resultCard": {
+    "collapse": "Resultatskarte einklappen",
+    "expand": "Resultatskarte ausklappen",
+    "toggleAria": "Ergebniskarte ein-/ausklappen: {{title}}"
+  },
+  "runUI": {
+    "runDefault": "Führen Sie nur diesen Knoten aus",
+    "run": "Ausführen",
+    "running": "Läuft…",
+    "pin": "ANHEFTEN",
+    "pinned": "ANHEFTEN ●",
+    "pinTitle": "Heften Sie diese Ausgabe als feste Referenz für nachgelagerte Knoten an",
+    "pinnedTitle": "Angeheftet: Nachgelagerte Läufe verwenden diese Ausgabe erneut, ohne erneut zu laufen. Klicken zum Ablösen.",
+    "clearTitle": "Löschen Sie die zwischengespeicherte Ausgabe dieses Knotens",
+    "clearAria": "Ausgabe löschen",
+    "clearBusyTitle": "Löschen nicht möglich, solange dieser Node läuft — stoppe zuerst den Lauf",
+    "noOutput": "(keine Ausgabe)",
+    "generatedAlt": "generiert",
+    "toDesignAudio": "→ Design-Audio",
+    "toDesignAudioTitle": "Clip ins Design-Audio kopieren — Animationen können ihn über staticFile() nutzen",
+    "toDesignAudioDone": "In Design-Audio gespeichert: {{file}}",
+    "retry": "WIEDERHOLUNG {{attempt}}/{{attempts}}",
+    "fanoutTitle": "Vervielfachen ×{{count}} — RUN führt diesen Knoten {{count}}-mal in separate Ergebniskarten aus. Klicken zum Ändern (×1 · ×2 · ×4).",
+    "fanoutAria": "Vervielfachen ×{{count}}",
+    "fanoutRunning": "RUN {{current}}/{{total}}",
+    "fanoutStop": "STOPP",
+    "fanoutStopTitle": "Vervielfachung nach Abschluss der aktuellen Variante stoppen",
+    "stopRun": "STOPP",
+    "stopRunTitle": "Diesen Render stoppen — beendet den lokalen Engine-Prozess sofort",
+    "statusDone": "{{title}}: Lauf beendet",
+    "statusError": "{{title}}: Lauf fehlgeschlagen"
+  },
+  "quickAdd": {
+    "addConnected": "Verdrahteten Knoten hinzufügen",
+    "menuAria": "Verdrahteten Knoten hinzufügen",
+    "header": "Hinzufügen + verbinden"
+  },
+  "referenceField": {
+    "placeholder": "Eingeben oder @ zum Referenzieren eines Upstream-Knotens…",
+    "resolvesTo": "Wird zu aufgelöst",
+    "empty": "(leer — Upstream-Knoten haben noch keine Ausgabe)"
+  },
+  "edgeSidecar": {
+    "placeholder": "Anweisung für die Kante…",
+    "hint": "Eingabetaste zum Speichern · Esc zum Abbrechen"
+  },
+  "edge": {
+    "removeConnection": "Verbindung entfernen",
+    "editLabel": "Kantenbeschriftung bearbeiten"
+  },
+  "paneMenu": {
+    "aria": "Leinwand-Kontextmenü",
+    "tidyUp": "Aufräumen",
+    "tidyUpTitle": "Alle Knoten mit ELK-Schichtungs-Layout automatisch anordnen",
+    "addNode": "Knoten hinzufügen…",
+    "addNodeTitle": "Schnell einen Knoten an dieser Position hinzufügen",
+    "kindAgent": "Agent",
+    "kindPrompt": "Prompt",
+    "kindText": "Text",
+    "kindMedia": "Bild (Media)",
+    "kindProvider": "Provider"
+  },
+  "group": {
+    "toSubflow": "Gruppieren → Subflow",
+    "title": "Die {{n}} ausgewählten Knoten zu einem Subflow einklappen"
+  },
+  "merge": {
+    "toFollowUp": "Zusammenführen → Folgeschritt",
+    "title": "Die {{n}} ausgewählten Ergebnisse zu einem Folge-Agenten zusammenführen, der sie zusammenfasst",
+    "label": "Zusammenführen",
+    "systemPrompt": "Fasse die vorgelagerten Ergebnisse zu einer einzigen Antwort zusammen."
+  },
+  "nodeMenu": {
+    "aria": "Knoten-Kontextmenü",
+    "group": "In Subflow gruppieren",
+    "duplicate": "Duplizieren",
+    "delete": "Löschen"
+  },
+  "emptyCanvas": {
+    "title": "Leere Leinwand",
+    "addNode": "Klicken Sie auf eine Vorlage in der Palette, um einen Knoten hinzuzufügen.",
+    "connect": "Ziehen Sie Griffe, um Knoten zu verbinden.",
+    "delete": "Zeigen Sie auf einen Knoten und klicken Sie ×, um ihn zu löschen, oder wählen Sie + drücken Sie Entf. / Backspace.",
+    "starters": "…oder mit einer Vorlage starten"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "Multi-Agent-Recherche",
+        "description": "Der Rechercheur sammelt Fakten, der Analyst destilliert sie, der Autor schreibt das fertige Briefing. Kostenlos — kein Schlüssel nötig."
+      },
+      "brainstorm-decide": {
+        "label": "Brainstormen & entscheiden",
+        "description": "Der Optimist liefert Ideen, der Skeptiker prüft sie auf Herz und Nieren, der Entscheider legt sich auf einen Plan fest. Kostenlos — kein Schlüssel nötig."
+      },
+      "prompt-to-image": {
+        "label": "Prompt → Bild",
+        "description": "Ein kostenloses Textmodell schreibt einen lebendigen Bild-Prompt und speist damit einen Bild-Knoten. Geben Sie Ihre Idee ein und führen Sie es aus."
+      },
+      "compare-two-models": {
+        "label": "Zwei Modelle vergleichen",
+        "description": "Eine Frage, zwei Modelle antworten nebeneinander, ein Juror kürt den Sieger. Modell B ist standardmäßig Bankr/Claude."
+      },
+      "rag-over-folder": {
+        "label": "RAG über einen Ordner",
+        "description": "Wählen Sie einen Ordner und stellen Sie Fragen — der Agent durchsucht Ihre Dateien und antwortet mit Zitaten. Benötigt einen Bankr-Schlüssel."
+      },
+      "summarize-url": {
+        "label": "URL zusammenfassen",
+        "description": "Fügen Sie einen Link in den Text-Knoten ein — ein Agent mit Webzugriff lädt die Seite und fasst sie zusammen. Benötigt einen Bankr-Schlüssel."
+      },
+      "geo-audit": {
+        "label": "GEO-Audit (Optimierung für Antwortmaschinen)",
+        "description": "Seite und Zielfragen einfügen — der Flow simuliert, wie eine Antwortmaschine sie nutzt, benotet sie und listet die Korrekturen. Kostenlos, kein Key nötig."
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio (Multi-Provider · Debatte → Bild + Video)",
+      "description": "Ein kreatives Team, das erst STREITET und dann erschafft. Ein Bankr-Agent bringt eine Idee ein, ein OpenGateway-Agent übt Kritik, ein Surplus-Agent entscheidet — dann schreibt ein Prompt-Knoten den Bild-Prompt (Surplus image), und ein Scenarist skriptet ein Video (Surplus video). Unterschiedliche Provider, Modelle, MCP-/Web-Tools und Berechtigungen pro Agent. Benötigt Bankr- + OpenGateway- + Surplus-Keys (für Medien ein finanzierter Surplus-Key). Showcase- / Testboard."
+    },
+    "storyboard": {
+      "label": "Storyboard (verkettete Szenen · lokal)",
+      "description": "Verkettete Szenen: ein Standbild eröffnet die Geschichte, Szene 1 animiert es, und Szene 2 beginnt beim LETZTEN FRAME von Szene 1 — die App extrahiert diesen Frame für Sie. Geben Sie Ihre Prämisse ein, wählen Sie Ihre lokalen Modelle und starten Sie den Flow. Ehrliche Grenzen: jede Szene ist ein eigenes ~5-Sekunden-Rendering mit vollem Pixel-Umweg, sodass Farb- und Identitätsdrift mit wachsender Kette zunehmen und jede Szene ihr eigenes Modell-Laden bezahlt. Als Storyboard mit ein paar Szenen gedacht, nicht als langer Film."
+    },
+    "prompt-to-image": {
+      "label": "Prompt → Bild",
+      "description": "Ein kostenloses Textmodell verfasst einen lebendigen Bild-Prompt und speist ihn in einen Bild-Knoten ein. Geben Sie Ihre Idee im Prompt-Knoten ein, führen Sie ihn aus, dann führen Sie den Bild-Knoten aus (benötigt einen Surplus-Key)."
+    },
+    "viral-video": {
+      "label": "Prompt → Viral → Video",
+      "description": "Ein Concept writer entwirft eine Idee, ein Viral rewriter macht daraus einen dynamischen Text-zu-Video-Prompt, der dann einen Video-Knoten speist. Das Verfassen ist kostenlos; die Videogenerierung benötigt einen Surplus-Key."
+    },
+    "improve-prompt-image": {
+      "label": "Prompt verbessern → Bild",
+      "description": "Fügen Sie einen groben Bild-Prompt in den Prompt-Knoten ein — ein kostenloses Textmodell verfeinert ihn und speist einen Bild-Knoten. Führen Sie den Prompt-Knoten aus, dann den Bild-Knoten."
+    },
+    "expert-roundtable": {
+      "label": "Experten-Runde (Multi-Agent-Chat)",
+      "description": "Frontend-, Backend- und SEO-Experten denken der Reihe nach mit — jeder baut auf dem vorigen auf —, dann fasst der CEO den Plan zusammen. Bearbeiten Sie die Instructions jedes Agenten, um die Persona anzupassen, oder klicken Sie auf „Add expert“. Öffnen Sie „Chat with flow“, um mit dem Team zu sprechen."
+    },
+    "code-helper": {
+      "label": "Code-Helfer (Dateien)",
+      "description": "Ein Agent (Bankr/Claude), der Dateien in einem von Ihnen gewählten Ordner liest und schreibt. Ordner wählen, dann ausführen."
+    },
+    "build-review": {
+      "label": "Build & Review (Dateien, Multi-Agent)",
+      "description": "Builder (Bankr/Claude) schreibt Dateien in Ihrem Ordner, dann prüft sie der Reviewer. Ordner wählen, dann ausführen."
+    },
+    "writer-reviewer": {
+      "label": "Writer zu Reviewer",
+      "description": "Writer verfasst den Entwurf, Reviewer kritisiert und verbessert ihn."
+    },
+    "research-summarize": {
+      "label": "Research zu Summary",
+      "description": "Researcher sammelt Punkte, Summarizer fasst sie zusammen."
+    },
+    "code-review": {
+      "label": "Code zu Review",
+      "description": "Coder schreibt den Code, Reviewer prüft ihn auf Bugs."
+    }
+  },
+  "palette": {
+    "title": "Knoten-Palette",
+    "searchPlaceholder": "Suche…",
+    "searchAria": "Palette durchsuchen",
+    "noMatches": "Keine Übereinstimmungen.",
+    "footer": "Auf die Leinwand ziehen oder zum Einfügen klicken.",
+    "dropHint": "Loslassen, um einen Knoten hinzuzufügen",
+    "addNode": "{{label}}-Knoten hinzufügen",
+    "addRole": "{{label}}-Rollenknoten hinzufügen",
+    "groups": {
+      "providers": "Provider",
+      "prompt": "Prompt",
+      "inputs": "Eingaben",
+      "agents": "Agents",
+      "tools": "Tools",
+      "media": "Media",
+      "annotate": "Notizen",
+      "roles": "Rollen",
+      "triggers": "Auslöser"
+    },
+    "aria": "Knoten-Palette"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "Versionen — jedes Speichern erzeugt einen Snapshot",
+      "openAria": "Versionen anzeigen",
+      "title": "Versionen",
+      "loading": "Verlauf wird gelesen…",
+      "empty": "Noch keine Versionen — beim Speichern dieses Flows entsteht ein Snapshot.",
+      "failed": "Versionen konnten nicht gelesen werden: {{error}}",
+      "unreadable": "Snapshot unlesbar",
+      "identical": "keine Änderungen",
+      "nodesAdded": "+{{n}} Knoten",
+      "nodesRemoved": "-{{n}} Knoten",
+      "edgesAdded": "+{{n}} Kanten",
+      "edgesRemoved": "-{{n}} Kanten",
+      "params": "{{n}} Parameter",
+      "justNow": "gerade eben",
+      "minutesAgo": "vor {{n}} Min.",
+      "hoursAgo": "vor {{n}} Std.",
+      "daysAgo": "vor {{n}} T.",
+      "size": "{{n}} KB",
+      "restore": "wiederherst.",
+      "restoreTitle": "Diese Version wiederherstellen — der aktuelle Stand wird vorher gesichert, also umkehrbar",
+      "restored": "„{{name}}“ aus einer früheren Version wiederhergestellt",
+      "restoreFailed": "Wiederherstellung fehlgeschlagen: {{error}}"
+    },
+    "scheduleTitle": "Diesen Flow per Timer ausführen",
+    "scheduleAria": "Diesen Flow planen",
+    "title": "Flows",
+    "refreshTitle": "Liste aktualisieren",
+    "refreshAria": "Aktualisieren",
+    "newTitle": "Speichern Sie die aktuelle Leinwand und starten Sie eine neue",
+    "newFlow": "+ Neuer Flow",
+    "empty": "Noch keine gespeicherten Flows. Erstellen Sie einen und drücken Sie Speichern, oder + Neuer Flow.",
+    "rename": "Ren",
+    "renameTitle": "Flow umbenennen",
+    "confirmDelete": "Sicher?",
+    "confirmDeleteTitle": "Klicken Sie erneut zur Bestätigung des Löschens",
+    "deleteTitle": "Flow löschen",
+    "templates": "Vorlagen",
+    "import": "⇧ Importieren",
+    "importTitle": "Eine .tachiflow.json-Flow-Datei importieren",
+    "importAria": "Flow importieren",
+    "imported": "\"{{name}}\" importiert",
+    "importFailed": "Import fehlgeschlagen: {{error}}",
+    "notTachiflow": "Keine .tachiflow.json-Datei",
+    "unsupportedVersion": "Diese .tachiflow.json stammt aus einer neueren App-Version — aktualisieren Sie TACHI STUDIO, um sie zu importieren.",
+    "exportTitle": "Als .tachiflow.json exportieren",
+    "exportAria": "Flow exportieren",
+    "exported": "{{file}} exportiert",
+    "exportFailed": "Export fehlgeschlagen: {{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "Aktuelle Arbeitsfläche als PNG mit eingebettetem Flow exportieren — reimportierbar",
+    "pngExported": "Exportiert {{file}}",
+    "pngExportFailed": "PNG-Export fehlgeschlagen: {{error}}",
+    "pngNoFlow": "Kein eingebetteter Flow in diesem PNG gefunden",
+    "saveFailed": "Speichern fehlgeschlagen: {{error}}",
+    "cfaBlocked": "Der überwachte Ordnerzugriff von Windows blockiert Schreibvorgänge in Dokumente\\Tachi Studio — erlaube Tachi Studio in der Windows-Sicherheit, sonst speichert die App die Daten in {{fallback}}",
+    "aria": "Gespeicherte Flows",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "Flow öffnen",
+    "renameAria": "Flow umbenennen",
+    "deleteAria": "Flow löschen",
+    "confirmDeleteAria": "Löschen bestätigen"
+  },
+  "config": {
+    "aria": "Knotenkonfiguration",
+    "header": "Konfigurieren · {{type}}",
+    "close": "Schließen",
+    "closeEsc": "Schließen (Esc)",
+    "deleteNode": "Knoten löschen",
+    "deleteTitle": "Diesen Knoten und seine Kanten löschen",
+    "duplicateNode": "Knoten duplizieren",
+    "duplicateTitle": "Diesen Knoten mit allen Einstellungen klonen (Strg+D)",
+    "fields": {
+      "label": "Beschriftung",
+      "model": "Modell",
+      "provider": "Provider",
+      "endpoint": "Endpunkt",
+      "harness": "Agent",
+      "systemPrompt": "System prompt",
+      "final": "Endgültig (Hauptausgabe)",
+      "instruction": "Anweisung",
+      "roleId": "Rollen-ID",
+      "description": "Beschreibung",
+      "permissionTier": "Berechtigungsstufe",
+      "workspacePath": "Workspace-Pfad",
+      "serverUrl": "Server-URL",
+      "modality": "Modalität",
+      "promptTemplate": "Prompt-Vorlage",
+      "size": "Größe",
+      "count": "Anzahl (n)",
+      "voice": "Stimme",
+      "format": "Format",
+      "duration": "Dauer (s)",
+      "resolution": "Auflösung",
+      "audioPath": "Audio-Pfad",
+      "autoSaveDir": "Auto-Save-Verzeichnis",
+      "codexAllowWrite": "Schreiben erlauben (workspace-write-Sandbox)",
+      "retries": "Wiederholungen bei Fehler",
+      "retryDelay": "Wiederholungsverzögerung (ms)"
+    },
+    "placeholders": {
+      "nodeLabel": "Knotenbeschriftung",
+      "modelId": "Modell-ID",
+      "systemPrompt": "Wer ist dieser Agent? Z. B. 'Sie sind ein strenger Code-Reviewer.'",
+      "instruction": "Welche Art von prompt zu schreiben…",
+      "serverUrl": "Leer = integrierter Server",
+      "surplusModelId": "Surplus-Modell-ID",
+      "autoSaveDir": "Fallback-Speicherordner"
+    },
+    "hints": {
+      "modelFromProvider": "Modell kommt vom Upstream-Provider-Knoten.",
+      "internet": "Gewährt Web-Fetch an einen verdrahteten Agent (Egress-Richtlinie bewacht).",
+      "codexAllowWrite": "Codex darf Dateien nur innerhalb des verbundenen Ordners erstellen, ändern oder löschen. Aus = schreibgeschützte Analyse.",
+      "codexWriteNeedsFolder": "Verbinde einen Ordner-Knoten, um den Schreibmodus zu aktivieren — er betrifft nur diesen Ordner, nie den gesamten App-Speicher.",
+      "retries": "Diesen Knoten bei Fehler bis zu 3-mal erneut ausführen. 0 = aus. Nur der letzte Fehlschlag speichert den Fehler oder speist einen Fehlerzweig.",
+      "retryDelay": "So lange zwischen den Versuchen warten."
+    },
+    "sections": {
+      "input": "Eingang",
+      "params": "Parameter",
+      "output": "Ausgang"
+    },
+    "io": {
+      "noInputs": "Keine Eingänge verdrahtet",
+      "inputEmpty": "— noch keine Ausgabe",
+      "noOutput": "Noch nicht ausgeführt",
+      "showMore": "Mehr anzeigen",
+      "showLess": "Weniger anzeigen",
+      "statusOk": "OK",
+      "statusError": "Fehlgeschlagen",
+      "statusIdle": "Nicht ausgeführt",
+      "errorLabel": "Fehler",
+      "costTitle": "Geschätzte Kosten der letzten Ausführung dieses Knotens (Zeichen/4-Tokenrechnung zu den Tarifen des verdrahteten Modells)"
+    },
+    "retries": {
+      "decrease": "Weniger Wiederholungen",
+      "increase": "Mehr Wiederholungen"
+    }
+  },
+  "blueprint": {
+    "title": "Blaupause importieren",
+    "close": "Schließen",
+    "description": "Fügen Sie Markdown mit nummerierten Schritten ein. Jeder Schritt wird zu einem Agent-Knoten (Beschriftung = Titel, Systemaufforderung = Body), verdrahtet von oben → unten in eine Kette.",
+    "placeholder": "Fügen Sie einen nummerierten Plan ein, z. B.\n\n1. Forschung\nSammeln Sie Quellen zum Thema und fassen Sie die Schlüsselfakten zusammen.\n\n2. Entwurf\nSchreiben Sie einen ersten Entwurf aus der obigen Forschung.\n\n3. Überprüfung\nKritisieren Sie den Entwurf und listen Sie konkrete Fixes auf.",
+    "stepsDetected_one": "{{count}} Schritt erkannt",
+    "stepsDetected_other": "{{count}} Schritte erkannt",
+    "noSteps": "Keine nummerierten Schritte gefunden. Beginnen Sie Zeilen mit \"1.\", \"2)\", usw.",
+    "final": "(endgültig)",
+    "cancel": "Abbrechen",
+    "import": "Importieren",
+    "importCount": "Importieren ({{count}})",
+    "importTitleReady": "Agent-Kette generieren",
+    "importTitleEmpty": "Fügen Sie zuerst nummerierte Schritte ein"
+  },
+  "howto": {
+    "title": "So erstellen Sie einen Workflow",
+    "closeAria": "Anleitung schließen",
+    "closeTitle": "Schließen (stellt Ihre Leinwand wieder her)",
+    "back": "Zurück",
+    "next": "Weiter",
+    "restore": "Meine Leinwand wiederherstellen",
+    "restoreTitle": "Entfernen Sie das Beispiel und stellen Sie Ihre Leinwand wieder her",
+    "keep": "Beispiel behalten",
+    "keepTitle": "Behalten Sie das Beispiel auf der Leinwand",
+    "restoreNote": "Ihre Leinwand wird beim Schließen wiederhergestellt — es sei denn, Sie wählen \"Beispiel behalten\".",
+    "steps": {
+      "intro": {
+        "title": "Was ist ein Workflow?",
+        "body": "Ein Workflow ist eine Kette von KI-Schritten, die Sie auf dieser Leinwand verdrahten — Text, prompts, Bilder, Videos, Musik. Ich werde ein einfaches zweischrittiges Beispiel direkt vor Ihnen bauen; drücken Sie Weiter und sehen Sie zu. (Jeder Schritt, den Sie ausführen, lässt seine Resultatskarte auf der Leinwand fallen, von der Sie verzweigen können.)"
+      },
+      "provider": {
+        "title": "Schritt 1 — Provider",
+        "body": "Ein Provider ist, woher die KI-Modelle kommen. Wir verwenden den schlüssellosen FreeLLM-Router — kein Schlüssel erforderlich. Jeder Agent benötigt einen Provider für sein \"Gehirn\"."
+      },
+      "agent": {
+        "title": "Schritt 2 — Agent",
+        "body": "Ein Agent verrichtet die eigentliche Arbeit. Dieser ist der Writer. Auf der echten Leinwand fügen Sie Knoten aus der Palette auf der linken Seite hinzu (einen herausziehen)."
+      },
+      "wire": {
+        "title": "Schritt 3 — Verdrahten Sie sie",
+        "body": "Verbinden Sie den Provider mit dem Writer, indem Sie von der Kante eines Knotens zur anderen ziehen. Jetzt hat der Writer ein Gehirn (sein Modell). Die Kante ist gerade erschienen."
+      },
+      "second": {
+        "title": "Schritt 4 — Fügen Sie einen zweiten Schritt hinzu",
+        "body": "Fügen Sie einen zweiten Agent (Reviewer) hinzu und verbinden Sie Writer mit Reviewer. Die Beschriftung auf dieser Kante (\"needs review\") ist ein Routing-Hinweis — sie sagt dem Flow, wann zu fortfahren ist. Sie haben jetzt einen 2-Schritt-Workflow."
+      },
+      "run": {
+        "title": "Schritt 5 — Führen Sie aus",
+        "body": "Das ist ein kompletter Workflow. Klicken Sie auf die hervorgehobene \"Run Flow\"-Schaltfläche (leuchtet jetzt auf), dann \"Run All\", um jeden Knoten der Reihe nach auszuführen. Jeder Schritt lässt eine Resultatskarte auf der Leinwand fallen — verzweigen Sie einen neuen Knoten aus einer beliebigen Karte, um weiterzumachen, oder treffen Sie die Karte in der Regen, um sie neu zu rollen."
+      },
+      "beyond": {
+        "title": "Über Agents hinaus",
+        "body": "Die Palette hat mehr: einen Text-Knoten (ein Thema/kurze Zusammenfassung), einen Reference Image-Knoten (fügen Sie einen Charakter oder Stil), Media-Knoten (Bild, Video, Musik, TTS, STT — über Venice oder Surplus), und einen Prompt-Knoten, der ein verdrahtetes Bild SEHEN kann (Vision). Jeder Provider funktioniert — Venice, Bankr, Ollama, llama.cpp — mit Modell-Fähigkeits-Tags, die inline angezeigt werden. Speichern Sie Leinwände in der Flows-Liste auf der linken Seite und wechseln Sie wie Chats zwischen ihnen."
+      }
+    }
+  },
+  "toolbar": {
+    "title": "Knoten-Leinwand",
+    "howToBuild": "Wie man baut",
+    "howToBuildTitle": "Interaktive Anleitung — bauen Sie Ihren ersten Workflow Schritt für Schritt",
+    "templates": "Vorlagen ▾",
+    "templatesTitle": "Fügen Sie einen fertigen Beispiel-Workflow ein",
+    "council": "Rat",
+    "councilTitle": "Generieren Sie einen Rat: Ein Quell-Agent verzweigt sich auf Skeptiker / Pragmatiker / Kritiker, die einen finalen Synthesis-Agent speisen",
+    "importBlueprint": "Blaupause importieren",
+    "importBlueprintTitle": "Fügen Sie Markdown mit nummerierten Schritten ein, um eine sequenzielle Kette von Agent-Knoten zu generieren",
+    "flowNamePlaceholder": "Flow-Name…",
+    "flowNameAria": "Flow-Name",
+    "new": "Neu",
+    "newTitle": "Neu — verwerfen Sie den aktuellen Flow",
+    "open": "Öffnen",
+    "openTitle": ".tachi-flow.json-Datei öffnen",
+    "save": "Speichern",
+    "saveTitle": "Flow als .tachi-flow.json speichern",
+    "clear": "Löschen",
+    "clearTitle": "Alle Knoten und Kanten löschen",
+    "autoLayout": "Automatisches Layout",
+    "layingOut": "Wird ausgeglichen…",
+    "autoLayoutTitle": "Knoten mit ELK-Schichtungs-Algorithmus automatisch anordnen",
+    "whiteboard": "Whiteboard",
+    "whiteboardTitle": "Skizzen-Whiteboard umschalten — Freihand-Diagramme und Notizen auf einer separaten Leinwand; Ihr Flow bleibt darunter unberührt",
+    "runFlow": "Flow ausführen",
+    "runFlowTitle": "Kompilieren und FÜHREN Sie diesen Graph einmal aus, dann zeigen Sie das Ergebnis",
+    "addExpert": "+ Experten hinzufügen",
+    "addExpertTitle": "Fügen Sie einen neuen Persona-Agent hinzu und verdrahten Sie ihn in den Roundtable (vor dem CEO/MAIN-Knoten)",
+    "chatWithFlow": "Mit Flow chatten",
+    "chatWithFlowTitle": "Sprechen Sie mit dem ganzen Team — jeder Experte antwortet und der MAIN-Agent synthetisiert",
+    "openInCode": "In Code-Registerkarte öffnen",
+    "openInCodeTitle": "Senden Sie diesen Flow an die Code-Registerkarte als Agent-Sitzung (Single-Agent)",
+    "runInCode": "▸ Im Code-Chat ausführen",
+    "runInCodeTitle": "Speichern Sie diesen ganzen Graph und führen Sie ihn aus dem Code-Chat aus — senden Sie ihm eine Nachricht, um das vollständige Multi-Agent-Netzwerk auszuführen",
+    "nodeCount_one": "{{count}} Knoten",
+    "nodeCount_other": "{{count}} Knoten",
+    "edgeCount_one": "{{count}} Kante",
+    "edgeCount_other": "{{count}} Kanten",
+    "templatesMenuAria": "Startvorlagen"
+  },
+  "runPanel": {
+    "title": "Flow ausführen",
+    "close": "Schließen",
+    "initialMessage": "Anfangsnachricht (nur Netzwerk-Modus)",
+    "initialPlaceholder": "Optional — leer lassen, um nur den Flow auszuführen. Prompt-Knoten tragen ihre eigenen Anweisungen.",
+    "runAll": "▸ Alle ausführen (der Reihe nach)",
+    "runAllTitle": "Führen Sie jeden Knoten EINMAL aus, von oben nach unten in Abhängigkeitsreihenfolge (Prompt → Prompt → Media). Die Ausgabe jedes Knotens speist die nächste — die ganze Pipeline mit einem Klick.",
+    "running": "Läuft…",
+    "runningStep": "Läuft {{step}}/{{total}}{{label}}…",
+    "stop": "■ Nach aktuellem Schritt beenden",
+    "stopTitle": "Beenden Sie den Lauf, nachdem der aktuelle Knoten fertig ist (es gibt kein Mid-Node-Abort).",
+    "runNetwork": "Als ein Netzwerk ausführen",
+    "runNetworkTitle": "Alternative: ein gemeinsamer Agent-Kit-Netzwerk-Durchgang (Agents teilen Status — für Roundtables). Verwendet die obige Anfangsnachricht. Verkettete Prompt→Prompt können auf einigen Providern leer zurückkommen.",
+    "idleBefore": "Drücken Sie ",
+    "idleStrong": "▸ Alle ausführen",
+    "idleAfter": ", um jeden Knoten einmal in Abhängigkeitsreihenfolge auszuführen — die Ausgabe jedes Knotens fließt in die nächste, und die Leinwand füllt sich live auf. (Das Nachrichtenfeld unten speist nur den optionalen \"Als ein Netzwerk ausführen\"-Modus.)",
+    "runningNode": "Läuft Knoten {{step}} von {{total}}{{label}}… (beobachten Sie die Leinwand — jeder Knoten füllt sich auf, wenn er fertig ist)",
+    "runningFlow": "Flow läuft…",
+    "runFailed": "Lauf fehlgeschlagen",
+    "noAgentOutput": "Der Flow lief aber produzierte keine Agent-Ausgabe.",
+    "step": "Schritt {{n}} · {{agent}}",
+    "finalSuffix": " (endgültig)",
+    "noTextOutput": "(keine Text-Ausgabe)",
+    "finalAnswer": "Endgültige Antwort",
+    "empty": "(leer)",
+    "budgetLabel": "Budget-Limit $",
+    "budgetOff": "aus",
+    "budgetTitle": "Beenden Sie den Lauf, bevor die geschätzten Ausgaben diesen Dollarbetrag überschreiten. Leer = kein Limit. Schätzungen nutzen die Tarife des verdrahteten Modells jedes Knotens; lokale Modelle sind kostenlos.",
+    "retrySuffix": " · Wiederholung {{attempt}}/{{attempts}}",
+    "aria": "Flow ausführen",
+    "doneAria": "Lauf beendet"
+  },
+  "chatPanel": {
+    "title": "Mit Flow chatten",
+    "clear": "Löschen",
+    "clearTitle": "Gespräch löschen",
+    "close": "Schließen",
+    "empty": "Senden Sie eine Nachricht — jeder Experte in dem Flow gibt Gewicht (jeder baut auf dem vorherigen auf), und der MAIN-Agent synthetisiert die Entscheidung. Alle Sichtpunkte werden angezeigt; das Gespräch wird über Turns hinweg erinnert. Tipp: Laden Sie die \"Expert Roundtable\"-Vorlage oder klicken Sie auf \"+ Expert hinzufügen\", und markieren Sie einen Knoten \"MAIN\", um zu wählen, wer synthetisiert.",
+    "you": "Sie",
+    "error": "Fehler",
+    "flow": "Flow",
+    "roundtable": "Team-Roundtable",
+    "decisionSuffix": " · Entscheidung",
+    "noOutput": "(keine Ausgabe)",
+    "thinking": "Flow überlegt…",
+    "inputPlaceholder": "Nachricht an den Flow… (Cmd/Strg+Eingabetaste zum Senden)",
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "aria": "Mit Flow chatten"
+  },
+  "media": {
+    "output": "Media-Ausgabe",
+    "failed": "Fehlgeschlagen.",
+    "noTranscript": "(kein Transkript)",
+    "noArtifact": "Fertig — kein Artefakt zurückgegeben.",
+    "generatedAlt": "generiert",
+    "modalities": {
+      "image": "Bild",
+      "video": "Video",
+      "music": "Musik",
+      "speech": "Sprache",
+      "transcript": "Transkript"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "Graph-Ausführungs-IPC ist nicht verfügbar.",
+      "nothingToRun": "Nichts zu laufen — fügen Sie einen Prompt-, Agent- oder Media-Knoten hinzu.",
+      "cycle": "Zyklus im Graphen erkannt — geordnete Ausführung nicht möglich. Betroffene Knoten: {{nodes}}"
+    },
+    "errorPrefix": "Fehler",
+    "budgetStop": "Gestoppt: geschätzte Ausgaben von ~${{spent}} haben das Budget-Limit von ${{cap}} erreicht. Erhöhen oder entfernen Sie das Limit im Ausführungs-Panel, um fortzufahren.",
+    "skippedNoError": "Übersprungen — kein Fehler zu behandeln",
+    "skippedUpstreamFailed": "Übersprungen — vorgelagerter Knoten fehlgeschlagen"
+  },
+  "chat": {
+    "noOutput": "(keine Ausgabe)"
+  },
+  "scheduler": {
+    "addProviderAgent": "Fügen Sie zuerst einen Provider und einen Agent hinzu.",
+    "needAgent": "Flow benötigt mindestens einen Agent-Knoten.",
+    "needProvider": "Flow benötigt mindestens einen Provider-Knoten.",
+    "unknownHarness": "Agent \"{{harness}}\" hat einen unbekannten Agent-Typ — übersprungen.",
+    "connectEdge": "Verbinden Sie einen Provider → Agent Edge vor dem Laufen."
+  },
+  "confirm": {
+    "discardFlow": "Aktuellen Flow verwerfen und neu starten?",
+    "replaceTemplate": "Ersetzen Sie den aktuellen Flow mit der \"{{label}}\"-Vorlage?",
+    "clearAll": "{{count}} Knoten und alle Kanten löschen?"
+  },
+  "toast": {
+    "addProviderFirst": "Fügen Sie zuerst einen Provider-Knoten hinzu, oder laden Sie die \"Expert Roundtable\"-Vorlage.",
+    "expertAdded": "Ein Experte hinzugefügt. Klicken Sie, um seinen Namen + Anweisungen (Persona) zu setzen.",
+    "autoLayoutFailed": "Auto Layout fehlgeschlagen: {{error}}",
+    "chainsCompiled": "{{count}} Ketten kompiliert — Anwendung von Chain[0] auf Agent.",
+    "flowLoadedPerm": " · {{permission}} Berechtigung",
+    "flowLoaded": "Flow geladen → {{harness}} auf {{provider}}{{perm}}. Wählen Sie einen Workspace, um zu starten.",
+    "saved": "Gespeichert: {{path}}",
+    "saveFailed": "Speichern fehlgeschlagen: {{error}}",
+    "unknownError": "unbekannter Fehler",
+    "useInCodeFailed": "Konnte nicht im Code verwendet werden: {{error}}",
+    "saveFailedShort": "Speichern fehlgeschlagen",
+    "activeInCode": "\"{{name}}\" ist in der Code-Registerkarte aktiv — senden Sie ihr eine Nachricht, um den ganzen Graph auszuführen.",
+    "councilAdded": "Ein Rat hinzugefügt: Quelle → Skeptiker/Pragmatiker/Kritiker → Synthesis. Verdrahten Sie einen Provider in die Agents, um ihn auszuführen.",
+    "blueprintImported_one": "{{count}} Schritt als Agent-Kette importiert. Verdrahten Sie einen Provider in den ersten Agent, um ihn auszuführen.",
+    "blueprintImported_other": "{{count}} Schritte als Agent-Kette importiert. Verdrahten Sie einen Provider in den ersten Agent, um ihn auszuführen.",
+    "templateLoaded": "Vorlage \"{{label}}\" geladen. Klicken Sie auf Flow ausführen, um sie zu versuchen.",
+    "loaded": "Geladen \"{{name}}\"",
+    "openFailed": "Öffnen fehlgeschlagen: {{error}}",
+    "cleared": "Leinwand geleert ({{count}} Knoten)",
+    "undo": "RÜCKGÄNGIG"
+  },
+  "whiteboard": {
+    "loading": "Whiteboard wird geladen…",
+    "saveFailed": "Whiteboard konnte nicht gespeichert werden — der Browser-Speicher ist voll. Ihre Skizze bleibt nur in dieser Sitzung verfügbar."
+  },
+  "search": {
+    "placeholder": "Knoten finden…",
+    "title": "Knoten nach Beschriftung oder Typ suchen — Enter springt zum nächsten Treffer, Umschalt+Enter zum vorherigen",
+    "aria": "Knoten suchen"
+  },
+  "errorBranch": {
+    "handleTooltip": "Fehlerausgang — mit einem Knoten verbinden, der nur laufen soll, wenn dieser Knoten fehlschlägt"
+  },
+  "codexWrite": {
+    "consentTitle": "CODEX-SCHREIBEN ERLAUBEN",
+    "consentMessage": "Der Codex-Agent läuft im SCHREIB-Modus. Er darf Dateien nur innerhalb dieser Ordner erstellen, ändern oder löschen:\n\n{{folders}}\n\nAlles außerhalb bleibt unberührt. Fortfahren?",
+    "consentRun": "AUSFÜHREN",
+    "consentCancel": "ABBRECHEN"
+  },
+  "canvas": {
+    "aria": "Flow-Arbeitsfläche",
+    "undo": "Rückgängig",
+    "undoTitle": "Rückgängig (Strg+Z)",
+    "redo": "Wiederholen",
+    "redoTitle": "Wiederholen (Strg+Umschalt+Z)"
+  },
+  "webhookNode": {
+    "header": "Auslöser · {{source}}",
+    "state": {
+      "listening": "HÖRT ZU",
+      "disarmed": "AUS",
+      "server-off": "SERVER AUS",
+      "server-down": "SERVER NICHT BEREIT",
+      "error": "FEHLER"
+    },
+    "help": {
+      "listening": "Wird aktiviert…",
+      "disarmed": "Aus — der Endpunkt antwortet mit 404, bis du ihn aktivierst.",
+      "server-off": "Der lokale API-Server ist aus. Schalte ihn unter Einstellungen → Verbindungen → OPENAI API ein, um eine Webhook-URL zu erhalten.",
+      "server-down": "Der lokale API-Server hört noch nicht zu — er startet kurz nach der App.",
+      "error": "Dieser Auslöser konnte nicht aktiviert werden."
+    },
+    "arm": "AKTIVIEREN",
+    "disarm": "DEAKTIVIEREN",
+    "armAria": "Diesen Webhook-Auslöser aktivieren",
+    "disarmAria": "Diesen Webhook-Auslöser deaktivieren",
+    "copyUrl": "URL KOPIEREN",
+    "copied": "KOPIERT",
+    "copyUrlAria": "Webhook-URL samt Geheimnis kopieren",
+    "rotate": "NEUES GEHEIMNIS",
+    "rotateAria": "Neues Geheimnis erzeugen — die vorher kopierte URL funktioniert dann nicht mehr",
+    "autoRun": "Flow starten, wenn ein Alert eintrifft",
+    "lastAlert": "Zuletzt: {{summary}} ({{count}} in dieser Sitzung)",
+    "noAlerts": "Noch keine Alerts.",
+    "loopbackHint": "Diese URL ist lokal (127.0.0.1). Die Server von TradingView erreichen sie nicht — POSTe von diesem Rechner aus oder mache sie über einen eigenen Tunnel erreichbar.",
+    "signalOnly": "Nur eingehendes Signal: der Alert wird zu Text. Dieser Knoten handelt niemals."
+  },
+  "rifeNode": {
+    "header": "rife · Interpolation",
+    "multiplierLabel": "Faktor",
+    "multiplierTitle": "Bilder pro Quellbild — ×2 oder ×4, beides in einem Durchlauf",
+    "sourceLabel": "Quellclip",
+    "noSource": "Nichts verbunden — verbinde ein Video-Ergebnis mit dem video-Anschluss.",
+    "checking": "Engine wird geprüft…",
+    "unsupported": "Für diese Plattform wird kein RIFE-Build veröffentlicht.",
+    "install": "Engine installieren · {{size}}",
+    "installTitle": "Lädt die rife-ncnn-vulkan-Engine ({{size}}) einmalig herunter. Danach läuft die Interpolation vollständig auf deinem Rechner.",
+    "installing": "Wird installiert…",
+    "installHint": "Einmaliger Download. Es wird nichts verschickt — die Engine läuft auf diesem Rechner.",
+    "installFailed": "Die Engine konnte nicht installiert werden.",
+    "runTitle": "Den verbundenen Clip interpolieren und eine neue Datei daneben speichern",
+    "wireHint": "Verbinde ein lokales Video-Ergebnis mit dem video-Anschluss, um zu starten.",
+    "localHint": "Vollständig lokal: liest die Datei von der Festplatte, rechnet auf deiner GPU und funktioniert im PRIVATMODUS."
+  }
+}

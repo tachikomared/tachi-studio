@@ -1,0 +1,152 @@
+{
+  "steps": {
+    "welcome": "欢迎",
+    "privacy": "隐私",
+    "provider": "提供商",
+    "vibe": "氛围",
+    "done": "完成"
+  },
+  "footer": {
+    "step": "第 {{current}} 步，共 {{total}}",
+    "skipAll": "跳过全部"
+  },
+  "nav": {
+    "back": "返回",
+    "continue": "继续"
+  },
+  "welcome": {
+    "heading": "零终端 AI 工作台",
+    "builtBy": "由 TachikomaRed 在 Bankr 上构建",
+    "features": {
+      "chat": "与任何模型聊天 — Anthropic、Ollama、OpenRouter、free tier",
+      "code": "通过 agentic 循环发送代码，无需终端",
+      "aeon": "Aeon HQ：kanban + 在 GitHub Actions 上运行的 skills"
+    },
+    "continue": "继续",
+    "skip": "跳过入门",
+    "choose": "选择你的路线",
+    "cards": {
+      "local": {
+        "title": "本地运行",
+        "desc": "下载为你的硬件挑选的模型，在这台机器上运行。无需账号，无需密钥。",
+        "hint": "下一步：模型目录"
+      },
+      "cloud": {
+        "title": "自带 API 密钥",
+        "desc": "用你自己的密钥连接云端提供商 — Bankr、Anthropic、OpenRouter。",
+        "hint": "下一步：密钥表单"
+      },
+      "explore": {
+        "title": "随便看看",
+        "desc": "跳过设置，四处看看。以后可以在 Settings 里添加模型或密钥。",
+        "hint": "下一步：直接进入"
+      }
+    },
+    "privacyNote": "只有使用本地模型（Ollama 或 llama.cpp）时，你的提示词才会留在这台机器上——免密钥路由会把它们转发给免费的云端服务商。"
+  },
+  "privacy": {
+    "heading": "您想如何开始？",
+    "subtext": "您可以随时通过命令调色板 → “Toggle PRIVATE MODE”切换。",
+    "free": {
+      "title": "免费 + 快速",
+      "recommended": "推荐",
+      "tagline": "(适合所有人 — 聊天的最快路径)",
+      "features": {
+        "cloud": "云提供商已启用",
+        "freeTier": "free tier 默认值",
+        "oneClick": "一键聊天",
+        "noKey": "不需要 pollinations / llm7 的密钥"
+      },
+      "pick": "[ 选择免费 + 快速 ]"
+    },
+    "private": {
+      "title": "私密 + 本地",
+      "strict": "严格",
+      "tagline": "(偏执 / 加密原住民 — 仅本地)",
+      "features": {
+        "cloudLocked": "云提供商已锁定",
+        "ollamaOnly": "仅允许 ollama",
+        "noEgress": "无网络出口",
+        "toolsDenied": "工具调用被黑名单"
+      },
+      "pick": "[ 选择私密 + 本地 ]"
+    },
+    "skipForNow": "暂时跳过"
+  },
+  "provider": {
+    "heading": "选择提供商",
+    "subtext": "您可以稍后在设置中更改此。",
+    "privateBanner": {
+      "title": "[ PRIVATE MODE ACTIVE ]",
+      "body": "仅本地提供商可选择。云提供商被锁定 — 稍后关闭 PRIVATE MODE 以启用。"
+    },
+    "list": {
+      "freellmapi": "free tier，无需 API 密钥。适用共享速率限制。",
+      "bankr-gateway": "粘贴您的 Bankr LLM 密钥以使用 Bankr 云提供商。",
+      "anthropic-oauth": "使用您的 Anthropic Pro 或 Max 账户 OAuth 登录。",
+      "ollama": "通过此机器上运行的 Ollama 本地推理。无需密钥。",
+      "openrouter": "通过 OpenRouter OAuth 访问数百个模型。"
+    },
+    "selected": "已选择",
+    "locked": "已锁定",
+    "lockedTitle": "在 PRIVATE MODE 中被阻止 — 仅本地提供商 (Ollama) 被允许",
+    "bankrKey": "Bankr 密钥",
+    "test": "测试",
+    "hints": {
+      "connected": "已连接",
+      "authInvalid": "密钥被拒绝 (401/403)。重新检查密钥。",
+      "degraded": "上游以错误响应。",
+      "unreachable": "主机无法访问 — 检查网络或 URL。"
+    },
+    "skipStep": "跳过此步",
+    "testStates": {
+      "ok": "OK",
+      "auth": "密钥无效",
+      "noNet": "无网络",
+      "warn": "警告"
+    },
+    "gpuBanner": {
+      "title": "GPU 就绪",
+      "body": "检测到 {{gpu}}（{{vram}}）——可在你的 GPU 上完全本地运行模型。现在选择一个提供商；随时在设置 → llama.cpp 添加本地模型。"
+    }
+  },
+  "vibe": {
+    "heading": "选择氛围",
+    "subtext": "您首先想做什么？",
+    "selected": "已选择",
+    "list": {
+      "chat": {
+        "label": "聊天",
+        "desc": "仅与模型交谈",
+        "detail": "与任何提供商进行开放式对话。最适合问答、写作、头脑风暴。"
+      },
+      "code": {
+        "label": "代码",
+        "desc": "通过 agent 发送功能",
+        "detail": "在您的机器上读、写和运行代码的 agentic 循环。零终端需要。"
+      },
+      "aeon": {
+        "label": "Aeon HQ",
+        "desc": "Kanban + GitHub Actions 上的 skills",
+        "detail": "从 kanban 板调度云 agents。Skills 在您的 fork 的 GitHub Actions 上运行。"
+      }
+    }
+  },
+  "done": {
+    "status": "设置完成",
+    "heading": "您已设置。",
+    "hints": {
+      "chat": "转到聊天并开始对话。",
+      "code": "打开 Agent 模式并描述任务 — 它将为您读、写和运行代码。",
+      "aeon": "打开 Aeon HQ，fork repo，并调度您的第一个 skill。",
+      "default": "浏览边栏以开始。",
+      "local": "接下来会打开模型目录 — 挑一个适合你硬件大小的模型。"
+    },
+    "next": {
+      "settings": "打开设置以配置其他提供商或主题",
+      "shortcut": "使用 Cmd/Ctrl+, 随时跳到设置",
+      "sidebar": "检查边栏中的 Chat、Agent、Dashboard 和 Aeon HQ"
+    },
+    "open": "打开 Tachi Studio"
+  }
+}

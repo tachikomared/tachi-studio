@@ -1,0 +1,35 @@
+{
+  "heading": "Ask anything",
+  "subtitle": "Powered by free AI providers — no cloud required.",
+  "placeholder": "What's on your mind?",
+  "startChat": "Start chat",
+  "slashHint": "Type / for commands",
+  "spent": "spent today — free tier",
+  "recent": "Recent",
+  "quickStarts": {
+    "url": "Summarize a URL",
+    "code": "Explain code",
+    "tweet": "Write a tweet",
+    "translate": "Translate",
+    "brainstorm": "Brainstorm ideas",
+    "folder": "Open folder as agent"
+  },
+  "actions": {
+    "chat": "New chat",
+    "code": "Code a folder",
+    "design": "New design",
+    "nodes": "Node canvas",
+    "models": "Get models"
+  },
+  "health": {
+    "spent": "30-day spend",
+    "apiUp": "Local API :{{port}}",
+    "apiDown": "Local API off",
+    "open": "Dashboard"
+  },
+  "recentTypes": {
+    "chat": "chat",
+    "design": "design",
+    "flow": "flow"
+  }
+}

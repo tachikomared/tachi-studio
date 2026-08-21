@@ -1,0 +1,54 @@
+# Line endings.
+#
+# This repository is developed on Windows with core.autocrlf=true, which is why
+# every commit printed "LF will be replaced by CRLF". Without this file the first
+# contributor on macOS or Linux gets a whole-file diff on any file they touch,
+# for no reason anyone can see.
+#
+# `text=auto eol=lf` means: git decides what is text, and text is stored AND
+# checked out as LF everywhere. Windows editors have handled LF for years; the
+# few things that genuinely need CRLF are listed below.
+* text=auto eol=lf
+
+# Windows-only scripts that cmd.exe / the NSIS toolchain read line by line.
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+*.nsh  text eol=crlf
+*.nsi  text eol=crlf
+
+# Binary: never touched, never diffed as text.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.icns binary
+*.mp4  binary
+*.webm binary
+*.mov  binary
+*.wav  binary
+*.mp3  binary
+*.pdf  binary
+*.ttf  binary
+*.otf  binary
+*.woff  binary
+*.woff2 binary
+*.zip  binary
+*.gz   binary
+*.exe  binary
+*.dll  binary
+*.node binary
+*.safetensors binary
+*.gguf binary
+*.onnx binary
+
+# Generated — collapse in PR diffs so a lockfile bump does not bury a real change.
+pnpm-lock.yaml linguist-generated=true -diff
+
+# GitHub language stats: this is a TypeScript app, not a docs/media project.
+docs/**            linguist-documentation=true
+claude-design/**   linguist-vendored=true
+website-landing/** linguist-documentation=true
+examples/**        linguist-documentation=true

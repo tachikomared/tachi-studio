@@ -1,0 +1,570 @@
+{
+  "modalities": {
+    "image": "图像",
+    "video": "视频",
+    "music": "音乐",
+    "tts": "语音 (TTS)",
+    "stt": "转录 (STT)"
+  },
+  "topbar": {
+    "howTo": "如何使用",
+    "howToTitle": "媒体标签页的交互式演练"
+  },
+  "tabs": {
+    "generate": "生成",
+    "audioOverview": "音频概览",
+    "artifacts": "Artifacts"
+  },
+  "audioOverview": {
+    "subtitle": "将笔记变成双主播播客。脚本由免密钥的 FreeLLM 路由器起草——它在本机运行，但会把你的笔记转发给免费的云端服务商；声音 100% 本地 (录音室级 Kokoro 或 piper TTS)，所以脚本之后没有任何数据离开您的机器。",
+    "titleLabel": "标题 (可选)",
+    "titlePlaceholder": "例如：每周研究回顾",
+    "sourceLabel": "来源笔记",
+    "sourcePlaceholder": "粘贴笔记、文章或文档 — 两位主播将对其进行讨论…",
+    "sourceHint": "{{current}} 字符 — 过长的来源会被裁剪到约 {{max}} 字符供脚本模型使用。",
+    "lengthLabel": "时长",
+    "length": {
+      "short": "短 (约 1 分钟)",
+      "standard": "标准 (约 3 分钟)"
+    },
+    "voices": {
+      "label": "声音 (本地)",
+      "probing": "正在检查本地声音…",
+      "notInstalled": "尚未安装本地 TTS — 请在上方下载录音室声音，或在 生成 → 语音 (TTS) → 提供方 LOCAL 中安装 piper，然后刷新。",
+      "none": "尚未下载本地声音。请在上方下载录音室声音，或在 生成 → 语音 (TTS) → 提供方 LOCAL 中下载 piper 声音，然后刷新。",
+      "refresh": "刷新",
+      "hostA": "主播 A — 好奇的主持人",
+      "hostB": "主播 B — 专家",
+      "single": "只安装了一个声音 — 两位主播共用它 (piper 不支持语速选项)。下载第二个声音以区分主播。",
+      "groupStudio": "录音室 — KOKORO",
+      "groupPiper": "PIPER"
+    },
+    "scriptModel": {
+      "notConfigured": "尚未配置免密钥脚本模型 — 请在 Settings → 提供商 中添加一个免费提供商，然后刷新。"
+    },
+    "kokoro": {
+      "cardTitle": "录音室声音 — ~330 MB 一次性下载",
+      "cardBody": "10 个录音室级英语声音 (Kokoro TTS)。只需下载一次，之后完全本地离线运行。",
+      "download": "下载",
+      "downloading": "下载中… {{percent}}%",
+      "installedToast": "录音室声音已就绪。",
+      "downloadFailed": "录音室声音下载失败"
+    },
+    "saveToLibrary": "保存到媒体库",
+    "savingToLibrary": "保存中…",
+    "saveFailed": "无法保存到媒体库",
+    "generate": "创建音频概览",
+    "cancel": "取消",
+    "status": {
+      "drafting": "正在起草脚本…",
+      "synthesizing": "正在合成 {{n}}/{{m}}…",
+      "stitching": "正在拼接音频…",
+      "ready": "就绪"
+    },
+    "error": {
+      "emptySource": "请先粘贴一些笔记。",
+      "llmDown": "本地 FreeLLM 路由器尚未运行 — 它随应用启动；请稍候片刻后重试。",
+      "scriptUnreachable": "脚本模型目前无法访问 — 请检查 Settings → 提供商。",
+      "emptyReply": "模型返回了空回复。",
+      "scriptFailed": "脚本生成失败 — {{reason}}",
+      "parseFailed": "即使重试一次，模型也没有返回有效脚本 ({{reason}})。",
+      "synthFailed": "第 {{n}}/{{m}} 句语音合成失败 — {{reason}}",
+      "stitchFailed": "音频拼接失败 — {{reason}}",
+      "noAudioReturned": "未返回音频"
+    },
+    "retry": "重试",
+    "dismiss": "关闭",
+    "download": "下载 .wav",
+    "result": {
+      "meta": "{{seconds}}秒 · {{turns}} 句"
+    },
+    "transcript": "文字稿",
+    "empty": "在左侧粘贴笔记，选择时长和声音，点击创建 — 即可获得带文字稿的双主播播客，声音完全本地。"
+  },
+  "tour": {
+    "windowTitle": "如何使用媒体标签页",
+    "intro": {
+      "title": "媒体工作室",
+      "body": "从一个地方生成图像、视频、音乐、语音 (TTS) 和转录 (STT)。在你自己的机器上免费运行 — 无需密钥、不耗积分 — 或连接 Surplus、Venice 或 imgnAI 使用云端模型，各自拥有独立的模型目录。在顶部选择提供商。两个子标签页：生成 (这个) 和工件 (您保存的库)。"
+    },
+    "importUrl": {
+      "title": "从 URL 导入",
+      "body": "粘贴来自 YouTube、Instagram、X 或其他 1000+ 网站的链接，将文件直接导入到你的媒体库 — 然后混合使用，或作为参考图像/视频使用。"
+    },
+    "modality": {
+      "title": "选择模态",
+      "body": "选择要创建的内容 — 模型列表和控件相应地适应。Local 涵盖图像、视频和语音 (TTS)，模型只需下载一次即可免费运行；Surplus 和 Venice 增加了音乐和转录 (STT)，并各自提供云端目录；imgnAI 则增加了另一个图像/视频目录。"
+    },
+    "localEngine": {
+      "title": "本地引擎",
+      "body": "在此一次性下载一个开放模型 — 大小提前显示 — 然后完全离线免费生成；受支持的模型还可使用加速包减少步数。"
+    },
+    "model": {
+      "title": "选择模型",
+      "body": "每个模态 + 提供商列出其自己的模型，并且控件随每个模型改变 — 大小、声音、持续时间、宽高比仅在该模型支持时出现。"
+    },
+    "prompt": {
+      "title": "Prompt + 参考图像",
+      "body": "描述您想要的内容并调整每个模型的参数。支持它的模型显示“参考图像”控件 — 用于 img2img / 图像编辑，或作为图像到视频的第一帧。"
+    },
+    "generate": {
+      "title": "生成",
+      "body": "点击生成。Local 就在本地运行 — 无需密钥、不耗积分，首次运行只需下载一次模型。图像/TTS/STT 是即时的；视频/音乐异步运行，带进度显示。云端提供商需要各自的密钥：有余额的 Surplus 密钥、Venice 密钥，或 imgnAI 密钥。"
+    },
+    "gallery": {
+      "title": "您的库 + 工件",
+      "body": "每个结果都保存在此处并在重启后存活 — 保存到文件夹、在磁盘上显示、混合以重新加载其设置，或以全屏打开。工件子标签页是您制作的所有内容的完整库。"
+    },
+    "workflow": {
+      "title": "提示：作为节点工作流构建",
+      "body": "打开 Nodes 标签页来链接它：prompt 节点写 prompt，参考图像节点供应一个字符，媒体节点生成 — 每次运行掉一张结果卡，您可以分支。或者打开 Storyboard 起始模板，将一张本地静态图与两段本地视频场景从头到尾串联起来。"
+    }
+  },
+  "import": {
+    "title": "从 URL 导入",
+    "subtitle": "YouTube · Instagram · X · 1000+ 个站点 — 下载后可重新混合或用作参考",
+    "placeholder": "粘贴媒体 URL…",
+    "fetch": "获取",
+    "download": "下载",
+    "downloadTitle": "下载到您的媒体库",
+    "resolutionTitle": "分辨率",
+    "audioOnlyOnTitle": "仅音频模式已开启",
+    "audioOnlyLabel": "仅音频",
+    "audioOnlyTitle": "仅下载音轨（例如用于转录/音乐）",
+    "disclaimer": "仅限个人使用 — 请只导入您拥有或有权使用的内容。遵守各平台的条款；不进行 DRM 规避。",
+    "error": {
+      "couldNotRead": "无法读取该 URL。",
+      "downloadFailed": "下载失败。"
+    },
+    "success": "已保存到您的媒体库 — 可在下方重新混合或编辑。"
+  },
+  "composer": {
+    "modality": "模态",
+    "provider": "提供商",
+    "model": "模型",
+    "loadingCatalog": "加载目录…",
+    "preset": "预设",
+    "presetPlaceholder": "— 选择起始 prompt —",
+    "perfPreset": "性能",
+    "perfPresetPlaceholder": "— 档位 —",
+    "stylePreset": "风格",
+    "stylePresetPlaceholder": "— 无 —",
+    "loras": "LoRA",
+    "lorasNone": "当前模型没有已安装的 LoRA。",
+    "lorasIncompatible": "有 {{count}} 个是为其他基础模型安装的。",
+    "loraWeight": "权重",
+    "triggerWords": "触发词",
+    "vaeSwap": "VAE",
+    "vaeDefault": "— 模型自带 —",
+    "audioFile": "音频文件",
+    "changeFile": "更改文件",
+    "chooseAudioFile": "选择音频文件",
+    "loadingParams": "加载参数…",
+    "noParams": "此模型未公开任何可配置参数。",
+    "autoSaveFolder": "自动保存文件夹",
+    "setFolder": "设置文件夹",
+    "loraUnknownFamily": "未记录该适配器的基础模型——仍然显示；可能不会生效。",
+    "lorasUnknownFamilyNote": "有 {{count}} 个没有记录基础模型（标记为 ?）。",
+    "loraTagFound": "提示词里用到了 LoRA「{{name}}」，强度 {{weight}}。",
+    "loraTagUnknown": "提示词里要求名为「{{name}}」的 LoRA，但没有安装同名文件，因此会被略过。",
+    "loraTagAmbiguous": "你安装了多个名为「{{name}}」的 LoRA，因此这个会被略过。请在上面的列表中选择。"
+  },
+  "presets": {
+    "lightning": {
+      "label": "闪电"
+    },
+    "speed": {
+      "label": "快速"
+    },
+    "quality": {
+      "label": "高质量"
+    },
+    "prompt": {
+      "image": {
+        "cinematicPortrait": "电影感人像",
+        "isometricRoom": "等距视角房间",
+        "logoMark": "标志 / 图标",
+        "conceptLandscape": "概念风景"
+      },
+      "video": {
+        "slowDollyPush": "缓慢推轨镜头",
+        "droneReveal": "无人机揭示镜头",
+        "productTurntable": "产品转盘展示"
+      },
+      "music": {
+        "lofiBeat": "Lo-fi 节拍",
+        "cinematicBuild": "电影感渐强",
+        "synthwave": "合成波"
+      },
+      "tts": {
+        "friendlyIntro": "友好的开场白",
+        "announcement": "公告"
+      }
+    }
+  },
+  "styles": {
+    "none": {
+      "label": "无"
+    },
+    "cinematic": {
+      "label": "电影感"
+    },
+    "photorealistic": {
+      "label": "照片级写实"
+    },
+    "digital-art": {
+      "label": "数字绘画"
+    },
+    "anime": {
+      "label": "动漫"
+    },
+    "oil-painting": {
+      "label": "油画"
+    },
+    "pixel-art": {
+      "label": "像素画"
+    },
+    "watercolor": {
+      "label": "水彩"
+    },
+    "neon-noir": {
+      "label": "霓虹黑色"
+    },
+    "fantasy-epic": {
+      "label": "奇幻史诗"
+    }
+  },
+  "local": {
+    "engine": "语音模型",
+    "piperChip": "PIPER",
+    "kokoro": {
+      "chip": "录音室 — KOKORO",
+      "card": "10 个录音室级英语声音 (Kokoro TTS) — ~330 MB 一次性下载，之后完全本地离线运行。",
+      "download": "下载录音室声音 (~330 MB)",
+      "downloading": "正在下载录音室声音… {{percent}}%",
+      "installed": "录音室声音已安装 · Kokoro TTS，英语",
+      "downloadFailed": "录音室声音下载失败"
+    },
+    "piper": {
+      "install": "安装 piper (一次)",
+      "installed": "piper 已安装 · 本地 TTS，CPU 快速",
+      "downloadVoice": "下载声音",
+      "installSized": "安装 piper（一次性 · {{size}}）"
+    },
+    "sdCpp": {
+      "install": "安装 sd.cpp (一次)",
+      "installed": "sd.cpp 已安装 · GPU 自动 (CUDA / Metal)",
+      "downloadModel": "下载模型",
+      "installSized": "安装 sd.cpp（一次性 · {{size}}）",
+      "update": "更新图像引擎",
+      "updating": "正在更新引擎…"
+    },
+    "installFailed": "安装失败",
+    "retryInstall": "重试安装",
+    "modelInstalled": "✓ {{name}} · {{size}} GB · 已安装",
+    "modelLicense": "许可证：{{name}} — 下载前请先阅读",
+    "voiceItem": "↓ {{name}} · {{size}} MB",
+    "modelItem": "↓ {{name}} · {{size}} GB",
+    "modelItemShared": "↓ {{name}} · {{size}} GB（节省 {{saved}} GB — 与已安装模型共用文件）",
+    "modelSpeedPackDiscount": "加速包仅需再下载 {{size}} GB — 其 LoRA 已在磁盘上",
+    "modelItemResume": "↻ {{name}} · 继续下载 · 还剩 {{size}} GB（已下载 {{done}} GB / 共 {{total}} GB）",
+    "fitVramOk": "适合你的显卡 — 需要约 {{need}} GB 显存，你有 {{have}} GB 可用",
+    "fitVramTight": "比较紧张 — 需要约 {{need}} GB 显存，你有 {{have}} GB 可用。改用更小的尺寸或低显存选项仍可能跑得起来。",
+    "fitRamOk": "适合你的机器 — 需要约 {{need}} GB 内存，你有 {{have}} GB",
+    "fitRamTight": "比较紧张 — 需要约 {{need}} GB 内存，你有 {{have}} GB。仍可能运行，只是更慢。",
+    "speedPack": "↓ {{name}} · {{size}} GB",
+    "speedPackShared": "↓ {{name}} · {{size}} GB（节省 {{saved}} GB — 与已安装的加速包共用文件）",
+    "speedPackInstalled": "✓ {{name}} · 已安装 — 下方的“加速”默认开启",
+    "ipAdapter": "↓ 参考图片（风格 / 主体）· {{size}}",
+    "ipAdapterShared": "↓ 参考图片（风格 / 主体）· {{size}}（节省 {{saved}}，图像读取器与已有文件共用）",
+    "ipAdapterInstalled": "✓ 参考图片已就绪 — 在下方“高级”里附上一张图",
+    "ipAdapterNone": "此模型不支持参考图片 — 悬停查看原因。",
+    "speedPackNone": "此模型没有加速包 — 悬停查看原因。",
+    "otherKindBadge": "{{kind}} · 进行中",
+    "modalitySwitched": "已切换到 {{modality}} — 你开始的下载刚刚完成。",
+    "engineSizeOne": "约 {{size}} MB",
+    "engineSizeRange": "{{min}}–{{max}} MB",
+    "engineSizeRangeTitle": "下载量取决于哪个构建适合本机 — CUDA 构建还会附带 NVIDIA 的运行库。",
+    "switchToLocal": "切换到本地 — 免费，在你自己的机器上运行",
+    "switchToLocalTitle": "本地生成在本机运行 sd.cpp 引擎：无需密钥、不耗积分，也不上传任何内容。",
+    "switchedToast": "已切换到本地引擎 — 免费，且没有任何内容离开你的机器。",
+    "speedPackPitch": "{{name}} — {{size}} GB，一次性。本次渲染采样了 {{steps}} 步；该加速包只需 4 步，约少 {{ratio}} 倍。"
+  },
+  "models": {
+    "error": {
+      "noLocalVoices": "尚无本地声音 — 在上方下载一个。",
+      "installPiper": "在上方安装 piper，然后下载一个声音。",
+      "installKokoro": "请在上方下载录音室声音 (~330 MB，仅需一次)。",
+      "noLocalModels": "尚无本地 {{kind}} 模型 — 在上方下载一个。",
+      "installSdCpp": "在上方安装 sd.cpp，然后下载一个模型。",
+      "couldNotLoad": "无法加载模型",
+      "noVenice": "没有此模态的 Venice 模型 — 在设置中添加 Venice 密钥。",
+      "noSurplus": "无模型 — 添加 Surplus 密钥并资助 USDC，或用本地引擎在自己的机器上免费生成。",
+      "noneAvailable": "无可用模型。",
+      "noImgnai": "该模态没有 imgnAI 模型 — 请在设置 → imgnAI Katana 中填写 API Key 和 Secret（app.imgnai.com/katana-api）。",
+      "noPollinations": "Pollinations 只能生成图像 — 请把模态切换到 IMAGE，或使用 Surplus/Venice。"
+    }
+  },
+  "firstRun": {
+    "cta": "第一张图 — 免费 · 一次性约 {{size}} GB",
+    "ctaNoSize": "第一张图 — 免费，在你自己的机器上运行",
+    "ctaHint": "一键完成：安装本地引擎、取入门模型、写好提示词并渲染。无需密钥，不耗积分。",
+    "ctaTitle": "安装 sd.cpp 引擎（{{engine}}），下载 {{name}}，然后在本机渲染一张图。全部保留在本地。",
+    "step": {
+      "engine": "正在安装引擎",
+      "weights": "正在下载入门模型",
+      "generate": "正在渲染你的第一张图"
+    },
+    "progress": "第一张图 · 第 {{step}}/{{total}} 步 · {{label}} — {{line}}",
+    "failedTitle": "第一张图在第 {{step}}/{{total}} 步停止 — {{label}}",
+    "resume": "继续 — 从已下载的部分接着来",
+    "dismiss": "关闭",
+    "error": {
+      "notReady": "入门模型已在磁盘上，但它的参数没有加载 — 请按「继续」。"
+    }
+  },
+  "progress": {
+    "starting": "启动中…",
+    "loadingModel": "加载模型中… {{percent}}%",
+    "decoding": "解码中…",
+    "downloading": "下载 {{name}}…",
+    "renderingLocally": "本地渲染中…",
+    "queuedVenice": "在 Venice 上排队…",
+    "queuedImgnai": "已在 imgnAI 排队…",
+    "queuedPollinations": "已在 Pollinations 排队…"
+  },
+  "livePreview": {
+    "label": "预览 — 仍在生成",
+    "alt": "正在生成的图像的部分渲染预览"
+  },
+  "pollinations": {
+    "hint": "免费且无需密钥 — 不用注册、无需配置。每张图几秒到一分钟不等，取决于负载；每 15 秒一张（其匿名限制）。云端：你的提示词会发送到 pollinations.ai。"
+  },
+  "actions": {
+    "change": "更改",
+    "clear": "清除",
+    "save": "保存",
+    "reveal": "显示",
+    "fullscreen": "全屏",
+    "generate": "生成",
+    "transcribe": "转录",
+    "working": "工作中…",
+    "workingProgress": "工作中 · {{progress}}",
+    "stop": "停止",
+    "stopping": "正在停止…",
+    "stopTitle": "终止正在进行的渲染。GPU 立即释放，不保存任何结果。"
+  },
+  "rife": {
+    "action": "RIFE 2×",
+    "title": "使用 rife-ncnn-vulkan 在本地把这段视频的帧率翻倍。会在旁边生成新文件，原文件保持不变。",
+    "install": "RIFE 2× · 安装 {{size}}",
+    "installTitle": "只需下载一次 rife-ncnn-vulkan 引擎（{{size}}）。之后补帧将完全在本机运行。",
+    "installing": "正在安装…",
+    "running": "正在补帧…",
+    "stop": "停止",
+    "saved": "已保存 {{name}}",
+    "derived": "RIFE 2× · 源自：{{source}}",
+    "failed": "补帧失败",
+    "unsupported": "该平台没有发布 RIFE 构建版本。",
+    "needsLocalFile": "请先保存这段视频——补帧需要磁盘上的文件。"
+  },
+  "upscale": {
+    "action": "放大 {{scale}}×",
+    "title": "就在这里用 Real-ESRGAN 把这张图放大 {{scale}} 倍。不加载任何检查点，也不需要提示词——它直接处理图像本身。会在旁边保存一个新文件；原图不变。",
+    "install": "放大 · 下载 {{size}}",
+    "installTitle": "一次性下载 {{name}}（{{size}}）。之后放大将完全在你的机器上运行。",
+    "installing": "正在安装…",
+    "running": "正在放大…",
+    "saved": "已保存 {{name}}",
+    "derived": "ESRGAN {{scale}}× · 来自：{{source}}",
+    "failed": "放大失败"
+  },
+  "gallery": {
+    "empty": "尚无结果。选择模态 + 模型，输入 prompt，并生成。",
+    "title": "库 ({{count}})",
+    "titleFull": "图库（{{count}}，已满）",
+    "newest": "最新 {{time}}",
+    "clearAll": "全部清除",
+    "clearAllConfirm": "要删除全部 {{count}} 条画廊记录吗？磁盘上的文件会保留，这只清空列表。"
+  },
+  "entry": {
+    "pin": "钉住",
+    "pinned": "已钉住",
+    "pinToTop": "钉住到顶部",
+    "unpin": "取消钉住",
+    "remix": "混合",
+    "generatedAlt": "生成的",
+    "remove": "删除",
+    "removeConfirm": "要把这条记录从画廊删除吗？磁盘上的文件会保留。",
+    "completedAfterPrivate": "PRIVATE MODE 后完成",
+    "completedAfterPrivateTitle": "生成请求在 PRIVATE MODE 开启前已经发送，因此正常完成并保存，而不是被拦截。切换之后没有任何新内容离开这台设备——此时拒绝只会丢弃一个已经发出的结果。"
+  },
+  "result": {
+    "failedNoOutput": "生成失败 — 无输出返回",
+    "failedReason": "生成失败 — {{reason}}",
+    "noOutput": "无输出返回"
+  },
+  "genError": {
+    "title": "生成失败",
+    "stoppedTitle": "已停止",
+    "stoppedHint": "你停止了这次渲染，因此没有保存任何内容。显存已经释放 — 随时可以重新开始一次。",
+    "hint": "如果运行在写出文件之前就结束，可能是所需显存超过了可用显存 — 缩短时长或减小尺寸所需更少。",
+    "dismiss": "关闭",
+    "unknown": "生成因未知原因失败。"
+  },
+  "preview": {
+    "close": "关闭 (Esc)",
+    "alt": "预览"
+  },
+  "restore": {
+    "button": "从图像恢复",
+    "buttonTitle": "拖入本地生成的 PNG 或点击选择 — 恢复其生成参数",
+    "success": "已从图像恢复参数。",
+    "noMeta": "此图像中未找到 tachi-gen 元数据。",
+    "error": "无法读取图像元数据。"
+  },
+  "toast": {
+    "jobFailed": "任务失败",
+    "timedOut": "5 分钟后超时 — 再次生成以重新轮询。",
+    "chooseAudio": "选择音频文件以转录。",
+    "enterField": "输入 {{field}}。",
+    "loaded": "加载到编辑框。",
+    "loadedRerolled": "加载到编辑框 (种子重新卷)。",
+    "nothingToSave": "没有内容可保存。",
+    "savedTo": "保存到 {{path}}",
+    "providerFellBack": "{{provider}} 不支持生成 {{modality}}，已切换到 Surplus。"
+  },
+  "params": {
+    "videoI2vAvailable": "仅支持文本→视频：若要从图像开始，需要 Wan i2v 检查点 —— 下载面板中已提供 {{model}}。",
+    "advanced": "高级 ({{count}})",
+    "on": "开",
+    "off": "关",
+    "promptAutoFill": "在其之前接入一个文本生成步骤，即可自动填充此项。",
+    "prompt": {
+      "label": "Prompt"
+    },
+    "negative_prompt": {
+      "label": "反向 Prompt",
+      "description": "要避免的内容（伪影、水印、多余的肢体等）。"
+    },
+    "aspect_ratio": {
+      "label": "宽高比"
+    },
+    "size": {
+      "label": "大小"
+    },
+    "n": {
+      "label": "图像数量",
+      "description": "一次运行生成多少张图像。检查点只加载一次，但每张图像都会完整采样 —— 生成 4 张大约需要 1 张的 4 倍时间。每张图像都有自己的种子，从第一张开始依次递增。"
+    },
+    "seed": {
+      "label": "种子值",
+      "description": "-1 = 随机。固定一个值即可复现结果。"
+    },
+    "steps": {
+      "label": "步数"
+    },
+    "cfg": {
+      "label": "引导强度 (CFG)",
+      "description": "生成结果对提示词的遵循程度。"
+    },
+    "sampler": {
+      "label": "采样器"
+    },
+    "strength": {
+      "label": "img2img 强度",
+      "description": "仅在提供初始图像时生效。0 = 保留原图，1 = 忽略原图。"
+    },
+    "image_url": {
+      "label": "初始图像",
+      "labelImg2img": "参考图像 (img2img)",
+      "labelI2v": "起始帧（图像→视频）",
+      "description": "用于 img2img 的可选初始图像。",
+      "descriptionI2v": "可选的第一帧（图像→视频）。"
+    },
+    "duration": {
+      "label": "持续时间 (s)"
+    },
+    "resolution": {
+      "label": "分辨率"
+    },
+    "lyrics": {
+      "label": "歌词",
+      "description": "可选。lyrics_required 模型要求必填。"
+    },
+    "instrumental": {
+      "label": "纯音乐（无人声）"
+    },
+    "genre": {
+      "label": "风格"
+    },
+    "input": {
+      "label": "文本",
+      "description": "要朗读的文本。"
+    },
+    "voice": {
+      "label": "声音",
+      "description": "声音 ID（因模型而异）。"
+    },
+    "response_format": {
+      "label": "格式"
+    },
+    "speed": {
+      "label": "速度"
+    },
+    "file": {
+      "label": "音频文件",
+      "description": "要转录的音频。"
+    },
+    "language": {
+      "label": "语言",
+      "description": "ISO 代码提示（例如 \"en\"）。留空以自动检测。"
+    },
+    "translate": {
+      "label": "翻译成英文"
+    },
+    "hires": {
+      "label": "两段式细节增强（hires fix）"
+    },
+    "hires_scale": {
+      "label": "两段式放大倍数"
+    },
+    "speed_mode": {
+      "label": "速度模式（蒸馏版）"
+    },
+    "clip_skip": {
+      "label": "CLIP 跳过层数",
+      "description": "忽略文本编码器最后几层中的多少层。0 表示交给引擎决定（SD 1.x 为 1）。许多 Civitai 上的 SD 1.5 融合模型 —— 尤其是二次元风格 —— 是以跳过 2 层训练的，若设为 1 会显得画面平淡、发灰；如果检查点的页面写明了 CLIP skip 数值，就在这里填入。"
+    },
+    "vae_tiling": {
+      "label": "分块解码 VAE",
+      "description": "以分块方式解码图像，而不是一次性解码。正是这个选项能把最终解码阶段的内存不足崩溃，变成一次成功完成的渲染 —— 在视频中，这一步恰恰是最容易被杀死的环节。会多花一点时间，块与块之间可能留下细微接缝。"
+    },
+    "vae_conv_direct": {
+      "label": "VAE 直接卷积",
+      "description": "在自编码器中使用直接卷积路径。在相同运算量下降低解码时的峰值内存占用 —— 由于不会产生接缝，建议在使用分块之前先尝试这个选项。"
+    },
+    "max_vram": {
+      "label": "显存预算",
+      "description": "将每次前向传播拆分开，这样模型就不必一次性完全放入显存 —— 这是引擎针对超出显卡容量的模型给出的应对方式。“auto”会使用驱动报告的空闲显存，并保留 1 GiB 余量；填写数字则表示以 GiB 为单位的固定预算。“关闭”表示不做任何拆分，也就是目前为止每次运行的默认方式。"
+    },
+    "stream_layers": {
+      "label": "分层流式加载",
+      "description": "只在内存中保留正在使用的层，并预取接下来的层 —— 它是上游自身梯度中，紧跟在预算之后的一级。它需要在上面设置显存预算，也需要把模型权重放在内存中，而后者会由此选项自动为你开启。下面的“自动适配”会把这项放置策略收回，因此两者不能同时生效：启用自动适配时由引擎决定，此选项保持关闭。"
+    },
+    "auto_fit": {
+      "label": "自动适配这台设备",
+      "description": "让引擎根据模型大小和各设备的空闲内存，自行决定扩散模型、文本编码器和自编码器本身的放置方式。这会取代应用自身的放置策略（包括将文本编码器保留在 CPU 上），并可能将模型拆分到多块 GPU 上。"
+    },
+    "image": {
+      "referenceAlt": "参考",
+      "change": "更改图像",
+      "choose": "选择图像"
+    },
+    "audio": {
+      "placeholder": "绝对路径或选择文件",
+      "change": "更改文件",
+      "choose": "选择音频文件"
+    }
+  }
+}

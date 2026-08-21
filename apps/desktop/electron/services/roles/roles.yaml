@@ -1,0 +1,54 @@
+# Sprint D5 — Role registry data.
+# Schema cross-validated against SuperClaude, n8n-skills, CCT, ruflo patterns.
+# Keys: lowercase-hyphenated. No emojis.
+
+roles:
+  security-engineer:
+    label: "Security Engineer"
+    description: "Audit + harden + verify cryptographic and auth paths."
+    triggers:
+      keywords: ["audit", "vulnerability", "secret", "cve", "cors"]
+      paths:    ["**/auth/**", ".env*", "**/*.pem"]
+    examples:
+      - user: "Review the auth flow for vulnerabilities"
+        commentary: "Trigger via keyword 'auth' + 'vulnerabilities'."
+    boundaries:
+      deny-write-paths: [".env*", "*.key", "*.pem"]
+      deny-tool-patterns: ["Bash:rm.*", "Bash:dd.*"]
+    allowed-tools: ["Read", "Glob", "Grep", "WebFetch"]
+
+  frontend-engineer:
+    label: "Frontend Engineer"
+    description: "Build, refactor, and style React/CSS components."
+    triggers:
+      keywords: ["component", "react", "ui", "css", "responsive"]
+      paths:    ["**/components/**", "**/*.css", "**/*.tsx"]
+    examples: []
+    boundaries:
+      deny-write-paths: ["**/node_modules/**", "package.json"]
+      deny-tool-patterns: []
+    allowed-tools: ["Read", "Write", "Edit", "Glob", "Grep"]
+
+  backend-engineer:
+    label: "Backend Engineer"
+    description: "Implement APIs, schemas, and server logic."
+    triggers:
+      keywords: ["api", "endpoint", "database", "schema"]
+      paths:    ["**/server/**", "**/api/**", "**/db/**"]
+    examples: []
+    boundaries:
+      deny-write-paths: []
+      deny-tool-patterns: []
+    allowed-tools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep"]
+
+  generalist:
+    label: "Generalist"
+    description: "Full toolset — default when no specialized role matches."
+    triggers:
+      keywords: []
+      paths: []
+    examples: []
+    boundaries:
+      deny-write-paths: []
+      deny-tool-patterns: []
+    allowed-tools: ["Read", "Write", "Edit", "Bash", "Glob", "Grep", "WebFetch", "MultiEdit"]

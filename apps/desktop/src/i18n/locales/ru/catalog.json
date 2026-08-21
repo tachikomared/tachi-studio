@@ -1,0 +1,211 @@
+{
+  "tabCurated": "Рекомендуемые",
+  "tabSearchHf": "Поиск HF",
+  "tabInstalled": "Установленные",
+  "searchPlaceholder": "например, qwen2.5 7b",
+  "filterByName": "фильтр по имени…",
+  "searchButton": "Искать",
+  "searchUnavailable": "Поиск недоступен",
+  "emptyInstalled": "Пока нет локальных моделей. Скачайте из «Рекомендуемые» или «Поиск HF».",
+  "confirmRemove": "Удалить эту модель с диска?",
+  "removing": "Удаление…",
+  "pullIncompatible": "Ollama не смог скачать этот репозиторий. Возможно, он несовместим (нестандартный или мультимодальный GGUF). Попробуйте модель от bartowski / unsloth / lmstudio-community или из «Рекомендуемые».",
+  "download": "Скачать",
+  "stopDownload": "Стоп",
+  "run": "Запустить",
+  "openChat": "Открыть чат",
+  "remove": "Удалить",
+  "clear": "очистить",
+  "chooseQuant": "Выберите квантизацию",
+  "recommended": "рекомендуется",
+  "quant": "квант",
+  "quants": "кванты",
+  "downloadSize": "Размер загрузки:",
+  "starting": "Старт…",
+  "downloading": "Загрузка…",
+  "hfDownloadNotSupported": "Загрузка произвольных моделей Hugging Face в llama.cpp появится позже. Пока поддержаны только рекомендованные модели.",
+  "ram": "RAM",
+  "free": "свободно",
+  "gpu": "GPU",
+  "vram": "VRAM",
+  "cpu": "CPU",
+  "cores": "ядер",
+  "unknown": "не определено",
+  "fit": {
+    "gpu": "Влезет в GPU (быстро)",
+    "cpu": "CPU / частичный GPU (медленнее)",
+    "tight": "Впритык — может не хватить памяти",
+    "too-big": "Не влезет",
+    "sdcppNote": "Разрешение и число кадров решают реальный пик — офлоад-флаги всё меняют.",
+    "sdcppVram": "Нужно ~{{gb}} ГБ VRAM (разрешение/офлоад-флаги могут изменить это)"
+  },
+  "capabilities": {
+    "chat": "чат",
+    "reasoning": "рассуждение",
+    "vision": "зрение",
+    "code": "код",
+    "tools": "инструменты",
+    "image-gen": "генерация изобр.",
+    "video-gen": "генерация видео",
+    "music": "музыка",
+    "tts": "TTS",
+    "stt": "STT"
+  },
+  "notice": {
+    "downloadFailed": "Не удалось скачать",
+    "installingLlama": "Установка llama.cpp…",
+    "loading": "Загрузка {{name}}…",
+    "llamaInstallFailed": "Не удалось установить llama.cpp",
+    "failedToStart": "Не удалось запустить модель",
+    "startingOllama": "Запуск Ollama…",
+    "removeFailed": "Не удалось удалить",
+    "whisperReady": "{{name}} готов — используйте микрофон в Chat для распознавания.",
+    "nothingToStop": "Останавливать нечего — эта загрузка уже передана.",
+    "stopNotYet": "Остановить можно, пока идёт передача данных."
+  },
+  "favorite": "Добавить в избранное",
+  "unfavorite": "Убрать из избранного",
+  "sectionFavorites": "Избранное",
+  "sectionRecent": "Недавние",
+  "sectionAll": "Все модели",
+  "emptyCurated": "Не удалось загрузить реестр моделей.",
+  "retry": "Повторить",
+  "notAvailable": "Недоступно",
+  "noMatches": "Ничего не найдено — измените запрос или сбросьте фильтры.",
+  "tour": {
+    "windowTitle": "Как пользоваться вкладкой Catalog",
+    "search": {
+      "title": "Найдите модель",
+      "body": "Три источника: Recommended (курируемый список), Search HF (весь Hugging Face) и Installed (уже на диске). Вводите текст для фильтра или поиска и сужайте чипами возможностей — chat, vision, image gen, TTS и другие."
+    },
+    "hardware": {
+      "title": "Ваше железо — определено",
+      "body": "Эта полоса — ваша реальная машина: RAM, GPU, VRAM и ядра CPU. Каждый вердикт совместимости ниже вычисляется из этих цифр, а не из абстрактных требований."
+    },
+    "fit": {
+      "title": "Поместится ли?",
+      "body": "Локальные модели получают метку совместимости — FITS / TIGHT / CPU-ONLY / NO FIT — плюс оценку VRAM, рассчитанную из ВАШИХ GPU и RAM выше. FITS — быстро на GPU; TIGHT — память может закончиться посреди генерации."
+    },
+    "download": {
+      "title": "Скачать и запустить",
+      "body": "DOWNLOAD открывает выбор кванта — рекомендованный для вашего железа подсвечен; кванты поменьше меняют качество на совместимость. После установки кнопка становится RUN: модель загружается, и вы сразу попадаете в чат с ней."
+    }
+  },
+  "tabCivitai": "Civitai",
+  "civitai": {
+    "searchPlaceholder": "например, dreamshaper, realistic vision",
+    "sfwNote": "только SFW",
+    "install": "Установить",
+    "loadMore": "Показать ещё",
+    "loadingMore": "Загрузка…",
+    "empty": "Ничего не найдено — измените запрос или выберите другой тип.",
+    "emptyAfterError": "Ничего не показано — поиск выше завершился ошибкой.",
+    "tryAgain": "Повторить",
+    "filteredNotice": "Скрыто SFW-фильтром: {{count}}",
+    "noPreview": "нет превью",
+    "triggerWords": "триггер:",
+    "copyTrigger": "Скопировать «{{word}}»",
+    "blockedFallback": "Эту модель приложение установить не может.",
+    "reveal": "Показать превью 18+",
+    "sortLabel": "Сортировка",
+    "periodLabel": "Период",
+    "baseLabel": "Базовая модель",
+    "clearFilters": "Сбросить фильтры",
+    "mode": {
+      "adult": "Просмотр 18+ (civitai.red)",
+      "adultInert": "18+ включён в настройках, но страница вернулась без 18+ — проверьте ключ Civitai."
+    },
+    "types": {
+      "all": "Все",
+      "checkpoint": "Checkpoint",
+      "unet": "UNet",
+      "text-encoder": "Текстовый энкодер",
+      "clip": "CLIP",
+      "clip-vision": "CLIP Vision",
+      "vision-language": "VLM",
+      "llm": "LLM",
+      "lora": "LoRA",
+      "locon": "LoCon",
+      "embedding": "Embedding",
+      "vae": "VAE",
+      "controlnet": "ControlNet",
+      "upscaler": "Апскейлер",
+      "motion": "Движение",
+      "dora": "DoRA",
+      "hypernetwork": "Hypernetwork",
+      "aesthetic": "Эстетика",
+      "poses": "Позы",
+      "wildcards": "Wildcards",
+      "workflows": "Воркфлоу",
+      "detection": "Детекция",
+      "other": "Прочее"
+    },
+    "groups": {
+      "models": "Модели",
+      "adapters": "Адаптеры",
+      "other": "Прочие файлы"
+    },
+    "outlook": {
+      "runs": "Устанавливается и генерирует самостоятельно.",
+      "needs-base": "Устанавливается, только если подходящий базовый checkpoint уже на диске.",
+      "later": "Движок это умеет — в приложении пока нет интерфейса.",
+      "no": "Только просмотр — приложение не может установить этот тип."
+    },
+    "sort": {
+      "mostDownloaded": "По загрузкам",
+      "newest": "Новые",
+      "highestRated": "По рейтингу"
+    },
+    "period": {
+      "allTime": "За всё время",
+      "year": "Год",
+      "month": "Месяц",
+      "week": "Неделя",
+      "day": "День"
+    },
+    "license": {
+      "noCommercial": "без коммерческого использования",
+      "noCommercialHint": "Автор запрещает коммерческое использование этой модели.",
+      "attribution": "нужно указание автора",
+      "attributionHint": "Автор требует указывать авторство при использовании модели.",
+      "noDerivatives": "без производных",
+      "noDerivativesHint": "Автор не разрешает мерджи и производные модели."
+    },
+    "forMyModels": "Для моих моделей",
+    "forMyModelsHint": "Показывать только дополнения для установленных семейств моделей.",
+    "forMyModelsEmpty": "Сначала установите локальную модель изображений или видео — тогда фильтр заработает.",
+    "forMyModelsActive": "Сужено до установленного: {{families}}",
+    "keyHint": "Где ввести API-ключ?",
+    "families": {
+      "sd15": "SD 1.5",
+      "sdxl": "SDXL",
+      "zimage": "Z-Image",
+      "wan": "Wan"
+    },
+    "detail": {
+      "title": "О модели",
+      "open": "Открыть подробности",
+      "about": "Об этой модели",
+      "by": "автор: {{user}}",
+      "downloadsLabel": "Загрузки",
+      "likesLabel": "Лайки",
+      "published": "Опубликовано {{date}}",
+      "loading": "Загружаем описание…",
+      "loadFailed": "Не удалось загрузить описание этой модели.",
+      "noDescription": "Автор не оставил описания.",
+      "descriptionTruncated": "Описание длинное — здесь показана сокращённая версия.",
+      "openOnCivitai": "Открыть на Civitai",
+      "thisVersion": "Эта версия",
+      "otherVersions": "Другие версии",
+      "versionsHidden": "Версий скрыто SFW-фильтром: {{count}}",
+      "versionsCapped": "Показано {{shown}} из {{total}} версий.",
+      "signInRequired": "нужен аккаунт Civitai",
+      "openNamed": "Открыть подробности: {{name}}"
+    }
+  },
+  "sdRemove": {
+    "frees": "Освободится {{size}} на диске.",
+    "sharedStay": "Общие компоненты останутся — их использует {{models}}.",
+    "sharedWith": "общие компоненты с {{models}}"
+  }
+}

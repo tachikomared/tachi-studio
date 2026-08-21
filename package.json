@@ -1,0 +1,28 @@
+{
+  "name": "tachi-studio",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "packageManager": "pnpm@11.1.2",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=11"
+  },
+  "scripts": {
+    "dev": "pnpm -F tachi-studio-desktop dev",
+    "build": "pnpm -F tachi-studio-desktop build",
+    "typecheck": "pnpm -F tachi-studio-desktop typecheck",
+    "test": "pnpm -F core test && pnpm -F tachi-studio-desktop test",
+    "lint": "eslint .",
+    "prepare:sidecars": "node scripts/download-sidecars.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.6.0",
+    "typescript": "^5.4.0",
+    "typescript-eslint": "^8.61.1"
+  }
+}

@@ -1,0 +1,124 @@
+/* ── tachi-opus5 ─────────────────────────────────────────────────────────────
+   OPUS-5 · EXPLODED CHASSIS — the app stops being a document and becomes a
+   piece of hardware: a milled instrument plate with the cover taken off.
+   Anodized GRAPHITE chassis and an acid CHARTREUSE signal that owns every live,
+   selected and active surface, plus a hard SIGNAL offset shadow — the same acid
+   the SEND key is cut from, thrown as a plate behind every surface. The crab
+   survives as tooling, not decal: its pincer profile is the corner bite cut
+   into every control (structure layer) AND into the window frame's own corners
+   (OpusChrome), and its full silhouette is engraved into dead panel space.
+
+   SIGNATURE SHADOW: 3px 3px 0 #b8f227 (signal chartreuse). Violet was the
+   crab's; acid is OPUS-5's, and the two never appear in the same theme. The
+   shadow is deliberately the LIVE colour rather than a third hue — every hard
+   offset in the app then reads as the theme's own light.
+
+   ── 2026-07-27 · THE ACID RETHEME (owner's call) ───────────────────────────
+   This theme shipped with a PETROL-TEAL control family (--accent #0c6b79,
+   --accent-text #6fe3f2, --accent-muted #0b2a2e) and a green-cast graphite.
+   On screen that meant every ACTIVE surface in the app — the PageTopbar
+   section badge, the sidebar's selected tab, the chat History `New` key, the
+   selected conversation row — was TEAL, while the only acid left was the frame
+   line and the SEND key. The owner's reading was the correct one: the theme
+   was named after its acid and painted in someone else's colour.
+
+   So the whole control family is now re-derived from --opus-signal:
+
+     acid  #b8f227 = hsl(77, 89%, 55%)   ← the signal, unchanged
+     every --accent* below sits on that SAME 77° hue at a different lightness,
+     so the theme has exactly ONE chroma and the graphite carries no chroma at
+     all. Teal is gone from this file; the only non-acid hues left are the four
+     SEMANTIC inks (success / warning / danger / info), which must stay
+     mutually distinguishable and are not decoration.
+
+   WHY THESE LIGHTNESSES (constraints, not taste):
+   • --accent must take WHITE text: Sidebar's primaryButtonStyle, ~40 primary
+     buttons, the inbox badge and globals' ::selection all hardcode #ffffff on
+     var(--accent), and those files are not this theme's to edit. It must ALSO
+     take BLACK text: ToolCallBlock paints the READ / SEARCH / FETCH family chip
+     as `background: var(--accent); color: #000`. Petrol #0c6b79 balanced those
+     two at 6.18:1 white / 3.40:1 black; the moss #4e6b0c is a deliberate
+     LUMINANCE MATCH to it (6.12:1 / 3.43:1), so the swap is chroma-only and no
+     call site anywhere in the app moves more than 0.1 of a contrast point.
+     The acid itself can never be a text bed (1.33:1 with white), which is why
+     it lives in --accent-alt / --opus-signal and is only ever used as a fill
+     under DARK ink — see the contrast note under --accent-alt.
+   • --accent-muted is the app's ACTIVE/SELECTED fill (126 call sites, almost
+     always paired with `color: var(--accent-text)`), so it is a WELL, not a
+     lamp: dark enough for acid text to sit on, bright enough to read as
+     selected. The old teal well was only 1.15:1 against --bg-elevated — the
+     "why does nothing look selected" half of the owner's complaint. #2b3d0c is
+     1.47:1 against the same surface and 7.3:1 under --accent-text.
+   • --accent-text is a DIMMED acid, not the signal itself. Keeping it a step
+     under #b8f227 (0.60 vs 0.74 relative luminance) is what preserves the
+     instrument hierarchy: the LEDs, the frame rule, the SEND key and the
+     selection wash are the brightest things on screen, and the legends that
+     merely NAME a live thing sit below them.
+   • The graphite is now NEUTRAL (R≈G>B by a hair, an olive breath rather than
+     a teal cast). Every bg/border/text value below is a luminance-matched
+     restatement of the one it replaced — the largest move is 0.014 of a
+     contrast point on --text-primary — so this is a hue correction and not a
+     re-balance. --text-dim's AA floor is re-derived below.
+   • --danger is pushed cool (#ff2f4f) so it never reads as a sibling of the
+     warning amber — the only other alarm-coloured chip on screen.
+   • --success stays EMERALD next to a green accent on purpose: the tool-call
+     family chips are READ=accent / WRITE=success / EDIT=warning, and moss
+     (L 0.12) vs emerald (L 0.42) separate on LIGHTNESS at 9px chip scale even
+     though they now share a family. Moving success would have collapsed it
+     into the warning amber instead, which is the worse trade.
+
+   Every variable of tachi-dark.css is mirrored. Two EXTRA vars exist for the
+   structure sheet: --opus-signal (the shadow / bite / focus ink, used
+   everywhere) and --opus-oxide, which after the shadow recolour has exactly
+   ONE consumer left — the h1/h2 bottom-right datum tick (structure GROUP G),
+   where a second ink is what makes the heading read as a dimensioned part.
+   It is not dead; do not delete it. Nothing outside this theme reads either.
+   ──────────────────────────────────────────────────────────────────────── */
+:root[data-theme="tachi-opus5"] {
+  --bg-base:       #0c0c0a;  /* chassis void — neutral graphite, hair of olive */
+  --bg-surface:    #131311;  /* plate */
+  --bg-elevated:   #1a1a16;  /* raised plate */
+  --bg-inset:      #070705;  /* milled recess */
+  --bg-sidebar:    #10100d;  /* nav plate */
+  --accent:        #4e6b0c;  /* MOSS — anodized control surface, acid at 23% L.
+                                Luminance-matched to the retired petrol so the
+                                ~40 hardcoded #fff and the #000 tool chip both
+                                keep their ratios. */
+  --accent-hover:  #5c7f0e;  /* one step up the same ramp (4.67:1 with white) */
+  --accent-alt:    #b8f227;  /* SIGNAL — acid chartreuse LED. FILL ONLY: it is
+                                1.33:1 with white, so every call site that fills
+                                with it pairs `color: var(--bg-base)` (14.7:1). */
+  --accent-muted:  #2b3d0c;  /* the ACTIVE/SELECTED well — see the note above */
+  --accent-text:   #a8dc22;  /* etched acid legend — one step under the signal */
+  --text-primary:  #eceae3;  /* etched legend */
+  --text-muted:    #969589;
+  --text-dim:      #85847d;  /* 5.2:1 on base, 4.6:1 on the RAISED plate —
+                                micro-labels; the app prints real copy at 8–9px
+                                in this tier (plate labels, status legends), so
+                                it must clear AA on every surface it lands on,
+                                not just on the void. The retired #79837b was
+                                4.4:1 on --bg-elevated: it cleared the floor
+                                only where the file happened to measure it.
+                                tachi-dark's #444 is 2.1:1. */
+  --border:        #282a20;  /* plate seam */
+  --border-strong: #4e5442;  /* chassis rib */
+  /* ONE semantic red: --destructive is an alias of --danger (see tachi-dark). */
+  --destructive:   var(--danger);
+  --success:       #2fbf6a;  /* emerald — separates from the moss on LIGHTNESS */
+  --warning:       #ffab2e;
+  --danger:        #ff2f4f;  /* cool crimson, never confusable with the amber */
+  --info:          #5cc8ff;
+  /* SIGNAL offset = the OPUS-5 signature. The hard shadow is the same acid the
+     SEND key is cut from, so the offset reads as the theme's live colour
+     throwing a plate behind every surface — not as a second, rusty accent. */
+  --shadow-hard:   3px 3px 0 #b8f227;
+  --shadow-hard-lg: 6px 6px 0 #b8f227;
+  --shadow-soft:   3px 3px 0 rgba(184, 242, 39, 0.30);
+  --border-width:  2px;
+
+  /* ── Theme-private inks (structure layer only) ──────────────────────────
+     Not part of the 21-var contract; scoped here so the structure sheet can
+     say what it means instead of repeating two hex codes forty times. */
+  --opus-signal:   #b8f227;
+  --opus-oxide:    #d1400a;  /* second ink — heading datum tick only */
+}

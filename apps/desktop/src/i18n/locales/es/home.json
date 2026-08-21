@@ -1,0 +1,35 @@
+{
+  "heading": "Pregunta cualquier cosa",
+  "subtitle": "Impulsado por 11 proveedores de IA gratuitos — sin nube requerida.",
+  "placeholder": "¿Qué está en tu mente?",
+  "startChat": "Iniciar chat",
+  "slashHint": "Escribe / para ver los comandos",
+  "spent": "gastado hoy — free tier",
+  "recent": "Reciente",
+  "quickStarts": {
+    "url": "Resumir una URL",
+    "code": "Explicar código",
+    "tweet": "Escribir un tweet",
+    "translate": "Traducir",
+    "brainstorm": "Lluvia de ideas",
+    "folder": "Abrir carpeta como agente"
+  },
+  "actions": {
+    "chat": "Nuevo chat",
+    "code": "Codificar carpeta",
+    "design": "Nuevo diseño",
+    "nodes": "Lienzo de nodos",
+    "models": "Modelos"
+  },
+  "health": {
+    "spent": "gasto 30 días",
+    "apiUp": "API local :{{port}}",
+    "apiDown": "API local apagada",
+    "open": "Panel"
+  },
+  "recentTypes": {
+    "chat": "chat",
+    "design": "diseño",
+    "flow": "flujo"
+  }
+}

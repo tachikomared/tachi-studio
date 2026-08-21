@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "So verwenden Sie die Swarm-Registerkarte",
+    "step1": {
+      "title": "Dies ist die Swarm-Registerkarte",
+      "body": "Erweitert: Führen Sie MEHRERE KI-Agents gleichzeitig auf einem Git-Repository aus. Sie koordinieren sich, indem sie kleine Statusdateien in einen .gnap/-Ordner committen — ein gemeinsames To-Do-Board, eine Agent-Liste und ein Nachrichtenlog im Repository."
+    },
+    "step2": {
+      "title": "Starten Sie einen Swarm",
+      "body": "Klicken Sie auf [NEUER SWARM], um auf ein Git-Repository zu verweisen und Agents zu starten. Es schreibt nur in .gnap/, also ist Ihr Code sicher. Verwenden Sie [ÖFFNEN VORHANDEN], um einen erneut anzuhängen, den Sie bereits gemacht haben."
+    },
+    "step3": {
+      "title": "Was Sie sehen werden",
+      "body": "Nach dem Öffnen zeigt das Dashboard drei Bereiche: die Agents (wer arbeitet), ein kanban-Board (Aufgaben über Stufen) und einen Live-Feed jedes Commits. Es aktualisiert, wenn die Agents arbeiten."
+    },
+    "step4": {
+      "title": "Wann man es verwendet",
+      "body": "Swarm ist für parallele Multi-Agent-Arbeiten an einer Codebasis — es ist experimentell und stärker beteiligt als die Code-Registerkarte. Wenn Sie nur einen Agent möchten, verwenden Sie Code. Öffnen Sie dies erneut von \"Anleitung\"."
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(kein Swarm offen)",
+    "loading": "· wird geladen…"
+  },
+  "actions": {
+    "newSwarm": "[NEUER SWARM]",
+    "openExisting": "[ÖFFNEN VORHANDEN]",
+    "howTo": "[ANLEITUNG]",
+    "howToTitle": "Was ist ein Swarm? Führen Sie mich hindurch",
+    "open": "[ÖFFNEN]",
+    "refresh": "[AKTUALISIEREN]"
+  },
+  "empty": {
+    "title": "KEIN SWARM OFFEN",
+    "descBefore": "Ein Swarm ist ein Team von KI-Agenten, die gemeinsam an einem Repository arbeiten: Sie teilen Aufgaben auf einem gemeinsamen Board und protokollieren jeden Schritt. Die gesamte Koordination lebt in einem kleinen Ordner",
+    "descAfter": " — Ihr Code bleibt unangetastet. Erstellen Sie einen neuen Swarm oder öffnen Sie einen vorhandenen.",
+    "pathRequired": "Pfad ist erforderlich",
+    "pathPlaceholder": "…oder Pfad eingeben",
+    "recent": "LETZTE"
+  },
+  "agents": {
+    "header": "AGENTS ({{count}})",
+    "empty": "Noch keine Agents registriert.",
+    "register": "[AGENT REGISTRIEREN]",
+    "idPlaceholder": "ID (z. B. Alice)",
+    "namePlaceholder": "Name (optional)",
+    "roleLabel": "Rolle:",
+    "heartbeatLabel": "Hb:",
+    "cancel": "Abbrechen",
+    "add": "Hinzufügen",
+    "idRequired": "ID ist erforderlich",
+    "registerFailed": "registerAgent fehlgeschlagen"
+  },
+  "kanban": {
+    "header": "AUFGABEN ({{count}})",
+    "claimed": "[BEANSPRUCHT]",
+    "newTask": "+ NEUE AUFGABE",
+    "titlePlaceholder": "Titel",
+    "descPlaceholder": "Beschreibung (optional)",
+    "cancel": "Abbrechen",
+    "add": "Hinzufügen",
+    "actionOpen": "ÖFFNEN",
+    "titleRequired": "Titel ist erforderlich",
+    "detail": {
+      "titlePrefix": "AUFGABE ·",
+      "close": "Schließen",
+      "comments": "KOMMENTARE ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "FEED",
+    "counts": "{{commits}} Commits · {{messages}} Nachrichten",
+    "empty": "Noch nichts. Commits und Nachrichten erscheinen hier, wenn der Swarm läuft.",
+    "commit": "Commit",
+    "noSubject": "(kein Betreff)",
+    "moreFiles": "+ {{count}} weitere",
+    "msg": "NACHRICHT"
+  },
+  "messaging": {
+    "header": "NACHRICHTEN",
+    "registerPrompt": "Registrieren Sie Agents, um Inter-Agent-Kanäle zu öffnen.",
+    "noMessages": "Keine Nachrichten.",
+    "ctxLabel": "ctx:",
+    "unreadTitle_one": "{{count}} ungelesene Nachricht",
+    "unreadTitle_other": "{{count}} ungelesene Nachrichten",
+    "sendTestTitle": "Senden Sie einen Test-Handoff an {{name}}",
+    "sendTestButton": "[SENDE TEST HANDOFF → {{name}}]",
+    "testHandoff": {
+      "task": "Überprüfen Sie den Diff im berührten Modul",
+      "context": "Von {{name}} übergeben"
+    }
+  },
+  "dialog": {
+    "title": "NEUER SWARM",
+    "descBefore": "Wählen Sie ein Git-Repository aus, das den Swarm hosten soll. Ein",
+    "descAfter": "Verzeichnis wird darin erstellt (oder wiederverwendet).",
+    "pathPlaceholder": "/Pfad/zum/Repository",
+    "pick": "[AUSWÄHLEN]",
+    "cancel": "ABBRECHEN",
+    "create": "ERSTELLEN",
+    "creating": "WIRD ERSTELLT…",
+    "pathRequired": "Bitte wählen Sie einen Verzeichnisspfad oder geben Sie einen ein.",
+    "initFailed": "initSwarm fehlgeschlagen"
+  }
+}

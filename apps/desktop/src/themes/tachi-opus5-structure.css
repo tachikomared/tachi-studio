@@ -1,0 +1,623 @@
+/* ── STRUCTURE LAYER · tachi-opus5 ───────────────────────────────────────────
+   Companion structure sheet for OPUS-5 · EXPLODED CHASSIS (tachi-opus5.css).
+   See recipes/ADDING-A-THEME.md → "Structure layer" and the convention header
+   in comic-structure.css. Same rules, no exceptions:
+     • every rule scoped under :root[data-theme="tachi-opus5"]
+     • element selectors + globals-owned container hooks ONLY, never a
+       component class
+     • geometry / texture / colour — no size, margin, padding, position
+     • no `cursor` declaration anywhere (test/unit/resizeCursor.test.ts)
+
+   THE SHAPE: the PINCER BITE. Every control loses its top-left corner to a
+   stepped machined notch and its bottom-right corner to a 45° chamfer — the
+   claw's jaw profile abstracted into geometry, so the crab is present on every
+   button without a single pixel of claw art. Where clip-path eats the
+   box-shadow we reissue the hard offset as a signal drop-shadow.
+
+   DROP-SHADOW SAFETY: filter: drop-shadow() traces ALPHA, not the border box.
+   On a ghost button the only opaque pixels are the glyphs, so the filter
+   paints a signal-coloured COPY OF THE TEXT 3px down-right (the bug that
+   shipped in
+   both tachi-crab-structure and comic-structure — 22 buttons a screen). Every
+   drop-shadow rule below carries the ghost exclusion, matched on the full
+   `background…: <value>` pair — never a bare `: none`, which also catches
+   `border-image: none` and would strip the bite from solid nav tiles.
+
+   MOTION: everything is static except two state-change transitions (GROUP C),
+   one live-state pulse (GROUP K) and the header scan bar (GROUP R), which
+   sweeps ONLY while a run is in flight. All of them are switched off under
+   prefers-reduced-motion at the foot of this file.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* ── GROUP A · Chassis datum grid ────────────────────────────────────────────
+   Schematic paper under the whole app: a 12px hairline lattice with a 96px
+   heavy rule, in the signal ink at 3%. `.app-body` and `.tachi-route-enter`
+   are globals.css-owned container hooks (not component classes), so they are
+   legal targets. `!important` on background-image is required: AppShell sets
+   the `background` SHORTHAND inline, which resets background-image to none and
+   wins on specificity. Colour only — no box model touched. Static. */
+:root[data-theme="tachi-opus5"] body,
+:root[data-theme="tachi-opus5"] .app-body,
+:root[data-theme="tachi-opus5"] .tachi-route-enter {
+  background-image:
+    linear-gradient(to right,  rgba(184, 242, 39, 0.030) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(184, 242, 39, 0.030) 1px, transparent 1px),
+    linear-gradient(to right,  rgba(255, 255, 255, 0.017) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.017) 1px, transparent 1px) !important;
+  background-size: 96px 96px, 96px 96px, 12px 12px, 12px 12px;
+  background-attachment: fixed;
+}
+
+/* ── GROUP B · Buttons — the pincer bite ─────────────────────────────────────
+   Stepped notch out of the top-left (two cuts: the claw jaw), 9px chamfer off
+   the bottom-right. box-shadow is force-cleared — clip-path paints it away and
+   would leave a torn corner — and reissued as a signal drop-shadow that hugs
+   the cut. globals.css still owns the hover/active transform.
+   SOLID CONTROLS ONLY (see header). */
+/* B1 · THE CUT — every control, ghost included. clip-path clips the BORDER
+   BOX; it never reads the alpha channel, so the ghost hazard that governs
+   drop-shadow does not apply here. Keeping the cut inside the ghost exclusion
+   (as this sheet first shipped) silently left ~90% of the app square: nearly
+   every chip in PageTopbar / Sidebar / PromptPicker / ToolCallRow and both
+   ghost variants of ui/Button.tsx set inline `background: transparent`. */
+:root[data-theme="tachi-opus5"] button:not(:disabled) {
+  clip-path: polygon(
+    9px 0, 100% 0,
+    100% calc(100% - 9px), calc(100% - 9px) 100%,
+    0 100%,
+    0 4px, 4px 4px, 4px 0
+  );
+}
+/* B2 · THE OFFSET — solid controls only, for the alpha reason above.
+   [data-chassis-key] excluded for the same reason the TK-05 sheet excludes it:
+   the window keys' inline clip-path is applied AFTER the filter and eats the
+   shadow, so the declaration only forced a compositing layer per key while
+   contradicting the signal-restraint note — the caps carry their own finish. */
+:root[data-theme="tachi-opus5"] button:not(:disabled):not([data-chassis-key]):not(
+    [style*="background: transparent"],
+    [style*="background: none"],
+    [style*="background-color: transparent"]
+  ) {
+  box-shadow: none !important;
+  filter: drop-shadow(
+    var(--opus-bite-offset, 3px) var(--opus-bite-offset, 3px) 0 var(--opus-signal)
+  );
+}
+
+/* ── GROUP C · Press interplay ───────────────────────────────────────────────
+   Hover grows the signal offset, press collapses it, so the drop-shadow behaves
+   exactly like the box-shadow it replaced. Driven through a custom property so
+   the long ghost-exclusion selector is written exactly once; setting the
+   variable on a ghost button is inert (it applies no filter). */
+:root[data-theme="tachi-opus5"] button:not(:disabled):hover  { --opus-bite-offset: 5px; }
+:root[data-theme="tachi-opus5"] button:not(:disabled):active { --opus-bite-offset: 0px; }
+:root[data-theme="tachi-opus5"] button:disabled { filter: none; }
+
+/* ── GROUP D · Machined hatch on hover ───────────────────────────────────────
+   A 45° brushed-metal hatch layered on the hovered control. Reaches ghost
+   buttons too (they get no bite, so this is their only hover geometry) —
+   background-image never triggers the alpha-tracing failure. */
+:root[data-theme="tachi-opus5"] button:not(:disabled):hover {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(184, 242, 39, 0.09) 0 1px,
+    transparent 1px 6px
+  );
+}
+
+/* ── GROUP E · Inputs & selects — engraved slot ──────────────────────────────
+   Single-line fields stay rectangular: a clip-path here would shear the text
+   caret at the edge. The machined read comes from a heavy rib border, an inset
+   double-rule, a top sheen and a signal underline seated INSIDE the box.
+   Excludes the native controls (checkbox/radio/range/color/file). */
+:root[data-theme="tachi-opus5"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+:root[data-theme="tachi-opus5"] select {
+  border: var(--border-width) solid var(--border-strong);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.035), transparent 42%);
+  box-shadow:
+    inset 0 0 0 1px var(--bg-base),
+    inset 0 -2px 0 rgba(184, 242, 39, 0.16);
+}
+/* Focus ring is INSET so no clip-path or overflow can shear it off, and the
+   thin accent outline is dropped in favour of the thick signal rule. */
+:root[data-theme="tachi-opus5"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):focus,
+:root[data-theme="tachi-opus5"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):focus-visible,
+:root[data-theme="tachi-opus5"] select:focus,
+:root[data-theme="tachi-opus5"] select:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--opus-signal);
+}
+
+/* ── GROUP F · Textareas — twin chamfer plate ────────────────────────────────
+   The composer is roomy enough for a real clip-path with zero caret risk, so
+   it gets the full plate treatment: opposite 16px chamfers, top-left and
+   bottom-right, matching the bite direction of the buttons. */
+:root[data-theme="tachi-opus5"] textarea {
+  border: var(--border-width) solid var(--border-strong);
+  clip-path: polygon(
+    16px 0, 100% 0,
+    100% calc(100% - 16px), calc(100% - 16px) 100%,
+    0 100%, 0 16px
+  );
+}
+:root[data-theme="tachi-opus5"] textarea:focus,
+:root[data-theme="tachi-opus5"] textarea:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--opus-signal);
+}
+
+/* ── GROUP G · Headings — datum ticks ────────────────────────────────────────
+   Machinist registration marks instead of a rule: a SIGNAL L-tick at the
+   top-left, an OXIDE L-tick at the bottom-right (two inks, so the heading
+   reads as a dimensioned part rather than a bracketed title). This tick is the
+   ONLY remaining consumer of --opus-oxide since the shadow family went signal;
+   it is deliberate contrast, not a leftover.
+   position:relative is layout-neutral; ticks are pointer-events:none and only
+   a few px outset, so they never collide or reflow. */
+:root[data-theme="tachi-opus5"] h1,
+:root[data-theme="tachi-opus5"] h2 { position: relative; }
+:root[data-theme="tachi-opus5"] h1::before,
+:root[data-theme="tachi-opus5"] h2::before {
+  content: "";
+  position: absolute; top: -4px; left: -7px;
+  width: 8px; height: 8px;
+  border-top: 2px solid var(--opus-signal);
+  border-left: 2px solid var(--opus-signal);
+  pointer-events: none;
+}
+:root[data-theme="tachi-opus5"] h1::after,
+:root[data-theme="tachi-opus5"] h2::after {
+  content: "";
+  position: absolute; bottom: -4px; right: -7px;
+  width: 8px; height: 8px;
+  border-bottom: 2px solid var(--opus-oxide);
+  border-right: 2px solid var(--opus-oxide);
+  pointer-events: none;
+}
+
+/* ── GROUP H · kbd — mini bite ───────────────────────────────────────────────
+   Button geometry at key scale, with a 1px signal drop-shadow replacing the
+   clipped box-shadow globals.css gives kbd. kbd is always opaque (globals sets
+   background: var(--bg-elevated)), so the alpha-tracing hazard does not apply. */
+:root[data-theme="tachi-opus5"] kbd {
+  clip-path: polygon(
+    5px 0, 100% 0,
+    100% calc(100% - 5px), calc(100% - 5px) 100%,
+    0 100%,
+    0 3px, 3px 3px, 3px 0
+  );
+  box-shadow: none !important;
+  filter: drop-shadow(1px 1px 0 var(--opus-signal));
+}
+
+/* ── GROUP I · Cards — riveted plate ─────────────────────────────────────────
+   .tachi-settings-card is the shared SettingsCard wrapper (a globals.css hook,
+   not a component class). Chamfer it like a bolted panel, drop four corner
+   rivets in, and reissue the inline hard-offset as a signal drop-shadow.
+   background-color is pinned FIRST and deliberately: drop-shadow traces alpha,
+   so the plate must be guaranteed opaque before the filter is applied. */
+:root[data-theme="tachi-opus5"] .tachi-settings-card {
+  background-color: var(--bg-surface);
+  background-image:
+    radial-gradient(circle at 8px 8px,                     rgba(255,255,255,0.11) 1.4px, transparent 1.7px),
+    radial-gradient(circle at calc(100% - 8px) 8px,        rgba(255,255,255,0.11) 1.4px, transparent 1.7px),
+    radial-gradient(circle at 8px calc(100% - 8px),        rgba(255,255,255,0.11) 1.4px, transparent 1.7px),
+    radial-gradient(circle at calc(100% - 8px) calc(100% - 8px), rgba(255,255,255,0.11) 1.4px, transparent 1.7px);
+  background-repeat: no-repeat;
+  clip-path: polygon(
+    14px 0, 100% 0,
+    100% calc(100% - 14px), calc(100% - 14px) 100%,
+    0 100%, 0 14px
+  );
+  box-shadow: none !important;
+  filter: drop-shadow(3px 3px 0 var(--opus-signal));
+}
+
+/* ── GROUP J · Scrollbars — machined slot ────────────────────────────────────
+   The track is a milled channel with cross-hatched rule marks; the thumb is a
+   grip block capped with a signal edge, so scroll position reads like a
+   travelling indicator on an instrument. */
+:root[data-theme="tachi-opus5"] ::-webkit-scrollbar { width: 12px; height: 12px; }
+:root[data-theme="tachi-opus5"] ::-webkit-scrollbar-track {
+  background-color: var(--bg-inset);
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0 5px, rgba(255, 255, 255, 0.045) 5px 6px);
+}
+:root[data-theme="tachi-opus5"] ::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border: 2px solid var(--bg-inset);
+  border-top-color: var(--opus-signal);
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0 3px, rgba(0, 0, 0, 0.35) 3px 4px);
+}
+:root[data-theme="tachi-opus5"] ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-hover);
+}
+:root[data-theme="tachi-opus5"] ::-webkit-scrollbar-corner { background: var(--bg-inset); }
+
+/* ── GROUP K · Live-state signal ─────────────────────────────────────────────
+   The one ambient motion in the theme: anything globals.css already marks as
+   live (the streaming dot, the WaitingIndicator's typing dots, the nodes run
+   dot) breathes in the signal ink instead of merely fading, so "something is
+   running" is visible in peripheral vision. Colour + opacity only — no layout,
+   no transform.
+
+   `.tachi-typing-dot` joined the list after the pulse/run pair: it is the same
+   kind of mark (globals.css already declares it live) and leaving it out was
+   the difference between "the theme lights what is running" and "the theme
+   lights two of the three things that are running". It keeps its OWN keyframes
+   as the second animation, because that one carries the dot's travel and this
+   group only adds the glow. */
+@keyframes opus5-signal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 242, 39, 0.55); }
+  50%      { box-shadow: 0 0 0 3px rgba(184, 242, 39, 0.00); }
+}
+:root[data-theme="tachi-opus5"] .tachi-pulse-dot,
+:root[data-theme="tachi-opus5"] .tachi-run-dot {
+  animation: opus5-signal 1.4s ease-out infinite, tachi-pulse 1.2s ease-in-out infinite;
+}
+:root[data-theme="tachi-opus5"] .tachi-typing-dot {
+  animation: opus5-signal 1.4s ease-out infinite, tachi-typing-dot 1.15s ease-in-out infinite;
+}
+
+/* ── GROUP L · Selection — signal wash ───────────────────────────────────────
+   globals.css sets ::selection to var(--accent) + #fff. Moss/white is legal
+   but flat; OPUS-5 selects in the signal ink with chassis-dark text, which is
+   how a highlighted reading on an instrument looks. 14.7:1 after the 2026-07-27
+   acid retheme (the void lightened by 2 levels; the wash did not move). */
+:root[data-theme="tachi-opus5"] ::selection {
+  background: var(--opus-signal);
+  color: var(--bg-base);
+}
+
+/* ── GROUP M · The chassis recess, in the theme's own ink ─────────────────────
+   `[data-chassis]` is stamped on :root by OpusChrome / TachikomaChrome and is
+   theme-agnostic (both frames recess the plate the same way), so globals.css
+   draws the counterbore in the TK-05 optic cyan. On OPUS-5 the frame line is
+   CHARTREUSE — that is the whole perimeter the mock puts around the window — so
+   the plate's rim and seep are restated here. Colour only: the geometry, the
+   inset and the z-index all stay with globals.css.
+   box-shadow, never filter: the plate contains the entire app.
+
+   THE SEEP RING WENT UP WITH THE FRAME RULE (2026-07-27). OpusChrome's four
+   inner hairlines are now PURE --opus-signal rather than a 55% wash of it, and
+   a 0.18 seep against a full-strength rule reads as a smudge under a hard line
+   instead of as the light coming off it. 0.32 is the same relation the two had
+   before, restated at the new strength — the acid still ENDS the frame, this
+   is only how far past the edge it carries. */
+:root[data-theme="tachi-opus5"][data-chassis] .app-body {
+  border-color: var(--opus-signal);
+  box-shadow:
+    0 0 0 2px var(--bg-inset),
+    0 0 0 3px rgba(184, 242, 39, 0.32),
+    0 10px 34px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* ── GROUP N · SEND / RUN key — the notched cap ───────────────────────────────
+   `[data-send-key]` is a neutral styling hook on the chat SEND button and the
+   Code tab's RUN button (added for this rule; nothing in the app reads it). The
+   mock cuts a chip out of the SEND key, so the shared GROUP B bite is
+   overridden with a deeper asymmetric notch.
+
+   GEOMETRY ONLY, and the chartreuse rim comes for free: both keys are SOLID, so
+   they already inherit GROUP B's alpha-safe
+   `drop-shadow(<offset> var(--opus-signal))`, which hugs the CUT — a
+   `border-color` would not (a border draws the element's rectangle and clip-path
+   shears it along the diagonal) and would need `!important` to beat the
+   components' inline `border` shorthand. Hence no border/box-shadow here.
+
+   SUPERSEDED ON THE PINCER, KEPT AS THE FALLBACK: both composer keys now also
+   carry `[data-pincer-send]` and GROUP S below cuts the notch into the two JAWS
+   instead, clearing this clip-path on the button (higher specificity, later in
+   the sheet). This rule still governs any future `[data-send-key]` that does not
+   publish jaws, which is why it stays. */
+:root[data-theme="tachi-opus5"] [data-send-key] {
+  clip-path: polygon(
+    14px 0, 100% 0,
+    100% calc(100% - 14px), calc(100% - 14px) 100%,
+    0 100%,
+    0 5px, 5px 5px, 5px 0
+  );
+}
+
+/* ── GROUP O · Context meter — LED ladder ─────────────────────────────────────
+   `[data-ctx-meter]` is the [CTX nn%] badge. On an instrument chassis a context
+   window is a gauge, so the badge is filled with a segment ladder instead of
+   being an empty outline. background-image only — the badge's border/text colour
+   tracks the fill zone (green → amber → red) and must keep winning; a
+   drop-shadow here would trace the digits (and GROUP B already excludes the
+   badge from the bite, because its background is inline `transparent`).
+   `!important` is required for the same reason it is in GROUP A: the inline
+   `background: transparent` shorthand resets background-image AND, being inline,
+   outranks any normal author rule. */
+:root[data-theme="tachi-opus5"] [data-ctx-meter] {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(184, 242, 39, 0.50) 0 3px, rgba(0,0,0,0) 3px 6px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0 3px, rgba(0,0,0,0) 3px 6px) !important;
+  background-size: var(--ctx-fill, 0%) 100%, 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+}
+
+/* ── GROUP P · Tool-call family chips — stamped tags ──────────────────────────
+   `[data-tool-family]` is the READ / WRITE / EDIT / BASH tag on every run-log
+   row. Same bite direction as the buttons, at chip scale. The chips are always
+   opaque (the component fills them with the family colour), so the cut is safe;
+   they carry no shadow to reissue. */
+:root[data-theme="tachi-opus5"] [data-tool-family] {
+  clip-path: polygon(
+    4px 0, 100% 0,
+    100% calc(100% - 4px), calc(100% - 4px) 100%,
+    0 100%, 0 4px
+  );
+  box-shadow: inset -2px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ── GROUP Q · Window keys — ONE set, never two ───────────────────────────────
+   `[data-titlebar-controls]` is the TitleBar's own — □ × row (components/layout/
+   TitleBar.tsx). This theme mills its OWN keys into the top rail (OpusChrome's
+   OpusKeys), wired to the same `window.tachi.window` IPC, so with the row still
+   up there are two live, identical key clusters ~50px apart — live-found
+   duplication, not a style nit.
+
+   Hidden HERE rather than branched in the component for the same reason every
+   other rule in this file lives here: the frame is a THEME decision, so the
+   theme that adds keys is the theme that takes the others away, and a theme
+   sheet cannot reach past its own `:root[data-theme=…]` scope — every
+   non-chassis theme keeps its row byte-identical. The BAR stays (it is the
+   window's drag region and carries the [PRIVATE] badge); only the three keys
+   go. `display: none` also drops them from the tab order, which is what we
+   want: two tab stops to the same action is the same defect for a keyboard. */
+/* !important is load-bearing: the row carries an INLINE display:flex
+   (TitleBar.tsx layout style), which beats any selector without it —
+   live-found as six window buttons on screen. [data-chassis-keys="1"] is
+   the safety interlock shared with TK-05: the chrome component sets it
+   only while its replacement keys are mounted, so this rule can never
+   remove the TitleBar row without keys on screen. */
+:root[data-theme="tachi-opus5"][data-chassis-keys="1"] [data-titlebar-controls] { display: none !important; }
+
+/* ── GROUP R · Header RUN BAR — the claw-notch instrument (mock option 1f) ────
+   `[data-scan-bar]` is the inert 2px leaf AppShell renders at the top of the app
+   plate on EVERY theme and dresses on none (components/layout/AppShell.tsx). It
+   exists because the mock's header carries a run bar and PATCH-01 could not ship
+   one: a theme sheet can style an element, it cannot invent one.
+
+   THE SHAPE IS MOCK 1f, "Claw-notch run bar", transcribed at its own numbers:
+     · the track  — `height:16px; background:var(--bg-inset); border:2px solid
+       var(--border)` (mock 1f L1316). In place, the 1b frame draws the same
+       instrument as a 14px band with a 2px seam under the header (L1216) — the
+       same 16px total, which is the height taken here.
+     · the milled ticks — `repeating-linear-gradient(90deg, transparent 0 11px,
+       rgba(0,0,0,.4) 11px 13px)` (mock 1f L1318): an 11px cell on a 13px pitch,
+       cut by a 2px groove. It is the TOP layer, so it mills the lit fill and the
+       dim rack with ONE scale — the machinist's rule the label asks for. The
+       idle rack below it is the 1b frame's dead-cell olive (`#22300a`, L1217) on
+       that same 11/13 pitch, so the grooves land in the gaps instead of beating
+       against a second cadence.
+     · the leading edge — mock 1f L1317 clips the fill with
+       `polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%)`:
+       a 12px-deep closing pincer, NOT a flat wall.
+
+   THE PINCER IS PAINTED, NOT CLIPPED, and that is what keeps the strip a
+   childless leaf. `conic-gradient(at 100% 50%, …)` puts the apex on the lit
+   group's leading edge and opens a wedge back along the horizontal; a boundary
+   ray at θ off 270deg falls |cot θ| per px, so with the band 14px tall (half
+   = 7px) and θ = atan(7/12) = 30.2564deg the wedge reaches full height at
+   exactly 12px behind the tip and stays full height from there back. That is
+   the mock's polygon, vertex for vertex, as one background layer — conic angles
+   are real geometry, not box-normalised, so the 12px depth holds at every window
+   width. The jaws (the two diagonal faces) run signal and fade to the control
+   surface `var(--accent)` — petrol when this was written, MOSS since the
+   2026-07-27 acid retheme; the declaration names the token, never the hue — ~33px
+   back, which is where the mock's separate signal sweep goes: this app has a
+   run BOOLEAN, never a progress scalar, so 1f's fill and 1f's sweep collapse
+   into one travelling group — and the sweep stays the only ambient motion.
+
+   `!important` is required for the same cascade reason as GROUP A and GROUP O:
+   the strip carries an inline `background: transparent` shorthand (its
+   guarantee of inertness on the themes with no rule here), which resets
+   background-image AND, being inline, outranks any normal author declaration.
+   `background-position` is deliberately NOT declared: the animation outranks the
+   inline shorthand on its own, and leaving the static value inline (0% 0%) is
+   what parks the lit group flush left when reduced motion kills the sweep.
+
+   THE HEIGHT COSTS LAYOUT ON THIS THEME ONLY. The element is inline-absolute at
+   2px, which is right for the six themes that never dress it; a 16px instrument
+   left absolute would paint over the top of either the title bar (at top:0) or
+   the sidebar and the page header (below it). So the rule puts it IN FLOW, where
+   the mock has it: its own `flex-shrink:0` band between the title bar and the
+   main row, taking 16px off the plate and covering nothing. It stays
+   pointer-events:none, so it is not a click target either way.
+
+   THE MOTION IS A PAINT PROPERTY ONLY — background-position, never transform or
+   filter, and never a fill-mode that outlives the animation. Any of those turns
+   an element into the containing block for its `position: fixed` descendants,
+   which is what ate the maximized window keys; the strip is childless so the
+   trap cannot spring, and keeping the animation off those properties means it
+   can never start. Killed under reduced motion immediately below. */
+@keyframes opus5-scan {
+  from { background-position: 0 0, -30% 0, 0 0; }
+  to   { background-position: 0 0, 130% 0, 0 0; }
+}
+:root[data-theme="tachi-opus5"] [data-scan-bar] {
+  position: relative !important;
+  height: 16px !important;
+  flex-shrink: 0;
+  border-bottom: 2px solid var(--border);
+  background-color: var(--bg-inset) !important;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0 11px, rgba(0, 0, 0, 0.55) 11px 13px),
+    repeating-linear-gradient(90deg, #22300a 0 11px, rgba(0, 0, 0, 0) 11px 13px) !important;
+  background-repeat: repeat, repeat !important;
+}
+:root[data-theme="tachi-opus5"] [data-scan-bar][data-run-active="1"] {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0 11px, rgba(0, 0, 0, 0.55) 11px 13px),
+    conic-gradient(
+      at 100% 50%,
+      rgba(184, 242, 39, 0) 0deg 239.74deg,
+      var(--opus-signal) 239.74deg 245deg,
+      var(--accent) 258deg 282deg,
+      var(--opus-signal) 295deg 300.26deg,
+      rgba(184, 242, 39, 0) 300.26deg 360deg
+    ),
+    repeating-linear-gradient(90deg, #22300a 0 11px, rgba(0, 0, 0, 0) 11px 13px) !important;
+  background-size: auto, 22% 100%, auto !important;
+  background-repeat: repeat, no-repeat, repeat !important;
+  animation: opus5-scan 2.4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+/* ── GROUP S · Pincer SEND — two jaws and a V-notch ───────────────────────────
+   Mock option 1e. The composer's send key stops being a slab with a corner bite
+   and becomes the CLAW ITSELF: two signal-coloured jaws with a V-notch between
+   them. Hover parts them 3px, press snaps them shut. 140ms, no springs.
+
+   THE HOOKS ARE COMPONENT-SIDE AND INERT: `[data-pincer-send]` on the button
+   plus two childless `[data-jaw]` leaf spans (pages/chat/InputBar.tsx and
+   pages/agent/AgentPage.tsx). With no chassis sheet loaded the top jaw is an
+   unstyled inline span holding the label that used to be the button's only
+   child and the bottom jaw is empty — every other theme renders those buttons
+   pixel-identically, which is the whole reason the shape lives here and not in
+   the components.
+
+   SPECIFICITY IS LOAD-BEARING: the selector is `button[data-pincer-send]`, not
+   `[data-pincer-send]`, so it ties GROUP B's `button:not(:disabled)` (0,3,1) and
+   wins on order. Without the type selector the bite would still be clipping the
+   button box and would shear the jaws off as they part.
+
+   `padding: 0` is the one box-model declaration in this sheet and it is not
+   decoration: the jaws ARE the button's face, and the components' inline
+   `padding: 8px 14px` would frame the claw in a band of dead air it can never
+   reach. It needs `!important` for the usual inline-style reason. The jaws take
+   the label's breathing room back on their own box, which is also where the
+   mock puts it.
+
+   TRANSFORM LIVES ON THE LEAVES, NEVER ON THE BUTTON — the containing-block law
+   (see GROUP R): an animated/transformed element becomes the containing block
+   for any `position: fixed` descendant. A jaw is a leaf and can hold nothing, so
+   the trap cannot spring; the button can and must stay clean. That law is why
+   `transform: none !important` is declared here: the composer's send button
+   carries an INLINE `transform: translate(1px, 1px)` on hover (the sink-into-
+   its-own-shadow press every other theme wants, and every other theme keeps —
+   the inline style is untouched). On the chassis it is wrong twice: the jaws
+   already move on hover, so the claw double-moved as a whole AND parted at the
+   same time (live-found), and a transformed button re-opens the containing-block
+   trap this comment closes. Neutralised HERE rather than deleted at the source
+   for the same reason `padding` and `background` are: the dressing belongs to
+   the sheet, so no other theme pays for it.
+
+   HEIGHT IS CAPPED, THE HIT TARGET IS NOT. The composer stretches this button to
+   the whole composer row (`align-self: stretch`), which on CHAT is ~94px tall.
+   The notch is a FIXED 14px cut across a diagonal, so the taller the upper jaw
+   the shallower that diagonal reads — at 74px of jaw the claw stopped reading as
+   a claw and became two slabs with a scratch between them (live-found; the 46px
+   CODE instance was fine, which is the tell). So the JAWS are capped to the
+   mock's own numbers and the button is left at whatever height the row gives it:
+   the claw stays the mock's shape and the click area stays the full row. */
+:root[data-theme="tachi-opus5"] button[data-pincer-send] {
+  display: flex;
+  flex-direction: column;
+  /* The capped claw is centred in a taller button — see HEIGHT IS CAPPED. */
+  justify-content: center;
+  row-gap: 2px;
+  padding: 0 !important;
+  background: transparent !important;
+  border-color: transparent;
+  box-shadow: none !important;
+  filter: none !important;
+  clip-path: none;
+  transform: none !important;
+}
+:root[data-theme="tachi-opus5"] [data-pincer-send] [data-jaw] {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: var(--opus-signal);
+  color: var(--bg-base);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  transition: transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+/* The upper jaw carries the label and the notch's upper face: the cut runs from
+   60% down the left edge out to 14px along the bottom.
+   `max-height: 44px` is the mock's number, not a guess: option 1e draws the
+   whole claw in a 64px row (mock L1301) with an 18px lower jaw (L1305) and a 2px
+   seam, and 64 − 18 − 2 = 44. At 44 the 40%-of-height cut spans ~18px vertically
+   over 14px horizontally — a diagonal. It still SHRINKS below the cap (the 46px
+   CODE send lands at 26px of jaw and is unchanged), the cap only stops it
+   growing past the shape the mock signs off on. */
+:root[data-theme="tachi-opus5"] [data-pincer-send] [data-jaw="t"] {
+  flex: 1;
+  max-height: 44px;
+  padding: 0 12px 2px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 60%);
+}
+/* The lower jaw is the mirror of it — 18px of travel-stop, and the two cuts face
+   each other across the seam. `flex-shrink: 0` so the travel-stop is a constant:
+   without it a column flex item with a fixed height is still shrinkable, and the
+   jaw that carries the notch's lower face would thin out on a short button. */
+:root[data-theme="tachi-opus5"] [data-pincer-send] [data-jaw="b"] {
+  height: 18px;
+  flex-shrink: 0;
+  clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+}
+:root[data-theme="tachi-opus5"] [data-pincer-send]:hover [data-jaw="t"] { transform: translateY(-3px); }
+:root[data-theme="tachi-opus5"] [data-pincer-send]:hover [data-jaw="b"] { transform: translateY(3px); }
+/* SNAP SHUT on press — 1px past rest each way, which closes the 2px seam
+   exactly. A claw that only returns to rest reads as a button releasing; a claw
+   that closes reads as a bite. */
+:root[data-theme="tachi-opus5"] [data-pincer-send]:active [data-jaw="t"] { transform: translateY(1px); }
+:root[data-theme="tachi-opus5"] [data-pincer-send]:active [data-jaw="b"] { transform: translateY(-1px); }
+
+/* ── GROUP T · Blur pause — the chassis stops moving when nobody is looking ───
+   `data-window-focused` is a :root contract published by AppShell (components/
+   layout/AppShell.tsx, "IDLE GATE"): the attribute is PRESENT while the window
+   has focus and ABSENT while it does not. It is written as a `:not()` on purpose
+   at both ends — an environment that never fires `focus` degrades to PAUSED,
+   which is the safe direction for a rule whose whole job is to stop work.
+
+   WHY A CHASSIS NEEDS IT. Electron's backgroundThrottling only covers a page the
+   compositor has stopped showing (minimised / fully occluded). The owner runs
+   this app on a second monitor, where it is VISIBLE and UNFOCUSED for hours: the
+   header rack's RUN cell keeps stepping and the readout's live cell keeps
+   animating a box-shadow — i.e. a repaint of the lamp block, forever, for a
+   screen nobody is looking at.
+
+   SCOPED TO THE FRAME, NEVER GLOBALLY. `.opus-chassis` is the root of the OPUS-5
+   chrome component (components/OpusChrome.tsx) — the one class in this sheet that
+   belongs to a component rather than to globals.css, and it is legal for the same
+   reason `[data-chassis-key]` is: the component exists only on this theme, is
+   mounted by the theme, and publishes that root as its styling scope (its own
+   `<style>` block already targets `.opus-chassis *` for reduced motion). Nothing
+   outside the frame is touched, so a paused chassis cannot freeze a spinner, a
+   streaming dot or anything else the app owns.
+
+   `!important` IS LOAD-BEARING, exactly as in GROUP A / GROUP O: the frame's
+   animations are INLINE styles (`animation: 'opus-chassis-led …'`), and an inline
+   shorthand carries animation-play-state:running at a priority no normal author
+   rule can beat. It composes with reduced motion below rather than fighting it:
+   that block sets `animation: none`, so there is nothing left to pause. */
+:root[data-theme="tachi-opus5"]:not([data-window-focused]) .opus-chassis,
+:root[data-theme="tachi-opus5"]:not([data-window-focused]) .opus-chassis * {
+  animation-play-state: paused !important;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────────
+   Everything above is static except GROUP K, GROUP R, GROUP S and the GROUP C offset
+   retune (which rides globals.css's own guarded transition). Kill the pulse and
+   the sweep; the bite, the grid, the ticks, the rivets and the slot are all
+   unaffected, and the run bar keeps EVERYTHING but the travel — the milled rack,
+   the lit group and its claw notch all still paint, the group simply parks flush
+   left (GROUP R declares no static background-position, so killing the sweep
+   drops it back to the inline 0% 0%). "A run is in flight" stays readable with
+   no motion at all. `opus5-scan` is the sheet's only run-bar animation, so this
+   one line is the whole kill list for it. */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="tachi-opus5"] .tachi-pulse-dot,
+  :root[data-theme="tachi-opus5"] .tachi-typing-dot,
+  :root[data-theme="tachi-opus5"] .tachi-run-dot { animation: none !important; }
+  :root[data-theme="tachi-opus5"] [data-scan-bar] { animation: none !important; }
+  /* GROUP S · the jaws stop travelling; hover/press still change nothing else,
+     so the pincer is simply a static claw. */
+  :root[data-theme="tachi-opus5"] [data-pincer-send] [data-jaw] { transition: none !important; }
+}

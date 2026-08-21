@@ -1,0 +1,566 @@
+{
+  "dropZone": {
+    "hint": "Soltar carpeta para establecer espacio de trabajo"
+  },
+  "playbook": {
+    "tooltip": "Se ha cargado un playbook de una sesión anterior como contexto para este espacio de trabajo.",
+    "loaded": "Playbook cargado"
+  },
+  "modeToggle": {
+    "planTooltip": "Modo Plan — describe y esboza antes de ejecutar",
+    "buildTooltip": "Modo Build — ejecuta inmediatamente",
+    "plan": "Plan",
+    "build": "Build"
+  },
+  "agentsMd": {
+    "unknownError": "Error desconocido",
+    "tooltip": "Generar AGENTS.md en la raíz del espacio de trabajo",
+    "generating": "Generando…",
+    "generate": "Generar AGENTS.md"
+  },
+  "diff": {
+    "label": "DIFF"
+  },
+  "toolGroup": {
+    "someRunning": "Algunas herramientas aún se están ejecutando",
+    "count_one": "{{count}} herramienta",
+    "count_other": "{{count}} herramientas"
+  },
+  "toolCall": {
+    "aborted": "[ABORTADO]",
+    "abortedTooltip": "La sesión terminó antes de que se completara esta herramienta",
+    "running": "Ejecutando…",
+    "harnessReports": "El agente informa: {{name}}",
+    "input": "ENTRADA",
+    "result": "RESULTADO",
+    "noOutput": "(sin salida)",
+    "abortedPlaceholder": "[ABORTADO] — la sesión terminó antes de que llegara el resultado",
+    "runningPlaceholder": "Ejecutando — esperando resultado…"
+  },
+  "preview": {
+    "label": "PREVISUALIZACIÓN",
+    "openInBrowser": "[ABRIR EN NAVEGADOR]",
+    "openInBrowserTooltip": "Abrir en navegador del sistema",
+    "close": "[CERRAR]",
+    "closeTooltip": "Cerrar previsualización",
+    "loading": "Cargando…",
+    "error": "Error: {{error}}",
+    "emptyHtml": "No se pudo renderizar HTML (contenido vacío)",
+    "imageTooLarge": "Binario / imagen demasiado grande para previsualizar",
+    "truncated": "Mostrando los primeros 1 MB ({{total}} MB en total)",
+    "unsupported": "Previsualización no compatible con este tipo de archivo.",
+    "supportedPrefix": "Admitido:",
+    "binary": "Archivo binario ({{bytes}} bytes) — no se puede previsualizar",
+    "saved": "Guardado",
+    "saveFailed": "Error al guardar"
+  },
+  "filePreview": {
+    "closeTooltip": "Cerrar previsualización",
+    "loading": "Cargando…",
+    "truncated": "Mostrando los primeros 1 MB del archivo ({{total}} MB en total)",
+    "binary": "Archivo binario ({{bytes}} bytes)",
+    "saveCopy": "GUARDAR COPIA",
+    "saveCopyTooltip": "Guardar una copia en la carpeta de artefactos de Tachi Studio",
+    "saveCopySuccess": "Copia guardada en {{path}}",
+    "saveCopyFailed": "No se pudo guardar la copia"
+  },
+  "permission": {
+    "owner": {
+      "code": "EJECUCIÓN DE CODE",
+      "tachiapp": "EJECUCIÓN DE TACHIAPP",
+      "hint": "Este permiso pertenece a una ejecución de la otra pestaña. Responderlo desbloquea ESA ejecución: la herramienta se ejecuta en su espacio de trabajo, no en este."
+    },
+    "morePending": "+{{n}} en espera: decide este primero",
+    "badge": "PERMISO",
+    "paused": "— pausado, esperando tu aprobación",
+    "risky": "RIESGOSO:",
+    "review": "REVISAR:",
+    "input": "ENTRADA",
+    "allow": "Permitir",
+    "allowHint": "Permitir esta única llamada",
+    "deny": "Denegar",
+    "denyHint": "Denegar y abortar esta llamada de herramienta",
+    "alwaysAllowTool": "Permitir siempre herramienta",
+    "alwaysAllowToolHint": "Permitir siempre {{toolName}} para esta sesión",
+    "alwaysAllowFamily": "Permitir siempre familia",
+    "alwaysAllowFamilyHint": "Permitir siempre esta familia de herramientas completa para esta sesión",
+    "allow30m": "Permitir 30 min",
+    "allow30mHint": "Deja que \"{{toolName}}\" se ejecute sin preguntar durante los próximos 30 minutos — el permiso expira en silencio",
+    "overlay": {
+      "title": "APROBACIÓN NECESARIA",
+      "hint": "Una ejecución está bloqueada hasta que respondas — esto se ve en todas las pestañas",
+      "goto": "IR A LA EJECUCIÓN",
+      "gotoHint": "Abre la superficie dueña de esta ejecución para ver la transcripción completa"
+    }
+  },
+  "slash": {
+    "status": {
+      "pendingReview": "PENDIENTE DE REVISIÓN",
+      "approved": "APROBADO",
+      "applied": "APLICADO",
+      "cancelled": "CANCELADO"
+    },
+    "risk": {
+      "low": "BAJO",
+      "med": "MEDIO",
+      "high": "ALTO"
+    },
+    "approve": "[APROBAR]",
+    "apply": "[APLICAR]",
+    "cancel": "[CANCELAR]",
+    "rootCause": "CAUSA RAÍZ",
+    "confidence": "[confianza: {{confidence}}%]",
+    "solutions": "SOLUCIONES",
+    "riskColumn": "RIESGO",
+    "risks": "RIESGOS",
+    "scope": "ÁMBITO",
+    "changes": "CAMBIOS",
+    "estimatedDiff": "DIFF ESTIMADO",
+    "lines": "líneas",
+    "findings": "HALLAZGOS",
+    "summary": "RESUMEN",
+    "errors_one": "{{count}} error",
+    "errors_other": "{{count}} errores",
+    "warnings_one": "{{count}} advertencia",
+    "warnings_other": "{{count}} advertencias",
+    "infoCount": "{{count}} información",
+    "goal": "OBJETIVO",
+    "phases": "FASES",
+    "phase": "Fase {{num}}: {{name}}",
+    "depends": "depende de: {{depends}}",
+    "tasks": "tareas: {{tasks}}",
+    "criticalPath": "RUTA CRÍTICA",
+    "errorCard": {
+      "title": "[COMANDO SLASH]",
+      "badge": "ERROR",
+      "parseFailed": "No se pudo analizar la respuesta del agente como un plan slash.",
+      "rawLogged": "Texto sin procesar registrado en auditoría de red.",
+      "dismiss": "[DESCARTAR]"
+    }
+  },
+  "history": {
+    "time": {
+      "justNow": "hace poco",
+      "minutesAgo": "hace {{count}}m",
+      "hoursAgo": "hace {{count}}h",
+      "daysAgo": "hace {{count}}d"
+    },
+    "sessions": "Sesiones · {{count}}",
+    "mainStore": "(almacén principal: {{status}})",
+    "new": "+ NUEVA",
+    "newTooltip": "Nueva sesión — archiva la actual e inicia una nueva",
+    "newAria": "Nueva sesión",
+    "hideTooltip": "Ocultar sesiones",
+    "hideAria": "Ocultar sesiones",
+    "viewingArchive": "● Viendo archivo",
+    "backToLiveTooltip": "Volver a sesión en directo",
+    "backToLive": "Volver a directo",
+    "continueAction": "continuar",
+    "continueTooltip": "Continuar esta sesión — restaurarla y seguir trabajando",
+    "searchPlaceholder": "Buscar sesiones…",
+    "noMatches": "Sin coincidencias.",
+    "empty": "Sin sesiones pasadas aún — las ejecuciones completadas llegan aquí automáticamente.",
+    "eventCount": "{{count}} ev",
+    "rename": "Renombrar",
+    "renameAction": "renombrar",
+    "delete": "Eliminar",
+    "deleteAction": "eliminar",
+    "confirmDeleteTooltip": "Haz clic de nuevo para confirmar",
+    "sure": "¿seguro?",
+    "deletedToast": "Sesión eliminada"
+  },
+  "tile": {
+    "status": {
+      "idle": "[INACTIVO]",
+      "running": "[EN EJECUCIÓN]",
+      "done": "[HECHO]",
+      "error": "[ERROR]",
+      "aborted": "[ABORTADO]"
+    },
+    "deleteTooltip": "Eliminar tarea (worktree + rama)",
+    "deleteAria": "Eliminar tarea",
+    "displayModeAria": "Modo de visualización de mosaico",
+    "events": "EVENTOS",
+    "eventsTooltip": "Mostrar eventos recientes de agente + steps.json",
+    "ptyTooltip": "Adjuntar un xterm al shell del worktree",
+    "noOutput": "sin salida aún"
+  },
+  "grid": {
+    "unknownBranch": "(desconocida)",
+    "deleteConfirmTitle": "¿ELIMINAR TAREA PARALELA?",
+    "deleteConfirmMessage": "Esto elimina el worktree y la rama \"{{branchName}}\" junto con cualquier cambio sin confirmar dentro de él. Esto no se puede deshacer.",
+    "deleteConfirmOk": "ELIMINAR",
+    "deleteConfirmCancel": "CANCELAR",
+    "newTask": "[+ NUEVA TAREA PARALELA]",
+    "running": "En ejecución: {{running}}/{{total}}",
+    "empty": "Sin tareas paralelas aún. Haz clic en [+ NUEVA TAREA PARALELA] arriba para crear una."
+  },
+  "dialog": {
+    "nameRequired": "El nombre de la tarea es requerido.",
+    "rootRequired": "La raíz del proyecto es requerida.",
+    "title": "Nueva Tarea Paralela",
+    "nameLabel": "Nombre de la tarea",
+    "namePlaceholder": "p. ej. corregir redirección de inicio de sesión",
+    "rootLabel": "Raíz del proyecto",
+    "rootPlaceholder": "ruta absoluta al repositorio git",
+    "choose": "ELEGIR...",
+    "baseBranchLabel": "Rama base (opcional)",
+    "baseBranchPlaceholder": "por defecto es HEAD",
+    "branchPrefixLabel": "Prefijo de rama",
+    "branchPrefixPlaceholder": "tarea",
+    "symlinkLabel": "Directorios de enlace simbólico en worktree",
+    "errorPrefix": "ERROR: {{error}}",
+    "cancel": "CANCELAR",
+    "create": "CREAR",
+    "creating": "CREANDO..."
+  },
+  "tour": {
+    "title": "Cómo usar la pestaña Code",
+    "intro": {
+      "title": "Esta es la pestaña Code",
+      "body": "Aquí un agente de IA lee y escribe archivos en una carpeta de tu computadora — puede construir, corregir y refactorizar proyectos reales. Déjame señalar los controles principales."
+    },
+    "folder": {
+      "title": "Elige una carpeta",
+      "body": "Primero elige (o arrastra) la carpeta del proyecto en el que debería trabajar el agente. Nada se ejecuta hasta que elijas una. Este botón resaltado abre el selector de carpetas."
+    },
+    "controls": {
+      "title": "Tus controles",
+      "body": "Esta fila establece CÓMO trabaja el agente: Modo (Plan = describir primero un plan, Build = hacerlo ahora), Agente (qué agente de codificación), y Proveedor — de dónde vienen los modelos (Free, OpenGateway, Bankr, Surplus, o Venice)."
+    },
+    "compose": {
+      "title": "Escribe y envía",
+      "body": "Escribe lo que quieres en el cuadro en la parte inferior y presiona el botón de envío (o Intro). El agente mostrará sus pasos, ediciones de archivos y cualquier previsualización mientras funciona."
+    },
+    "done": {
+      "title": "Eso es todo",
+      "body": "Elige una carpeta, selecciona Plan o Build, escribe tu tarea, envía. Puedes detener en cualquier momento. Abre este walkthrough nuevamente desde el botón \"Cómo\" en la parte superior."
+    }
+  },
+  "harness": {
+    "openClaudeHint": "Agente: OpenClaude — agente de codificación de estilo Claude (por gitlawb)",
+    "darkSolHint": "Agente: DarkSol — terminal criptográfica nativa de agente (billetera / comercio / wiretap). Requiere @darksol/terminal instalado + una billetera de agente financiada.",
+    "tachiHint": "Agente propio en proceso (alfa)"
+  },
+  "header": {
+    "howTo": "Cómo",
+    "howToTooltip": "Walkthrough interactivo de esta pestaña",
+    "buildWorkflow": "Construir flujo de trabajo",
+    "buildWorkflowTooltip": "Construir un flujo de trabajo multiagente personalizado visualmente en el editor de nodos",
+    "sessions": "sesiones",
+    "showSessionsTooltip": "Mostrar historial de sesiones",
+    "folderTooltip": "Elige carpeta del espacio de trabajo (o arrastra y suelta una carpeta en la página)",
+    "folderTooltipWorkflow": "Flujo de trabajo activo — el gráfico usa sus propios nodos de Carpeta. Desacopla el flujo de trabajo para usar una carpeta aquí.",
+    "chooseFolder": "Elegir carpeta…"
+  },
+  "smartRouting": {
+    "on": "SMART ENCENDIDO",
+    "off": "SMART APAGADO",
+    "onTooltip": "Enrutamiento inteligente ENCENDIDO — elige automáticamente un modelo confiable en herramientas para codificación agentica. Haz clic para apagar y elegir manualmente.",
+    "offTooltip": "Enrutamiento inteligente APAGADO — usa el modelo que elegiste. Haz clic para elegir automáticamente un modelo confiable en herramientas."
+  },
+  "workflowBanner": {
+    "prefix": "Flujo de trabajo",
+    "suffix": "se ejecuta en el compositor de abajo — controles normales del agente pausados.",
+    "running": "ejecutando: {{node}}…",
+    "edit": "Editar en Nodes",
+    "editTooltip": "Abrir este flujo de trabajo en el lienzo de Nodes para editarlo",
+    "detach": "Desacoplar",
+    "detachTooltip": "Desacoplar el flujo de trabajo y volver al agente normal"
+  },
+  "archiveBanner": {
+    "text": "Viendo sesión pasada — solo lectura. Compositor deshabilitado.",
+    "back": "Volver a directo",
+    "backTooltip": "Volver a sesión en directo"
+  },
+  "logEmpty": {
+    "workflowPrefix": "Escribe un mensaje de abajo para ejecutar el flujo de trabajo",
+    "workflowSuffix": ".",
+    "workflowHint": "Usa los proveedores, carpetas, herramientas y agentes conectados en el gráfico — edítalo en cualquier momento en Nodes.",
+    "chooseFolder": "Elige o arrastra una carpeta para iniciar una sesión de agente."
+  },
+  "appMode": {
+    "title": "TACHIAPP",
+    "sourceLabel": "CÓDIGO",
+    "sourceTooltip": "Código fuente de Tachi Studio: {{path}} (detectado: {{source}})",
+    "heroTitle": "Pregunta sobre la app — o dile qué cambiar.",
+    "heroBody": "Este chat está fijado al código fuente de Tachi Studio. Lee la app, responde preguntas sobre ella y edita sus propios archivos. No hay carpeta que elegir: solo proveedor y modelo.",
+    "composerPlaceholder": "Pregunta sobre la app o describe el cambio… (Mayús+Intro para nueva línea)",
+    "chips": {
+      "featureLabel": "AÑADIR UNA FUNCIÓN",
+      "featurePrompt": "Añade un atajo de teclado que borre el chat actual. Muéstrame el plan primero.",
+      "bugLabel": "CORREGIR UN ERROR",
+      "bugPrompt": "En una ventana estrecha los botones de tema de la barra lateral se amontonan. Averigua por qué y arréglalo.",
+      "explainLabel": "EXPLICAR CÓMO FUNCIONA",
+      "explainPrompt": "Explica cómo viaja un mensaje desde el campo de texto del chat hasta el modelo y de vuelta."
+    },
+    "locate": {
+      "title": "LOCALIZAR EL CÓDIGO",
+      "body": "Tachi Studio no encontró su propia carpeta de código. Indícasela una vez — la que contiene AGENTS.md y apps/desktop — y no volverá a preguntar.",
+      "action": "Elegir carpeta",
+      "resolving": "Localizando el código de la app…"
+    }
+  },
+  "surfaceBusy": {
+    "title": "OTRA EJECUCIÓN EN CURSO",
+    "bodyCode": "Una ejecución de CODE sigue trabajando. Este chat se abrirá en cuanto termine: esa transcripción se archiva en el historial de la pestaña CODE y se abre allí automáticamente.",
+    "bodyApp": "Una ejecución de TACHIAPP sigue trabajando. Esta pestaña quedará libre en cuanto termine: esa transcripción se archiva en el historial del chat TACHIAPP y se abre allí automáticamente.",
+    "composerPlaceholder": "Esperando a que termine la ejecución de la otra pestaña…"
+  },
+  "legend": {
+    "heading": "QUÉ SIGNIFICAN LOS BOTONES ARRIBA",
+    "modeLabel": "Modo",
+    "modeDesc": "Plan (describir primero) o Build (hacerlo ahora)",
+    "thinkingLabel": "Pensamiento",
+    "thinkingDesc": "cuánto razona la IA antes de actuar",
+    "engineLabel": "Agente",
+    "engineDesc": "qué agente de codificación lo ejecuta",
+    "gatewayLabel": "Proveedor",
+    "gatewayDesc": "de dónde vienen los modelos de IA",
+    "newHerePrefix": "¿Nuevo aquí? Abre",
+    "learnLink": "Aprender",
+    "newHereSuffix": "para un walkthrough breve."
+  },
+  "status": {
+    "starting": "Iniciando {{agent}}…",
+    "waiting": "Esperando respuesta…"
+  },
+  "composer": {
+    "attachTooltip": "Adjuntar archivo(s) al siguiente prompt",
+    "attachTooltipWorkflow": "Los adjuntos no se usan en modo flujo de trabajo",
+    "attachAria": "Adjuntar archivos",
+    "placeholderArchive": "Solo lectura — viendo sesión pasada",
+    "placeholderWorkflow": "Mensaje al flujo de trabajo \"{{name}}\"…",
+    "placeholderSelectTile": "Primero selecciona un mosaico de tarea paralela…",
+    "placeholderTask": "¿Qué debería hacer {{agent}}? (Shift+Intro para nueva línea)",
+    "placeholderNoFolder": "Primero elige una carpeta…",
+    "stop": "Detener agente",
+    "run": "Ejecutar tarea",
+    "estFree": "est. $0 (ruta gratuita)",
+    "estBilledByModel": "se factura según el modelo"
+  },
+  "provider": {
+    "freeHint": "Proveedor: Auto — elige tu mejor ruta guardada: clave OpenGateway → {{model}} (gratis), si no clave Bankr (de pago, facturada a tu clave), si no el router local gratuito freellmapi. Muestra FREE solo cuando la ruta elegida no cuesta nada.",
+    "openGatewayHint": "Proveedor: OpenGateway — fuerza OpenGateway de gitlawb; las ejecuciones del agente usan {{model}} (gratis verificado; cuota diaria de modelos gratuitos; los demás modelos son de pago). Sin fallback de Bankr/freellmapi.",
+    "bankrHint": "Proveedor: Bankr — modelos premium con tu clave de Bankr (llm.bankr.bot).",
+    "surplusHint": "Proveedor: Surplus Intelligence — enrutamiento más barato vendedor a través de su catálogo de modelo en directo. Necesita una clave inf_ (surplusintelligence.ai/buy).",
+    "veniceHint": "Proveedor: Venice — privacidad primero, compatible con OpenAI (por defecto zai-org-glm-4.7). Necesita una clave de Venice (venice.ai/settings/api).",
+    "imgnaiHint": "Proveedor: imgnAI Katana — glm-5-2 / gpt-5-6 / deepseek con una sola clave (por defecto glm-5-2). Necesita tu clave de API de imgnAI (Ajustes → imgnAI Katana)."
+  },
+  "workflowSelector": {
+    "tooltip": "Ejecutar un flujo de trabajo de Nodes guardado aquí mismo en el chat de Code",
+    "off": "Flujo de trabajo: apagado",
+    "none": "Ninguno (agente normal)",
+    "loading": "Cargando…",
+    "empty": "Sin flujos de trabajo guardados aún. Construye uno en Nodes y guárdalo.",
+    "savedAt": "Guardado {{date}}",
+    "buildNew": "+ Construir nuevo en Nodes"
+  },
+  "depth": {
+    "normal": "NORMAL",
+    "normalHint": "Respuesta estándar — sin pensamiento extendido",
+    "think": "PENSAR",
+    "thinkHint": "Pensamiento extendido — presupuesto de 4.000 tokens",
+    "ultra": "ULTRA",
+    "ultraHint": "Pensamiento profundo — presupuesto de 32.000 tokens"
+  },
+  "statusBadge": {
+    "idle": "En espera",
+    "starting": "Iniciando…",
+    "running": "Trabajando",
+    "done": "Hecho",
+    "error": "Error",
+    "incomplete": "Detenido"
+  },
+  "incomplete": {
+    "badge": "Terminó sin completar",
+    "continue": "Continuar",
+    "continueHint": "Enviar un mensaje de continuación a esta sesión",
+    "continueMessage": "Continúa la tarea. Si ya está completa, llama a la herramienta de finalización con un resumen de qué cambiaste y cómo lo verificaste; si no puedes continuar, di exactamente por qué.",
+    "detailFallback": "La ejecución se detuvo sin completar ni resumir.",
+    "nudgedHint": "Ya se le pidió una vez que continuara."
+  },
+  "event": {
+    "running": "ejecutando…",
+    "preview": "[PREVISUALIZACIÓN]",
+    "previewTooltip": "Previsualizar {{path}}",
+    "noOutput": "(sin salida)",
+    "done": "Hecho ({{reason}})",
+    "copy": "COPIAR",
+    "copied": "COPIADO",
+    "copyTooltip": "Copiar este mensaje",
+    "copyFailed": "Error al copiar",
+    "failed": "La ejecución falló",
+    "stopped": "Detenido"
+  },
+  "chain": {
+    "default": "Por defecto (mejor clave guardada, si no router local gratuito)",
+    "route": "Ruta",
+    "edit": "Editar en Nodes",
+    "editTooltip": "Editar el flujo del agente en el lienzo de Nodes"
+  },
+  "folder": {
+    "renameError": "renombrar: {{error}}",
+    "deleteConfirm": "¿Eliminar \"{{label}}\"? Esto es permanente.",
+    "deleteOk": "ELIMINAR",
+    "deleteError": "eliminar: {{error}}",
+    "showPanel": "Mostrar panel de archivos",
+    "files": "Archivos",
+    "back": "Atrás",
+    "forward": "Adelante",
+    "up": "Arriba",
+    "newFile": "Nuevo archivo",
+    "newFolder": "Nueva carpeta",
+    "hidePanel": "Ocultar panel",
+    "newFileHeader": "nuevo archivo",
+    "newFolderHeader": "nueva carpeta",
+    "fileNamePlaceholder": "nombre.ext",
+    "folderNamePlaceholder": "nombre-carpeta",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "loading": "Cargando…",
+    "empty": "(vacío — haz clic derecho para crear)",
+    "open": "Abrir",
+    "preview": "Previsualizar",
+    "previewInPanel": "Previsualizar en Panel",
+    "rename": "Renombrar",
+    "delete": "Eliminar"
+  },
+  "fusion": {
+    "panel": "Panel de fusión",
+    "planPanel": "Panel de plan de fusión",
+    "answered": "{{ok}}/{{total}} respondidos",
+    "rerun": "reejecutar",
+    "rerunTitle": "Reejecutar {{model}}",
+    "judge": "juez",
+    "label": "Fusion",
+    "on": "Fusion activado",
+    "titleOn": "Fusion ACTIVADO — el agente consulta un panel de modelos (fuse_plan) y sintetiza su plan antes de ejecutar",
+    "titleOff": "Fusion — el agente consulta un panel de modelos para planificar (fuse_plan) y decisiones difíciles (consult_panel)"
+  },
+  "checkpoint": {
+    "revert": "Revertir",
+    "revertTooltip": "Deshacer los cambios de archivos del agente — restaura el espacio de trabajo a la instantánea previa a esta ejecución",
+    "reverted": "Cambios del agente revertidos.",
+    "revertFailed": "Error al revertir."
+  },
+  "codexChip": {
+    "installing": "instalando…",
+    "loggingIn": "iniciando sesión…",
+    "titleLoading": "Comprobando el agente Codex…",
+    "titleInstall": "Instalar el agente Codex (OpenAI Codex CLI): el agente de CODE podrá delegarle subtareas",
+    "titleLogin": "Codex está instalado pero sin sesión: haz clic para abrir el inicio de sesión de ChatGPT en el navegador",
+    "titleOn": "El agente Codex está ACTIVADO: el agente de CODE puede delegarle subtareas, y puedes hablar con Codex directamente empezando el mensaje con @codex. Clic para desactivar.",
+    "titleOff": "El agente Codex está DESACTIVADO. Clic para activar. Chat directo: empieza el mensaje con @codex."
+  },
+  "codexCard": {
+    "write": "ESCRITURA",
+    "readOnly": "SOLO LECTURA",
+    "writeTitle": "Codex se ejecutó con permiso de escritura en el workspace: pudo cambiar archivos",
+    "readOnlyTitle": "Codex se ejecutó en solo lectura: pudo inspeccionar pero no cambiar archivos",
+    "task": "TAREA",
+    "output": "SALIDA",
+    "partial": "SALIDA PARCIAL",
+    "error": "ERROR",
+    "steps": "PASOS",
+    "stepsCount": "{{count}} PASOS",
+    "files": "ARCHIVOS",
+    "failed": "FALLÓ",
+    "session": "sesión {{id}}",
+    "resumed": "reanudada {{id}}",
+    "model": "modelo {{model}}",
+    "runningTitle": "Codex está trabajando en esta tarea…",
+    "runningPlaceholder": "Delegado a Codex: esperando al worker…",
+    "progress": "PROGRESO",
+    "progressEarlier": "+{{count}} anteriores"
+  },
+  "codexReview": {
+    "review": "REVISIÓN",
+    "claim": "AFIRMACIÓN REVISADA",
+    "focus": "enfoque",
+    "filesRequested": "archivos",
+    "findingsCount": "{{count}} HALLAZGOS",
+    "holds": "SE SOSTIENE",
+    "holdsTitle": "El revisor intentó refutar la afirmación y no pudo",
+    "reviewed": "REVISADO",
+    "notes": "NOTAS DEL REVISOR",
+    "runningTitle": "Codex está revisando este trabajo…",
+    "runningPlaceholder": "Enviado al revisor de Codex: esperando los hallazgos…"
+  },
+  "starters": {
+    "auditLabel": "AUDITAR ESTA CARPETA",
+    "auditDesc": "Modo PLAN, solo lectura — el agente mapea el código e informa. Sin aprobaciones necesarias.",
+    "auditCta": "ELIGE UNA CARPETA ▸",
+    "auditPrompt": "Audita este código: mapea la arquitectura, señala los 3 riesgos principales y sugiere 3 mejoras rápidas. No cambies nada."
+  },
+  "advanced": {
+    "label": "Avanzado",
+    "summaryTooltip": "Ruta actual — haz clic para abrir AVANZADO",
+    "toggleTooltip": "Agente, proveedor, pensamiento, fusión, roles, flujo de trabajo — la cabina completa",
+    "workflowLabel": "Flujo de trabajo"
+  },
+  "trust": {
+    "safe": "Seguro",
+    "safeHint": "Preguntar antes de cada escritura de archivo, comando de shell y herramienta externa",
+    "standard": "Estándar",
+    "standardHint": "Lecturas y escrituras dentro del espacio de trabajo corren libres; el shell y las herramientas externas preguntan",
+    "auto": "Auto",
+    "autoHint": "También ejecuta comandos de shell no destructivos sin preguntar — los destructivos siguen preguntando"
+  },
+  "reconnect": {
+    "retrying": "Conexión perdida: reintentando {{attempt}}/{{max}}",
+    "nextIn": "siguiente en {{seconds}} s",
+    "reason": "Causa: {{reason}}"
+  },
+  "loop": {
+    "cycle": "Bucle {{iteration}}/{{cap}}",
+    "stop": "Detener bucle",
+    "stopping": "Deteniendo…",
+    "stopHint": "Terminar este ciclo y dejar de repetir",
+    "goal": "Objetivo del bucle: {{goal}}"
+  },
+  "queue": {
+    "placeholder": "Ejecución en curso — Enter pone tu mensaje en cola para cuando termine",
+    "label": "EN COLA {{n}}",
+    "labelHint": "Se envía automáticamente, de uno en uno, cuando termina la ejecución actual. Cada mensaje hereda los ajustes vigentes en ese momento. Solo texto — los adjuntos no se ponen en cola.",
+    "paused": "COLA EN PAUSA · {{n}}",
+    "pausedHint": "La ejecución se detuvo o falló, así que nada se envía solo. REANUDAR envía el mensaje más antiguo de la cola como siguiente turno.",
+    "resume": "REANUDAR",
+    "resumeHint": "Reanudar el envío automático — el mensaje más antiguo de la cola saldrá en el siguiente turno",
+    "button": "En cola",
+    "buttonHint": "Poner este mensaje en cola — se envía cuando termine la ejecución actual",
+    "remove": "Quitar de la cola",
+    "full": "La cola está llena ({{cap}}) — quita primero uno de los mensajes."
+  },
+  "reset": {
+    "button": "restablecer",
+    "tooltip": "Restablecer este turno: chat, código o ambos",
+    "chat": "RESTABLECER CHAT",
+    "chatHint": "Elimina este turno y todo lo posterior. Los archivos no se tocan.",
+    "code": "RESTABLECER CÓDIGO",
+    "codeHint": "Restaura los archivos a como estaban antes de este turno.",
+    "both": "RESTABLECER AMBOS",
+    "bothHint": "Restaura los archivos y luego elimina la transcripción desde aquí.",
+    "blocked": {
+      "running": "Hay una ejecución en curso: deténla primero.",
+      "archive": "Estás viendo una sesión archivada.",
+      "harness": "Este harness no toma instantáneas de archivos.",
+      "not-taken": "No se tomó ninguna instantánea de archivos para este turno.",
+      "aged-out": "Esta instantánea ya salió del historial de puntos de control."
+    },
+    "confirmTitle": "RESTABLECER TURNO",
+    "confirmChat": "¿Eliminar este turno y todos los mensajes posteriores? Los archivos no se tocan.",
+    "confirmCode": "¿Restaurar los archivos del espacio de trabajo a como estaban antes de este turno? Todo lo cambiado desde entonces se sobrescribirá.",
+    "confirmBoth": "¿Restaurar los archivos Y eliminar este turno junto con todo lo posterior?",
+    "codeRestored": "Archivos restaurados al estado previo a este turno.",
+    "codeFailed": "La restauración falló: los archivos no se modificaron.",
+    "noCheckpoint": "No existe ninguna instantánea de archivos para este turno.",
+    "undo": "DESHACER ESTE RESTABLECIMIENTO",
+    "undone": "Restablecimiento deshecho.",
+    "undoFailed": "No se pudo deshacer el restablecimiento."
+  },
+  "fileChips": {
+    "enlarge": "Haz clic para ampliar",
+    "shrink": "Haz clic para reducir"
+  }
+}

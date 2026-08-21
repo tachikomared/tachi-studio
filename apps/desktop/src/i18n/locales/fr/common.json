@@ -1,0 +1,256 @@
+{
+  "actions": {
+    "newChat": "+ Nouveau chat",
+    "routines": "Routines",
+    "customize": "Personnaliser",
+    "providers": "Fournisseurs",
+    "tachiapp": "TACHIAPP",
+    "tachiappHint": "Posez une question sur cette app ou dites-lui quoi changer — elle modifie son propre code",
+    "approvalPending": "{{n}} approbation en attente — une exécution est bloquée jusqu’à votre réponse"
+  },
+  "sidebar": {
+    "newSession": "+ Nouvelle session",
+    "workspace": "Espace de travail",
+    "openCanvas": "+ Ouvrir le canevas",
+    "media": "Media",
+    "newMedia": "+ Nouveau media",
+    "artifacts": "Artifacts",
+    "newSwarm": "+ Nouveau swarm",
+    "openInbox": "Ouvrir l'inbox",
+    "llmNodes": "+ LLM Nodes",
+    "addRuntime": "Ajouter un serveur local",
+    "settings": "Settings",
+    "runSkill": "+ Exécuter un skill",
+    "configure": "Configurer",
+    "secrets": "Secrets",
+    "dashboard": "Tableau de bord",
+    "postBounty": "+ Publier une prime",
+    "browseNetwork": "Parcourir le réseau",
+    "mineNook": "Mine NOOK",
+    "toasts": {
+      "routinesSoon": "Routines — à venir !",
+      "workspaceSoon": "Gestion de l'espace de travail — à venir !",
+      "addRuntimeHint": "Ajouter un serveur local — installer manuellement Ollama/Claude Code puis redémarrer Tachi Studio pour les détecter."
+    },
+    "newDesign": "+ Nouveau design",
+    "recentDesigns": "Designs récents",
+    "noRecentDesigns": "Pas encore de designs",
+    "untitledDesign": "Design sans titre",
+    "recent": "Récents",
+    "noRecentSwarms": "Aucun swarm récent",
+    "more": "Plus",
+    "moreHint": "Plus d'onglets — Swarm, Tableau de bord, Catalogue, Aeon, Nook, Apprendre",
+    "learnHint": "Apprendre — courte visite guidée de chaque onglet",
+    "wallet": "Portefeuille",
+    "walletExpand": "Afficher les soldes du portefeuille",
+    "walletCollapse": "Masquer les soldes du portefeuille"
+  },
+  "theme": {
+    "dark": "Sombre",
+    "light": "Clair",
+    "neon": "Neon",
+    "comic": "BD",
+    "opus5": "Opus5",
+    "tk05": "TK-05",
+    "moreHint": "Tous les thèmes — Réglages → Apparence"
+  },
+  "language": "Langue",
+  "errors": {
+    "generic": "Une erreur est survenue. Réessayez ou vérifiez le fournisseur dans les Réglages.",
+    "noKey": "Aucune clé API pour ce fournisseur — ajoutez-la dans Réglages → Fournisseurs, ou choisissez le fournisseur gratuit sans clé.",
+    "auth": "Le fournisseur a rejeté la clé API — vérifiez-la dans Réglages → Fournisseurs.",
+    "rateLimit": "Limite de requêtes atteinte — patientez puis réessayez, ou changez de modèle/fournisseur.",
+    "quota": "Quota ou crédits du fournisseur épuisés — vérifiez votre offre ou changez de fournisseur.",
+    "contextLength": "La conversation est trop longue pour ce modèle — démarrez une nouvelle discussion ou passez à un modèle à plus grand contexte.",
+    "network": "Problème réseau vers le fournisseur — vérifiez votre connexion (ou le Mode Privé qui bloque le trafic).",
+    "upstream": "Le fournisseur a rencontré une erreur serveur — réessayez sous peu."
+  },
+  "quickask": {
+    "placeholder": "Demandez n'importe quoi…",
+    "ask": "Demander",
+    "asking": "…",
+    "thinking": "réflexion…",
+    "hintEmpty": "Entrée pour demander · Échap pour fermer",
+    "footer": "quick ask · routeur FreeLLM sans clé",
+    "copy": "copier",
+    "openApp": "ouvrir l'app",
+    "routerDown": "Le routeur local ne tourne pas — ouvrez d'abord l'app."
+  },
+  "prompts": {
+    "search": "Rechercher des modèles…",
+    "saveCurrent": "+ enregistrer l'actuel",
+    "titlePlaceholder": "Nom du modèle…",
+    "save": "Enregistrer",
+    "empty": "Pas encore de modèles. Gardez ici vos meilleurs prompts.",
+    "insert": "Insérer",
+    "delete": "Supprimer le modèle"
+  },
+  "split": {
+    "hint": "Glissez pour redimensionner · Double-clic pour replier"
+  },
+  "footerHints": {
+    "chat": "Entrée envoie · {{mod}}+K palette · {{mod}}+Shift+Space quick-ask",
+    "code": "Entrée lance la tâche · ↺ restaure le checkpoint",
+    "nodes": "{{mod}}+Entrée lance tout · {{mod}}+Z annule",
+    "design": "{{mod}}+Entrée envoie · ↺ modifiez pour rembobiner",
+    "media": "Prompt → Générer · Échap ferme l'aperçu",
+    "catalog": "Cliquez sur une pastille de quantification pour voir si ça tient",
+    "swarm": "NOUVEAU SWARM ouvre un repo · le fil diffuse les commits des agents",
+    "dashboard": "Stats système en direct · actualisation toutes les 3 s"
+  },
+  "activity": {
+    "title": "Activité",
+    "stop": "Arrêter",
+    "stopping": "Arrêt en cours…",
+    "dismiss": "Masquer",
+    "more": "+{{n}} de plus",
+    "less": "Afficher moins",
+    "open": "Aller à cette tâche",
+    "failed": "Échec",
+    "done": "Terminé",
+    "cancelled": "Annulé",
+    "label": {
+      "generate": "Génération",
+      "render": "Export vidéo",
+      "migrate": "Déplacement des modèles",
+      "rife": "Interpolation d'images",
+      "audioOverview": "Aperçu audio"
+    },
+    "notify": {
+      "imageReady": "Image prête",
+      "videoReady": "Vidéo prête",
+      "genFailed": "Échec de la génération",
+      "installed": "{{name}} installé",
+      "installFailed": "Échec de l'installation de {{name}}",
+      "renderDone": "Export vidéo terminé",
+      "renderFailed": "Échec de l'export vidéo",
+      "rifeDone": "Interpolation d'images terminée",
+      "rifeFailed": "Échec de l'interpolation d'images",
+      "took": "a pris {{elapsed}}",
+      "audioOverviewReady": "Aperçu audio prêt",
+      "audioOverviewFailed": "Échec de l’aperçu audio"
+    }
+  },
+  "audioOverview": {
+    "stage": {
+      "script": "rédaction du script…",
+      "voices": "voix {{n}}/{{m}}",
+      "mix": "mixage…",
+      "saving": "enregistrement…"
+    },
+    "saved": "Enregistré sur le disque",
+    "reveal": "Afficher le fichier",
+    "saveFailed": "Non enregistré sur le disque : {{reason}}"
+  },
+  "downloads": {
+    "title": "Téléchargements",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "retry": "Réessayer",
+    "cancel": "Annuler le téléchargement (supprime le fichier partiel)",
+    "dismiss": "Ignorer",
+    "paused": "En pause",
+    "queued": "En file d'attente",
+    "verifying": "Vérification",
+    "done": "Terminé",
+    "error": "Erreur",
+    "verifiedSha": "SHA-256 vérifié",
+    "verifiedSize": "Taille vérifiée"
+  },
+  "observability": {
+    "compaction": "Compactage",
+    "tokensSaved": "tokens économisés (est.)",
+    "charsSaved": "caractères économisés",
+    "promptCache": "Cache de prompt",
+    "cachedInputTokens": "tokens d'entrée en cache",
+    "cacheHitRatio": "taux de succès (cache / entrée)",
+    "legacyHarnessTag": "harness hérité",
+    "legacyHarnessNote": "Dépense du harness enregistrée avant d'être attribuée à la passerelle qui l'a servie. Conservée comme historique : un journal ne se corrige pas après coup."
+  },
+  "commands": {
+    "popupLabel": "Commandes slash",
+    "popupHint": "↑↓ naviguer · ↵ / Tab choisir · esc fermer",
+    "groupCommands": "Commandes",
+    "groupSkills": "Compétences",
+    "dismiss": "Masquer",
+    "unknown": "Commande inconnue /{{name}}. Tapez /help pour voir les commandes disponibles, ou commencez le message par // pour envoyer une barre oblique littérale.",
+    "wrongSurfaceChat": "/{{name}} ne fonctionne que dans l'onglet Chat.",
+    "wrongSurfaceHarness": "/{{name}} ne fonctionne que dans l'onglet Code.",
+    "unavailable": "/{{name}} n'est pas disponible ici pour le moment.",
+    "help": {
+      "desc": "Lister toutes les commandes disponibles ici",
+      "title": "COMMANDES DISPONIBLES",
+      "escape": "Commencez un message par // pour envoyer une barre oblique littérale."
+    },
+    "new": {
+      "desc": "Démarrer une nouvelle discussion"
+    },
+    "compact": {
+      "desc": "Résumer les anciens tours pour libérer du contexte",
+      "done": "Compacté — les anciens tours sont désormais un résumé. La transcription reste intacte.",
+      "failed": "Rien à compacter pour l'instant."
+    },
+    "init": {
+      "desc": "Générer AGENTS.md pour ce dossier",
+      "done": "Écrit {{path}}",
+      "failed": "Impossible de générer AGENTS.md : {{reason}}"
+    },
+    "model": {
+      "desc": "Afficher le modèle actuel ou en changer",
+      "args": "[nom]",
+      "current": "Modèle actuel : {{model}}",
+      "switched": "Modèle → {{model}}",
+      "noMatch": "Aucun modèle ou fournisseur ne correspond à « {{name}} »."
+    },
+    "cost": {
+      "desc": "Afficher les dépenses de la session et sur 30 jours",
+      "title": "DÉPENSES",
+      "session": "Cette session : {{value}}",
+      "sessionTokens": "~{{count}} jetons",
+      "window": "{{days}} derniers jours : ${{total}} sur un budget de ${{budget}}",
+      "provider": "  {{provider}} — ${{usd}}",
+      "none": "  aucune dépense facturée enregistrée"
+    },
+    "memory": {
+      "desc": "Afficher les faits mémorisés",
+      "title": "FAITS MÉMORISÉS ({{count}})",
+      "empty": "Aucun fait enregistré — ajoutez-en un avec /remember <texte>."
+    },
+    "remember": {
+      "desc": "Enregistrer un fait en mémoire",
+      "args": "<texte>",
+      "saved": "Mémorisé : {{text}}",
+      "needsText": "Utilisation : /remember <texte>",
+      "failed": "Impossible d'enregistrer ce fait."
+    },
+    "rewind": {
+      "desc": "Modifier votre dernier message et relancer à partir de là",
+      "done": "Votre dernier message est revenu dans l'éditeur — modifiez-le et envoyez.",
+      "none": "Aucun message vers lequel revenir."
+    },
+    "search": {
+      "desc": "Forcer une recherche web pour cette requête",
+      "args": "<requête>",
+      "needsQuery": "Utilisation : /search <requête>",
+      "disabled": "La recherche web est désactivée — activez-la dans les Réglages et ajoutez une clé Brave ou Tavily."
+    },
+    "plan": {
+      "desc": "Planifier le travail avant de toucher au code"
+    },
+    "review": {
+      "desc": "Revue de code structurée par niveau de gravité"
+    },
+    "troubleshoot": {
+      "desc": "Trouver la cause racine d'une panne, puis proposer des correctifs"
+    },
+    "refactor": {
+      "desc": "Planifier un refactoring qui préserve le comportement"
+    },
+    "loop": {
+      "desc": "Répéter des cycles jusqu'à atteindre l'objectif",
+      "args": "[n] <objectif>",
+      "needsGoal": "Utilisation : /loop [n] <objectif> — p. ex. /loop 3 faire passer tous les tests",
+      "needsTachi": "/loop requiert le harnais TACHI — choisissez-le dans ADVANCED, puis renvoyez."
+    }
+  }
+}

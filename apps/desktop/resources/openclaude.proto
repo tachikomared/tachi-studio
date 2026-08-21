@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package openclaude;
+
+service AgentService {
+  rpc Chat(stream ClientMessage) returns (stream ServerMessage);
+}
+
+message ClientMessage {
+  oneof payload {
+    ChatRequest  chat_request  = 1;
+    UserInput    user_input    = 2;
+    CancelSignal cancel_signal = 3;
+  }
+}
+
+message ChatRequest {
+  string text        = 1;
+  string working_dir = 2;
+  string model       = 3;
+  string session_id  = 4;
+}
+
+message UserInput {
+  string input     = 1;
+  string prompt_id = 2;
+}
+
+message CancelSignal {
+  string reason = 1;
+}
+
+message ServerMessage {
+  oneof event {
+    TextChunk      text_chunk      = 1;
+    ToolCallStart  tool_call_start = 2;
+    ToolCallResult tool_call_result = 3;
+    ActionRequired action_required = 4;
+    FinalResponse  final_response  = 5;
+    ErrorResponse  error_response  = 6;
+  }
+}
+
+message TextChunk      { string text       = 1; }
+message ToolCallStart  { string tool_name  = 1; string args_json = 2; string call_id = 3; }
+message ToolCallResult { string result     = 1; string error     = 2; string call_id = 3; }
+message ActionRequired { string prompt_id  = 1; string action_type = 2; string message = 3; }
+message FinalResponse  { string full_text  = 1; int32  input_tokens = 2; int32 output_tokens = 3; }
+message ErrorResponse  { string message   = 1; string code = 2; }

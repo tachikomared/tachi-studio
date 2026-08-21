@@ -1,0 +1,211 @@
+{
+  "tabCurated": "Recommended",
+  "tabSearchHf": "Search HF",
+  "tabInstalled": "Installed",
+  "searchPlaceholder": "e.g. qwen2.5 7b",
+  "filterByName": "filter by name…",
+  "searchButton": "Search",
+  "searchUnavailable": "Search unavailable",
+  "emptyInstalled": "No local models yet. Download one from Recommended or Search HF.",
+  "confirmRemove": "Remove this model from disk?",
+  "removing": "Removing…",
+  "pullIncompatible": "Ollama couldn't pull this repo. It may be incompatible (non-standard or multimodal GGUF). Try a model from bartowski / unsloth / lmstudio-community, or use Recommended.",
+  "download": "Download",
+  "run": "Run",
+  "openChat": "Open chat",
+  "remove": "Remove",
+  "clear": "clear",
+  "chooseQuant": "Choose a quant",
+  "recommended": "recommended",
+  "quant": "quant",
+  "quants": "quants",
+  "downloadSize": "Download size:",
+  "starting": "Starting…",
+  "downloading": "Downloading…",
+  "stopDownload": "Stop",
+  "hfDownloadNotSupported": "Downloading arbitrary Hugging Face models into llama.cpp is coming soon. For now, only the recommended models are supported.",
+  "ram": "RAM",
+  "free": "free",
+  "gpu": "GPU",
+  "vram": "VRAM",
+  "cpu": "CPU",
+  "cores": "cores",
+  "unknown": "unknown",
+  "fit": {
+    "gpu": "Fits in GPU (fast)",
+    "cpu": "CPU / partial GPU (slower)",
+    "tight": "Tight — may run out of memory",
+    "too-big": "Too large",
+    "sdcppNote": "Resolution and frame count decide the real peak — offload flags change everything.",
+    "sdcppVram": "Needs ~{{gb}} GB VRAM (resolution/offload flags change this)"
+  },
+  "capabilities": {
+    "chat": "chat",
+    "reasoning": "reasoning",
+    "vision": "vision",
+    "code": "code",
+    "tools": "tools",
+    "image-gen": "image gen",
+    "video-gen": "video gen",
+    "music": "music",
+    "tts": "TTS",
+    "stt": "STT"
+  },
+  "notice": {
+    "downloadFailed": "Download failed",
+    "installingLlama": "Installing llama.cpp…",
+    "loading": "Loading {{name}}…",
+    "llamaInstallFailed": "llama.cpp install failed",
+    "failedToStart": "Failed to start model",
+    "startingOllama": "Starting Ollama…",
+    "removeFailed": "Remove failed",
+    "whisperReady": "{{name}} ready — use the mic in Chat to transcribe.",
+    "nothingToStop": "Nothing to stop — that download already finished transferring.",
+    "stopNotYet": "Stop is available while the download is transferring."
+  },
+  "favorite": "Add to favorites",
+  "unfavorite": "Remove from favorites",
+  "sectionFavorites": "Favorites",
+  "sectionRecent": "Recent",
+  "sectionAll": "All models",
+  "emptyCurated": "The model registry could not be loaded.",
+  "retry": "Retry",
+  "notAvailable": "Not available",
+  "noMatches": "No models match — adjust the search or clear the filters.",
+  "tour": {
+    "windowTitle": "How to use the Catalog tab",
+    "search": {
+      "title": "Find a model",
+      "body": "Three sources: Recommended (curated), Search HF (all of Hugging Face) and Installed (already on disk). Type to filter or search, and narrow by capability chips — chat, vision, image gen, TTS and more."
+    },
+    "hardware": {
+      "title": "Your hardware, detected",
+      "body": "This strip is your real machine — RAM, GPU, VRAM and CPU cores. Every fit verdict below is computed from these numbers, not from generic requirements."
+    },
+    "fit": {
+      "title": "Will it fit?",
+      "body": "Local models get a fit pill — FITS / TIGHT / CPU-ONLY / NO FIT — plus a VRAM estimate, computed from YOUR GPU and RAM above. FITS means fast on GPU; TIGHT may run out of memory mid-generation."
+    },
+    "download": {
+      "title": "Download & run",
+      "body": "DOWNLOAD opens the quant picker with the recommended quant for your hardware highlighted — smaller quants trade quality for fit. Once installed, the button becomes RUN: it loads the model and drops you into a chat with it."
+    }
+  },
+  "tabCivitai": "Civitai",
+  "civitai": {
+    "searchPlaceholder": "e.g. dreamshaper, realistic vision",
+    "sfwNote": "SFW only",
+    "install": "Install",
+    "loadMore": "Load more",
+    "loadingMore": "Loading…",
+    "empty": "Nothing to show — try another search or a different type.",
+    "emptyAfterError": "Nothing to show — the search above failed.",
+    "tryAgain": "Try again",
+    "filteredNotice": "Hidden by the SFW filter: {{count}}",
+    "noPreview": "no preview",
+    "triggerWords": "trigger:",
+    "copyTrigger": "Copy \"{{word}}\"",
+    "blockedFallback": "This model can't be installed by this app.",
+    "reveal": "Show 18+ preview",
+    "sortLabel": "Sort",
+    "periodLabel": "Period",
+    "baseLabel": "Base model",
+    "clearFilters": "Clear filters",
+    "mode": {
+      "adult": "18+ browsing (civitai.red)",
+      "adultInert": "18+ is on in Settings, but this page came back safe — check your Civitai API key."
+    },
+    "types": {
+      "all": "All",
+      "checkpoint": "Checkpoint",
+      "unet": "UNet",
+      "text-encoder": "Text encoder",
+      "clip": "CLIP",
+      "clip-vision": "CLIP Vision",
+      "vision-language": "VLM",
+      "llm": "LLM",
+      "lora": "LoRA",
+      "locon": "LoCon",
+      "embedding": "Embedding",
+      "vae": "VAE",
+      "controlnet": "ControlNet",
+      "upscaler": "Upscaler",
+      "motion": "Motion",
+      "dora": "DoRA",
+      "hypernetwork": "Hypernetwork",
+      "aesthetic": "Aesthetic",
+      "poses": "Poses",
+      "wildcards": "Wildcards",
+      "workflows": "Workflows",
+      "detection": "Detection",
+      "other": "Other"
+    },
+    "groups": {
+      "models": "Models",
+      "adapters": "Adapters",
+      "other": "Other files"
+    },
+    "outlook": {
+      "runs": "Installs and generates on its own.",
+      "needs-base": "Installs only when a matching base checkpoint is already on disk.",
+      "later": "The engine supports this — the app has no surface for it yet.",
+      "no": "Browse only — this app cannot install this type."
+    },
+    "sort": {
+      "mostDownloaded": "Most downloaded",
+      "newest": "Newest",
+      "highestRated": "Highest rated"
+    },
+    "period": {
+      "allTime": "All time",
+      "year": "Year",
+      "month": "Month",
+      "week": "Week",
+      "day": "Day"
+    },
+    "license": {
+      "noCommercial": "no commercial use",
+      "noCommercialHint": "The creator allows no commercial use of this model.",
+      "attribution": "credit required",
+      "attributionHint": "The creator requires credit when you use this model.",
+      "noDerivatives": "no derivatives",
+      "noDerivativesHint": "The creator does not allow merges or derived models."
+    },
+    "forMyModels": "For my models",
+    "forMyModelsHint": "Show only add-ons for the model families you have installed.",
+    "forMyModelsEmpty": "Install a local image or video model first — then this filters to it.",
+    "forMyModelsActive": "Narrowed to what you have installed: {{families}}",
+    "keyHint": "Where do I put my API key?",
+    "families": {
+      "sd15": "SD 1.5",
+      "sdxl": "SDXL",
+      "zimage": "Z-Image",
+      "wan": "Wan"
+    },
+    "detail": {
+      "title": "Model details",
+      "open": "Open details",
+      "about": "About this model",
+      "by": "by {{user}}",
+      "downloadsLabel": "Downloads",
+      "likesLabel": "Likes",
+      "published": "Published {{date}}",
+      "loading": "Loading the description…",
+      "loadFailed": "Couldn't load this model's description.",
+      "noDescription": "The uploader wrote no description.",
+      "descriptionTruncated": "The description was long — it is shown shortened here.",
+      "openOnCivitai": "Open on Civitai",
+      "thisVersion": "This version",
+      "otherVersions": "Other versions",
+      "versionsHidden": "Versions hidden by the SFW filter: {{count}}",
+      "versionsCapped": "Showing {{shown}} of {{total}} versions.",
+      "signInRequired": "needs a Civitai account",
+      "openNamed": "Open details for {{name}}"
+    }
+  },
+  "sdRemove": {
+    "frees": "Frees {{size}} on disk.",
+    "sharedStay": "Shared components stay — still used by {{models}}.",
+    "sharedWith": "shares components with {{models}}"
+  }
+}

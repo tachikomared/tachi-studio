@@ -1,0 +1,570 @@
+{
+  "modalities": {
+    "image": "이미지",
+    "video": "동영상",
+    "music": "음악",
+    "tts": "음성 합성 (TTS)",
+    "stt": "음성 인식 (STT)"
+  },
+  "topbar": {
+    "howTo": "사용 방법",
+    "howToTitle": "미디어 탭 인터랙티브 안내"
+  },
+  "tabs": {
+    "generate": "생성",
+    "audioOverview": "오디오 개요",
+    "artifacts": "아티팩트"
+  },
+  "audioOverview": {
+    "subtitle": "메모를 두 명의 진행자가 나누는 팟캐스트로 바꿉니다. 대본은 키 없는 FreeLLM 라우터가 작성합니다 — 이 컴퓨터에서 실행되지만 메모를 무료 클라우드 제공자로 전달합니다. 목소리는 100% 로컬 (스튜디오 Kokoro 또는 piper TTS)이므로 대본 이후에는 아무것도 컴퓨터 밖으로 나가지 않습니다.",
+    "titleLabel": "제목 (선택)",
+    "titlePlaceholder": "예: 주간 리서치 요약",
+    "sourceLabel": "원본 메모",
+    "sourcePlaceholder": "메모, 기사, 문서를 붙여넣으세요 — 두 진행자가 이에 대해 이야기합니다…",
+    "sourceHint": "{{current}}자 — 긴 원본은 대본 모델을 위해 약 {{max}}자로 잘립니다.",
+    "lengthLabel": "길이",
+    "length": {
+      "short": "짧게 (~1분)",
+      "standard": "표준 (~3분)"
+    },
+    "voices": {
+      "label": "목소리 (로컬)",
+      "probing": "로컬 음성 확인 중…",
+      "notInstalled": "로컬 TTS가 아직 설치되어 있지 않습니다 — 위에서 스튜디오 목소리를 다운로드하거나, 생성 → 음성 합성 (TTS) → 제공자 LOCAL에서 piper를 설치한 후 새로고침하세요.",
+      "none": "다운로드된 로컬 음성이 없습니다. 위에서 스튜디오 목소리를 다운로드하거나, 생성 → 음성 합성 (TTS) → 제공자 LOCAL에서 piper 목소리를 다운로드한 후 새로고침하세요.",
+      "refresh": "새로고침",
+      "hostA": "진행자 A — 호기심 많은 앵커",
+      "hostB": "진행자 B — 전문가",
+      "single": "설치된 음성이 하나뿐입니다 — 두 진행자가 공유합니다 (piper는 속도 옵션을 지원하지 않음). 진행자를 구분하려면 두 번째 음성을 다운로드하세요.",
+      "groupStudio": "스튜디오 — KOKORO",
+      "groupPiper": "PIPER"
+    },
+    "scriptModel": {
+      "notConfigured": "아직 키 없는 스크립트 모델이 구성되지 않았습니다 — 설정 → 공급자에서 무료 공급자를 추가한 다음 새로고침하세요."
+    },
+    "kokoro": {
+      "cardTitle": "스튜디오 목소리 — ~330 MB 최초 1회 다운로드",
+      "cardBody": "스튜디오급 영어 목소리 10종 (Kokoro TTS). 한 번만 다운로드하면 이후 완전히 로컬·오프라인으로 동작합니다.",
+      "download": "다운로드",
+      "downloading": "다운로드 중… {{percent}}%",
+      "installedToast": "스튜디오 목소리가 준비되었습니다.",
+      "downloadFailed": "스튜디오 목소리 다운로드 실패"
+    },
+    "saveToLibrary": "라이브러리에 저장",
+    "savingToLibrary": "저장 중…",
+    "saveFailed": "미디어 라이브러리에 저장하지 못했습니다",
+    "generate": "오디오 개요 만들기",
+    "cancel": "취소",
+    "status": {
+      "drafting": "대본 작성 중…",
+      "synthesizing": "합성 중 {{n}}/{{m}}…",
+      "stitching": "오디오 이어붙이는 중…",
+      "ready": "완료"
+    },
+    "error": {
+      "emptySource": "먼저 메모를 붙여넣으세요.",
+      "llmDown": "로컬 FreeLLM 라우터가 아직 실행되지 않았습니다 — 앱과 함께 시작됩니다. 잠시 기다렸다가 다시 시도하세요.",
+      "scriptUnreachable": "스크립트 모델에 지금 연결할 수 없습니다 — 설정 → 공급자를 확인하세요.",
+      "emptyReply": "모델이 빈 응답을 반환했습니다.",
+      "scriptFailed": "대본 생성 실패 — {{reason}}",
+      "parseFailed": "한 번 재시도했지만 모델이 유효한 대본을 반환하지 않았습니다 ({{reason}}).",
+      "synthFailed": "차례 {{n}}/{{m}}에서 음성 합성 실패 — {{reason}}",
+      "stitchFailed": "오디오 이어붙이기 실패 — {{reason}}",
+      "noAudioReturned": "반환된 오디오 없음"
+    },
+    "retry": "다시 시도",
+    "dismiss": "닫기",
+    "download": ".wav 다운로드",
+    "result": {
+      "meta": "{{seconds}}초 · {{turns}}개 차례"
+    },
+    "transcript": "스크립트",
+    "empty": "왼쪽에 메모를 붙여넣고 길이와 목소리를 선택한 뒤 만들기를 누르세요 — 스크립트가 포함된 두 진행자 팟캐스트를 완전 로컬 음성으로 얻습니다."
+  },
+  "tour": {
+    "windowTitle": "미디어 탭 사용 방법",
+    "intro": {
+      "title": "미디어 스튜디오",
+      "body": "한 곳에서 이미지, 동영상, 음악, 음성 합성(TTS), 텍스트 변환(STT)을 생성하세요. 내 컴퓨터에서 무료로 실행됩니다 — 키도 크레딧도 필요 없음 — 또는 Surplus, Venice, imgnAI를 연결해 클라우드 모델을 사용하세요, 각각 자체 카탈로그를 가집니다. 상단에서 제공자를 선택하세요. 상단에 두 개의 하위 탭이 있습니다: 생성(현재 탭)과 아티팩트(저장된 라이브러리)."
+    },
+    "importUrl": {
+      "title": "URL로 가져오기",
+      "body": "YouTube, Instagram, X 또는 그 밖의 1000개 이상 사이트에서 링크를 붙여넣어 파일을 미디어 라이브러리로 바로 가져오세요 — 이후 리믹스하거나 참조 이미지·동영상으로 사용할 수 있습니다."
+    },
+    "modality": {
+      "title": "모달리티 선택",
+      "body": "만들 콘텐츠를 선택하세요 — 모델 목록과 컨트롤이 이에 맞게 조정됩니다. Local은 이미지, 동영상, 음성(TTS)을 지원하며 모델을 한 번만 다운로드하면 무료로 실행됩니다; Surplus와 Venice는 음악과 텍스트 변환(STT)에 더해 각자의 클라우드 카탈로그를 제공하고, imgnAI는 또 다른 이미지/동영상 카탈로그를 추가합니다."
+    },
+    "localEngine": {
+      "title": "로컬 엔진",
+      "body": "여기서 오픈 모델을 한 번만 다운로드하면 — 크기는 미리 표시됩니다 — 이후 완전히 오프라인으로 무료 생성됩니다; 지원되는 모델에는 단계를 줄여주는 속도 팩도 있습니다."
+    },
+    "model": {
+      "title": "모델 선택",
+      "body": "각 모달리티와 제공자마다 자체 모델 목록이 있으며, 모델에 따라 컨트롤이 달라집니다 — 크기, 음성, 재생 시간, 화면 비율은 해당 모델이 지원할 때만 표시됩니다."
+    },
+    "prompt": {
+      "title": "prompt + 참조 이미지",
+      "body": "원하는 내용을 설명하고 모델별 파라미터를 조정하세요. 지원하는 모델에는 \"참조 이미지\" 컨트롤이 표시됩니다 — img2img / 이미지 편집, 또는 이미지-동영상 변환의 첫 프레임으로 사용할 수 있습니다."
+    },
+    "generate": {
+      "title": "생성",
+      "body": "생성 버튼을 누르세요. Local은 바로 여기서 실행됩니다 — 키도 크레딧도 필요 없고, 첫 실행은 모델을 한 번만 다운로드합니다. 이미지/TTS/STT는 즉시 완료되고, 동영상/음악은 진행 상황이 표시되며 비동기로 처리됩니다. 클라우드 제공자는 각자의 키가 필요합니다: 잔액이 있는 Surplus 키, Venice 키, 또는 imgnAI 키."
+    },
+    "gallery": {
+      "title": "갤러리 + 아티팩트",
+      "body": "모든 결과가 여기에 저장되며 재시작 후에도 유지됩니다 — 폴더에 저장, 디스크에서 열기, 설정을 다시 불러오는 리믹스, 또는 전체 화면으로 열 수 있습니다. 아티팩트 하위 탭은 지금까지 만든 모든 것의 전체 라이브러리입니다."
+    },
+    "workflow": {
+      "title": "팁: node workflow로 구성하기",
+      "body": "Nodes 탭을 열어 연결해 보세요: Prompt node는 prompt를 작성하고, 참조 이미지 node는 캐릭터를 제공하며, 미디어 node가 생성합니다 — 각 실행마다 결과 카드가 생성되어 분기할 수 있습니다. 또는 Storyboard 스타터 템플릿을 열어 로컬 스틸 이미지를 두 개의 로컬 동영상 장면으로 처음부터 끝까지 연결해 보세요."
+    }
+  },
+  "import": {
+    "title": "URL로 가져오기",
+    "subtitle": "YouTube · Instagram · X · 1000개 이상의 사이트 — 다운로드 후 리믹스하거나 참조로 사용하세요",
+    "placeholder": "미디어 URL 붙여넣기…",
+    "fetch": "가져오기",
+    "download": "다운로드",
+    "downloadTitle": "미디어 라이브러리로 다운로드",
+    "resolutionTitle": "해상도",
+    "audioOnlyOnTitle": "오디오 전용이 켜져 있습니다",
+    "audioOnlyLabel": "오디오만",
+    "audioOnlyTitle": "오디오 트랙만 다운로드 (예: 전사 / 음악용)",
+    "disclaimer": "개인 용도로만 사용하세요 — 소유하고 있거나 권리가 있는 콘텐츠만 가져오세요. 각 플랫폼의 약관을 준수하며 DRM 우회는 하지 않습니다.",
+    "error": {
+      "couldNotRead": "해당 URL을 읽을 수 없습니다.",
+      "downloadFailed": "다운로드에 실패했습니다."
+    },
+    "success": "미디어 라이브러리에 저장되었습니다 — 아래에서 리믹스하거나 편집하세요."
+  },
+  "composer": {
+    "modality": "모달리티",
+    "provider": "제공자",
+    "model": "모델",
+    "loadingCatalog": "카탈로그 불러오는 중…",
+    "preset": "프리셋",
+    "presetPlaceholder": "— 시작 prompt 선택 —",
+    "perfPreset": "성능",
+    "perfPresetPlaceholder": "— 등급 —",
+    "stylePreset": "스타일",
+    "stylePresetPlaceholder": "— 없음 —",
+    "loras": "LoRA",
+    "lorasNone": "이 체크포인트에 설치된 LoRA가 없습니다.",
+    "lorasIncompatible": "다른 베이스 모델용으로 {{count}}개가 설치되어 있습니다.",
+    "loraWeight": "가중치",
+    "triggerWords": "트리거 단어",
+    "vaeSwap": "VAE",
+    "vaeDefault": "— 체크포인트 기본값 —",
+    "audioFile": "오디오 파일",
+    "changeFile": "파일 변경",
+    "chooseAudioFile": "오디오 파일 선택",
+    "loadingParams": "파라미터 불러오는 중…",
+    "noParams": "이 모델에는 구성 가능한 파라미터가 없습니다.",
+    "autoSaveFolder": "자동 저장 폴더",
+    "setFolder": "폴더 설정",
+    "loraUnknownFamily": "이 어댑터의 베이스 모델이 기록되지 않았습니다 — 그래도 표시하며, 적용되지 않을 수 있습니다.",
+    "lorasUnknownFamilyNote": "베이스 모델이 기록되지 않은 항목 {{count}}개(? 표시).",
+    "loraTagFound": "프롬프트에서 LoRA \"{{name}}\"를 강도 {{weight}}로 사용합니다.",
+    "loraTagUnknown": "프롬프트가 \"{{name}}\" LoRA를 요청했지만 그 이름으로 설치된 것이 없어 빠집니다.",
+    "loraTagAmbiguous": "\"{{name}}\" 이름의 LoRA가 여러 개 있어 이 태그는 빠집니다. 위 목록에서 선택하세요."
+  },
+  "presets": {
+    "lightning": {
+      "label": "라이트닝"
+    },
+    "speed": {
+      "label": "속도"
+    },
+    "quality": {
+      "label": "고품질"
+    },
+    "prompt": {
+      "image": {
+        "cinematicPortrait": "시네마틱 인물 사진",
+        "isometricRoom": "아이소메트릭 방",
+        "logoMark": "로고 / 마크",
+        "conceptLandscape": "콘셉트 풍경"
+      },
+      "video": {
+        "slowDollyPush": "느린 달리 인",
+        "droneReveal": "드론 리빌",
+        "productTurntable": "제품 턴테이블"
+      },
+      "music": {
+        "lofiBeat": "로파이 비트",
+        "cinematicBuild": "시네마틱 빌드업",
+        "synthwave": "신스웨이브"
+      },
+      "tts": {
+        "friendlyIntro": "친근한 인트로",
+        "announcement": "공지"
+      }
+    }
+  },
+  "styles": {
+    "none": {
+      "label": "없음"
+    },
+    "cinematic": {
+      "label": "영화적"
+    },
+    "photorealistic": {
+      "label": "사실적"
+    },
+    "digital-art": {
+      "label": "Digital Art"
+    },
+    "anime": {
+      "label": "Anime"
+    },
+    "oil-painting": {
+      "label": "유화"
+    },
+    "pixel-art": {
+      "label": "Pixel Art"
+    },
+    "watercolor": {
+      "label": "수채화"
+    },
+    "neon-noir": {
+      "label": "Neon Noir"
+    },
+    "fantasy-epic": {
+      "label": "판타지 서사"
+    }
+  },
+  "local": {
+    "engine": "음성 모델",
+    "piperChip": "PIPER",
+    "kokoro": {
+      "chip": "스튜디오 — KOKORO",
+      "card": "스튜디오급 영어 목소리 10종 (Kokoro TTS) — ~330 MB 최초 1회 다운로드, 이후 완전히 로컬·오프라인.",
+      "download": "스튜디오 목소리 다운로드 (~330 MB)",
+      "downloading": "스튜디오 목소리 다운로드 중… {{percent}}%",
+      "installed": "스튜디오 목소리 설치됨 · Kokoro TTS, 영어",
+      "downloadFailed": "스튜디오 목소리 다운로드 실패"
+    },
+    "piper": {
+      "install": "piper 설치 (최초 1회)",
+      "installed": "piper 설치됨 · 로컬 TTS, CPU 고속",
+      "downloadVoice": "음성 다운로드",
+      "installSized": "piper 설치 (최초 1회 · {{size}})"
+    },
+    "sdCpp": {
+      "install": "sd.cpp 설치 (최초 1회)",
+      "installed": "sd.cpp 설치됨 · GPU 자동 (CUDA / Metal)",
+      "downloadModel": "모델 다운로드",
+      "installSized": "sd.cpp 설치 (최초 1회 · {{size}})",
+      "update": "이미지 엔진 업데이트",
+      "updating": "엔진 업데이트 중…"
+    },
+    "installFailed": "설치 실패",
+    "retryInstall": "설치 다시 시도",
+    "modelInstalled": "✓ {{name}} · {{size}} GB · 설치됨",
+    "modelLicense": "라이선스: {{name}} — 내려받기 전에 읽어 보세요",
+    "voiceItem": "↓ {{name}} · {{size}} MB",
+    "modelItem": "↓ {{name}} · {{size}} GB",
+    "modelItemShared": "↓ {{name}} · {{size}} GB ({{saved}} GB 절약 — 설치된 모델과 파일 공유)",
+    "modelSpeedPackDiscount": "속도 팩은 {{size}} GB만 더 받으면 됩니다 — LoRA는 이미 디스크에 있습니다",
+    "modelItemResume": "↻ {{name}} · 이어받기 · {{size}} GB 남음 ({{total}} GB 중 {{done}} GB 완료)",
+    "fitVramOk": "GPU에 맞습니다 — 약 {{need}} GB VRAM이 필요하고 {{have}} GB가 남아 있습니다",
+    "fitVramTight": "빡빡합니다 — 약 {{need}} GB VRAM이 필요하고 {{have}} GB가 남아 있습니다. 더 작은 크기나 저 VRAM 옵션으로는 실행될 수 있습니다.",
+    "fitRamOk": "컴퓨터에 맞습니다 — 약 {{need}} GB RAM이 필요하고 {{have}} GB가 있습니다",
+    "fitRamTight": "빡빡합니다 — 약 {{need}} GB RAM이 필요하고 {{have}} GB가 있습니다. 실행될 수는 있지만 더 느립니다.",
+    "speedPack": "↓ {{name}} · {{size}} GB",
+    "speedPackShared": "↓ {{name}} · {{size}} GB({{saved}} GB 절약 — 설치된 팩과 파일 공유)",
+    "speedPackInstalled": "✓ {{name}} · 설치됨 — 아래 ‘속도’가 기본으로 켜짐",
+    "ipAdapter": "↓ 참조 이미지(스타일 / 대상) · {{size}}",
+    "ipAdapterShared": "↓ 참조 이미지(스타일 / 대상) · {{size}}({{saved}} 절약 — 이미지 해석기를 기존 파일과 공유)",
+    "ipAdapterInstalled": "✓ 참조 이미지 준비 완료 — 아래 “고급”에서 사진을 추가하세요",
+    "ipAdapterNone": "이 모델은 참조 이미지를 지원하지 않습니다 — 마우스를 올리면 이유가 나옵니다.",
+    "speedPackNone": "이 모델에는 속도 팩이 없습니다 — 이유는 마우스를 올려 확인.",
+    "otherKindBadge": "{{kind}} · 진행 중",
+    "modalitySwitched": "{{modality}}(으)로 전환했습니다 — 시작한 다운로드가 방금 완료되었습니다.",
+    "engineSizeOne": "약 {{size}} MB",
+    "engineSizeRange": "{{min}}–{{max}} MB",
+    "engineSizeRangeTitle": "다운로드 용량은 이 컴퓨터에 맞는 빌드에 따라 달라집니다 — CUDA 빌드는 NVIDIA 런타임 라이브러리까지 함께 받습니다.",
+    "switchToLocal": "로컬로 전환 — 무료, 내 컴퓨터에서 실행",
+    "switchToLocalTitle": "로컬 생성은 이 컴퓨터에서 sd.cpp 엔진을 실행합니다: 키도 크레딧도 필요 없고, 아무것도 업로드하지 않습니다.",
+    "switchedToast": "로컬 엔진으로 전환했습니다 — 무료이고, 아무것도 컴퓨터를 벗어나지 않습니다.",
+    "speedPackPitch": "{{name}} — {{size}} GB, 최초 1회. 이번 렌더는 {{steps}}번 샘플링했습니다; 이 팩은 4번이면 되며 약 {{ratio}}배 적습니다."
+  },
+  "models": {
+    "error": {
+      "noLocalVoices": "로컬 음성이 없습니다 — 위에서 다운로드하세요.",
+      "installPiper": "위에서 piper를 설치한 후 음성을 다운로드하세요.",
+      "installKokoro": "위에서 스튜디오 목소리를 다운로드하세요 (~330 MB, 최초 1회).",
+      "noLocalModels": "로컬 {{kind}} 모델이 없습니다 — 위에서 다운로드하세요.",
+      "installSdCpp": "위에서 sd.cpp를 설치한 후 모델을 다운로드하세요.",
+      "couldNotLoad": "모델을 불러올 수 없습니다",
+      "noVenice": "이 모달리티에 사용 가능한 Venice 모델이 없습니다 — 설정에서 Venice 키를 추가하세요.",
+      "noSurplus": "사용 가능한 모델 없음 — Surplus 키를 추가하고 USDC를 충전하거나, 로컬 엔진으로 내 컴퓨터에서 무료로 생성하세요.",
+      "noneAvailable": "사용 가능한 모델이 없습니다.",
+      "noImgnai": "이 모달리티에는 imgnAI 모델이 없습니다 — 설정 → imgnAI Katana에서 API Key와 Secret을 입력하세요 (app.imgnai.com/katana-api).",
+      "noPollinations": "Pollinations는 이미지 생성만 지원합니다 — 모달리티를 IMAGE로 바꾸거나 Surplus/Venice를 사용하세요."
+    }
+  },
+  "firstRun": {
+    "cta": "첫 이미지 — 무료 · 최초 1회 약 {{size}} GB",
+    "ctaNoSize": "첫 이미지 — 무료, 내 컴퓨터에서 실행",
+    "ctaHint": "한 번의 클릭: 로컬 엔진을 설치하고 입문 모델을 받아 프롬프트를 채우고 렌더링합니다. 키도 크레딧도 필요 없습니다.",
+    "ctaTitle": "sd.cpp 엔진({{engine}})을 설치하고 {{name}}을 다운로드한 뒤 이 컴퓨터에서 이미지 한 장을 렌더링합니다. 모든 것이 로컬에 남습니다.",
+    "step": {
+      "engine": "엔진 설치 중",
+      "weights": "입문 모델 다운로드 중",
+      "generate": "첫 이미지 렌더링 중"
+    },
+    "progress": "첫 이미지 · {{step}}/{{total}}단계 · {{label}} — {{line}}",
+    "failedTitle": "첫 이미지가 {{step}}/{{total}}단계에서 멈췄습니다 — {{label}}",
+    "resume": "이어서 진행 — 이미 받은 부분부터",
+    "dismiss": "닫기",
+    "error": {
+      "notReady": "입문 모델은 디스크에 있지만 설정이 로드되지 않았습니다 — '이어서 진행'을 누르세요."
+    }
+  },
+  "progress": {
+    "starting": "시작 중…",
+    "loadingModel": "모델 로딩 중… {{percent}}%",
+    "decoding": "디코딩 중…",
+    "downloading": "{{name}} 다운로드 중…",
+    "renderingLocally": "로컬에서 렌더링 중…",
+    "queuedVenice": "Venice 대기열에 추가됨…",
+    "queuedImgnai": "imgnAI 대기열에 있음…",
+    "queuedPollinations": "Pollinations 대기열에 있음…"
+  },
+  "livePreview": {
+    "label": "미리보기 — 아직 생성 중",
+    "alt": "생성 중인 이미지의 부분 렌더링 미리보기"
+  },
+  "pollinations": {
+    "hint": "무료·키 불필요 — 계정도 설정도 필요 없습니다. 이미지 한 장에 수 초에서 1분 정도(부하에 따라 다름), 15초당 한 장(익명 사용 제한). 클라우드: 프롬프트가 pollinations.ai로 전송됩니다."
+  },
+  "actions": {
+    "change": "변경",
+    "clear": "지우기",
+    "save": "저장",
+    "reveal": "위치 열기",
+    "fullscreen": "전체 화면",
+    "generate": "생성",
+    "transcribe": "변환",
+    "working": "처리 중…",
+    "workingProgress": "처리 중 · {{progress}}",
+    "stop": "중지",
+    "stopping": "중지하는 중…",
+    "stopTitle": "진행 중인 렌더링을 중단합니다. GPU가 즉시 해제되며 결과는 저장되지 않습니다."
+  },
+  "rife": {
+    "action": "RIFE 2×",
+    "title": "rife-ncnn-vulkan으로 이 클립의 프레임률을 로컬에서 두 배로 만듭니다. 옆에 새 파일을 저장하며 원본은 그대로 둡니다.",
+    "install": "RIFE 2× · 설치 {{size}}",
+    "installTitle": "rife-ncnn-vulkan 엔진({{size}})을 한 번만 내려받습니다. 이후 프레임 보간은 전부 이 컴퓨터에서 실행됩니다.",
+    "installing": "설치 중…",
+    "running": "보간 중…",
+    "stop": "중지",
+    "saved": "{{name}} 저장됨",
+    "derived": "RIFE 2× · 원본: {{source}}",
+    "failed": "프레임 보간에 실패했습니다",
+    "unsupported": "이 플랫폼용 RIFE 빌드는 배포되지 않습니다.",
+    "needsLocalFile": "먼저 이 영상을 저장하세요 — 프레임 보간은 디스크의 파일을 대상으로 동작합니다."
+  },
+  "upscale": {
+    "action": "확대 {{scale}}×",
+    "title": "이 이미지를 Real-ESRGAN으로 바로 여기서 {{scale}}배 확대합니다. 체크포인트를 불러오지 않고 프롬프트도 필요 없습니다 — 이미지 자체에 작동합니다. 옆에 새 파일로 저장되며 원본은 그대로 유지됩니다.",
+    "install": "확대 · {{size}} 다운로드",
+    "installTitle": "{{name}}({{size}})을 한 번만 다운로드합니다. 이후 확대는 전부 사용자 컴퓨터에서 실행됩니다.",
+    "installing": "설치 중…",
+    "running": "확대 중…",
+    "saved": "{{name}} 저장됨",
+    "derived": "ESRGAN {{scale}}× · 출처: {{source}}",
+    "failed": "확대에 실패했습니다"
+  },
+  "gallery": {
+    "empty": "결과가 없습니다. 모달리티와 모델을 선택하고 prompt를 입력한 후 생성하세요.",
+    "title": "갤러리 ({{count}})",
+    "titleFull": "갤러리({{count}}, 가득 참)",
+    "newest": "최신 {{time}}",
+    "clearAll": "모두 지우기",
+    "clearAllConfirm": "갤러리 항목 {{count}}개를 모두 삭제할까요? 디스크의 파일은 그대로 남고 목록만 비웁니다."
+  },
+  "entry": {
+    "pin": "고정",
+    "pinned": "고정됨",
+    "pinToTop": "상단에 고정",
+    "unpin": "고정 해제",
+    "remix": "리믹스",
+    "generatedAlt": "생성됨",
+    "remove": "삭제",
+    "removeConfirm": "이 항목을 갤러리에서 삭제할까요? 디스크의 파일은 그대로 남습니다.",
+    "completedAfterPrivate": "PRIVATE MODE 이후 완료",
+    "completedAfterPrivateTitle": "이 생성 요청은 PRIVATE MODE가 켜지기 전에 이미 전송된 상태였기 때문에 차단되지 않고 완료되어 저장되었습니다. 전환 이후 이 기기에서 새로 나간 것은 없습니다 — 이 시점에 거부했더라도 이미 전송된 결과물만 버려졌을 것입니다."
+  },
+  "result": {
+    "failedNoOutput": "생성 실패 — 출력이 반환되지 않았습니다",
+    "failedReason": "생성 실패 — {{reason}}",
+    "noOutput": "출력이 반환되지 않았습니다"
+  },
+  "genError": {
+    "title": "생성 실패",
+    "stoppedTitle": "중지됨",
+    "stoppedHint": "이 렌더링을 중지했으므로 저장된 것은 없습니다. GPU가 다시 비었으니 언제든 다시 실행할 수 있습니다.",
+    "hint": "파일이 기록되기 전에 실행이 멈췄다면 사용 가능한 GPU 메모리를 초과했을 수 있습니다 — 길이를 줄이거나 크기를 낮추면 필요한 메모리가 줄어듭니다.",
+    "dismiss": "닫기",
+    "unknown": "알 수 없는 이유로 생성에 실패했습니다."
+  },
+  "preview": {
+    "close": "닫기 (Esc)",
+    "alt": "미리보기"
+  },
+  "restore": {
+    "button": "이미지에서 복원",
+    "buttonTitle": "로컬에서 생성된 PNG를 끌어다 놓거나 클릭하여 선택 — 생성 파라미터를 복원합니다",
+    "success": "이미지에서 파라미터를 복원했습니다.",
+    "noMeta": "이 이미지에서 tachi-gen 메타데이터를 찾을 수 없습니다.",
+    "error": "이미지 메타데이터를 읽을 수 없습니다."
+  },
+  "toast": {
+    "jobFailed": "작업 실패",
+    "timedOut": "5분 후 시간 초과 — 다시 생성하여 재확인하세요.",
+    "chooseAudio": "변환할 오디오 파일을 선택하세요.",
+    "enterField": "{{field}}을(를) 입력하세요.",
+    "loaded": "작성기에 불러왔습니다.",
+    "loadedRerolled": "작성기에 불러왔습니다 (시드가 다시 생성됨).",
+    "nothingToSave": "저장할 내용이 없습니다.",
+    "savedTo": "{{path}}에 저장됨",
+    "providerFellBack": "{{provider}}은(는) {{modality}}을(를) 생성하지 않습니다 — Surplus로 전환했습니다."
+  },
+  "params": {
+    "videoI2vAvailable": "텍스트→영상 전용입니다. 이미지에서 시작하려면 Wan i2v 체크포인트가 필요하며, {{model}}을(를) 다운로드 패널에서 받을 수 있습니다.",
+    "advanced": "고급 ({{count}})",
+    "on": "ON",
+    "off": "OFF",
+    "promptAutoFill": "이 입력값은 앞 단계에 텍스트 생성 단계를 연결하면 자동으로 채울 수 있습니다.",
+    "prompt": {
+      "label": "프롬프트"
+    },
+    "negative_prompt": {
+      "label": "네거티브 프롬프트",
+      "description": "피해야 할 요소(아티팩트, 워터마크, 여분의 팔다리 등)."
+    },
+    "aspect_ratio": {
+      "label": "종횡비"
+    },
+    "size": {
+      "label": "크기"
+    },
+    "n": {
+      "label": "이미지 수",
+      "description": "한 번의 실행에서 생성할 이미지 수입니다. 체크포인트는 한 번만 로드되지만, 각 이미지는 처음부터 끝까지 샘플링됩니다 — 이미지 4장은 1장보다 약 4배의 시간이 걸립니다. 각 이미지는 첫 번째 시드부터 순서대로 고유한 시드를 가집니다."
+    },
+    "seed": {
+      "label": "시드",
+      "description": "-1 = 무작위. 값을 고정하면 결과를 재현할 수 있습니다."
+    },
+    "steps": {
+      "label": "스텝"
+    },
+    "cfg": {
+      "label": "가이던스 강도 (CFG)",
+      "description": "프롬프트를 얼마나 엄격하게 따를지 결정합니다."
+    },
+    "sampler": {
+      "label": "샘플러"
+    },
+    "strength": {
+      "label": "img2img 강도",
+      "description": "초기 이미지가 있을 때만 적용됩니다. 0 = 원본 유지, 1 = 원본 무시."
+    },
+    "image_url": {
+      "label": "초기 이미지",
+      "labelImg2img": "참조 이미지 (img2img)",
+      "labelI2v": "시작 프레임 (이미지→영상)",
+      "description": "img2img용 선택적 초기 이미지입니다.",
+      "descriptionI2v": "선택적 첫 프레임 (이미지→영상)."
+    },
+    "duration": {
+      "label": "길이 (s)"
+    },
+    "resolution": {
+      "label": "해상도"
+    },
+    "lyrics": {
+      "label": "가사",
+      "description": "선택 사항입니다. lyrics_required 모델에서는 필수입니다."
+    },
+    "instrumental": {
+      "label": "인스트루멘탈"
+    },
+    "genre": {
+      "label": "장르"
+    },
+    "input": {
+      "label": "텍스트",
+      "description": "음성으로 읽을 텍스트입니다."
+    },
+    "voice": {
+      "label": "Voice",
+      "description": "Voice ID (모델별로 다름)."
+    },
+    "response_format": {
+      "label": "Format"
+    },
+    "speed": {
+      "label": "속도"
+    },
+    "file": {
+      "label": "오디오 파일",
+      "description": "텍스트로 변환할 오디오입니다."
+    },
+    "language": {
+      "label": "언어",
+      "description": "ISO 코드 힌트 (예: \"en\"). 비워두면 자동 감지됩니다."
+    },
+    "translate": {
+      "label": "영어로 번역"
+    },
+    "hires": {
+      "label": "2단계 디테일 향상 (hires fix)"
+    },
+    "hires_scale": {
+      "label": "2단계 배율"
+    },
+    "speed_mode": {
+      "label": "속도 (증류 모델)"
+    },
+    "clip_skip": {
+      "label": "CLIP 스킵",
+      "description": "텍스트 인코더의 마지막 레이어 중 몇 개를 무시할지입니다. 0이면 엔진에 맡깁니다(SD 1.x는 1). Civitai의 많은 SD 1.5 병합 모델 — 특히 애니메이션 계열 — 은 스킵 2로 학습되어 1에서는 평면적이고 색이 바랜 듯 보입니다. 체크포인트 페이지에 CLIP skip 값이 명시되어 있다면 여기에 입력하세요."
+    },
+    "vae_tiling": {
+      "label": "VAE 디코드 타일링",
+      "description": "이미지를 한 번에 디코딩하는 대신 타일 단위로 디코딩합니다. 최종 디코딩 단계에서 메모리 부족으로 죽는 것을 완성된 렌더로 바꿔주는 옵션입니다 — 영상에서는 바로 이 단계에서 실제로 실패하는 경우가 많습니다. 시간이 조금 더 걸리고 타일 사이에 옅은 이음새가 남을 수 있습니다."
+    },
+    "vae_conv_direct": {
+      "label": "직접 VAE 컨볼루션",
+      "description": "오토인코더에서 직접 컨볼루션 경로를 사용합니다. 동일한 연산으로 디코딩 시 최대 메모리 사용량을 낮춥니다 — 이음새가 생기지 않으므로 타일링보다 먼저 시도해 보세요."
+    },
+    "max_vram": {
+      "label": "VRAM 예산",
+      "description": "각 순전파를 분할하여 모델이 비디오 메모리에 한 번에 다 들어가지 않아도 되도록 합니다 — 카드보다 큰 모델에 대한 엔진 자체의 해결책입니다. \"auto\"는 드라이버가 보고하는 여유 VRAM을 사용하며 1GiB의 여유를 남겨둡니다. 숫자를 지정하면 GiB 단위의 고정 예산이 됩니다. \"끄기\"는 분할하지 않음을 의미하며, 지금까지의 모든 실행이 그렇게 동작해 왔습니다."
+    },
+    "stream_layers": {
+      "label": "레이어 스트리밍",
+      "description": "현재 사용 중인 레이어만 상주시키고 다음 레이어를 미리 불러옵니다 — 업스트림 자체의 단계 중 예산 다음 단계에 해당합니다. 위에서 VRAM 예산이 설정되어 있어야 하고, 모델 가중치가 RAM에 있어야 하는데 후자는 이 설정이 대신 켜 줍니다. 아래의 자동 맞춤이 그 배치를 다시 가져가므로 둘을 동시에 켤 수는 없습니다. 자동 맞춤을 쓰면 엔진이 결정하고 이 설정은 꺼진 채로 남습니다."
+    },
+    "auto_fit": {
+      "label": "이 기기에 맞게 자동 배치",
+      "description": "모델 크기와 각 장치의 여유 메모리를 기준으로 확산 모델, 텍스트 인코더, 오토인코더 자체의 배치를 엔진이 직접 결정하도록 합니다. 앱 자체의 배치 방식(텍스트 인코더를 CPU에 유지하는 것 포함)을 대체하며, 모델을 여러 GPU에 분할할 수도 있습니다."
+    },
+    "image": {
+      "referenceAlt": "참조",
+      "change": "이미지 변경",
+      "choose": "이미지 선택"
+    },
+    "audio": {
+      "placeholder": "절대 경로 또는 파일 선택",
+      "change": "파일 변경",
+      "choose": "오디오 파일 선택"
+    }
+  }
+}

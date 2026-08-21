@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "ウォレット",
+    "subtitle": "マルチチェーン · アプリ (nookplot · x402) + darksol エージェント ウォレット"
+  },
+  "toast": {
+    "addressCopied": "アドレス コピー",
+    "backupDownloaded": "暗号化 バックアップ ダウンロード",
+    "walletImported": "ウォレット インポート",
+    "walletRemoved": "ウォレット このデバイス から削除",
+    "agentWalletRemoved": "エージェント ウォレット \"{{agentName}}\" 削除"
+  },
+  "newKey": {
+    "backupNow": "これ をバックアップ — コピー のみ",
+    "address": "アドレス",
+    "privateKey": "プライベート キー",
+    "done": "完了 — ウォレット を開く"
+  },
+  "empty": {
+    "title": "ウォレット なし まだ",
+    "description": "あなたの アプリ全体 ウォレット — nookplot、x402 支払い、統合 1つ アカウント。非カスタディアル: キー はあなたの OS キーチェーン 暗号化 このデバイス から暗号化 なしで離れなし。",
+    "creating": "作成中…",
+    "create": "✦ ウォレット 作成",
+    "importKey": "プライベート キー インポート",
+    "keyPlaceholder": "0x…",
+    "import": "インポート"
+  },
+  "account": {
+    "title": "アカウント · {{label}}",
+    "noAddress": "—",
+    "copy": "コピー"
+  },
+  "balances": {
+    "title": "残高",
+    "allNetworks": "· すべての ネットワーク",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 表示",
+    "hide": "👁 非表示",
+    "refreshing": "リフレッシュ中…",
+    "refresh": "↻ リフレッシュ"
+  },
+  "backup": {
+    "title": "暗号化 バックアップ",
+    "description": "パスワード 暗号化 キーストア (Web3 シークレット ストレージ — MetaMask/geth で動作)。ファイル + パスワード を安全 保つ; 一緒に あなたの エージェント を任意 マシン で復元。",
+    "password": "バックアップ パスワード (最小 8)",
+    "download": "バックアップ ダウンロード"
+  },
+  "switch": {
+    "title": "ウォレット 切り替え",
+    "replaceTitle": "キー 置換 · {{label}}",
+    "warning": "最初に バックアップ エクスポート — キー 置換 このデバイス から現在 ウォレット を削除。",
+    "agentName": "エージェント ウォレット 名",
+    "keyPlaceholder": "プライベート キー 0x…",
+    "importKey": "キー インポート",
+    "orKeystore": "または キーストア JSON + パスワード",
+    "keystorePassword": "キーストア パスワード",
+    "importKeystore": "キーストア インポート"
+  },
+  "danger": {
+    "title": "新規 / 削除",
+    "generate": "新規 ウォレット 生成",
+    "forget": "ウォレット 忘れる",
+    "forgetNamed": "{{label}} 忘れる"
+  },
+  "switcher": {
+    "account": "アカウント",
+    "activeSuffix": " ·有効",
+    "new": "+ 新規",
+    "newPrompt": "新規 darksol エージェント ウォレット 名:",
+    "newTitle": "新規エージェント ウォレット",
+    "newPlaceholder": "例: trading-bot",
+    "newOk": "作成",
+    "newCancel": "キャンセル"
+  },
+  "network": {
+    "all": "すべての ネットワーク"
+  },
+  "send": {
+    "title": "送信 · あんな トークン",
+    "token": "トークン",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "受取人",
+    "recipientPlaceholder": "0x… / name.eth",
+    "amount": "金額",
+    "sending": "送信中…",
+    "send": "送信",
+    "note": "ネイティブ + 選択 ネットワーク 上 あんな ERC-20 (またはコントラクト アドレス ペースト)。クロスチェーン → darksol エージェント を使用 (LI.FI)。",
+    "toast": {
+      "success": "送信 — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "資金調達 · アプリ → {{agentName}}",
+    "amount": "金額 (ネイティブ)",
+    "moving": "移動中…",
+    "move": "移動",
+    "note": "あなたの NOOK / x402 残高 アプリ ウォレット をタッチ なし 保つ。",
+    "toast": {
+      "success": "資金調達 — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "エージェント リミット · darksol エージェント サイナー",
+    "maxPerTrade": "最大 / 取引",
+    "daily": "日次 リミット",
+    "dryRun": "ドライラン",
+    "on": "ON",
+    "off": "OFF",
+    "save": "リミット 保存",
+    "toast": {
+      "saved": "リミット 保存"
+    }
+  }
+}

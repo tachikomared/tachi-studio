@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or idea
+    url: https://github.com/tachikomared/tachi-studio/discussions
+    about: Anything that is not a bug or a concrete request
+  - name: Security vulnerability
+    url: https://github.com/tachikomared/tachi-studio/security/advisories/new
+    about: Please report privately, not as a public issue

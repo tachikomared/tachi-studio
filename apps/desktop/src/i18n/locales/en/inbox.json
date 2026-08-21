@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "INBOX",
+    "pending": "[{{count}} pending]"
+  },
+  "actions": {
+    "approveAll": "[APPROVE ALL]",
+    "clearResolved": "[CLEAR RESOLVED]"
+  },
+  "footer": {
+    "modeLabel": "Mode:",
+    "mode": {
+      "immediate": "[IMMEDIATE]",
+      "inbox": "[INBOX]"
+    },
+    "hints": "j/k move  ·  Enter approve  ·  Del deny  ·  Ctrl+A approve all"
+  },
+  "empty": {
+    "title": "[ INBOX EMPTY ]",
+    "inbox": "Tool-permission requests will land here while your agent runs. Approve or deny them at your own pace — the agent waits until you decide.",
+    "immediate": "You are in IMMEDIATE mode. Tool-permission requests pop a blocking modal instead of queuing here. Switch to INBOX below to let the agent run long and batch-review later."
+  },
+  "fields": {
+    "reason": "reason:",
+    "session": "session:",
+    "workingDir": "workingDir:"
+  },
+  "item": {
+    "approve": "[APPROVE]",
+    "approveAria": "approve request",
+    "deny": "[DENY]",
+    "denyAria": "deny request"
+  }
+}

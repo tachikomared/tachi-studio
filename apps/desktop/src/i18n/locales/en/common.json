@@ -1,0 +1,256 @@
+{
+  "actions": {
+    "newChat": "+ New chat",
+    "routines": "Routines",
+    "customize": "Customize",
+    "providers": "Providers",
+    "tachiapp": "TACHIAPP",
+    "tachiappHint": "Ask about this app or tell it what to change — it edits its own source",
+    "approvalPending": "{{n}} approval waiting — a run is blocked until you answer"
+  },
+  "sidebar": {
+    "newSession": "+ New session",
+    "workspace": "Workspace",
+    "openCanvas": "+ Open canvas",
+    "media": "Media",
+    "newMedia": "+ New media",
+    "artifacts": "Artifacts",
+    "newSwarm": "+ New swarm",
+    "openInbox": "Open inbox",
+    "llmNodes": "+ LLM Nodes",
+    "addRuntime": "Add local server",
+    "settings": "Settings",
+    "runSkill": "+ Run skill",
+    "configure": "Configure",
+    "secrets": "Secrets",
+    "dashboard": "Dashboard",
+    "postBounty": "+ Post bounty",
+    "browseNetwork": "Browse network",
+    "mineNook": "Mine NOOK",
+    "toasts": {
+      "routinesSoon": "Routines — coming soon!",
+      "workspaceSoon": "Workspace management — coming soon!",
+      "addRuntimeHint": "Add local server — install Ollama/Claude Code manually then restart Tachi Studio to detect them."
+    },
+    "newDesign": "+ New design",
+    "recentDesigns": "Recent designs",
+    "noRecentDesigns": "No designs yet",
+    "untitledDesign": "Untitled design",
+    "recent": "Recent",
+    "noRecentSwarms": "No recent swarms",
+    "more": "More",
+    "moreHint": "More tabs — Swarm, Dashboard, Catalog, Aeon, Nook, Learn",
+    "learnHint": "Learn — short walkthrough of every tab",
+    "wallet": "Wallet",
+    "walletExpand": "Show wallet balances",
+    "walletCollapse": "Hide wallet balances"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light",
+    "neon": "Neon",
+    "comic": "Comic",
+    "opus5": "Opus5",
+    "tk05": "TK-05",
+    "moreHint": "All themes — Settings → Appearance"
+  },
+  "language": "Language",
+  "errors": {
+    "generic": "Something went wrong. Retry, or check the provider in Settings.",
+    "noKey": "No API key for this provider — add one in Settings → Providers, or pick the keyless free provider.",
+    "auth": "The provider rejected the API key — check it in Settings → Providers.",
+    "rateLimit": "Rate limit hit — wait a moment and retry, or switch model/provider.",
+    "quota": "Provider quota or credits exhausted — check your plan or switch provider.",
+    "contextLength": "The conversation is too long for this model — start a new chat or switch to a larger-context model.",
+    "network": "Network problem reaching the provider — check your connection (or Private Mode blocking egress).",
+    "upstream": "The provider had a server error — retry shortly."
+  },
+  "quickask": {
+    "placeholder": "Ask anything…",
+    "ask": "Ask",
+    "asking": "…",
+    "thinking": "thinking…",
+    "hintEmpty": "Enter to ask · Esc to close",
+    "footer": "quick ask · keyless FreeLLM router",
+    "copy": "copy",
+    "openApp": "open app",
+    "routerDown": "Local router is not running — open the app first."
+  },
+  "prompts": {
+    "search": "Search templates…",
+    "saveCurrent": "+ save current",
+    "titlePlaceholder": "Template name…",
+    "save": "Save",
+    "empty": "No templates yet. Save your best prompts here.",
+    "insert": "Insert",
+    "delete": "Delete template"
+  },
+  "split": {
+    "hint": "Drag to resize · Double-click to collapse"
+  },
+  "footerHints": {
+    "chat": "Enter send · {{mod}}+K palette · {{mod}}+Shift+Space quick-ask",
+    "code": "Enter run task · ↺ revert checkpoint",
+    "nodes": "{{mod}}+Enter run all · {{mod}}+Z undo",
+    "design": "{{mod}}+Enter send · ↺ edit to rewind",
+    "media": "Prompt → Generate · Esc closes preview",
+    "catalog": "Click a quant pill to see fit",
+    "swarm": "NEW SWARM opens a repo · feed streams agent commits",
+    "dashboard": "Live system stats · auto-refresh every 3s"
+  },
+  "activity": {
+    "title": "Activity",
+    "stop": "Stop",
+    "stopping": "Stopping…",
+    "dismiss": "Dismiss",
+    "more": "+{{n}} more",
+    "less": "Show less",
+    "open": "Go to this task",
+    "failed": "Failed",
+    "done": "Done",
+    "cancelled": "Cancelled",
+    "label": {
+      "generate": "Generating",
+      "render": "Video export",
+      "migrate": "Moving models",
+      "rife": "Frame interpolation",
+      "audioOverview": "Audio overview"
+    },
+    "notify": {
+      "imageReady": "Image ready",
+      "videoReady": "Video ready",
+      "genFailed": "Generation failed",
+      "installed": "{{name}} installed",
+      "installFailed": "{{name}} install failed",
+      "renderDone": "Video export finished",
+      "renderFailed": "Video export failed",
+      "rifeDone": "Frame interpolation finished",
+      "rifeFailed": "Frame interpolation failed",
+      "took": "took {{elapsed}}",
+      "audioOverviewReady": "Audio overview ready",
+      "audioOverviewFailed": "Audio overview failed"
+    }
+  },
+  "audioOverview": {
+    "stage": {
+      "script": "drafting script…",
+      "voices": "voices {{n}}/{{m}}",
+      "mix": "mixing…",
+      "saving": "saving…"
+    },
+    "saved": "Saved to disk",
+    "reveal": "Show file",
+    "saveFailed": "Not saved to disk: {{reason}}"
+  },
+  "downloads": {
+    "title": "Downloads",
+    "pause": "Pause",
+    "resume": "Resume",
+    "retry": "Retry",
+    "cancel": "Cancel download (deletes the partial file)",
+    "dismiss": "Dismiss",
+    "paused": "Paused",
+    "queued": "Queued",
+    "verifying": "Verifying",
+    "done": "Done",
+    "error": "Error",
+    "verifiedSha": "SHA-256 verified",
+    "verifiedSize": "Size verified"
+  },
+  "observability": {
+    "compaction": "Compaction",
+    "tokensSaved": "tokens saved (est)",
+    "charsSaved": "chars saved",
+    "promptCache": "Prompt cache",
+    "cachedInputTokens": "cached input tokens",
+    "cacheHitRatio": "hit ratio (cached / input)",
+    "legacyHarnessTag": "legacy harness",
+    "legacyHarnessNote": "Harness spend recorded before it was attributed to the gateway that served it. Kept as history — a ledger is not edited after the fact."
+  },
+  "commands": {
+    "popupLabel": "Slash commands",
+    "popupHint": "↑↓ move · ↵ / Tab pick · esc close",
+    "groupCommands": "Commands",
+    "groupSkills": "Skills",
+    "dismiss": "Dismiss",
+    "unknown": "Unknown command /{{name}}. Type /help to see what's available, or start the message with // to send a literal slash.",
+    "wrongSurfaceChat": "/{{name}} only works in the Chat tab.",
+    "wrongSurfaceHarness": "/{{name}} only works in the Code tab.",
+    "unavailable": "/{{name}} isn't available here right now.",
+    "help": {
+      "desc": "List every command available here",
+      "title": "AVAILABLE COMMANDS",
+      "escape": "Start a message with // to send a literal slash."
+    },
+    "new": {
+      "desc": "Start a new chat"
+    },
+    "compact": {
+      "desc": "Summarize older turns to free up context",
+      "done": "Compacted — older turns are now a summary. The transcript is untouched.",
+      "failed": "Nothing to compact yet."
+    },
+    "init": {
+      "desc": "Generate AGENTS.md for this folder",
+      "done": "Wrote {{path}}",
+      "failed": "Could not generate AGENTS.md: {{reason}}"
+    },
+    "model": {
+      "desc": "Show the current model, or switch to one",
+      "args": "[name]",
+      "current": "Current model: {{model}}",
+      "switched": "Model → {{model}}",
+      "noMatch": "No model or provider matched \"{{name}}\"."
+    },
+    "cost": {
+      "desc": "Show session and 30-day spend",
+      "title": "SPEND",
+      "session": "This session: {{value}}",
+      "sessionTokens": "~{{count}} tokens",
+      "window": "Last {{days}} days: ${{total}} of ${{budget}} budget",
+      "provider": "  {{provider}} — ${{usd}}",
+      "none": "  no priced spend recorded yet"
+    },
+    "memory": {
+      "desc": "Show saved memory facts",
+      "title": "MEMORY FACTS ({{count}})",
+      "empty": "No memory facts saved yet — add one with /remember <text>."
+    },
+    "remember": {
+      "desc": "Save a fact to memory",
+      "args": "<text>",
+      "saved": "Remembered: {{text}}",
+      "needsText": "Usage: /remember <text>",
+      "failed": "Could not save that fact."
+    },
+    "rewind": {
+      "desc": "Edit your last message and re-run from there",
+      "done": "Your last message is back in the composer — edit it and send.",
+      "none": "No message to rewind to."
+    },
+    "search": {
+      "desc": "Force a web search for this query",
+      "args": "<query>",
+      "needsQuery": "Usage: /search <query>",
+      "disabled": "Web search is off — turn it on in Settings and add a Brave or Tavily key."
+    },
+    "plan": {
+      "desc": "Plan the work before touching code"
+    },
+    "review": {
+      "desc": "Structured code review with severity tiers"
+    },
+    "troubleshoot": {
+      "desc": "Root-cause a failure, then propose fixes"
+    },
+    "refactor": {
+      "desc": "Plan a behaviour-preserving refactor"
+    },
+    "loop": {
+      "desc": "Keep working in cycles until the goal is met",
+      "args": "[n] <goal>",
+      "needsGoal": "Usage: /loop [n] <goal> — e.g. /loop 3 make every test pass",
+      "needsTachi": "/loop needs the TACHI harness — pick it under ADVANCED, then send again."
+    }
+  }
+}

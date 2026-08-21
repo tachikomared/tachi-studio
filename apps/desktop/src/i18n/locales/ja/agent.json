@@ -1,0 +1,566 @@
+{
+  "dropZone": {
+    "hint": "フォルダをドロップしてワークスペースを設定"
+  },
+  "playbook": {
+    "tooltip": "前のセッションからのプレイブックが、このワークスペースのコンテキストとして読み込まれました。",
+    "loaded": "プレイブック読み込み"
+  },
+  "modeToggle": {
+    "planTooltip": "プランモード — 実行前に説明とアウトラインを作成",
+    "buildTooltip": "ビルドモード — すぐに実行",
+    "plan": "プラン",
+    "build": "ビルド"
+  },
+  "agentsMd": {
+    "unknownError": "不明なエラー",
+    "tooltip": "ワークスペースルートにAGENTS.mdを生成",
+    "generating": "生成中…",
+    "generate": "AGENTS.mdを生成"
+  },
+  "diff": {
+    "label": "差分"
+  },
+  "toolGroup": {
+    "someRunning": "一部のツールがまだ実行中",
+    "count_one": "{{count}}ツール",
+    "count_other": "{{count}}ツール"
+  },
+  "toolCall": {
+    "aborted": "[中止]",
+    "abortedTooltip": "このツールが完了する前にセッションが終了",
+    "running": "実行中…",
+    "harnessReports": "エージェントレポート: {{name}}",
+    "input": "入力",
+    "result": "結果",
+    "noOutput": "(出力なし)",
+    "abortedPlaceholder": "[中止] — 結果が到着する前にセッションが終了",
+    "runningPlaceholder": "実行中 — 結果を待機中…"
+  },
+  "preview": {
+    "label": "プレビュー",
+    "openInBrowser": "[ブラウザで開く]",
+    "openInBrowserTooltip": "システムブラウザで開く",
+    "close": "[閉じる]",
+    "closeTooltip": "プレビューを閉じる",
+    "loading": "読み込み中…",
+    "error": "エラー: {{error}}",
+    "emptyHtml": "HTMLをレンダリングできません (コンテンツが空)",
+    "imageTooLarge": "バイナリ/画像が大きすぎてプレビューできません",
+    "truncated": "最初の1 MBを表示中 (合計{{total}} MB)",
+    "unsupported": "このファイル形式はプレビューをサポートしていません。",
+    "supportedPrefix": "サポート:",
+    "binary": "バイナリファイル ({{bytes}}バイト) — プレビューできません",
+    "saved": "保存しました",
+    "saveFailed": "保存に失敗しました"
+  },
+  "filePreview": {
+    "closeTooltip": "プレビューを閉じる",
+    "loading": "読み込み中…",
+    "truncated": "ファイルの最初の1 MBを表示中 (合計{{total}} MB)",
+    "binary": "バイナリファイル ({{bytes}}バイト)",
+    "saveCopy": "コピーを保存",
+    "saveCopyTooltip": "このファイルのコピーを Tachi Studio のアーティファクトフォルダに保存",
+    "saveCopySuccess": "{{path}} に保存しました",
+    "saveCopyFailed": "コピーを保存できませんでした"
+  },
+  "permission": {
+    "owner": {
+      "code": "CODE の実行",
+      "tachiapp": "TACHIAPP の実行",
+      "hint": "この承認は別タブの実行のものです。答えるとその実行が進み、ツールはその実行のワークスペースで動きます（このタブではありません）。"
+    },
+    "morePending": "他に {{n}} 件待機中 — まずこれを決定してください",
+    "badge": "権限",
+    "paused": "— 一時停止中、あなたの承認を待機中",
+    "risky": "危険:",
+    "review": "確認:",
+    "input": "入力",
+    "allow": "許可",
+    "allowHint": "このツール呼び出しのみを許可",
+    "deny": "拒否",
+    "denyHint": "拒否してこのツール呼び出しを中止",
+    "alwaysAllowTool": "常にツールを許可",
+    "alwaysAllowToolHint": "このセッション中、{{toolName}}を常に許可",
+    "alwaysAllowFamily": "常にファミリーを許可",
+    "alwaysAllowFamilyHint": "このセッション中、このツールファミリー全体を常に許可",
+    "allow30m": "30分許可",
+    "allow30mHint": "「{{toolName}}」を今後30分間、確認なしで実行 — 許可は静かに失効",
+    "overlay": {
+      "title": "承認が必要",
+      "hint": "実行は回答まで停止しています — このカードはどのタブでも表示されます",
+      "goto": "実行を開く",
+      "gotoHint": "この実行を所有する画面を開いて全文ログを確認します"
+    }
+  },
+  "slash": {
+    "status": {
+      "pendingReview": "確認待機中",
+      "approved": "承認済み",
+      "applied": "適用済み",
+      "cancelled": "キャンセル済み"
+    },
+    "risk": {
+      "low": "低",
+      "med": "中",
+      "high": "高"
+    },
+    "approve": "[承認]",
+    "apply": "[適用]",
+    "cancel": "[キャンセル]",
+    "rootCause": "根本原因",
+    "confidence": "[確信度: {{confidence}}%]",
+    "solutions": "解決策",
+    "riskColumn": "リスク",
+    "risks": "リスク",
+    "scope": "スコープ",
+    "changes": "変更",
+    "estimatedDiff": "予想差分",
+    "lines": "行",
+    "findings": "発見",
+    "summary": "概要",
+    "errors_one": "{{count}}エラー",
+    "errors_other": "{{count}}エラー",
+    "warnings_one": "{{count}}警告",
+    "warnings_other": "{{count}}警告",
+    "infoCount": "{{count}}情報",
+    "goal": "目標",
+    "phases": "フェーズ",
+    "phase": "フェーズ {{num}}: {{name}}",
+    "depends": "依存: {{depends}}",
+    "tasks": "タスク: {{tasks}}",
+    "criticalPath": "クリティカルパス",
+    "errorCard": {
+      "title": "[スラッシュコマンド]",
+      "badge": "エラー",
+      "parseFailed": "エージェント応答をスラッシュプランとして解析できませんでした。",
+      "rawLogged": "生テキストはネットワーク監査にログされています。",
+      "dismiss": "[閉じる]"
+    }
+  },
+  "history": {
+    "time": {
+      "justNow": "たった今",
+      "minutesAgo": "{{count}}分前",
+      "hoursAgo": "{{count}}時間前",
+      "daysAgo": "{{count}}日前"
+    },
+    "sessions": "セッション · {{count}}",
+    "mainStore": "(メインストア: {{status}})",
+    "new": "+ 新規",
+    "newTooltip": "新規セッション — 現在のセッションをアーカイブして新規開始",
+    "newAria": "新規セッション",
+    "hideTooltip": "セッションを非表示",
+    "hideAria": "セッションを非表示",
+    "viewingArchive": "● アーカイブを表示中",
+    "backToLiveTooltip": "ライブセッションに戻る",
+    "backToLive": "ライブに戻る",
+    "continueAction": "続行",
+    "continueTooltip": "このセッションを続行 — 復元して作業を再開",
+    "searchPlaceholder": "セッションを検索…",
+    "noMatches": "一致する項目なし。",
+    "empty": "まだ過去のセッションなし — 完了したラン自動的にここに登録されます。",
+    "eventCount": "{{count}}イベント",
+    "rename": "名前変更",
+    "renameAction": "名前変更",
+    "delete": "削除",
+    "deleteAction": "削除",
+    "confirmDeleteTooltip": "再度クリックして確認",
+    "sure": "確認?",
+    "deletedToast": "セッション削除"
+  },
+  "tile": {
+    "status": {
+      "idle": "[アイドル]",
+      "running": "[実行中]",
+      "done": "[完了]",
+      "error": "[エラー]",
+      "aborted": "[中止]"
+    },
+    "deleteTooltip": "タスクを削除 (ワークツリー + ブランチ)",
+    "deleteAria": "タスク削除",
+    "displayModeAria": "タイル表示モード",
+    "events": "イベント",
+    "eventsTooltip": "最近のエージェントイベント + steps.jsonを表示",
+    "ptyTooltip": "xtermをワークツリーシェルに接続",
+    "noOutput": "まだ出力なし"
+  },
+  "grid": {
+    "unknownBranch": "(不明)",
+    "deleteConfirmTitle": "パラレルタスクを削除?",
+    "deleteConfirmMessage": "これはワークツリーとブランチ「{{branchName}}」を削除し、その中のコミットされていない変更があれば削除します。これはやり直せません。",
+    "deleteConfirmOk": "削除",
+    "deleteConfirmCancel": "キャンセル",
+    "newTask": "[+ 新規パラレルタスク]",
+    "running": "実行中: {{running}}/{{total}}",
+    "empty": "パラレルタスクなし。上の[+ 新規パラレルタスク]をクリックして1つをスピンアップしてください。"
+  },
+  "dialog": {
+    "nameRequired": "タスク名は必須です。",
+    "rootRequired": "プロジェクトルートは必須です。",
+    "title": "新規パラレルタスク",
+    "nameLabel": "タスク名",
+    "namePlaceholder": "例: ログインリダイレクト修正",
+    "rootLabel": "プロジェクトルート",
+    "rootPlaceholder": "gitリポジトリへの絶対パス",
+    "choose": "選択...",
+    "baseBranchLabel": "ベースブランチ (オプション)",
+    "baseBranchPlaceholder": "HEADがデフォルト",
+    "branchPrefixLabel": "ブランチプリフィックス",
+    "branchPrefixPlaceholder": "タスク",
+    "symlinkLabel": "ワークツリーにディレクトリをシンボリックリンク",
+    "errorPrefix": "エラー: {{error}}",
+    "cancel": "キャンセル",
+    "create": "作成",
+    "creating": "作成中..."
+  },
+  "tour": {
+    "title": "コードタブの使い方",
+    "intro": {
+      "title": "これはコードタブです",
+      "body": "ここでAIエージェントがコンピューター上のフォルダーのファイルを読み書き — リアルプロジェクトを構築、修正、リファクタできます。主なコントロールをお見せします。"
+    },
+    "folder": {
+      "title": "フォルダーを選択",
+      "body": "まずエージェントが作業するプロジェクトフォルダーを選択(またはドラッグ)してください。フォルダーを選択するまで何も実行されません。このハイライトされたボタンはフォルダーピッカーを開きます。"
+    },
+    "controls": {
+      "title": "あなたのコントロール",
+      "body": "この行はエージェントの動作方法を設定します: モード (Plan = 最初にプラン作成、Build = すぐに実行)、エージェント (どのコーディングエージェント)、プロバイダー — モデルの提供元 (Free、OpenGateway、Bankr、Surplus、Venice)。"
+    },
+    "compose": {
+      "title": "入力して送信",
+      "body": "下のボックスにやってほしいことを書いて、送信ボタンを押す (またはEnter)。エージェントはそのステップ、ファイル編集、プレビューを作業中に表示します。"
+    },
+    "done": {
+      "title": "以上です",
+      "body": "フォルダーを選択して、Plan または Build を選んで、タスク を入力して送信。いつでも停止できます。上の「How to」ボタンからこのウォークスルーを再度開けます。"
+    }
+  },
+  "harness": {
+    "openClaudeHint": "エージェント: OpenClaude — Claude形式コーディングエージェント (gitlawb製)",
+    "darkSolHint": "エージェント: DarkSol — エージェントネイティブ暗号ターミナル (ウォレット / トレード / 盗聴)。@darksol/terminalインストール + 資金を持つエージェントウォレットが必要。",
+    "tachiHint": "ファーストパーティのインプロセスエージェント（アルファ版）"
+  },
+  "header": {
+    "howTo": "方法",
+    "howToTooltip": "このタブのインタラクティブウォークスルー",
+    "buildWorkflow": "ワークフロー構築",
+    "buildWorkflowTooltip": "ノードエディターでカスタム複数エージェントワークフローを視覚的に構築",
+    "sessions": "セッション",
+    "showSessionsTooltip": "セッション履歴を表示",
+    "folderTooltip": "ワークスペースフォルダーを選択 (またはフォルダーをページにドラッグ & ドロップ)",
+    "folderTooltipWorkflow": "ワークフローが有効 — グラフは独自のフォルダーノードを使用。ワークフローをデタッチしてここでフォルダーを使用。",
+    "chooseFolder": "フォルダーを選択…"
+  },
+  "smartRouting": {
+    "on": "スマート ON",
+    "off": "スマート OFF",
+    "onTooltip": "スマートルーティング ON — ツール信頼性の高いモデルを自動選択。クリックでオフにして手動選択。",
+    "offTooltip": "スマートルーティング OFF — 選択したモデルを使用。クリックしてツール信頼性の高いモデルを自動選択。"
+  },
+  "workflowBanner": {
+    "prefix": "ワークフロー",
+    "suffix": "は下のコンポーザーで実行 — 通常のエージェントコントロールは一時停止。",
+    "running": "実行中: {{node}}…",
+    "edit": "ノードで編集",
+    "editTooltip": "ノードキャンバスでこのワークフローを編集できます",
+    "detach": "デタッチ",
+    "detachTooltip": "ワークフローをデタッチして通常のエージェントに戻す"
+  },
+  "archiveBanner": {
+    "text": "過去のセッションを表示中 — 読み取り専用。コンポーザー無効。",
+    "back": "ライブに戻る",
+    "backTooltip": "ライブセッションに戻る"
+  },
+  "logEmpty": {
+    "workflowPrefix": "下にメッセージを入力して",
+    "workflowSuffix": "ワークフローを実行。",
+    "workflowHint": "グラフに配線されたプロバイダー、フォルダー、ツール、エージェントを使用 — いつでもノードで編集。",
+    "chooseFolder": "フォルダーを選択またはドラッグしてエージェントセッションを開始。"
+  },
+  "appMode": {
+    "title": "TACHIAPP",
+    "sourceLabel": "アプリのソース",
+    "sourceTooltip": "Tachi Studio のソース: {{path}}（検出: {{source}}）",
+    "heroTitle": "アプリについて質問する、または変更したいことを伝えてください。",
+    "heroBody": "このチャットは Tachi Studio 自身のソースコードに固定されています。アプリのコードを読み、それについて答え、自分自身のファイルを編集します。フォルダーの選択は不要 — プロバイダーとモデルだけ選べば動きます。",
+    "composerPlaceholder": "アプリについて質問するか、変更内容を書いてください…（Shift+Enter で改行）",
+    "chips": {
+      "featureLabel": "機能を追加する",
+      "featurePrompt": "現在のチャットを消去するショートカットキーを追加して。まず計画を見せて。",
+      "bugLabel": "バグを直す",
+      "bugPrompt": "ウィンドウを狭くするとサイドバーのテーマボタンが窮屈になります。原因を突き止めて直して。",
+      "explainLabel": "仕組みを説明する",
+      "explainPrompt": "チャットの入力欄からモデルへ、そして戻ってくるまでメッセージがどう流れるか説明して。"
+    },
+    "locate": {
+      "title": "アプリのソースを指定",
+      "body": "Tachi Studio が自身のソースフォルダーを見つけられませんでした。AGENTS.md と apps/desktop が入っているフォルダーを一度だけ指定してください。以後は聞きません。",
+      "action": "フォルダーを選ぶ",
+      "resolving": "アプリのソースを探しています…"
+    }
+  },
+  "surfaceBusy": {
+    "title": "別の実行が進行中です",
+    "bodyCode": "CODE の実行がまだ動いています。終わり次第このチャットを使えます — その記録は CODE タブの履歴レールに保存され、自動的にそこで開きます。",
+    "bodyApp": "TACHIAPP の実行がまだ動いています。終わり次第このタブを使えます — その記録は TACHIAPP チャットの履歴レールに保存され、自動的にそこで開きます。",
+    "composerPlaceholder": "別のタブの実行が終わるのを待っています…"
+  },
+  "legend": {
+    "heading": "上のボタンの意味",
+    "modeLabel": "モード",
+    "modeDesc": "プラン (最初に説明) または ビルド (すぐに実行)",
+    "thinkingLabel": "思考",
+    "thinkingDesc": "AIが行動する前にどの程度深く推論するか",
+    "engineLabel": "エージェント",
+    "engineDesc": "どのコーディングエージェントを実行するか",
+    "gatewayLabel": "プロバイダー",
+    "gatewayDesc": "AIモデルの出所",
+    "newHerePrefix": "ここが初めてですか？",
+    "learnLink": "学ぶ",
+    "newHereSuffix": "を開いて短いウォークスルーを見る。"
+  },
+  "status": {
+    "starting": "{{agent}}を開始中…",
+    "waiting": "応答を待機中…"
+  },
+  "composer": {
+    "attachTooltip": "次のプロンプトにファイルをアタッチ",
+    "attachTooltipWorkflow": "ワークフローモードではアタッチメントを使用しません",
+    "attachAria": "ファイルをアタッチ",
+    "placeholderArchive": "読み取り専用 — 過去のセッション表示中",
+    "placeholderWorkflow": "「{{name}}」ワークフローにメッセージ…",
+    "placeholderSelectTile": "まずパラレルタスクタイルを選択…",
+    "placeholderTask": "{{agent}}は何をすべき? (Shift+Enterで改行)",
+    "placeholderNoFolder": "まずフォルダーを選択…",
+    "stop": "エージェント停止",
+    "run": "タスク実行",
+    "estFree": "推定 $0（無料ルート）",
+    "estBilledByModel": "モデルごとに課金"
+  },
+  "provider": {
+    "freeHint": "プロバイダー: Auto — 保存済みの最適ルートを選択：OpenGatewayキー → {{model}}（無料）、なければBankrキー（有料、キーに課金）、なければ無料のローカルfreellmapiルーター。選ばれたルートが無料のときだけFREEと表示。",
+    "openGatewayHint": "プロバイダー: OpenGateway — gitlawbのOpenGatewayを強制。エージェント実行は {{model}} を使用（検証済み無料；無料モデルは日次クォータあり；他のモデルは従量課金）。Bankr/freellmapiフォールバックなし。",
+    "bankrHint": "プロバイダー: Bankr — Bankrキー (llm.bankr.bot)でプレミアムモデル。",
+    "surplusHint": "プロバイダー: Surplus Intelligence — 最安売り手ルーティング across 実ライブ モデル カタログ。inf_ キー が必要 (surplusintelligence.ai/buy)。",
+    "veniceHint": "プロバイダー: Venice — プライバシー第一、OpenAI互換 (デフォルト zai-org-glm-4.7)。Venice キー が必要 (venice.ai/settings/api)。",
+    "imgnaiHint": "プロバイダー: imgnAI Katana — 1つのキーで glm-5-2 / gpt-5-6 / deepseek (デフォルト glm-5-2)。imgnAI の API Key が必要（設定 → imgnAI Katana）。"
+  },
+  "workflowSelector": {
+    "tooltip": "保存されたノードワークフローをコードチャットで直接実行",
+    "off": "ワークフロー: オフ",
+    "none": "なし (通常のエージェント)",
+    "loading": "読み込み中…",
+    "empty": "保存されたワークフローなし。ノードで構築して保存してください。",
+    "savedAt": "{{date}}に保存",
+    "buildNew": "+ Nodes で新規ビルド"
+  },
+  "depth": {
+    "normal": "通常",
+    "normalHint": "標準応答 — 拡張思考なし",
+    "think": "思考",
+    "thinkHint": "拡張思考 — 4,000トークン予算",
+    "ultra": "ウルトラ",
+    "ultraHint": "深い思考 — 32,000トークン予算"
+  },
+  "statusBadge": {
+    "idle": "スタンバイ中",
+    "starting": "開始中…",
+    "running": "作業中",
+    "done": "完了",
+    "error": "エラー",
+    "incomplete": "停止"
+  },
+  "incomplete": {
+    "badge": "完了せずに終了",
+    "continue": "続行",
+    "continueHint": "このセッションに続行メッセージを送信",
+    "continueMessage": "タスクを続行してください。すでに完了している場合は、何を変更しどう検証したかの要約を付けて完了ツールを呼び出してください。続行できない場合は、その理由を正確に述べてください。",
+    "detailFallback": "実行は完了も要約もせずに停止しました。",
+    "nudgedHint": "すでに一度、続行を促しました。"
+  },
+  "event": {
+    "running": "実行中…",
+    "preview": "[プレビュー]",
+    "previewTooltip": "{{path}}をプレビュー",
+    "noOutput": "(出力なし)",
+    "done": "完了 ({{reason}})",
+    "copy": "コピー",
+    "copied": "コピー済み",
+    "copyTooltip": "このメッセージをコピー",
+    "copyFailed": "コピー失敗",
+    "failed": "実行に失敗しました",
+    "stopped": "停止しました"
+  },
+  "chain": {
+    "default": "デフォルト（保存済みの最適キー、なければ無料ローカルルーター）",
+    "route": "ルート",
+    "edit": "ノードで編集",
+    "editTooltip": "ノードキャンバスでエージェントフローを編集"
+  },
+  "folder": {
+    "renameError": "名前変更: {{error}}",
+    "deleteConfirm": "「{{label}}」を削除?これは永続的です。",
+    "deleteOk": "削除",
+    "deleteError": "削除: {{error}}",
+    "showPanel": "ファイルパネルを表示",
+    "files": "ファイル",
+    "back": "戻る",
+    "forward": "進む",
+    "up": "上へ",
+    "newFile": "新規ファイル",
+    "newFolder": "新規フォルダー",
+    "hidePanel": "パネルを非表示",
+    "newFileHeader": "新規ファイル",
+    "newFolderHeader": "新規フォルダー",
+    "fileNamePlaceholder": "name.ext",
+    "folderNamePlaceholder": "フォルダー名",
+    "create": "作成",
+    "cancel": "キャンセル",
+    "loading": "読み込み中…",
+    "empty": "(空 — 右クリックで作成)",
+    "open": "開く",
+    "preview": "プレビュー",
+    "previewInPanel": "パネルでプレビュー",
+    "rename": "名前変更",
+    "delete": "削除"
+  },
+  "fusion": {
+    "panel": "フュージョンパネル",
+    "planPanel": "フュージョンプランパネル",
+    "answered": "{{ok}}/{{total}} 回答済み",
+    "rerun": "再実行",
+    "rerunTitle": "{{model}} を再実行",
+    "judge": "ジャッジ",
+    "label": "Fusion",
+    "on": "Fusion オン",
+    "titleOn": "Fusion オン — エージェントは実行前にモデルパネル（fuse_plan）に相談し、計画を統合します",
+    "titleOff": "Fusion — 計画（fuse_plan）や難しい判断（consult_panel）でモデルパネルに相談させます"
+  },
+  "checkpoint": {
+    "revert": "元に戻す",
+    "revertTooltip": "エージェントのファイル変更を取り消し — この実行前のスナップショットにワークスペースを戻します",
+    "reverted": "エージェントの変更を元に戻しました。",
+    "revertFailed": "元に戻せませんでした。"
+  },
+  "codexChip": {
+    "installing": "インストール中…",
+    "loggingIn": "ログイン中…",
+    "titleLoading": "Codex エージェントを確認中…",
+    "titleInstall": "Codex エージェント（OpenAI Codex CLI）をインストール — CODE エージェントがサブタスクを委任できます",
+    "titleLogin": "Codex はインストール済みですが未ログインです — クリックでブラウザの ChatGPT ログインを開きます",
+    "titleOn": "Codex エージェントは ON — CODE エージェントがサブタスクを委任でき、@codex で始まるメッセージを送ると Codex と直接会話できます。クリックで OFF。",
+    "titleOff": "Codex エージェントは OFF — 委任なし。クリックで ON。直接チャット：メッセージを @codex で始めてください。"
+  },
+  "codexCard": {
+    "write": "書き込み",
+    "readOnly": "読み取り専用",
+    "writeTitle": "Codex はワークスペース書き込み可能なサンドボックスで実行されました（ファイルを変更できます）",
+    "readOnlyTitle": "Codex は読み取り専用で実行されました（ファイルは変更できません）",
+    "task": "タスク",
+    "output": "出力",
+    "partial": "部分的な出力",
+    "error": "エラー",
+    "steps": "ステップ",
+    "stepsCount": "{{count}} ステップ",
+    "files": "ファイル",
+    "failed": "失敗",
+    "session": "セッション {{id}}",
+    "resumed": "再開 {{id}}",
+    "model": "モデル {{model}}",
+    "runningTitle": "Codex がこのタスクを実行中…",
+    "runningPlaceholder": "Codex に委任しました — ワーカーの応答を待っています…",
+    "progress": "進捗",
+    "progressEarlier": "+{{count}} 件は上に"
+  },
+  "codexReview": {
+    "review": "レビュー",
+    "claim": "レビュー対象の主張",
+    "focus": "重点",
+    "filesRequested": "ファイル",
+    "findingsCount": "指摘 {{count}} 件",
+    "holds": "問題なし",
+    "holdsTitle": "レビュアーは主張を覆そうとしましたが、覆せませんでした",
+    "reviewed": "レビュー済み",
+    "notes": "レビュアーのメモ",
+    "runningTitle": "Codex がこの作業をレビュー中…",
+    "runningPlaceholder": "Codex レビュアーに送信しました — 指摘を待っています…"
+  },
+  "starters": {
+    "auditLabel": "このフォルダーを監査",
+    "auditDesc": "PLAN モード、読み取り専用 — エージェントがコードをマップしてレポート。承認は不要。",
+    "auditCta": "フォルダーを選択 ▸",
+    "auditPrompt": "このコードベースを監査して：アーキテクチャをマップし、上位3つのリスクを指摘し、3つのクイックウィンを提案して。何も変更しないこと。"
+  },
+  "advanced": {
+    "label": "詳細",
+    "summaryTooltip": "現在のルート — クリックで「詳細」を開く",
+    "toggleTooltip": "エージェント、プロバイダー、思考、Fusion、ロール、ワークフロー — フルコックピット",
+    "workflowLabel": "ワークフロー"
+  },
+  "trust": {
+    "safe": "安全",
+    "safeHint": "ファイル書き込み・シェルコマンド・外部ツールのたびに毎回確認",
+    "standard": "標準",
+    "standardHint": "読み取りとワークスペース内の書き込みは自由に実行。シェルと外部ツールは確認",
+    "auto": "自動",
+    "autoHint": "非破壊的なシェルコマンドも確認なしで実行 — 破壊的なものは引き続き確認"
+  },
+  "reconnect": {
+    "retrying": "接続が切断されました — 再試行 {{attempt}}/{{max}}",
+    "nextIn": "次は {{seconds}} 秒後",
+    "reason": "原因: {{reason}}"
+  },
+  "loop": {
+    "cycle": "ループ {{iteration}}/{{cap}}",
+    "stop": "ループを停止",
+    "stopping": "停止中…",
+    "stopHint": "このサイクルを終えてからループを停止",
+    "goal": "ループの目標: {{goal}}"
+  },
+  "queue": {
+    "placeholder": "実行中 — Enter でメッセージをキューに追加し、終了後に送信します",
+    "label": "キュー {{n}}",
+    "labelHint": "現在の実行が終わると自動で 1 件ずつ送信されます。各メッセージはその時点の設定を使います。テキストのみ — 添付はキューに入りません。",
+    "paused": "キュー一時停止 · {{n}}",
+    "pausedHint": "実行が停止または失敗したため、自動送信はされません。「再開」で最も古いメッセージを次のターンとして送信します。",
+    "resume": "再開",
+    "resumeHint": "自動送信を再開 — 最も古いキューのメッセージを次のターンで送ります",
+    "button": "キューに追加",
+    "buttonHint": "このメッセージをキューに追加 — 現在の実行が終わったら送信されます",
+    "remove": "キューから削除",
+    "full": "キューが満杯です（{{cap}}）— まず 1 件削除してください。"
+  },
+  "reset": {
+    "button": "リセット",
+    "tooltip": "このターンをリセット — チャット・コード・両方",
+    "chat": "チャットをリセット",
+    "chatHint": "このターンと以降をすべて破棄します。ファイルは変更しません。",
+    "code": "コードをリセット",
+    "codeHint": "ファイルをこのターン開始前の状態に戻します。",
+    "both": "両方をリセット",
+    "bothHint": "ファイルを戻してから、ここ以降の履歴を破棄します。",
+    "blocked": {
+      "running": "実行中です — 先に停止してください。",
+      "archive": "アーカイブ済みセッションを表示しています。",
+      "harness": "このハーネスはファイルスナップショットを取りません。",
+      "not-taken": "このターンではファイルスナップショットが取られていません。",
+      "aged-out": "このスナップショットはチェックポイント履歴から外れました。"
+    },
+    "confirmTitle": "ターンをリセット",
+    "confirmChat": "このターンと以降のメッセージをすべて破棄しますか？ファイルは変更されません。",
+    "confirmCode": "ワークスペースのファイルをこのターン開始前の状態に戻しますか？以降の変更は上書きされます。",
+    "confirmBoth": "ファイルを戻し、さらにこのターンと以降をすべて破棄しますか？",
+    "codeRestored": "ファイルをこのターン開始前の状態に戻しました。",
+    "codeFailed": "復元に失敗しました — ファイルは変更されていません。",
+    "noCheckpoint": "このターンのファイルスナップショットはありません。",
+    "undo": "このリセットを取り消す",
+    "undone": "リセットを取り消しました。",
+    "undoFailed": "リセットを取り消せませんでした。"
+  },
+  "fileChips": {
+    "enlarge": "クリックで拡大",
+    "shrink": "クリックで縮小"
+  }
+}

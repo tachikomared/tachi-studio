@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "local",
+    "free": "nube gratuita",
+    "unknown": "precio desconocido"
+  },
+  "repair": {
+    "title": "El flujo necesita configuración",
+    "summary_one": "Este flujo hace referencia a 1 elemento que aún no está listo.",
+    "summary_other": "Este flujo hace referencia a {{count}} elementos que aún no están listos.",
+    "openAnyway": "Abrir de todos modos",
+    "openAnywayTitle": "Descartar para este flujo — abrirlo tal cual",
+    "persistFailedTitle": "No se guarda",
+    "persistFailed": "Los cambios del lienzo NO se están guardando — exporta tu flujo.",
+    "fix": {
+      "providers": "Añadir clave",
+      "catalog": "Abrir catálogo",
+      "settings": "Abrir ajustes",
+      "skills": "Abrir habilidades",
+      "pickFolder": "Elegir carpeta",
+      "generic": "Corregir"
+    },
+    "problem": {
+      "providerKey": "Sin conexión — añade la clave API de este proveedor para ejecutarlo.",
+      "localModel": "El modelo local «{{model}}» no está descargado.",
+      "engineOff": "El modelo «{{model}}» está descargado, pero el motor local no lo está ejecutando.",
+      "folderEmpty": "Aún no se ha elegido una carpeta — elige una para dar un espacio de trabajo al agente.",
+      "folderMissing": "Carpeta no encontrada en este equipo: {{path}}",
+      "skillMissing": "La habilidad «{{skill}}» no está instalada.",
+      "codexMissing": "Codex aún no está instalado.",
+      "segmentLength": "La escena encadenada pide {{frames}} fotogramas: el vídeo encadenado se limita a {{cap}} (~5 s) por escena y esta se recortará. Añade otra escena en vez de alargarla.",
+      "rifeNoInput": "A este nodo de interpolación no hay conectado nada que pueda producir un vídeo: conecta un nodo de vídeo, su tarjeta de resultado u otro nodo de interpolación.",
+      "rifeMissing": "El motor de interpolación de fotogramas no está instalado. Instálalo en el propio nodo: es una descarga única y el botón indica el tamaño.",
+      "generic": "Necesita configuración antes de ejecutar este flujo."
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "Eliminar nodo",
+    "toggleMain": "Alternar salida principal"
+  },
+  "unknownNode": {
+    "title": "Nodo desconocido",
+    "originalTypeLabel": "Tipo original",
+    "hint": "Este tipo de nodo no está registrado en esta compilación. Sus datos se conservan y se omite al ejecutar el flujo."
+  },
+  "agentNode": {
+    "mainSet": "Marcar como la salida principal (final)",
+    "mainUnset": "Esta es la salida principal/final — haz clic para desestablecer",
+    "modelFromUpstream": "modelo ← proveedor upstream",
+    "instructionsLabel": "Instrucciones (opcional · @ para referencias)",
+    "instructionsPlaceholder": "¿Quién es este agente? p. ej. 'Eres un revisor de código estricto.' Escribe @ para referenciar un nodo upstream.",
+    "runTitle": "Ejecutar solo este agente usando salidas upstream",
+    "empty": "(el agente no produjo texto)"
+  },
+  "promptNode": {
+    "mainSet": "Marcar como la salida principal (final)",
+    "mainUnset": "Salida final — haz clic para desestablecer",
+    "providerLabel": "Proveedor",
+    "modelLabel": "Modelo",
+    "visionSuffix": " · visión",
+    "noLocalModels": "Sin modelos locales — descarga uno en Estado → llama.cpp.",
+    "modelIdPlaceholder": "id de modelo",
+    "instructionLabel": "Instrucción (@ para referencias)",
+    "instructionPlaceholder": "p. ej. 'Escribe un prompt de generación de imagen vívido y detallado para: una ciudad de neón en la noche.' Escribe @ para integrar un nodo upstream.",
+    "visionWarning": "VISIÓN ▸ imagen conectada, pero este modelo no puede leer imágenes — elige un modelo de visión (Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…) para usarla.",
+    "runTitle": "Ejecutar este nodo de prompt — generar el texto de prompt",
+    "empty": "(aún no se generó ningún prompt)",
+    "library": "{ } biblioteca",
+    "libraryTitle": "Insertar una plantilla de la biblioteca de prompts"
+  },
+  "folderNode": {
+    "header": "carpeta · espacio de trabajo",
+    "noFolder": "ninguna carpeta elegida",
+    "pickTitle": "Elige la carpeta del espacio de trabajo",
+    "change": "Cambiar carpeta",
+    "choose": "Elegir carpeta",
+    "hint": "los agentes conectados aquí pueden leer/escribir archivos (según el Rol que otorgues), aislados a esta carpeta."
+  },
+  "internetNode": {
+    "grants": "otorga: web_fetch(url)",
+    "hint": "los agentes conectados aquí pueden obtener URLs públicas. Bloqueado en PRIVATE MODE."
+  },
+  "mcpNode": {
+    "urlPlaceholder": "en blanco = servidor integrado",
+    "hint": "los agentes conectados aquí obtienen las herramientas de este servidor MCP. Restringido a la lista segura en PRIVATE MODE."
+  },
+  "textNode": {
+    "label": "Texto — el tema / breve",
+    "placeholder": "¿De qué debería ser el prompt? p. ej. 'Publicidad $TACHI — brutalista de neón, viral, bombo criptográfico.' Referencia aguas abajo con @ o conéctalo a un nodo Prompt / Media.",
+    "hintBefore": "Salida = este texto. Referencia desde otro nodo con ",
+    "hintAfter": ", o conéctalo a un nodo Prompt / Media."
+  },
+  "noteNode": {
+    "badge": "NOTA",
+    "placeholder": "Nota adhesiva: apunta una etiqueta, una tarea o contexto. No forma parte de la ejecución.",
+    "cycleColor": "Cambiar color",
+    "anchor": "Ancla {{count}} nodo(s) — se mueven con esta nota",
+    "dragHint": "Arrastrar mueve también los nodos dentro de la nota. Mantén Alt para mover solo la nota."
+  },
+  "subflowNode": {
+    "badge": "Subflujo",
+    "labelPlaceholder": "Subflujo",
+    "labelAria": "Nombre del subflujo",
+    "count": "{{n}} nodos",
+    "expand": "Expandir",
+    "expandTitle": "Expandir — restaurar los nodos colapsados y sus conexiones",
+    "hint": "Grupo colapsado. Los nodos ocultos siguen ejecutándose con el flujo."
+  },
+  "imageRefNode": {
+    "tooLarge": "Imagen demasiado grande ({{size}} MB, máx 12).",
+    "readError": "No se pudo leer el archivo.",
+    "label": "Imagen de referencia (fotograma de inicio / referencia de estilo)",
+    "altFallback": "referencia",
+    "replace": "Reemplazar imagen…",
+    "choose": "Elegir imagen…",
+    "removeImage": "Eliminar imagen",
+    "clear": "Limpiar",
+    "hint1": "Conecta a un nodo ",
+    "hintVideoImage": "Video / Imagen",
+    "hint2": " = su imagen de referencia (fotograma de inicio de imagen a video). Conecta a un nodo ",
+    "hint3": " = el modelo de texto LO VE (visión) y escribe sobre esto. Necesita un modelo capaz de visión."
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ salida",
+    "titlePlain": "salida",
+    "regen": "↻ REGEN",
+    "regenTitle": "Regenerar — re-ejecutar el nodo fuente",
+    "regenAria": "Regenerar",
+    "deleteResult": "Eliminar resultado",
+    "noOutput": "(sin salida)",
+    "branchHint": "Rama ▸ conecta un nuevo nodo Prompt / Media de este resultado para continuar la cadena.",
+    "pin": "FIJAR",
+    "pinned": "▪ FIJADO",
+    "pinTitle": "Fija este resultado — Ejecutar todo lo reutiliza en lugar de volver a ejecutar (y volver a pagar) el nodo",
+    "unpinTitle": "Desfijar — Ejecutar todo volverá a ejecutar este nodo",
+    "pinnedChip": "FIJADO — EJECUTAR TODO LO REUTILIZA",
+    "costTitle": "Costo estimado de la última ejecución de este nodo (cálculo de tokens chars/4 con las tarifas del modelo conectado)",
+    "followUp": "Seguimiento",
+    "followUpLabel": "Seguimiento",
+    "followUpTitle": "Ramifica un agente de seguimiento desde este resultado — lee esta salida como su contexto",
+    "variantTitle": "Variante {{n}} de la multiplicación — una de varias ejecuciones hermanas del nodo de origen"
+  },
+  "mediaNode": {
+    "noLocalVoices": "Sin voces locales — descarga una en Media → Local.",
+    "installPiper": "Instala piper + descarga una voz en Media → Local.",
+    "noLocalModels": "Sin modelos locales {{kind}} — descarga uno en Media → Local.",
+    "installSdCpp": "Instala sd.cpp + descarga un modelo en Media → Local.",
+    "providerLabel": "Proveedor",
+    "providerLocal": "Local",
+    "modelLabel": "Modelo",
+    "staleModel": "{{id}} (no instalado)",
+    "noModels": "Sin modelos — agrega una clave de Surplus + financia USDC.",
+    "noModelsErr": "Sin modelos ({{error}})",
+    "promptLabel": "Prompt",
+    "promptWired1": "El prompt está conectado desde un nodo upstream — su salida se usa como el prompt. Desconecta el enchufe ",
+    "promptWired2": " para escribir uno aquí.",
+    "promptLabelRef": "Prompt (@ para referenciar un nodo upstream)",
+    "promptPlaceholder": "describe qué generar… (o conecta un nodo Prompt en el enchufe de prompt)",
+    "imageWired1": "La imagen de referencia está conectada desde un nodo upstream — su imagen se usa. Desconecta el enchufe ",
+    "imageWired2": " para elegir una aquí.",
+    "required": "Requerido:",
+    "runTitle": "Generar usando el prompt y parámetros de este nodo",
+    "perfPreset": "Rendimiento",
+    "perfPresetPlaceholder": "— nivel —",
+    "stylePreset": "Estilo"
+  },
+  "resultCard": {
+    "collapse": "Contraer tarjeta de resultado",
+    "expand": "Expandir tarjeta de resultado",
+    "toggleAria": "Alternar tarjeta de resultado: {{title}}"
+  },
+  "runUI": {
+    "runDefault": "Ejecutar solo este nodo",
+    "run": "Ejecutar",
+    "running": "Ejecutando…",
+    "pin": "ANCLAR",
+    "pinned": "ANCLAR ●",
+    "pinTitle": "Anclar esta salida como referencia fija para nodos aguas abajo",
+    "pinnedTitle": "Anclado: las ejecuciones aguas abajo reutilizan esta salida sin re-ejecutar. Haz clic para desanclar.",
+    "clearTitle": "Limpiar la salida almacenada en caché de este nodo",
+    "clearAria": "Limpiar salida",
+    "clearBusyTitle": "No se puede limpiar mientras este nodo está en ejecución — detén la ejecución primero",
+    "noOutput": "(sin salida)",
+    "generatedAlt": "generado",
+    "toDesignAudio": "→ audio de Design",
+    "toDesignAudioTitle": "Copiar este clip al audio de Design — las animaciones pueden usarlo vía staticFile()",
+    "toDesignAudioDone": "Guardado en audio de Design: {{file}}",
+    "retry": "REINTENTO {{attempt}}/{{attempts}}",
+    "fanoutTitle": "Multiplicar ×{{count}} — RUN ejecuta este nodo {{count}} veces en tarjetas de resultado separadas. Haz clic para cambiar (×1 · ×2 · ×4).",
+    "fanoutAria": "Multiplicar ×{{count}}",
+    "fanoutRunning": "RUN {{current}}/{{total}}",
+    "fanoutStop": "PARAR",
+    "fanoutStopTitle": "Detener la multiplicación tras terminar la variante actual",
+    "stopRun": "PARAR",
+    "stopRunTitle": "Detener esta generación: finaliza ahora el proceso del motor local",
+    "statusDone": "{{title}}: ejecución finalizada",
+    "statusError": "{{title}}: ejecución fallida"
+  },
+  "quickAdd": {
+    "addConnected": "Agregar un nodo conectado",
+    "menuAria": "Agregar nodo conectado",
+    "header": "Agregar + conectar"
+  },
+  "referenceField": {
+    "placeholder": "Escribe, o @ para referenciar un nodo upstream…",
+    "resolvesTo": "Se resuelve a",
+    "empty": "(vacío — los nodos upstream aún no tienen salida)"
+  },
+  "edgeSidecar": {
+    "placeholder": "Instrucción de borde…",
+    "hint": "Intro para guardar · Esc para cancelar"
+  },
+  "edge": {
+    "removeConnection": "Eliminar conexión",
+    "editLabel": "Editar etiqueta de borde"
+  },
+  "paneMenu": {
+    "aria": "Menú contextual del lienzo",
+    "tidyUp": "Ordenar",
+    "tidyUpTitle": "Reorganizar automáticamente todos los nodos con diseño en capas ELK",
+    "addNode": "Agregar nodo…",
+    "addNodeTitle": "Agregar rápidamente un nodo en esta posición",
+    "kindAgent": "Agente",
+    "kindPrompt": "Prompt",
+    "kindText": "Texto",
+    "kindMedia": "Imagen (Media)",
+    "kindProvider": "Proveedor"
+  },
+  "group": {
+    "toSubflow": "Agrupar → Subflujo",
+    "title": "Colapsar los {{n}} nodos seleccionados en un subflujo"
+  },
+  "merge": {
+    "toFollowUp": "Fusionar → Seguimiento",
+    "title": "Fusiona los {{n}} resultados seleccionados en un agente de seguimiento que los sintetiza",
+    "label": "Fusionar",
+    "systemPrompt": "Sintetiza los resultados anteriores en una sola respuesta."
+  },
+  "nodeMenu": {
+    "aria": "Menú contextual del nodo",
+    "group": "Agrupar en subflujo",
+    "duplicate": "Duplicar",
+    "delete": "Eliminar"
+  },
+  "emptyCanvas": {
+    "title": "Lienzo vacío",
+    "addNode": "Haz clic en una plantilla en la paleta para agregar un nodo.",
+    "connect": "Arrastra controladores para conectar nodos.",
+    "delete": "Pasa el mouse sobre un nodo y haz clic × para eliminar, o selecciona + presiona Supr / Retroceso.",
+    "starters": "…o empieza desde una plantilla"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "Investigación multiagente",
+        "description": "El Investigador reúne datos, el Analista los destila y el Redactor produce el informe final. Gratis — sin clave."
+      },
+      "brainstorm-decide": {
+        "label": "Idear y decidir",
+        "description": "El Optimista lanza ideas, el Escéptico las pone a prueba y el Decisor se compromete con un plan. Gratis — sin clave."
+      },
+      "prompt-to-image": {
+        "label": "Prompt → Imagen",
+        "description": "Un modelo de texto gratuito escribe un prompt de imagen vívido y alimenta un nodo de Imagen. Escribe tu idea y ejecuta."
+      },
+      "compare-two-models": {
+        "label": "Comparar dos modelos",
+        "description": "Una pregunta, dos modelos responden lado a lado y un juez elige al ganador. El modelo B es Bankr/Claude por defecto."
+      },
+      "rag-over-folder": {
+        "label": "RAG sobre una carpeta",
+        "description": "Elige una carpeta y haz preguntas — el agente busca en tus archivos y responde con citas. Requiere una clave de Bankr."
+      },
+      "summarize-url": {
+        "label": "Resumir una URL",
+        "description": "Pega un enlace en el nodo de Texto — un agente con acceso web obtiene la página y la resume. Requiere una clave de Bankr."
+      },
+      "geo-audit": {
+        "label": "Auditoría GEO (optimización para motores de respuesta)",
+        "description": "Pega una página y las preguntas que quieres ganar: el flujo simula cómo la usaría un motor de respuestas, la califica y enumera las correcciones. Gratis, sin clave."
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio (multiproveedor · debate → imagen + vídeo)",
+      "description": "Un equipo creativo que DEBATE y luego crea. Un agente en Bankr propone una idea, un agente en OpenGateway la critica, un agente en Surplus decide — luego un nodo Prompt escribe el prompt de imagen (Surplus image) y un Scenarist guioniza un vídeo (Surplus video). Distintos proveedores, modelos, herramientas MCP/web y permisos por agente. Requiere claves de Bankr + OpenGateway + Surplus (con clave Surplus con saldo para los medios). Tablero de demostración / pruebas."
+    },
+    "storyboard": {
+      "label": "Storyboard (escenas encadenadas · local)",
+      "description": "Escenas encadenadas: una imagen fija abre la historia, la escena 1 la anima, y la escena 2 empieza desde el ÚLTIMO FOTOGRAMA de la escena 1 — la app extrae ese fotograma por ti. Escribe tu premisa, elige tus modelos locales y pulsa Run flow. Límites honestos: cada escena es un render aparte de ~5 s con un recorrido completo por píxeles, así que el desvío de color e identidad se acumula al crecer la cadena, y cada escena paga su propia carga de modelo. Piénsalo como un storyboard de unas pocas escenas, no una película larga."
+    },
+    "prompt-to-image": {
+      "label": "Prompt → Imagen",
+      "description": "Un modelo de texto gratuito redacta un prompt de imagen vívido y lo pasa a un nodo Imagen. Escribe tu idea en el nodo Prompt, ejecútalo y luego ejecuta el nodo Imagen (necesita una clave Surplus)."
+    },
+    "viral-video": {
+      "label": "Prompt → Viral → Vídeo",
+      "description": "Concept writer redacta una idea, un Viral rewriter la convierte en un prompt de texto a vídeo dinámico, que alimenta un nodo Vídeo. Redactar es gratis; generar el vídeo necesita una clave Surplus."
+    },
+    "improve-prompt-image": {
+      "label": "Mejorar prompt → Imagen",
+      "description": "Pega un prompt de imagen tosco en el nodo Prompt — un modelo de texto gratuito lo pule y alimenta un nodo Imagen. Ejecuta el nodo Prompt y luego el nodo Imagen."
+    },
+    "expert-roundtable": {
+      "label": "Mesa redonda de expertos (chat multiagente)",
+      "description": "Los expertos de Frontend, Backend y SEO opinan por turnos — cada uno construye sobre el anterior — y luego el CEO sintetiza el plan. Edita las Instructions de cada agente para personalizar su personaje, o pulsa «Add expert». Abre «Chat with flow» para hablar con el equipo."
+    },
+    "code-helper": {
+      "label": "Ayudante de código (archivos)",
+      "description": "Un agente (Bankr/Claude) que lee y escribe archivos en una carpeta que elijas. Elige una carpeta y ejecuta."
+    },
+    "build-review": {
+      "label": "Build & Review (archivos, multiagente)",
+      "description": "Builder (Bankr/Claude) escribe archivos en tu carpeta, y luego Reviewer los revisa. Elige una carpeta y ejecuta."
+    },
+    "writer-reviewer": {
+      "label": "Writer a Reviewer",
+      "description": "Writer redacta, Reviewer critica y mejora el resultado."
+    },
+    "research-summarize": {
+      "label": "Research a Summary",
+      "description": "Researcher reúne datos, Summarizer los condensa."
+    },
+    "code-review": {
+      "label": "Code a Review",
+      "description": "Coder escribe el código, Reviewer lo revisa en busca de errores."
+    }
+  },
+  "palette": {
+    "title": "Paleta de Nodos",
+    "searchPlaceholder": "Buscar…",
+    "searchAria": "Buscar paleta",
+    "noMatches": "Sin coincidencias.",
+    "footer": "Arrastra al lienzo o haz clic para insertar.",
+    "dropHint": "Suelta para añadir un nodo",
+    "addNode": "Agregar nodo {{label}}",
+    "addRole": "Agregar nodo de rol {{label}}",
+    "groups": {
+      "providers": "Proveedores",
+      "prompt": "Prompt",
+      "inputs": "Entradas",
+      "agents": "Agentes",
+      "tools": "Herramientas",
+      "media": "Medios",
+      "annotate": "Anotar",
+      "roles": "Roles",
+      "triggers": "Disparadores"
+    },
+    "aria": "Paleta de nodos"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "Revisiones: cada guardado deja una instantánea",
+      "openAria": "Mostrar revisiones",
+      "title": "Revisiones",
+      "loading": "Leyendo el historial…",
+      "empty": "Aún no hay revisiones: al guardar este flujo se crea una instantánea.",
+      "failed": "No se pudieron leer las revisiones: {{error}}",
+      "unreadable": "instantánea ilegible",
+      "identical": "sin cambios",
+      "nodesAdded": "+{{n}} nodos",
+      "nodesRemoved": "-{{n}} nodos",
+      "edgesAdded": "+{{n}} conexiones",
+      "edgesRemoved": "-{{n}} conexiones",
+      "params": "{{n}} parámetros",
+      "justNow": "ahora mismo",
+      "minutesAgo": "hace {{n}} min",
+      "hoursAgo": "hace {{n}} h",
+      "daysAgo": "hace {{n}} d",
+      "size": "{{n}} KB",
+      "restore": "restaurar",
+      "restoreTitle": "Restaurar esta revisión: el estado actual se guarda antes, así que es reversible",
+      "restored": "«{{name}}» restaurado desde una revisión anterior",
+      "restoreFailed": "Error al restaurar: {{error}}"
+    },
+    "scheduleTitle": "Programar este flujo con temporizador",
+    "scheduleAria": "Programar este flujo",
+    "title": "Flujos",
+    "refreshTitle": "Refrescar lista",
+    "refreshAria": "Refrescar",
+    "newTitle": "Guarda el lienzo actual e inicia uno nuevo",
+    "newFlow": "+ Nuevo flujo",
+    "empty": "Sin flujos guardados aún. Construye uno y presiona Guardar, o + Nuevo flujo.",
+    "rename": "ren",
+    "renameTitle": "Renombrar flujo",
+    "confirmDelete": "¿seguro?",
+    "confirmDeleteTitle": "Haz clic de nuevo para confirmar eliminación",
+    "deleteTitle": "Eliminar flujo",
+    "templates": "Plantillas",
+    "import": "⇧ Importar",
+    "importTitle": "Importar un archivo de flujo .tachiflow.json",
+    "importAria": "Importar flujo",
+    "imported": "Se importó \"{{name}}\"",
+    "importFailed": "Error al importar: {{error}}",
+    "notTachiflow": "No es un archivo .tachiflow.json",
+    "unsupportedVersion": "Este .tachiflow.json proviene de una versión más nueva de la app — actualiza TACHI STUDIO para importarlo.",
+    "exportTitle": "Exportar como .tachiflow.json",
+    "exportAria": "Exportar flujo",
+    "exported": "Se exportó {{file}}",
+    "exportFailed": "Error al exportar: {{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "Exportar el lienzo actual como PNG con el flujo incrustado — reimportable",
+    "pngExported": "Exportado {{file}}",
+    "pngExportFailed": "Error al exportar PNG: {{error}}",
+    "pngNoFlow": "No se encontró ningún flujo incrustado en este PNG",
+    "saveFailed": "Error al guardar: {{error}}",
+    "cfaBlocked": "El acceso controlado a carpetas de Windows está bloqueando la escritura en Documentos\\Tachi Studio: permite Tachi Studio en Seguridad de Windows o la aplicación guardará los datos en {{fallback}}",
+    "aria": "Flujos guardados",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "Abrir flujo",
+    "renameAria": "Renombrar flujo",
+    "deleteAria": "Eliminar flujo",
+    "confirmDeleteAria": "Confirmar eliminación"
+  },
+  "config": {
+    "aria": "Configuración de nodo",
+    "header": "Configurar · {{type}}",
+    "close": "Cerrar",
+    "closeEsc": "Cerrar (Esc)",
+    "deleteNode": "Eliminar nodo",
+    "deleteTitle": "Eliminar este nodo y sus bordes",
+    "duplicateNode": "Duplicar nodo",
+    "duplicateTitle": "Clonar este nodo con toda su configuración (Ctrl+D)",
+    "fields": {
+      "label": "Etiqueta",
+      "model": "Modelo",
+      "provider": "Proveedor",
+      "endpoint": "Punto final",
+      "harness": "Agente",
+      "systemPrompt": "Prompt del sistema",
+      "final": "Final (salida principal)",
+      "instruction": "Instrucción",
+      "roleId": "Id de rol",
+      "description": "Descripción",
+      "permissionTier": "Nivel de permiso",
+      "workspacePath": "Ruta del espacio de trabajo",
+      "serverUrl": "URL del servidor",
+      "modality": "Modalidad",
+      "promptTemplate": "Plantilla de prompt",
+      "size": "Tamaño",
+      "count": "Conteo (n)",
+      "voice": "Voz",
+      "format": "Formato",
+      "duration": "Duración (s)",
+      "resolution": "Resolución",
+      "audioPath": "Ruta de audio",
+      "autoSaveDir": "Directorio de guardado automático",
+      "codexAllowWrite": "Permitir escritura (sandbox workspace-write)",
+      "retries": "Reintentos al fallar",
+      "retryDelay": "Retraso de reintento (ms)"
+    },
+    "placeholders": {
+      "nodeLabel": "Etiqueta del nodo",
+      "modelId": "id de modelo",
+      "systemPrompt": "¿Quién es este agente? p. ej. 'Eres un revisor de código estricto.'",
+      "instruction": "Qué tipo de prompt escribir…",
+      "serverUrl": "En blanco = servidor integrado",
+      "surplusModelId": "id de modelo de Surplus",
+      "autoSaveDir": "Carpeta de guardado de fallback"
+    },
+    "hints": {
+      "modelFromProvider": "El modelo viene del nodo Proveedor upstream.",
+      "internet": "Otorga acceso de obtención web a un agente conectado (puerta de política de egreso).",
+      "codexAllowWrite": "Codex puede crear, modificar o eliminar archivos solo dentro de la carpeta conectada. Desactivado = análisis de solo lectura.",
+      "codexWriteNeedsFolder": "Conecta un nodo Carpeta para habilitar el modo de escritura: apunta a esa carpeta, nunca a todo el almacenamiento de la app.",
+      "retries": "Vuelve a ejecutar este nodo hasta 3 veces si falla. 0 = desactivado. Solo el fallo final registra el error o alimenta una rama de error.",
+      "retryDelay": "Espera este tiempo entre intentos."
+    },
+    "sections": {
+      "input": "Entrada",
+      "params": "Parámetros",
+      "output": "Salida"
+    },
+    "io": {
+      "noInputs": "Sin entradas conectadas",
+      "inputEmpty": "— aún sin salida",
+      "noOutput": "Sin ejecutar aún",
+      "showMore": "Mostrar más",
+      "showLess": "Mostrar menos",
+      "statusOk": "OK",
+      "statusError": "Falló",
+      "statusIdle": "Sin ejecutar",
+      "errorLabel": "Error",
+      "costTitle": "Coste estimado de la última ejecución de este nodo (cálculo de caracteres/4 sobre las tarifas del modelo conectado)"
+    },
+    "retries": {
+      "decrease": "Menos reintentos",
+      "increase": "Más reintentos"
+    }
+  },
+  "blueprint": {
+    "title": "Importar plan",
+    "close": "Cerrar",
+    "description": "Pega markdown con pasos numerados. Cada paso se convierte en un nodo de agente (etiqueta = título, prompt del sistema = cuerpo), conectados de arriba a abajo en una cadena.",
+    "placeholder": "Pega un plan numerado, p. ej.\n\n1. Investigar\nRecopila fuentes sobre el tema y resume los hechos clave.\n\n2. Borrador\nEscribe un primer borrador de la investigación anterior.\n\n3. Revisar\nCrítica el borrador y lista correcciones concretas.",
+    "stepsDetected_one": "{{count}} paso detectado",
+    "stepsDetected_other": "{{count}} pasos detectados",
+    "noSteps": "No se encontraron pasos numerados. Comienza líneas con \"1.\", \"2)\", etc.",
+    "final": "(final)",
+    "cancel": "Cancelar",
+    "import": "Importar",
+    "importCount": "Importar ({{count}})",
+    "importTitleReady": "Generar la cadena de agente",
+    "importTitleEmpty": "Primero pega pasos numerados"
+  },
+  "howto": {
+    "title": "Cómo construir un flujo de trabajo",
+    "closeAria": "Cerrar walkthrough",
+    "closeTitle": "Cerrar (restaura tu lienzo)",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "restore": "Restaurar mi lienzo",
+    "restoreTitle": "Elimina el ejemplo y devuelve tu lienzo",
+    "keep": "Mantener ejemplo",
+    "keepTitle": "Mantener el ejemplo en el lienzo",
+    "restoreNote": "Tu lienzo se restaura cuando cierres — a menos que elijas \"Mantener ejemplo\".",
+    "steps": {
+      "intro": {
+        "title": "¿Qué es un flujo de trabajo?",
+        "body": "Un flujo de trabajo es una cadena de pasos de IA que conectas en este lienzo — texto, prompts, imágenes, video, música. Construiré un ejemplo simple de dos pasos directamente frente a ti; presiona Siguiente y mira. (Cada paso que ejecutes suelta su resultado como una tarjeta en el lienzo del que puedes ramificar.)"
+      },
+      "provider": {
+        "title": "Paso 1 — Proveedor",
+        "body": "Un Proveedor es de dónde vienen los modelos de IA. Estamos usando el router FreeLLM sin claves — no se necesita clave. Cada agente necesita un proveedor para su \"cerebro\"."
+      },
+      "agent": {
+        "title": "Paso 2 — Agente",
+        "body": "Un Agente hace el trabajo real. Este es el Writer. En el lienzo real agregas nodos de la paleta a la izquierda (arrastra uno)."
+      },
+      "wire": {
+        "title": "Paso 3 — Conecta",
+        "body": "Conecta el Proveedor al Writer arrastrando desde el borde de un nodo al otro. Ahora el Writer tiene un cerebro (su modelo). El cable acaba de aparecer."
+      },
+      "second": {
+        "title": "Paso 4 — Agregar un segundo paso",
+        "body": "Agrega un segundo Agente (Reviewer) y conecta Writer a Reviewer. La etiqueta en ese cable (\"necesita revisión\") es una sugerencia de enrutamiento — le dice al flujo cuándo avanzar. Ahora tienes un flujo de trabajo de 2 pasos."
+      },
+      "run": {
+        "title": "Paso 5 — Ejecutar",
+        "body": "Ese es un flujo de trabajo completo. Haz clic en el botón \"Run flow\" resaltado (brillante ahora), luego \"Run all\" para ejecutar cada nodo en orden. Cada paso suelta una tarjeta de resultado en el lienzo — ramifica un nuevo nodo de cualquier tarjeta para continuar, o presiona Regen de la tarjeta para re-lanzarla."
+      },
+      "beyond": {
+        "title": "Más allá de agentes",
+        "body": "La paleta tiene más: un nodo de Texto (un tema/breve), un nodo de Imagen de Referencia (alimenta un personaje o estilo), nodos Media (imagen, video, música, TTS, STT — a través de Venice o Surplus), y un nodo Prompt que puede VER una imagen conectada (visión). Cualquier proveedor funciona — Venice, Bankr, Ollama, llama.cpp — con etiquetas de capacidad de modelo mostradas en línea. Guarda lienzos en la lista de Flujos a la izquierda y cambia entre ellos como chats."
+      }
+    }
+  },
+  "toolbar": {
+    "title": "Lienzo de Nodos",
+    "howToBuild": "Cómo construir",
+    "howToBuildTitle": "Walkthrough interactivo — construye tu primer flujo de trabajo paso a paso",
+    "templates": "Plantillas ▾",
+    "templatesTitle": "Insertar un flujo de trabajo de ejemplo listo para usar",
+    "council": "Consejo",
+    "councilTitle": "Generar un Consejo: un agente de fuente se ramifica a Escéptico / Pragmatista / Crítico, que alimentan un agente de Síntesis final",
+    "importBlueprint": "Importar plan",
+    "importBlueprintTitle": "Pega markdown con pasos numerados para generar una cadena secuencial de nodos de agente",
+    "flowNamePlaceholder": "Nombre del flujo…",
+    "flowNameAria": "Nombre del flujo",
+    "new": "Nuevo",
+    "newTitle": "Nuevo — descartar flujo actual",
+    "open": "Abrir",
+    "openTitle": "Abrir archivo .tachi-flow.json",
+    "save": "Guardar",
+    "saveTitle": "Guardar flujo como .tachi-flow.json",
+    "clear": "Limpiar",
+    "clearTitle": "Limpiar todos los nodos y bordes",
+    "autoLayout": "Diseño Automático",
+    "layingOut": "Diseñando…",
+    "autoLayoutTitle": "Nodos de diseño automático usando algoritmo en capas ELK",
+    "whiteboard": "Pizarra",
+    "whiteboardTitle": "Alternar la pizarra de bocetos — diagramas y notas a mano alzada en un lienzo aparte; tu flujo queda intacto debajo",
+    "runFlow": "Ejecutar flujo",
+    "runFlowTitle": "Compilar y EJECUTAR este gráfico una vez, luego mostrar el resultado",
+    "addExpert": "+ Agregar experto",
+    "addExpertTitle": "Agregar un nuevo agente de persona y conectarlo a la mesa redonda (antes del nodo CEO/MAIN)",
+    "chatWithFlow": "Chatear con flujo",
+    "chatWithFlowTitle": "Hablar con todo el equipo — cada experto responde y el agente MAIN sintetiza",
+    "openInCode": "Abrir en pestaña Code",
+    "openInCodeTitle": "Enviar este flujo a la pestaña Code como sesión de agente (agente único)",
+    "runInCode": "▸ Ejecutar en chat de Code",
+    "runInCodeTitle": "Guarda este gráfico completo y ejecútalo desde el chat de Code — envía un mensaje allí para ejecutar la red multiagente completa",
+    "nodeCount_one": "{{count}} nodo",
+    "nodeCount_other": "{{count}} nodos",
+    "edgeCount_one": "{{count}} borde",
+    "edgeCount_other": "{{count}} bordes",
+    "templatesMenuAria": "Plantillas iniciales"
+  },
+  "runPanel": {
+    "title": "Ejecutar Flujo",
+    "close": "Cerrar",
+    "initialMessage": "Mensaje inicial (solo modo red)",
+    "initialPlaceholder": "Opcional — deja en blanco para simplemente ejecutar el flujo. Los nodos de Prompt llevan sus propias instrucciones.",
+    "runAll": "▸ Ejecutar todo (en orden)",
+    "runAllTitle": "Ejecutar CADA nodo UNA VEZ, de arriba a abajo en orden de dependencia (Prompt → Prompt → Media). La salida de cada nodo alimenta el siguiente — todo el pipeline con un clic.",
+    "running": "Ejecutando…",
+    "runningStep": "Ejecutando {{step}}/{{total}}{{label}}…",
+    "stop": "■ Detener después del paso actual",
+    "stopTitle": "Detener la ejecución después de que el nodo actual se complete (no hay aborto a mitad de nodo).",
+    "runNetwork": "Ejecutar como una red",
+    "runNetworkTitle": "Alternativa: un paso de red de agente único (los agentes comparten estado — para mesas redondas). Usa el mensaje inicial de arriba. Los Prompt→Prompt encadenados pueden volver vacíos en algunos proveedores.",
+    "idleBefore": "Presiona ",
+    "idleStrong": "▸ Ejecutar todo",
+    "idleAfter": " para ejecutar cada nodo una vez, en orden de dependencia — la salida de cada nodo fluye al siguiente, y el lienzo se llena en directo. (El cuadro de mensaje de abajo solo alimenta el modo opcional \"Ejecutar como una red\".)",
+    "runningNode": "Ejecutando nodo {{step}} de {{total}}{{label}}… (mira el lienzo — cada nodo se llena al terminar)",
+    "runningFlow": "Ejecutando flujo…",
+    "runFailed": "Error en ejecución",
+    "noAgentOutput": "El flujo se ejecutó pero no produjo salida de agente.",
+    "step": "Paso {{n}} · {{agent}}",
+    "finalSuffix": " (final)",
+    "noTextOutput": "(sin salida de texto)",
+    "finalAnswer": "Respuesta final",
+    "empty": "(vacío)",
+    "budgetLabel": "Tope de presupuesto $",
+    "budgetOff": "sin tope",
+    "budgetTitle": "Detiene la ejecución antes de que el gasto estimado supere esta cantidad de dólares. Vacío = sin tope. Las estimaciones usan las tarifas del modelo conectado de cada nodo; los modelos locales son gratis.",
+    "retrySuffix": " · reintento {{attempt}}/{{attempts}}",
+    "aria": "Ejecutar flujo",
+    "doneAria": "Ejecución finalizada"
+  },
+  "chatPanel": {
+    "title": "Chatear con flujo",
+    "clear": "Limpiar",
+    "clearTitle": "Limpiar conversación",
+    "close": "Cerrar",
+    "empty": "Envía un mensaje — cada experto en el flujo pesa (cada uno se basa en el anterior), y el agente MAIN sintetiza la decisión. Se muestran todos los argumentos; la conversación se recuerda entre turnos. Consejo: carga la plantilla \"Mesa redonda de expertos\" o haz clic en \"+ Agregar experto\", y marca un nodo \"MAIN\" para elegir quién sintetiza.",
+    "you": "Tú",
+    "error": "Error",
+    "flow": "Flujo",
+    "roundtable": "Mesa redonda del equipo",
+    "decisionSuffix": " · decisión",
+    "noOutput": "(sin salida)",
+    "thinking": "El flujo está pensando…",
+    "inputPlaceholder": "Mensaje al flujo… (Cmd/Ctrl+Intro para enviar)",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "aria": "Chatear con flujo"
+  },
+  "media": {
+    "output": "Salida de medios",
+    "failed": "Falló.",
+    "noTranscript": "(sin transcripción)",
+    "noArtifact": "Hecho — sin artefacto devuelto.",
+    "generatedAlt": "generado",
+    "modalities": {
+      "image": "imagen",
+      "video": "video",
+      "music": "música",
+      "speech": "habla",
+      "transcript": "transcripción"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "El IPC de ejecución del gráfico no está disponible.",
+      "nothingToRun": "Nada que ejecutar — agrega un nodo Prompt, Agent o Media.",
+      "cycle": "Ciclo detectado en el grafo — no se puede ejecutar en orden. Nodos implicados: {{nodes}}"
+    },
+    "errorPrefix": "error",
+    "budgetStop": "Detenido: el gasto estimado ~${{spent}} alcanzó el tope de presupuesto de ${{cap}}. Sube o quita el tope en el panel de ejecución para continuar.",
+    "skippedNoError": "Omitido: no hay error que manejar",
+    "skippedUpstreamFailed": "Omitido: falló un nodo anterior"
+  },
+  "chat": {
+    "noOutput": "(sin salida)"
+  },
+  "scheduler": {
+    "addProviderAgent": "Primero agrega un proveedor y un agente.",
+    "needAgent": "El flujo necesita al menos un nodo Agent.",
+    "needProvider": "El flujo necesita al menos un nodo Provider.",
+    "unknownHarness": "El agente \"{{harness}}\" tiene un tipo de agente desconocido — omitido.",
+    "connectEdge": "Conecta un borde Provider → Agent antes de ejecutar."
+  },
+  "confirm": {
+    "discardFlow": "¿Descartar flujo actual e iniciar uno nuevo?",
+    "replaceTemplate": "¿Reemplazar el flujo actual con la plantilla \"{{label}}\"?",
+    "clearAll": "¿Limpiar {{count}} nodos y todos los bordes?"
+  },
+  "toast": {
+    "addProviderFirst": "Primero agrega un nodo Provider, o carga la plantilla \"Mesa redonda de expertos\".",
+    "expertAdded": "Se agregó un experto. Haz clic en él para establecer su nombre + Instrucciones (persona).",
+    "autoLayoutFailed": "Error en diseño automático: {{error}}",
+    "chainsCompiled": "{{count}} cadenas compiladas — aplicando chain[0] a Agent.",
+    "flowLoadedPerm": " · permiso {{permission}}",
+    "flowLoaded": "Flujo cargado → {{harness}} en {{provider}}{{perm}}. Elige un espacio de trabajo para comenzar.",
+    "saved": "Guardado: {{path}}",
+    "saveFailed": "Error al guardar: {{error}}",
+    "unknownError": "error desconocido",
+    "useInCodeFailed": "No se pudo usar en Code: {{error}}",
+    "saveFailedShort": "error al guardar",
+    "activeInCode": "\"{{name}}\" está activo en la pestaña Code — envía un mensaje allí para ejecutar todo el gráfico.",
+    "councilAdded": "Se agregó un Consejo: fuente → Escéptico/Pragmatista/Crítico → Síntesis. Conecta un Proveedor en los agentes para ejecutarlo.",
+    "blueprintImported_one": "Se importó {{count}} paso como cadena de agente. Conecta un Proveedor en el primer agente para ejecutarlo.",
+    "blueprintImported_other": "Se importaron {{count}} pasos como cadena de agente. Conecta un Proveedor en el primer agente para ejecutarlo.",
+    "templateLoaded": "Plantilla cargada \"{{label}}\". Haz clic en Ejecutar flujo para probarla.",
+    "loaded": "Cargado \"{{name}}\"",
+    "openFailed": "Error al abrir: {{error}}",
+    "cleared": "Lienzo limpiado ({{count}} nodos)",
+    "undo": "DESHACER"
+  },
+  "whiteboard": {
+    "loading": "Cargando pizarra…",
+    "saveFailed": "No se pudo guardar la pizarra — el almacenamiento del navegador está lleno. Tu boceto solo estará disponible en esta sesión."
+  },
+  "search": {
+    "placeholder": "Buscar nodo…",
+    "title": "Busca nodos por etiqueta o tipo — Enter salta a la siguiente coincidencia, Shift+Enter a la anterior",
+    "aria": "Buscar nodos"
+  },
+  "errorBranch": {
+    "handleTooltip": "Salida de error: conéctala a un nodo que solo deba ejecutarse si este nodo falla"
+  },
+  "codexWrite": {
+    "consentTitle": "PERMITIR ESCRITURA DE CODEX",
+    "consentMessage": "El agente Codex se ejecutará en modo ESCRITURA. Puede crear, modificar o eliminar archivos solo dentro de estas carpetas:\n\n{{folders}}\n\nNada fuera de ellas se toca. ¿Continuar?",
+    "consentRun": "EJECUTAR",
+    "consentCancel": "CANCELAR"
+  },
+  "canvas": {
+    "aria": "Lienzo de flujo",
+    "undo": "Deshacer",
+    "undoTitle": "Deshacer (Ctrl+Z)",
+    "redo": "Rehacer",
+    "redoTitle": "Rehacer (Ctrl+Shift+Z)"
+  },
+  "webhookNode": {
+    "header": "disparador · {{source}}",
+    "state": {
+      "listening": "ESCUCHANDO",
+      "disarmed": "DESACTIVADO",
+      "server-off": "SERVIDOR APAGADO",
+      "server-down": "SERVIDOR NO LISTO",
+      "error": "ERROR"
+    },
+    "help": {
+      "listening": "Activando…",
+      "disarmed": "Desactivado: el endpoint responde 404 hasta que lo actives.",
+      "server-off": "El servidor API local está apagado. Actívalo en Ajustes → Conexiones → OPENAI API para obtener una URL de webhook.",
+      "server-down": "El servidor API local aún no escucha: arranca un instante después de la app.",
+      "error": "No se pudo activar este disparador."
+    },
+    "arm": "ACTIVAR",
+    "disarm": "DESACTIVAR",
+    "armAria": "Activar este disparador de webhook",
+    "disarmAria": "Desactivar este disparador de webhook",
+    "copyUrl": "COPIAR URL",
+    "copied": "COPIADO",
+    "copyUrlAria": "Copiar la URL del webhook, secreto incluido",
+    "rotate": "NUEVO SECRETO",
+    "rotateAria": "Generar un secreto nuevo: la URL que copiaste antes deja de funcionar",
+    "autoRun": "Ejecutar el flujo cuando llegue una alerta",
+    "lastAlert": "Última: {{summary}} ({{count}} en esta sesión)",
+    "noAlerts": "Aún no hay alertas.",
+    "loopbackHint": "Esta URL es local (127.0.0.1). Los servidores de TradingView no pueden alcanzarla: haz el POST desde esta máquina o expónla con un túnel propio.",
+    "signalOnly": "Solo señal entrante: la alerta se convierte en texto. Este nodo nunca ejecuta operaciones."
+  },
+  "rifeNode": {
+    "header": "rife · interpolación",
+    "multiplierLabel": "Factor",
+    "multiplierTitle": "Fotogramas por fotograma de origen — ×2 o ×4, una sola pasada en ambos casos",
+    "sourceLabel": "Clip de origen",
+    "noSource": "No hay nada conectado: conecta un resultado de vídeo al conector video.",
+    "checking": "Comprobando el motor…",
+    "unsupported": "No se publica ninguna versión de RIFE para esta plataforma.",
+    "install": "Instalar motor · {{size}}",
+    "installTitle": "Descarga el motor rife-ncnn-vulkan ({{size}}) una sola vez. Después, la interpolación se ejecuta por completo en tu equipo.",
+    "installing": "Instalando…",
+    "installHint": "Descarga única. No se envía nada a ninguna parte: el motor se ejecuta en este equipo.",
+    "installFailed": "No se pudo instalar el motor.",
+    "runTitle": "Interpolar el clip conectado y guardar un archivo nuevo al lado",
+    "wireHint": "Conecta un resultado de vídeo local al conector video para poder ejecutarlo.",
+    "localHint": "Totalmente local: lee el archivo del disco, calcula en tu GPU y funciona en MODO PRIVADO."
+  }
+}

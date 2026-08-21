@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "Comment utiliser l'onglet Swarm",
+    "step1": {
+      "title": "Ceci est l'onglet Swarm",
+      "body": "Avancé : exécutez PLUSIEURS agents IA sur un référentiel git à la fois. Ils se coordonnent en engageant de petits fichiers d'état dans un dossier .gnap/ — un tableau de tâches partagé, une liste d'agents et un journal des messages à l'intérieur de votre repo."
+    },
+    "step2": {
+      "title": "Commencer un swarm",
+      "body": "Cliquez sur [NOUVEAU SWARM] pour le pointer vers un repo git et faire tourner les agents. Il écrit uniquement à l'intérieur de .gnap/, donc votre code est sûr. Utilisez [OUVRIR EXISTANT] pour vous rattacher à un que vous avez déjà créé."
+    },
+    "step3": {
+      "title": "Ce que vous verrez",
+      "body": "Une fois ouvert, le tableau de bord affiche trois volets : les agents (qui travaille), un tableau kanban (les tâches se déplacent sur les étapes) et un flux en direct de chaque engagement. Il se met à jour au fur et à mesure que les agents travaillent."
+    },
+    "step4": {
+      "title": "Quand l'utiliser",
+      "body": "Swarm est pour le travail parallèle multi-agent sur une base de code — c'est expérimental et plus impliqué que l'onglet Code. Si vous voulez juste un agent, utilisez Code. Rouvrez ceci à partir de « Comment faire »."
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(aucun swarm ouvert)",
+    "loading": "· chargement…"
+  },
+  "actions": {
+    "newSwarm": "[NOUVEAU SWARM]",
+    "openExisting": "[OUVRIR EXISTANT]",
+    "howTo": "[COMMENT FAIRE]",
+    "howToTitle": "Qu'est-ce qu'un swarm ? Faites-moi un tour",
+    "open": "[OUVRIR]",
+    "refresh": "[ACTUALISER]"
+  },
+  "empty": {
+    "title": "AUCUN SWARM OUVERT",
+    "descBefore": "Un swarm est une équipe d'agents IA travaillant ensemble sur un dépôt : ils se répartissent les tâches sur un tableau commun et consignent chaque étape. Toute la coordination vit dans un petit dossier",
+    "descAfter": " — votre code reste intact. Créez un nouveau swarm ou rouvrez-en un.",
+    "pathRequired": "Le chemin est requis",
+    "pathPlaceholder": "…ou tapez un chemin",
+    "recent": "RÉCENT"
+  },
+  "agents": {
+    "header": "AGENTS ({{count}})",
+    "empty": "Aucun agent enregistré pour le moment.",
+    "register": "[ENREGISTRER L'AGENT]",
+    "idPlaceholder": "id (ex. alice)",
+    "namePlaceholder": "nom (optionnel)",
+    "roleLabel": "rôle :",
+    "heartbeatLabel": "hb :",
+    "cancel": "Annuler",
+    "add": "Ajouter",
+    "idRequired": "l'id est requis",
+    "registerFailed": "registerAgent a échoué"
+  },
+  "kanban": {
+    "header": "TÂCHES ({{count}})",
+    "claimed": "[RÉCLAMÉ]",
+    "newTask": "+ NOUVELLE TÂCHE",
+    "titlePlaceholder": "titre",
+    "descPlaceholder": "description (optionnel)",
+    "cancel": "Annuler",
+    "add": "Ajouter",
+    "actionOpen": "OUVRIR",
+    "titleRequired": "le titre est requis",
+    "detail": {
+      "titlePrefix": "TÂCHE ·",
+      "close": "Fermer",
+      "comments": "COMMENTAIRES ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "FLUX",
+    "counts": "{{commits}} commits · {{messages}} msgs",
+    "empty": "Rien pour le moment. Les engagements et les messages apparaîtront ici au fur et à mesure que le swarm fonctionne.",
+    "commit": "engagement",
+    "noSubject": "(pas de sujet)",
+    "moreFiles": "+ {{count}} de plus",
+    "msg": "MSG"
+  },
+  "messaging": {
+    "header": "MESSAGES",
+    "registerPrompt": "Enregistrez les agents pour ouvrir les canaux inter-agents.",
+    "noMessages": "Pas de messages.",
+    "ctxLabel": "ctx :",
+    "unreadTitle_one": "{{count}} message non lu",
+    "unreadTitle_other": "{{count}} messages non lus",
+    "sendTestTitle": "Envoyer un test de passation à {{name}}",
+    "sendTestButton": "[ENVOYER UN TEST DE PASSATION → {{name}}]",
+    "testHandoff": {
+      "task": "Vérifier la différence sur le module touché",
+      "context": "Passé par {{name}}"
+    }
+  },
+  "dialog": {
+    "title": "NOUVEAU SWARM",
+    "descBefore": "Choisissez un référentiel git pour héberger le swarm. Un répertoire",
+    "descAfter": "sera créé (ou réutilisé) à l'intérieur.",
+    "pathPlaceholder": "/chemin/vers/repo",
+    "pick": "[CHOISIR]",
+    "cancel": "ANNULER",
+    "create": "CRÉER",
+    "creating": "CRÉATION...",
+    "pathRequired": "Veuillez choisir ou taper un chemin de répertoire.",
+    "initFailed": "initSwarm a échoué"
+  }
+}

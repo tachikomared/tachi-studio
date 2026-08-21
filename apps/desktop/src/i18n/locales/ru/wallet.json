@@ -1,0 +1,114 @@
+{
+  "header": {
+    "title": "Кошелёк",
+    "subtitle": "МУЛЬТИЦЕПЬ · Приложение (nookplot · x402) + кошельки агентов darksol"
+  },
+  "toast": {
+    "addressCopied": "Адрес скопирован",
+    "backupDownloaded": "Зашифрованная резервная копия загружена",
+    "walletImported": "Кошелёк импортирован",
+    "walletRemoved": "Кошелёк удалён с этого устройства",
+    "agentWalletRemoved": "Кошелёк агента «{{agentName}}» удалён"
+  },
+  "newKey": {
+    "backupNow": "Сделайте резервную копию прямо сейчас — скопируйте только",
+    "address": "Адрес",
+    "privateKey": "Приватный ключ",
+    "done": "Готово — открыть кошелёк"
+  },
+  "empty": {
+    "title": "Нет кошелька ещё",
+    "description": "Ваш кошелёк для приложения — один аккаунт для nookplot, платежей x402 и любой интеграции. Non-custodial: ключ зашифрован в keychain ОС и никогда не покидает это устройство без шифрования.",
+    "creating": "Создание…",
+    "create": "✦ Создать кошелёк",
+    "importKey": "Импортировать приватный ключ",
+    "keyPlaceholder": "0x…",
+    "import": "Импортировать"
+  },
+  "account": {
+    "title": "Аккаунт · {{label}}",
+    "noAddress": "—",
+    "copy": "Копировать"
+  },
+  "balances": {
+    "title": "Балансы",
+    "allNetworks": "· все сети",
+    "networkSuffix": "· {{network}}",
+    "show": "🙈 показать",
+    "hide": "👁 скрыть",
+    "refreshing": "обновление…",
+    "refresh": "↻ обновить"
+  },
+  "backup": {
+    "title": "Зашифрованная резервная копия",
+    "description": "Пароль-зашифрованное хранилище ключей (Web3 Secret Storage — работает с MetaMask/geth). Держите файл + пароль в безопасности; вместе они восстанавливают вашего агента на любой машине.",
+    "password": "Пароль резервной копии (мин 8)",
+    "download": "Загрузить резервную копию"
+  },
+  "switch": {
+    "title": "Переключить кошелёк",
+    "replaceTitle": "Заменить ключ · {{label}}",
+    "warning": "Экспортируйте резервную копию сначала — замена ключа удаляет текущий кошелёк с этого устройства.",
+    "agentName": "Имя кошелька агента",
+    "keyPlaceholder": "Приватный ключ 0x…",
+    "importKey": "Импортировать ключ",
+    "orKeystore": "или keystore JSON + пароль",
+    "keystorePassword": "пароль keystore",
+    "importKeystore": "Импортировать keystore"
+  },
+  "danger": {
+    "title": "Новый / удалить",
+    "generate": "Генерировать новый кошелёк",
+    "forget": "Забыть кошелёк",
+    "forgetNamed": "Забыть {{label}}"
+  },
+  "switcher": {
+    "account": "аккаунт",
+    "activeSuffix": " ·активный",
+    "new": "+ Новый",
+    "newPrompt": "Новое имя кошелька агента darksol:",
+    "newTitle": "Новый кошелёк агента",
+    "newPlaceholder": "напр. trading-bot",
+    "newOk": "Создать",
+    "newCancel": "Отмена"
+  },
+  "network": {
+    "all": "Все сети"
+  },
+  "send": {
+    "title": "Отправить · любой токен",
+    "token": "Токен",
+    "tokenPlaceholder": "ETH / USDC / 0x…",
+    "recipient": "Получатель",
+    "recipientPlaceholder": "0x… / name.eth",
+    "amount": "Количество",
+    "sending": "Отправка…",
+    "send": "Отправить",
+    "note": "Нативный + любой ERC-20 на выбранной сети (или вставьте адрес контракта). Кросс-цепь → используйте агента darksol (LI.FI).",
+    "toast": {
+      "success": "Отправлено — {{hash}}…"
+    }
+  },
+  "funding": {
+    "title": "Финансирование · Приложение → {{agentName}}",
+    "amount": "Количество (нативный)",
+    "moving": "Перемещение…",
+    "move": "Переместить",
+    "note": "Держит ваш баланс NOOK / x402 в кошельке App нетронутым.",
+    "toast": {
+      "success": "Финансировано — {{hash}}…"
+    }
+  },
+  "limits": {
+    "title": "Лимиты агента · подписант агента darksol",
+    "maxPerTrade": "Макс / торговля",
+    "daily": "Ежедневный лимит",
+    "dryRun": "Сухой запуск",
+    "on": "ВКЛ",
+    "off": "ВЫКЛ",
+    "save": "Сохранить лимиты",
+    "toast": {
+      "saved": "Лимиты сохранены"
+    }
+  }
+}

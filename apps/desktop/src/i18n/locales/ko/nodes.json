@@ -1,0 +1,776 @@
+{
+  "costChip": {
+    "local": "로컬",
+    "free": "무료 클라우드",
+    "unknown": "가격 미상"
+  },
+  "repair": {
+    "title": "플로우 설정이 필요합니다",
+    "summary_one": "이 플로우는 아직 준비되지 않은 항목 1개를 참조합니다.",
+    "summary_other": "이 플로우는 아직 준비되지 않은 항목 {{count}}개를 참조합니다.",
+    "openAnyway": "그래도 열기",
+    "openAnywayTitle": "이 플로우에서 숨기기 — 그대로 열기",
+    "persistFailedTitle": "저장되지 않음",
+    "persistFailed": "캔버스 변경 사항이 저장되지 않고 있습니다 — 플로우를 내보내세요.",
+    "fix": {
+      "providers": "키 추가",
+      "catalog": "카탈로그 열기",
+      "settings": "설정 열기",
+      "skills": "스킬 열기",
+      "pickFolder": "폴더 선택",
+      "generic": "수정"
+    },
+    "problem": {
+      "providerKey": "연결되지 않음 — 실행하려면 이 제공자의 API 키를 추가하세요.",
+      "localModel": "로컬 모델 \"{{model}}\"이(가) 다운로드되지 않았습니다.",
+      "engineOff": "모델 \"{{model}}\"은(는) 다운로드되었지만 로컬 엔진이 실행하고 있지 않습니다.",
+      "folderEmpty": "아직 폴더를 선택하지 않았습니다 — 에이전트 작업 폴더를 선택하세요.",
+      "folderMissing": "이 컴퓨터에서 폴더를 찾을 수 없습니다: {{path}}",
+      "skillMissing": "스킬 \"{{skill}}\"이(가) 설치되지 않았습니다.",
+      "codexMissing": "Codex가 아직 설치되지 않았습니다.",
+      "segmentLength": "연결된 장면이 {{frames}} 프레임을 요청했습니다 — 연결 영상은 장면당 {{cap}}(약 5초)이 상한이며 이 장면은 잘립니다. 길게 만들지 말고 장면을 하나 더 추가하세요.",
+      "rifeNoInput": "이 보간 노드에는 영상을 만들 수 있는 것이 아무것도 연결되어 있지 않습니다 — 영상 노드, 그 결과 카드 또는 다른 보간 노드를 연결하세요.",
+      "rifeMissing": "프레임 보간 엔진이 설치되지 않았습니다. 노드에 있는 버튼으로 설치하세요 — 한 번만 내려받으며 버튼에 크기가 표시됩니다.",
+      "generic": "이 플로우를 실행하기 전에 설정이 필요합니다."
+    },
+    "fixAria": "{{action}} — {{label}}"
+  },
+  "node": {
+    "delete": "node 삭제",
+    "toggleMain": "주 출력 전환"
+  },
+  "unknownNode": {
+    "title": "알 수 없는 노드",
+    "originalTypeLabel": "원래 유형",
+    "hint": "이 노드 유형은 이 빌드에 등록되지 않았습니다. 데이터는 보존되며 플로우 실행 시 건너뜁니다."
+  },
+  "agentNode": {
+    "mainSet": "주(최종) 출력으로 표시",
+    "mainUnset": "이것이 주/최종 출력입니다 — 클릭하여 해제",
+    "modelFromUpstream": "model ← upstream provider",
+    "instructionsLabel": "Instructions (선택사항 · @ 참조)",
+    "instructionsPlaceholder": "이 agent는 누구인가요? 예: 'You are a strict code reviewer.' @ 를 입력하면 upstream node를 참조할 수 있습니다.",
+    "runTitle": "upstream 출력을 사용하여 이 agent만 실행",
+    "empty": "(agent가 텍스트를 생성하지 않음)"
+  },
+  "promptNode": {
+    "mainSet": "주(최종) 출력으로 표시",
+    "mainUnset": "최종 출력 — 클릭하여 해제",
+    "providerLabel": "Provider",
+    "modelLabel": "Model",
+    "visionSuffix": " · vision",
+    "noLocalModels": "로컬 model 없음 — Status → llama.cpp에서 다운로드하세요.",
+    "modelIdPlaceholder": "model id",
+    "instructionLabel": "Instruction (@ 참조)",
+    "instructionPlaceholder": "예: '다음 주제로 생생하고 세밀한 이미지 생성 prompt를 작성하세요: 밤의 네온 도시.' @ 를 입력하면 upstream node를 포함할 수 있습니다.",
+    "visionWarning": "VISION ▸ 이미지가 연결되었지만, 이 model은 이미지를 읽을 수 없습니다 — vision model(Claude, Gemini, GPT-4o/5, Qwen-VL, Pixtral…)을 선택하여 사용하세요.",
+    "runTitle": "이 prompt node 실행 — prompt 텍스트 생성",
+    "empty": "(아직 생성된 prompt 없음)",
+    "library": "{ } 라이브러리",
+    "libraryTitle": "프롬프트 라이브러리에서 템플릿 삽입"
+  },
+  "folderNode": {
+    "header": "folder · workspace",
+    "noFolder": "폴더가 선택되지 않음",
+    "pickTitle": "workspace 폴더 선택",
+    "change": "폴더 변경",
+    "choose": "폴더 선택",
+    "hint": "여기에 연결된 agents는 파일을 읽고 쓸 수 있습니다(부여한 Role에 따라), 이 폴더 안으로 제한됩니다."
+  },
+  "internetNode": {
+    "grants": "권한 부여: web_fetch(url)",
+    "hint": "여기에 연결된 agents는 공개 URL을 가져올 수 있습니다. PRIVATE MODE에서는 차단됩니다."
+  },
+  "mcpNode": {
+    "urlPlaceholder": "비워두면 = 내장 서버",
+    "hint": "여기에 연결된 agents는 이 MCP 서버의 tools를 사용할 수 있습니다. PRIVATE MODE에서는 안전 목록으로 제한됩니다."
+  },
+  "textNode": {
+    "label": "Text — 주제 / 브리프",
+    "placeholder": "prompt의 주제는 무엇인가요? 예: '$TACHI 홍보 — 네온 브루탈리즘, 바이럴, 암호화폐 열풍.' @ 로 참조하거나 Prompt / Media node에 연결하세요.",
+    "hintBefore": "출력 = 이 텍스트. 다른 node에서 ",
+    "hintAfter": "로 참조하거나 Prompt / Media node에 연결하세요."
+  },
+  "noteNode": {
+    "badge": "메모",
+    "placeholder": "스티커 메모 — 라벨, 할 일 또는 참고 사항을 적으세요. 실행에는 포함되지 않습니다.",
+    "cycleColor": "색상 변경",
+    "anchor": "{{count}}개 노드를 고정 — 이 메모와 함께 이동합니다",
+    "dragHint": "드래그하면 메모 안의 노드도 함께 이동합니다. Alt를 누르면 메모만 이동합니다."
+  },
+  "subflowNode": {
+    "badge": "서브플로우",
+    "labelPlaceholder": "서브플로우",
+    "labelAria": "서브플로우 이름",
+    "count": "노드 {{n}}개",
+    "expand": "펼치기",
+    "expandTitle": "펼치기 — 접힌 노드와 연결을 복원",
+    "hint": "접힌 그룹입니다. 숨겨진 노드도 플로우와 함께 실행됩니다."
+  },
+  "imageRefNode": {
+    "tooLarge": "이미지가 너무 큽니다 ({{size}} MB, 최대 12).",
+    "readError": "파일을 읽을 수 없습니다.",
+    "label": "Reference image (초기 프레임 / 스타일 참조)",
+    "altFallback": "reference",
+    "replace": "이미지 교체…",
+    "choose": "이미지 선택…",
+    "removeImage": "이미지 제거",
+    "clear": "지우기",
+    "hint1": "이것을 ",
+    "hintVideoImage": "Video / Image",
+    "hint2": " node에 연결 = 해당 reference image(image-to-video 초기 프레임). ",
+    "hint3": " node에 연결 = 텍스트 model이 이미지를 보고(vision) 설명을 씁니다. vision 지원 model이 필요합니다."
+  },
+  "outputNode": {
+    "title": "{{source}} ▸ 출력",
+    "titlePlain": "출력",
+    "regen": "↻ REGEN",
+    "regenTitle": "재생성 — 소스 node 다시 실행",
+    "regenAria": "재생성",
+    "deleteResult": "결과 삭제",
+    "noOutput": "(출력 없음)",
+    "branchHint": "Branch ▸ 이 결과에서 새 Prompt / Media node를 연결하여 체인을 이어가세요.",
+    "pin": "PIN",
+    "pinned": "▪ PINNED",
+    "pinTitle": "이 결과를 고정합니다 — 모두 실행 시 node를 다시 실행(및 재과금)하지 않고 이 결과를 재사용합니다",
+    "unpinTitle": "고정 해제 — 모두 실행 시 이 node를 다시 실행합니다",
+    "pinnedChip": "PINNED — 모두 실행 시 재사용",
+    "costTitle": "이 node의 마지막 실행 예상 비용 (연결된 model 요금 기준, 문자수/4 토큰 계산)",
+    "followUp": "후속 질문",
+    "followUpLabel": "후속 질문",
+    "followUpTitle": "이 결과에서 후속 agent를 분기합니다 — 이 출력을 context로 읽습니다",
+    "variantTitle": "팬아웃 변형 {{n}} — 소스 노드의 여러 병렬 실행 중 하나"
+  },
+  "mediaNode": {
+    "noLocalVoices": "로컬 음성 없음 — Media → Local에서 다운로드하세요.",
+    "installPiper": "piper를 설치하고 Media → Local에서 음성을 다운로드하세요.",
+    "noLocalModels": "로컬 {{kind}} model 없음 — Media → Local에서 다운로드하세요.",
+    "installSdCpp": "sd.cpp를 설치하고 Media → Local에서 model을 다운로드하세요.",
+    "providerLabel": "Provider",
+    "providerLocal": "Local",
+    "modelLabel": "Model",
+    "staleModel": "{{id}} (설치되지 않음)",
+    "noModels": "model 없음 — Surplus 키를 추가하고 USDC를 충전하세요.",
+    "noModelsErr": "model 없음 ({{error}})",
+    "promptLabel": "Prompt",
+    "promptWired1": "Prompt가 upstream node에서 연결되어 있습니다 — 해당 출력이 prompt로 사용됩니다. ",
+    "promptWired2": " 플러그를 연결 해제하면 여기에 직접 입력할 수 있습니다.",
+    "promptLabelRef": "Prompt (@ 로 upstream node 참조)",
+    "promptPlaceholder": "생성할 내용을 설명하세요… (또는 Prompt node를 prompt 플러그에 연결하세요)",
+    "imageWired1": "Reference image가 upstream node에서 연결되어 있습니다 — 해당 이미지가 사용됩니다. ",
+    "imageWired2": " 플러그를 연결 해제하면 여기에서 선택할 수 있습니다.",
+    "required": "필수:",
+    "runTitle": "이 node의 prompt + 파라미터로 생성",
+    "perfPreset": "Performance",
+    "perfPresetPlaceholder": "— tier —",
+    "stylePreset": "Style"
+  },
+  "resultCard": {
+    "collapse": "결과 카드 접기",
+    "expand": "결과 카드 펼치기",
+    "toggleAria": "결과 카드 접기/펼치기: {{title}}"
+  },
+  "runUI": {
+    "runDefault": "이 node만 실행",
+    "run": "실행",
+    "running": "실행 중…",
+    "pin": "PIN",
+    "pinned": "PIN ●",
+    "pinTitle": "이 출력을 downstream node의 고정 참조로 고정",
+    "pinnedTitle": "고정됨: downstream 실행 시 이 출력을 재사용하며 다시 실행하지 않습니다. 클릭하여 고정 해제.",
+    "clearTitle": "이 node의 캐시된 출력 지우기",
+    "clearAria": "출력 지우기",
+    "clearBusyTitle": "이 노드가 실행 중일 때는 지울 수 없습니다 — 먼저 실행을 중지하세요",
+    "noOutput": "(출력 없음)",
+    "generatedAlt": "generated",
+    "toDesignAudio": "→ Design 오디오",
+    "toDesignAudioTitle": "이 클립을 Design 오디오로 복사 — 애니메이션이 staticFile()로 사용할 수 있습니다",
+    "toDesignAudioDone": "Design 오디오에 저장됨: {{file}}",
+    "retry": "재시도 {{attempt}}/{{attempts}}",
+    "fanoutTitle": "팬아웃 ×{{count}} — 실행하면 이 노드를 {{count}}번 돌려 각각 별도의 결과 카드를 만듭니다. 클릭하여 변경 (×1 · ×2 · ×4).",
+    "fanoutAria": "팬아웃 ×{{count}}",
+    "fanoutRunning": "실행 {{current}}/{{total}}",
+    "fanoutStop": "중지",
+    "fanoutStopTitle": "현재 변형이 끝난 뒤 팬아웃을 중지합니다",
+    "stopRun": "중지",
+    "stopRunTitle": "이 렌더링 중지 — 로컬 엔진 프로세스를 지금 종료합니다",
+    "statusDone": "{{title}}: 실행 완료",
+    "statusError": "{{title}}: 실행 실패"
+  },
+  "quickAdd": {
+    "addConnected": "연결된 node 추가",
+    "menuAria": "연결된 node 추가",
+    "header": "추가 + 연결"
+  },
+  "referenceField": {
+    "placeholder": "입력하거나 @ 로 upstream node를 참조하세요…",
+    "resolvesTo": "해석 결과",
+    "empty": "(비어 있음 — upstream nodes에 아직 출력이 없습니다)"
+  },
+  "edgeSidecar": {
+    "placeholder": "Edge instruction...",
+    "hint": "Enter로 저장 · Esc로 취소"
+  },
+  "edge": {
+    "removeConnection": "연결 제거",
+    "editLabel": "edge 레이블 편집"
+  },
+  "paneMenu": {
+    "aria": "캔버스 컨텍스트 메뉴",
+    "tidyUp": "정리",
+    "tidyUpTitle": "ELK 레이어드 레이아웃으로 모든 nodes 자동 배치",
+    "addNode": "node 추가…",
+    "addNodeTitle": "이 위치에 node 빠르게 추가",
+    "kindAgent": "Agent",
+    "kindPrompt": "Prompt",
+    "kindText": "Text",
+    "kindMedia": "Image (Media)",
+    "kindProvider": "Provider"
+  },
+  "group": {
+    "toSubflow": "그룹화 → 서브플로우",
+    "title": "선택한 노드 {{n}}개를 하나의 서브플로우로 접기"
+  },
+  "merge": {
+    "toFollowUp": "병합 → 후속",
+    "title": "선택한 결과 {{n}}개를 이를 종합하는 하나의 후속 에이전트로 병합합니다",
+    "label": "병합",
+    "systemPrompt": "상류 결과를 하나의 답변으로 종합하세요."
+  },
+  "nodeMenu": {
+    "aria": "Node 컨텍스트 메뉴",
+    "group": "서브플로우로 그룹화",
+    "duplicate": "복제",
+    "delete": "삭제"
+  },
+  "emptyCanvas": {
+    "title": "빈 캔버스",
+    "addNode": "팔레트에서 템플릿을 클릭하여 node를 추가하세요.",
+    "connect": "핸들을 드래그하여 nodes를 연결하세요.",
+    "delete": "node 위에 마우스를 올리고 ×를 클릭하여 삭제하거나, 선택 후 Del / Backspace를 누르세요.",
+    "starters": "…또는 템플릿에서 시작하기"
+  },
+  "palette": {
+    "title": "Node 팔레트",
+    "searchPlaceholder": "검색…",
+    "searchAria": "팔레트 검색",
+    "noMatches": "일치하는 항목 없음.",
+    "footer": "캔버스로 드래그하거나 클릭하여 삽입합니다.",
+    "dropHint": "놓아서 node 추가",
+    "addNode": "{{label}} node 추가",
+    "addRole": "{{label}} role node 추가",
+    "groups": {
+      "providers": "Providers",
+      "prompt": "Prompt",
+      "inputs": "Inputs",
+      "agents": "Agents",
+      "tools": "Tools",
+      "media": "Media",
+      "annotate": "Annotate",
+      "roles": "Roles",
+      "triggers": "트리거"
+    },
+    "aria": "Node 팔레트"
+  },
+  "flowsRail": {
+    "revisions": {
+      "openTitle": "리비전 — 저장할 때마다 스냅샷 생성",
+      "openAria": "리비전 보기",
+      "title": "리비전",
+      "loading": "기록을 읽는 중…",
+      "empty": "아직 리비전이 없습니다. 이 플로우를 저장하면 스냅샷이 만들어집니다.",
+      "failed": "리비전을 읽지 못했습니다: {{error}}",
+      "unreadable": "스냅샷을 읽을 수 없음",
+      "identical": "변경 없음",
+      "nodesAdded": "+{{n}} 노드",
+      "nodesRemoved": "-{{n}} 노드",
+      "edgesAdded": "+{{n}} 연결",
+      "edgesRemoved": "-{{n}} 연결",
+      "params": "{{n}} 매개변수",
+      "justNow": "방금",
+      "minutesAgo": "{{n}}분 전",
+      "hoursAgo": "{{n}}시간 전",
+      "daysAgo": "{{n}}일 전",
+      "size": "{{n}} KB",
+      "restore": "복원",
+      "restoreTitle": "이 리비전을 복원 — 현재 상태를 먼저 스냅샷하므로 되돌릴 수 있습니다",
+      "restored": "\"{{name}}\"을(를) 이전 리비전에서 복원했습니다",
+      "restoreFailed": "복원 실패: {{error}}"
+    },
+    "scheduleTitle": "이 플로우를 타이머로 실행 예약",
+    "scheduleAria": "이 플로우 예약",
+    "title": "Flows",
+    "refreshTitle": "목록 새로고침",
+    "refreshAria": "새로고침",
+    "newTitle": "현재 캔버스를 저장하고 새로 시작",
+    "newFlow": "+ New flow",
+    "empty": "저장된 flow가 없습니다. 만들고 저장하거나 + New flow를 누르세요.",
+    "rename": "이름 변경",
+    "renameTitle": "flow 이름 변경",
+    "confirmDelete": "확실합니까?",
+    "confirmDeleteTitle": "다시 클릭하여 삭제 확인",
+    "deleteTitle": "flow 삭제",
+    "templates": "템플릿",
+    "import": "⇧ 가져오기",
+    "importTitle": ".tachiflow.json flow 파일 가져오기",
+    "importAria": "Flow 가져오기",
+    "imported": "\"{{name}}\" 가져옴",
+    "importFailed": "가져오기 실패: {{error}}",
+    "notTachiflow": ".tachiflow.json 파일이 아닙니다",
+    "unsupportedVersion": "이 .tachiflow.json은 더 새로운 버전의 앱에서 만든 파일입니다 — 가져오려면 TACHI STUDIO를 업데이트하세요.",
+    "exportTitle": ".tachiflow.json으로 내보내기",
+    "exportAria": "Flow 내보내기",
+    "exported": "{{file}} 내보냄",
+    "exportFailed": "내보내기 실패: {{error}}",
+    "pngExport": "⇩ PNG",
+    "pngExportTitle": "현재 캔버스를 플로우가 포함된 PNG로 내보내기 — 다시 가져올 수 있음",
+    "pngExported": "내보냄 {{file}}",
+    "pngExportFailed": "PNG 내보내기 실패: {{error}}",
+    "pngNoFlow": "이 PNG에 포함된 플로우가 없습니다",
+    "saveFailed": "저장 실패: {{error}}",
+    "cfaBlocked": "Windows 제어된 폴더 액세스가 문서\\Tachi Studio에 대한 쓰기를 차단하고 있습니다 — Windows 보안에서 Tachi Studio를 허용하세요. 허용하지 않으면 앱이 데이터를 {{fallback}}에 저장합니다",
+    "aria": "저장된 flow",
+    "rowActionAria": "{{action}} — {{name}}",
+    "openAria": "flow 열기",
+    "renameAria": "flow 이름 변경",
+    "deleteAria": "flow 삭제",
+    "confirmDeleteAria": "삭제 확인"
+  },
+  "config": {
+    "aria": "Node 설정",
+    "header": "설정 · {{type}}",
+    "close": "닫기",
+    "closeEsc": "닫기 (Esc)",
+    "deleteNode": "node 삭제",
+    "deleteTitle": "이 node와 연결된 edges 삭제",
+    "duplicateNode": "node 복제",
+    "duplicateTitle": "설정 전체와 함께 이 node를 복제 (Ctrl+D)",
+    "fields": {
+      "label": "레이블",
+      "model": "Model",
+      "provider": "Provider",
+      "endpoint": "Endpoint",
+      "harness": "에이전트",
+      "systemPrompt": "System prompt",
+      "final": "최종 (주 출력)",
+      "instruction": "Instruction",
+      "roleId": "Role id",
+      "description": "설명",
+      "permissionTier": "권한 등급",
+      "workspacePath": "Workspace 경로",
+      "serverUrl": "서버 URL",
+      "modality": "Modality",
+      "promptTemplate": "Prompt 템플릿",
+      "size": "크기",
+      "count": "개수 (n)",
+      "voice": "Voice",
+      "format": "Format",
+      "duration": "길이 (s)",
+      "resolution": "해상도",
+      "audioPath": "오디오 경로",
+      "autoSaveDir": "자동 저장 디렉토리",
+      "codexAllowWrite": "쓰기 허용 (workspace-write 샌드박스)",
+      "retries": "실패 시 재시도",
+      "retryDelay": "재시도 지연 (ms)"
+    },
+    "placeholders": {
+      "nodeLabel": "Node 레이블",
+      "modelId": "model id",
+      "systemPrompt": "이 agent는 누구인가요? 예: 'You are a strict code reviewer.'",
+      "instruction": "어떤 종류의 prompt를 작성할까요…",
+      "serverUrl": "비워두면 = 내장 서버",
+      "surplusModelId": "surplus model id",
+      "autoSaveDir": "대체 저장 폴더"
+    },
+    "hints": {
+      "modelFromProvider": "Model은 upstream Provider node에서 가져옵니다.",
+      "internet": "연결된 agent에 웹 가져오기 권한을 부여합니다(egress-policy 적용).",
+      "codexAllowWrite": "Codex는 연결된 폴더 안에서만 파일을 만들고 수정하고 삭제할 수 있습니다. 끄면 = 읽기 전용 분석.",
+      "codexWriteNeedsFolder": "쓰기 모드를 켜려면 폴더 노드를 연결하세요. 해당 폴더만 대상으로 하며 앱 저장소 전체에는 영향을 주지 않습니다.",
+      "retries": "실패 시 이 node를 최대 3회 다시 실행합니다. 0 = 끔. 최종 실패만 오류를 기록하거나 오류 분기로 전달됩니다.",
+      "retryDelay": "시도 사이에 이 시간만큼 대기합니다."
+    },
+    "sections": {
+      "input": "입력",
+      "params": "매개변수",
+      "output": "출력"
+    },
+    "io": {
+      "noInputs": "연결된 입력 없음",
+      "inputEmpty": "— 아직 출력 없음",
+      "noOutput": "아직 실행 안 됨",
+      "showMore": "더 보기",
+      "showLess": "접기",
+      "statusOk": "OK",
+      "statusError": "실패",
+      "statusIdle": "실행 안 됨",
+      "errorLabel": "오류",
+      "costTitle": "이 노드의 마지막 실행 예상 비용(연결된 모델 요금으로 문자수/4 토큰 계산)"
+    },
+    "retries": {
+      "decrease": "재시도 줄이기",
+      "increase": "재시도 늘리기"
+    }
+  },
+  "blueprint": {
+    "title": "blueprint 가져오기",
+    "close": "닫기",
+    "description": "번호가 매겨진 단계가 포함된 마크다운을 붙여넣으세요. 각 단계는 agent node가 됩니다(레이블 = 제목, system prompt = 본문). 위에서 아래로 체인 형태로 연결됩니다.",
+    "placeholder": "번호가 매겨진 계획을 붙여넣으세요. 예:\n\n1. Research\n주제에 관한 자료를 수집하고 핵심 사실을 요약하세요.\n\n2. Draft\n위 research를 바탕으로 초안을 작성하세요.\n\n3. Review\n초안을 검토하고 구체적인 수정 사항을 나열하세요.",
+    "stepsDetected_one": "{{count}}개 단계 감지됨",
+    "stepsDetected_other": "{{count}}개 단계 감지됨",
+    "noSteps": "번호가 매겨진 단계를 찾을 수 없습니다. 줄 시작을 \"1.\", \"2)\" 등으로 작성하세요.",
+    "final": "(최종)",
+    "cancel": "취소",
+    "import": "가져오기",
+    "importCount": "가져오기 ({{count}})",
+    "importTitleReady": "agent 체인 생성",
+    "importTitleEmpty": "먼저 번호가 매겨진 단계를 붙여넣으세요"
+  },
+  "howto": {
+    "title": "workflow 만드는 방법",
+    "closeAria": "안내 닫기",
+    "closeTitle": "닫기 (캔버스 복원)",
+    "back": "이전",
+    "next": "다음",
+    "restore": "내 캔버스 복원",
+    "restoreTitle": "예시를 제거하고 내 캔버스를 되돌립니다",
+    "keep": "예시 유지",
+    "keepTitle": "캔버스에 예시를 유지합니다",
+    "restoreNote": "닫으면 캔버스가 복원됩니다 — \"예시 유지\"를 선택하지 않는 한.",
+    "steps": {
+      "intro": {
+        "title": "workflow란 무엇인가요?",
+        "body": "workflow는 이 캔버스에서 연결하는 AI 단계들의 체인입니다 — 텍스트, prompts, 이미지, 비디오, 음악. 바로 앞에서 간단한 2단계 예시를 만들어 보겠습니다; 다음을 누르고 지켜보세요. (실행한 각 단계는 결과를 캔버스의 카드로 남기며, 거기서 분기할 수 있습니다.)"
+      },
+      "provider": {
+        "title": "1단계 — Provider",
+        "body": "Provider는 AI model이 제공되는 곳입니다. 키 없는 FreeLLM 라우터를 사용합니다 — 키가 필요 없습니다. 모든 agent는 '두뇌' 역할을 하는 provider가 필요합니다."
+      },
+      "agent": {
+        "title": "2단계 — Agent",
+        "body": "Agent는 실제 작업을 수행합니다. 이 agent는 Writer입니다. 실제 캔버스에서는 왼쪽 팔레트에서 nodes를 추가합니다(드래그하여 꺼내세요)."
+      },
+      "wire": {
+        "title": "3단계 — 연결하기",
+        "body": "한 node의 가장자리에서 다른 node로 드래그하여 Provider와 Writer를 연결하세요. 이제 Writer에 두뇌(model)가 생겼습니다. 연결선이 생겼습니다."
+      },
+      "second": {
+        "title": "4단계 — 두 번째 단계 추가",
+        "body": "두 번째 Agent(Reviewer)를 추가하고 Writer를 Reviewer에 연결하세요. 그 연결선의 레이블(\"needs review\")은 라우팅 힌트입니다 — 언제 다음으로 넘어갈지 flow에 알려줍니다. 이제 2단계 workflow가 완성되었습니다."
+      },
+      "run": {
+        "title": "5단계 — 실행",
+        "body": "완전한 workflow입니다. 강조 표시된 \"Run flow\" 버튼(현재 빛나고 있음)을 클릭한 다음 \"Run all\"을 클릭하여 모든 node를 순서대로 실행하세요. 각 단계는 캔버스에 결과 카드를 남깁니다 — 카드에서 새 node를 분기하여 계속하거나, 카드의 Regen을 눌러 다시 생성하세요."
+      },
+      "beyond": {
+        "title": "agent를 넘어서",
+        "body": "팔레트에는 더 많은 것이 있습니다: Text node(주제/브리프), Reference Image node(캐릭터 또는 스타일 제공), Media nodes(이미지, 비디오, 음악, TTS, STT — Venice 또는 Surplus 경유), 그리고 연결된 이미지를 볼 수 있는 Prompt node(vision). Venice, Bankr, Ollama, llama.cpp 등 모든 provider가 작동하며 model 기능 태그가 인라인으로 표시됩니다. Flows 목록에 캔버스를 저장하고 채팅처럼 전환하세요."
+      }
+    }
+  },
+  "toolbar": {
+    "title": "Node 캔버스",
+    "howToBuild": "만드는 방법",
+    "howToBuildTitle": "인터랙티브 안내 — 단계별로 첫 번째 workflow 만들기",
+    "templates": "Templates ▾",
+    "templatesTitle": "완성된 예시 workflow 삽입",
+    "council": "Council",
+    "councilTitle": "Council 생성: 소스 agent가 Skeptic / Pragmatist / Critic으로 팬아웃하고, 최종 Synthesis agent로 모입니다",
+    "importBlueprint": "blueprint 가져오기",
+    "importBlueprintTitle": "번호가 매겨진 단계가 포함된 마크다운을 붙여넣어 순차적 agent node 체인 생성",
+    "flowNamePlaceholder": "Flow 이름...",
+    "flowNameAria": "Flow 이름",
+    "new": "새로 만들기",
+    "newTitle": "새로 만들기 — 현재 flow 폐기",
+    "open": "열기",
+    "openTitle": ".tachi-flow.json 파일 열기",
+    "save": "저장",
+    "saveTitle": "flow를 .tachi-flow.json으로 저장",
+    "clear": "지우기",
+    "clearTitle": "모든 nodes와 edges 지우기",
+    "autoLayout": "자동 레이아웃",
+    "layingOut": "레이아웃 중...",
+    "autoLayoutTitle": "ELK 레이어드 알고리즘으로 nodes 자동 배치",
+    "runFlow": "flow 실행",
+    "runFlowTitle": "이 그래프를 한 번 컴파일하고 실행한 뒤 결과 표시",
+    "addExpert": "+ 전문가 추가",
+    "addExpertTitle": "새 페르소나 agent를 추가하고 원탁 토론에 연결합니다(CEO/MAIN node 앞에)",
+    "chatWithFlow": "flow와 채팅",
+    "chatWithFlowTitle": "전체 팀과 대화 — 모든 전문가가 응답하고 MAIN agent가 종합합니다",
+    "openInCode": "Code 탭에서 열기",
+    "openInCodeTitle": "이 flow를 Code 탭에 agent 세션으로 전송합니다(단일 agent)",
+    "runInCode": "▸ Code 채팅에서 실행",
+    "runInCodeTitle": "이 전체 그래프를 저장하고 Code 채팅에서 실행 — 거기서 메시지를 보내면 전체 멀티 agent 네트워크가 실행됩니다",
+    "nodeCount_one": "{{count}}개 node",
+    "nodeCount_other": "{{count}}개 nodes",
+    "edgeCount_one": "{{count}}개 edge",
+    "edgeCount_other": "{{count}}개 edges",
+    "whiteboard": "화이트보드",
+    "whiteboardTitle": "스케치 화이트보드 전환 — 별도의 캔버스에 자유롭게 다이어그램과 메모를 그립니다. 아래의 flow는 그대로 유지됩니다",
+    "templatesMenuAria": "스타터 템플릿"
+  },
+  "runPanel": {
+    "title": "Flow 실행",
+    "close": "닫기",
+    "initialMessage": "초기 메시지 (네트워크 모드 전용)",
+    "initialPlaceholder": "선택사항 — 비워두면 flow만 실행됩니다. Prompt nodes는 자체 instructions을 포함합니다.",
+    "runAll": "▸ 모두 실행 (순서대로)",
+    "runAllTitle": "모든 node를 한 번씩, 위에서 아래로 종속성 순서대로 실행합니다(Prompt → Prompt → Media). 각 node의 출력이 다음으로 전달됩니다 — 클릭 한 번으로 전체 파이프라인을 실행합니다.",
+    "running": "실행 중…",
+    "runningStep": "{{step}}/{{total}}{{label}} 실행 중…",
+    "stop": "■ 현재 단계 이후 정지",
+    "stopTitle": "현재 node가 완료된 후 실행을 중지합니다(node 중간에 중단할 수 없습니다).",
+    "runNetwork": "하나의 네트워크로 실행",
+    "runNetworkTitle": "대안: 단일 공유 agent-kit 네트워크 패스(agents가 상태 공유 — 원탁 토론용). 위의 초기 메시지를 사용합니다. 체인된 Prompt→Prompt는 일부 providers에서 빈 결과가 올 수 있습니다.",
+    "idleBefore": "이제 ",
+    "idleStrong": "▸ 모두 실행",
+    "idleAfter": "을 눌러 모든 node를 한 번씩 종속성 순서대로 실행하세요 — 각 node의 출력이 다음으로 흐르고, 캔버스가 실시간으로 채워집니다. (아래 메시지 상자는 선택적 \"하나의 네트워크로 실행\" 모드에만 적용됩니다.)",
+    "runningNode": "{{total}} 중 {{step}}번째 node 실행 중{{label}}… (캔버스를 지켜보세요 — 각 node가 완료되면 채워집니다)",
+    "runningFlow": "flow 실행 중…",
+    "runFailed": "실행 실패",
+    "noAgentOutput": "flow가 실행되었지만 agent 출력이 없습니다.",
+    "step": "{{n}}단계 · {{agent}}",
+    "finalSuffix": " (최종)",
+    "noTextOutput": "(텍스트 출력 없음)",
+    "finalAnswer": "최종 답변",
+    "empty": "(비어 있음)",
+    "budgetLabel": "예산 한도 $",
+    "budgetOff": "끔",
+    "budgetTitle": "예상 지출이 이 금액(달러)을 넘기 전에 실행을 중지합니다. 비워두면 한도가 없습니다. 예상치는 각 node에 연결된 model 요금을 사용하며, 로컬 models는 무료입니다.",
+    "retrySuffix": " · 재시도 {{attempt}}/{{attempts}}",
+    "aria": "Flow 실행",
+    "doneAria": "실행 완료"
+  },
+  "chatPanel": {
+    "title": "flow와 채팅",
+    "clear": "지우기",
+    "clearTitle": "대화 지우기",
+    "close": "닫기",
+    "empty": "메시지를 보내세요 — flow의 모든 전문가가 의견을 제시하고(각각 이전 답변을 바탕으로), MAIN agent가 결정을 종합합니다. 모든 의견이 표시되며, 대화는 턴을 넘어 기억됩니다. 팁: \"Expert roundtable\" 템플릿을 불러오거나 \"+ 전문가 추가\"를 클릭하고, node를 \"MAIN\"으로 표시하여 종합자를 선택하세요.",
+    "you": "나",
+    "error": "오류",
+    "flow": "Flow",
+    "roundtable": "팀 원탁 토론",
+    "decisionSuffix": " · 결정",
+    "noOutput": "(출력 없음)",
+    "thinking": "Flow가 생각 중…",
+    "inputPlaceholder": "flow에 메시지 보내기… (Cmd/Ctrl+Enter로 전송)",
+    "send": "전송",
+    "sending": "전송 중…",
+    "aria": "Flow와 채팅"
+  },
+  "media": {
+    "output": "미디어 출력",
+    "failed": "실패.",
+    "noTranscript": "(트랜스크립트 없음)",
+    "noArtifact": "완료 — 반환된 결과물 없음.",
+    "generatedAlt": "generated",
+    "modalities": {
+      "image": "image",
+      "video": "video",
+      "music": "music",
+      "speech": "speech",
+      "transcript": "transcript"
+    }
+  },
+  "run": {
+    "errors": {
+      "ipcUnavailable": "그래프 실행 IPC를 사용할 수 없습니다.",
+      "nothingToRun": "실행할 항목이 없습니다 — Prompt, Agent 또는 Media node를 추가하세요.",
+      "cycle": "그래프에서 순환이 감지되었습니다 — 순서대로 실행할 수 없습니다. 해당 노드: {{nodes}}"
+    },
+    "errorPrefix": "오류",
+    "budgetStop": "중지됨: 예상 지출 ~${{spent}}이(가) ${{cap}} 예산 한도에 도달했습니다. 계속하려면 실행 패널에서 한도를 높이거나 지우세요.",
+    "skippedNoError": "건너뜀 — 처리할 오류 없음",
+    "skippedUpstreamFailed": "건너뜀 — 상위 노드 실패"
+  },
+  "chat": {
+    "noOutput": "(출력 없음)"
+  },
+  "scheduler": {
+    "addProviderAgent": "먼저 provider와 agent를 추가하세요.",
+    "needAgent": "Flow에는 최소 하나의 Agent node가 필요합니다.",
+    "needProvider": "Flow에는 최소 하나의 Provider node가 필요합니다.",
+    "unknownHarness": "Agent \"{{harness}}\"의 에이전트 유형을 알 수 없습니다 — 건너뜁니다.",
+    "connectEdge": "실행하기 전에 Provider → Agent edge를 연결하세요."
+  },
+  "confirm": {
+    "discardFlow": "현재 flow를 폐기하고 새로 시작할까요?",
+    "replaceTemplate": "현재 flow를 \"{{label}}\" 템플릿으로 교체할까요?",
+    "clearAll": "{{count}}개 nodes와 모든 edges를 지울까요?"
+  },
+  "toast": {
+    "addProviderFirst": "먼저 Provider node를 추가하거나 \"Expert roundtable\" 템플릿을 불러오세요.",
+    "expertAdded": "전문가가 추가되었습니다. 클릭하여 이름 + Instructions(페르소나)를 설정하세요.",
+    "autoLayoutFailed": "자동 레이아웃 실패: {{error}}",
+    "chainsCompiled": "{{count}}개 체인이 컴파일되었습니다 — Agent에 chain[0] 적용 중.",
+    "flowLoadedPerm": " · {{permission}} 권한",
+    "flowLoaded": "Flow 불러옴 → {{provider}}의 {{harness}}{{perm}}. workspace를 선택하여 시작하세요.",
+    "saved": "저장됨: {{path}}",
+    "saveFailed": "저장 실패: {{error}}",
+    "unknownError": "알 수 없는 오류",
+    "useInCodeFailed": "Code에서 사용 실패: {{error}}",
+    "saveFailedShort": "저장 실패",
+    "activeInCode": "\"{{name}}\"이(가) Code 탭에서 활성화되어 있습니다 — 거기서 메시지를 보내면 전체 그래프가 실행됩니다.",
+    "councilAdded": "Council이 추가되었습니다: source → Skeptic/Pragmatist/Critic → Synthesis. agents에 Provider를 연결하여 실행하세요.",
+    "blueprintImported_one": "{{count}}개 단계를 agent 체인으로 가져왔습니다. 첫 번째 agent에 Provider를 연결하여 실행하세요.",
+    "blueprintImported_other": "{{count}}개 단계를 agent 체인으로 가져왔습니다. 첫 번째 agent에 Provider를 연결하여 실행하세요.",
+    "templateLoaded": "템플릿 \"{{label}}\"을(를) 불러왔습니다. Run flow를 클릭하여 시도하세요.",
+    "loaded": "\"{{name}}\" 불러옴",
+    "openFailed": "열기 실패: {{error}}",
+    "cleared": "캔버스가 지워졌습니다 ({{count}}개 nodes)",
+    "undo": "실행 취소"
+  },
+  "templatesRail": {
+    "items": {
+      "multi-agent-research": {
+        "label": "멀티 에이전트 리서치",
+        "description": "리서처가 사실을 모으고, 애널리스트가 핵심을 추리고, 라이터가 최종 브리프를 작성합니다. 무료 — 키 필요 없음."
+      },
+      "brainstorm-decide": {
+        "label": "브레인스토밍 & 결정",
+        "description": "낙관론자가 아이디어를 내고, 회의론자가 검증하고, 결정자가 하나의 계획을 확정합니다. 무료 — 키 필요 없음."
+      },
+      "prompt-to-image": {
+        "label": "프롬프트 → 이미지",
+        "description": "무료 텍스트 모델이 생생한 이미지 프롬프트를 작성해 이미지 node에 전달합니다. 아이디어를 입력하고 실행하세요."
+      },
+      "compare-two-models": {
+        "label": "두 모델 비교",
+        "description": "하나의 질문에 두 모델이 나란히 답하고, 심판이 승자를 고릅니다. 모델 B의 기본값은 Bankr/Claude입니다."
+      },
+      "rag-over-folder": {
+        "label": "폴더에 RAG",
+        "description": "폴더를 선택하고 질문하세요 — 에이전트가 파일을 검색해 인용과 함께 답합니다. Bankr 키가 필요합니다."
+      },
+      "summarize-url": {
+        "label": "URL 요약",
+        "description": "텍스트 node에 링크를 붙여넣으세요 — 웹 지원 에이전트가 페이지를 가져와 요약합니다. Bankr 키가 필요합니다."
+      },
+      "geo-audit": {
+        "label": "GEO 감사(응답 엔진 최적화)",
+        "description": "페이지와 노리는 질문을 붙여넣으면 응답 엔진이 이를 어떻게 쓸지 시뮬레이션하고, 점수와 수정 목록을 제시합니다. 무료 — 키 불필요."
+      }
+    }
+  },
+  "templates": {
+    "agentic-studio": {
+      "label": "Agentic Studio (멀티 프로바이더 · 토론 → 이미지 + 영상)",
+      "description": "먼저 논쟁하고, 그다음 만들어내는 크리에이티브 팀입니다. Bankr 에이전트가 아이디어를 제안하고, OpenGateway 에이전트가 이를 비판하며, Surplus 에이전트가 최종 결정을 내립니다 — 이후 Prompt node가 이미지 프롬프트를 작성하고(Surplus image), Scenarist가 영상 대본을 씁니다(Surplus video). 에이전트마다 다른 프로바이더, 모델, MCP/웹 도구, 권한을 사용합니다. Bankr + OpenGateway + Surplus 키가 필요합니다(미디어 생성에는 충전된 Surplus 키 필요). 쇼케이스 / 테스트용 보드입니다."
+    },
+    "storyboard": {
+      "label": "스토리보드 (연결된 장면 · 로컬)",
+      "description": "연결된 장면들: 스틸 컷이 이야기를 열고, 장면 1이 이를 애니메이션화하며, 장면 2는 장면 1의 마지막 프레임에서 시작합니다 — 앱이 그 프레임을 알아서 추출해줍니다. 전제를 입력하고, 로컬 모델을 선택한 다음 Run flow를 누르세요. 솔직한 한계: 각 장면은 별도의 약 5초 렌더링이며 픽셀 왕복 전체를 거치므로, 체인이 길어질수록 색상과 정체성의 오차가 누적되고, 각 장면마다 모델 로딩 비용이 따로 듭니다. 긴 영화가 아니라 몇 개의 장면으로 된 스토리보드로 생각하세요."
+    },
+    "prompt-to-image": {
+      "label": "Prompt → 이미지",
+      "description": "무료 텍스트 모델이 생생한 이미지 프롬프트를 작성해 Image node로 전달합니다. Prompt node에 아이디어를 입력해 실행한 다음, Image node를 실행하세요 (Surplus 키가 필요합니다)."
+    },
+    "viral-video": {
+      "label": "Prompt → 바이럴 → 영상",
+      "description": "Concept writer가 아이디어 초안을 쓰고, Viral rewriter가 이를 역동적인 텍스트-투-비디오 프롬프트로 바꿔 Video node로 전달합니다. 작성은 무료이며, 영상 생성에는 Surplus 키가 필요합니다."
+    },
+    "improve-prompt-image": {
+      "label": "프롬프트 개선 → 이미지",
+      "description": "거친 이미지 프롬프트를 Prompt node에 붙여넣으면 무료 텍스트 모델이 다듬어 Image node로 전달합니다. Prompt node를 실행한 다음 Image node를 실행하세요."
+    },
+    "expert-roundtable": {
+      "label": "전문가 원탁회의 (멀티 에이전트 채팅)",
+      "description": "Frontend, Backend, SEO 전문가가 차례로 의견을 내며 — 각자 이전 의견을 바탕으로 발전시키고 — 마지막에 CEO가 계획을 종합합니다. 각 에이전트의 Instructions를 수정해 페르소나를 커스터마이즈하거나 \"Add expert\"를 클릭하세요. \"Chat with flow\"를 열면 팀과 대화할 수 있습니다."
+    },
+    "code-helper": {
+      "label": "코드 도우미 (파일)",
+      "description": "선택한 폴더 안의 파일을 읽고 쓰는 단일 에이전트(Bankr/Claude)입니다. 폴더를 선택한 다음 실행하세요."
+    },
+    "build-review": {
+      "label": "Build & Review (파일, 멀티 에이전트)",
+      "description": "Builder(Bankr/Claude)가 폴더에 파일을 작성하면 Reviewer가 이를 검토합니다. 폴더를 선택한 다음 실행하세요."
+    },
+    "writer-reviewer": {
+      "label": "Writer to Reviewer",
+      "description": "Writer가 초안을 쓰고, Reviewer가 이를 비평하고 개선합니다."
+    },
+    "research-summarize": {
+      "label": "Research to Summary",
+      "description": "Researcher가 요점을 모으고, Summarizer가 이를 요약합니다."
+    },
+    "code-review": {
+      "label": "Code to Review",
+      "description": "Coder가 코드를 작성하고, Reviewer가 버그를 검토합니다."
+    }
+  },
+  "whiteboard": {
+    "loading": "화이트보드 불러오는 중…",
+    "saveFailed": "화이트보드를 저장할 수 없습니다 — 브라우저 저장소가 가득 찼습니다. 스케치는 이번 세션에서만 사용할 수 있습니다."
+  },
+  "search": {
+    "placeholder": "node 찾기…",
+    "title": "라벨 또는 유형으로 nodes 검색 — Enter로 다음 일치 항목, Shift+Enter로 이전 항목 이동",
+    "aria": "node 검색"
+  },
+  "errorBranch": {
+    "handleTooltip": "오류 출력 — 이 노드가 실패할 때만 실행할 노드에 연결하세요"
+  },
+  "codexWrite": {
+    "consentTitle": "CODEX 쓰기 허용",
+    "consentMessage": "Codex 에이전트가 쓰기 모드로 실행됩니다. 다음 폴더 안에서만 파일을 만들고 수정하고 삭제할 수 있습니다:\n\n{{folders}}\n\n그 밖의 어떤 것도 건드리지 않습니다. 계속할까요?",
+    "consentRun": "실행",
+    "consentCancel": "취소"
+  },
+  "canvas": {
+    "aria": "Flow 캔버스",
+    "undo": "실행 취소",
+    "undoTitle": "실행 취소 (Ctrl+Z)",
+    "redo": "다시 실행",
+    "redoTitle": "다시 실행 (Ctrl+Shift+Z)"
+  },
+  "webhookNode": {
+    "header": "트리거 · {{source}}",
+    "state": {
+      "listening": "수신 대기",
+      "disarmed": "해제됨",
+      "server-off": "서버 꺼짐",
+      "server-down": "서버 준비 안 됨",
+      "error": "오류"
+    },
+    "help": {
+      "listening": "활성화 중…",
+      "disarmed": "해제됨 — 켜기 전까지 엔드포인트는 404를 반환합니다.",
+      "server-off": "로컬 API 서버가 꺼져 있습니다. 설정 → 연결 → OPENAI API에서 켜면 webhook URL이 생깁니다.",
+      "server-down": "로컬 API 서버가 아직 수신하지 않습니다 — 앱 시작 직후에 올라옵니다.",
+      "error": "이 트리거를 활성화할 수 없습니다."
+    },
+    "arm": "활성화",
+    "disarm": "해제",
+    "armAria": "이 webhook 트리거 활성화",
+    "disarmAria": "이 webhook 트리거 해제",
+    "copyUrl": "URL 복사",
+    "copied": "복사됨",
+    "copyUrlAria": "비밀키가 포함된 webhook URL 복사",
+    "rotate": "새 비밀키",
+    "rotateAria": "새 비밀키 생성 — 이전에 복사한 URL은 더 이상 작동하지 않습니다",
+    "autoRun": "알림이 오면 플로우 실행",
+    "lastAlert": "최근: {{summary}} (이 세션 {{count}}건)",
+    "noAlerts": "아직 알림이 없습니다.",
+    "loopbackHint": "이 URL은 로컬(127.0.0.1)입니다. TradingView 서버는 여기에 접근할 수 없습니다 — 이 컴퓨터에서 POST하거나, 직접 운영하는 터널로 노출하세요.",
+    "signalOnly": "수신 신호 전용: 알림은 텍스트가 될 뿐입니다. 이 노드는 절대 거래를 실행하지 않습니다."
+  },
+  "rifeNode": {
+    "header": "rife · 보간",
+    "multiplierLabel": "배율",
+    "multiplierTitle": "원본 프레임당 생성 수 — ×2, ×4 모두 한 번의 패스로 처리합니다",
+    "sourceLabel": "원본 클립",
+    "noSource": "연결된 것이 없습니다 — 영상 결과를 video 플러그에 연결하세요.",
+    "checking": "엔진 확인 중…",
+    "unsupported": "이 플랫폼용 RIFE 빌드는 배포되지 않습니다.",
+    "install": "엔진 설치 · {{size}}",
+    "installTitle": "rife-ncnn-vulkan 엔진({{size}})을 한 번만 내려받습니다. 이후 보간은 전부 이 컴퓨터에서 실행됩니다.",
+    "installing": "설치 중…",
+    "installHint": "한 번만 내려받습니다. 어디에도 전송되지 않으며 엔진은 이 컴퓨터에서 동작합니다.",
+    "installFailed": "엔진을 설치하지 못했습니다.",
+    "runTitle": "연결된 클립을 보간하고 옆에 새 파일로 저장합니다",
+    "wireHint": "실행하려면 로컬 영상 결과를 video 플러그에 연결하세요.",
+    "localHint": "완전히 로컬입니다: 디스크의 파일을 읽고 GPU에서 계산하며 프라이빗 모드에서도 동작합니다."
+  }
+}

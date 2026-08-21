@@ -1,0 +1,50 @@
+{
+  "filters": {
+    "all": "すべて",
+    "image": "画像",
+    "video": "ビデオ",
+    "music": "ミュージック",
+    "tts": "TTS"
+  },
+  "search": {
+    "placeholder": "プロンプトを検索…"
+  },
+  "empty": {
+    "none": "アーティファクトはまだありません。生成したもの—メディアスタジオまたはスタジオキャンバスのメディアノードから—すべてここに登録されます。",
+    "noneHint": "メディアタブを開いて最初のものを生成。",
+    "noMatch": "アーティファクトが{{scope}}{{query}}に一致しません。",
+    "noMatchFilter": "このフィルター"
+  },
+  "tile": {
+    "altFallback": "アーティファクト",
+    "noPreview": "(プレビューなし)",
+    "noPrompt": "(プロンプトなし)",
+    "pin": "ピン",
+    "pinned": "ピン済み",
+    "pinTitle": "トップにピン",
+    "unpinTitle": "ピンを外す",
+    "completedAfterPrivate": "PRIVATE MODE 後に完了",
+    "completedAfterPrivateTitle": "この生成は PRIVATE MODE がオンになった時点ですでに送信済みだったため、ブロックされずに完了して保存されました。切り替え後にこの端末から新たに何かが送信されたわけではありません — この時点で拒否しても、すでに送信済みの結果を捨てるだけです。"
+  },
+  "actions": {
+    "fullscreen": "フルスクリーン",
+    "save": "保存",
+    "reveal": "表示"
+  },
+  "preview": {
+    "alt": "プレビュー",
+    "close": "閉じる (Esc)"
+  },
+  "pane": {
+    "preview": "プレビュー",
+    "code": "コード",
+    "openInDesign": "デザインで開く",
+    "restore": "復元",
+    "viewingVersion": "v{{n}} / {{max}} を表示中 — 読み取り専用",
+    "versionLabel": "v{{n}}/{{max}}",
+    "olderVersion": "古いバージョン",
+    "newerVersion": "新しいバージョン",
+    "seedUser": "チャットからインポート: {{title}}",
+    "seedAssistant": "チャットのアーティファクトから作成 — チャットで反復改良。"
+  }
+}

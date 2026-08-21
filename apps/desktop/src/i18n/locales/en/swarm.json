@@ -1,0 +1,105 @@
+{
+  "tour": {
+    "title": "How to use the Swarm tab",
+    "step1": {
+      "title": "This is the Swarm tab",
+      "body": "Advanced: a coordination board for multiple AI agents working on one git repository. They coordinate by committing small status files into a .gnap/ folder — a shared to-do board, agent list, and message log inside your repo."
+    },
+    "step2": {
+      "title": "Start a swarm",
+      "body": "Click [NEW SWARM] to point it at a git repo and register agents and tasks. It writes only inside .gnap/, so your code is safe. Use [OPEN EXISTING] to reattach to one you already made."
+    },
+    "step3": {
+      "title": "What you will see",
+      "body": "Once open, the dashboard shows three panes: the agents (who is working), a kanban board (tasks moving across stages), and a live feed of every commit. It updates as the agents work."
+    },
+    "step4": {
+      "title": "When to use it",
+      "body": "Swarm is a coordination board for multiple agents working on one repo — it tracks tasks, agents, and commits in a shared .gnap/ folder. It is experimental and more involved than the Code tab. If you just want one agent, use Code. Reopen this from \"How to\"."
+    }
+  },
+  "topbar": {
+    "noSwarmOpen": "(no swarm open)",
+    "loading": "· loading…"
+  },
+  "actions": {
+    "newSwarm": "[NEW SWARM]",
+    "openExisting": "[OPEN EXISTING]",
+    "howTo": "[HOW TO]",
+    "howToTitle": "What is a swarm? Walk me through it",
+    "open": "[OPEN]",
+    "refresh": "[REFRESH]"
+  },
+  "empty": {
+    "title": "NO SWARM OPEN",
+    "descBefore": "A swarm is a team of AI agents working on one repo together — they split tasks on a shared board and log every step. All coordination lives in a tiny",
+    "descAfter": " folder, so your code stays untouched. Create a new swarm or reopen an existing one.",
+    "pathRequired": "Path is required",
+    "pathPlaceholder": "…or type a path",
+    "recent": "RECENT"
+  },
+  "agents": {
+    "header": "AGENTS ({{count}})",
+    "empty": "No agents registered yet.",
+    "register": "[REGISTER AGENT]",
+    "idPlaceholder": "id (e.g. alice)",
+    "namePlaceholder": "name (optional)",
+    "roleLabel": "role:",
+    "heartbeatLabel": "hb:",
+    "cancel": "Cancel",
+    "add": "Add",
+    "idRequired": "id is required",
+    "registerFailed": "registerAgent failed"
+  },
+  "kanban": {
+    "header": "TASKS ({{count}})",
+    "claimed": "[CLAIMED]",
+    "newTask": "+ NEW TASK",
+    "titlePlaceholder": "title",
+    "descPlaceholder": "description (optional)",
+    "cancel": "Cancel",
+    "add": "Add",
+    "actionOpen": "OPEN",
+    "titleRequired": "title is required",
+    "detail": {
+      "titlePrefix": "TASK ·",
+      "close": "Close",
+      "comments": "COMMENTS ({{count}})"
+    }
+  },
+  "feed": {
+    "header": "FEED",
+    "counts": "{{commits}} commits · {{messages}} msgs",
+    "empty": "Nothing yet. Commits and messages will appear here as agents commit.",
+    "commit": "commit",
+    "noSubject": "(no subject)",
+    "moreFiles": "+ {{count}} more",
+    "msg": "MSG"
+  },
+  "messaging": {
+    "header": "MESSAGES",
+    "registerPrompt": "Register agents to open inter-agent channels.",
+    "noMessages": "No messages.",
+    "ctxLabel": "ctx:",
+    "unreadTitle_one": "{{count}} unread message",
+    "unreadTitle_other": "{{count}} unread messages",
+    "sendTestTitle": "Send a test handoff to {{name}}",
+    "sendTestButton": "[SEND TEST HANDOFF → {{name}}]",
+    "testHandoff": {
+      "task": "Review the diff on the touched module",
+      "context": "Handed off from {{name}}"
+    }
+  },
+  "dialog": {
+    "title": "NEW SWARM",
+    "descBefore": "Pick a git repository to host the swarm. A",
+    "descAfter": " directory will be created (or reused) inside it.",
+    "pathPlaceholder": "/path/to/repo",
+    "pick": "[PICK]",
+    "cancel": "CANCEL",
+    "create": "CREATE",
+    "creating": "CREATING...",
+    "pathRequired": "Please pick or type a directory path.",
+    "initFailed": "initSwarm failed"
+  }
+}

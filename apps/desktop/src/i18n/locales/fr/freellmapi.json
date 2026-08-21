@@ -1,0 +1,50 @@
+{
+  "toolbar": {
+    "title": "[FREELLMAPI] Tableau de bord"
+  },
+  "actions": {
+    "reload": "[Recharger]",
+    "openInBrowser": "[Ouvrir dans le navigateur]"
+  },
+  "iframe": {
+    "title": "Tableau de bord freellmapi"
+  },
+  "status": {
+    "probing": "[sondage]",
+    "ready": "[prêt]",
+    "unreachable": "[inaccessible]"
+  },
+  "probing": {
+    "label": "[sondage] {{url}}"
+  },
+  "unreachable": {
+    "title": "[inaccessible] freellmapi ne répond pas",
+    "body": "freellmapi démarre automatiquement avec Tachi Studio. S'il n'a pas démarré, vérifiez la page Dashboard pour les erreurs de service, puis cliquez sur Recharger :",
+    "portLine": "port : {{port}}"
+  },
+  "errors": {
+    "healthFalse": "Le contrôle de santé du service a retourné false — freellmapi peut toujours démarrer"
+  },
+  "api": {
+    "title": "Utilisez-le depuis votre code",
+    "tabs": {
+      "curl": "curl",
+      "python": "Python",
+      "javascript": "JavaScript"
+    },
+    "copy": "[Copier]",
+    "copied": "[Copié — clé incluse]",
+    "copiedNoKey": "[Copié — clé d'exemple]",
+    "keyNote": "Copier insère votre vraie clé API — les extraits affichent {{placeholder}}. Fonctionne avec tout SDK compatible OpenAI ; le modèle \"auto\" route vers FreeLLM / llama.cpp.",
+    "status": {
+      "running": "[ en marche ]",
+      "stopped": "[ arrêté ]",
+      "disabled": "[ désactivé ]"
+    }
+  },
+  "disclosure": {
+    "title": "Route gratuite — ce qu'il y a derrière",
+    "trainsOnPrompts": "Certains fournisseurs gratuits derrière ce routeur peuvent s'entraîner sur vos prompts (les modèles gratuits de Kilo l'indiquent dans leur propre catalogue). N'envoyez pas de secrets ni de données privées — utilisez un fournisseur local pour cela.",
+    "trainsBadge": "Peut s'entraîner sur vos prompts"
+  }
+}

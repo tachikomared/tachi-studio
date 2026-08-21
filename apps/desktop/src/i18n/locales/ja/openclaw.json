@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "OpenClawダッシュボード"
+  },
+  "actions": {
+    "reload": "リロード",
+    "openInBrowser": "ブラウザで開く",
+    "openDocs": "ドキュメントを開く"
+  },
+  "iframe": {
+    "title": "OpenClawダッシュボード"
+  },
+  "probing": {
+    "label": "{{url}}をプローブ中…"
+  },
+  "unreachable": {
+    "title": "OpenClawデーモンに到達不可",
+    "hint": "ターミナルでOpenClawデーモンを開始して、リロードをクリック:"
+  },
+  "status": {
+    "probing": "プローブ中",
+    "live": "ライブ",
+    "offline": "オフライン"
+  }
+}

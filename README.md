@@ -63,16 +63,14 @@ It is a real desktop program, not a browser wrapper around someone's API.
 
 The app is not code-signed yet, so SmartScreen will show *"Windows protected your
 PC"* on first run. Click **More info → Run anyway**, or check the file against
-the checksum file on the release page first. Signing is on the roadmap —
-[issue #4](https://github.com/tachikomared/tachi-studio/issues/4).
+the checksum file on the release page first. Signing is on the roadmap.
 
 ### macOS and Linux
 
-Not released yet. Both targets are configured and the app is built to run there,
-but neither has been through a real install and test, so publishing a binary
-would be a promise we have not checked. Build from source below — and if it
-works or breaks on your machine, [open an issue](https://github.com/tachikomared/tachi-studio/issues);
-that is exactly the feedback needed to ship them.
+**Windows first.** macOS and Linux come later, as their own piece of work — the
+targets are configured and the code is written for them, but neither has been
+through a real install and test, and publishing a binary nobody has run would be
+a promise rather than a release. Building from source works on all three today.
 
 ---
 
@@ -199,11 +197,8 @@ Add your own in **Settings → Connections**.
 | `pnpm test` | Unit suites — `@tachi/core` and desktop (~9 800 tests) |
 | `pnpm -F tachi-studio-desktop package` | Build an installer for the current OS |
 
-CI runs the suite on Windows, Linux and macOS, and **gates on Windows** — the
-platform this release ships. The other two report without blocking, because a
-known set of test files still assumes Windows-shaped paths
-([#7](https://github.com/tachikomared/tachi-studio/issues/7), a good first
-issue if you want one).
+CI runs the whole suite on Windows on every push — the platform this release
+ships on. The other two come back into the matrix when they are ready to ship.
 
 ## Layout
 
@@ -220,9 +215,8 @@ Start with [docs/architecture.md](docs/architecture.md).
 
 ## Contributing
 
-Issues and pull requests are welcome — especially macOS and Linux reports, since
-those are the platforms that need real users to become real releases. See
-[CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md)
+and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Licence
 

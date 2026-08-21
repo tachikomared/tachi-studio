@@ -12,22 +12,19 @@ on:
 
 jobs:
   verify:
-    # All three platforms. The unit suite used to carry Windows path assumptions
-    # that nobody could see — it passed for months and failed the first time it
-    # ever ran on Linux, because `C:\Fake…` is a RELATIVE path to a POSIX runner.
-    # fail-fast is off, so one platform's failure still reports the others.
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
-    # Windows BLOCKS — it is the platform this release ships. Linux and macOS
-    # report without blocking, because the unit suite still carries Windows path
-    # assumptions in a known set of files (see the open issue). Flipping this to
-    # `false` is the definition of done for that work; until then a green tick
-    # here means "the shipped platform is green", and the other two legs are
-    # visible right next to it rather than hidden.
-    continue-on-error: ${{ matrix.os != 'windows-latest' }}
+    # WINDOWS ONLY, deliberately. This is the platform the app ships on today;
+    # macOS and Linux come later, as their own piece of work.
+    #
+    # Two reasons, both measured. The unit suite carries Windows path
+    # assumptions in a known set of files — `C:\Fake…` is a RELATIVE path to a
+    # POSIX runner, so those tests passed here for months and failed the first
+    # time they ever ran on Linux. And a private repository BILLS its minutes:
+    # macOS runners cost ten times a Linux one, and running three platforms per
+    # push exhausted the account's allowance in a single day. A leg that cannot
+    # pass yet and costs the most is not a gate, it is a bill.
+    #
+    # Bringing them back = fix the path assumptions, then add the two entries.
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

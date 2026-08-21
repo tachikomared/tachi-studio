@@ -35,10 +35,15 @@ jobs:
     # release — after a full three-OS build has already succeeded.
     permissions:
       contents: write
+    # Windows only, for the same reasons as ci.yml: it is what ships, and the
+    # other two do not package yet (macOS stops inside electron-builder, Linux
+    # exceeds the size budget). Keeping them in the matrix produced two red legs
+    # and a bill on every release rehearsal. The matrix stays a matrix so adding
+    # them back is one line each.
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [windows-latest]
     steps:
       - uses: actions/checkout@v4
         with:

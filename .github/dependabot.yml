@@ -12,7 +12,13 @@ updates:
     schedule:
       interval: weekly
       day: monday
-    open-pull-requests-limit: 5
+    # 0 means: NO version-update pull requests. Security updates still arrive —
+    # they ignore this limit — which is the trade this repository wants. The
+    # first hour with version updates on produced a TypeScript 6 major, a
+    # Tailwind 4 major and a 28-package group PR, none of which a bot should be
+    # proposing unattended on a pre-1.0 desktop app. Bumps happen deliberately,
+    # or because an advisory forces them.
+    open-pull-requests-limit: 0
     groups:
       security-and-patches:
         applies-to: security-updates

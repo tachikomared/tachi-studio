@@ -70,7 +70,7 @@
     "react-router-dom": "^7.15.1",
     "remotion": "4.0.490",
     "systeminformation": "^5.31.7",
-    "typescript": "^5.4.0",
+    "typescript": "^6.0.3",
     "yaml": "^2.9.0",
     "zod": "^4.3.6"
   },

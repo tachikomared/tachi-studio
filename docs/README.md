@@ -23,3 +23,11 @@ they are the evidence behind a decision, they are not published, and the comment
 names them so the reasoning has an owner rather than appearing out of nowhere.
 Nothing in the build reads them. If a claim in a comment matters to you and the
 note is not here, open an issue and ask — the measurement can be repeated.
+
+---
+
+[Tachi Studio on GitHub](https://github.com/tachikomared/tachi-studio) ·
+[Download](https://github.com/tachikomared/tachi-studio/releases/latest) ·
+[@smolekoma](https://x.com/smolekoma)
+
+Created by smolekoma and smolemaru, with Claude.

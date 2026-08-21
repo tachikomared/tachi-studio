@@ -886,7 +886,7 @@ inside its own directory in the application bundle.
 - inngest 4.13.0
 - kokoro-js 1.2.1
 - long 5.3.2
-- pdfjs-dist 6.1.200
+- pdfjs-dist 6.2.108
 - phonemizer 1.2.1
 - puppeteer-core 24.43.1
 - pwacompat 2.0.17

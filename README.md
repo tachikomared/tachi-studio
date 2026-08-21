@@ -6,7 +6,7 @@
 
 Chat with any model, run coding agents on your own repos, wire multi-step flows
 on a canvas, and generate images, video and speech locally. No sign-up, no
-subscription, no server in the middle.
+subscription, and no server of ours between you and the model.
 
 [![CI](https://github.com/tachikomared/tachi-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/tachikomared/tachi-studio/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/tachikomared/tachi-studio?display_name=tag&sort=semver)](https://github.com/tachikomared/tachi-studio/releases/latest)
@@ -42,7 +42,7 @@ It is a real desktop program, not a browser wrapper around someone's API.
 | 🧠 **It picks the model for you** | Leave the model on `AUTO`. A local classifier reads the prompt in under a millisecond and sends "what's 2+2" somewhere cheap and "rewrite this service" somewhere strong. You keep the dial if you want it. |
 | 🤖 **Coding agents on your repo** | Point an agent at a folder and it reads, edits, runs commands and reports back — with a permission prompt before anything touches disk or network. |
 | 🕸 **Flows on a canvas** | Drag providers, prompts, agents and tools onto a board, connect them, hit run. Save it, share it as a file, or run it on a schedule. |
-| 🎨 **Local image, video and voice** | Stable Diffusion, video, text-to-speech and speech-to-text run on your GPU through bundled engines. No credits, no queue, no upload. |
+| 🎨 **Local image, video and voice** | Stable Diffusion, video, text-to-speech and speech-to-text run on your GPU. The engines download on request, are checked against the publisher's own hash, and then work with the network off. No credits, no queue, no upload. |
 | 🔒 **A private mode that means it** | One switch disables every cloud provider, web search and non-local tool at the process boundary — not with a checkbox the UI politely respects. |
 | 🔌 **Talks to your other tools** | Serves an OpenAI-compatible API on `127.0.0.1`, so Claude Code, Cursor or any OpenAI SDK can use this app as their backend. Also runs an MCP server, and installs MCP servers from a catalog. |
 | 🌍 **8 languages** | English, Russian, Spanish, French, German, Chinese, Japanese, Korean. |
@@ -62,7 +62,8 @@ It is a real desktop program, not a browser wrapper around someone's API.
 
 The app is not code-signed yet, so SmartScreen will show *"Windows protected your
 PC"* on first run. Click **More info → Run anyway**, or check the file against
-`SHA256SUMS.txt` on the release page first. Signing is on the roadmap.
+the checksum file on the release page first. Signing is on the roadmap —
+[issue #4](https://github.com/tachikomared/tachi-studio/issues/4).
 
 ### macOS and Linux
 

@@ -342,33 +342,50 @@ describe('portable mode', () => {
 // addPatterns(platformOptions.files) onto the same matcher, so a platform block
 // of pure negations narrows the shared whitelist instead of replacing it.
 
-describe('onnxruntime is filtered per platform, not globally', () => {
+describe('onnxruntime is pruned in the TOP-LEVEL files list', () => {
   const cfg = JSON.parse(read('electron-builder.json')) as {
     files: string[]
-    win: { files?: string[] }; mac: { files?: string[] }; linux: { files?: string[] }
+    win?: { files?: string[] }; mac?: { files?: string[] }; linux?: { files?: string[] }
   }
   const ORT = '!**/node_modules/onnxruntime-node/bin/napi-v3/'
 
-  it('the shared files array no longer prunes any platform', () => {
-    expect(cfg.files.some(f => f.startsWith(ORT))).toBe(false)
+  // THIS FILE USED TO ASSERT THE OPPOSITE, and the opposite was wrong.
+  //
+  // The pruning was moved into per-platform `files` blocks so each build could
+  // drop the two platforms it is not. Those blocks held nothing but negations,
+  // and app-builder-lib gives a matcher with no inclusion pattern the default
+  // `**/*` — so the top-level whitelist ("out/**/*" + package.json) stopped
+  // applying entirely. Measured on a real package: app.asar went to 4613 MB and
+  // carried src, electron, test, e2e and three stale build directories.
+  //
+  // Windows is the only platform packaged today, so the exclusions live in the
+  // one list that cannot collapse. The invariant that keeps this from coming
+  // back is in builderFilesWhitelist.test.ts: a platform block that narrows the
+  // file set must also carry what to include.
+
+  it('prunes the foreign platforms from the shared list', () => {
+    const ort = cfg.files.filter(f => f.startsWith(ORT))
+    expect(ort.length, 'the shared list is where the pruning lives now').toBeGreaterThan(0)
+    const joined = ort.join(' ')
+    expect(joined).toContain('darwin')
+    expect(joined).toContain('linux')
   })
 
-  it('each platform excludes the OTHER platforms and never itself', () => {
-    const table: Array<[string[], string, string[]]> = [
-      [cfg.win.files ?? [],   'win32',  ['darwin', 'linux']],
-      [cfg.mac.files ?? [],   'darwin', ['win32', 'linux']],
-      [cfg.linux.files ?? [], 'linux',  ['win32', 'darwin']],
-    ]
-    for (const [files, self, foreign] of table) {
-      const ort = files.filter(f => f.startsWith(ORT))
-      expect(ort.length, `${self} must filter onnxruntime`).toBeGreaterThan(0)
-      const joined = ort.join(' ')
-      for (const other of foreign) {
-        expect(joined, `${self} must exclude ${other}`).toContain(other)
-      }
-      // Its own directory must survive — excluding it is what broke mac + linux.
-      // (win32/arm64 is a different ARCH of the same platform and may be pruned.)
-      expect(joined, `${self} must not exclude its own binaries`).not.toContain(`${self}/**`)
+  it("never excludes the shipping platform's own binaries", () => {
+    const joined = cfg.files.filter(f => f.startsWith(ORT)).join(' ')
+    // win32/arm64 is a different ARCH of the same platform and may be pruned;
+    // `win32/**` would take the binaries this build actually runs on.
+    expect(joined, 'excluding win32 wholesale is what broke the build that shipped').not.toContain('win32/**')
+  })
+
+  it('no platform block re-introduces the collapse', () => {
+    for (const platform of ['win', 'mac', 'linux'] as const) {
+      const patterns = cfg[platform]?.files
+      if (!patterns) continue
+      expect(
+        patterns.some(pat => !pat.startsWith('!')),
+        `${platform}.files is negations-only — that is the collapse`,
+      ).toBe(true)
     }
   })
 })

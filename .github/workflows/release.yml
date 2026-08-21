@@ -132,8 +132,12 @@ jobs:
           Set-Location apps/desktop/release-build
           # BOTH artifacts: the installer and the portable folder zip. Hashing
           # only the .exe would publish a zip nobody can verify.
+          # The NAME is the asset name, not the on-disk name: GitHub turns spaces
+          # into dashes on upload, and a checksum line naming a file that is not
+          # on the release page is a line nobody can use.
           Get-ChildItem *.exe, *.zip | ForEach-Object {
-            "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)"
+            $asset = $_.Name -replace ' ', '-'
+            "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $asset"
           } | Out-File -Encoding utf8 SHA256SUMS
 
       - name: Generate checksums (macOS)

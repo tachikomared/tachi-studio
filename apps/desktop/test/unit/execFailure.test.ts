@@ -12,12 +12,13 @@ import { tmpdir } from 'node:os'
 import { detectExecFailure } from '../../electron/services/util/exec-failure'
 import { executeTool, type ToolContext } from '../../electron/services/tachi/tools'
 
-// A CI runner spawning a real shell — under a virus scanner on windows-latest —
-// routinely needs more than vitest's 5s default, and a test that times out while
-// its child is still alive turns the next test's temp-directory cleanup into
-// EBUSY. The allowance is per file on purpose: raising it globally was measured
-// to break four sd/media suites that share real temp directories.
-vi.setConfig({ testTimeout: 30_000, hookTimeout: 30_000 })
+// This suite spawns a REAL shell. On windows-latest that is powershell.exe with
+// a cold module cache and a virus scanner in front of it, and 30s was measured
+// to be too little — the test timed out while its child was still alive, which
+// then turned the next test's temp-directory cleanup into EBUSY. Two failures,
+// one cause. The allowance is per file on purpose: raising it globally was
+// measured to break four sd/media suites that share real temp directories.
+vi.setConfig({ testTimeout: 120_000, hookTimeout: 120_000 })
 
 describe('detectExecFailure — strong signals', () => {
   const cases: Array<[string, string]> = [

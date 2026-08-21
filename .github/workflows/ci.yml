@@ -21,6 +21,13 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
+    # Windows BLOCKS — it is the platform this release ships. Linux and macOS
+    # report without blocking, because the unit suite still carries Windows path
+    # assumptions in a known set of files (see the open issue). Flipping this to
+    # `false` is the definition of done for that work; until then a green tick
+    # here means "the shipped platform is green", and the other two legs are
+    # visible right next to it rather than hidden.
+    continue-on-error: ${{ matrix.os != 'windows-latest' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

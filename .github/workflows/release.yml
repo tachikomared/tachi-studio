@@ -144,6 +144,23 @@ jobs:
           # Hash DMGs + zips (the user-facing distributables).
           ls *.dmg *.zip 2>/dev/null | xargs -I{} shasum -a 256 "{}" > SHA256SUMS || true
 
+      # The checksums have to reach the PEOPLE DOWNLOADING, not just the run's
+      # artifact bucket: the "Windows says this is unsafe" instructions tell a
+      # user to compare a hash, and a hash that expires with the workflow
+      # artifact is not something they can compare against.
+      - name: Attach checksums to the draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          version=$(node -p "require('./apps/desktop/package.json').version")
+          src=apps/desktop/release-build/SHA256SUMS
+          [ -s "$src" ] || { echo "no checksums produced on ${{ matrix.os }} — nothing to attach"; exit 0; }
+          out="SHA256SUMS-${{ matrix.os }}.txt"
+          cp "$src" "$out"
+          gh release upload "v$version" "$out" --clobber --repo "$GITHUB_REPOSITORY"
+
       - name: Upload diagnostic artifacts
         if: always()
         uses: actions/upload-artifact@v4

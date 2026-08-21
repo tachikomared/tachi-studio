@@ -124,7 +124,8 @@
         ]
       }
     ],
-    "icon": "build/icon.ico"
+    "icon": "build/icon.ico",
+    "artifactName": "Tachi-Studio-${version}-${os}.${ext}"
   },
   "linux": {
     "target": [
@@ -157,7 +158,8 @@
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
     "shortcutName": "Tachi Studio",
-    "license": "../../LICENSE"
+    "license": "../../LICENSE",
+    "artifactName": "Tachi-Studio-Setup-${version}.${ext}"
   },
   "publish": [
     {

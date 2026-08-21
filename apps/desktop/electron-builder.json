@@ -21,7 +21,9 @@
     "!**/win-unpacked.tmp/**",
     "!**/node_modules/@remotion/compositor-*/**",
     "!**/node_modules/onnxruntime-web/dist/*.wasm",
-    "!**/node_modules/@huggingface/transformers/dist/*.wasm"
+    "!**/node_modules/@huggingface/transformers/dist/*.wasm",
+    "!**/node_modules/onnxruntime-node/bin/napi-v3/{darwin,linux}/**",
+    "!**/node_modules/onnxruntime-node/bin/napi-v3/win32/arm64/**"
   ],
   "npmRebuild": false,
   "asarUnpack": [
@@ -105,10 +107,7 @@
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",
-    "entitlementsInherit": "build/entitlements.mac.plist",
-    "files": [
-      "!**/node_modules/onnxruntime-node/bin/napi-v3/{win32,linux}/**"
-    ]
+    "entitlementsInherit": "build/entitlements.mac.plist"
   },
   "win": {
     "target": [
@@ -125,11 +124,7 @@
         ]
       }
     ],
-    "icon": "build/icon.ico",
-    "files": [
-      "!**/node_modules/onnxruntime-node/bin/napi-v3/{darwin,linux}/**",
-      "!**/node_modules/onnxruntime-node/bin/napi-v3/win32/arm64/**"
-    ]
+    "icon": "build/icon.ico"
   },
   "linux": {
     "target": [
@@ -153,10 +148,7 @@
       }
     ],
     "category": "Development",
-    "icon": "build/icon.png",
-    "files": [
-      "!**/node_modules/onnxruntime-node/bin/napi-v3/{win32,darwin}/**"
-    ]
+    "icon": "build/icon.png"
   },
   "nsis": {
     "oneClick": false,
